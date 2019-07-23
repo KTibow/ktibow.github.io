@@ -1,0 +1,35 @@
+#mythingy {
+	width: 20%;
+	text-align: center;
+	color: green;
+	border-color: red;
+	border-style: dashed;
+	border-width: thin;
+	border-radius: 20px;
+	background: lightblue;
+	margin: auto;
+}
+
+body {
+	background: salmon;
+}
+
+#mydivvy {
+	display: flex;
+}
+.blocks {
+	border-style: solid;
+	border-color: cyan;
+	padding: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 30%;
+}
+
+#leftpart {
+	float: left;
+}
+
+#rightpart {
+	float: right;
+}
