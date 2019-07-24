@@ -33,3 +33,7 @@ body {
 #rightpart {
 	float: right;
 }
+
+#Quote {
+	word-break: break-all;
+}
