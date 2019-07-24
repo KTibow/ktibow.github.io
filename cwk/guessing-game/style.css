@@ -1,0 +1,29 @@
+.center {
+  text-align: center;
+}
+
+.purple {
+  color: purple;
+}
+
+.blue {
+  color: cornflowerblue;
+}
+
+.border {
+	border-style: dashed;
+	display: inline-block;
+	padding: 10px;
+}
+
+.orange {
+  color: darkorange;
+}
+
+body {
+  background: #D3D3D3;
+}
+
+.inline {
+	display: inline;
+}
