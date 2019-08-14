@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://ktibow.github.io/</loc>
+  <lastmod>2019-08-13T02:03:28+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://ktibow.github.io/tutorials/</loc>
+  <lastmod>2019-08-13T02:03:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ktibow.github.io/blog/</loc>
+  <lastmod>2019-08-13T02:03:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ktibow.github.io/cwk/</loc>
+  <lastmod>2019-08-13T02:03:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ktibow.github.io/tutorials/pip-yun/</loc>
+  <lastmod>2019-08-13T02:03:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ktibow.github.io/blog/2019/</loc>
+  <lastmod>2019-08-13T02:03:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ktibow.github.io/cwk/my-first-codepen/</loc>
+  <lastmod>2019-08-13T02:03:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ktibow.github.io/cwk/guessing-game/</loc>
+  <lastmod>2019-08-13T02:03:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ktibow.github.io/blog/2019/7/</loc>
+  <lastmod>2019-08-13T02:03:28+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ktibow.github.io/blog/2019/8/</loc>
+  <lastmod>2019-08-13T02:03:28+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ktibow.github.io/blog/2019/7/19/</loc>
+  <lastmod>2019-08-13T02:03:28+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://ktibow.github.io/blog/2019/7/20/</loc>
+  <lastmod>2019-08-13T02:03:28+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://ktibow.github.io/blog/2019/7/21/</loc>
+  <lastmod>2019-08-13T02:03:28+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://ktibow.github.io/blog/2019/7/23/</loc>
+  <lastmod>2019-08-13T02:03:28+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://ktibow.github.io/blog/2019/8/12/</loc>
+  <lastmod>2019-08-13T02:03:28+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+
+
+</urlset>
