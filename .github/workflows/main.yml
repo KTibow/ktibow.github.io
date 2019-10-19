@@ -9,11 +9,11 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo one line
     - name: Run a multi-line script
       run: |
         echo running
         find . | grep -v ".*/\..*" | awk 'BEGIN{FIELDWIDTHS="1 1000"}{print $2}' > sitemap.txt
+        echo raw
+        cat sitemap.txt
         echo generating
         sh generate_sitemap.sh
