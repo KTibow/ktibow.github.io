@@ -15,7 +15,5 @@ jobs:
       run: |
         echo running
         find . | grep -v ".*/\..*" | awk 'BEGIN{FIELDWIDTHS="1 1000"}{print $2}' > sitemap.txt
-        echo "Using cat:"
-        cat sitemap.txt
-        echo "Using for:"
+        echo generating
         sh generate_sitemap.sh
