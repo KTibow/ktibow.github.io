@@ -18,4 +18,4 @@ jobs:
         echo "Using cat:"
         cat sitemap.txt
         echo "Using for:"
-        while IFS= read -r line; do echo ">>$line<<"; done < sitemap.txt
+        sh generate_sitemap.sh
