@@ -1,5 +1,5 @@
 contents=`cat sitemap.txt`
-for item in $contents;
+for line in $contents;
 do
     echo $line
 done
