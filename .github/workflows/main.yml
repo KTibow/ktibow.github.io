@@ -13,5 +13,9 @@ jobs:
       run: echo one line
     - name: Run a multi-line script
       run: |
+        echo running
         find . | grep -v ".*/\..*" | awk 'BEGIN{FIELDWIDTHS="1 1000"}{print $2}' > sitemap.txt
+        echo "Using cat:"
         cat sitemap.txt
+        echo "Using for:"
+        while IFS= read -r line; do echo ">>$line<<"; done < file.txt
