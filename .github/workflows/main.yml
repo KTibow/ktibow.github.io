@@ -15,3 +15,6 @@ jobs:
       run: |
         mkdir myDir
         ls
+        cd myDir
+        echo hi > hi.txt
+        ls
