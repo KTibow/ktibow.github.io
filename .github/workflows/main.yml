@@ -13,4 +13,4 @@ jobs:
       run: echo one line
     - name: Run a multi-line script
       run: |
-        ls -R | awk '/:$/&&f{s=$0;f=0}/:$/&&!f{sub(/:$/,"");s=$0;f=1;next}NF&&f{ print s"/"$0 }'
+        ls -R / | awk '/:$/&&f{s=$0;f=0}/:$/&&!f{sub(/:$/,"");s=$0;f=1;next}NF&&f{ print s"/"$0 }'
