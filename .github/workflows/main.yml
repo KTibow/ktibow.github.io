@@ -16,6 +16,6 @@ jobs:
         echo raw
         cat sitemap.txt
         echo generating
-        sh generate_sitemap.sh > new_sitemap.txt
-        echo here
-        cat new_sitemap.txt
+        sh generate_sitemap.sh
+        #echo here
+        #cat new_sitemap.txt
