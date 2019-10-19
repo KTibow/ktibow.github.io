@@ -13,4 +13,5 @@ jobs:
       run: echo one line
     - name: Run a multi-line script
       run: |
-        find . | grep -v ".*/\..*"
+        find . | grep -v ".*/\..*" | awk 'BEGIN{FIELDWIDTHS="1 1000"}{print $2}' > sitemap.txt
+        cat sitemap.txt
