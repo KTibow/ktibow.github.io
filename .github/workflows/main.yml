@@ -17,4 +17,4 @@ jobs:
         sh generate_sitemap.sh > new_sitemap.txt
         echo =====================
         cat new_sitemap.txt
-        git switch -
+        git push
