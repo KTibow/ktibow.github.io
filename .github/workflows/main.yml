@@ -13,4 +13,4 @@ jobs:
       run: echo one line
     - name: Run a multi-line script
       run: |
-        ls -R
+        ls -a1
