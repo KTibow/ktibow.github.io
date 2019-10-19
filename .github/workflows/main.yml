@@ -13,8 +13,4 @@ jobs:
       run: echo one line
     - name: Run a multi-line script
       run: |
-        mkdir myDir
-        ls
-        cd myDir
-        echo hi > hi.txt
-        ls
+        ls -R
