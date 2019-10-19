@@ -17,6 +17,6 @@ jobs:
         sh generate_sitemap.sh > new_sitemap.txt
         echo =====================
         cat new_sitemap.txt
-        git config –global user.name KTibow
-        git config –global user.email KTibow@users.noreply.github.com
-        git push
+        #git config –global user.name KTibow
+        #git config –global user.email KTibow@users.noreply.github.com
+        #git push
