@@ -8,15 +8,23 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+    - uses: actions/checkout@master
     - name: Generate sitemap
       run: |
-        git clone https://github.com/KTibow/ktibow.github.io.git ./
         echo running
         find . | grep -v ".*/\..*" | awk 'BEGIN{FIELDWIDTHS="1 1000"}{print $2}' > sitemap.txt
         echo generating
         sh generate_sitemap.sh > new_sitemap.txt
         echo =====================
         cat new_sitemap.txt
-        #git config –global user.name KTibow
-        #git config –global user.email KTibow@users.noreply.github.com
-        #git push
+    - name: Commit files
+      run: |
+        git config --local user.email "KTibow@users.noreply.github.com"
+        git config --local user.name "KTibow"
+        git commit -m "Add changes" -a
+    - name: Push sitemap
+      uses: ad-m/github-push-action@master
+      with:
+        key: f59eebbebd13047342f7788bebd62ff07c960496 
+      
+
