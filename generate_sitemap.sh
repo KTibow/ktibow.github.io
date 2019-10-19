@@ -1,5 +1,5 @@
 contents=`cat sitemap.txt`
 for line in $contents;
 do
-    echo $line
+    echo "https://ktibow.github.io$line"
 done
