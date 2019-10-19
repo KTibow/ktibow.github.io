@@ -8,9 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v1
     - name: Generate sitemap
       run: |
+        git clone https://github.com/KTibow/ktibow.github.io.git
         echo running
         find . | grep -v ".*/\..*" | awk 'BEGIN{FIELDWIDTHS="1 1000"}{print $2}' > sitemap.txt
         echo generating
