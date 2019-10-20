@@ -28,12 +28,15 @@ jobs:
         body: ${{ secrets.BING_WEBMASTER_SITEMAP_BODY }}
       run: |
         curl -X POST -d "$body" -b "$cookies" https://www.bing.com/webmaster/configure/sitemaps/addsitemap?url=https%3A%2F%2Fktibow.github.io%2F > ./webmaster.html
+    - name: Copy over action
+      run: |
+        cp /home/runner/work/_actions/ actions || true
     - name: Commit changes
       run: |
         git config --local user.email "KTibow@users.noreply.github.com"
         git config --local user.name "KTibow"
         git add -A
-        git commit -m "Add new sitemap" -a || true
+        git commit -m "Add new sitemap and cached action" -a || true
     - uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -51,7 +54,7 @@ jobs:
           url: 'https://ktibow.github.io'
       - name: Find my report at https://ktibow.github.io/lighthouse.html
         run: |
-          ls
+          ls report
           mv ./report/https_ktibow_github_io.report.html ./lighthouse.html
           rm -r report
       - name: Commit changes
