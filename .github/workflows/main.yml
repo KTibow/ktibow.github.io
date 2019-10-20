@@ -30,7 +30,8 @@ jobs:
         git add .
     - name: Commit changes
       run: |
-        git commit -m "Add new sitemap" -a || true
+        git status
+        git commit -m "Add new sitemap" -a 2> /dev/null
     - name: Push sitemap
       uses: ad-m/github-push-action@master
       with:
