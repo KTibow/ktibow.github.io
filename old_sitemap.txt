@@ -11,6 +11,7 @@
 /report/https___ktibow_github_io.report.html
 /report/https___ktibow_github_io.report.json
 /LICENSE
+/webmaster.html
 /404.html
 /sitemap.xml
 /index.html
