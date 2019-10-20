@@ -11,8 +11,6 @@
 /404.html
 /sitemap.xml
 /index.html
-/hi
-/hi/index.html
 /README.md
 /gocallme
 /gocallme/index.html
