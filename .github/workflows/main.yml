@@ -21,15 +21,11 @@ jobs:
         sh generate_sitemap.sh > sitemap.txt
         echo =====================
         cat sitemap.txt
-    - name: login
+    - name: Commit changes
       run: |
         git config --local user.email "KTibow@users.noreply.github.com"
         git config --local user.name "KTibow"
-    - name: Add everything
-      run: |
         git add -A
-    - name: Commit changes
-      run: |
         git commit -m "Add new sitemap" -a || true
     - name: Push sitemap
       uses: ad-m/github-push-action@master
@@ -49,6 +45,7 @@ jobs:
         name: Sitemap upload response
         path: ./artifacts
   audit:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Audit URL
