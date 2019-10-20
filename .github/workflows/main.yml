@@ -1,4 +1,4 @@
-name: Sitemap
+name: CI
 
 on: [push]
 
@@ -31,8 +31,8 @@ jobs:
     - name: Commit changes
       run: |
         git commit -m "Add new sitemap" -a || true
+    - uses: ad-m/github-push-action@master
     - name: Push sitemap
-      uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
     - name: Submit sitemap
@@ -46,6 +46,18 @@ jobs:
         #curl https://www.bing.com/ping?sitemap=https://ktibow.github.io/sitemap.txt
     - uses: actions/upload-artifact@master
       with:
-        name: response.html
+        name: Sitemap upload response
         path: ./artifacts
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Audit URL
+        uses: jakejarvis/lighthouse-action@master
+        with:
+          url: 'https://ktibow.github.io'
+      - name: Upload results
+        uses: actions/upload-artifact@master
+        with:
+          name: Lighthouse report
+          path: './report'
 
