@@ -14,6 +14,7 @@
 /README.md
 /gocallme
 /gocallme/index.html
+/old_sitemap.txt
 /cwk
 /cwk/index.html
 /cwk/gocallme
