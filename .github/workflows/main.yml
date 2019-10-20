@@ -14,7 +14,9 @@ jobs:
     - name: Generate sitemap
       run: |
         echo running
-        find . | grep -v ".*/\..*" | awk 'BEGIN{FIELDWIDTHS="1 1000"}{print $2}' > sitemap.txt
+        find . | grep -v ".*/\..*" | awk 'BEGIN{FIELDWIDTHS="1 1000"}{print $2}' > old_sitemap.txt
+        echo =====================
+        cat old_sitemap.txt
         echo generating
         sh generate_sitemap.sh > sitemap.txt
         echo =====================
