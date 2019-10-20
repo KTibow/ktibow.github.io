@@ -41,6 +41,7 @@ jobs:
         cookies: ${{ secrets.BING_WEBMASTER_SITEMAP_COOKIES }}
         body: ${{ secrets.BING_WEBMASTER_SITEMAP_BODY }}
       run: |
+        mkdir artifacts
         curl -X POST -d "$body" -b "$cookies" https://www.bing.com/webmaster/configure/sitemaps/addsitemap?url=https%3A%2F%2Fktibow.github.io%2F > ./artifacts/webmaster.html
         #curl https://www.bing.com/ping?sitemap=https://ktibow.github.io/sitemap.txt
     - uses: actions/upload-artifact@master
