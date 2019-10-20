@@ -8,6 +8,7 @@
 /tutorials/index.html
 /lighthouse.html
 /generate_sitemap.sh
+/up-to-date.sh
 /LICENSE
 /webmaster.html
 /404.html
