@@ -56,7 +56,7 @@ jobs:
         run: |
           ls report
           cp report/https___ktibow_github_io.report.html lighthouse.html
-          rm -r report
+          sudo rm -r report
       - name: Commit changes
         run: |
           git config --local user.email "KTibow@users.noreply.github.com"
