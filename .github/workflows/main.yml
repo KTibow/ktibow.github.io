@@ -51,7 +51,8 @@ jobs:
           url: 'https://ktibow.github.io'
       - name: Find my report at https://ktibow.github.io/lighthouse.html
         run: |
-          mv report/https_ktibow_github_io.report.html lighthouse.html
+          ls
+          mv ./report/https_ktibow_github_io.report.html ./lighthouse.html
           rm -r report
       - name: Commit changes
         run: |
