@@ -21,16 +21,6 @@ jobs:
         sh generate_sitemap.sh > sitemap.txt
         echo =====================
         cat sitemap.txt
-    - name: Commit changes
-      run: |
-        git config --local user.email "KTibow@users.noreply.github.com"
-        git config --local user.name "KTibow"
-        git add -A
-        git commit -m "Add new sitemap" -a || true
-    - name: Push sitemap
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
     - name: Submit sitemap
       env:
         token:  ${{ secrets.BING_WEBMASTER_SITEMAP_TOKEN }}
@@ -44,10 +34,22 @@ jobs:
       with:
         name: Sitemap upload response
         path: ./artifacts
+    - name: Commit changes
+      run: |
+        git config --local user.email "KTibow@users.noreply.github.com"
+        git config --local user.name "KTibow"
+        git add -A
+        git commit -m "Add new sitemap" -a || true
+    - uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
   audit:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: Get repo
+        run: |
+          git clone https://github.com/KTibow/ktibow.github.io.git ./
       - name: Audit URL
         uses: jakejarvis/lighthouse-action@master
         with:
@@ -57,4 +59,13 @@ jobs:
         with:
           name: Lighthouse report
           path: './report'
+      - name: Commit changes
+        run: |
+          git config --local user.email "KTibow@users.noreply.github.com"
+          git config --local user.name "KTibow"
+          git add -A
+          git commit -m "Add new sitemap" -a || true
+      - uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
