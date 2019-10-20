@@ -10,12 +10,7 @@ jobs:
     steps:
     - name: Get repo
       run: |
-        git init "/home/runner/work/ktibow.github.io/ktibow.github.io"
-        git remote add origin https://github.com/KTibow/ktibow.github.io
-        git config gc.auto 0
-        git config --get-all http.https://github.com/KTibow/ktibow.github.io.extraheader
-        git config --get-all http.proxy
-        git -c http.extraheader="AUTHORIZATION: basic ***" fetch --tags --prune --progress --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/*
+        git clone https://github.com/KTibow/ktibow.github.io.git ./
     - name: Generate sitemap
       run: |
         echo running
