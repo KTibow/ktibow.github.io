@@ -31,6 +31,7 @@ jobs:
     - name: Commit changes
       run: |
         git status
+        echo =============
         git commit -m "Add new sitemap" -a || true
     - name: Push sitemap
       uses: ad-m/github-push-action@master
