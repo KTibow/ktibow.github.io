@@ -1,4 +1,4 @@
-contents=`cat sitemap.txt`
+contents=`cat old_sitemap.txt`
 echo "https://ktibow.github.io/"
 for line in $contents;
 do
