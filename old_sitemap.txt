@@ -12,6 +12,7 @@
 /LICENSE
 /webmaster.html
 /404.html
+/page-things.txt
 /sitemap.xml
 /index.html
 /artifacts
