@@ -27,11 +27,9 @@ jobs:
         git config --local user.name "KTibow"
     - name: Add everything
       run: |
-        git add .
+        git add -A
     - name: Commit changes
       run: |
-        git status
-        echo =============
         git commit -m "Add new sitemap" -a || true
     - name: Push sitemap
       uses: ad-m/github-push-action@master
