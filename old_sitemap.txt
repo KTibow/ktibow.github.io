@@ -20,6 +20,16 @@
 /README.md
 /gocallme
 /gocallme/index.html
+/actions
+/actions/ad-m
+/actions/ad-m/github-push-action
+/actions/ad-m/github-push-action/master.completed
+/actions/ad-m/github-push-action/master
+/actions/ad-m/github-push-action/master/action.yml
+/actions/ad-m/github-push-action/master/start.sh
+/actions/ad-m/github-push-action/master/LICENSE
+/actions/ad-m/github-push-action/master/README.md
+/actions/ad-m/github-push-action/master/Dockerfile
 /old_sitemap.txt
 /cwk
 /cwk/index.html
