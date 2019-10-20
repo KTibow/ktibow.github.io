@@ -8,9 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Get repo
+    - name: Get repo and remove action
       run: |
         git clone https://github.com/KTibow/ktibow.github.io.git ./
+        sudo rm -r actions
     - name: Generate sitemap
       run: |
         echo running
