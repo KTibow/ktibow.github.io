@@ -30,6 +30,16 @@
 /actions/ad-m/github-push-action/master/LICENSE
 /actions/ad-m/github-push-action/master/README.md
 /actions/ad-m/github-push-action/master/Dockerfile
+/actions/_actions
+/actions/_actions/ad-m
+/actions/_actions/ad-m/github-push-action
+/actions/_actions/ad-m/github-push-action/master.completed
+/actions/_actions/ad-m/github-push-action/master
+/actions/_actions/ad-m/github-push-action/master/action.yml
+/actions/_actions/ad-m/github-push-action/master/start.sh
+/actions/_actions/ad-m/github-push-action/master/LICENSE
+/actions/_actions/ad-m/github-push-action/master/README.md
+/actions/_actions/ad-m/github-push-action/master/Dockerfile
 /old_sitemap.txt
 /cwk
 /cwk/index.html
