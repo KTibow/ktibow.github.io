@@ -48,7 +48,7 @@ jobs:
       - name: Get repo and remove old dir
         run: |
           git clone https://github.com/KTibow/ktibow.github.io.git ./
-          rm -r report
+          rm -r report || true
       - name: Audit URL
         uses: jakejarvis/lighthouse-action@master
         with:
