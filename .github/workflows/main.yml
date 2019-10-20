@@ -16,7 +16,7 @@ jobs:
         echo running
         find . | grep -v ".*/\..*" | awk 'BEGIN{FIELDWIDTHS="1 1000"}{print $2}' > sitemap.txt
         echo generating
-        sh generate_sitemap.sh > new_sitemap.txt
+        sh generate_sitemap.sh > sitemap.txt
         echo =====================
         cat new_sitemap.txt
     - name: Commit files
