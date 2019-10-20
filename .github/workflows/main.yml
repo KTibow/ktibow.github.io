@@ -27,13 +27,7 @@ jobs:
         cookies: ${{ secrets.BING_WEBMASTER_SITEMAP_COOKIES }}
         body: ${{ secrets.BING_WEBMASTER_SITEMAP_BODY }}
       run: |
-        mkdir artifacts
-        curl -X POST -d "$body" -b "$cookies" https://www.bing.com/webmaster/configure/sitemaps/addsitemap?url=https%3A%2F%2Fktibow.github.io%2F > ./artifacts/webmaster.html
-        #curl https://www.bing.com/ping?sitemap=https://ktibow.github.io/sitemap.txt
-    - uses: actions/upload-artifact@master
-      with:
-        name: Sitemap upload response
-        path: ./artifacts
+        curl -X POST -d "$body" -b "$cookies" https://www.bing.com/webmaster/configure/sitemaps/addsitemap?url=https%3A%2F%2Fktibow.github.io%2F > ./webmaster.html
     - name: Commit changes
       run: |
         git config --local user.email "KTibow@users.noreply.github.com"
@@ -47,18 +41,14 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Get repo
+      - name: Get repo and remove old dir
         run: |
           git clone https://github.com/KTibow/ktibow.github.io.git ./
+          rm -r report
       - name: Audit URL
         uses: jakejarvis/lighthouse-action@master
         with:
           url: 'https://ktibow.github.io'
-      - name: Upload results
-        uses: actions/upload-artifact@master
-        with:
-          name: Lighthouse report
-          path: './report'
       - name: Find my report at https://ktibow.github.io/lighthouse.html
         run: |
           mv report/https_ktibow_github_io.report.html lighthouse.html
