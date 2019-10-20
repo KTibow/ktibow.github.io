@@ -18,7 +18,7 @@ jobs:
         echo generating
         sh generate_sitemap.sh > sitemap.txt
         echo =====================
-        cat new_sitemap.txt
+        cat sitemap.txt
     - name: Commit files
       run: |
         git add .
