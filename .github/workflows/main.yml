@@ -49,6 +49,9 @@ jobs:
         run: |
           git clone https://github.com/KTibow/ktibow.github.io.git ./
           rm -r report || true
+      - name: Wait until up-to-date
+        run: |
+          sh up-to-date.sh
       - name: Audit URL
         uses: jakejarvis/lighthouse-action@master
         with:
