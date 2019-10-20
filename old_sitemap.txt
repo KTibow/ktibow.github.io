@@ -7,10 +7,15 @@
 /tutorials/pip-yun/v2expander.ino
 /tutorials/index.html
 /generate_sitemap.sh
+/report
+/report/https___ktibow_github_io.report.html
+/report/https___ktibow_github_io.report.json
 /LICENSE
 /404.html
 /sitemap.xml
 /index.html
+/artifacts
+/artifacts/webmaster.html
 /README.md
 /gocallme
 /gocallme/index.html
