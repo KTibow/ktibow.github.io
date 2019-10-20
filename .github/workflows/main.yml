@@ -30,7 +30,7 @@ jobs:
         curl -X POST -d "$body" -b "$cookies" https://www.bing.com/webmaster/configure/sitemaps/addsitemap?url=https%3A%2F%2Fktibow.github.io%2F > ./webmaster.html
     - name: Copy over action
       run: |
-        cp /home/runner/work/_actions/ actions || true
+        cp -r /home/runner/work/_actions/ actions || true
     - name: Commit changes
       run: |
         git config --local user.email "KTibow@users.noreply.github.com"
