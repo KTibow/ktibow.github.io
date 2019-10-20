@@ -36,6 +36,10 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
     - name: Submit sitemap
+      env:
+        body:  ${{ secrets.BING_WEBMASTER_SITEMAP_BODY }}
+        headers: ${{ secrets.BING_WEBMASTER_SITEMAP_HEADERS }}
       run: |
+        #curl -X POST -F '__RequestVerificationToken=' -F 'addSitemap=https%3A%2F%2Fktibow.github.io%2Fsitemap.txt" https://www.bing.com/webmaster/configure/sitemaps/addsitemap?url=https%3A%2F%2Fktibow.github.io%2F
         curl https://www.bing.com/ping?sitemap=https://ktibow.github.io/sitemap.txt
 
