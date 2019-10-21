@@ -42,9 +42,6 @@ jobs:
         body: ${{ secrets.BING_WEBMASTER_SITEMAP_BODY }}
       run: |
         curl -X POST -d "$body" -b "$cookies" https://www.bing.com/webmaster/configure/sitemaps/addsitemap?url=https%3A%2F%2Fktibow.github.io%2F
-    - name: Copy over action
-      run: |
-        cp -r /home/runner/work/_actions/ actions || true
     - name: Commit changes
       run: |
         git config --local user.email "KTibow@users.noreply.github.com"
