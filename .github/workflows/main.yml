@@ -14,8 +14,8 @@ jobs:
         sudo rm -r actions || true
     - name: Change Lighthouse page
       run: |
-        mv lighthouse.html old_lighthouse.html
-        cp preparing_lighthouse.html lighthouse.html
+        mv lighthouse.html old_lighthouse.html || true
+        cp preparing_lighthouse.html lighthouse.html || true
     - name: Commit changes
       run: |
         git config --local user.email "KTibow@users.noreply.github.com"
