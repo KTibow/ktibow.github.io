@@ -82,7 +82,9 @@ jobs:
           https://ktibow.github.io/blog/2019/8/12/
     - name: Find my report at https://ktibow.github.io/lighthouse.html
       run: |
-        sudo apt install jq
+        curl -sL https://deb.nodesource.com/setup_12.x | sudeo -E bash -
+        sudo apt-get install -y nodejs
+        sudo apt-get install jq
         ls results/*.json
         jq --help
         #cp report/https___ktibow_github_io.report.html lighthouse.html
