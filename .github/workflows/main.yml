@@ -65,9 +65,6 @@ jobs:
           git clone https://github.com/KTibow/ktibow.github.io.git ./
           rm -r report || true
           rm lighthouse.html || true
-      - name: Wait until up-to-date
-        run: |
-          sh up-to-date.sh
       - name: Audit URL
         uses: jakejarvis/lighthouse-action@master
         with:
@@ -86,4 +83,10 @@ jobs:
       - uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Tell me the build finished
+        uses: screendriver/ifttt-action@v1.0.0
+        with:
+          event: buildfinished
+          key:  ${{ secrets.IFTTT_KEY }}
+
 
