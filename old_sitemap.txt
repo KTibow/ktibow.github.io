@@ -14,8 +14,8 @@
 /404.html
 /finished_lighthouse.html
 /results
-/results/ktibow.github.io_2019-10-21_22-12-05.html
-/results/ktibow.github.io_2019-10-21_22-12-05.json
+/results/ktibow.github.io_2019-10-21_22-15-41.json
+/results/ktibow.github.io_2019-10-21_22-15-41.html
 /page-things.txt
 /index.html
 /artifacts
