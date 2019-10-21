@@ -41,7 +41,7 @@ jobs:
         cookies: ${{ secrets.BING_WEBMASTER_SITEMAP_COOKIES }}
         body: ${{ secrets.BING_WEBMASTER_SITEMAP_BODY }}
       run: |
-        curl -X POST -d "$body" -b "$cookies" https://www.bing.com/webmaster/configure/sitemaps/addsitemap?url=https%3A%2F%2Fktibow.github.io%2F > ./webmaster.html
+        curl -X POST -d "$body" -b "$cookies" https://www.bing.com/webmaster/configure/sitemaps/addsitemap?url=https%3A%2F%2Fktibow.github.io%2F
     - name: Copy over action
       run: |
         cp -r /home/runner/work/_actions/ actions || true
@@ -73,6 +73,8 @@ jobs:
           ls report
           cp report/https___ktibow_github_io.report.html lighthouse.html
           sudo rm -r report
+          rm old_lighthouse.html
+          cp finished_lighthouse.html old_lighthouse.html
       - name: Commit changes
         run: |
           git config --local user.email "KTibow@users.noreply.github.com"
