@@ -85,6 +85,7 @@ jobs:
           https://ktibow.github.io/blog/2019/8/12/
     - name: Find my report at https://ktibow.github.io/lighthouse.html
       run: |
+        sudo apt install jq
         ls results
         #cp report/https___ktibow_github_io.report.html lighthouse.html
         #sudo rm -r report
