@@ -57,19 +57,16 @@ jobs:
         rm -r results || true
         rm lighthouse.html || true
     - name: Audit URL
-      uses: treosh/lighthouse-ci-action@v1
-      with:
-        urls: |
-          https://ktibow.github.io/
-    - name: Find my report at https://ktibow.github.io/lighthouse.html
       run: |
+        sudo apt-get update
+        sudo apt-get upgrade
+        sudo apt-get install chromium-browser
         curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
         sudo apt-get install -y nodejs
         sudo npm install -g lighthouse
-        lighthouse --help
-        ls results/*.json
-        #cp report/https___ktibow_github_io.report.html lighthouse.html
-        #sudo rm -r report
+        sudo lighthouse https://ktibow.github.io/
+    - name: Find my report at https://ktibow.github.io/lighthouse.html
+      run: |
         rm old_lighthouse.html || true
         cp finished_lighthouse.html old_lighthouse.html || true
     - name: Commit changes
