@@ -3,7 +3,7 @@ name: CI
 on: [push]
 
 jobs:
-  build:
+  build-and-test:
 
     runs-on: ubuntu-latest
     
@@ -55,39 +55,34 @@ jobs:
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-  audit:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get repo and remove old dir
-        run: |
-          git clone https://github.com/KTibow/ktibow.github.io.git ./
-          rm -r report || true
-          rm lighthouse.html || true
-      - name: Audit URL
-        uses: jakejarvis/lighthouse-action@master
-        with:
-          url: 'https://ktibow.github.io'
-      - name: Find my report at https://ktibow.github.io/lighthouse.html
-        run: |
-          ls report
-          cp report/https___ktibow_github_io.report.html lighthouse.html
-          sudo rm -r report
-          rm old_lighthouse.html
-          cp finished_lighthouse.html old_lighthouse.html
-      - name: Commit changes
-        run: |
-          git config --local user.email "KTibow@users.noreply.github.com"
-          git config --local user.name "KTibow"
-          git add -A
-          git commit -m "Add Lighthouse report" -a || true
-      - uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Tell me the build finished
-        uses: screendriver/ifttt-action@v1.0.0
-        with:
-          event: buildfinished
-          key:  ${{ secrets.IFTTT_KEY }}
+    - name: Remove files/folders
+      run: |
+        rm -r report || true
+        rm lighthouse.html || true
+    - name: Audit URL
+      uses: jakejarvis/lighthouse-action@master
+      with:
+        url: 'https://ktibow.github.io'
+    - name: Find my report at https://ktibow.github.io/lighthouse.html
+      run: |
+        ls report
+        cp report/https___ktibow_github_io.report.html lighthouse.html
+        sudo rm -r report
+        rm old_lighthouse.html
+        cp finished_lighthouse.html old_lighthouse.html
+    - name: Commit changes
+      run: |
+        git config --local user.email "KTibow@users.noreply.github.com"
+        git config --local user.name "KTibow"
+        git add -A
+        git commit -m "Add Lighthouse report" -a || true
+    - uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Tell me the build finished
+      uses: screendriver/ifttt-action@v1.0.0
+      with:
+        event: buildfinished
+        key:  ${{ secrets.IFTTT_KEY }}
 
 
