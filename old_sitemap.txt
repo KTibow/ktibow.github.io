@@ -11,10 +11,9 @@
 /generate_sitemap.sh
 /up-to-date.sh
 /LICENSE
-/webmaster.html
 /404.html
+/finished_lighthouse.html
 /page-things.txt
-/sitemap.xml
 /index.html
 /artifacts
 /artifacts/webmaster.html
