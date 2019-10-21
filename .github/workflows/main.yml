@@ -65,9 +65,9 @@ jobs:
       run: |
         curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
         sudo apt-get install -y nodejs
-        sudo apt-get install jq
+        sudo npm install -g lighthouse
+        lighthouse --help
         ls results/*.json
-        jq --help
         #cp report/https___ktibow_github_io.report.html lighthouse.html
         #sudo rm -r report
         rm old_lighthouse.html || true
