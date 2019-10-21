@@ -61,28 +61,9 @@ jobs:
       with:
         urls: |
           https://ktibow.github.io/
-          https://ktibow.github.io/tutorials/
-          https://ktibow.github.io/tutorials/pip-yun/
-          https://ktibow.github.io/artifacts/
-          https://ktibow.github.io/gocallme/
-          https://ktibow.github.io/cwk/
-          https://ktibow.github.io/cwk/gocallme/
-          https://ktibow.github.io/cwk/guessing-game/
-          https://ktibow.github.io/cwk/my-first-codepen/
-          https://ktibow.github.io/blog/
-          https://ktibow.github.io/blog/2019/
-          https://ktibow.github.io/blog/2019/10/
-          https://ktibow.github.io/blog/2019/10/19/
-          https://ktibow.github.io/blog/2019/7/
-          https://ktibow.github.io/blog/2019/7/19/
-          https://ktibow.github.io/blog/2019/7/20/
-          https://ktibow.github.io/blog/2019/7/21/
-          https://ktibow.github.io/blog/2019/7/23/
-          https://ktibow.github.io/blog/2019/8/
-          https://ktibow.github.io/blog/2019/8/12/
     - name: Find my report at https://ktibow.github.io/lighthouse.html
       run: |
-        curl -sL https://deb.nodesource.com/setup_12.x | sudeo -E bash -
+        curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
         sudo apt-get install -y nodejs
         sudo apt-get install jq
         ls results/*.json
