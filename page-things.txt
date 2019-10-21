@@ -6,7 +6,7 @@
 ./tutorials/pip-yun/index.html
 ./tutorials/pip-yun/v2expander.ino
 ./tutorials/index.html
-./lighthouse.html
+./old_lighthouse.html
 ./generate_sitemap.sh
 ./up-to-date.sh
 ./LICENSE
