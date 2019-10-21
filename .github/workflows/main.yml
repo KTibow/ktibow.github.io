@@ -38,7 +38,6 @@ jobs:
         cat sitemap.txt
     - name: Submit sitemap
       env:
-        token:  ${{ secrets.BING_WEBMASTER_SITEMAP_TOKEN }}
         cookies: ${{ secrets.BING_WEBMASTER_SITEMAP_COOKIES }}
         body: ${{ secrets.BING_WEBMASTER_SITEMAP_BODY }}
       run: |
