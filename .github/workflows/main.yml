@@ -12,6 +12,20 @@ jobs:
       run: |
         git clone https://github.com/KTibow/ktibow.github.io.git ./
         sudo rm -r actions || true
+    - name: Change Lighthouse page
+      run: |
+        mv lighthouse.html old_lighthouse.html
+        cp preparing_lighthouse.html lighthouse.html
+    - name: Commit changes
+      run: |
+        git config --local user.email "KTibow@users.noreply.github.com"
+        git config --local user.name "KTibow"
+        git add -A
+        git commit -m "Change Lighthouse page" -a || true
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
     - name: Generate sitemap
       run: |
         echo running
@@ -38,7 +52,8 @@ jobs:
         git config --local user.name "KTibow"
         git add -A
         git commit -m "Add new sitemap and cached action" -a || true
-    - uses: ad-m/github-push-action@master
+    - name: Push changes
+      uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
   audit:
@@ -49,6 +64,7 @@ jobs:
         run: |
           git clone https://github.com/KTibow/ktibow.github.io.git ./
           rm -r report || true
+          rm lighthouse.html || true
       - name: Wait until up-to-date
         run: |
           sh up-to-date.sh
