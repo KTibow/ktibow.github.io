@@ -56,7 +56,7 @@ jobs:
       run: |
         rm -r results || true
         rm lighthouse.html || true
-    - name: Audit URL
+    - name: Audit pages
       run: |
         echo =========================================================
         echo updating package sources
@@ -73,7 +73,8 @@ jobs:
         sudo npm install -g lighthouse
         echo =========================================================
         echo "here's the report"
-        lighthouse --chrome-flags="--headless" https://ktibow.github.io/
+        #lighthouse --chrome-flags="--headless" https://ktibow.github.io/
+        sh lighthouse_report.sh
     - name: Find my report at https://ktibow.github.io/lighthouse.html
       run: |
         rm old_lighthouse.html || true
