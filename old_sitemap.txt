@@ -6,6 +6,7 @@
 /tutorials/pip-yun/index.html
 /tutorials/pip-yun/v2expander.ino
 /tutorials/index.html
+/ktibow.github.io_2019-10-22_14-13-49.report.html
 /old_lighthouse.html
 /lighthouse.html
 /generate_sitemap.sh
@@ -13,13 +14,8 @@
 /LICENSE
 /404.html
 /finished_lighthouse.html
-/results
-/results/ktibow.github.io_2019-10-21_22-15-41.json
-/results/ktibow.github.io_2019-10-21_22-15-41.html
 /page-things.txt
 /index.html
-/artifacts
-/artifacts/webmaster.html
 /README.md
 /gocallme
 /gocallme/index.html
