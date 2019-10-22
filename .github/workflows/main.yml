@@ -73,7 +73,7 @@ jobs:
         sudo npm install -g lighthouse
         echo =========================================================
         echo "here's the report"
-        lighthouse https://ktibow.github.io/
+        sudo lighthouse --chrome-flags="--headless" --no-sandbox https://ktibow.github.io/
     - name: Find my report at https://ktibow.github.io/lighthouse.html
       run: |
         rm old_lighthouse.html || true
