@@ -72,7 +72,7 @@ jobs:
         echo getting lighthouse
         sudo npm install -g lighthouse
         echo =========================================================
-        echo here's the report
+        echo "here's the report"
         sudo lighthouse https://ktibow.github.io/
     - name: Find my report at https://ktibow.github.io/lighthouse.html
       run: |
