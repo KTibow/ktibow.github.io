@@ -59,6 +59,9 @@ jobs:
     - name: Audit URL
       run: |
         echo =========================================================
+        echo updating package sources
+        sudo apt-get update
+        echo =========================================================
         echo installing chromium
         sudo apt-get install chromium-browser
         echo =========================================================
