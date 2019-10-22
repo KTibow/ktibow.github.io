@@ -66,3 +66,4 @@
 /blog/2019/8/12
 /blog/2019/8/12/index.html
 /blog/2019/index.html
+/sitemap.txt
