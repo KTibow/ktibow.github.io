@@ -32,7 +32,6 @@
 /cwk/guessing-game
 /cwk/guessing-game/style.css
 /cwk/guessing-game/index.html
-/cwk/guessing-game/blanjmcbsegfhd
 /cwk/guessing-game/script.js
 /cwk/my-first-codepen
 /cwk/my-first-codepen/style.css
