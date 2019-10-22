@@ -6,7 +6,6 @@
 /tutorials/pip-yun/index.html
 /tutorials/pip-yun/v2expander.ino
 /tutorials/index.html
-/ktibow.github.io_2019-10-22_14-13-49.report.html
 /old_lighthouse.html
 /lighthouse.html
 /generate_sitemap.sh
