@@ -17,6 +17,7 @@
 /README.md
 /gocallme
 /gocallme/index.html
+/lighthouse_report.sh
 /old_sitemap.txt
 /cwk
 /cwk/index.html
