@@ -74,7 +74,7 @@ jobs:
         echo =========================================================
         echo "here's the report"
         #lighthouse --chrome-flags="--headless" https://ktibow.github.io/
-        sh lighthouse_report.sh
+        bash lighthouse_report.sh
     - name: Find my report at https://ktibow.github.io/lighthouse.html
       run: |
         rm old_lighthouse.html || true
