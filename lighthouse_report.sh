@@ -1,5 +1,6 @@
 
 cat sitemap.txt | while read line
 do 
-  lighthouse --chrome-flags="--headless" --output-path="./${line////-}.html" $line
+  report="./${line////-}.html"
+  lighthouse --chrome-flags="--headless" --output-path=$report $line
 done
