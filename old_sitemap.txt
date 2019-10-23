@@ -9,7 +9,6 @@
 /old_lighthouse.html
 /lighthouse.html
 /generate_sitemap.sh
-/up-to-date.sh
 /LICENSE
 /404.html
 /finished_lighthouse.html
