@@ -11,10 +11,11 @@ jobs:
     - name: Get repo and remove action
       run: |
         git clone https://github.com/KTibow/ktibow.github.io.git ./
+        sudo rm -r actions || true
     - name: Change Lighthouse page
       run: |
-        mv ./actions/lighthouse.html ./actions/old_lighthouse.html || true
-        cp ./actions/preparing_lighthouse.html ./actions/lighthouse.html || true
+        mv lighthouse.html old_lighthouse.html || true
+        cp preparing_lighthouse.html lighthouse.html || true
     - name: Commit changes
       run: |
         git config --local user.email "KTibow@users.noreply.github.com"
@@ -28,11 +29,11 @@ jobs:
     - name: Generate sitemap
       run: |
         echo running
-        find . | grep -v ".*/\..*" | awk 'BEGIN{FIELDWIDTHS="1 1000"}{print $2}' > ./actions/old_sitemap.txt
+        find . | grep -v ".*/\..*" | awk 'BEGIN{FIELDWIDTHS="1 1000"}{print $2}' > old_sitemap.txt
         echo =====================
-        cat ./actions/old_sitemap.txt
+        cat old_sitemap.txt
         echo generating
-        sh ./actions/generate_sitemap.sh > sitemap.txt
+        sh generate_sitemap.sh > sitemap.txt
         echo =====================
         cat sitemap.txt
     - name: Submit sitemap
@@ -53,7 +54,8 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
     - name: Remove files/folders
       run: |
-        rm ./actions/lighthouse.html || true
+        rm -r results || true
+        rm lighthouse.html || true
     - name: Audit pages
       run: |
         echo =========================================================
@@ -72,11 +74,11 @@ jobs:
         echo =========================================================
         echo "here's the report"
         #lighthouse --chrome-flags="--headless" https://ktibow.github.io/
-        sh ./actions/lighthouse_report.sh
+        sh lighthouse_report.sh
     - name: Find my report at https://ktibow.github.io/lighthouse.html
       run: |
-        rm ./actions/./actions/./actions/old_lighthouse.html || true
-        cp ./actions/./actions/finished_lighthouse.html ./actions/old_lighthouse.html || true
+        rm old_lighthouse.html || true
+        cp finished_lighthouse.html old_lighthouse.html || true
     - name: Commit changes
       run: |
         git config --local user.email "KTibow@users.noreply.github.com"
