@@ -20,6 +20,7 @@
 /lighthouse/https:--ktibow.github.io-tutorials-pip-yun-.html
 /lighthouse/https:--ktibow.github.io-blog-2019-.html
 /lighthouse/https:--ktibow.github.io-cwk-guessing-game-.html
+/lighthouse/https:--ktibow.github.io-lighthouse-.html
 /lighthouse/https:--ktibow.github.io-blog-2019-7-21-.html
 /lighthouse/https:--ktibow.github.io-blog-2019-8-.html
 /lighthouse/https:--ktibow.github.io-cwk-gocallme-.html
