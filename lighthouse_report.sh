@@ -2,6 +2,8 @@ rm -r lighthouse || true
 mkdir lighthouse
 cat sitemap.txt | while read line
 do 
+  echo $line
+  echo "${line////-}"
   report="${line////-}.html"
   echo $report
   report="${string:8:${#string}-1}"
