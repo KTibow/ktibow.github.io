@@ -3,7 +3,7 @@ mkdir lighthouse
 cat sitemap.txt | while read line
 do 
   report="${line////-}"
-  report="${line//./-}"
+  report="${report//./-}"
   report="${report:8:${#report}-2}"
   report="./lighthouse/${report}.html"
   echo $report
