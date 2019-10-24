@@ -6,7 +6,7 @@ do
   echo "${line////-}"
   report="${line////-}.html"
   echo $report
-  report="${string:8:${#string}-1}"
+  report="${string:6:${#string}-2}"
   echo $report
   report="./lighthouse/$report"
   echo $report
