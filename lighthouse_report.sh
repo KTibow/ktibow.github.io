@@ -3,7 +3,7 @@ mkdir lighthouse
 cat sitemap.txt | while read line
 do 
   report="./${line////-}.html"
-  report=echo "$report""\n" | cut -c 9-
+  report="${string:8:${#string}-1}"
   report="./lighthouse/$report"
   lighthouse --chrome-flags="--headless" --output-path=$report $line
 done
