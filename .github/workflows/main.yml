@@ -22,6 +22,7 @@ jobs:
         git config --local user.name "KTibow"
         git add -A
         git commit -m "Change Lighthouse page" -a || true
+        git pull
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
@@ -48,6 +49,7 @@ jobs:
         git config --local user.name "KTibow"
         git add -A
         git commit -m "Add new sitemap and cached action" -a || true
+        git pull
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
@@ -85,6 +87,7 @@ jobs:
         git config --local user.name "KTibow"
         git add -A
         git commit -m "Add Lighthouse report" -a || true
+        git pull
     - uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
