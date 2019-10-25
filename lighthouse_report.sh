@@ -5,3 +5,5 @@ do
   filename=`date "+%s"`
   lighthouse --chrome-flags="--headless" --output=json --output-path="./${filename}.json" $line
 done
+rm .json || true
+ls *.json
