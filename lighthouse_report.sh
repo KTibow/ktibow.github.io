@@ -6,4 +6,4 @@ do
   lighthouse --chrome-flags="--headless" --output=json --output-path="./lighthouse/${filename}.json" $line
 done
 rm .json || true
-ls *.json
+ls ./lighthouse/*.json
