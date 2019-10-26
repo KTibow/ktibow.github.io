@@ -97,12 +97,14 @@ jobs:
         event: buildfinished
         key:  ${{ secrets.IFTTT_KEY }}
     - name: Go back
-      run: pwd
+      run: |
+        cd /home/runner
+        sudo chmod 755 .config
     - name: Deploy
       uses: crazy-max/ghaction-github-pages@v1
       with:
         target_branch: master
         build_dir: ./
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_PAT }}
 
