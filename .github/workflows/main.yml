@@ -1,9 +1,6 @@
 name: CI
 
-on:
-  push:
-    paths: 
-      - '*'
+on: push
 
 jobs:
   build-and-test:
