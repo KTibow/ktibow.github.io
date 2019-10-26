@@ -10,7 +10,8 @@ jobs:
     steps:
     - name: Get repo and remove action
       run: |
-        git clone https://github.com/KTibow/ktibow.github.io.git ./
+        git clone https://github.com/KTibow/ktibow.github.io.git ./webpage/
+        cd webpage
         sudo rm -r actions || true
     - name: Change Lighthouse page
       run: |
@@ -96,5 +97,13 @@ jobs:
       with:
         event: buildfinished
         key:  ${{ secrets.IFTTT_KEY }}
-
+    - name: Go back
+      run: cd ..
+    - name: Deploy
+      uses: crazy-max/ghaction-github-pages@v1
+      with:
+        target_branch: gh-pages
+        build_dir: website
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
