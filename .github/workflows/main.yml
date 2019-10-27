@@ -11,7 +11,7 @@ jobs:
     - name: Check for valid commit
       run: |
         echo ${{ github.sha }}
-        echo ${{ github.commits[0].description }}
+        echo ${{ github.commits[0][description] }}
     - name: Get repo and remove action
       run: |
         git clone https://github.com/KTibow/ktibow.github.io.git ./
