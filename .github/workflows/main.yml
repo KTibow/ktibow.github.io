@@ -16,6 +16,12 @@ jobs:
       run: sudo apt-get update
     - name: Check for valid commit
       run: |
+        printenv HOME
+        printenv GITHUB_WORKFLOW
+        printenv GITHUB_ACTION
+        printenv GITHUB_REPOSITORY
+        printenv GITHUB_EVENT_NAME
+        printenv GITHUB_SHA
         sudo apt-get install jq
         message=$(curl https://api.github.com/repos/KTibow/ktibow.github.io/git/commits/${{ github.sha }} | jq '.message')
         message="${message%\"}"
