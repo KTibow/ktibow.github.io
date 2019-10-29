@@ -20,7 +20,7 @@ jobs:
         message=$(curl https://api.github.com/repos/KTibow/ktibow.github.io/git/commits/${{ github.sha }} | jq '.message')
         message="${message%\"}"
         message="${message#\"}"
-        sh check-if-works.sh "$message"
+        bash check-if-works.sh "$message"
     - name: Change Lighthouse page
       run: |
         mv lighthouse.html old_lighthouse.html || true
