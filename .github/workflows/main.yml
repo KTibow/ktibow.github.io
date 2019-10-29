@@ -16,7 +16,7 @@ jobs:
         message=$(curl https://api.github.com/repos/KTibow/ktibow.github.io/git/commits/${{ github.sha }} | jq '.message')
         message="${message%\"}"
         message="${message#\"}"
-        echo "$message"
+        sh check-if-works.sh "$message"
     - name: Get repo and remove action
       run: |
         git clone https://github.com/KTibow/ktibow.github.io.git ./
