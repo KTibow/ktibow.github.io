@@ -8,6 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+    - name: Get repo and remove action
+      run: |
+        git clone https://github.com/KTibow/ktibow.github.io.git ./
+        sudo rm -r actions || true
     - name: Update package sources
       run: sudo apt-get update
     - name: Check for valid commit
@@ -16,11 +20,7 @@ jobs:
         message=$(curl https://api.github.com/repos/KTibow/ktibow.github.io/git/commits/${{ github.sha }} | jq '.message')
         message="${message%\"}"
         message="${message#\"}"
-        echo "$message"
-    - name: Get repo and remove action
-      run: |
-        git clone https://github.com/KTibow/ktibow.github.io.git ./
-        sudo rm -r actions || true
+        sh check-if-works.sh "$message"
     - name: Change Lighthouse page
       run: |
         mv lighthouse.html old_lighthouse.html || true
@@ -111,5 +111,5 @@ jobs:
         target_branch: master
         build_dir: ./
       env:
-        GITHUB_TOKEN: removethiswhenreasy${{ secrets.GITHUB_PAT }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_PAT }}
 
