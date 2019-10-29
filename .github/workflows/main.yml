@@ -8,9 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+    - name: Update package sources
+      run: sudo apt-get update
     - name: Check for valid commit
       run: |
-        curl https://api.github.com/repos/KTibow/ktibow.github.io/git/commits/${{ github.sha }}
+        sudo apt-get install jq
+        curl https://api.github.com/repos/KTibow/ktibow.github.io/git/commits/${{ github.sha }} | jq '.message'
     - name: Get repo and remove action
       run: |
         git clone https://github.com/KTibow/ktibow.github.io.git ./
@@ -64,9 +67,6 @@ jobs:
     - name: Audit pages
       run: |
         echo =========================================================
-        echo updating package sources
-        sudo apt-get update
-        echo =========================================================
         echo installing chromium
         sudo apt-get install chromium-browser
         echo =========================================================
@@ -78,7 +78,6 @@ jobs:
         sudo npm install -g lighthouse
         echo =========================================================
         echo "here's the report"
-        #lighthouse --chrome-flags="--headless" https://ktibow.github.io/
         bash lighthouse_report.sh
     - name: Find my report at https://ktibow.github.io/lighthouse.html
       run: |
