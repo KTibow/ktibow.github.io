@@ -78,6 +78,7 @@
 /cwk/my-first-codepen/style.css
 /cwk/my-first-codepen/index.html
 /BingSiteAuth.xml
+/commit-info.txt
 /preparing_lighthouse.html
 /blog
 /blog/index.html
