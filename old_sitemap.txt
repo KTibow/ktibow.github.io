@@ -30,7 +30,6 @@
 /cwk/gocallme/style.css
 /commit-info.txt
 /LICENSE
-/HelloWifi.apk
 /sitemap.txt
 /lighthouse
 /lighthouse/1575300512.json
