@@ -10,7 +10,10 @@
 /tutorials/pip-yun/v2expander.ino
 /tutorials/index.html
 /libraryapk
+/libraryapk/WIN_20191204_06_56_01_Pro.jpg
+/libraryapk/Screenshot_20191204-065833.jpg
 /libraryapk/index.html
+/libraryapk/Screenshot_20191204-065331.jpg
 /cwk
 /cwk/my-first-codepen
 /cwk/my-first-codepen/index.html
