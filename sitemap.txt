@@ -8,6 +8,7 @@ https://ktibow.github.io/cwk/gocallme/
 https://ktibow.github.io/lighthouse/
 https://ktibow.github.io/tutorials/
 https://ktibow.github.io/tutorials/pip-yun/
+https://ktibow.github.io/cardterms/
 https://ktibow.github.io/blog/
 https://ktibow.github.io/blog/2019/
 https://ktibow.github.io/blog/2019/8/
