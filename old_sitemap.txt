@@ -30,7 +30,6 @@
 /cwk/gocallme/script.js
 /cwk/gocallme/style.processed.min.css.map
 /cwk/gocallme/script.min.js.map
-/Library.apk
 /lighthouse
 /lighthouse/1575819265.json
 /lighthouse/1575819150.json
