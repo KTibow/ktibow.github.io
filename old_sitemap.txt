@@ -89,6 +89,8 @@
 /tutorials/pip-yun/index.html
 /tutorials/pip-yun/v2expander.ino
 /tutorials/index.html
+/cardterms
+/cardterms/index.html
 /blog
 /blog/index.html
 /blog/2019
