@@ -11,6 +11,7 @@
 /libraryapk/Screenshot_20191204-065833.jpg
 /libraryapk/WIN_20191204_06_56_01_Pro.jpg
 /libraryapk/index.html
+/libraryapk/realindex.html
 /libraryapk/Screenshot_20191204-065331.jpg
 /404.html
 /cwk
@@ -30,7 +31,6 @@
 /cwk/gocallme/script.js
 /cwk/gocallme/style.processed.min.css.map
 /cwk/gocallme/script.min.js.map
-/Library.apk
 /lighthouse
 /lighthouse/1575819265.json
 /lighthouse/1575819150.json
