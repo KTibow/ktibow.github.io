@@ -11,6 +11,7 @@
 /libraryapk/Screenshot_20191204-065833.jpg
 /libraryapk/WIN_20191204_06_56_01_Pro.jpg
 /libraryapk/index.html
+/libraryapk/realindex.html
 /libraryapk/Screenshot_20191204-065331.jpg
 /404.html
 /cwk
