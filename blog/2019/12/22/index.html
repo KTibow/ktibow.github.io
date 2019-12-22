@@ -31,7 +31,7 @@ sudo mkfs.vfat -F32 /dev/[path to your card]1</textarea>
         <script>
             function create() {
                 var path = document.getElementById("path").value;
-                document.getElementById("oneliner").innerHTML = "sudo dd if=/dev/zero of="+path+" bs=4096 status=progress";
+                document.getElementById("oneliner").innerHTML = "sudo dd if=/dev/zero of="+path+" bs=4096 status=progress; sudo parted "+path+" --script -- mklabel msdos; sudo parted "+path+" --script -- mkpart primary fat32 1MiB 100%; sudo mkfs.vfat -F32 "+path+"1";
             };
         </script>
         <p>Also available as a one-liner:</p>
