@@ -1,0 +1,15 @@
+DADDY! COME ON.
+sudo parted /dev/sda1
+sudo ls -ltr /dev/*
+sudo dd if=/dev/zero of=/dev/sda bs=4096 status=progress
+sudo parted /dev/sda --script print
+sudo parted /dev/sda --script --mklabel noobs
+sudo parted /dev/sda --script -- mklabel noobs
+sudo parted /dev/sda --script -- mklabel msdos
+ls /dev
+sudo parted /dev/sda --script -- mklabel msdos
+sudo parted /dev/sda --script -- mkpart primary fat 1MiB 100%
+sudo parted /dev/sda --script -- mkpart primary fat32 1MiB 100%
+sudo mkfs.vfat -F32 /dev/sda1
+sudo parted /dev/sda --script print
+ls /dev
