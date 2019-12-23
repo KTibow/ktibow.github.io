@@ -23,9 +23,9 @@
             };
         </script>
 		<form>
-            Path to SD Card (Make sure it doesn't have a number at the end. The number is a partition. We want to wipe the whole MicroSD.):<br>
+            Type the path to SD Card (Make sure it doesn't have a number at the end. The number is a partition. We want to wipe the whole MicroSD.):<br>
             <input type="text" name="path" id="path" value="/dev/sda"><br>
-			Erase at a time:<br>
+			Erase this amount at a time:<br>
 			<select id="speed">
 				<option value="25KB">USB 1.0, erase 25KB at a time</option>
 				<option value="200KB">USB 1.1, erase 200KB at a time</option>
@@ -35,5 +35,7 @@
         </form>
 		<button onclick="createErase()">Make erase command</button>
         <p id="erasecmd"></p>
+		<p>Just copy that command, and paste it into your shell. When it's done, it'll say something like<br>""<code>dd: error writing '/dev/sda': No space left on device</code>"</p>
+		
 	</body>
 </html>
