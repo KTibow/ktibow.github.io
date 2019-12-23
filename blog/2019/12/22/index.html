@@ -37,7 +37,14 @@ sudo mkfs.vfat -F32 /dev/[path to your card]1</textarea>
         <p>Also available as a one-liner:</p>
         <form>
             Path to SD Card:<br>
-            <input type="text" name="path" id="path" value="/dev/sda">
+            <input type="text" name="path" id="path" value="/dev/sda"><br>
+			Erase at a time:<br>
+			<select>
+			<option value="22KB">USB 1.0, 22KB at a time</option>
+			<option value="178KB">USB 1.1, 178KB at a time</option>
+			<option value="7MB">USB 2.0, 7MB at a time</option>
+			<option value="70MB">USB 3.0, 70MB at a time</option>
+			</select>
         </form>
         <button onclick="create()">Make oneliner</button>
         <p id="oneliner"></p>
