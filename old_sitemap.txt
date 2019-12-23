@@ -114,6 +114,8 @@
 /blog/2019/7/21
 /blog/2019/7/21/index.html
 /blog/2019/12
+/blog/2019/12/23
+/blog/2019/12/23/index.html
 /blog/2019/12/22
 /blog/2019/12/22/index.html
 /blog/2019/12/22/history
