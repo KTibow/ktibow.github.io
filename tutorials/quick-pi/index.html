@@ -14,7 +14,7 @@
 			<li>USB MicroSD card reader</li>
 			<li>parted installed on the pi that's making the other card</li>
         </ul>
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;First, to erase partitions and sensitive data, wipe the card. Use this little tool to find out what command to use:</p>
+		<h4>First, to erase partitions and sensitive data, wipe the card. Use this little tool to find out what command to use:</h4>
 		<script>
             function createErase() {
                 var path = document.getElementById("path").value;
@@ -36,6 +36,7 @@
 		<button onclick="createErase()">Make erase command</button><br>
         <code id="erasecmd"></code>
 		<p>Just copy that command, and paste it into your shell. When it's done, it'll say something like<br>"<code>dd: error writing '/dev/sda': No space left on device</code>"</p>
-		
+		<h4>Next, we need to format the card. But first, we need to eject the card and reinsert it to reset it.</h4>
+		<h4>Now we need to format the card. Fill in the tool at the top, and click the (non-existent) button below to make a one-liner.
 	</body>
 </html>
