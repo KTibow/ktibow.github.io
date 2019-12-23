@@ -27,15 +27,15 @@
             <input type="text" name="path" id="path" value="/dev/sda"><br>
 			Erase this amount at a time:<br>
 			<select id="speed">
-				<option value="25KB">USB 1.0, erase 25KB at a time</option>
-				<option value="200KB">USB 1.1, erase 200KB at a time</option>
-				<option value="35MB">USB 2.0, erase 35MB at a time</option>
-				<option value="70MB">USB 3.0, erase 70MB at a time</option>
+				<option value="150KB">USB 1.0, erase 150KB at a time</option>
+				<option value="1200KB">USB 1.1, erase 1200KB at a time</option>
+				<option value="48MB">USB 2.0, erase 48MB at a time</option>
+				<option value="480MB">USB 3.0, erase 480MB at a time</option>
 			</select>
         </form>
 		<button onclick="createErase()">Make erase command</button>
-        <p id="erasecmd"></p>
-		<p>Just copy that command, and paste it into your shell. When it's done, it'll say something like<br>""<code>dd: error writing '/dev/sda': No space left on device</code>"</p>
+        <code id="erasecmd"></code>
+		<p>Just copy that command, and paste it into your shell. When it's done, it'll say something like<br>"<code>dd: error writing '/dev/sda': No space left on device</code>"</p>
 		
 	</body>
 </html>
