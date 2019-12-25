@@ -109,12 +109,16 @@
 		<h4>Good Job!</h4>
 		<h2>Part 2</h2>
 		<h3>Setting up your Pi</h3>
-		<h4>This is a real quick thing you can paste into your command line. Enjoy the tool!</h4>
-		<form>
-		Things to remove:<br>
-		<input type="checkbox" value="geany" id="geany" checked>Geany<br>
-		<input type="checkbox" value="thonny" id="geany" checked>Thonny<br>
-		Other things (seperate with a space): <input type="text" id="other-remove"><br>
-		</form>
+		<h4>This is a real quick thing you can paste into your command line. Enjoy the code!</h4>
+		<code class="shell">
+			<code class="noselect">
+				<code class="green">pi@pi4</code>:<code class="cmdblue">~ $</code>
+			</code>
+			<code>
+			sudo apt-get update; sudo apt-get upgrade -y; sudo apt-get purge geany thonny -y; sudo apt-get install idle3 scite -y; sudo apt-get autoremove -y
+			</code>
+		</code>
+		<p>This code updates, upgrades, removes geany and thonny, installs idle 3 and scite, and autoremoves leftover packages.
+		<h3>I hope this helped!</h3>
 	</body>
 </html>
