@@ -4,7 +4,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" /> 
 		<meta http-equiv="content-language" content="en"/>
 		<style>
-			#shell {
+			.shell {
 				background-color: black;
 				color: white;
 				padding: 10px;
@@ -18,6 +18,9 @@
 			}
 			.noselect {
 				user-select: none;
+			}
+			.gif {
+				width: 75%;
 			}
 		</style>
 	</head>
@@ -39,11 +42,16 @@
                 var eraseCmd = "sudo dd if=/dev/zero of="+path+" bs="+bls+" status=progress";
 				document.getElementById("erasecmdline").innerHTML = eraseCmd;
             };
+			function createPartition() {
+				var path2 = document.getElementById("path2").value;
+				var partitionCmd = "sudo parted "+path2+" --script -- mklabel msdos"
+				document.getElementById("partitioncmdline").innerHTML = partitionCmd;
+			}
         </script>
 		<form>
-            Type the path to SD Card:<br>
+            Type the path to the SD Card:<br>
 			(Make sure it doesn't have a number at the end. The number is a partition. We want to wipe the whole MicroSD.)<br>
-            <input type="text" name="path" id="path" value="/dev/sda"><br>
+            <input type="text" id="path" value="/dev/sda"><br>
 			Erase this amount at a time:<br>
 			<select id="speed">
 				<option value="45MB">USB 2.0, erase 45MB at a time</option>
@@ -54,16 +62,32 @@
         </form>
 		<button onclick="createErase()">Make erase command</button><br>
 		<p>Here's a shell preview:</p>
-		<code id="shell">
+		<code class="shell">
 			<code class="noselect">
 				<code class="green">pi@pi4</code>:<code class="cmdblue">~ $</code>
 			</code>
 			<code id="erasecmdline">
 			</code>
 		</code>
-		<p>Note: I adjusted the CSS, and as long as you're using a modern browser, you'll only copy the command.</p>
+		<p>Note: I adjusted the CSS, and as long as you're using a modern browser, you'll won't copy the shell part.</p>
 		<p>Just select, copy, paste, and and run that command in your shell. When it's done, it'll say something like<br>"<code>dd: error writing '/dev/sda': No space left on device</code>"</p>
 		<h4>Next, we need to format the card. But first, we need to eject the card and reinsert it to reset it.</h4>
-		<h4>Now we need to format the card. Fill in the tool at the top, and click the (non-existent) button below to make a one-liner.
+		<img src="eject.gif" alt="How to eject the card" class="gif">
+		<h4>Once you've plugged it back in, we need to format the card. Fill in the field below, and click the (non-existent) button below to make a one-liner.</h4>
+		<form>
+			Type the path to the SD Card:<br>
+			(Make sure it doesn't have a number at the end. The number means that's a partition. We want to make a partition on the whole MicroSD.)<br>
+			<input type="text" id="path2" value="/dev/sda">
+		</form>
+		<button onclick="createPartition()">Make partition command</button><br>
+		<p>Here's a shell preview:</p>
+		<code class="shell">
+			<code class="noselect">
+				<code class="green">pi@pi4</code>:<code class="cmdblue">~ $</code>
+			</code>
+			<code id="partitioncmdline">
+			</code>
+		</code>
+		<p>Note: I adjusted the CSS, and as long as you're using a modern browser, you'll won't copy the shell part.</p>
 	</body>
 </html>
