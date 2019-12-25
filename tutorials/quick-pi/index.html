@@ -41,14 +41,15 @@
             };
         </script>
 		<form>
-            Type the path to SD Card:<br>(Make sure it doesn't have a number at the end. The number is a partition. We want to wipe the whole MicroSD.)<br>
+            Type the path to SD Card:<br>
+			(Make sure it doesn't have a number at the end. The number is a partition. We want to wipe the whole MicroSD.)<br>
             <input type="text" name="path" id="path" value="/dev/sda"><br>
 			Erase this amount at a time:<br>
 			<select id="speed">
-				<option value="48MB">USB 2.0, erase 48MB at a time</option>
+				<option value="45MB">USB 2.0, erase 45MB at a time</option>
 				<option value="150KB">USB 1.0, erase 150KB at a time</option>
 				<option value="1200KB">USB 1.1, erase 1200KB at a time</option>
-				<option value="480MB">USB 3.0, erase 480MB at a time</option>
+				<option value="70MB">USB 3.0, erase 70MB at a time</option>
 			</select>
         </form>
 		<button onclick="createErase()">Make erase command</button><br>
@@ -60,7 +61,8 @@
 			<code id="erasecmdline">
 			</code>
 		</code>
-		<p>Just copy that command, and paste it into your shell. When it's done, it'll say something like<br>"<code>dd: error writing '/dev/sda': No space left on device</code>"</p>
+		<p>Note: I adjusted the CSS, and as long as you're using a modern browser, you'll only copy the command.</p>
+		<p>Just select, copy, paste, and and run that command in your shell. When it's done, it'll say something like<br>"<code>dd: error writing '/dev/sda': No space left on device</code>"</p>
 		<h4>Next, we need to format the card. But first, we need to eject the card and reinsert it to reset it.</h4>
 		<h4>Now we need to format the card. Fill in the tool at the top, and click the (non-existent) button below to make a one-liner.
 	</body>
