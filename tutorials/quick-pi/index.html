@@ -44,7 +44,7 @@
             };
 			function createPartition() {
 				var path2 = document.getElementById("path2").value;
-				var partitionCmd = "sudo parted "+path2+" --script -- mklabel msdos"
+				var partitionCmd = "sudo parted "+path2+" --script -- mklabel msdos; sudo parted "+path2+" --script -- mkpart primary fat32 1MiB 100%; sudo mkfs.vfat -F32 "+path2+"1"
 				document.getElementById("partitioncmdline").innerHTML = partitionCmd;
 			}
         </script>
@@ -73,7 +73,7 @@
 		<p>Just select, copy, paste, and and run that command in your shell. When it's done, it'll say something like<br>"<code>dd: error writing '/dev/sda': No space left on device</code>"</p>
 		<h4>Next, we need to format the card. But first, we need to eject the card and reinsert it to reset it.</h4>
 		<img src="eject.gif" alt="How to eject the card" class="gif">
-		<h4>Once you've plugged it back in, we need to format the card. Fill in the field below, and click the (non-existent) button below to make a one-liner.</h4>
+		<h4>Once you've plugged it back in, we need to format the card. Fill in the field below, and click the button below to make a one-liner.</h4>
 		<form>
 			Type the path to the SD Card:<br>
 			(Make sure it doesn't have a number at the end. The number means that's a partition. We want to make a partition on the whole MicroSD.)<br>
@@ -89,5 +89,23 @@
 			</code>
 		</code>
 		<p>Note: I adjusted the CSS, and as long as you're using a modern browser, you'll won't copy the shell part.</p>
+		<h4>Next, we need to put NOOBS on the card. But first, we need to eject the card and reinsert it to reset it.</h4>
+		<img src="eject.gif" alt="How to eject the card" class="gif">
+		<h4>Now that the card is ready, let's give it NOOBS.</h4>
+		<p>You can <a href="https://downloads.raspberrypi.org/NOOBS_latest">download a version where you can install offline once NOOBS is on</a>, or you can <a href="https://downloads.raspberrypi.org/NOOBS_lite_latest">download a version where you need internet to install an OS with NOOBS</a>. You can use these links, which will always be the latest version, or you can go to the <a href="https://www.raspberrypi.org/downloads/noobs/">choosing page</a> and choose for yourself.</p>
+		<p>Once you've got the ZIP file, open it in the default compressed file manager, XArchiver. Click this button: <img src="unzip.png" alt="Box with yellow arrow means unzip button"></p>
+		<p>It should pop open a box. All of the settings are fine, except one: The output file path. Click on the browse button, and make a folder called NOOBS. Select that folder for the output file path.</p>
+		<p>Then click "Extract", and it'll extract NOOBS! Once the "light" stops flashing red and green, it's done. Now time for the fun part!</p>
+		<p>Close XArchiver, and open the file manager. Find the NOOBS folder you made, and open it. If there's just one folder in there still, keep opening the folders until you see something like this: <img src="explorer.png" alt="Inside of NOOBS: A lot of folders and files" width="25%"></p>
+		<p>To get NOOBS onto the MicroSD, press Control+A to select all the files. Then, press Control+C to copy them. We're ready to put NOOBS on the card! Now, go to "/media/pi" in the file explorer.</p>
+		<p>There should be some folders, or maybe just one. Each folder represents some media. In order to know which one is yours, eject and unplug any other flash drives or other MicroSD cards, and refresh your folder with the F5 key. (Don't press the Function key while you press the F5 key!)</p>
+		<p>Now, open the folder that looks something like E14A-CF69, or some other string of numbers and letters. You're almost done installing NOOBS!</p>
+		<p>And press Control+V to put the files on! Once the progress bar is done, eject the MicroSD and put it in your new Pi!</p>
+		<h4>NOOBS tips:</h4>
+		<ul>
+			<li>Ever wanted to have multiple OSes on your pi? It's easy to do by just checking multiple check boxes before hitting "Install"!</li>
+			<li>If you want Raspbian, I recommend you use Raspbian, not Raspbian Full. If you need something, it's easy to install it later.</li>
+		</ul>
+		<h4>Good Job!</h4>
 	</body>
 </html>
