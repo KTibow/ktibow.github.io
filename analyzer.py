@@ -33,7 +33,7 @@ def parseJson(path):
 jsonpath = "lighthouse"
 os.chdir(jsonpath)
 for report in glob.glob("*.json"):
-    info = parseJson(jsonpath+"\\"+report)
+    info = parseJson(jsonpath+"/"+report)
     generatedHtml += "<tr><td><a href=\"/lighthouse/"+report[0:len(report)-4]+"html\">"+str(info[0])+"</a></td><td>"+str(info[1])+","+str(info[2])+","+str(info[3])+","+str(info[4])+"</td></tr>"
 generatedHtml += "</table>"
 print(generatedHtml)
