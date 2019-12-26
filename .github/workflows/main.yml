@@ -8,38 +8,19 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Get repo and remove action
+    - name: Clone repo
       run: |
         git clone https://github.com/KTibow/ktibow.github.io.git ./
-        sudo rm -r actions || true
     - name: Update package sources
       run: sudo apt-get update
     - name: Check for valid commit
       run: |
-        curl --header "Accept: application/vnd.github.antiope-preview+json" https://api.github.com/repos/KTibow/ktibow.github.io/commits/3de7dce/check-suites > commit-info.txt
-        printenv GITHUB_REPOSITORY
-        printenv GITHUB_SHA
         sudo apt-get install jq
         message=$(curl https://api.github.com/repos/KTibow/ktibow.github.io/git/commits/${{ github.sha }} | jq '.message')
         message="${message%\"}"
         message="${message#\"}"
         bash check-if-works.sh "$message"
-    - name: Change Lighthouse page
-      run: |
-        mv lighthouse.html old_lighthouse.html || true
-        cp preparing_lighthouse.html lighthouse.html || true
-    - name: Commit changes
-      run: |
-        git config --local user.email "KTibow@users.noreply.github.com"
-        git config --local user.name "KTibow"
-        git add -A
-        git commit -m "Change Lighthouse page" -a || true
-        git pull
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-    - name: Generate sitemap
+    - name: Generate sitemap and commit
       run: |
         echo running
         find . | grep -v ".*/\..*" | awk 'BEGIN{FIELDWIDTHS="1 1000"}{print $2}' > old_sitemap.txt
@@ -49,27 +30,17 @@ jobs:
         sh generate_sitemap.sh > sitemap.txt
         echo =====================
         cat sitemap.txt
-    - name: Submit sitemap
-      env:
-        cookies: ${{ secrets.BING_WEBMASTER_SITEMAP_COOKIES }}
-        body: ${{ secrets.BING_WEBMASTER_SITEMAP_BODY }}
-      run: |
-        curl -X POST -d "$body" -b "$cookies" https://www.bing.com/webmaster/configure/sitemaps/addsitemap?url=https%3A%2F%2Fktibow.github.io%2F > /dev/null
     - name: Commit changes
       run: |
         git config --local user.email "KTibow@users.noreply.github.com"
         git config --local user.name "KTibow"
         git add -A
-        git commit -m "Add new sitemap and cached action" -a || true
+        git commit -m "Add new sitemap" -a || true
         git pull
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-    - name: Remove files/folders
-      run: |
-        rm -r results || true
-        rm lighthouse.html || true
     - name: Audit pages
       run: |
         echo =========================================================
@@ -85,16 +56,15 @@ jobs:
         echo =========================================================
         echo "here's the report"
         bash lighthouse_report.sh
-    - name: Find my report at https://ktibow.github.io/lighthouse.html
+    - name: Find my report at https://ktibow.github.io/lighthouse/
       run: |
-        rm old_lighthouse.html || true
-        cp finished_lighthouse.html old_lighthouse.html || true
+        python3 analyzer.py > lighthouse/index.html
     - name: Commit changes
       run: |
         git config --local user.email "KTibow@users.noreply.github.com"
         git config --local user.name "KTibow"
         git add -A
-        git commit -m "Add Lighthouse report" -a || true
+        git commit -m "Add Lighthouse digest" -a || true
         git pull
     - uses: ad-m/github-push-action@master
       with:
@@ -115,4 +85,9 @@ jobs:
         build_dir: ./
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_PAT }}
-
+    - name: Submit sitemap
+      env:
+        cookies: ${{ secrets.BING_WEBMASTER_SITEMAP_COOKIES }}
+        body: ${{ secrets.BING_WEBMASTER_SITEMAP_BODY }}
+      run: |
+        curl -X POST -d "$body" -b "$cookies" https://www.bing.com/webmaster/configure/sitemaps/addsitemap?url=https%3A%2F%2Fktibow.github.io%2F > /dev/null
