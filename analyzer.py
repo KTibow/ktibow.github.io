@@ -30,7 +30,7 @@ def parseJson(path):
         
     return (url, performanceScore, accessibilityScore, bestpracticesScore, seoScore)
 
-jsonpath = r"C:\Users\kende_000\Documents\GitHub\ktibow.github.io\lighthouse"
+jsonpath = "lighthouse"
 os.chdir(jsonpath)
 for report in glob.glob("*.json"):
     info = parseJson(jsonpath+"\\"+report)
