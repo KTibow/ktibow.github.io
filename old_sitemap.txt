@@ -7,6 +7,8 @@
 /libraryapk/Screenshot_20191204-065331.jpg
 /BingSiteAuth.xml
 /blog
+/blog/2020
+/blog/2020/index.html
 /blog/index.html
 /blog/2019
 /blog/2019/12
