@@ -79,6 +79,8 @@
 /blog/2020/1/index.html
 /blog/2020/index.html
 /blog/2020/3
+/blog/2020/3/18
+/blog/2020/3/18/index.html
 /blog/2020/3/index.html
 /LICENSE
 /README.md
