@@ -97,6 +97,7 @@
 /check-if-works.sh
 /generate_sitemap.sh
 /lighthouse_report.sh
+/robots.txt
 /lighthouse
 /lighthouse/1584653927.html
 /lighthouse/1584654175.html
