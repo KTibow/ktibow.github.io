@@ -1,8 +1,10 @@
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<title>A KTibow Tutorial</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1" /> 
 		<meta http-equiv="content-language" content="en"/>
+		<meta name="description" content="A really handy tutorial for setting up a diffrent Raspberry Pi SD card with an existing Raspberry Pi desktop" /> 
 		<style>
 			.shell {
 				background-color: black;
@@ -14,7 +16,7 @@
 				color: #00FF00;
 			}
 			.cmdblue {
-				color: #5A63F9;
+				color: #5A63F9;erasing it
 			}
 			.noselect {
 				user-select: none;
@@ -52,6 +54,7 @@
             Type the path to the SD Card:<br>
 			(Make sure it doesn't have a number at the end. The number is a partition. We want to wipe the whole MicroSD.)<br>
             <input type="text" id="path" value="/dev/sda"><br>
+			<label for="path">/dev path to the sd card for erasing it</label>
 			Erase this amount at a time:<br>
 			<select id="speed">
 				<option value="45MB">USB 2.0, erase 45MB at a time</option>
@@ -59,6 +62,7 @@
 				<option value="1200KB">USB 1.1, erase 1200KB at a time</option>
 				<option value="70MB">USB 3.0, erase 70MB at a time</option>
 			</select>
+			<label for="speed">How much to erase off of the sd card at a time</label>
         </form>
 		<button onclick="createErase()">Make erase command</button><br>
 		<p>Here's a shell preview:</p>
@@ -79,6 +83,7 @@
 			(Make sure it doesn't have a number at the end. The number means that's a partition. We want to make a partition on the whole MicroSD.)<br>
 			<input type="text" id="path2" value="/dev/sda">
 		</form>
+		<label for="path2">/dev path to the sd card for formatting it</label>
 		<button onclick="createPartition()">Make partition command</button><br>
 		<p>Here's a shell preview:</p>
 		<code class="shell">
