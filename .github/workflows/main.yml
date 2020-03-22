@@ -23,9 +23,10 @@ jobs:
     - name: Generate sitemap and commit
       run: |
         find . | grep -v ".*/\..*" | awk 'BEGIN{FIELDWIDTHS="1 1000"}{print $2}' > old_sitemap.txt
-        cat old_sitemap.txt
         sh generate_sitemap.sh > sitemap.txt
         python3 sitemapxml.py
+        rm old_sitemap.txt
+        rm sitemap.txt
     - name: Commit changes
       run: |
         git config --local user.email "KTibow@users.noreply.github.com"
@@ -74,9 +75,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_PAT }}
     - name: Submit sitemap
-      env:
-        cookies: ${{ secrets.BING_WEBMASTER_SITEMAP_COOKIES }}
-        body: ${{ secrets.BING_WEBMASTER_SITEMAP_BODY }}
-      run: |
-        curl -X POST -d "$body" -b "$cookies" https://www.bing.com/webmaster/configure/sitemaps/addsitemap?url=https%3A%2F%2Fktibow.github.io%2F > /dev/null
-        curl https://www.google.com/ping?sitemap=https://ktibow.github.io/sitemap.txt
+      uses: atymic/sitemap-ping-action@1.0.0
+      with:
+        # Root sitemap URL
+        sitemap-url: https://ktibow.github.io/sitemap.xml
