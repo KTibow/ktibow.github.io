@@ -9,7 +9,7 @@ for url in input.split("\n"):
   priority = 0.5
   if url in ["https://ktibow.github.io/", "https://ktibow.github.io/blog/", "https://ktibow.github.io/tutorials/quick-pi/", "https://ktibow.github.io/blog/2020/3/"]:
     priority = 0.8
-  out.write("0."+round(priority*100)+"""</priority>
+  out.write("0."+str(round(priority*100))+"""</priority>
 </url>""")
 out.write("</urlset")
 out.close()
