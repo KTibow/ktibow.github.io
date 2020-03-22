@@ -4,4 +4,4 @@ Disallow: /libraryapk/
 Disallow: /dirtyhostlibrary/
 Disallow: /lighthouse/
 Disallow: /gocallme/
-Sitemap: https://ktibow.github.io/sitemap.txt
+Sitemap: https://ktibow.github.io/sitemap.xml
