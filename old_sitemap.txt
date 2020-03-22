@@ -84,6 +84,8 @@
 /blog/2020/3/19/index.html
 /blog/2020/3/18
 /blog/2020/3/18/index.html
+/blog/2020/3/22
+/blog/2020/3/22/index.html
 /blog/2020/3/20
 /blog/2020/3/20/index.html
 /blog/2020/3/index.html
