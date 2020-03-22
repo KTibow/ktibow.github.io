@@ -25,6 +25,7 @@ jobs:
         find . | grep -v ".*/\..*" | awk 'BEGIN{FIELDWIDTHS="1 1000"}{print $2}' > old_sitemap.txt
         cat old_sitemap.txt
         sh generate_sitemap.sh > sitemap.txt
+        python3 sitemapxml.py
     - name: Commit changes
       run: |
         git config --local user.email "KTibow@users.noreply.github.com"
