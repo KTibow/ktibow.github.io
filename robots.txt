@@ -2,4 +2,5 @@ User-agent: *
 Disallow: /cardterms/
 Disallow: /libraryapk/
 Disallow: /dirtyhostlibrary/
+Disallow: /lighthouse/
 Sitemap: https://ktibow.github.io/sitemap.txt
