@@ -5,6 +5,7 @@
 /lighthouse_report.sh
 /index.html
 /check-if-works.sh
+/classroom-logo.png
 /README.md
 /old_sitemap.txt
 /Library Card guide.pdf
