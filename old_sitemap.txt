@@ -95,6 +95,8 @@
 /generate_sitemap.sh
 /dirtyhostlibrary
 /dirtyhostlibrary/index.html
+/sharetest2
+/sharetest2/index.html
 /LICENSE
 /cardterms
 /cardterms/index.html

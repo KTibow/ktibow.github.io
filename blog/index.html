@@ -9,11 +9,36 @@
             body {
                 background: lavender;
             }
+	      .share {
+		border-color: green;
+		border-style: solid;
+		color: white;
+		border-radius: 3px;
+		text-decoration: none;
+		background-color: green;
+		font-family: calibri;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+	      }
+
+	      .shareimg {
+		padding: 5px;
+		height: 32px;
+	      }
+
+	      .sharespan {
+		padding: 5px;
+	      }
         </style>
     </head>
     <body>
         <h1>Blog homepage</h1>
         <a href="/blog/2019" style="padding-top: 10px; padding-bottom: 10px;">2019</a><br>
 	<a href="/blog/2020" style="padding-top: 10px; padding-bottom: 10px;">2020</a><br>
+	<a href="https://classroom.google.com/share?url=https://ktibow.github.io/blog/" class="share">
+     	 <img src="https://ktibow.github.io/classroom-logo.png" class="shareimg">
+      	 <span class="sharespan">Share to Classroom</span>
+  	</a>
     </body>
 </html>
