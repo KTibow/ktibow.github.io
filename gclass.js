@@ -2,7 +2,7 @@ var newScript = document.createElement('script');
 newScript.type = 'text/javascript';
 newScript.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
 document.getElementsByTagName('head')[0].appendChild(newScript);
-WebFont.load({
+onload = WebFont.load({
 	google: {
 			families: ['Open Sans']
 		}
