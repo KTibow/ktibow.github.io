@@ -2,7 +2,7 @@ var newScript = document.createElement('script');
 newScript.type = 'text/javascript';
 newScript.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
 document.getElementsByTagName('head')[0].appendChild(newScript);
-class ClassroomShare extends HTMLDivElement {
+class ClassroomShare extends HTMLElement {
 	constructor() {
 		console.log("Constructed!");
 		// Always call super first in constructor
@@ -21,6 +21,6 @@ onload = WebFont.load({
 			families: ['Open Sans']
 		}
 	});
-customElements.define("gclass-share", ClassroomShare, { extends: 'div' });
+customElements.define("gclass-share", ClassroomShare);
 }
 setTimeout(start, 300);
