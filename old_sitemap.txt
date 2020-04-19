@@ -62,6 +62,8 @@
 /blog/2020/4/3
 /blog/2020/4/3/index.html
 /blog/index.html
+/sharetest3
+/sharetest3/index.html
 /sharetest
 /sharetest/index.html
 /libraryapk
