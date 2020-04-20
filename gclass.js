@@ -1,7 +1,7 @@
-var newScript = document.createElement('script');
-newScript.type = 'text/javascript';
-newScript.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
-document.getElementsByTagName('head')[0].appendChild(newScript);
+var newFont = document.createElement('link');
+newFont.rel = 'stylesheet';
+newFont.href = 'https://fonts.googleapis.com/css?family=Open+Sans';
+document.getElementsByTagName('head')[0].appendChild(newFont);
 class ClassroomShare extends HTMLElement {
 	constructor() {
 		super();
@@ -26,10 +26,4 @@ class ClassroomShare extends HTMLElement {
 		}
 	}
 }
-while (typeof WebFont == 'undefined') {}
-WebFont.load({
-	google: {
-			families: ['Open Sans']
-		}
-	});
 customElements.define("gclass-share", ClassroomShare);
