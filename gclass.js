@@ -12,7 +12,7 @@ class ClassroomShare extends HTMLElement {
 		var mySharePage = "https://accounts.google.com/AccountChooser?continue=https%3A%2F%2Fclassroom.google.com%2Fshare%3Furl%3D"+currentPage;
 		var attr;
 		for (attr in myAttributes) {
-			console.log(myAttributes[attr]);
+			mySharePage += "%26"+myAttributes[attr].name+"%3D"+myAttributes[attr].value
 		}
 		this.innerHTML = `<a href="${mySharePage}" style="text-decoration: none; display: inline-block; margin: 17px 5px 10px 24px; position: relative;">
 <img src="https://ktibow.github.io/classroom-logo.png" style="position: absolute; border-radius: 50%; height: 32px; top: -6px; left: -18px;">
