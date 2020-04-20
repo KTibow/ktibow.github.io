@@ -10,6 +10,7 @@ class ClassroomShare extends HTMLElement {
 		var currentPage = window.location;
 		var myAttributes = Array.from(this.attributes);
 		var mySharePage = "https://accounts.google.com/AccountChooser?continue=https%3A%2F%2Fclassroom.google.com%2Fshare%3Furl%3D"+currentPage;
+		var attr;
 		for (attr in myAttributes) {
 			console.log(myAttributes[attr]);
 		}
