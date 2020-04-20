@@ -26,12 +26,10 @@ class ClassroomShare extends HTMLElement {
 		}
 	}
 }
-function start() {
-onload = WebFont.load({
+while (typeof WebFont == 'undefined') {}
+WebFont.load({
 	google: {
 			families: ['Open Sans']
 		}
 	});
 customElements.define("gclass-share", ClassroomShare);
-}
-setTimeout(start, 300);
