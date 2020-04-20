@@ -8,7 +8,7 @@ class ClassroomShare extends HTMLElement {
   }
 	connectedCallback() {
 		var currentPage = window.location;
-		this.innerHTML = "<a href=\"https://accounts.google.com/SignOutOptions?hl=en&amp;continue=https://accounts.google.com/AccountChooser/signinchooser?continue=https://classroom.google.com/share?url="+currentPage+"&flowName=GlifWebSignIn&flowEntry=AccountChooser\" style=\"text-decoration: none; display: inline-block; margin: 17px 5px 10px 24px; position: relative;\"><img src=\"https://ktibow.github.io/classroom-logo.png\" style=\"position: absolute; border-radius: 50%; height: 32px; top: -6px; left: -18px;\"> <span style=\"padding: 3px 6px 3px 22px; background-color: green; border-radius: 3px; color: white; font-family: Open Sans;\">Share to Classroom</span></a>";
+		this.innerHTML = "<a href=\"https://accounts.google.com/AccountChooser/signinchooser?continue=https://classroom.google.com/share?url="+currentPage+"&flowName=GlifWebSignIn&flowEntry=AccountChooser\" style=\"text-decoration: none; display: inline-block; margin: 17px 5px 10px 24px; position: relative;\"><img src=\"https://ktibow.github.io/classroom-logo.png\" style=\"position: absolute; border-radius: 50%; height: 32px; top: -6px; left: -18px;\"> <span style=\"padding: 3px 6px 3px 22px; background-color: green; border-radius: 3px; color: white; font-family: Open Sans;\">Share to Classroom</span></a>";
 		this.onmouseenter = function() {
 			this.style.filter = "brightness(90%)";
 		}
