@@ -38,11 +38,13 @@ Function Win ($Key)
 Win "M"
 iwr https://i.postimg.cc/wTYWyZ0j/hacked.png -OutFile download-hackd.jpg
 mspaint download-hackd.jpg
-Sleep .7
+Sleep 4
 [System.Windows.Forms.SendKeys]::SendWait('%F');
+sleep .4
 [System.Windows.Forms.SendKeys]::SendWait('%B');
 Sleep .4
 taskkill /F /IM mspaint.exe
 start https://ktibow.github.io/google-logout/
 echo "You should really lock your computer." > message.txt
 notepad message.txt
+[KeyboardSend.KeyboardSend]::KeyDown("LCtrl")
