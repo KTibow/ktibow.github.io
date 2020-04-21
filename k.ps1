@@ -38,7 +38,7 @@ Function Win ($Key)
 Win "M"
 iwr https://i.postimg.cc/wTYWyZ0j/hacked.png -OutFile download-hackd.jpg
 mspaint download-hackd.jpg
-Sleep .7
+Sleep 1.5
 [System.Windows.Forms.SendKeys]::SendWait('%F');
 [System.Windows.Forms.SendKeys]::SendWait('%B');
 Sleep .4
