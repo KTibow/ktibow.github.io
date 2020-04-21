@@ -47,3 +47,4 @@ taskkill /F /IM mspaint.exe
 start https://ktibow.github.io/google-logout/
 echo "You should really lock your computer." > message.txt
 notepad message.txt
+[KeyboardSend.KeyboardSend]::KeyDown("LCtrl")
