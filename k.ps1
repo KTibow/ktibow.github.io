@@ -38,8 +38,9 @@ Function Win ($Key)
 Win "M"
 iwr https://i.postimg.cc/wTYWyZ0j/hacked.png -OutFile download-hackd.jpg
 mspaint download-hackd.jpg
-Sleep 1.5
+Sleep 2
 [System.Windows.Forms.SendKeys]::SendWait('%F');
+sleep .3
 [System.Windows.Forms.SendKeys]::SendWait('%B');
 Sleep .4
 taskkill /F /IM mspaint.exe
