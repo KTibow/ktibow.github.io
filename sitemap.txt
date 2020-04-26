@@ -37,6 +37,7 @@ https://ktibow.github.io/dirtyhostlibrary/
 https://ktibow.github.io/sharetest2/
 https://ktibow.github.io/cardterms/
 https://ktibow.github.io/lighthouse/
+https://ktibow.github.io/simplisafe-intent/
 https://ktibow.github.io/tutorials/
 https://ktibow.github.io/tutorials/pip-yun/
 https://ktibow.github.io/tutorials/quick-pi/
