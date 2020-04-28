@@ -71,6 +71,7 @@
 /libraryapk/Screenshot_20191204-065331.jpg
 /libraryapk/Screenshot_20191204-065833.jpg
 /libraryapk/WIN_20191204_06_56_01_Pro.jpg
+/favicon.ico
 /404.html
 /Library Card guide.html
 /Library Card guide.docx
@@ -201,12 +202,15 @@
 /simplisafe-intent
 /simplisafe-intent/index.html
 /tutorials
+/tutorials/backuplogoimg.jpg
 /tutorials/index.html
 /tutorials/pip-yun
 /tutorials/pip-yun/v1expander.ino
 /tutorials/pip-yun/index.html
 /tutorials/pip-yun/yunbottom.jpg
 /tutorials/pip-yun/v2expander.ino
+/tutorials/rasppi.jpg
+/tutorials/pyart.png
 /tutorials/quick-pi
 /tutorials/quick-pi/unzip.png
 /tutorials/quick-pi/explorer.png
