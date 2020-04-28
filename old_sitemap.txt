@@ -8,7 +8,6 @@
 /classroom-logo.png
 /README.md
 /old_sitemap.txt
-/Library Card guide.pdf
 /blog
 /blog/2019
 /blog/2019/index.html
@@ -62,19 +61,8 @@
 /blog/2020/4/3
 /blog/2020/4/3/index.html
 /blog/index.html
-/sharetest3
-/sharetest3/index.html
-/sharetest
-/sharetest/index.html
-/libraryapk
-/libraryapk/index.html
-/libraryapk/Screenshot_20191204-065331.jpg
-/libraryapk/Screenshot_20191204-065833.jpg
-/libraryapk/WIN_20191204_06_56_01_Pro.jpg
 /favicon.ico
 /404.html
-/Library Card guide.html
-/Library Card guide.docx
 /k.ps1
 /sitemapxml.py
 /google64c86dc8185ca524.html
@@ -97,13 +85,7 @@
 /cwk/gocallme/script.min.js.map
 /cwk/gocallme/style.processed.min.css
 /cwk/gocallme/style.processed.min.css.map
-/embedtest
-/embedtest/index.html
 /generate_sitemap.sh
-/dirtyhostlibrary
-/dirtyhostlibrary/index.html
-/sharetest2
-/sharetest2/index.html
 /LICENSE
 /cardterms
 /cardterms/index.html
@@ -197,10 +179,7 @@
 /lighthouse/1587945116.json
 /lighthouse/1587944522.json
 /lighthouse/1587944367.html
-/OpenSans-Regular.ttf
 /robots.txt
-/simplisafe-intent
-/simplisafe-intent/index.html
 /tutorials
 /tutorials/backuplogoimg.jpg
 /tutorials/index.html
@@ -217,5 +196,3 @@
 /tutorials/quick-pi/index.html
 /tutorials/quick-pi/eject.gif
 /BingSiteAuth.xml
-/gocallme
-/gocallme/index.html
