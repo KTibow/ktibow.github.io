@@ -189,6 +189,7 @@
 /tutorials/pip-yun/yunbottom.jpg
 /tutorials/pip-yun/v2expander.ino
 /tutorials/rasppi.jpg
+/tutorials/requireit.png
 /tutorials/pyart.png
 /tutorials/quick-pi
 /tutorials/quick-pi/unzip.png
