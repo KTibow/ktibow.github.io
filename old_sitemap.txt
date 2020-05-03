@@ -73,6 +73,7 @@
 /k.ps1
 /sitemapxml.py
 /google64c86dc8185ca524.html
+/ana2.js
 /gclass.js
 /analyzer.py
 /cwk
