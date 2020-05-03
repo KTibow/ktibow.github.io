@@ -2,6 +2,8 @@
 /sitemap.txt
 /commit-info.txt
 /sitemap.xml
+/googleredir
+/googleredir/index.html
 /lighthouse_report.sh
 /index.html
 /check-if-works.sh
