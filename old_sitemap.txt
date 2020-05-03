@@ -41,6 +41,8 @@
 /blog/2020
 /blog/2020/5
 /blog/2020/5/index.html
+/blog/2020/5/3
+/blog/2020/5/3/index.html
 /blog/2020/index.html
 /blog/2020/1
 /blog/2020/1/index.html
