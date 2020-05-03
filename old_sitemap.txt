@@ -190,6 +190,7 @@
 /robots.txt
 /tutorials
 /tutorials/backuplogoimg.jpg
+/tutorials/pyart-helpers.png
 /tutorials/index.html
 /tutorials/pip-yun
 /tutorials/pip-yun/v1expander.ino
