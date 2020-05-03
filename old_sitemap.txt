@@ -39,6 +39,8 @@
 /blog/2019/7/19
 /blog/2019/7/19/index.html
 /blog/2020
+/blog/2020/5
+/blog/2020/5/index.html
 /blog/2020/index.html
 /blog/2020/1
 /blog/2020/1/index.html
