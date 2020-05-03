@@ -4,6 +4,7 @@
 /sitemap.xml
 /googleredir
 /googleredir/index.html
+/ana.js
 /lighthouse_report.sh
 /index.html
 /check-if-works.sh
