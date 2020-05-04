@@ -27,7 +27,7 @@ var data = {
 };
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status != 200) {
+  if (this.readyState == 4 && this.status != 301) {
     alert("Consider letting me know that you're here by disabling your analytics/ad blocker. It makes a big difference to know people actually visit my site.");
   }
 };
