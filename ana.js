@@ -34,8 +34,8 @@ xhttp.onreadystatechange = function() {
 };
 xhttp.open("GET", "https://www.google-analytics.com/analytics.js", true);
 xhttp.send();
-/*
 
+/*
  Copyright The Closure Library Authors.
  SPDX-License-Identifier: Apache-2.0
 */
