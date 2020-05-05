@@ -25,16 +25,13 @@ var data = {
 },
 "runtime":[]
 };
-  
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status != 200) {
-    console.log(this.status);
-    alert("Consider letting me know that you're here by disabling your analytics/ad blocker. It makes a big difference to know people actually visit my site.");
-  }
-};
-xhttp.open("GET", "https://www.google-analytics.com/analytics.js", true);
-xhttp.send();
+
+function notifyUser() {alert("Consider letting me know that you're here by disabling your analytics/ad blocker. It makes a big difference to know people actually visit my site.");}
+var newAnaTest = document.createElement('script');
+newAnaTest.src = "https://www.google-analytics.com/analytics.js";
+newAnaTest.onerror = notifyUser;
+newAnaTest.type = "application/gzip"
+document.getElementsByTagName("body")[0].appendChild(newAnaTest);
 
 /*
  Copyright The Closure Library Authors.
