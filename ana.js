@@ -27,11 +27,11 @@ var data = {
 };
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status != 301) {
+  if (this.readyState == 4 && this.status != 200) {
     alert("Consider letting me know that you're here by disabling your analytics/ad blocker. It makes a big difference to know people actually visit my site.");
   }
 };
-xhttp.open("GET", "https://google-analytics.com/", true);
+xhttp.open("GET", "https://www.google-analytics.com/analytics.js", true);
 xhttp.send();
 /*
 
