@@ -10,7 +10,9 @@
     <script src="/clippy.min.js"></script>
     <script type="text/javascript">
       clippy.load('Clippy', function(agent) {
+        agent.show();
         agent.Play('Congratulate');
+        agent.speak('Hello world!');
       });
     </script>
   </body>
