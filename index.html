@@ -18,8 +18,8 @@
 <body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="/clippy.min.js"></script>
-    <a id="yesBut" href="javascript:yes();" style="font-size: 1.17em; font-weight: bolder; color: white; background-color: green; padding: 8px;">Yes</a>
-    <a id="noBut" href="javascript:no();" href="#" style="font-size: 1.17em; font-weight: bolder; color: white; background-color: red; padding: 8px;">No</a>
+    <a id="yesBut" href="javascript:yes();" style="font-size: 1.17em; font-weight: bolder; color: white; background-color: green; padding: 8px; margin: 5px;">Yes</a>
+    <a id="noBut" href="javascript:no();" href="#" style="font-size: 1.17em; font-weight: bolder; color: white; background-color: red; padding: 8px; margin: 5px;">No</a>
     <script type="text/javascript">
         var dagent;
         document.getElementById("yesBut").style.display = "none";
@@ -27,6 +27,7 @@
         function show() {
             document.getElementById("yesBut").style.display = "inline";
             document.getElementById("noBut").style.display = "inline";
+            dagent.moveTo(200, 4);
             dagent.gestureAt(17, 4);
         }
         clippy.load('Clippy', function(agent) {
