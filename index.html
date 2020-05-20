@@ -33,7 +33,8 @@
             agent.show();
             agent.moveTo(200, 200);
             agent.play('GetAttention');
-            agent.speak('Hello there! Would you like to take a quick tour of my site that can be cancellable at any time?', show);
+            agent.speak('Hello there! Would you like to take a quick tour of my site that can be cancellable at any time?');
+            setTimeout(show, 7000);
         });
         function no() {
             dagent.hide();
