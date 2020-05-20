@@ -45,7 +45,7 @@
         var dagent;
         function tutorials() {
             var rect = document.getElementById("tutorials").getBoundingClientRect();
-            dagent.gestureAt(rect.top-11, rect.left);
+            dagent.play("GestureRight");
             dagent.speak("These are my tutorials. Try clicking on the link.");
         }
         clippy.load('Clippy', function(agent) {
@@ -54,7 +54,7 @@
             agent.moveTo(200, 200);
             agent.play('GetAttention');
             var rect = document.getElementById("tutorials").getBoundingClientRect();
-            agent.moveTo(rect.top-11, rect.right+15);
+            agent.moveTo(rect.top-12, rect.right+15);
             agent.speak('Hello! The tour is starting in 5 . . 4 . . 3 . . 2 . . 1.');
             setTimeout(tutorials, 9700);
         });
