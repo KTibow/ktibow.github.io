@@ -45,8 +45,8 @@
         var dagent;
         function tutorials() {
             var rect = document.getElementById("tutorials").getBoundingClientRect();
-            agent.gestureAt(rect.top-11, rect.right);
-            agent.speak("These are my tutorials. Try clicking on the link.");
+            dagent.gestureAt(rect.top-11, rect.right);
+            dagent.speak("These are my tutorials. Try clicking on the link.");
         }
         clippy.load('Clippy', function(agent) {
             dagent = agent;
