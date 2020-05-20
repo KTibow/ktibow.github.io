@@ -63,11 +63,14 @@
                 setTimeout(show, 9000);
             });
         }
+        if (window.location.href.includes("done")) {
+            setCookie("tourDone", "yes", 365);
+        }
         function no() {
             dagent.hide();
             document.getElementById("yesBut").style.display = "none";
             document.getElementById("noBut").style.display = "none";
-            setCookie("tourDone", "yes", 1000);
+            setCookie("tourDone", "yes", 365);
         }
     </script>
     <h1>Hey! This is my homepage.</h1>
