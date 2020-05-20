@@ -56,7 +56,7 @@
             agent.show();
             agent.moveTo(200, 200);
             agent.play('GetAttention');
-            var rect = element.getBoundingClientRect();
+            var rect = document.getElementById("tutorials").getBoundingClientRect();
             agent.moveTo(rect.top, rect.right);
             agent.speak('Hello there! Would you like to take a quick tour of my site that can be cancellable at any time?');
         });
