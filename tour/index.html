@@ -27,7 +27,7 @@
     <a href="https://scratch.mit.edu/users/cwkkendell5667/" style="margin-top: 25px; margin-bottom: 25px; display: inline-block;">Scratch account</a><br>
     <a href="https://github.com/KTibow/" style="margin-top: 25px; margin-bottom: 25px; display: inline-block;">GitHub account</a><br>
     <a href="https://fritzing.org/profiles/KTibow/" style="margin-top: 25px; margin-bottom: 25px; display: inline-block;">Fritzing account</a><br>
-    <a href="https://www.tinkercad.com/users/0yffiTn5n5r-blazekendellr/" style="margin-top: 25px; margin-bottom: 25px; display: inline-block;">TinkerCAD account</a>
+    <a href="https://www.tinkercad.com/users/0yffiTn5n5r-blazekendellr/" style="margin-top: 25px; margin-bottom: 25px; display: inline-block;">TinkerCAD account</a><br>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <!-- I'm sorry I use Analytics. It's just that I couldn't find an alternative. -->
     <script async src="https://ktibow.github.io/ana.js"></script>
@@ -43,6 +43,11 @@
     </script>
     <script type="text/javascript">
         var dagent;
+        function tutorials() {
+            var rect = document.getElementById("tutorials").getBoundingClientRect();
+            agent.gestureAt(rect.top-11, rect.right);
+            agent.speak("These are my tutorials. Try clicking on the link.");
+        }
         clippy.load('Clippy', function(agent) {
             dagent = agent;
             agent.show();
@@ -51,6 +56,7 @@
             var rect = document.getElementById("tutorials").getBoundingClientRect();
             agent.moveTo(rect.top-11, rect.right+15);
             agent.speak('Hello! The tour is starting in 5 . . 4 . . 3 . . 2 . . 1.');
+            setTimeout(tutorials, 9000);
         });
     </script>
     <gclass-share/>
