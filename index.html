@@ -27,6 +27,7 @@
         function show() {
             document.getElementById("yesBut").style.display = "inline";
             document.getElementById("noBut").style.display = "inline";
+            dagent.gesture(17, 4);
         }
         clippy.load('Clippy', function(agent) {
             dagent = agent;
@@ -34,7 +35,7 @@
             agent.moveTo(200, 200);
             agent.play('GetAttention');
             agent.speak('Hello there! Would you like to take a quick tour of my site that can be cancellable at any time?');
-            setTimeout(show, 7000);
+            setTimeout(show, 10000);
         });
         function no() {
             dagent.hide();
