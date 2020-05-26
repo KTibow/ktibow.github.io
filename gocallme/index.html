@@ -2,19 +2,22 @@
 <html>
   <head>
     <title>Go Call Me (beta)</title>
-    <link rel="stylesheet" href="style.processed.min.css"/>
+    <link rel="stylesheet" href="style.css"/>
   </head>
   <body>
-    <h1 style="text-align: center; color: green;">Go Call Me</h1>
-    <p style="text-align: center; color: blue;">&nbsp;&nbsp;&nbsp;&nbsp;Are you tired of typing in phone numbers? Go Call Me makes it a lot easier to call someone!</p>
-    <p style="text-align: center; color: blue;">&nbsp;&nbsp;&nbsp;&nbsp;Enter the phone number to make a QR code to call that number!</p>
-    <input type="tel" id="telfield" style="display: block; margin-left: auto; margin-right: auto;"/><br/>
-    <button onclick="make();" style="display: block; margin-left: auto; margin-right: auto;">Make it!</button>
+    <h1>Go Call Me</h1>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;Are you tired of typing in phone numbers? Go Call Me makes it a lot easier to call someone!</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;Enter the phone number to make a QR code to call that number!</p>
+    <input type="tel" id="telfield"/><br/>
+    <button onclick="make();">Make it!</button>
     <img src="" id="qr"/>
+    <a href="" id="qrlink" target="_blank">Open QR code in new tab</a>
   </body>
   <script>
     function make() {
-      document.getElementById("qr").src = "https://qrcode.tec-it.com/API/QRCode?data="+encodeURIComponent("https://ktibow.github.io/gocallme/"+document.getElementById("telfield").value)+"&quietzone=10&color="+encodeURIComponent("#2266DD");
+      var imgurl = "https://qrcode.tec-it.com/API/QRCode?data="+encodeURIComponent("https://ktibow.github.io/gocallme/"+document.getElementById("telfield").value)+"&quietzone=10&color="+encodeURIComponent("#2266DD");
+      document.getElementById("qr").src = imgurl;
+      document.getElementById("qrlink").href = imgurl;
     }
   </script>
 </html>
