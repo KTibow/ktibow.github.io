@@ -27,7 +27,10 @@ img {
   }
 }
 @media print {
-  h1, a, input, button {
+  h1, a, input, button, p {
     display: none !important;
+  }
+  .keep {
+    display: inline !important;
   }
 }
