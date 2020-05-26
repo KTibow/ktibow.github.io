@@ -11,10 +11,11 @@
     <p>&nbsp;&nbsp;&nbsp;&nbsp;Enter the phone number to make a QR code to call that number!</p>
     <input type="tel" id="telfield"/><br/>
     <button onclick="make();">Make it!</button>
+    <p id="callhint" class="keep"></p>
     <img src="" id="qr"/>
-    <a href="" id="qrlink" target="_blank">Open QR code in new tab</a>
-    <a href="#" onClick="window.print();" id="printqr">Print the QR code</a>
-    <p id="calllink" class="keep"></p>
+    <a href="" id="qrlink" target="_blank"><b>Open QR code in new tab</b></a>
+    <a href="#" onClick="window.print();" id="printqr"><b>Print the QR code</b></a>
+    <p id="calllink" class="keep"></p><br/>
     <p id="ycalllink" class="keep"></p>
   </body>
   <script>
@@ -26,8 +27,9 @@
       document.getElementById("qrlink").href = imgurl;
       document.getElementById("qrlink").style.display = "block";
       document.getElementById("printqr").style.display = "block";
-      document.getElementById("calllink").innerHTML = "Or use this link: https://ktibow.github.io/gocallme/"+document.getElementById("telfield").value;
-      document.getElementById("ycalllink").innerHTML = "For a shorter link, use https://ktibow.github.io/y/"+document.getElementById("telfield").value;
+      document.getElementById("callhint").innerHTML = "Scan this QR code to call <b>"+document.getElementById("telfield").value+"</b>.";
+      document.getElementById("calllink").innerHTML = "Or use this link: <b>https://ktibow.github.io/gocallme/"+document.getElementById("telfield").value+"</b>";
+      document.getElementById("ycalllink").innerHTML = "For a shorter link, use <b>https://ktibow.github.io/y/"+document.getElementById("telfield").value+"</b>;
     }
   </script>
 </html>
