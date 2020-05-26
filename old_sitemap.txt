@@ -1,7 +1,10 @@
 
 /analyzer.py
 /gocallme
+/gocallme/maskable_icon.png
 /gocallme/style.css
+/gocallme/manifest.json
+/gocallme/sw.js
 /gocallme/index.html
 /robots.txt
 /ana2.js
