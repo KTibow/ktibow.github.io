@@ -9,7 +9,7 @@ p, a, span {
   text-align: center;
   color: #009090;
 }
-input, button {
+input, button, div {
   display: block;
   text-align: center;
   margin-left: auto;
