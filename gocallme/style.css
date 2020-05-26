@@ -5,7 +5,7 @@ h1 {
   text-align: center;
   color: green;
 }
-p, a {
+p, a, span {
   text-align: center;
   color: #009090;
 }
