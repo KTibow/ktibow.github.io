@@ -37,5 +37,8 @@
       document.getElementById("calllink").innerHTML = "<b>https://ktibow.github.io/gocallme/"+document.getElementById("telfield").value+"</b>";
       document.getElementById("ycalllink").innerHTML = "<b>https://ktibow.github.io/y/"+document.getElementById("telfield").value+"</b>";
     }
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/gocallme/sw.js').then(function() { console.log("(Empty) Service Worker Registered"); });
+    }
   </script>
 </html>
