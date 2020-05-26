@@ -17,17 +17,17 @@
 		</div>
 		<div id="gocallme">
 			<h1 style="text-align: center; color: green;">Go Call Me</h1>
-			<p style="text-align: center; color: blue;">Calling...</p>
+			<p style="text-align: center; color: lightgreen;">Calling...</p>
 		</div>
     		<script>
 			document.getElementById("gocallme").style.display = "none";
 			function call(num) {
 				var telLink = document.createElement("a");
-				telLink.href = "tel:+"+num;
+				telLink.href = "tel:"+num;
 				telLink.id = "telly";
-				telLink.style.display = "none";
-				document.body.appendChild(telLink);
-				document.getElementById("telly").click();
+				telLink.innerHTML = "Click here if nothing pops up.";
+				document.getElementById("gocallme").appendChild(telLink);
+				telLink.click();
 			}
 			if (window.location.pathname.includes("gocallme") || window.location.pathname.includes("y")) {
 				document.title = "Go Call Me";
