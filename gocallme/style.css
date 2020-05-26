@@ -32,5 +32,7 @@ img {
   }
   .keep {
     display: inline !important;
+    text-align: center !important;
+    color: #000000 !important;
   }
 }
