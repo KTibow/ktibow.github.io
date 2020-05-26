@@ -4,12 +4,38 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" /> 
 	</head>
 	<body>
-		<h1>Not found. Wah-wah-wah.</h1>
-		<h2>Explore my <a href="https://github.com/KTibow?tab=repositories">GitHub repos</a> instead!</h2>
-		<h3>Or <a href="/">go home</a>.</h3>
+		<div id="404">
+			<h1>Not found. Wah-wah-wah.</h1>
+			<h2>Explore my <a href="https://github.com/KTibow?tab=repositories">GitHub repos</a> instead!</h2>
+			<h3>Or <a href="/">go home</a>.</h3>
+		</div>
+		<div id="gocallme">
+			<h1 style="text-align: center; color: green;">Go Call Me</h1>
+			<p style="text-align: center; color: blue;">Calling...</p>
+		</div>
     		<script>
-			var pageUrl = window.location.href;
-			//alert("Does "+pageUrl+" really exist?")
+			document.getElementById("gocallme").style.display = "none";
+			var pageUrl = window.location.pathname;
+			function call(num) {
+				var telLink = document.createElement("a");
+				telLink.href = "tel:+"+num;
+				telLink.id = "telly";
+				telLink.style.display = "none";
+				document.body.appendChild(telLink);
+				document.getElementById("telly").click();
+			}
+			if (pageURL.includes("gocallme")) {
+				document.title = "Go Call Me";
+				document.getElementById("404").style.display = "none";
+				document.getElementById("gocallme").style.display = "block";
+				var number = "";
+				for (var i = 0; i < pageUrl.length; i++) {
+					if ("0123456789".includes(pageURL.charAt(i))) {
+						number += pageURL.charAt(i);
+					}
+				}
+				alert(number);
+			}
     		</script>
 	</body>
 </html>
