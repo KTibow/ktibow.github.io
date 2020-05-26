@@ -11,3 +11,18 @@ input, button {
   margin-left: auto;
   margin-right: auto;
 }
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media only screen and (orientation: landscape) {
+  img {
+    height: 33%;
+  }
+}
+@media only screen and (orientation: portrait) {
+  img {
+    width: 75%;
+  }
+}
