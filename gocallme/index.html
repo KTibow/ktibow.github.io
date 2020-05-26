@@ -15,8 +15,9 @@
     <img src="" id="qr"/>
     <a href="" id="qrlink" target="_blank"><b>Open QR code in new tab</b></a>
     <a href="#" onClick="window.print();" id="printqr"><b>Print the QR code</b></a>
-    <p id="calllink" class="keep"></p><br/>
-    <p id="ycalllink" class="keep"></p>
+    <p id="linkhint" class="keep" style="display: inline;"></p><br/>
+    <p id="calllink" class="keep" style="display: inline;"></p><br/>
+    <p id="ycalllink" class="keep" style="display: inline;"></p>
   </body>
   <script>
     document.getElementById("qrlink").style.display = "none";
@@ -27,9 +28,10 @@
       document.getElementById("qrlink").href = imgurl;
       document.getElementById("qrlink").style.display = "block";
       document.getElementById("printqr").style.display = "block";
+      document.getElementById("linkhint").innerHTML = "Or use one of these URLs:";
       document.getElementById("callhint").innerHTML = "Scan this QR code to call <b>"+document.getElementById("telfield").value+"</b>.";
-      document.getElementById("calllink").innerHTML = "Or use this link: <b>https://ktibow.github.io/gocallme/"+document.getElementById("telfield").value+"</b>";
-      document.getElementById("ycalllink").innerHTML = "For a shorter link, use <b>https://ktibow.github.io/y/"+document.getElementById("telfield").value+"</b>";
+      document.getElementById("calllink").innerHTML = "<b>https://ktibow.github.io/gocallme/"+document.getElementById("telfield").value+"</b>";
+      document.getElementById("ycalllink").innerHTML = "<b>https://ktibow.github.io/y/"+document.getElementById("telfield").value+"</b>";
     }
   </script>
 </html>
