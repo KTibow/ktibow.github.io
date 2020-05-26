@@ -11,9 +11,9 @@
       "purpose": "any maskable"
     }
   ],
-  "start_url": "/",
+  "start_url": "/gocallme",
   "background_color": "#FFFFFF",
   "display": "standalone",
-  "scope": "/",
+  "scope": "/gocallme",
   "theme_color": "#77ff00"
 }
