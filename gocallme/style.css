@@ -2,11 +2,11 @@ h1 {
   text-align: center;
   color: green;
 }
-p {
+p, a {
   text-align: center;
   color: blue;
 }
-input, button, a {
+input, button {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -24,5 +24,10 @@ img {
 @media only screen and (orientation: portrait) {
   img {
     width: 75%;
+  }
+}
+@media print {
+  h1, a, input, button {
+    display: none !important;
   }
 }
