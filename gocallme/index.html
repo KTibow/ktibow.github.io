@@ -18,11 +18,14 @@
     <p>&nbsp;&nbsp;&nbsp;&nbsp;Enter the phone number to make a QR code to call that number!</p>
     <input type="tel" id="telfield"/><br/>
     <button onclick="make();">Make it!</button>
-    <p id="callhint" class="printonly keep"></p>
+    <div>
+      <p id="callhint" class="printonly keep"></p>
+    </div>
     <img src="" id="qr" class="keep"/>
     <a href="" id="qrlink" target="_blank"><b>Open QR code in new tab</b></a>
     <a href="#" onClick="window.print();" id="printqr"><b>Print the QR code</b></a>
     <div>
+      <br/>
       <span id="linkhint" class="keep"></span><br/>
       <span id="calllink" class="keep"></span><br/>
       <span id="ycalllink" class="keep"></span>
