@@ -34,7 +34,7 @@ img {
   }
 }
 @media print {
-  * {
+  h1, p, input, button, a {
     display: none !important;
   }
   .keep {
