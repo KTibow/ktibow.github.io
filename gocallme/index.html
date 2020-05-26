@@ -14,17 +14,19 @@
     <a href="" id="qrlink" target="_blank">Open QR code in new tab</a>
     <a href="#" onClick="window.print();" id="printqr">Print the QR code</a>
     <p id="calllink" class="keep"></p>
+    <p id="ycalllink" class="keep"></p>
   </body>
   <script>
     document.getElementById("qrlink").style.display = "none";
     document.getElementById("printqr").style.display = "none";
     function make() {
-      var imgurl = "https://qrcode.tec-it.com/API/QRCode?data="+encodeURIComponent("https://ktibow.github.io/gocallme/"+document.getElementById("telfield").value)+"&quietzone=10&color="+encodeURIComponent("#2266DD");
+      var imgurl = "https://qrcode.tec-it.com/API/QRCode?data="+encodeURIComponent("https://ktibow.github.io/z/"+document.getElementById("telfield").value)+"&quietzone=10&color="+encodeURIComponent("#2266DD");
       document.getElementById("qr").src = imgurl;
       document.getElementById("qrlink").href = imgurl;
       document.getElementById("qrlink").style.display = "block";
       document.getElementById("printqr").style.display = "block";
       document.getElementById("calllink").innerHTML = "Or use this link: https://ktibow.github.io/gocallme/"+document.getElementById("telfield").value;
+      document.getElementById("ycalllink").innerHTML = "For a shorter link, use https://ktibow.github.io/y/"+document.getElementById("telfield").value;
     }
   </script>
 </html>
