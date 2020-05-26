@@ -1,0 +1,19 @@
+{
+  "short_name": "GoCallMe",
+  "name": "Go Call Me, the easy way for people to call you",
+  "description": "QR code and link generator for phone numbers",
+  "lang": "en-US",
+  "icons": [
+    {
+      "src": "/gocallme/maskable_icon.png",
+      "type": "image/png",
+      "sizes": "930x930",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#FFFFFF",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#77ff00"
+}
