@@ -26,6 +26,12 @@
 				telLink.href = "tel:"+num;
 				telLink.id = "telly";
 				telLink.innerHTML = "Click here if nothing pops up.";
+				telLink.style.textAlign = "center";
+				telLink.style.fontSize = "1.65em";
+				telLink.style.display = "block";
+				telLink.style.backgroundColor = "lightgreen";
+				telLink.style.color = "white";
+				telLink.style.padding = "15%";
 				document.getElementById("gocallme").appendChild(telLink);
 				telLink.click();
 			}
