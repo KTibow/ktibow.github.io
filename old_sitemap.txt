@@ -1,5 +1,8 @@
 
 /analyzer.py
+/gocallme
+/gocallme/style.css
+/gocallme/index.html
 /robots.txt
 /ana2.js
 /sitemap.txt
