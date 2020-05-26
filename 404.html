@@ -15,7 +15,6 @@
 		</div>
     		<script>
 			document.getElementById("gocallme").style.display = "none";
-			var pageUrl = window.location.pathname;
 			function call(num) {
 				var telLink = document.createElement("a");
 				telLink.href = "tel:+"+num;
@@ -24,14 +23,14 @@
 				document.body.appendChild(telLink);
 				document.getElementById("telly").click();
 			}
-			if (pageURL.includes("gocallme")) {
+			if (window.location.pathname.includes("gocallme")) {
 				document.title = "Go Call Me";
 				document.getElementById("404").style.display = "none";
 				document.getElementById("gocallme").style.display = "block";
 				var number = "";
-				for (var i = 0; i < pageUrl.length; i++) {
-					if ("0123456789".includes(pageURL.charAt(i))) {
-						number += pageURL.charAt(i);
+				for (var i = 0; i < window.location.pathname.length; i++) {
+					if ("0123456789".includes(window.location.pathname.charAt(i))) {
+						number += window.location.pathname.charAt(i);
 					}
 				}
 				alert(number);
