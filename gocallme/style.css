@@ -1,0 +1,13 @@
+h1 {
+  text-align: center;
+  color: green;
+}
+p {
+  text-align: center;
+  color: blue;
+}
+input, button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
