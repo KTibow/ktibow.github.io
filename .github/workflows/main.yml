@@ -1,6 +1,8 @@
 name: CI
-
-on: release
+on:
+  release:
+    types:
+      - created
 
 jobs:
   build-and-test:
