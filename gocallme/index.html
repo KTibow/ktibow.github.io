@@ -17,7 +17,7 @@
     <h1>Go Call Me</h1>
     <p>&nbsp;&nbsp;&nbsp;&nbsp;Are you tired of typing in phone numbers? Go Call Me makes it a lot easier to call someone!</p>
     <p>&nbsp;&nbsp;&nbsp;&nbsp;Enter the phone number to make a QR code to call that number!</p>
-    <input type="tel" id="telfield"/><br/>
+    <input type="tel" id="telfield" pattern="1?[0-9]{3}-?[0-9]{3}-?[0-9]{4}"/><br/>
     <button onclick="make();">Make it!</button>
     <div>
       <p id="callhint" class="printonly keep"></p>
