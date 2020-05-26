@@ -20,6 +20,9 @@ img {
   margin-left: auto;
   margin-right: auto;
 }
+.printonly {
+  display: none;
+}
 @media only screen and (orientation: landscape) {
   img {
     width: 33%;
