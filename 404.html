@@ -1,52 +1,94 @@
 <html>
-	<head>
-		<title>404</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1" /> 
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" />
-		<style>
-			* {
-				font-family: Open Sans;
-			}
-		</style>
-	</head>
-	<body>
-		<div id="404">
-			<h1>Not found. Wah-wah-wah.</h1>
-			<h2>Explore my <a href="https://github.com/KTibow?tab=repositories">GitHub repos</a> instead!</h2>
-			<h3>Or <a href="/">go home</a>.</h3>
-		</div>
-		<div id="gocallme">
-			<h1 style="text-align: center; color: green;">Go Call Me</h1>
-			<p style="text-align: center; color: green;">Calling...</p>
-		</div>
-    		<script>
-			document.getElementById("gocallme").style.display = "none";
-			function call(num) {
-				var telLink = document.createElement("a");
-				telLink.href = "tel:"+num;
-				telLink.id = "telly";
-				telLink.innerHTML = "Click here if nothing pops up.";
-				telLink.style.textAlign = "center";
-				telLink.style.fontSize = "1.65em";
-				telLink.style.display = "block";
-				telLink.style.backgroundColor = "lightgreen";
-				telLink.style.color = "white";
-				telLink.style.padding = "15%";
-				document.getElementById("gocallme").appendChild(telLink);
-				telLink.click();
-			}
-			if (window.location.pathname.includes("gocallme") || window.location.pathname.includes("y")) {
-				document.title = "Go Call Me";
-				document.getElementById("404").style.display = "none";
-				document.getElementById("gocallme").style.display = "block";
-				var number = "";
-				for (var i = 0; i < window.location.pathname.length; i++) {
-					if ("0123456789".includes(window.location.pathname.charAt(i))) {
-						number += window.location.pathname.charAt(i);
-					}
-				}
-				call(number);
-			}
-    		</script>
-	</body>
+
+<head>
+    <title>404</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" />
+    <style>
+        * {
+            font-family: Open Sans;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="404">
+        <h1>Not found. Wah-wah-wah.</h1>
+        <h2>Explore my <a href="https://github.com/KTibow?tab=repositories">GitHub repos</a> instead!</h2>
+        <h3>Or <a href="/">go home</a>.</h3>
+    </div>
+    <div id="gocallme">
+        <h1 style="text-align: center; color: green;">Go Call Me</h1>
+        <p style="text-align: center; color: green;">Calling...</p>
+    </div>
+    <script>
+        // sitemap file
+        var sitemapFile = '/sitemap.xml';
+
+        getXMLSitemapObject(sitemapFile, function(sitemapObject) {
+
+            // retrieve properties from the sitemap object
+            var urls = sitemapObject.getElementsByTagName('url');
+            var urlarray = [];
+            for (var i = 0; i < urls.length; i++) {
+                var urlElement = urls[i];
+
+                var loc = urlElement.getElementsByTagName('loc')[0].textContent;
+
+                urlarray.push(loc)
+            }
+            console.log(urlarray);
+        });
+
+         // get sitemap content and parse it to Document Object Model
+        function getXMLSitemapObject(sitemapFile, callback) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if ((this.readyState === 4) && (this.status === 200)) {
+                    var sitemapContent = this.responseText;
+                    var sitemapObject = parseXMLSitemap(sitemapContent);
+                    callback(sitemapObject);
+                }
+            };
+            xhttp.open('GET', sitemapFile, true);
+            xhttp.send();
+        }
+
+         // parse a text string into an XML DOM object
+        function parseXMLSitemap(sitemapContent) {
+            var parser = new DOMParser();
+            var xmlDoc = parser.parseFromString(sitemapContent, 'text/xml');
+            return xmlDoc;
+        }
+        document.getElementById("gocallme").style.display = "none";
+
+        function call(num) {
+            var telLink = document.createElement("a");
+            telLink.href = "tel:" + num;
+            telLink.id = "telly";
+            telLink.innerHTML = "Click here if nothing pops up.";
+            telLink.style.textAlign = "center";
+            telLink.style.fontSize = "1.65em";
+            telLink.style.display = "block";
+            telLink.style.backgroundColor = "lightgreen";
+            telLink.style.color = "white";
+            telLink.style.padding = "15%";
+            document.getElementById("gocallme").appendChild(telLink);
+            telLink.click();
+        }
+        if (window.location.pathname.includes("gocallme") || window.location.pathname.includes("y")) {
+            document.title = "Go Call Me";
+            document.getElementById("404").style.display = "none";
+            document.getElementById("gocallme").style.display = "block";
+            var number = "";
+            for (var i = 0; i < window.location.pathname.length; i++) {
+                if ("0123456789".includes(window.location.pathname.charAt(i))) {
+                    number += window.location.pathname.charAt(i);
+                }
+            }
+            call(number);
+        }
+    </script>
+</body>
+
 </html>
