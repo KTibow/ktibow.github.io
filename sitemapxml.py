@@ -5,9 +5,9 @@ out.write("""<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">""")
 input = open("sitemap.txt", "r").read()
 for url in input.split("\n"):
-  print("Parsing url "+url)
+  print("Parsing url "+urlparse(url).path)
   print(urlparse(url).path in robots)
-  if "https://ktibow.github.io/" in url and urlparse(url).path not in robots:
+  if "https://ktibow.github.io/" in url and (urlparse(url).path not in robots or url == "https://ktibow.github.io/"):
     out.write("""<url>
 <loc>"""+url+"""</loc>
 <priority>""")
