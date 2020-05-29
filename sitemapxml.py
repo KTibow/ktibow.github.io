@@ -1,5 +1,5 @@
+from urllib.parse import urlparse
 robots = open("robots.txt", "r").read()
-print(robots)
 out = open("sitemap.xml", "w")
 out.write("""<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">""")
@@ -7,7 +7,7 @@ input = open("sitemap.txt", "r").read()
 for url in input.split("\n"):
   print("Parsing url "+url)
   print(url in robots)
-  if "https://ktibow.github.io/" in url and url not in robots:
+  if "https://ktibow.github.io/" in url and urlparse(url).path not in robots:
     out.write("""<url>
 <loc>"""+url+"""</loc>
 <priority>""")
