@@ -13,15 +13,15 @@ jobs:
     - name: Clone repo
       run: |
         git clone https://github.com/KTibow/ktibow.github.io.git ./
-    - name: Update package sources
-      run: sudo apt-get update
-    - name: Check for valid commit
-      run: |
-        sudo apt-get install jq
-        message=$(curl https://api.github.com/repos/KTibow/ktibow.github.io/git/commits/${{ github.sha }} | jq '.message')
-        message="${message%\"}"
-        message="${message#\"}"
-        bash check-if-works.sh "$message"
+#    - name: Update package sources
+#      run: sudo apt-get update
+#    - name: Check for valid commit
+#      run: |
+#        sudo apt-get install jq
+#        message=$(curl https://api.github.com/repos/KTibow/ktibow.github.io/git/commits/${{ github.sha }} | jq '.message')
+#        message="${message%\"}"
+#        message="${message#\"}"
+#        bash check-if-works.sh "$message"
     - name: Generate sitemap and commit
       run: |
         find . | grep -v ".*/\..*" | awk 'BEGIN{FIELDWIDTHS="1 1000"}{print $2}' > old_sitemap.txt
