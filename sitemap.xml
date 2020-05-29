@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
-<loc>https://ktibow.github.io/gocallme/</loc>
-<priority>0.50</priority>
-</url><url>
-<loc>https://ktibow.github.io/lighthouse/</loc>
-<priority>0.50</priority>
-</url><url>
 <loc>https://ktibow.github.io/tutorials/</loc>
 <priority>0.50</priority>
 </url><url>
@@ -100,12 +94,6 @@
 <priority>0.50</priority>
 </url><url>
 <loc>https://ktibow.github.io/tour/</loc>
-<priority>0.50</priority>
-</url><url>
-<loc>https://ktibow.github.io/googleredir/</loc>
-<priority>0.50</priority>
-</url><url>
-<loc>https://ktibow.github.io/cardterms/</loc>
 <priority>0.50</priority>
 </url><url>
 <loc>https://ktibow.github.io/cwk/</loc>
