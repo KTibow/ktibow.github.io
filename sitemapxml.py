@@ -6,7 +6,7 @@ out.write("""<?xml version="1.0" encoding="UTF-8"?>
 input = open("sitemap.txt", "r").read()
 for url in input.split("\n"):
   print("Parsing url "+url)
-  print(url in robots)
+  print(urlparse(url).path in robots)
   if "https://ktibow.github.io/" in url and urlparse(url).path not in robots:
     out.write("""<url>
 <loc>"""+url+"""</loc>
