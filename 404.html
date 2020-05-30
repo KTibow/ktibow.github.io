@@ -14,7 +14,9 @@
 <body>
     <div id="404">
         <h1>Not found. Wah-wah-wah.</h1>
-        <h2>Explore my <a href="https://github.com/KTibow?tab=repositories">GitHub repos</a> instead!</h2>
+        <h2>Maybe you meant to go to one of these URLs:</h2>
+        <p id="urls"></p>
+        <h2>Or explore my <a href="https://github.com/KTibow?tab=repositories">GitHub repos</a> instead!</h2>
         <h3>Or <a href="/">go home</a>.</h3>
     </div>
     <div id="gocallme">
@@ -43,9 +45,11 @@
                     top.push(loc);
                 }
             }
-            console.log("Max score and top:");
-            console.log(maxScore);
-            console.log(top);
+            if (top.length == 0) {
+                document.getElementById("urls").innerHTML = "Couldn't find a related URL."
+            } else {
+                document.getElementById("urls").innerHTML = top.join(", ")
+            }
         });
 
          // get sitemap content and parse it to Document Object Model
