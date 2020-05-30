@@ -8,6 +8,52 @@
         * {
             font-family: Open Sans;
         }
+        #zoom > * {
+            text-align: center;
+        }
+        #zoom > h1 {
+            font-size: 3em;
+        }
+        #zoom > a {
+            display: block;
+            font-size: 3em;
+        }
+        #zoom > a: visited {
+            color: blue;
+        }
+        #zoom > div {
+            height: 40px;
+            background-color: black;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @media only all and (orientation: portrait) {
+            #zoom > div {
+                width: 100%;
+            }
+        }
+        @media only all and (orientation: landscape) {
+            #zoom > div {
+                width: 30%;
+            }
+        }
+        @keyframes progress {
+            0% {
+                width: 10%;
+            }
+            50% {
+                width: 100%;
+            }
+            100% {
+                width: 10%;
+            }
+        }
+        .progress {
+            background-color: #2b8efe;
+            animation-name: progress;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+        }
     </style>
 </head>
 
@@ -22,6 +68,33 @@
     <div id="gocallme">
         <h1 style="text-align: center; color: green;">Go Call Me</h1>
         <p style="text-align: center; color: green;">Calling...</p>
+    </div>
+    <script>
+        function openzoom() {
+            var number = "";
+            for (var i = 0; i < window.location.pathname.length; i++) {
+                if ("0123456789".includes(window.location.pathname.charAt(i))) {
+                    number += window.location.pathname.charAt(i);
+                }
+            }
+            var zoomtab = window.open("https://zoom.us/j/"+number, "_blank", "");
+
+                function closezoom(tab) {
+                    tab.close();
+                }
+            setTimeout(closezoom, 20000, zoomtab);
+        }
+    </script>
+    <div id="zoom">
+        <h1>Launching <span style="color: #2b8efe">Zoom</span></h1>
+        <div>
+            <div class="progress">
+            </div>
+        </div>
+        <a href="#" onClick="openzoom();">Open in new tab</a>
+<a href="https://zoom.us/wc/join/1234567890" id="browsejoin">Join from browser</a>
+<a href="https://zoom.us/download">Download Zoom</a>
+<iframe src="about:blank" style="width: 0px; height: 0px;" sandbox="allow-forms allow-scripts allow-same-origin" id="framejoin"/>
     </div>
     <script>
         // sitemap file
@@ -40,9 +113,9 @@
                 if (similarity(window.location.href, loc) > maxScore) {
                     maxScore = similarity(window.location.href, loc);
                     top = [];
-                    top.push("<a href=\""+loc+"\">"+loc+"</a>");
+                    top.push("<a href=\"" + loc + "\">" + loc + "</a>");
                 } else if (similarity(window.location.href, loc) == maxScore) {
-                    top.push("<a href=\""+loc+"\">"+loc+"</a>");
+                    top.push("<a href=\"" + loc + "\">" + loc + "</a>");
                 }
             }
             if (top.length == 0) {
@@ -114,6 +187,7 @@
             return costs[s2.length];
         }
         document.getElementById("gocallme").style.display = "none";
+        document.getElementById("zoom").style.display = "none";
 
         function call(num) {
             var telLink = document.createElement("a");
@@ -140,6 +214,21 @@
                 }
             }
             call(number);
+        }
+        setTimeout(closezoom, 20000, zoomtab)
+        }
+        if (window.location.pathname.includes("zoom")) {
+            document.title = "Launch Zoom (unofficial)";
+            var number = "";
+            for (var i = 0; i < window.location.pathname.length; i++) {
+                if ("0123456789".includes(window.location.pathname.charAt(i))) {
+                    number += window.location.pathname.charAt(i);
+                }
+            }
+            document.getElementById("browsejoin").href = "https://zoom.us/wc/join/"+number;
+            document.getElementById("framejoin").src = "https://zoom.us/j/"+number;
+            document.getElementById("404").style.display = "none";
+            document.getElementById("zoom").style.display = "block";
         }
     </script>
 </body>
