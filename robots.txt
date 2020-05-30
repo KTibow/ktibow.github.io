@@ -3,6 +3,5 @@ Disallow: /cardterms/
 Disallow: /libraryapk/
 Disallow: /dirtyhostlibrary/
 Disallow: /lighthouse/
-Disallow: /gocallme/
 Disallow: /googleredir/
 Sitemap: https://ktibow.github.io/sitemap.xml
