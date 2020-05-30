@@ -4,4 +4,5 @@ Disallow: /libraryapk/
 Disallow: /dirtyhostlibrary/
 Disallow: /lighthouse/
 Disallow: /googleredir/
+Disallow: /tour/
 Sitemap: https://ktibow.github.io/sitemap.xml
