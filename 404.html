@@ -40,11 +40,9 @@
                 if (similarity(window.location.href, loc) > maxScore) {
                     maxScore = similarity(window.location.href, loc);
                     top = [];
-                    console.log("<a href=\""+loc"\">"+loc+"</a>");
-                    top.push("<a href=\""+loc"\">"+loc+"</a>");
+                    top.push("<a href=\""+loc+"\">"+loc+"</a>");
                 } else if (similarity(window.location.href, loc) == maxScore) {
-                    console.log("<a href=\""+loc"\">"+loc+"</a>");
-                    top.push("<a href=\""+loc"\">"+loc+"</a>");
+                    top.push("<a href=\""+loc+"\">"+loc+"</a>");
                 }
             }
             if (top.length == 0) {
