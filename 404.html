@@ -14,6 +14,9 @@
         #zoom > h1 {
             font-size: 3em;
         }
+        #zoom > h2 {
+            font-size: 2.2em;
+        }
         #zoom > a {
             display: block;
             font-size: 3em;
@@ -87,6 +90,7 @@
     </script>
     <div id="zoom">
         <h1>Launching <span style="color: #2b8efe" class="theme">Zoom</span></h1>
+        <h2 id="status">Status: Launching soon...</h1>
         <div class="pbar">
             <div class="pbar pval" id="themeback">
             </div>
@@ -96,7 +100,7 @@
         <a href="#" onClick="openzoom();" class="theme">Open in new tab</a>
 <a href="https://zoom.us/wc/join/1234567890" id="browsejoin" class="theme">Join from browser</a>
 <a href="https://zoom.us/download" class="theme">Download Zoom</a>
-<iframe src="about:blank" onload="alert('loaded');" style="width: 0px; height: 0px;" sandbox="allow-forms allow-scripts allow-same-origin" id="framejoin"></iframe>
+<iframe src="about:blank" onload="document.getElementById('status').innerHTML = 'Status: Launching...';" style="width: 0px; height: 0px;" sandbox="allow-forms allow-scripts allow-same-origin" id="framejoin"></iframe>
     </div>
     <script>
         // sitemap file
@@ -238,7 +242,7 @@
                 for (var i = 0; i < document.getElementsByClassName("theme").length; i++) {
                     document.getElementsByClassName("theme")[i].style.setProperty("color", window.location.href.split("theme=")[1], "important");
                 }
-                document.getElementById("themeinstall").style.setProperty("background-color", window.location.href.split("theme=")[1], "important");
+                document.getElementById("themeback").style.setProperty("background-color", window.location.href.split("theme=")[1], "important");
             }
         }
     </script>
