@@ -88,6 +88,8 @@
     </script>
     <div id="zoom">
         <h1>Launching <span style="color: #2b8efe" class="theme">Zoom</span></h1>
+        <p id="mid"></p>
+        <p id="pwd"></p>
         <div class="pbar">
             <div class="pbar pval" id="themeback">
             </div>
@@ -228,6 +230,7 @@
             }
             document.getElementById("browsejoin").href = "https://zoom.us/wc/join/" + number;
             document.getElementById("framejoin").src = "https://zoom.us/j/" + number;
+            document.getElementById("mid").innerHTML = "Meeting ID: " + number;
             document.getElementById("404").style.display = "none";
             document.getElementById("zoom").style.display = "initial";
             var favy = document.createElement('link');
@@ -255,6 +258,9 @@
             }
             if (window.location.href.includes("font-size=")) {
                 document.getElementsByTagName('style')[0].innerHTML = document.getElementsByTagName('style')[0].innerHTML + "\n* { font-size: " + window.location.href.split("font-size=")[1].split("&")[0] + "; }\n";
+            }
+            if (window.location.href.includes("pwd=")) {
+                document.getElementById("pwd").innerHTML = "Password: " + window.location.href.split("pwd=")[1].split("&")[0];
             }
             var timeoutID;
 
