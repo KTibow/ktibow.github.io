@@ -251,7 +251,10 @@
                 newFont.rel = 'stylesheet';
                 newFont.href = 'https://fonts.googleapis.com/css?family='+window.location.href.split("font=")[1].split("&")[0];
                 document.getElementsByTagName('head')[0].appendChild(newFont);
-                document.getElementsByTagName('style')[0].innerHTML = document.getElementsByTagName('style')[0].innerHTML.replace("Open Sans", window.location.href.split("font=")[1].split("&")[0]);
+                document.getElementsByTagName('style')[0].innerHTML = document.getElementsByTagName('style')[0].innerHTML.replace("Open Sans", decodeURI(window.location.href.split("font=")[1].split("&")[0]));
+            }
+            if (window.location.href.includes("font-size=")) {
+                document.getElementsByTagName('style')[0].innerHTML = document.getElementsByTagName('style')[0].innerHTML + "\n* { font-size: "+window.location.href.split("font-size=")[1].split("&")[0]+"; }\n";
             }
             var timeoutID;
  
