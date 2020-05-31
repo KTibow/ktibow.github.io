@@ -227,6 +227,11 @@
             document.getElementById("framejoin").src = "https://zoom.us/j/"+number;
             document.getElementById("404").style.display = "none";
             document.getElementById("zoom").style.display = "block";
+            var favy = document.createElement('link');
+            favy.rel = "shortcut icon";
+            favy.type = "image/png";
+            favy.href = "https://d24cgw3uvb9a9h.cloudfront.net/zoom.ico";
+            document.head.appendChild(favy);
         }
     </script>
 </body>
