@@ -28,7 +28,6 @@ jobs:
         sh generate_sitemap.sh > sitemap.txt
         python3 sitemapxml.py
         rm sitemap.txt old_sitemap.txt
-        rm -r lighthouse
     - name: Commit changes
       run: |
         git config --local user.email "KTibow@users.noreply.github.com"
