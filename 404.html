@@ -21,7 +21,7 @@
         #zoom > a:visited {
             color: blue;
         }
-        #zoom > div {
+        .pbar {
             height: 40px;
             background-color: black;
             margin-left: auto;
@@ -48,7 +48,7 @@
                 width: 10%;
             }
         }
-        .progress {
+        .pval {
             background-color: #2b8efe;
             animation-name: progress;
             animation-duration: 1s;
@@ -87,10 +87,11 @@
     </script>
     <div id="zoom">
         <h1>Launching <span style="color: #2b8efe">Zoom</span></h1>
-        <div>
-            <div class="progress">
+        <div class="pbar">
+            <div class="pbar pval">
             </div>
         </div>
+        <p>Let this page open "zoom.us" or "Zoom Meetings".</p>
         <a href="#" onClick="openzoom();">Open in new tab</a>
 <a href="https://zoom.us/wc/join/1234567890" id="browsejoin">Join from browser</a>
 <a href="https://zoom.us/download">Download Zoom</a>
@@ -226,7 +227,7 @@
             document.getElementById("browsejoin").href = "https://zoom.us/wc/join/"+number;
             document.getElementById("framejoin").src = "https://zoom.us/j/"+number;
             document.getElementById("404").style.display = "none";
-            document.getElementById("zoom").style.display = "block";
+            document.getElementById("zoom").style.display = "initial";
             var favy = document.createElement('link');
             favy.rel = "shortcut icon";
             favy.type = "image/png";
