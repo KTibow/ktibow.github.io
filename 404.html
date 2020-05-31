@@ -237,14 +237,21 @@
             document.head.appendChild(favy);
             if (window.location.href.includes("theme=")) {
                 for (var i = 0; i < document.getElementsByClassName("theme").length; i++) {
-                    document.getElementsByClassName("theme")[i].style.setProperty("color", window.location.href.split("theme=")[1], "important");
+                    document.getElementsByClassName("theme")[i].style.setProperty("color", window.location.href.split("theme=")[1].split("&")[0], "important");
                 }
-                document.getElementById("themeback").style.setProperty("background-color", window.location.href.split("theme=")[1], "important");
+                document.getElementById("themeback").style.setProperty("background-color", window.location.href.split("theme=")[1].split("&")[0], "important");
             }
             if (window.location.href.includes("dark=1")) {
                 document.body.style.backgroundColor = "black";
                 document.body.style.color = "white";
                 document.getElementsByClassName("pbar")[0].style.backgroundColor = "white";
+            }
+            if (window.location.href.includes("font=")) {
+                var newFont = document.createElement('link');
+                newFont.rel = 'stylesheet';
+                newFont.href = 'https://fonts.googleapis.com/css?family='+window.location.href.split("font=")[1].split("&")[0];
+                document.getElementsByTagName('head')[0].appendChild(newFont);
+                document.getElementsByTagName('style')[0].innerHTML = document.getElementsByTagName('style')[0].innerHTML.replace("Open Sans", window.location.href.split("font=")[1].split("&")[0]);
             }
             var timeoutID;
  
