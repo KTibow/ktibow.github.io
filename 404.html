@@ -86,15 +86,15 @@
         }
     </script>
     <div id="zoom">
-        <h1>Launching <span style="color: #2b8efe">Zoom</span></h1>
+        <h1>Launching <span style="color: #2b8efe" class="theme">Zoom</span></h1>
         <div class="pbar">
-            <div class="pbar pval">
+            <div class="pbar pval" id="themeback">
             </div>
         </div>
         <p>Let this page open "zoom.us" or "Zoom Meetings".</p>
-        <a href="#" onClick="openzoom();">Open in new tab</a>
-<a href="https://zoom.us/wc/join/1234567890" id="browsejoin">Join from browser</a>
-<a href="https://zoom.us/download">Download Zoom</a>
+        <a href="#" onClick="openzoom();" class="theme">Open in new tab</a>
+<a href="https://zoom.us/wc/join/1234567890" id="browsejoin" class="theme">Join from browser</a>
+<a href="https://zoom.us/download" class="theme">Download Zoom</a>
 <iframe src="about:blank" style="width: 0px; height: 0px;" sandbox="allow-forms allow-scripts allow-same-origin" id="framejoin"></iframe>
     </div>
     <script>
@@ -233,6 +233,12 @@
             favy.type = "image/png";
             favy.href = "https://d24cgw3uvb9a9h.cloudfront.net/zoom.ico";
             document.head.appendChild(favy);
+            if (window.location.href.includes("theme=")) {
+                for (th in document.getElementsByClassName("theme")) {
+                    th.style.setProperty("color", window.location.href.split("theme=")[1], "important");
+                }
+                document.getElementById("themeinstall").style.setProperty("background-color", window.location.href.split("theme=")[1], "important");
+            }
         }
     </script>
 </body>
