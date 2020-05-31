@@ -77,12 +77,13 @@
                     number += window.location.pathname.charAt(i);
                 }
             }
+            alert("The page will close 25 seconds after you open it to keep your tabs tidy.");
             var zoomtab = window.open("https://zoom.us/j/"+number, "_blank", "");
 
                 function closezoom(tab) {
                     tab.close();
                 }
-            setTimeout(closezoom, 20000, zoomtab);
+            setTimeout(closezoom, 25000, zoomtab);
         }
     </script>
     <div id="zoom">
