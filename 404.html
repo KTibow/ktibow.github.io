@@ -96,7 +96,7 @@
         <a href="#" onClick="openzoom();" class="theme">Open in new tab</a>
 <a href="https://zoom.us/wc/join/1234567890" id="browsejoin" class="theme">Join from browser</a>
 <a href="https://zoom.us/download" class="theme">Download Zoom</a>
-<iframe src="about:blank" style="width: 0px; height: 0px;" sandbox="allow-forms allow-scripts allow-same-origin" id="framejoin"></iframe>
+<iframe src="about:blank" onload="alert('loaded');" style="width: 0px; height: 0px;" sandbox="allow-forms allow-scripts allow-same-origin" id="framejoin"></iframe>
     </div>
     <script>
         // sitemap file
@@ -235,8 +235,8 @@
             favy.href = "https://d24cgw3uvb9a9h.cloudfront.net/zoom.ico";
             document.head.appendChild(favy);
             if (window.location.href.includes("theme=")) {
-                for (th in document.getElementsByClassName("theme")) {
-                    th.style.setProperty("color", window.location.href.split("theme=")[1], "important");
+                for (var i = 0; i < document.getElementsByClassName("theme").length; i++) {
+                    document.getElementsByClassName("theme")[i].style.setProperty("color", window.location.href.split("theme=")[1], "important");
                 }
                 document.getElementById("themeinstall").style.setProperty("background-color", window.location.href.split("theme=")[1], "important");
             }
