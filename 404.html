@@ -78,11 +78,11 @@
                 }
             }
             alert("The page will close 25 seconds after you open it to keep your tabs tidy.");
-            var zoomtab = window.open("https://zoom.us/j/"+number, "_blank", "");
+            var zoomtab = window.open("https://zoom.us/j/" + number, "_blank", "");
 
-                function closezoom(tab) {
-                    tab.close();
-                }
+            function closezoom(tab) {
+                tab.close();
+            }
             setTimeout(closezoom, 25000, zoomtab);
         }
     </script>
@@ -94,10 +94,10 @@
         </div>
         <p>Let this page open "zoom.us" or "Zoom Meetings".</p>
         <p>On Linux, let this page open "xdg-open".</p>
-        <a href="#" onClick="openzoom();" class="theme">Open in new tab</a>
-<a href="https://zoom.us/wc/join/1234567890" id="browsejoin" class="theme">Join from browser</a>
-<a href="https://zoom.us/download" class="theme">Download Zoom</a>
-<iframe src="about:blank" style="width: 0px; height: 0px; border-width: 0px;" sandbox="allow-forms allow-scripts allow-same-origin" id="framejoin"></iframe>
+        <a href="#" onClick="openzoom();" class="theme">Try opening in new tab instead</a>
+        <a href="https://zoom.us/wc/join/1234567890" id="browsejoin" class="theme">Join from browser, the easy way</a>
+        <a href="https://zoom.us/download" class="theme">Did nothing happen? Download Zoom</a>
+        <iframe src="about:blank" style="width: 0px; height: 0px; border-width: 0px;" sandbox="allow-forms allow-scripts allow-same-origin" id="framejoin"></iframe>
     </div>
     <script>
         // sitemap file
@@ -226,8 +226,8 @@
                     number += window.location.pathname.charAt(i);
                 }
             }
-            document.getElementById("browsejoin").href = "https://zoom.us/wc/join/"+number;
-            document.getElementById("framejoin").src = "https://zoom.us/j/"+number;
+            document.getElementById("browsejoin").href = "https://zoom.us/wc/join/" + number;
+            document.getElementById("framejoin").src = "https://zoom.us/j/" + number;
             document.getElementById("404").style.display = "none";
             document.getElementById("zoom").style.display = "initial";
             var favy = document.createElement('link');
@@ -249,15 +249,15 @@
             if (window.location.href.includes("font=")) {
                 var newFont = document.createElement('link');
                 newFont.rel = 'stylesheet';
-                newFont.href = 'https://fonts.googleapis.com/css?family='+window.location.href.split("font=")[1].split("&")[0];
+                newFont.href = 'https://fonts.googleapis.com/css?family=' + window.location.href.split("font=")[1].split("&")[0];
                 document.getElementsByTagName('head')[0].appendChild(newFont);
                 document.getElementsByTagName('style')[0].innerHTML = document.getElementsByTagName('style')[0].innerHTML.replace("Open Sans", decodeURI(window.location.href.split("font=")[1].split("&")[0]));
             }
             if (window.location.href.includes("font-size=")) {
-                document.getElementsByTagName('style')[0].innerHTML = document.getElementsByTagName('style')[0].innerHTML + "\n* { font-size: "+window.location.href.split("font-size=")[1].split("&")[0]+"; }\n";
+                document.getElementsByTagName('style')[0].innerHTML = document.getElementsByTagName('style')[0].innerHTML + "\n* { font-size: " + window.location.href.split("font-size=")[1].split("&")[0] + "; }\n";
             }
             var timeoutID;
- 
+
             function setup() {
                 this.addEventListener("mousemove", resetTimer, false);
                 this.addEventListener("mousedown", resetTimer, false);
