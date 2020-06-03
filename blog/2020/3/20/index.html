@@ -1,80 +1,38 @@
-<!DOCTYPE html>
 <html>
-<head>
-<meta name="generator" content=
-"HTML Tidy for HTML5 for Linux version 5.6.0">
-<title>Blog</title>
-<meta name="viewport" content=
-"width=device-width, initial-scale=1">
-<style>
+    <head>
+        <title>Blog</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style>
             body {
                     background: lavender;
             }
-</style>
-</head>
-<body>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;Well, back at it! I thought I'd talk
-about Home Assistant a little this time. After all, when you
-isolate at home it's important you have the best experience, and
-home automation is one of the best parts.</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;I guess I'm just going to document this
-stuff. I'm using a Pi 3 with Ethernet. The reason I didn't use WiFi
-was because I couldn't get it to work.</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;You install Home Assistant on a SD card,
-just like Raspbian. You can get the images <a href=
-"https://www.home-assistant.io/hassio/installation/">here</a>. You
-don't have to put Home Assistant on a seperate Raspberry Pi; You
-can install it as a VM on your computer, or as a seperate user
-account on a Pi, but I like this way because it gives you a lot of
-functionality. You get the most processing power and you know
-you'll have the full functionality.</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;Why'd I install Home Assistant? Well, I
-was trying to upgrade my old Roomba. I had tried in the past but
-abandoned my project. Then one day I saw a video about upgrading
-your old Roomba to work with Home Assistant:</p>
-<iframe width="400" height="225" src=
-"https://www.youtube-nocookie.com/embed/t2NgA8qYcFI" frameborder=
-"0" allow=
-"accelerometer; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen></iframe>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;So I decided to install it! It's simple
-to get started with. For my basic setup, I have these plugins:</p>
-<ul>
-<li>Duck DNS</li>
-<li>File editor</li>
-<li>Mosquitto broker</li>
-</ul>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;What do these plugins do? Well, Duck DNS
-lets me have a domain name (*.duckdns.org). File editor lets me
-edit the config files. Mosquitto broker lets me use MQTT, which is
-what I use to talk with the Roomba.</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;I also connected some stuff to Home
-Assistant:</p>
-<ul>
-<li>Google Cast</li>
-<li>Mobile app</li>
-<li>Toilet flusher (DIY, made with Lego WeDo, Python, a WeDo
-library, MQTT, and a MQTT library)</li>
-<li>Roomba (DIY, made with Python, the roomba serial protocol, a
-serial library, MQTT, and a MQTT library)</li>
-<li>Weather (automatic)</li>
-<li>Ping (real-time location updates)</li>
-</ul>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;That's not a lot of stuff, but it can be
-very handy. If you have something else, you can make a DIY solution
-or try to find an integration in the <a href=
-"https://www.home-assistant.io/integrations/#all">list</a>. It has
-a lot of possible integrations!</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;So yeah, I do reccomend you try this.
-You can even put Home Assistant on an existing Google Home Hub!</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;If you're not ready yet, try the
-<a href="https://demo.home-assistant.io/#/lovelace/0">demo</a>. I'm
-not that big in this, but it is nice. I'm kind of giving up the
-roomba project in favor of the roomba i7, which there are really
-good deals for on eBay. If you have any tips, you can send them in
-at my <a href=
-"mailto:kidscodingplace@gmail.com?subject=Home%20Assistant%20tips">email</a>.</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;But yeah, try it out! I guess I'll see
-you tommorow.</p>
-</body>
+        </style>
+    </head>
+    <body>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;Well, back at it! I thought I'd talk about Home Assistant a little this time. After all, when you isolate at home it's important you have the best experience, and home automation is one of the best parts.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;I guess I'm just going to document this stuff. I'm using a Pi 3 with Ethernet. The reason I didn't use WiFi was because I couldn't get it to work.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;You install Home Assistant on a SD card, just like Raspbian. You can get the images <a href="https://www.home-assistant.io/hassio/installation/">here</a>. You don't have to put Home Assistant on a seperate Raspberry Pi; You can install it as a VM on your computer, or as a seperate user account on a Pi, but I like this way because it gives you a lot of functionality. You get the most processing power and you know you'll have the full functionality.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;Why'd I install Home Assistant? Well, I was trying to upgrade my old Roomba. I had tried in the past but abandoned my project. Then one day I saw a video about upgrading your old Roomba to work with Home Assistant:</p>
+        <iframe width="400" height="225" src="https://www.youtube-nocookie.com/embed/t2NgA8qYcFI" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;So I decided to install it! It's simple to get started with. For my basic setup, I have these plugins:</p>
+        <ul>
+            <li>Duck DNS</li>
+            <li>File editor</li>
+            <li>Mosquitto broker</li>
+        </ul>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;What do these plugins do? Well, Duck DNS lets me have a domain name (*.duckdns.org). File editor lets me edit the config files. Mosquitto broker lets me use MQTT, which is what I use to talk with the Roomba.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;I also connected some stuff to Home Assistant:</p>
+        <ul>
+            <li>Google Cast</li>
+            <li>Mobile app</li>
+            <li>Toilet flusher (DIY, made with Lego WeDo, Python, a WeDo library, MQTT, and a MQTT library)</li>
+            <li>Roomba (DIY, made with Python, the roomba serial protocol, a serial library, MQTT, and a MQTT library)</li>
+            <li>Weather (automatic)</li>
+            <li>Ping (real-time location updates)</li>
+        </ul>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;That's not a lot of stuff, but it can be very handy. If you have something else, you can make a DIY solution or try to find an integration in the <a href="https://www.home-assistant.io/integrations/#all">list</a>. It has a lot of possible integrations!</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;So yeah, I do reccomend you try this. You can even put Home Assistant on an existing Google Home Hub!</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;If you're not ready yet, try the <a href="https://demo.home-assistant.io/#/lovelace/0">demo</a>. I'm not that big in this, but it is nice. I'm kind of giving up the roomba project in favor of the roomba i7, which there are really good deals for on eBay. If you have any tips, you can send them in at my <a href="mailto:kidscodingplace@gmail.com?subject=Home%20Assistant%20tips">email</a>.</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;But yeah, try it out! I guess I'll see you tommorow.</p>
+    </body>
 </html>
