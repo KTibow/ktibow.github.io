@@ -1,14 +1,10 @@
-<!DOCTYPE html>
 <html>
+
 <head>
-<meta name="generator" content=
-"HTML Tidy for HTML5 for Linux version 5.6.0">
-<title>404</title>
-<meta name="viewport" content=
-"width=device-width, initial-scale=1">
-<link rel="stylesheet" href=
-"https://fonts.googleapis.com/css?family=Open+Sans">
-<style>
+    <title>404</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" />
+    <style>
         * {
             font-family: Open Sans;
         }
@@ -82,23 +78,22 @@
             padding: 3vmin;
             text-decoration: none;
         }
-</style>
+    </style>
 </head>
+
 <body>
-<div id="404">
-<h1>Not found. Wah-wah-wah.</h1>
-<h2>Maybe you meant to go to one of these URLs:</h2>
-<p id="urls"></p>
-<h2>Or explore my <a href=
-"https://github.com/KTibow?tab=repositories">GitHub repos</a>
-instead!</h2>
-<h3>Or <a href="/">go home</a>.</h3>
-</div>
-<div id="gocallme">
-<h1 style="text-align: center; color: green;">Go Call Me</h1>
-<p style="text-align: center; color: green;">Calling...</p>
-</div>
-<script>
+    <div id="404">
+        <h1>Not found. Wah-wah-wah.</h1>
+        <h2>Maybe you meant to go to one of these URLs:</h2>
+        <p id="urls"></p>
+        <h2>Or explore my <a href="https://github.com/KTibow?tab=repositories">GitHub repos</a> instead!</h2>
+        <h3>Or <a href="/">go home</a>.</h3>
+    </div>
+    <div id="gocallme">
+        <h1 style="text-align: center; color: green;">Go Call Me</h1>
+        <p style="text-align: center; color: green;">Calling...</p>
+    </div>
+    <script>
         function openzoom() {
             var number = "";
             for (var i = 0; i < window.location.pathname.length; i++) {
@@ -114,26 +109,24 @@ instead!</h2>
             }
             setTimeout(closezoom, 25000, zoomtab);
         }
-</script>
-<div id="zoom">
-<h1>Launching <span style="color: #2b8efe" class=
-"theme">Zoom</span></h1>
-<p id="mid"></p>
-<p id="pwd"></p>
-<div class="pbar">
-<div class="pbar pval" id="themeback"></div>
-</div>
-<p>Let this page open "zoom.us" or "Zoom Meetings".</p>
-<p>On Linux, let this page open "xdg-open".</p>
-<a href="#" onclick="openzoom();" class="theme">New tab</a>
-<a href="https://zoom.us/wc/join/1234567890" id="browsejoin" class=
-"theme">Join in browser</a> <a href="https://zoom.us/download"
-class="theme">Download Zoom</a> <iframe src="about:blank" style=
-"width: 0px; height: 0px; border-width: 0px;" sandbox=
-"allow-forms allow-scripts allow-same-origin" id="framejoin" name=
-"framejoin"></iframe> <a href="javascript:scroll();" class=
-"scrollbutton theme">⬇</a></div>
-<script>
+    </script>
+    <div id="zoom">
+        <h1>Launching <span style="color: #2b8efe" class="theme">Zoom</span></h1>
+        <p id="mid"></p>
+        <p id="pwd"></p>
+        <div class="pbar">
+            <div class="pbar pval" id="themeback">
+            </div>
+        </div>
+        <p>Let this page open "zoom.us" or "Zoom Meetings".</p>
+        <p>On Linux, let this page open "xdg-open".</p>
+        <a href="#" onClick="openzoom();" class="theme">New tab</a>
+        <a href="https://zoom.us/wc/join/1234567890" id="browsejoin" class="theme">Join in browser</a>
+        <a href="https://zoom.us/download" class="theme">Download Zoom</a>
+        <iframe src="about:blank" style="width: 0px; height: 0px; border-width: 0px;" sandbox="allow-forms allow-scripts allow-same-origin" id="framejoin"></iframe>
+        <a href="javascript:scroll();" class="scrollbutton theme">⬇</a>
+    </div>
+    <script>
         // sitemap file
         var sitemapFile = '/sitemap.xml';
 
@@ -150,9 +143,9 @@ class="theme">Download Zoom</a> <iframe src="about:blank" style=
                 if (similarity(window.location.href, loc) > maxScore) {
                     maxScore = similarity(window.location.href, loc);
                     top = [];
-                    top.push("<a href=\"" + loc + "\">" + loc + "<\/a>");
+                    top.push("<a href=\"" + loc + "\">" + loc + "</a>");
                 } else if (similarity(window.location.href, loc) == maxScore) {
-                    top.push("<a href=\"" + loc + "\">" + loc + "<\/a>");
+                    top.push("<a href=\"" + loc + "\">" + loc + "</a>");
                 }
             }
             if (top.length == 0) {
@@ -344,6 +337,7 @@ class="theme">Download Zoom</a> <iframe src="about:blank" style=
                 console.log("Done scrolling");
             }
         }
-</script>
+    </script>
 </body>
+
 </html>
