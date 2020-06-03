@@ -254,7 +254,11 @@
                 }
             }
             document.getElementById("browsejoin").href = "https://zoom.us/wc/join/" + number;
-            document.getElementById("framejoin").src = "https://zoom.us/j/" + number;
+            var zoompwd = "";
+            if (window.location.href.includes("zoompwd=")) {
+                zoompwd = "?pwd=" + window.location.href.split("zoompwd=")[1].split("&")[0];
+            }
+            document.getElementById("framejoin").src = "https://zoom.us/j/" + number + zoompwd;
             document.getElementById("mid").innerHTML = "Meeting ID: " + number;
             document.getElementById("404").style.display = "none";
             document.getElementById("zoom").style.display = "initial";
