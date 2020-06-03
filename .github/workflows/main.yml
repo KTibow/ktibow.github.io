@@ -25,7 +25,8 @@ jobs:
     - name: Tidy HTML
       run: |
         sudo apt install tidy
-        find . -name '*.html' -type f -print -exec tidy -mq '{}' --indent auto --indent-spaces 4 --wrap 128 --tidy-mark no \;
+        shopt -s globstar
+        tidy -mq **/*.html --indent auto --indent-spaces 4 --wrap 128 --tidy-mark no \;
     - name: Generate sitemap and commit
       run: |
         find . | grep -v ".*/\..*" | awk 'BEGIN{FIELDWIDTHS="1 1000"}{print $2}' > old_sitemap.txt
