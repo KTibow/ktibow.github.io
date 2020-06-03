@@ -21,6 +21,9 @@
         #zoom > a[href] {
             color: #2b8efe;
         }
+        #zoom > h1 > span {
+            font-size: 1em;
+        }
         .pbar {
             height: 40px;
             background-color: black;
@@ -244,7 +247,7 @@
                 }
                 document.getElementById("themeback").style.setProperty("background-color", window.location.href.split("theme=")[1].split("&")[0], "important");
             }
-            if (window.location.href.includes("dark=1")) {
+            if (window.location.href.includes("dark=1") || window.matchMedia("(prefers-color-scheme: dark)").matches) {
                 document.body.style.backgroundColor = "black";
                 document.body.style.color = "white";
                 document.getElementsByClassName("pbar")[0].style.backgroundColor = "white";
@@ -289,7 +292,8 @@
             }
 
             function goInactive() {
-                // do something
+                window.close()
+                
             }
 
             function goActive() {
