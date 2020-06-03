@@ -22,6 +22,10 @@ jobs:
 #        message="${message%\"}"
 #        message="${message#\"}"
 #        bash check-if-works.sh "$message"
+    - name: Tidy HTML
+      run: |
+        sudo apt install tidy
+        find . -name '*.html' -type f -print -exec tidy -mq '{}' \;
     - name: Generate sitemap and commit
       run: |
         find . | grep -v ".*/\..*" | awk 'BEGIN{FIELDWIDTHS="1 1000"}{print $2}' > old_sitemap.txt
@@ -33,7 +37,7 @@ jobs:
         git config --local user.email "KTibow@users.noreply.github.com"
         git config --local user.name "KTibow"
         git add -A
-        git commit -m "Add new sitemap" -a || true
+        git commit -m "Add new sitemap + tidy HTML" -a || true
         git pull
     - name: Push changes
       uses: ad-m/github-push-action@master
