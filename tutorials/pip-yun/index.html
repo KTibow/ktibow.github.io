@@ -1,48 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>How to install Python 2 Pip on an Arduino Yun (UNCOMPLETE)</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1" /> 
-		<meta http-equiv="content-language" content="en"/>
-		<meta name="keywords" content="arduino, pip, python, yun, install, installing, tutorial"/>
-	</head>
-	<body>
-		<h1>Installing Pip from Python on Arduino Yun (UNCOMPLETE)</h1>
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;Before everything, make sure your Yun is plugged in.</p>
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;First, if you think it seems reasonable and you know how, back up your Arduino Yun. Done? Great. Let's keep going.</p>
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;Next, reset your Arduino Yun by holding the button called "WLAN RST" next to the USB port for 30 seconds. Wait 5 or so minutes.</p>
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;Then check your WiFi networks. You should see a WiFi network called "Arduino Yún-XXXXXXXXXXXX". Connect to it. It won't have Internet. That's okay.</p>
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;Open your web browser. Type in "192.168.240.1". You might see a security warning. That's okay too. In a moment, you'll be asked for your password. Use "arduino".</p>
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;Now, once you're logged in, click on the "Configure" button. Make sure you change the Yún name and password, and the time zone too.</p>
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;Now, click on the dropdown menu under Wireless Parameters called "Detected Wireless Networks". Change it to the name of a WiFi network <u>you</u> can connect to.</p>
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;Finally, if your network has a password, enter it. Click "Configure & Restart", and pretty soon, we can start on installing pip!</p>
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;Once it's restarted, connect to the WiFi network connect to where you told the Yun to connect to (WiFi). Now, open your command prompt.</p>
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;If you're on Windows, make sure you have the April 2019 update for Windows 10. If you have an older version:</p>
-		<ol>
-			<li>YOU <u><b>WILL</b></u> GET HACKED!</li>
-			<li>This tutorial will be a <u>lot</u> harder.</li>
-			<li>I know you're used to your old version, but Windows 10 has a <u>lot</u> more features.</li>
-		</ol>
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;As long as you're using a new version  of Linux, Mac OS, Chrome OS, or Windows 10, keep going.</p>
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;Now, if you don't know how to open your command prompt, here's how:</p>
-		<ul>
-			<li>Mac OS: Find an application named "Terminal".</li>
-			<li>Linux: Hopefully you know how already. There's many variations of Linux, so I may not know how.</li>
-			<li>Chrome OS: In Google Chrome, press Ctrl + Alt + T.</li>
-			<li>Windows 10: Type "Command Prompt" into the search bar, and launch the first result.</li>
-		</ul>
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;Once your Yun has finished restarting, type and press Enter/Return the following: "ping [the name of your Arduino Yun should be typed here]"</p>
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;Find where it says<br>"Pinging [your arduino yun name].local [important numbers] with 32 bytes of data:"<br>and write down the numbers and dots where I said "[important numbers]".<br>Then type in the thing you wrote down into the web address bar of your web browser. Could you connect to it? GREAT!</p>
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;Relax for a little. You've done a lot. Once you're ready, keep going.</p>
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;You need to make more space on the Yun. In order to do that, you need a MicroSD card. You're going to remove all data on it, so back it up or make sure it isn't valuable data.</p>
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;Once you've got your MicroSD card, flip your Yun over. Put into this slot:</p>
-		<img src="/tutorials/pip-yun/yunbottom.jpg" alt="MicroSD card slot" style="width:100%;"/>
-		<span>&nbsp;&nbsp;&nbsp;&nbsp;Next, make sure you have the Arduino IDE. You can </span><a href="https://www.bing.com/search?q=download+arduino+ide">download the arduino IDE here</a><span> if you don't have it yet.</span>
-		<p>Download time! We've got some files here. Here's the download links:</p>
-		<a href="/tutorials/pip-yun/v1expander.ino" style="padding-top: 10px; padding-bottom: 10px;" download>Rev 1 boards</a><br>
-		<a href="/tutorials/pip-yun/v2expander.ino" style="padding-top: 10px; padding-bottom: 10px;"download>Rev 2 boards or updated firmware</a><br>
-		<span>Once you've downloaded the .ino file, open it in Arduino IDE and upload it to your Arduino Yun, after you open the Serial Monitor. I'll refer you to the official Arduino guide:</span><a href="https://www.arduino.cc/en/Tutorial/ExpandingYunDiskSpace"> (click here) </a>
-		<p>Scroll down to "Start" under "A look to the procedure". Follow all of the instructions in <u>your</u> serial monitor until the tutorial says<br>"The sketch will continue showing the Yún Linux shell and you will see lots of messages telling you the Yún is starting up.",<br>because we have a better way.</p>
-		<b>this is where the tutorial ends.</b>
-	</body>
+<head>
+<meta name="generator" content=
+"HTML Tidy for HTML5 for Linux version 5.6.0">
+<title>How to install Python 2 Pip on an Arduino Yun
+(UNCOMPLETE)</title>
+<meta name="viewport" content=
+"width=device-width, initial-scale=1">
+<meta http-equiv="content-language" content="en">
+<meta name="keywords" content=
+"arduino, pip, python, yun, install, installing, tutorial">
+</head>
+<body>
+<h1>Installing Pip from Python on Arduino Yun (UNCOMPLETE)</h1>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Before everything, make sure your Yun is
+plugged in.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;First, if you think it seems reasonable
+and you know how, back up your Arduino Yun. Done? Great. Let's keep
+going.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Next, reset your Arduino Yun by holding
+the button called "WLAN RST" next to the USB port for 30 seconds.
+Wait 5 or so minutes.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Then check your WiFi networks. You
+should see a WiFi network called "Arduino Yún-XXXXXXXXXXXX".
+Connect to it. It won't have Internet. That's okay.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Open your web browser. Type in
+"192.168.240.1". You might see a security warning. That's okay too.
+In a moment, you'll be asked for your password. Use "arduino".</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Now, once you're logged in, click on the
+"Configure" button. Make sure you change the Yún name and password,
+and the time zone too.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Now, click on the dropdown menu under
+Wireless Parameters called "Detected Wireless Networks". Change it
+to the name of a WiFi network <u>you</u> can connect to.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Finally, if your network has a password,
+enter it. Click "Configure & Restart", and pretty soon, we can
+start on installing pip!</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Once it's restarted, connect to the WiFi
+network connect to where you told the Yun to connect to (WiFi).
+Now, open your command prompt.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;If you're on Windows, make sure you have
+the April 2019 update for Windows 10. If you have an older
+version:</p>
+<ol>
+<li>YOU <u><b>WILL</b></u> GET HACKED!</li>
+<li>This tutorial will be a <u>lot</u> harder.</li>
+<li>I know you're used to your old version, but Windows 10 has a
+<u>lot</u> more features.</li>
+</ol>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;As long as you're using a new version of
+Linux, Mac OS, Chrome OS, or Windows 10, keep going.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Now, if you don't know how to open your
+command prompt, here's how:</p>
+<ul>
+<li>Mac OS: Find an application named "Terminal".</li>
+<li>Linux: Hopefully you know how already. There's many variations
+of Linux, so I may not know how.</li>
+<li>Chrome OS: In Google Chrome, press Ctrl + Alt + T.</li>
+<li>Windows 10: Type "Command Prompt" into the search bar, and
+launch the first result.</li>
+</ul>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Once your Yun has finished restarting,
+type and press Enter/Return the following: "ping [the name of your
+Arduino Yun should be typed here]"</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Find where it says<br>
+"Pinging [your arduino yun name].local [important numbers] with 32
+bytes of data:"<br>
+and write down the numbers and dots where I said "[important
+numbers]".<br>
+Then type in the thing you wrote down into the web address bar of
+your web browser. Could you connect to it? GREAT!</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Relax for a little. You've done a lot.
+Once you're ready, keep going.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;You need to make more space on the Yun.
+In order to do that, you need a MicroSD card. You're going to
+remove all data on it, so back it up or make sure it isn't valuable
+data.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Once you've got your MicroSD card, flip
+your Yun over. Put into this slot:</p>
+<img src="/tutorials/pip-yun/yunbottom.jpg" alt="MicroSD card slot"
+style="width:100%;"> <span>&nbsp;&nbsp;&nbsp;&nbsp;Next, make sure
+you have the Arduino IDE. You can</span> <a href=
+"https://www.bing.com/search?q=download+arduino+ide">download the
+arduino IDE here</a> <span>if you don't have it yet.</span>
+<p>Download time! We've got some files here. Here's the download
+links:</p>
+<a href="/tutorials/pip-yun/v1expander.ino" style=
+"padding-top: 10px; padding-bottom: 10px;" download="">Rev 1
+boards</a><br>
+<a href="/tutorials/pip-yun/v2expander.ino" style=
+"padding-top: 10px; padding-bottom: 10px;" download="">Rev 2 boards
+or updated firmware</a><br>
+<span>Once you've downloaded the .ino file, open it in Arduino IDE
+and upload it to your Arduino Yun, after you open the Serial
+Monitor. I'll refer you to the official Arduino guide:</span>
+<a href=
+"https://www.arduino.cc/en/Tutorial/ExpandingYunDiskSpace">(click
+here)</a>
+<p>Scroll down to "Start" under "A look to the procedure". Follow
+all of the instructions in <u>your</u> serial monitor until the
+tutorial says<br>
+"The sketch will continue showing the Yún Linux shell and you will
+see lots of messages telling you the Yún is starting up.",<br>
+because we have a better way.</p>
+<b>this is where the tutorial ends.</b>
+</body>
 </html>

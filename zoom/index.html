@@ -1,8 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>Zoom Improved! (unofficial)</title>
-    <style>
+<head>
+<meta name="generator" content=
+"HTML Tidy for HTML5 for Linux version 5.6.0">
+<title>Zoom Improved! (unofficial)</title>
+
+<style>
       * {
         font-family: sans-serif;
       }
@@ -12,45 +15,80 @@
       img {
         width: 90%;
       }
-    </style>
-  </head>
-  <body>
-    <h1>How to make an (unofficial) Zoom Improved link</h1>
-    <h2>1: The domain</h5>
-    <p>https://ktibow.github.io/</p>
-    <p>This part is the starting part, just like for official zoom links it's <span style="font-family: monospace;">https://zoom.us/</span></p>
-    <h2>2: The path</h5>
-    <p>zoom/12345678901</p>
-    <p>This part is the number of your zoom meeting, just like for official zoom links it's <span style="font-family: monospace;">j/12345678901</span></p>
-    <p>Example: <span style="font-family: monospace;">https://ktibow.github.io/zoom/12345678901</span></p>
-    <h2>3: The addons</h5>
-    <p>Let me explain these. They're complicated but powerful.</p>
-    <h2>4: theme=</h5>
-    <p>Set the theme to any CSS accepted value. You can set it to <span style="font-family: monospace;">red</span>, <span style="font-family: monospace;">orange</span>, <span style="font-family: monospace;">#FF8844</span>, <span style="font-family: monospace;">rgba(256, 128, 64, 0.5)</span>, and more.</p>
-    <p>Example: <span style="font-family: monospace;">https://ktibow.github.io/zoom/12345678901?theme=orange</span></p>
-    <h2>5: dark=1</h5>
-    <p>Turn on "dark mode". This is auto-on if your system has dark mode on and I detect it with <span style="font-family: monospace;">window.matchMedia("(prefers-color-scheme: dark)").matches</span> automatically, but you can just put that in the URL manually to enable dark mode.</p>
-    <p>Example: <span style="font-family: monospace;">https://ktibow.github.io/zoom/12345678901?theme=orange&dark=1</span></p>
-    <h2>6: font=</h5>
-    <p>Use any Google Font, or use the system default <span style="font-family: monospace;">sans-serif</span> or <span style="font-family: monospace;">monospace</span>. Put spaces as <span style="font-family: monospace;">%20</span>.</p>
-    <p>Example: <span style="font-family: monospace;">https://ktibow.github.io/zoom/12345678901?theme=orange&dark=1&font=Chelsea%20Market</span></p>
-    <h2>7: font-size=</h5>
-    <p>Adjust the font size. Again, this is CSS, so you can use <span style="font-family: monospace;">5vmin</span>, <span style="font-family: monospace;">5%</span>, <span style="font-family: monospace;">5px</span>, or <span style="font-family: monospace;">large</span>.</p>
-    <p>Example: <span style="font-family: monospace;">https://ktibow.github.io/zoom/12345678901?theme=orange&dark=1&font=Chelsea%20Market&font-size=large</span></p>
-    <h2>8+9: pwd= and zoompwd=</h5>
-    <p>Add a password. The <span style="font-family: monospace;">pwd</span> will be displayed in plain text to the user (DO NOT TAKE SCREENSHOTS). The <span style="font-family: monospace;">zoompwd</span> will be added to the autojoin, so auto-launch will use the password. <span style="font-family: monospace;">zoompwd</span> is the part in the zoom link that looks weird.</p>
-    <h2>10: Full example</h5>
-    <p><b>Original link</b>: <span style="font-family: monospace;">https://us04web.zoom.us/j/12345678901?pwd=abcd1efgh2ijkl3mnop4qrst5uvwx6wz</span></p>
-    <p><b>Original meeting ID</b>: <span style="font-family: monospace;">123 4567 8901</span></p>
-    <p><b>Original password</b>: <span style="font-family: monospace;">abcdran</span></p>
-    <p><b>New link:</b>  <span style="font-family: monospace;">https://ktibow.github.io/zoom/12345678901?theme=#F84&dark=1&font=Chelsea%20Market&font-size=large&pwd=abcdran&zoompwd=bcd1efgh2ijkl3mnop4qrst5uvwx6wz</span></p>
-    <p><b>You're in!</b></p>
-    <h2>11: Screenshots!</h5>
-    <p>Plain join, no customizations:</p>
-    <img src="/zoom/plainjoin.jpg" />
-    <p>Fully customized join:</p>
-    <img src="/zoom/darkjoin.jpg" />
-    <p>Join dialog (chrome):</p>
-    <img src="/zoom/joindialog.jpg" />
-  </body>
+</style>
+</head>
+<body>
+<h1>How to make an (unofficial) Zoom Improved link</h1>
+<h2>1: The domain</h2>
+<p>https://ktibow.github.io/</p>
+<p>This part is the starting part, just like for official zoom
+links it's <span style=
+"font-family: monospace;">https://zoom.us/</span></p>
+<h2>2: The path</h2>
+<p>zoom/12345678901</p>
+<p>This part is the number of your zoom meeting, just like for
+official zoom links it's <span style=
+"font-family: monospace;">j/12345678901</span></p>
+<p>Example: <span style=
+"font-family: monospace;">https://ktibow.github.io/zoom/12345678901</span></p>
+<h2>3: The addons</h2>
+<p>Let me explain these. They're complicated but powerful.</p>
+<h2>4: theme=</h2>
+<p>Set the theme to any CSS accepted value. You can set it to
+<span style="font-family: monospace;">red</span>, <span style=
+"font-family: monospace;">orange</span>, <span style=
+"font-family: monospace;">#FF8844</span>, <span style=
+"font-family: monospace;">rgba(256, 128, 64, 0.5)</span>, and
+more.</p>
+<p>Example: <span style=
+"font-family: monospace;">https://ktibow.github.io/zoom/12345678901?theme=orange</span></p>
+<h2>5: dark=1</h2>
+<p>Turn on "dark mode". This is auto-on if your system has dark
+mode on and I detect it with <span style=
+"font-family: monospace;">window.matchMedia("(prefers-color-scheme:
+dark)").matches</span> automatically, but you can just put that in
+the URL manually to enable dark mode.</p>
+<p>Example: <span style=
+"font-family: monospace;">https://ktibow.github.io/zoom/12345678901?theme=orange&amp;dark=1</span></p>
+<h2>6: font=</h2>
+<p>Use any Google Font, or use the system default <span style=
+"font-family: monospace;">sans-serif</span> or <span style=
+"font-family: monospace;">monospace</span>. Put spaces as
+<span style="font-family: monospace;">%20</span>.</p>
+<p>Example: <span style=
+"font-family: monospace;">https://ktibow.github.io/zoom/12345678901?theme=orange&amp;dark=1&amp;font=Chelsea%20Market</span></p>
+<h2>7: font-size=</h2>
+<p>Adjust the font size. Again, this is CSS, so you can use
+<span style="font-family: monospace;">5vmin</span>, <span style=
+"font-family: monospace;">5%</span>, <span style=
+"font-family: monospace;">5px</span>, or <span style=
+"font-family: monospace;">large</span>.</p>
+<p>Example: <span style=
+"font-family: monospace;">https://ktibow.github.io/zoom/12345678901?theme=orange&amp;dark=1&amp;font=Chelsea%20Market&amp;font-size=large</span></p>
+<h2>8+9: pwd= and zoompwd=</h2>
+<p>Add a password. The <span style=
+"font-family: monospace;">pwd</span> will be displayed in plain
+text to the user (DO NOT TAKE SCREENSHOTS). The <span style=
+"font-family: monospace;">zoompwd</span> will be added to the
+autojoin, so auto-launch will use the password. <span style=
+"font-family: monospace;">zoompwd</span> is the part in the zoom
+link that looks weird.</p>
+<h2>10: Full example</h2>
+<p><b>Original link</b>: <span style=
+"font-family: monospace;">https://us04web.zoom.us/j/12345678901?pwd=abcd1efgh2ijkl3mnop4qrst5uvwx6wz</span></p>
+<p><b>Original meeting ID</b>: <span style=
+"font-family: monospace;">123 4567 8901</span></p>
+<p><b>Original password</b>: <span style=
+"font-family: monospace;">abcdran</span></p>
+<p><b>New link:</b> <span style=
+"font-family: monospace;">https://ktibow.github.io/zoom/12345678901?theme=#F84&amp;dark=1&amp;font=Chelsea%20Market&amp;font-size=large&amp;pwd=abcdran&amp;zoompwd=bcd1efgh2ijkl3mnop4qrst5uvwx6wz</span></p>
+<p><b>You're in!</b></p>
+<h2>11: Screenshots!</h2>
+<p>Plain join, no customizations:</p>
+<img src="/zoom/plainjoin.jpg">
+<p>Fully customized join:</p>
+<img src="/zoom/darkjoin.jpg">
+<p>Join dialog (chrome):</p>
+<img src="/zoom/joindialog.jpg">
+</body>
 </html>

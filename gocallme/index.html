@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Go Call Me (beta)</title>
-    <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#008000">
-    <script>
+<head>
+<meta name="generator" content=
+"HTML Tidy for HTML5 for Linux version 5.6.0">
+<title>Go Call Me (beta)</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href=
+"https://fonts.googleapis.com/css?family=Open+Sans">
+<meta name="viewport" content=
+"width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#008000">
+<script>
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/gocallme/sw.js').then(function() { console.log("Service Worker Registered"); });
       }
-    </script>
-    <link rel="manifest" href="/gocallme/manifest.json">
-  </head>
-  <body>
-    <h1>Go Call Me</h1>
-    <script type="application/ld+json">
+</script>
+<link rel="manifest" href="/gocallme/manifest.json">
+</head>
+<body>
+<h1>Go Call Me</h1>
+<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
@@ -30,25 +34,24 @@
         "name": "Go Call Me"
       }]
     }
-    </script>
-    <p>&nbsp;&nbsp;&nbsp;&nbsp;Are you tired of typing in phone numbers? Go Call Me makes it a lot easier to call someone!</p>
-    <p>&nbsp;&nbsp;&nbsp;&nbsp;Enter the phone number to make a QR code to call that number!</p>
-    <input type="tel" id="telfield"/><br/>
-    <button onclick="make();">Make it!</button>
-    <div>
-      <p id="callhint" class="printonly keep"></p>
-    </div>
-    <img src="" id="qr" class="keep"/>
-    <a href="" id="qrlink" target="_blank"><b>Open QR code in new tab</b></a>
-    <a href="#" onClick="window.print();" id="printqr"><b>Print the QR code</b></a>
-    <div>
-      <br/>
-      <span id="linkhint" class="keep"></span><br/>
-      <span id="calllink" class="keep"></span><br/>
-      <span id="ycalllink" class="keep"></span>
-    </div>
-  </body>
-  <script>
+</script>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Are you tired of typing in phone
+numbers? Go Call Me makes it a lot easier to call someone!</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Enter the phone number to make a QR code
+to call that number!</p>
+<input type="tel" id="telfield"><br>
+<button onclick="make();">Make it!</button>
+<div>
+<p id="callhint" class="printonly keep"></p>
+</div>
+<img src="" id="qr" class="keep"> <a href="" id="qrlink" target=
+"_blank"><b>Open QR code in new tab</b></a> <a href="#" onclick=
+"window.print();" id="printqr"><b>Print the QR code</b></a>
+<div><br>
+<span id="linkhint" class="keep"></span><br>
+<span id="calllink" class="keep"></span><br>
+<span id="ycalllink" class="keep"></span></div>
+<script>
     document.getElementById("qrlink").style.display = "none";
     document.getElementById("printqr").style.display = "none";
     function make() {
@@ -59,13 +62,14 @@
         document.getElementById("qrlink").style.display = "block";
         document.getElementById("printqr").style.display = "block";
         document.getElementById("linkhint").innerHTML = "Or use one of these URLs:";
-        document.getElementById("callhint").innerHTML = "Scan this QR code to call <b>"+document.getElementById("telfield").value+"</b>.";
-        document.getElementById("calllink").innerHTML = "<b>https://ktibow.github.io/gocallme/"+document.getElementById("telfield").value+"</b>";
-        document.getElementById("ycalllink").innerHTML = "<b>https://ktibow.github.io/y/"+document.getElementById("telfield").value+"</b>";
+        document.getElementById("callhint").innerHTML = "Scan this QR code to call <b>"+document.getElementById("telfield").value+"<\/b>.";
+        document.getElementById("calllink").innerHTML = "<b>https://ktibow.github.io/gocallme/"+document.getElementById("telfield").value+"<\/b>";
+        document.getElementById("ycalllink").innerHTML = "<b>https://ktibow.github.io/y/"+document.getElementById("telfield").value+"<\/b>";
         setTimeout(function(){window.scrollTo(0, Math.pow(10, 10));}, 0);
       } else {
         alert("Invalid phone number. Use the format xxx-xxx-xxxx.");
       }
     }
-  </script>
+</script>
+</body>
 </html>

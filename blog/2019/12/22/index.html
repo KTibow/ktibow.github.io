@@ -1,26 +1,37 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>December 22, 2019 blog post</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <style>
+<head>
+<meta name="generator" content=
+"HTML Tidy for HTML5 for Linux version 5.6.0">
+<title>December 22, 2019 blog post</title>
+<meta name="viewport" content=
+"width=device-width, initial-scale=1">
+<style>
             body {
                     background: lavender;
             }
-        </style>
-    </head>
-    <body>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;Well, it is officially winter! I got a Pi 4 recently, and I want to share with you some little tricks for setup **edit:** with your existing Raspberry Pi, because you need the latest version of Raspbian in order to use your SD card with your Pi 4.</p>
-        <h2>Part 1</h2>
-        <h3>Getting your SD ready</h3>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;With this script, it's easier than ever to setup a MicroSD card with another Raspberry Pi. Make sure you have these, though:</p>
-        <ul>
-        <li><b>32GB or greater</b> MicroSD card</li>
-        <li>USB MicroSD card reader</li>
-        <li>parted installed on the original MicroSD card</li>
-        </ul>
-        <p>Make sure you adapt as needed, and drag to see more. Here it is:</p>
-        <textarea rows="8" columns="90">
-#make sure you choose the one without the number. the one with the number is a partition.
+</style>
+</head>
+<body>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Well, it is officially winter! I got a
+Pi 4 recently, and I want to share with you some little tricks for
+setup **edit:** with your existing Raspberry Pi, because you need
+the latest version of Raspbian in order to use your SD card with
+your Pi 4.</p>
+<h2>Part 1</h2>
+<h3>Getting your SD ready</h3>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;With this script, it's easier than ever
+to setup a MicroSD card with another Raspberry Pi. Make sure you
+have these, though:</p>
+<ul>
+<li><b>32GB or greater</b> MicroSD card</li>
+<li>USB MicroSD card reader</li>
+<li>parted installed on the original MicroSD card</li>
+</ul>
+<p>Make sure you adapt as needed, and drag to see more. Here it
+is:</p>
+<textarea rows="8" columns=
+"90">#make sure you choose the one without the number. the one with the number is a partition.
 #erases card
 sudo dd if=/dev/zero of=/dev/[path to your card] bs=4096 status=progress
 #creates partition
@@ -28,27 +39,28 @@ sudo parted /dev/[path to your card] --script -- mklabel msdos
 sudo parted /dev/[path to your card] --script -- mkpart primary fat32 1MiB 100%
 #this time we're targeting a partition, so we use "1"
 sudo mkfs.vfat -F32 /dev/[path to your card]1</textarea>
-        <script>
+ 
+<script>
+
             function create() {
                 var path = document.getElementById("path").value;
-				var bls = document.getElementById("speed").value;
+                                var bls = document.getElementById("speed").value;
                 document.getElementById("oneliner").innerHTML = "sudo dd if=/dev/zero of="+path+" bs="+bls+" status=progress; sudo parted "+path+" --script -- mklabel msdos; sudo parted "+path+" --script -- mkpart primary fat32 1MiB 100%; sudo mkfs.vfat -F32 "+path+"1";
             };
-        </script>
-        <p>Also available as a one-liner:</p>
-        <form>
-            Path to SD Card:<br>
-            <input type="text" name="path" id="path" value="/dev/sda"><br>
-			Erase at a time:<br>
-			<select id="speed">
-			<option value="25KB">USB 1.0, 25KB at a time</option>
-			<option value="200KB">USB 1.1, 200KB at a time</option>
-			<option value="35MB">USB 2.0, 35MB at a time</option>
-			<option value="70MB">USB 3.0, 70MB at a time</option>
-			</select>
-        </form>
-        <button onclick="create()">Make oneliner</button>
-        <p id="oneliner"></p>
-		<p>I couldn't finish this in a day, though, so I'm moving this to the tutorial section.</p>
-  </body>
+</script>
+<p>Also available as a one-liner:</p>
+<form>Path to SD Card:<br>
+<input type="text" name="path" id="path" value="/dev/sda"><br>
+Erase at a time:<br>
+<select id="speed">
+<option value="25KB">USB 1.0, 25KB at a time</option>
+<option value="200KB">USB 1.1, 200KB at a time</option>
+<option value="35MB">USB 2.0, 35MB at a time</option>
+<option value="70MB">USB 3.0, 70MB at a time</option>
+</select></form>
+<button onclick="create()">Make oneliner</button>
+<p id="oneliner"></p>
+<p>I couldn't finish this in a day, though, so I'm moving this to
+the tutorial section.</p>
+</body>
 </html>
