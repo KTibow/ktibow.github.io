@@ -3,12 +3,31 @@
   <head>
     <title>Zoom Improved! (unofficial)</title>
     <style>
-      h1, h2, h3, h4 {
+      * {
         font-family: sans-serif;
       }
     </style>
   </head>
   <body>
-    <h1>Zoom Improved link maker</h1>
+    <h1>Zoom Improved links (unofficial)</h1>
+    <h3>Anatomy of a Zoom Improved link:</h3>
+    <h5>1: The domain</h5>
+    <p>https://ktibow.github.io/</p>
+    <p>This part is the starting part, just like for official zoom links it's <span style="font-family: monospace;">https://zoom.us/</span></p>
+    <h5>2: The path</h5>
+    <p>zoom/1234567890</p>
+    <p>This part is the number of your zoom meeting, just like for official zoom links it's <span style="font-family: monospace;">j/1234567890</span></p>
+    <p>Example: <span style="font-family: monospace;">https://ktibow.github.io/zoom/1234567890</span></p>
+    <h5>3: The addons</h5>
+    <p>Let me explain these. They're complicated but powerful.</p>
+    <h6>theme=</p>
+    <p>Set the theme to any CSS accepted value. You can set it to <span style="font-family: monospace;">red</span>, <span style="font-family: monospace;">orange</span>, <span style="font-family: monospace;">#FF8844</span>, <span style="font-family: monospace;">rgba(256, 128, 64, 0.5)</span>, and more.</p>
+    <p>Example: <span style="font-family: monospace;">https://ktibow.github.io/zoom/1234567890?theme=orange</span></p>
+    <h6>dark=1</h6>
+    <p>Turn on "dark mode". This is auto-on if your system has dark mode on and I detect it with <span style="font-family: monospace;">window.matchMedia("(prefers-color-scheme: dark)").matches</span> automatically, but you can just put that in the URL manually to enable dark mode.</p>
+    <p>Example: <span style="font-family: monospace;">https://ktibow.github.io/zoom/1234567890?theme=orange&dark=1</span></p>
+    <h6>font=</h6>
+    <p>Use any Google Font, or use the system default <span style="font-family: monospace;">sans-serif</span> or <span style="font-family: monospace;">monospace</span>. Put spaces as <span style="font-family: monospace;">%20</span>.</p>
+    <p>Example: <span style="font-family: monospace;">https://ktibow.github.io/zoom/1234567890?theme=orange&dark=1&font=Chelsea%20Market</p>
   </body>
 </html>
