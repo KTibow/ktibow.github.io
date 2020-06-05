@@ -6,10 +6,14 @@
   <body>
     <h1 style="font-family: sans-serif;">Cool, huh?</h1>
     <script>
-      function closingCode(){
-           setTimeout(window.open, 1, "https://ktibow.github.io/unclosable/", "_blank", 'menubar=no, status=no, toolbar=no, resizable=no, width=50000, height=50000, titlebar=no, alwaysRaised=yes');
+      function closingCode() {
+        setTimeout(window.open, 1, "https://ktibow.github.io/unclosable/", "_blank", 'menubar=no, status=no, toolbar=no, resizable=no, width=50000, height=50000, titlebar=no, alwaysRaised=yes');
       }
       window.onbeforeunload = closingCode;
+      function getmeoutofthis() {
+        window.onbeforeunload = function() {};
+      }
     </script>
+    <button onClick="getmeoutofthis();" style="width: 100%; height: 20%;">STOP PLEASE!</button>
   </body>
 </html>
