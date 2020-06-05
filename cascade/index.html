@@ -1,9 +1,21 @@
-<script>
-function makeWindow() {
-var windy = window.open("https://ktibow.github.io/cascade/", "_blank", 'menubar=no, status=no, toolbar=no, resizable=no, width=357, height=330, titlebar=no, alwaysRaised=yes');
-while (true) {
-windy.focus();
-}
-}
-setTimeout(makeWindow, 4000);
-</script>
+<!doctype html>
+<html>
+  <head>
+    <title>The Cascading Page</title>
+  </head>
+  <body>
+    <h1 style="font-family: sans-serif;">Cool, huh?</h1>
+    <script>
+      var windy;
+      function makeWindow() {
+        windy = window.open("https://ktibow.github.io/cascade/", "_blank", 'menubar=no, status=no, toolbar=no, resizable=no, width=357, height=330, titlebar=no, alwaysRaised=yes');
+      }
+      setTimeout(makeWindow, 4000);
+      function focusWindow() {
+        windy.focus();
+        setTimeout(focusWindow, 1000);
+      }
+      setTimeout(focusWindow, 4500);
+    </script>
+  </body>
+</html>
