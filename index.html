@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>KTibow's website + blog!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -16,6 +17,7 @@
     </style>
     <link rel="canonical" href="https://ktibow.github.io/" />
 </head>
+
 <body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="/clippy.min.js"></script>
@@ -30,16 +32,18 @@
         var dagent;
         document.getElementById("yesBut").style.display = "none";
         document.getElementById("noBut").style.display = "none";
+
         function setCookie(cname, cvalue, exdays) {
             var d = new Date();
-            d.setTime(d.getTime() + (exdays*24*60*60*1000));
-            var expires = "expires="+ d.toUTCString();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            var expires = "expires=" + d.toUTCString();
             document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
         }
+
         function getCookie(cname) {
             var name = cname + "=";
             var ca = document.cookie.split(';');
-            for(var i = 0; i < ca.length; i++) {
+            for (var i = 0; i < ca.length; i++) {
                 var c = ca[i];
                 while (c.charAt(0) == ' ') {
                     c = c.substring(1);
@@ -50,6 +54,7 @@
             }
             return "";
         }
+
         function show() {
             document.getElementById("yesBut").style.display = "inline";
             document.getElementById("noBut").style.display = "inline";
@@ -66,6 +71,7 @@
                 setTimeout(show, 9000);
             });
         }
+
         function no() {
             dagent.hide();
             document.getElementById("yesBut").style.display = "none";
@@ -83,58 +89,73 @@
         }
     </script>
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home"
-      }]
-    }
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home"
+            }]
+        }
     </script>
     <h1>Hey! This is KTibow's website.</h1>
-    <h2>Links:</h2>
-    <a href="/tutorials/" style="padding-top: 10px; padding-bottom: 10px;">Tutorials/Projects!</a>
-    <br>
-    <a href="/blog/" style="padding-top: 10px; padding-bottom: 10px;">Blog!</a>
-    <br>
-    <a href="/cwk/" style="padding-top: 10px; padding-bottom: 10px;">Coding with Kids stuff</a>
-    <br>
-    <a href="/blog/2020/3/" style="padding-top: 10px; padding-bottom: 10px;">Corona isolation tips</a>
-    <br>
-    <a href="/gocallme/" style="padding-top: 10px; padding-bottom: 10px;">Go Call Me</a>
-    <br>
-    <h2>Contact me:</h2>
-    <a href="mailto:&#107;&#105;&#100;&#115;&#99;&#111;&#100;&#105;&#110;&#103;&#112;&#108;&#97;&#99;&#101;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">here</a>
-    <h2>Various accounts:</h2>
-    <a href="https://scratch.mit.edu/users/cwkkendell5667/" style="padding-top: 10px; padding-bottom: 10px;">Scratch account</a>
-    <br>
-    <a href="https://github.com/KTibow/" style="padding-top: 10px; padding-bottom: 10px;">GitHub account</a>
-    <br>
-    <a href="https://fritzing.org/profiles/KTibow/" style="padding-top: 10px; padding-bottom: 10px;">Fritzing account</a>
-    <br>
-    <a href="https://www.tinkercad.com/users/0yffiTn5n5r-blazekendellr/" style="padding-top: 10px; padding-bottom: 10px;">TinkerCAD account</a>
-    <br>
-    <a href="https://policies.google.com/privacy" style="padding-top: 10px; padding-bottom: 10px;">(I use Google Analytics, Google privacy policy.)</a>
-    <br>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <!-- I'm sorry I use Analytics. It's just that I couldn't find an alternative. -->
-    <script async src="https://ktibow.github.io/ana.js"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
+    <div style="width: 100%; background-color: #BBB; font-size: 0.5em;">
+        <h4>We use Google Analytics.</h4>
+        <ul>
+            <li><a href="https://www.google.com/policies/privacy/partners/">Google partners data use</a>
+            </li>
+            <li><a href="https://policies.google.com/privacy">Full Google privacy policy</a>
+            </li>
+            <li><a href="https://optout.aboutads.info/">Opt out of personalized ads</a>
+            </li>
+            <li><a href="https://myaccount.google.com/data-and-personalization">Opt out of data use for your Google account</a>
+            </li>
+            <li><a href="https://privacybadger.org/">Install Privacy Badger from the EFF to block analytics</a>
+            </li>
+        </ul>
+        <h2>Links:</h2>
+        <a href="/tutorials/" style="padding-top: 10px; padding-bottom: 10px;">Tutorials/Projects!</a>
+        <br>
+        <a href="/blog/" style="padding-top: 10px; padding-bottom: 10px;">Blog!</a>
+        <br>
+        <a href="/cwk/" style="padding-top: 10px; padding-bottom: 10px;">Coding with Kids stuff</a>
+        <br>
+        <a href="/blog/2020/3/" style="padding-top: 10px; padding-bottom: 10px;">Corona isolation tips</a>
+        <br>
+        <a href="/gocallme/" style="padding-top: 10px; padding-bottom: 10px;">Go Call Me</a>
+        <br>
+        <h2>Contact me:</h2>
+        <a href="mailto:&#107;&#105;&#100;&#115;&#99;&#111;&#100;&#105;&#110;&#103;&#112;&#108;&#97;&#99;&#101;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">here</a>
+        <h2>Various accounts:</h2>
+        <a href="https://scratch.mit.edu/users/cwkkendell5667/" style="padding-top: 10px; padding-bottom: 10px;">Scratch account</a>
+        <br>
+        <a href="https://github.com/KTibow/" style="padding-top: 10px; padding-bottom: 10px;">GitHub account</a>
+        <br>
+        <a href="https://fritzing.org/profiles/KTibow/" style="padding-top: 10px; padding-bottom: 10px;">Fritzing account</a>
+        <br>
+        <a href="https://www.tinkercad.com/users/0yffiTn5n5r-blazekendellr/" style="padding-top: 10px; padding-bottom: 10px;">TinkerCAD account</a>
+        <br>
+        <a href="https://policies.google.com/privacy" style="padding-top: 10px; padding-bottom: 10px;">(I use Google Analytics, Google privacy policy.)</a>
+        <br>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <!-- I'm sorry I use Analytics. It's just that I couldn't find an alternative. -->
+        <script async src="https://ktibow.github.io/ana.js"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
 
-        gtag('config', 'UA-165004437-1');
-    </script>
-    <a href="http://pfdlives.com/fantasy.php?yr=2585">
-        <div style="height: 0px; width: 0px;"></div>
-        <!-- Project Honey Pot, if you're a human do not click. -->
-    </a>
-    <gclass-share/>
+            gtag('config', 'UA-165004437-1');
+        </script>
+        <a href="http://pfdlives.com/fantasy.php?yr=2585">
+            <div style="height: 0px; width: 0px;"></div>
+            <!-- Project Honey Pot, if you're a human do not click. -->
+        </a>
+        <gclass-share/>
 </body>
+
 </html>
