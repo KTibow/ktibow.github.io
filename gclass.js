@@ -16,7 +16,7 @@ class ClassroomShare extends HTMLElement {
 		}
 		this.innerHTML = `<a href="${mySharePage}" style="text-decoration: none; display: inline-block; margin: 17px 5px 10px 24px; position: relative;">
 <img src="https://ktibow.github.io/classroom-logo.png" style="position: absolute; border-radius: 50%; height: 32px; top: -6px; left: -18px;">
-<span style="padding: 3px 6px 3px 22px; background-color: green; border-radius: 3px; color: white; font-family: Open Sans;">Google Classroom share (if you think this has educational value)</span>
+<span style="padding: 3px 6px 3px 22px; background-color: green; border-radius: 3px; color: white; font-family: Open Sans;">Google Classroom share</span>
 </a>`;
 		this.onmouseenter = function() {
 			this.style.filter = "brightness(90%)";
