@@ -1,4 +1,4 @@
-
+if(navigator.doNotTrack != 1) {
 // Copyright 2012 Google Inc. All rights reserved.
 (function(){
 var data = {
@@ -225,3 +225,4 @@ function hn(){Sf.gtm_3pds=!0;Qc=D.google_tag_manager=D.google_tag_manager||{};if
 }}
 (function(a){a()})(hn);
 })()
+}
