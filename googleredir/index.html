@@ -1,5 +1,6 @@
 <html>
 <head>
+<script src="/common.js"></script>
 <title>This link goes to Google, right?</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -7,17 +8,5 @@
 <h4>Long-click this link on mobile to verify it goes to Google, or hover over it on desktop.</h4>
 <a href="https://www.google.com/" onClick="this.href='https://www.bing.com/'" oncontextmenu="window.location.href='https://www.bing.com/'" onmouseover="this.href='https://www.google.com/'">Link to Google</a>
 <p style="font-size: 0.63em">Disclaimer: This link leads to Bing. I just like Bing more than Google. I am not sponsored by them.</p>
-    <!-- I'm sorry I use Analytics. It's just that I couldn't find an alternative. -->
-    <script async src="https://ktibow.github.io/ana.js"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-165004437-1');
-    </script>
-  </body>
+</body>
 </html>
