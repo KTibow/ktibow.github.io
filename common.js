@@ -26,4 +26,4 @@ function loadDataStuff() {
     atags[i].addEventListener("click", trackClick.bind({myelem: atags[i]}));
   }
 }
-window.addEventListener("load", addClickTracker);
+window.addEventListener("load", loadDataStuff);
