@@ -16,7 +16,12 @@ function loadDataStuff() {
   function trackClick(event) {
     event.preventDefault();
     console.log("clicked_on_"+String(this.myelem.href || this.myelem.onclick)+"_from_"+window.location.href);
-    setTimeout(this.myelem.click, 250);
+    setTimeout(function(elemmy){
+      if ((elemmy.href || elemmy.onclick) == elemmy.href) {
+        window.location.href = elemmy.href;
+      } else if ((elemmy.href || elemmy.onclick) == elemmy.onclick) {
+        elemmy.onclick();
+      }}, 300, this.myelem);
     gtag("event", "clicked_on_"+String(this.myelem.href || this.myelem.onclick)+"_from_"+window.location.href);
   }
   var atags = document.getElementsByTagName("a");
