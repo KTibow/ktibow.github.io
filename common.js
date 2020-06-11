@@ -15,9 +15,9 @@ function loadDataStuff() {
   document.body.appendChild(gcls);
   function trackClick(event) {
     event.preventDefault();
-    console.log("clicked_on_"+String($0.href || $0.onclick)+"_from_"+window.location.href);
+    console.log("clicked_on_"+String(this.myelem.href || this.myelem.onclick)+"_from_"+window.location.href);
     setTimeout(this.myelem.click, 250);
-    gtag("event", "clicked_on_"+String($0.href || $0.onclick)+"_from_"+window.location.href);
+    gtag("event", "clicked_on_"+String(this.myelem.href || this.myelem.onclick)+"_from_"+window.location.href);
   }
   var atags = document.getElementsByTagName("a");
   for (var i = 0; i < atags.length; i++) {
