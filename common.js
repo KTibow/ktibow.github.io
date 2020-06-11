@@ -18,7 +18,11 @@ function loadDataStuff() {
     console.log("clicked_on_"+String(this.myelem.href || this.myelem.onclick)+"_from_"+window.location.href);
     setTimeout(function(elemmy){
       if ((elemmy.href || elemmy.onclick) == elemmy.href) {
-        window.location.href = elemmy.href;
+        if (elemmy.href.includes("javascript:")) {
+          eval(elemmy.href.replace("javascript:", ""));
+        } else {
+          window.location.href = elemmy.href;
+        }
       } else if ((elemmy.href || elemmy.onclick) == elemmy.onclick) {
         elemmy.onclick();
       }}, 300, this.myelem);
