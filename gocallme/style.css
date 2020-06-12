@@ -34,7 +34,7 @@ img {
   }
 }
 @media print {
-  h1, p, input, button, a {
+  h1, p, input, button, a, .loadingqr {
     display: none !important;
   }
   .keep {
@@ -42,4 +42,15 @@ img {
     text-align: center !important;
     color: #000000 !important;
   }
+}
+@keyframes infiniterotate {  
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loadingqr {
+  animation: infiniterotate 0.5s ease infinite;
 }
