@@ -17,7 +17,7 @@ class ClassroomShare extends HTMLElement {
 		for (attr in myAttributes) {
 			mySharePage += "%26"+encodeURIComponent(myAttributes[attr].name)+"%3D"+encodeURIComponent(myAttributes[attr].value)
 		}
-		this.innerHTML = `<a href="${mySharePage}" style="text-decoration: none; display: inline-block; margin: 22px 10px 15px 29px; position: relative;">
+		this.innerHTML = `<a href="${mySharePage}" style="text-decoration: none; display: inline-block; margin: 35px 10px 20px 32px; position: relative;">
 <img src="https://ktibow.github.io/classroom-logo.png" style="position: absolute; border-radius: 50%; height: 34px; top: -7px; left: -20px;" alt="Share to Google Classroom">
 <span style="padding: 5px 8px 5px 24px; background-color: green; border-radius: 6px; color: white; font-family: Open Sans;">Google Classroom share</span>
 </a>`;
