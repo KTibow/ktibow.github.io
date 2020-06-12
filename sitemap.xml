@@ -3,9 +3,6 @@
 <loc>https://ktibow.github.io/</loc>
 <priority>0.100</priority>
 </url><url>
-<loc>https://ktibow.github.io/clippy/</loc>
-<priority>0.50</priority>
-</url><url>
 <loc>https://ktibow.github.io/clippy/Clippy/</loc>
 <priority>0.50</priority>
 </url><url>
@@ -46,6 +43,12 @@
 <priority>0.25</priority>
 </url><url>
 <loc>https://ktibow.github.io/blog/2020/1/18/</loc>
+<priority>0.50</priority>
+</url><url>
+<loc>https://ktibow.github.io/blog/2020/6/</loc>
+<priority>0.25</priority>
+</url><url>
+<loc>https://ktibow.github.io/blog/2020/6/12/</loc>
 <priority>0.50</priority>
 </url><url>
 <loc>https://ktibow.github.io/blog/2020/5/</loc>
@@ -118,11 +121,5 @@
 <priority>0.50</priority>
 </url><url>
 <loc>https://ktibow.github.io/blog/2019/12/1/</loc>
-<priority>0.50</priority>
-</url><url>
-<loc>https://ktibow.github.io/analyze/</loc>
-<priority>0.50</priority>
-</url><url>
-<loc>https://ktibow.github.io/unclosable/</loc>
 <priority>0.50</priority>
 </url></urlset>
