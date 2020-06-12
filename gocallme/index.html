@@ -61,6 +61,7 @@
         document.getElementById("qr").onload = function() {
           document.getElementById("loadingqr").style.display = "none";
         };
+        document.getElementById("qr").src = "";
         document.getElementById("qr").src = imgurl;
         document.getElementById("qrlink").href = imgurl;
         document.getElementById("qrlink").style.display = "block";
@@ -69,7 +70,7 @@
         document.getElementById("callhint").innerHTML = "Scan this QR code to call <b>"+document.getElementById("telfield").value+"</b>.";
         document.getElementById("calllink").innerHTML = "<b>https://ktibow.github.io/gocallme/"+document.getElementById("telfield").value+"</b>";
         document.getElementById("ycalllink").innerHTML = "<b>https://ktibow.github.io/y/"+document.getElementById("telfield").value+"</b>";
-        setTimeout(function(){window.scrollTo(0, Math.pow(10, 10));}, 0);
+        setTimeout(function(){window.scrollTo(0, Math.pow(10, 10));}, 1);
       } else {
         alert("Invalid phone number. Use the format xxx-xxx-xxxx.");
       }
