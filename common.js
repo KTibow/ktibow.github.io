@@ -20,6 +20,12 @@ function loadDataStuff() {
     newFont.href = 'https://fonts.googleapis.com/css?family=Open+Sans&display=swap';
     document.getElementsByTagName('head')[0].appendChild(newFont);
   }
+  if (window.location.href.includes("blog")) {
+    var sansall = document.createElement('link');
+    sansall.rel = 'stylesheet';
+    sansall.href = "/sans.css";
+    document.getElementsByTagName('head')[0].appendChild(sansall);
+  }
   var anny = document.createElement("script");
   anny.async = true;
   anny.src = "https://ktibow.github.io/analyze/ana.js";
