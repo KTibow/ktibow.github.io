@@ -1,8 +1,14 @@
 User-agent: *
 Disallow: /cardterms/
-Disallow: /libraryapk/
-Disallow: /dirtyhostlibrary/
-Disallow: /lighthouse/
+Disallow: /clippy/
 Disallow: /googleredir/
+Disallow: /unclosable/
 Disallow: /tour/
+Disallow: /analyze/
+User-Agent: Bingbot
+Disallow: /cardterms/
+Disallow: /clippy/
+Disallow: /analyze/
+Disallow: /tour/
+Disallow: /unclosable/
 Sitemap: https://ktibow.github.io/sitemap.xml
