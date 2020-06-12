@@ -25,8 +25,8 @@ function getCookie(cname) {
 }
 
 function show() {
-    document.getElementById("yesBut").style.display = "inline";
-    document.getElementById("noBut").style.display = "inline";
+    document.getElementById("yesBut").style.setProperty("style", "inline", "important");
+    document.getElementById("noBut").style.setProperty("style", "inline", "important");
     dagent.moveTo(200, -10);
     dagent.gestureAt(0, 0);
 }
