@@ -1,8 +1,9 @@
-
-var newFont = document.createElement('link');
-newFont.rel = 'stylesheet';
-newFont.href = 'https://fonts.googleapis.com/css?family=Open+Sans&display=swap';
-document.getElementsByTagName('head')[0].appendChild(newFont);
+if (!document.fonts.check("Open Sans")) {
+	var newFont = document.createElement('link');
+	newFont.rel = 'stylesheet';
+	newFont.href = 'https://fonts.googleapis.com/css?family=Open+Sans&display=swap';
+	document.getElementsByTagName('head')[0].appendChild(newFont);
+}
 class ClassroomShare extends HTMLElement {
 	constructor() {
 		super();
