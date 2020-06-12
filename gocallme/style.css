@@ -27,10 +27,16 @@ img {
   img {
     width: 33%;
   }
+  .loadingqr {
+    width: 16.5%;
+  }
 }
 @media only screen and (orientation: portrait) {
   img {
     width: 75%;
+  }
+  .loadingqr {
+    width: 37.5%;
   }
 }
 @media print {
