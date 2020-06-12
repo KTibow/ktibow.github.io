@@ -11,6 +11,19 @@
       body {
         background: lavender;
       }
+      .padlink {
+        padding: 5px 6px;
+        margin: 3px;
+        display: block;
+        font-size: 1.04em;
+      }
+      @media all and (orientation: portrait) {
+        .padlink {
+          border-radius: 3px;
+          background-color: #D6D6EA;
+          margin: 15px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -25,10 +38,10 @@
       }]
     }
     </script>
-    <a href="/">Go home</a>
+    <a href="/" class="padlink">Go home</a>
     <h1>KTibow's Blog! (2019-2020)</h1>
-    <a href="/blog/2019" style="padding-top: 10px; padding-bottom: 10px;">2019</a><br>
-    <a href="/blog/2020" style="padding-top: 10px; padding-bottom: 10px;">2020</a><br><br>
-    <gclass-share />
+    <a href="/blog/2019" class="padlink">2019</a>
+    <a href="/blog/2020" class="padlink">2020</a>
+    <gclass-share></gclass-share>
   </body>
 </html>
