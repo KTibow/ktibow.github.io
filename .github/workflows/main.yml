@@ -33,7 +33,7 @@ jobs:
         git config --local user.email "KTibow@users.noreply.github.com"
         git config --local user.name "KTibow"
         git add -A
-        git commit -m "Add new sitemap + tidy HTML" -a || true
+        git commit -m "Add new sitemap" -a || true
         git pull
     - name: Push changes
       uses: ad-m/github-push-action@master
