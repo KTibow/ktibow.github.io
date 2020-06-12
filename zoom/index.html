@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <script src="/common.js"></script>
+    <script defer src="/common.js"></script>
     <title>Zoom Improved! (unofficial)</title>
     <style>
       * {
@@ -16,6 +16,14 @@
     </style>
   </head>
   <body>
+    <h1 id="fromzimp">How'd I get here? From a Zoom Improved link. Make one now.</h1>
+    <script>
+      if (window.location.href.includes("from=zimp")) {
+        document.getElementById("fromzimp").style.display = "";
+      } else {
+        document.getElementById("fromzimp").style.display = "none";
+      }
+    </script>
     <h1>How to make an (unofficial) Zoom Improved link</h1>
     <h2>1: The domain</h5>
     <p>https://ktibow.github.io/</p>
