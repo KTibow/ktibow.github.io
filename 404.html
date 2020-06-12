@@ -234,7 +234,7 @@
             document.getElementById("gocallme").appendChild(telLink);
             telLink.click();
         }
-        if (window.location.pathname.includes("gocallme") || window.location.pathname.includes("y")) {
+        if (window.location.pathname.includes("gocallme") || window.location.pathname.charAt(1) == "y") {
             document.title = "Go Call Me";
             document.getElementById("404").style.display = "none";
             document.getElementById("gocallme").style.display = "block";
@@ -308,8 +308,8 @@
             setup();
 
             function startTimer() {
-                // wait 60 seconds before calling goInactive
-                timeoutID = window.setTimeout(goInactive, 60000);
+                // wait 100 seconds before calling goInactive
+                timeoutID = window.setTimeout(goInactive, 100000);
             }
 
             function resetTimer(e) {
@@ -319,8 +319,8 @@
             }
 
             function goInactive() {
-                window.close()
-
+                window.close();
+                window.location.href = "https://ktibow.github.io/zoom/?from=zimp";
             }
 
             function goActive() {
