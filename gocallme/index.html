@@ -56,6 +56,7 @@
     document.getElementById("qrlink").style.display = "none";
     document.getElementById("printqr").style.display = "none";
     document.getElementById("loadingqr").style.display = "none";
+    document.getElementById("qr").style.display = "none";
     function make() {
       if (/^1?[0-9]{3}-?[0-9]{3}-?[0-9]{4}$/.test(document.getElementById("telfield").value)) {
         var imgurl = "https://qrcode.tec-it.com/API/QRCode?data="+encodeURIComponent("https://ktibow.github.io/z/"+document.getElementById("telfield").value)+"&quietzone=10&color="+encodeURIComponent("#2266DD");
@@ -66,6 +67,7 @@
         document.getElementById("qr").src = "";
         document.getElementById("qr").src = imgurl;
         document.getElementById("qr").alt = "Scan this QR code to call "+document.getElementById("telfield").value+".";
+        document.getElementById("qr").style.display = "";
         document.getElementById("qrlink").href = imgurl;
         document.getElementById("qrlink").style.display = "block";
         document.getElementById("printqr").style.display = "block";
