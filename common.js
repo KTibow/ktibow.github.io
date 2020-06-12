@@ -6,7 +6,15 @@ function gtag() {
 gtag('js', new Date());
 gtag('config', 'UA-165' + '004437-1', { 'anonymize_ip': true });
 function loadDataStuff() {
-  if (!isFontAvailable("Open Sans")) {
+  try {
+    if (!isFontAvailable("Open Sans")) {
+      var newFont = document.createElement('link');
+      newFont.rel = 'stylesheet';
+      newFont.href = 'https://fonts.googleapis.com/css?family=Open+Sans&display=swap';
+      document.getElementsByTagName('head')[0].appendChild(newFont);
+    }
+  }
+  catch {
     var newFont = document.createElement('link');
     newFont.rel = 'stylesheet';
     newFont.href = 'https://fonts.googleapis.com/css?family=Open+Sans&display=swap';
