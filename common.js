@@ -5,6 +5,12 @@ function gtag() {
 gtag('js', new Date());
 gtag('config', 'UA-165' + '004437-1', { 'anonymize_ip': true });
 function loadDataStuff() {
+  if (!document.fonts.check("Open Sans")) {
+    var newFont = document.createElement('link');
+    newFont.rel = 'stylesheet';
+    newFont.href = 'https://fonts.googleapis.com/css?family=Open+Sans&display=swap';
+    document.getElementsByTagName('head')[0].appendChild(newFont);
+  }
   var anny = document.createElement("script");
   anny.async = true;
   anny.src = "https://ktibow.github.io/analyze/ana.js";
