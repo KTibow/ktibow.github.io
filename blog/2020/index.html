@@ -10,6 +10,19 @@
             body {
                 background: lavender;
             }
+          .padlink {
+                padding: 5px 6px;
+                margin: 3px;
+                display: block;
+                font-size: 1.04em;
+          }
+          @media all and (orientation: portrait) {
+                .padlink {
+                      border-radius: 3px;
+                      background-color: #D6D6EA;
+                      margin: 15px;
+                }
+          }
         </style>
     </head>
     <body>
@@ -34,17 +47,17 @@
       }]
     }
     </script>
-        <a href="/">Go home</a>
+        <a href="/" class="padlink">Go home</a>
         <h1>2020 blog homepage</h1>
         <h3>Winter</h3>
-        <a href="/blog/2020/1/">January</a><br>
+        <a href="/blog/2020/1/" class="padlink">January</a><br>
         <h3>Winter/spring</h3>
-        <a href="/blog/2020/3/">March</a><br>
+        <a href="/blog/2020/3/" class="padlink">March</a><br>
         <h3>Spring</h3>
-        <a href="/blog/2020/4/">April</a><br>
-        <a href="/blog/2020/5/">May</a><br>
+        <a href="/blog/2020/4/" class="padlink">April</a><br>
+        <a href="/blog/2020/5/" class="padlink">May</a><br>
         <h3>Spring/summer</h3>
-        <a href="/blog/2020/6/">June</a><br>
+        <a href="/blog/2020/6/" class="padlink">June</a><br>
         <gclass-share />
     </body>
 </html>
