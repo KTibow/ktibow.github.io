@@ -61,7 +61,7 @@
     document.getElementById("qr").style.display = "none";
     function make() {
       if (/^1?[0-9]{3}-?[0-9]{3}-?[0-9]{4}$/.test(document.getElementById("telfield").value)) {
-        var imgurl = "https://qrcode.tec-it.com/API/QRCode?data="+encodeURIComponent("https://ktibow.github.io/z/"+document.getElementById("telfield").value)+"&quietzone=10&color="+encodeURIComponent("#2266DD");
+        var imgurl = "https://qrcode.tec-it.com/API/QRCode?data="+encodeURIComponent("https://ktibow.github.io/y/"+document.getElementById("telfield").value)+"&quietzone=10&color="+encodeURIComponent("#2266DD");
         document.getElementById("loadingqr").style.display = "";
         document.getElementById("qr").onload = function() {
           document.getElementById("loadingqr").style.display = "none";
