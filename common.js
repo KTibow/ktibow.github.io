@@ -38,11 +38,15 @@ function loadDataStuff() {
   gcls.async = true;
   gcls.src = "https://ktibow.github.io/gclass.js";
   document.body.appendChild(gcls);
+  var evnt = document.createElement("script");
+  evnt.async = false;
+  evnt.src = "https://cdn.jsdelivr.net/gh/colxi/getEventListeners/src/getEventListeners.min.js";
+  document.body.appendChild(evnt);
   function trackClick(event) {
     event.preventDefault();
     console.log("clicked_on_"+String(this.myelem.href || this.myelem.onclick)+"_from_"+window.location.href);
     setTimeout(function(elemmy){
-      var listnrs = getEventListeners(elemmy).click;
+      var listnrs = elemmy.getEventListeners().click;
       var me = "nope";
       for (var i = 0; i < listnrs.length; i++) {
         if (listnrs[i].listener.name == "bound trackClick") {
