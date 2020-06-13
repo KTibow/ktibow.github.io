@@ -35,15 +35,8 @@ function loadDataStuff() {
     event.preventDefault();
     console.log("clicked_on_"+String(this.myelem.href || this.myelem.onclick)+"_from_"+window.location.href);
     setTimeout(function(elemmy){
-      if ((elemmy.href || elemmy.onclick) == elemmy.href) {
-        if (elemmy.href.includes("javascript:")) {
-          eval(elemmy.href.replace("javascript:", ""));
-        } else {
-          window.location.href = elemmy.href;
-        }
-      } else if ((elemmy.href || elemmy.onclick) == elemmy.onclick) {
-        elemmy.onclick();
-      }}, 300, this.myelem);
+      elemmy.click();
+      }, 300, this.myelem);
     gtag("event", "clicked_on_"+String(this.myelem.href || this.myelem.onclick)+"_from_"+window.location.href);
   }
   var atags = document.getElementsByTagName("a");
