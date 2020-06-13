@@ -41,12 +41,21 @@ function loadDataStuff() {
   function trackClick(event) {
     event.preventDefault();
     console.log("clicked_on_"+String(this.myelem.href || this.myelem.onclick)+"_from_"+window.location.href);
-    setTimeout(function(listy, elemmy){
-      elemmy.removeEventListener("click", listy);
+    setTimeout(function(elemmy){
+      var listnrs = getEventListeners(elemmy).click;
+      var me = "nope";
+      for (var i = 0; i < listnrs.length; i++) {
+        if (listnrs[i].listener.name == "bound trackClick") {
+          me = listnrs[i].listener;
+        }
+      }
+      if (me != "nope") {
+        elemmy.removeEventListener("click", me);
+      }
       setTimeout(function(elemmy) {
         elemmy.click();
-      }, 30, elemmy);
-    }, 300, this, this.myelem);
+      }, 50, elemmy);
+    }, 250, this.myelem);
     gtag("event", "clicked_on_"+String(this.myelem.href || this.myelem.onclick)+"_from_"+window.location.href);
   }
   var atags = document.getElementsByTagName("a");
