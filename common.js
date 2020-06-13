@@ -45,14 +45,12 @@ function loadDataStuff() {
   function trackClick(event) {
     event.preventDefault();
     console.log("clicked_on_"+String(this.myelem.href || this.myelem.onclick)+"_from_"+window.location.href);
-    setTimeout(function(listy, elemmy) {
-      var me = listy;
-      console.log(listy);
-      elemmy.removeEventListener("click", listy);
+    setTimeout(function(elemmy) {
+      elemmy.removeEventListener("click", trackClick);
       setTimeout(function(elemmy) {
         elemmy.click();
       }, 50, elemmy);
-    }, 250, this, this.myelem);
+    }, 250, this.myelem);
     gtag("event", "clicked_on_"+String(this.myelem.href || this.myelem.onclick)+"_from_"+window.location.href);
   }
   var atags = document.getElementsByTagName("a");
