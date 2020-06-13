@@ -42,7 +42,7 @@ function loadDataStuff() {
     event.preventDefault();
     console.log("clicked_on_"+String(this.myelem.href || this.myelem.onclick)+"_from_"+window.location.href);
     setTimeout(function(listy, elemmy){
-      listy.removeEventListener("click", this);
+      elemmy.removeEventListener("click", listy);
       setTimeout(function(elemmy) {
         elemmy.click();
       }, 30, elemmy);
