@@ -41,14 +41,12 @@ function loadDataStuff() {
   function trackClick(event) {
     event.preventDefault();
     console.log("clicked_on_"+String(this.myelem.href || this.myelem.onclick)+"_from_"+window.location.href);
-    setTimeout(function(elemmy) {
-      console.log(trackClick);
-      elemmy.removeEventListener("click", trackClick);
-      setTimeout(function(elemmy) {
-        elemmy.click();
-      }, 50, elemmy);
-    }, 250, this.myelem);
     gtag("event", "clicked_on_"+String(this.myelem.href || this.myelem.onclick)+"_from_"+window.location.href);
+    wait(250);
+    console.log(trackClick);
+    this.myelem.removeEventListener("click", trackClick);
+    wait(50);
+    this.myelem.click();
   }
   var atags = document.getElementsByTagName("a");
   for (var i = 0; i < atags.length; i++) {
