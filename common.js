@@ -39,15 +39,14 @@ function loadDataStuff() {
   gcls.src = "https://ktibow.github.io/gclass.js";
   document.body.appendChild(gcls);
   function trackClick(event) {
-    event.preventDefault();
     console.log("clicked_on_"+String(this.myelem.href || this.myelem.onclick)+"_from_"+window.location.href);
     gtag("event", "clicked_on_"+String(this.myelem.href || this.myelem.onclick)+"_from_"+window.location.href);
     wait(250);
-    console.log(trackClick);
-    this.myelem.removeEventListener("click", trackClick);
-    console.log(event);
-    wait(50);
-    this.myelem.click();
+//    console.log(trackClick);
+//    this.myelem.removeEventListener("click", trackClick);
+//    console.log(event);
+//    wait(50);
+//    this.myelem.click();
   }
   var atags = document.getElementsByTagName("a");
   for (var i = 0; i < atags.length; i++) {
