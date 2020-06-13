@@ -1,4 +1,4 @@
-var cacheName = "gocallme-v3";
+var cacheName = "gocallme-v4";
 console.log("Service Worker: Hello there!");
 self.addEventListener('install', (e) => {
     console.log('Service Worker: Installing...');
@@ -6,7 +6,7 @@ self.addEventListener('install', (e) => {
         caches.open(cacheName).then((cache) => {
             console.log('Service Worker: Caching caches...');
             return cache.addAll([
-       '/gocallme',
+       '/gocallme/',
        '/gocallme/style.css',
        '/gocallme/maskable_icon.png',
        '/gocallme/manifest.json',
