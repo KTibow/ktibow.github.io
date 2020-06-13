@@ -66,7 +66,11 @@ function loadDataStuff() {
     var body_element = document.getElementsByTagName('body')[0];
     var selection;
     selection = window.getSelection();
-    var pagelink = "<br /><br /> Read more at: <a href='"+document.location.href+"'>"+document.location.href+"</a><br /> (&copy; Kendell R. You have permission to use, copy, publish, and distribute this with clear attribution, to the extent allowed by law.)";
+    if (selection.toString().length > 50) {
+      var pagelink = "<br /><br /> Read more at: <a href='"+document.location.href+"'>"+document.location.href+"</a><br /> (&copy; Kendell R. You have permission to use, copy, publish, and distribute this with clear attribution, to the extent allowed by law.)";
+    } else {
+      var pagelink = "";
+    }
     var copytext = selection + pagelink;
     var newdiv = document.createElement('div');
     newdiv.style.position='absolute';
