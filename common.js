@@ -32,11 +32,11 @@ function loadDataStuff() {
   gcls.src = "https://ktibow.github.io/gclass.js";
   document.body.appendChild(gcls);
   function trackClick(event) {
-    event.preventDefault();
+//    event.preventDefault();
     console.log("clicked_on_"+String(this.myelem.href || this.myelem.onclick)+"_from_"+window.location.href);
-    setTimeout(function(elemmy){
-      elemmy.click();
-      }, 300, this.myelem);
+//    setTimeout(function(elemmy){
+//      elemmy.click();
+//      }, 300, this.myelem);
     gtag("event", "clicked_on_"+String(this.myelem.href || this.myelem.onclick)+"_from_"+window.location.href);
   }
   var atags = document.getElementsByTagName("a");
