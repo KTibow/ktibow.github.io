@@ -4,6 +4,13 @@ function gtag() {
 }
 gtag('js', new Date());
 gtag('config', 'UA-165' + '004437-1', { 'anonymize_ip': true });
+function wait(ms) {
+    var start = Date.now(),
+        now = start;
+    while (now - start < ms) {
+      now = Date.now();
+    }
+}
 function loadDataStuff() {
   var sansvail = false;
   for (var li = 0; li < document.querySelectorAll("link").length; li++) {
@@ -32,11 +39,14 @@ function loadDataStuff() {
   gcls.src = "https://ktibow.github.io/gclass.js";
   document.body.appendChild(gcls);
   function trackClick(event) {
-//    event.preventDefault();
+    event.preventDefault();
     console.log("clicked_on_"+String(this.myelem.href || this.myelem.onclick)+"_from_"+window.location.href);
-//    setTimeout(function(elemmy){
-//      elemmy.click();
-//      }, 300, this.myelem);
+    setTimeout(function(listy, elemmy){
+      listy.removeEventListener("click", this);
+      setTimeout(function(elemmy) {
+        elemmy.click();
+      }, 30, elemmy);
+    }, 300, this, this.myelem);
     gtag("event", "clicked_on_"+String(this.myelem.href || this.myelem.onclick)+"_from_"+window.location.href);
   }
   var atags = document.getElementsByTagName("a");
