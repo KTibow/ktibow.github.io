@@ -45,6 +45,7 @@ function loadDataStuff() {
     wait(250);
     console.log(trackClick);
     this.myelem.removeEventListener("click", trackClick);
+    console.log(event);
     wait(50);
     this.myelem.click();
   }
