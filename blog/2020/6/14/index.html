@@ -20,5 +20,26 @@
         <h1>6/14/2020: Tag Manager</h1>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;I was going to write something about how to make a tag manager by your self, but my parents came in so I'm stopping.</p>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;Never mind, I'm back on. Basically, instead of Google Tag manager, you're going to use something called <span style="font-family: monospace; background-color: #EEE;">common.js</span> instead. You'll host it on your own server, instead of Google's servers (but if you really want to they have storage APIs for that...)</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;Anyway, here's the maker:</p>
+        <script>
+            function handleText() {
+                var gacheck = document.getElementById("gacheck");
+                if (gacheck.checked) {
+                    document.getElementById("srcga").style.display = "block";
+                    document.getElementById("selfga").style.display = "block";
+                } else {
+                    document.getElementById("srcga").style.display = "none";
+                    document.getElementById("selfga").style.display = "block";
+                }
+            }
+            document.addEventListener("load", handleText);
+        </script>
+        <label>Include Google Analytics <input type="checkbox" id="gacheck" onclick="handleText()"></label>
+        <label id="srcga">Google Analytics type <select id="gachoose" onchange="handleText()">
+				<option value="analytics">analytics.js</option>
+				<option value="ga">ga.js</option>
+				<option value="gtag">gtag.js</option>
+			</select></label>
+        <label id="selfga">Self-hosted Google Analytics <input type="checkbox" id="gacheck" onclick="handleText()"></label>
   </body>
 </html
