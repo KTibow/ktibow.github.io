@@ -82,5 +82,11 @@
         alert("Invalid phone number. Use the format xxx-xxx-xxxx.");
       }
     }
+    document.getElementById("telfield").addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        make()
+      }
+    });
   </script>
 </html>
