@@ -5,8 +5,10 @@ out.write("""<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">""")
 input = open("sitemap.txt", "r").read()
 robolist = robots.split("\n")
+print("Original robolist:")
+print(robolist)
 for r in robolist:
-  if ":" in r:
+  if "User-Agent" in r or "Sitemap" in r or len(r) < 1:
     robolist.remove(r)
 print("Parsed robolist:")
 print(robolist)
