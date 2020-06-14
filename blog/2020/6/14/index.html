@@ -36,38 +36,24 @@
             if (gacheck) {
                 document.getElementById("srcga").style.display = "block";
                 document.getElementById("selfga").style.display = "block";
+                document.getElementById("ganum").style.display = "block";
                 var gaselect = document.getElementById("gachoose").value;
                 var selfhost = document.getElementById("selfga").checked;
                 if (gaselect == "analytics") {
-                    commonjsfill += `(function(i, s, o, g, r, a, m) {
-                        i['GoogleAnalyticsObject'] = r;
-                        i[r] = i[r] || function() {
-                            (i[r].q = i[r].q || []).push(arguments)
-                        }, i[r].l = 1 * new Date();
-                        a = s.createElement(o),
-                        m = s.getElementsByTagName(o)[0];
-                        a.async = 1;
-                        a.src = g;
-                        m.parentNode.insertBefore(a, m)
-                    })(window, document, 'script', '`;
+                    commonjsfill += `(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','`;
                     if (!selfhost) {
-                        commonjsfill += "https://www.google-analytics.com/analytics.js', 'ga');
-                    ";
+                        commonjsfill += "https://www.google-analytics.com/analytics.js', 'ga');";
                     }
-                    commonjsfill += "
-                    ga('create', 'UA-XXXXX-Y', 'auto');
-                    ga('send', 'pageview');
-                    ";
+                    commonjsfill += "ga('create', 'UA-XXXXX-Y', 'auto');ga('send', 'pageview');";
             } else {
-                document.getElementById("
-                    srcga ").style.display = "
-                    none ";
-                document.getElementById("
-                    selfga ").style.display = "
-                    none ";
+                document.getElementById("srcga").style.display = "none";
+                document.getElementById("selfga").style.display = "none";
+                document.getElementById("ganum").style.display = "none";
             }
-            document.getElementById("
-                    commonjscode ").innerHTML = safetext(commonjsfill);
+            document.getElementById("commonjscode").innerHTML = safetext(commonjsfill);
         }
     </script>
     <label>Include Google Analytics <input type="checkbox" id="gacheck" onclick="handleText()">
