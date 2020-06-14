@@ -7,13 +7,22 @@ input = open("sitemap.txt", "r").read()
 robolist = robots.split("\n")
 print("Original robolist:")
 print(robolist)
-for r in robolist:
-  if "user-agent" in r.lower() or "sitemap" in r.lower() or len(r) < 1:
-    print("Removing", r)
-    robolist.remove(r)
-  else:
-    print("Modifying", r)
-    robolist[robolist.index(r)] = r.replace("Disallow: ", "")
+for i in range(3):
+  print(robolist)
+  robostat = robolist.copy()
+  for r in robostat:
+    if "user-agent" in r.lower() or "sitemap" in r.lower() or len(r) < 1:
+      print("Removing", r)
+      try:
+        robolist.remove(r)
+      except ValueError:
+        pass
+    else:
+      print("Modifying", r)
+      try:
+        robolist[robolist.index(r)] = r.replace("Disallow: ", "")
+      except ValueError:
+        pass
 print("Parsed robolist:")
 print(robolist)
 for url in input.split("\n"):
