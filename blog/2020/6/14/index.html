@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 
 <head>
     <script async src="/common.js"></script>
@@ -35,8 +35,8 @@
             var commonjsfill = "";
             if (gacheck) {
                 document.getElementById("srcga").style.display = "block";
-                document.getElementById("selfga").style.display = "block";
-                document.getElementById("ganum").style.display = "block";
+                document.getElementById("selfgalab").style.display = "block";
+                document.getElementById("ganumlab").style.display = "block";
                 var gaselect = document.getElementById("gachoose").value;
                 var selfhost = document.getElementById("selfga").checked;
                 if (gaselect == "analytics") {
@@ -50,8 +50,8 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
                     commonjsfill += "ga('create', 'UA-XXXXX-Y', 'auto');ga('send', 'pageview');";
             } else {
                 document.getElementById("srcga").style.display = "none";
-                document.getElementById("selfga").style.display = "none";
-                document.getElementById("ganum").style.display = "none";
+                document.getElementById("selfgalab").style.display = "none";
+                document.getElementById("ganumlab").style.display = "none";
             }
             document.getElementById("commonjscode").innerHTML = safetext(commonjsfill);
         }
@@ -66,10 +66,10 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         </select>
     </label>
     <br/>
-    <label id="ganum">Google Analytics number <input id="ganum" onchange="handleText()">
+    <label id="ganumlab">Google Analytics number <input id="ganum" onchange="handleText()">
     </label>
     <br/>
-    <label id="selfga">Self-hosted Google Analytics <input type="checkbox" id="selfga" onclick="handleText()">
+    <label id="selfgalab">Self-hosted Google Analytics <input type="checkbox" id="selfga" onclick="handleText()">
     </label>
     <br/>
     <h2><u>Your</u> <span style="font-family: monospace; background-color: #EEE;">common.js</span></h2>
