@@ -60,7 +60,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
                 document.getElementById("srcga").style.display = "none";
                 document.getElementById("selfgalab").style.display = "none";
                 document.getElementById("ganumlab").style.display = "none";
-                document.getElementById("selfgalab").style.display = "none";
+                document.getElementById("selfgaurllab").style.display = "none";
             }
             document.getElementById("commonjscode").innerHTML = safetext(commonjsfill);
         }
@@ -68,9 +68,9 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     <label>Include Google Analytics <input type="checkbox" id="gacheck" onclick="handleText()">
     </label>
     <label id="srcga"><br/>Google Analytics type <select id="gachoose" onchange="handleText()">
+            <option value="gtag">gtag.js</option>
             <option value="analytics">analytics.js</option>
             <option value="ga">ga.js</option>
-            <option value="gtag">gtag.js</option>
         </select>
     </label>
     <br/>
@@ -80,7 +80,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     <label id="selfgalab">Self-hosted Google Analytics <input type="checkbox" id="selfga" onclick="handleText()">
     </label>
     <br/>
-    <label id="selfgaurllab">Self-hosted Google Analytics URL <input type="text" id="selfgaurl" onchange="handleText()">
+    <label id="selfgaurllab">Self-hosted Google Analytics URL <input type="text" id="selfgaurl" onchange="handleText()" placeholder="https://example.com/analyz.js">
     </label>
     <br/>
     <h2><u>Your</u> <span style="font-family: monospace; background-color: #EEE;">common.js</span></h2>
