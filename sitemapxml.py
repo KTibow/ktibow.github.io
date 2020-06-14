@@ -8,7 +8,7 @@ robolist = robots.split("\n")
 print("Original robolist:")
 print(robolist)
 for r in robolist:
-  if "User-Agent" in r.lower() or "Sitemap" in r.lower() or len(r) < 1:
+  if "user-agent" in r.lower() or "sitemap" in r.lower() or len(r) < 1:
     print("Removing", r)
     robolist.remove(r)
   else:
