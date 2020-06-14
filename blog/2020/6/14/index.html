@@ -26,6 +26,7 @@
     <p>&nbsp;&nbsp;&nbsp;&nbsp;Anyway, here's the maker:</p>
     <script>
         function handleText() {
+            console.log("Handling display");
             var gacheck = document.getElementById("gacheck");
             if (gacheck.checked) {
                 document.getElementById("srcga").style.display = "block";
@@ -38,17 +39,22 @@
     </script>
     <label>Include Google Analytics
         <input type="checkbox" id="gacheck" onclick="handleText()">
-    </label>
+    </label><br/>
     <label id="srcga">Google Analytics type
         <select id="gachoose" onchange="handleText()">
             <option value="analytics">analytics.js</option>
             <option value="ga">ga.js</option>
             <option value="gtag">gtag.js</option>
         </select>
-    </label>
+    </label><br/>
     <label id="selfga">Self-hosted Google Analytics
         <input type="checkbox" id="gacheck" onclick="handleText()">
-    </label>
+    </label><br/>
+    <h2><u>Your</u> <span style="font-family: monospace; background-color: #EEE;">common.js</span></h2>
+    <code style="font-family: monospace; background-color: #EEE;" id="commonjscode"></code>
+    <p>Include it like this:</p>
+    <code style="font-family: monospace; background-color: #EEE;">&lt;script defer src="/common.js"&gt;&lt;/script&gt;</code>
+    
     <script>
         handleText();
     </script>
