@@ -5,10 +5,4 @@ Disallow: /googleredir/
 Disallow: /unclosable/
 Disallow: /tour/
 Disallow: /analyze/
-User-Agent: Bingbot
-Disallow: /cardterms/
-Disallow: /clippy/
-Disallow: /analyze/
-Disallow: /tour/
-Disallow: /unclosable/
 Sitemap: https://ktibow.github.io/sitemap.xml
