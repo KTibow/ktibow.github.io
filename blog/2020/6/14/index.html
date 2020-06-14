@@ -60,6 +60,16 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
                         commonjsfill += gaurl;
                     }
                     commonjsfill += "';l.async=1;m=document.getElementsByTagName('script')[0];m.parentNode.insertBefore(l, m);})(document)";
+                } else if (gaselect == 'ga') {
+                    commonjsfill += "var _gaq=_gaq||[];_gaq.push(['_setAccount', '";
+                    commonjsfill += ganum;
+                    commonjsfill += "']);_gaq.push(['_trackPageview']);(function() {var ga=document.createElement('script');ga.type = 'text/javascript'; ga.async = true;ga.src = ";
+                    if (!selfhost) {
+                        commonjsfill += "('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js";
+                    } else {
+                        commonjsfill += "'" + gaurl + "';";
+                    }
+                    commonjsfill += "var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();";
                 }
                 commonjsfill += `
 `;
