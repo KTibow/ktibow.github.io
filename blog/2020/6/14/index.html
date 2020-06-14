@@ -57,7 +57,7 @@ m=s.getElementsByTagName('body')[0];a.async=1;a.src=g;m.appendChild(a);
                     commonjsfill += "window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', '";
                     commonjsfill += ganum;
                     commonjsfill += "');";
-                    commonjsfill += "(function(p){l=p.createElement('script');l.href='";
+                    commonjsfill += "(function(p){l=p.createElement('script');l.src='";
                     if (!selfhost) {
                         commonjsfill += "https://www.googletagmanager.com/gtag/js?id="+ganum;
                     } else {
@@ -67,7 +67,7 @@ m=s.getElementsByTagName('body')[0];a.async=1;a.src=g;m.appendChild(a);
                 } else if (gaselect == 'ga') {
                     commonjsfill += "var _gaq=_gaq||[];_gaq.push(['_setAccount', '";
                     commonjsfill += ganum;
-                    commonjsfill += "']);_gaq.push(['_trackPageview']);(function() {var ga=document.createElement('script');ga.type = 'text/javascript'; ga.async = true;ga.src = ";
+                    commonjsfill += "']);_gaq.push(['_trackPageview']);(function() {var ga=document.createElement('script');ga.async = 1;ga.src = ";
                     if (!selfhost) {
                         commonjsfill += "('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';";
                     } else {
@@ -110,9 +110,8 @@ m=s.getElementsByTagName('body')[0];a.async=1;a.src=g;m.appendChild(a);
     <code style="font-family: monospace; background-color: #EEE;">&lt;script defer src="/common.js"&gt;&lt;/script&gt;</code>
     <script>
         handleText();
-        setInterval(function() {window.oncopy = null;}, 100);
     </script>
-    <b>I may not be able to finish this.</b>
+    <b style="display: block;">I may not be able to finish this.</b>
 </body>
 
 </html>
