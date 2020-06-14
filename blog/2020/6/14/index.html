@@ -28,6 +28,7 @@
         function safetext(str) {
             return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
         }
+
         function handleText() {
             console.log("Handling display");
             var gacheck = document.getElementById("gacheck").checked;
@@ -38,39 +39,58 @@
                 var gaselect = document.getElementById("gachoose").value;
                 var selfhost = document.getElementById("selfga").checked;
                 if (gaselect == "analytics") {
-                    commonjsfill += `(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','`;
+                    commonjsfill += `(function(i, s, o, g, r, a, m) {
+                        i['GoogleAnalyticsObject'] = r;
+                        i[r] = i[r] || function() {
+                            (i[r].q = i[r].q || []).push(arguments)
+                        }, i[r].l = 1 * new Date();
+                        a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0];
+                        a.async = 1;
+                        a.src = g;
+                        m.parentNode.insertBefore(a, m)
+                    })(window, document, 'script', '`;
                     if (!selfhost) {
-                        commonjsfill += "https://www.google-analytics.com/analytics.js','ga');";
+                        commonjsfill += "https://www.google-analytics.com/analytics.js', 'ga');
+                    ";
                     }
-                    commonjsfill += "ga('create', 'UA-XXXXX-Y', 'auto');ga('send', 'pageview');";
+                    commonjsfill += "
+                    ga('create', 'UA-XXXXX-Y', 'auto');
+                    ga('send', 'pageview');
+                    ";
             } else {
-                document.getElementById("srcga").style.display = "none";
-                document.getElementById("selfga").style.display = "none";
+                document.getElementById("
+                    srcga ").style.display = "
+                    none ";
+                document.getElementById("
+                    selfga ").style.display = "
+                    none ";
             }
-            document.getElementById("commonjscode").innerHTML = safetext(commonjsfill);
+            document.getElementById("
+                    commonjscode ").innerHTML = safetext(commonjsfill);
         }
     </script>
-    <label>Include Google Analytics
-        <input type="checkbox" id="gacheck" onclick="handleText()">
-    </label><br/>
+    <label>Include Google Analytics <input type="checkbox" id="gacheck" onclick="handleText()">
+    </label>
+    <br/>
     <label id="srcga">Google Analytics type <select id="gachoose" onchange="handleText()">
             <option value="analytics">analytics.js</option>
             <option value="ga">ga.js</option>
             <option value="gtag">gtag.js</option>
         </select>
-    </label><br/>
+    </label>
+    <br/>
     <label id="ganum">Google Analytics number <input id="ganum" onchange="handleText()">
-    </label><br/>
+    </label>
+    <br/>
     <label id="selfga">Self-hosted Google Analytics <input type="checkbox" id="selfga" onclick="handleText()">
-    </label><br/>
+    </label>
+    <br/>
     <h2><u>Your</u> <span style="font-family: monospace; background-color: #EEE;">common.js</span></h2>
     <code style="font-family: monospace; background-color: #EEE;" id="commonjscode"></code>
     <p>Include it like this:</p>
     <code style="font-family: monospace; background-color: #EEE;">&lt;script defer src="/common.js"&gt;&lt;/script&gt;</code>
-    
+
     <script>
         handleText();
     </script>
