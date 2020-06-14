@@ -13,13 +13,13 @@
   </head>
   <body>
     <h1>My code snippets</h1>
-    <p><b>What are these?</b> Random collections of random stuff from different programming languages.<p>
-    <h2>**Basic** HTML</h2>
-    <h4>Basic HTML template (2 space indent. Please don't get mad if anything's wrong.)</h4>
+    <p><b>What are these?</b> Random collections of random stuff from different programming languages. (Note some of these have been copy/pasted from other places, and modified to standardize them.)<p>
+    <h2>HTML</h2>
+    <h3>Basic HTML template (2 space indent. Please don't get mad if anything's wrong.)</h3>
     <p><b>What is it?</b> This is all you need to get started. All of your head's code goes in between the two <code>&lt;head&gt;</code> and <code>&lt;/head&gt;</code> tags.</p>
     <p>All of your body's code goes in between the two <code>&lt;hbody&gt;</code> and <code>&lt;/body&gt;</code> tags.</p>
     <p>Get started with a <code>&lt;h1&gt;</code> tag, which means a header tag. Put your text after, and then close it with a <code>&lt;/h1&gt;</code> tag. Put it in the body to make a <code>Hello World!</code></p>
-    <code><br/>
+    <code>
 &lt;!DOCTYPE html&gt;<br/>
 &lt;html&gt;<br/>
 &nbsp;&nbsp;&lt;head&gt;<br/>
@@ -29,16 +29,46 @@
 &nbsp;&nbsp;&lt;/body&gt;<br/>
 &lt;/html&gt;<br/>
     </code>
-    <h4>Includes:</h4>
-    <h5>Include JS (place at bottom of HTML if possible, order matters though.)</h5>
-    <p><b>What is it?</b> This lets you include and execute JS (JavaScript) from another source.</p>
-    <code><br/>
-&lt;script src="/myscript.js"&gt;&lt;/script&gt;<br/>
+    <h3>Inline JS</h3>
+    <p><b>What is it?</b> This lets you execute inline JS.</p>
+    <code>
+&lt;script&gt;<br/>
+alert("HI!");<br/>
+&lt;/script&gt;<br/>
     </code>
-    <h5>Async JS (better than plain, prefer defer if possible.)</h5>
-    <p><b>What is it?</b> This tag is basically the same as the previous one. With the previous one, though, the browser stops rendering the whole page, downloads the JS, executes the JS, then renders the rest of it. With this one, it downloads the JS while it's rendering, and then executes the JS when it finishes. This is default if you use JS to make a JS tag.</p>
-    <code><br/>
-&lt;script src="/myscript.js" async&gt;&lt;/script&gt;<br/>
+    <h3>Include JS (place at bottom of HTML if possible, order matters though.)</h3>
+    <p><b>What is it?</b> This lets you include and execute JS (JavaScript) from another source. Note the <code>type="text/javascript"</code> <b>is optional</b>, but you should use it just in case.</p>
+    <code>
+&lt;script src="/myscript.js" type="text/javascript"&gt;&lt;/script&gt;<br/>
+    </code>
+    <h3>Async JS (better than plain, prefer defer if possible.)</h3>
+    <p><b>What is it?</b> This tag is basically the same as the previous one. With the previous one, though, the browser stops rendering the whole page, downloads the JS, executes the JS, then renders the rest of it. With this one, it downloads the JS while it's rendering, and then executes the JS when it finishes. This is default if you use JS to make a JS tag. Note that it's impossible to apply either <code>async</code> or <code>defer</code> to inline JS.</p>
+    <code>
+&lt;script async src="/myscript.js" type="text/javascript"&gt;&lt;/script&gt;<br/>
+    </code>
+    <h3>Defer JS (waits long time!)</h3>
+    <p><b>What is it?</b> This is like Async JS, but instead of executing it when it finishes downloading, it executes it when the page finishes rendering. Important notes: 1. <code>defer</code> can't apply to inline JS. 2. Don't count on it; it's better to use onload if it's critical that it works in older browsers.</p>
+    <code>
+&lt;script defer src="/myscript.js" type="text/javascript"&gt;&lt;/script&gt;<br/>
+    </code>
+    <h3>Inline CSS</h3>
+    <p><b>What is it?</b> This lets you use inline CSS.</p>
+    <code>
+&lt;style&gt;<br/>
+* {<br/>
+&nbsp;&nbsp;font-family: "Comic Sans MS";<br/>
+}<br/>
+&lt;/style&gt;<br/>
+    </code>
+    <h3>Include CSS</h3>
+    <p><b>What is it?</b> This lets you use include and use CSS (Cascading Style Sheets) from another source. Note that the <code>type="text/css"</code> is optional, but you should use it just in case.</p>
+    <code>
+&lt;link rel="stylesheet" href="/mystyle.css" type="text/css" /&gt;<br/>
+    </code>
+    <h3>Defered include CSS</h3>
+    <p><b>What is it?</b> This lets you defer using CSS until page load. Note you may want to provide a noscript fallback. Also note this works inline.</p>
+    <code>
+&lt;link rel="stylesheet" type="text/css" href="/mystyle.css" media="none" onload="if(media!='all')media='all'"&gt;<br/>
     </code>
   </body>
 </html>
