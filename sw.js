@@ -11,24 +11,21 @@ self.addEventListener('install', function (event) {
           while (listpages.indexOf("") != -1) {
             delete listpages[listpages.indexOf("")];
           }
-          var jscsslist = [];
+          var cachelist = [];
           for (var i = 0; i < listpages.length; i++) {
-            if (typeof listpages[i] == "string" && (listpages[i].includes("js") || listpages[i].includes("css")) && !listpages[i].includes("index.html")) {
-              jscsslist.push(listpages[i]);
+            if (typeof listpages[i] == "string" && listpages[i].includes(".") && !listpages[i].includes("index.html")) {
+              cachelist.push(listpages[i]);
             }
           }
-          console.log("Caching JS + CSS:", jscsslist);
-          cache.addAll(jscsslist).then(function(){console.log("Cached JS+CSS");}).catch(function(){console.log("Error caching JS+CSS");});
-          var dirlist = [];
           for (var i = 0; i < listpages.length; i++) {
             if (typeof listpages[i] == "string" && listpages[i].includes("index.html")) {
-              dirlist.push(listpages[i].replace("index.html", ""));
+              cachelist.push(listpages[i].replace("index.html", ""));
             }
           }
-          console.log("Caching directories:", dirlist);
-          cache.addAll(dirlist).then(function(){console.log("Cached directories");}).catch(function(){console.log("Error caching directories");});
+          console.log("Caching caches:", cachelist);
+          cache.addAll(cachelist).then(function(){console.log("Cached caches");}).catch(function(){console.log("Error caching caches");});
           for (var i = 0; i < listpages.length; i++) {
-            if (typeof listpages[i] == "string" && !(listpages[i].includes("js") || listpages[i].includes("css")) && !listpages[i].includes("index.html")) {
+            if (typeof listpages[i] == "string" && !cachelist.includes(listpages[i]) && !cachelist.includes(listpages[i]+"/")) {
               console.log("I didn't cache", listpages[i]);
             }
           }
