@@ -14,7 +14,9 @@ self.addEventListener('install', function (event) {
           listpages.push("/");
           console.log("List to cache:")
           console.log(listpages);
-          return cache.addAll(listpages);
+          for (var i = 0; i < listpages.length; i++) {
+            cache.add(listpages[i]).then(function(urly) { console.log("Cached "+urly); }).catch(function(urly) { console.log("Couldn't cache "+urly); });
+          };
         });
       });
     })
@@ -36,8 +38,7 @@ self.addEventListener('fetch', function (event) {
   caches.open(cacheName).then(function (cache) {
     console.log('Service Worker: Trying to cache ' + event.request.url + '...');
     cache.add(event.request.url);
-  }).
-  catch(function () {
+  }).catch(function () {
     return;
   });
   event.respondWith(
