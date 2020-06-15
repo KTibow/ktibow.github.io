@@ -22,7 +22,7 @@ self.addEventListener('install', function (event) {
           var jscsslist = [];
           for (var i = 0; i < listpages.length; i++) {
             if (typeof listpages[i] == "string" && (listpages[i].includes("js") || listpages[i].includes("css"))) {
-              jsscsslist.push(listpages[i]);
+              jscsslist.push(listpages[i]);
             }
           }
           console.log("Caching JS + CSS:", jscsslist);
