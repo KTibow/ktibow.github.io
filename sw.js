@@ -17,20 +17,12 @@ self.addEventListener('install', function (event) {
               bloglist.push(listpages[i]);
             }
           }
-          console.log("Caching blog:", bloglist);
-          cache.addAll(bloglist).then(function(){console.log("Cached blog");}).catch(function(){console.log("Error caching blog");});
-          var jscsslist = [];
-          for (var i = 0; i < listpages.length; i++) {
-            if (typeof listpages[i] == "string" && (listpages[i].includes("js") || listpages[i].includes("css"))) {
-              jscsslist.push(listpages[i]);
-            }
-          }
           console.log("Caching JS + CSS:", jscsslist);
           cache.addAll(jscsslist).then(function(){console.log("Cached JS+CSS");}).catch(function(){console.log("Error caching JS+CSS");});
           var dirlist = [];
           for (var i = 0; i < listpages.length; i++) {
-            if (typeof listpages[i] == "string" && !listpages[i].includes(".")) {
-              dirlist.push(listpages[i]);
+            if (typeof listpages[i] == "string" && listpages[i].includes("index.html")) {
+              dirlist.push(listpages[i].replace("index.html", ""));
             }
           }
           console.log("Caching directories:", dirlist);
