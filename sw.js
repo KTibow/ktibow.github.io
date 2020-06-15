@@ -11,15 +11,14 @@ self.addEventListener('install', function (event) {
           while (listpages.indexOf("") != -1) {
             delete listpages[listpages.indexOf("")];
           }
-          listpages.push("/");
-          console.log("List to cache:")
-          console.log(listpages);
+          var bloglist = [];
           for (var i = 0; i < listpages.length; i++) {
             if (typeof listpages[i] == "string" && listpages[i].includes("blog")) {
-              console.log("Trying to cache", listpages[i]);
-              cache.addAll([listpages[i]]).then(console.log).catch(console.error);
+              bloglist.push(listpages[i]);
             }
-          };
+          }
+          console.log("Caching blog:", bloglist);
+          cache.addAll(bloglist).then(function(){console.log("Cached blog");}).catch(function(){console.log("Error caching blog");});
         });
       });
     })
