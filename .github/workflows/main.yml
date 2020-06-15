@@ -25,6 +25,7 @@ jobs:
     - name: Generate sitemap and commit
       run: |
         find . | grep -v ".*/\..*" | awk 'BEGIN{FIELDWIDTHS="1 1000"}{print $2}' > old_sitemap.txt
+        cp old_sitemap.txt fullmap.txt
         sh generate_sitemap.sh > sitemap.txt
         python3 sitemapxml.py
         rm sitemap.txt old_sitemap.txt
