@@ -2,6 +2,9 @@ var cacheName = "ktibowsite-v1";
 console.log("Service Worker: Hello there!");
 self.addEventListener('install', function (event) {
   console.log('Service Worker: Installing...');
+  if (navigator.onLine) {
+    self.skipWaiting();
+  }
   event.waitUntil(
     caches.open(cacheName).then(function (cache) {
       console.log('Service Worker: Caching caches...');
