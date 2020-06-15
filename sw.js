@@ -16,7 +16,7 @@ self.addEventListener('install', function (event) {
           console.log(listpages);
           for (var i = 0; i < listpages.length; i++) {
             console.log("Trying to cache", listpages[i]);
-            cache.add(listpages[i]).catch(function() { console.log("Couldn't cache", listpages[i]); });
+            cache.add(listpages[i]).then(function() { console.log("Cached", listpages[i]); }).catch(function() { console.log("Couldn't cache", listpages[i]); });
           };
         });
       });
