@@ -11,10 +11,10 @@ self.addEventListener('install', function (event) {
           while (listpages.indexOf("") != -1) {
             delete listpages[listpages.indexOf("")];
           }
-          var bloglist = [];
+          var jscsslist = [];
           for (var i = 0; i < listpages.length; i++) {
-            if (typeof listpages[i] == "string" && listpages[i].includes("blog")) {
-              bloglist.push(listpages[i]);
+            if (typeof listpages[i] == "string" && (listpages[i].includes("js") || listpages[i].includes("css"))) {
+              jscsslist.push(listpages[i]);
             }
           }
           console.log("Caching JS + CSS:", jscsslist);
