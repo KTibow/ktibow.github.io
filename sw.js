@@ -11,9 +11,15 @@ self.addEventListener('install', function (event) {
           while (listpages.indexOf("") != -1) {
             delete listpages[listpages.indexOf("")];
           }
+          var jscsslist = [];
+          for (var i = 0; i < listpages.length; i++) {
+            if (typeof listpages[i] == "string" && (listpages[i].includes("js") || listpages[i].includes("css")) && !listpages[i].includes("index.html")) {
+              jscsslist.push(listpages[i]);
+            }
+          }
           var filelist = [];
           for (var i = 0; i < listpages.length; i++) {
-            if (typeof listpages[i] == "string" && listpages[i].includes(".") && !listpages[i].includes("index.html")) {
+            if (typeof listpages[i] == "string" && listpages[i].includes(".") && !listpages[i].includes("index.html") && !(listpages[i].includes("js") || listpages[i].includes("css"))) {
               filelist.push(listpages[i]);
             }
           }
@@ -23,8 +29,16 @@ self.addEventListener('install', function (event) {
               dirlist.push(listpages[i].replace("index.html", ""));
             }
           }
+          console.log("Caching JS+CSS caches:", jscsslist);
           console.log("Caching file caches:", filelist);
           console.log("Caching directory caches:", dirlist);
+          cache.addAll(jscsslist)
+            .then(function(){
+               console.log("Cached JS+CSS");
+            }).catch(function(){
+               console.error("Error caching JS+CSS");
+               console.trace();
+            });
           cache.addAll(filelist)
             .then(function(){
                console.log("Cached files");
