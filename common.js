@@ -47,25 +47,18 @@ function loadDataStuff() {
   for (var i = 0; i < atags.length; i++) {
     atags[i].addEventListener("click", trackClick.bind({myelem: atags[i]}));
   }
-  function addLink() {
+  function addLink(ev) {
     var body_element = document.getElementsByTagName('body')[0];
     var selection;
     selection = window.getSelection();
     if (selection.toString().length > 100) {
-      var pagelink = "&lt;!--// From <a href='"+document.location.href+"'>"+document.location.href+"</a>. &copy; Kendell R. Do not remove this attribution notice, but you can remove the part after \"Kendell R\".--&gt;";
+      var pagelink = "<!--// From <a href='"+document.location.href+"'>"+document.location.href+"</a>. &copy; Kendell R. Do not remove this attribution notice, but you can remove the part after \"Kendell R\".-->";
     } else {
       var pagelink = "";
     }
     var copytext = selection + pagelink;
-    var newdiv = document.createElement('div');
-    newdiv.style.position='absolute';
-    newdiv.style.left='-99999px';
-    body_element.appendChild(newdiv);
-    newdiv.innerHTML = copytext;
-    selection.selectAllChildren(newdiv);
-    window.setTimeout(function() {
-      body_element.removeChild(newdiv);
-    },0);
+    ev.clipboardData.setData('text/plain', copytext);
+    ev.preventDefault();
   }
   document.oncopy = addLink;
   var styl = document.createElement("style");
