@@ -19,6 +19,22 @@ self.addEventListener('install', function (event) {
           }
           console.log("Caching blog:", bloglist);
           cache.addAll(bloglist).then(function(){console.log("Cached blog");}).catch(function(){console.log("Error caching blog");});
+          var jscsslist = [];
+          for (var i = 0; i < listpages.length; i++) {
+            if (typeof listpages[i] == "string" && (listpages[i].includes("js") || listpages[i].includes("css"))) {
+              jsscsslist.push(listpages[i]);
+            }
+          }
+          console.log("Caching JS + CSS:", jscsslist);
+          cache.addAll(jscsslist).then(function(){console.log("Cached JS+CSS");}).catch(function(){console.log("Error caching JS+CSS");});
+          var dirlist = [];
+          for (var i = 0; i < listpages.length; i++) {
+            if (typeof listpages[i] == "string" && !listpages[i].includes(".")) {
+              dirlist.push(listpages[i]);
+            }
+          }
+          console.log("Caching directories:", dirlist);
+          cache.addAll(dirlist).then(function(){console.log("Cached directories");}).catch(function(){console.log("Error caching directories");});
         });
       });
     })
