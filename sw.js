@@ -21,7 +21,7 @@ self.addEventListener('install', function (event) {
   event.waitUntil(
     caches.keys().then(function (keyList) {
       return Promise.all(keyList.map(function (key) {
-        if (key !== cacheName) {
+        if (key !== cacheName && !key.includes("gocallme")) {
           console.log("Service Worker: Bye-Bye " + key);
           return caches.delete(key);
         }
