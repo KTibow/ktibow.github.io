@@ -52,7 +52,7 @@ function loadDataStuff() {
     var selection;
     selection = window.getSelection();
     if (selection.toString().length > 100) {
-      var pagelink = "&lt;!--<br /><br /> Read more at: <a href='"+document.location.href+"'>"+document.location.href+"</a><br /> (&copy; Kendell R. You can use, copy, publish, and distribute this (give clear attribution please!), as much as allowed by law.)--&gt;";
+      var pagelink = "&lt;!--// Read more at: <a href='"+document.location.href+"'>"+document.location.href+"</a> (&copy; Kendell R. You can use, copy, publish, and distribute this (give clear attribution please!), as much as allowed by law.)--&gt;";
     } else {
       var pagelink = "";
     }
