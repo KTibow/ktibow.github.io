@@ -12,7 +12,8 @@ self.addEventListener('install', function (event) {
             delete listpages[listpages.indexOf("")];
           }
           listpages.push("/");
-          console.log("List to cache: " + listpages.toString());
+          console.log("List to cache:")
+          console.log(listpages);
           return cache.addAll(listpages);
         });
       });
