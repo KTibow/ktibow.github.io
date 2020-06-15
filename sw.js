@@ -13,14 +13,14 @@ self.addEventListener('install', function (event) {
           }
           var jscsslist = [];
           for (var i = 0; i < listpages.length; i++) {
-            if (typeof listpages[i] == "string" && (listpages[i].includes("js") || listpages[i].includes("css")) && !listpages[i].includes("index.html")) {
+            if (typeof listpages[i] == "string" && listpages[i].includes(".") && (listpages[i].includes("js") || listpages[i].includes("css"))) {
               jscsslist.push(listpages[i]);
             }
           }
-          var filelist = [];
+          var imglist = [];
           for (var i = 0; i < listpages.length; i++) {
-            if (typeof listpages[i] == "string" && listpages[i].includes(".") && !listpages[i].includes("index.html") && !(listpages[i].includes("js") || listpages[i].includes("css"))) {
-              filelist.push(listpages[i]);
+            if (typeof listpages[i] == "string" && listpages[i].includes(".") && (listpages[i].includes("png") || listpages[i].includes("jpg"))) {
+              imglist.push(listpages[i]);
             }
           }
           var dirlist = [];
@@ -29,14 +29,30 @@ self.addEventListener('install', function (event) {
               dirlist.push(listpages[i].replace("index.html", ""));
             }
           }
+          var cachelist = jscsslist.concat(imglist).concat(dirlist);
+          var filelist = [];
+          for (var i = 0; i < listpages.length; i++) {
+            if (typeof listpages[i] == "string" && listpages[i].includes(".") && !listpages[i].includes("index.html") && !cachelist.includes(listpages[i])) {
+              filelist.push(listpages[i]);
+            }
+          }
+          cachelist = cachelist.concat(filelist);
           console.log("Caching JS+CSS caches:", jscsslist);
-          console.log("Caching file caches:", filelist);
+          console.log("Caching image caches:", imglist);
           console.log("Caching directory caches:", dirlist);
+          console.log("Caching file caches:", filelist);
           cache.addAll(jscsslist)
             .then(function(){
                console.log("Cached JS+CSS");
             }).catch(function(){
                console.error("Error caching JS+CSS");
+               console.trace();
+            });
+          cache.addAll(imglist)
+            .then(function(){
+               console.log("Cached images");
+            }).catch(function(){
+               console.error("Error caching images");
                console.trace();
             });
           cache.addAll(filelist)
@@ -53,7 +69,6 @@ self.addEventListener('install', function (event) {
                console.error("Error caching directories");
                console.trace();
             });
-          var cachelist = filelist.concat(dirlist);
           for (var i = 0; i < listpages.length; i++) {
             if (typeof listpages[i] == "string" && !cachelist.includes(listpages[i]) && !cachelist.includes(listpages[i]+"/")) {
               console.log("I didn't cache", listpages[i]);
