@@ -41,12 +41,14 @@ self.addEventListener('fetch', function (event) {
     console.log('Service Worker: Trying to cache ' + event.request.url + '...');
     cache.add(event.request.url);
   }).catch(function () {
-    return;
+    console.log("No cache this time");
   });
   event.respondWith(
     fetch(event.request).catch(function () {
-      console.log('Service Worker: Returning cache ' + event.request.url + '...');
-      return caches.match(event.request);
+      console.log('Service Worker: Returning cache for ' + event.request.url + '...');
+      var respy = caches.match(event.request);
+      console.log(respy);
+      return respy;
     })
   );
 });
