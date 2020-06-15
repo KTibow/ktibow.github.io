@@ -11,19 +11,34 @@ self.addEventListener('install', function (event) {
           while (listpages.indexOf("") != -1) {
             delete listpages[listpages.indexOf("")];
           }
-          var cachelist = [];
+          var filelist = [];
           for (var i = 0; i < listpages.length; i++) {
             if (typeof listpages[i] == "string" && listpages[i].includes(".") && !listpages[i].includes("index.html")) {
-              cachelist.push(listpages[i]);
+              filelist.push(listpages[i]);
             }
           }
+          var dirlist = [];
           for (var i = 0; i < listpages.length; i++) {
             if (typeof listpages[i] == "string" && listpages[i].includes("index.html")) {
-              cachelist.push(listpages[i].replace("index.html", ""));
+              dirlist.push(listpages[i].replace("index.html", ""));
             }
           }
-          console.log("Caching caches:", cachelist);
-          cache.addAll(cachelist).then(function(){console.log("Cached caches");}).catch(function(){console.log("Error caching caches");});
+          console.log("Caching file caches:", filelist);
+          console.log("Caching directory caches:", dirlist);
+          cache.addAll(filelist)
+            .then(function(){
+               console.log("Cached files");
+            }).catch(function(){
+               console.error("Error caching files");
+               console.trace();
+            });
+          cache.addAll(dirlist)
+            .then(function(){
+               console.log("Cached directories");
+            }).catch(function(){
+               console.error("Error caching directories");
+               console.trace();
+            });
           for (var i = 0; i < listpages.length; i++) {
             if (typeof listpages[i] == "string" && !cachelist.includes(listpages[i]) && !cachelist.includes(listpages[i]+"/")) {
               console.log("I didn't cache", listpages[i]);
