@@ -27,8 +27,13 @@ print("Parsed robolist:")
 print(robolist)
 for url in input.split("\n"):
   print("Parsing url "+urlparse(url).path)
-  print(urlparse(url).path in robots)
-  if "https://ktibow.github.io/" in url and (urlparse(url).path not in robots or url == "https://ktibow.github.io/"):
+  allowed = True
+  for rob in robolist:
+    if rob in urlparse(url).path:
+      print("Nope says", rob)
+      allowed = False
+  print(allowed)
+  if "https://ktibow.github.io/" in url and (allowed or url == "https://ktibow.github.io/"):
     out.write("""<url>
 <loc>"""+url+"""</loc>
 <priority>""")
