@@ -13,7 +13,7 @@ self.addEventListener('install', function (event) {
           }
           var jscsslist = [];
           for (var i = 0; i < listpages.length; i++) {
-            if (typeof listpages[i] == "string" && (listpages[i].includes("js") || listpages[i].includes("css"))) {
+            if (typeof listpages[i] == "string" && (listpages[i].includes("js") || listpages[i].includes("css")) && !listpages[i].includes("index.html")) {
               jscsslist.push(listpages[i]);
             }
           }
@@ -27,6 +27,11 @@ self.addEventListener('install', function (event) {
           }
           console.log("Caching directories:", dirlist);
           cache.addAll(dirlist).then(function(){console.log("Cached directories");}).catch(function(){console.log("Error caching directories");});
+          for (var i = 0; i < listpages.length; i++) {
+            if (typeof listpages[i] == "string" && !(listpages[i].includes("js") || listpages[i].includes("css")) && !listpages[i].includes("index.html")) {
+              console.log("I didn't cache", listpages[i]);
+            }
+          }
         });
       });
     })
