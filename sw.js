@@ -1,13 +1,5 @@
 var cacheName = "ktibowsite-v1";
 console.log("Service Worker: Hello there!");
-function logthen(arg) {
-  console.log("Then", arg);
-  return arg;
-}
-function logcatch(arg) {
-  console.log("Catch", arg);
-  return arg;
-}
 self.addEventListener('install', function (event) {
   console.log('Service Worker: Installing...');
   event.waitUntil(
@@ -24,7 +16,7 @@ self.addEventListener('install', function (event) {
           console.log(listpages);
           for (var i = 0; i < listpages.length; i++) {
             console.log("Trying to cache", listpages[i]);
-            cache.add(listpages[i]).then(logthen).catch(logcatch);
+            cache.add(listpages[i]).then(console.log).catch(console.error);
           };
         });
       });
