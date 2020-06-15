@@ -15,7 +15,7 @@ self.addEventListener('install', function (event) {
           console.log("List to cache:")
           console.log(listpages);
           for (var i = 0; i < listpages.length; i++) {
-            if (typeof listpages[i] == "string") {
+            if (typeof listpages[i] == "string" && listpages[i].includes("blog")) {
               console.log("Trying to cache", listpages[i]);
               cache.addAll([listpages[i]]).then(console.log).catch(console.error);
             }
