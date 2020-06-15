@@ -14,7 +14,7 @@
       .padpost {
         padding: 5px 6px;
         margin: 15px;
-        display: block;
+        display: inline-block;
         font-size: 1.04em;
         border-radius: 3px;
         background-color: #D6D6EA;
@@ -22,7 +22,8 @@
       }
       @media all and (orientation: portrait) {
         .padpost {
-          max-width: 100%;
+          display: block;
+          max-width: initial;
         }
       }
     </style>
