@@ -39,6 +39,7 @@ self.addEventListener('install', function (event) {
                console.error("Error caching directories");
                console.trace();
             });
+          var cachelist = filelist.concat(dirlist);
           for (var i = 0; i < listpages.length; i++) {
             if (typeof listpages[i] == "string" && !cachelist.includes(listpages[i]) && !cachelist.includes(listpages[i]+"/")) {
               console.log("I didn't cache", listpages[i]);
