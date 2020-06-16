@@ -37,7 +37,7 @@
         -moz-osx-font-smoothing: grayscale;
         font-feature-settings: 'liga';
         margin: 5px;
-        color: #EEE;
+        color: gray;
       }
     </style>
   </head>
@@ -46,20 +46,34 @@
     <div id="wait1">
       <span id="loadicon" class="icon">check_box_outline_blank</span> <p id="loadstatus">Waiting...</p>
     </div>
-    <div id="wait2" style="display: none;">
-      <span id="loadicon2" class="icon">check_box_outline_blank</span> <p id="loadstatus2">Unloading other service workers...</p>
+    <div id="wait2">
+      <span id="loadicon2" class="icon">check_box_outline_blank</span> <p id="loadstatus2">Unload other service workers</p>
+    </div>
+    <div id="wait3">
+      <span id="loadicon3" class="icon">check_box_outline_blank</span> <p id="loadstatus3">Load service worker</p>
     </div>
     <script>
       window.addEventListener("load", function() {
         setTimeout(function() {
-          document.getElementById("loadicon").style.color = "#0F0";
+          document.getElementById("loadicon").style.color = "green";
           document.getElementById("loadicon").innerHTML = "check_box";
           document.getElementById("loadstatus").innerHTML = "Done waiting.";
-          navigator.serviceWorker.getRegistrations().then(function(registrations) {
-            for (let registration of registrations) {
-              registration.unregister();
-            }
-          });
+          document.getElementById("loadstatus2").innerHTML = "Unloading other service workers...";
+          if (window.navigator.onLine) {
+            navigator.serviceWorker.getRegistrations().then(function(registrations) {
+              for (let registration of registrations) {
+                registration.unregister();
+              }
+            });
+            document.getElementById("loadstatus2").innerHTML = "Unloaded other service workers.";
+            document.getElementById("loadicon2").style.color = "green";
+            document.getElementById("loadicon2").innerHTML = "check_box";
+          } else {
+            document.getElementById("loadicon2").style.color = "red";
+            document.getElementById("loadicon2").innerHTML = "error";
+            document.getElementById("loadstatus2").innerHTML = "Please connect to the internet first.";
+            document.getElementById("statusheader").innerHTML = "Error going offline";
+          }
         }, 1000);
       });
       /*if ('serviceWorker' in navigator) {
