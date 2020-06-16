@@ -9,6 +9,7 @@
       div {
         padding: 10px;
         background-color: #EAEAEA;
+        text-align: center;
       }
       .icon {
         font-family: Material Icons;
@@ -22,18 +23,17 @@
         font-size: 1.1em;
         display: inline-block;
         margin: 7px;
-        text-align: center;
       }
     </style>
   </head>
   <body>
     <h1 id="statusheader">Going offline...</h1>
-    <p id="wait1">
+    <div id="wait1">
       <span id="loadicon" class="icon">check_box_outline_blank</span> <p id="loadstatus">Waiting...</p>
-    </p>
-    <p id="wait2" style="display: none;">
+    </div>
+    <div id="wait2" style="display: none;">
       <span id="loadicon2" class="icon">check_box_outline_blank</span> <p id="loadstatus2">Unloading other service workers...</p>
-    </p>
+    </div>
     <script>
       window.addEventListener("load", function() {
         setTimeout(function() {
