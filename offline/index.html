@@ -29,7 +29,7 @@
   <body>
     <h1 id="statusheader">Going offline...</h1>
     <div>
-    <span id="loadicon">check_box_outline_blank</span>
+    <span id="loadicon" class="icon">check_box_outline_blank</span>
     <p id="loadstatus">Loading...</p>
     </div>
     <script>
@@ -43,7 +43,7 @@
           console.log('Service worker registration succeeded:', registration);
         }).catch(function(error) {
           console.log('Service worker registration failed:', error);
-          document.getElementById("loadicon").style.color = "#F00;";
+          document.getElementById("loadicon").style.color = "#F00";
           document.getElementById("loadicon").innerHTML = "error";
           document.getElementById("loadstatus").innerHTML = `There was an error going offline.`;
           document.getElementById("statusheader").innerHTML = "Error going offline.";
