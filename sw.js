@@ -1,6 +1,6 @@
 var cacheName = "ktibowsite-v1";
 console.log("Service Worker: Hello there!");
-async function postMessageToPage(message) {
+async function postMessageToPage(event, message) {
   if (!event.clientId) return;
   const client = await clients.get(event.clientId);
   if (!client) return;
@@ -78,7 +78,7 @@ self.addEventListener('install', function (event) {
           cache.addAll(jscsslist)
             .then(function(){
               console.log("Cached JS+CSS");
-              postMessageToPage("Cached JS+CSS<br>");
+              postMessageToPage(event, "Cached JS+CSS<br>");
             }).catch(function(){
               console.error("Error caching JS+CSS");
               console.trace();
@@ -86,7 +86,7 @@ self.addEventListener('install', function (event) {
           cache.addAll(imglist)
             .then(function(){
               console.log("Cached images");
-              postMessageToPage("Cached images<br>");
+              postMessageToPage(event, "Cached images<br>");
             }).catch(function(){
               console.error("Error caching images");
               console.trace();
@@ -94,7 +94,7 @@ self.addEventListener('install', function (event) {
           cache.addAll(dirlist)
             .then(function(){
               console.log("Cached directories");
-              postMessageToPage("Cached directories<br>");
+              postMessageToPage(event, "Cached directories<br>");
             }).catch(function(){
               console.error("Error caching directories");
               console.trace();
@@ -102,7 +102,7 @@ self.addEventListener('install', function (event) {
           cache.addAll(redirdirlist)
             .then(function(){
               console.log("Cached redirect directories");
-              postMessageToPage("Cached redirect directories<br>");
+              postMessageToPage(event, "Cached redirect directories<br>");
             }).catch(function(){
               console.error("Error caching redirect directories");
               console.trace();
@@ -110,7 +110,7 @@ self.addEventListener('install', function (event) {
           cache.addAll(indexlist)
             .then(function(){
               console.log("Cached index.html files");
-              postMessageToPage("Cached index.html files<br>");
+              postMessageToPage(event, "Cached index.html files<br>");
             }).catch(function(){
               console.error("Error caching index.html files");
               console.trace();
@@ -118,7 +118,7 @@ self.addEventListener('install', function (event) {
           cache.addAll(gocallmelist)
             .then(function(){
               console.log("Cached Go Call Me files");
-              postMessageToPage("Cached Go Call Me files<br>");
+              postMessageToPage(event, "Cached Go Call Me files<br>");
             }).catch(function(){
               console.error("Error caching Go Call Me files");
               console.trace();
@@ -126,7 +126,7 @@ self.addEventListener('install', function (event) {
           cache.addAll(filelist)
             .then(function(){
               console.log("Cached files");
-              postMessageToPage("Cached files <br>");
+              postMessageToPage(event, "Cached files <br>");
             }).catch(function(){
               console.error("Error caching files");
               console.trace();
