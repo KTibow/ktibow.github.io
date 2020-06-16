@@ -8,5 +8,32 @@
   </head>
   <body>
     <h1 id="statusheader">Going offline...</h1>
-    <p><span style="font-family: Material Icons; color: #666;">check_box_outline_blank</span>Loading...</p>
+    <div>
+    <span id="loadicon" style="font-family: Material Icons; color: #666; width: 20%; font-size: 1.25em; display: inline-block;">check_box_outline_blank</span>
+    <p id="loadstatus" style="width: 75%; font-size: 1.25em; display: inline-block;">Loading...</p>
+    </div>
+    <script>
+      navigator.serviceWorker.getRegistrations().then(function(registrations) {
+        for(let registration of registrations) {
+          registration.unregister()
+        }
+      });
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').then(function(registration) {
+          console.log('Service worker registration succeeded:', registration);
+        }).catch(function(error) {
+          console.log('Service worker registration failed:', error);
+          document.getElementById("loadicon").style.color = "#F00;";
+          document.getElementById("loadicon").innerHTML = "error";
+          document.getElementById("loadstatus").innerHTML = `There was an error going offline.`;
+          document.getElementById("statusheader").innerHTML = "Error going offline.";
+        });
+      } else {
+        console.log('Service workers are not supported.');
+        document.getElementById("loadicon").style.color = "#F00;";
+        document.getElementById("loadicon").innerHTML = "error";
+        document.getElementById("loadstatus").innerHTML = "Your browser doesn't support offline mode.";
+        document.getElementById("statusheader").innerHTML = "Error going offline.";
+      }
+    </script>
 </html>
