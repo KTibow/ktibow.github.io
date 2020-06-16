@@ -1,15 +1,12 @@
 var cacheName = "ktibowsite-v1";
 console.log("Service Worker: Hello there!");
-function parseUrl(link) {
-  var a = document.createElement('a');
-  a.href = link;
-  return a;
-};
-function isSameOrigin(url1, url2) {
-  return (parseUrl(url1).hostname === parseurl2.hostname);
-};
-function isCrossOrigin(url) {
-  return !isSameOrigin(url.url, window.location);
+function postMessageToPage(message) {
+  if (!event.clientId) return;
+  const client = await clients.get(event.clientId);
+  if (!client) return;
+  client.postMessage({
+    msg: message
+  });
 }
 self.addEventListener('install', function (event) {
   console.log('Service Worker: Installing...');
@@ -80,52 +77,59 @@ self.addEventListener('install', function (event) {
           console.log("Caching file caches:", filelist);
           cache.addAll(jscsslist)
             .then(function(){
-               console.log("Cached JS+CSS");
+              console.log("Cached JS+CSS");
+              postMessageToPage("Cached JS+CSS<br>");
             }).catch(function(){
-               console.error("Error caching JS+CSS");
-               console.trace();
+              console.error("Error caching JS+CSS");
+              console.trace();
             });
           cache.addAll(imglist)
             .then(function(){
-               console.log("Cached images");
+              console.log("Cached images");
+              postMessageToPage("Cached images<br>");
             }).catch(function(){
-               console.error("Error caching images");
-               console.trace();
+              console.error("Error caching images");
+              console.trace();
             });
           cache.addAll(dirlist)
             .then(function(){
-               console.log("Cached directories");
+              console.log("Cached directories");
+              postMessageToPage("Cached directories<br>");
             }).catch(function(){
-               console.error("Error caching directories");
-               console.trace();
+              console.error("Error caching directories");
+              console.trace();
             });
           cache.addAll(redirdirlist)
             .then(function(){
-               console.log("Cached redirect directories");
+              console.log("Cached redirect directories");
+              postMessageToPage("Cached redirect directories<br>");
             }).catch(function(){
-               console.error("Error caching redirect directories");
-               console.trace();
+              console.error("Error caching redirect directories");
+              console.trace();
             });
           cache.addAll(indexlist)
             .then(function(){
-               console.log("Cached index.html files");
+              console.log("Cached index.html files");
+              postMessageToPage("Cached index.html files<br>");
             }).catch(function(){
-               console.error("Error caching index.html files");
-               console.trace();
+              console.error("Error caching index.html files");
+              console.trace();
             });
           cache.addAll(gocallmelist)
             .then(function(){
-               console.log("Cached Go Call Me files");
+              console.log("Cached Go Call Me files");
+              postMessageToPage("Cached Go Call Me files<br>");
             }).catch(function(){
-               console.error("Error caching Go Call Me files");
-               console.trace();
+              console.error("Error caching Go Call Me files");
+              console.trace();
             });
           cache.addAll(filelist)
             .then(function(){
-               console.log("Cached files");
+              console.log("Cached files");
+              postMessageToPage("Cached files <br>");
             }).catch(function(){
-               console.error("Error caching files");
-               console.trace();
+              console.error("Error caching files");
+              console.trace();
             });
           for (var i = 0; i < listpages.length; i++) {
             if (typeof listpages[i] == "string" && !cachelist.includes(listpages[i]) && !cachelist.includes(listpages[i]+"/")) {
