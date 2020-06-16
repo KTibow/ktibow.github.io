@@ -4,6 +4,7 @@ async function postMessageToPage(event, message) {
   if (!event.clientId) return;
   const client = await clients.get(event.clientId);
   if (!client) return;
+  console.log("Posting message "+message+" to "+String(client));
   client.postMessage({
     msg: message
   });
