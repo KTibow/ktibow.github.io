@@ -162,7 +162,7 @@ self.addEventListener('fetch', function (event) {
       console.log("Service Worker: Returning response for "+event.request.url);
       return networkResponse;
     } catch {
-      console.log("Service Worker: 
+      console.log("Service Worker: Returning cache for "+event.request.url);
       const cache = await caches.open(cacheName);
       const response = await cache.match(event.request);
       return response;
