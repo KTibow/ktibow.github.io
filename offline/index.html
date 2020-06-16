@@ -71,7 +71,7 @@
     </div>
     <p id="servgets" style="display: block;"></p>
     <script>
-      function installServiceWorker() {
+      function installServiceWorker(delkeys) {
         document.getElementById("loadicon3").style.color = "green";
         document.getElementById("loadicon3").innerHTML = "check_box";
         document.getElementById("loadstatus3").innerHTML = "Deleted " + delkeys.length.toString() + " old caches.";
@@ -122,12 +122,12 @@
                 caches.delete(key).then(function() {
                   delkeys.push(key);
                   if (delkeys.length == keys.length) {
-                    installServiceWorker();
+                    installServiceWorker(delkeys);
                   }
                 });
               }
               if (delkeys.length == 0) {
-                installServiceWorker();
+                installServiceWorker(delkeys);
               }
             });
           } else {
