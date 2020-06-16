@@ -1,5 +1,16 @@
 var cacheName = "ktibowsite-v1";
 console.log("Service Worker: Hello there!");
+function parseUrl(link) {
+  var a = document.createElement('a');
+  a.href = link;
+  return a;
+};
+function isSameOrigin(url1, url2) {
+  return (parseUrl(url1).hostname === parseurl2.hostname);
+};
+function isCrossOrigin(url) {
+  return !isSameOrigin(url.url, window.location);
+}
 self.addEventListener('install', function (event) {
   console.log('Service Worker: Installing...');
   if (navigator.onLine) {
@@ -139,18 +150,20 @@ self.addEventListener('install', function (event) {
 });
 self.addEventListener('fetch', function (event) {
   console.log("Service Worker: We got a (no, not fish) fetch! " + event.request.url);
-  caches.open(cacheName).then(function (cache) {
-    console.log('Service Worker: Trying to cache ' + event.request.url + '...');
-    cache.add(event.request.url);
-  }).catch(function () {
-    console.log("No cache this time");
-  });
-  event.respondWith(
-    fetch(event.request).catch(function () {
-      console.log('Service Worker: Returning cache for ' + event.request.url + '...');
-      var respy = caches.match(event.request);
-      console.log(respy);
-      return respy;
-    })
-  );
+  try {
+    const networkResponse = await fetch(event.request);
+    const clonedResponse = networkResponse.clone();
+    event.waitUntil((async function() {
+      const cache = await caches.open(cacheName);
+      console.log("Service Worker: Caching "+event.request.url);
+      await cache.put(event.request, clonedResponse);
+    })());
+    console.log("Service Worker: Returning response for "+event.request.url);
+    return networkResponse;
+  } catch {
+    console.log("Service Worker: 
+    const cache = await caches.open(cacheName);
+    const response = await cache.match(event.request);
+    return response;
+  }
 });
