@@ -46,14 +46,17 @@
   </head>
   <body>
     <h1 id="statusheader">Going offline...</h1>
-    <div id="wait1">
+    <div>
       <span id="loadicon" class="icon">check_box_outline_blank</span> <p id="loadstatus">Waiting...</p>
     </div>
-    <div id="wait2">
+    <div>
       <span id="loadicon2" class="icon">check_box_outline_blank</span> <p id="loadstatus2">Unload other service workers</p>
     </div>
-    <div id="wait3">
-      <span id="loadicon3" class="icon">check_box_outline_blank</span> <p id="loadstatus3">Load service worker</p>
+    <div>
+      <span id="loadicon3" class="icon">check_box_outline_blank</span> <p id="loadstatus3">Delete old caches</p>
+    </div>
+    <div>
+      <span id="loadicon4" class="icon">check_box_outline_blank</span> <p id="loadstatus4">Load service worker</p>
     </div>
     <script>
       window.addEventListener("load", function() {
@@ -71,30 +74,47 @@
             document.getElementById("loadstatus2").innerHTML = "Unloaded other service workers.";
             document.getElementById("loadicon2").style.color = "green";
             document.getElementById("loadicon2").innerHTML = "check_box";
+            document.getElementById("loadstatus3").innerHTML = "Deleting old caches...";
+            caches.keys().then(function(keys) {
+              var delkeys = [];
+              for (let key of keys) {
+                caches.delete(key).then(function() {
+                  delkeys.push(key);
+                  if (delkeys.length == keys.length) {
+                    document.getElementById("loadicon3").style.color = "green";
+                    document.getElementById("loadicon3").innerHTML = "check_box";
+                    document.getElementById("loadstatus3").innerHTML = "Deleted "+delkeys.length.toString()+" old caches.";
+                    if ('serviceWorker' in navigator) {
+                      navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                        console.log('Service worker registration succeeded:', registration);
+                        document.getElementById("loadicon4").style.color = "green";
+                        document.getElementById("loadicon4").innerHTML = "check_box";
+                        document.getElementById("loadstatus4").innerHTML = "Loaded service worker";
+                      }).catch(function(error) {
+                        console.log('Service worker registration failed:', error);
+                        document.getElementById("loadicon4").style.color = "red";
+                        document.getElementById("loadicon4").innerHTML = "error";
+                        document.getElementById("loadstatus4").innerHTML = "There was an error going offline.";
+                        document.getElementById("statusheader").innerHTML = "Error going offline.";
+                      });
+                    } else {
+                      console.log('Service workers are not supported.');
+                      document.getElementById("loadicon4").style.color = "#F00;";
+                      document.getElementById("loadicon4").innerHTML = "error";
+                      document.getElementById("loadstatus4").innerHTML = "Your browser doesn't support offline mode.";
+                      document.getElementById("statusheader").innerHTML = "Error going offline.";
+                    }
+                  }
+                });
+              });
           } else {
             document.getElementById("loadicon2").style.color = "red";
             document.getElementById("loadicon2").innerHTML = "error";
-            document.getElementById("loadstatus2").innerHTML = "Please connect to the internet first.";
+            document.getElementById("loadstatus2").innerHTML = "Please connect to the internet first to do this.";
             document.getElementById("statusheader").innerHTML = "Error going offline";
           }
-        }, 1000);
+        }, 2000);
       });
-      /*if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js').then(function(registration) {
-          console.log('Service worker registration succeeded:', registration);
-        }).catch(function(error) {
-          console.log('Service worker registration failed:', error);
-          document.getElementById("loadicon").style.color = "#F00";
-          document.getElementById("loadicon").innerHTML = "error";
-          document.getElementById("loadstatus").innerHTML = "There was an error going offline.";
-          document.getElementById("statusheader").innerHTML = "Error going offline.";
-        });
-      } else {
-        console.log('Service workers are not supported.');
-        document.getElementById("loadicon").style.color = "#F00;";
-        document.getElementById("loadicon").innerHTML = "error";
-        document.getElementById("loadstatus").innerHTML = "Your browser doesn't support offline mode.";
-        document.getElementById("statusheader").innerHTML = "Error going offline.";
-      }*/
+      /**/
     </script>
 </html>
