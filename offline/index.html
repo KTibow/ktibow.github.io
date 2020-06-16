@@ -71,6 +71,35 @@
     </div>
     <p id="servgets" style="display: block;"></p>
     <script>
+      function installServiceWorker() {
+        document.getElementById("loadicon3").style.color = "green";
+        document.getElementById("loadicon3").innerHTML = "check_box";
+        document.getElementById("loadstatus3").innerHTML = "Deleted " + delkeys.length.toString() + " old caches.";
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/sw.js').then(function(registration) {
+            console.log('Service worker registration succeeded:', registration);
+            document.getElementById("loadicon4").style.color = "green";
+            document.getElementById("loadicon4").innerHTML = "check_box";
+            document.getElementById("loadstatus4").innerHTML = "Loaded service worker";
+            document.getElementById("statusheader").innerHTML = "You're ready to use my website offline.";
+            navigator.serviceWorker.addEventListener('message', function(event) {
+              document.getElementById("servgets").innerHTML += event.data.msg;
+            });
+          }).catch(function(error) {
+            console.log('Service worker registration failed:', error);
+            document.getElementById("loadicon4").style.color = "red";
+            document.getElementById("loadicon4").innerHTML = "error";
+            document.getElementById("loadstatus4").innerHTML = "There was an error going offline.";
+            document.getElementById("statusheader").innerHTML = "Error going offline.";
+          });
+        } else {
+          console.log('Service workers are not supported.');
+          document.getElementById("loadicon4").style.color = "#F00;";
+          document.getElementById("loadicon4").innerHTML = "error";
+          document.getElementById("loadstatus4").innerHTML = "Your browser doesn't support offline mode.";
+          document.getElementById("statusheader").innerHTML = "Error going offline.";
+        }
+      }
       window.addEventListener("load", function() {
         setTimeout(function() {
           document.getElementById("loadicon").style.color = "green";
@@ -93,35 +122,12 @@
                 caches.delete(key).then(function() {
                   delkeys.push(key);
                   if (delkeys.length == keys.length) {
-                    document.getElementById("loadicon3").style.color = "green";
-                    document.getElementById("loadicon3").innerHTML = "check_box";
-                    document.getElementById("loadstatus3").innerHTML = "Deleted " + delkeys.length.toString() + " old caches.";
-                    if ('serviceWorker' in navigator) {
-                      navigator.serviceWorker.register('/sw.js').then(function(registration) {
-                        console.log('Service worker registration succeeded:', registration);
-                        document.getElementById("loadicon4").style.color = "green";
-                        document.getElementById("loadicon4").innerHTML = "check_box";
-                        document.getElementById("loadstatus4").innerHTML = "Loaded service worker";
-                        document.getElementById("statusheader").innerHTML = "You're ready to use my website offline.";
-                        navigator.serviceWorker.addEventListener('message', function(event) {
-                          document.getElementById("servgets").innerHTML += event.data.msg;
-                        });
-                      }).catch(function(error) {
-                        console.log('Service worker registration failed:', error);
-                        document.getElementById("loadicon4").style.color = "red";
-                        document.getElementById("loadicon4").innerHTML = "error";
-                        document.getElementById("loadstatus4").innerHTML = "There was an error going offline.";
-                        document.getElementById("statusheader").innerHTML = "Error going offline.";
-                      });
-                    } else {
-                      console.log('Service workers are not supported.');
-                      document.getElementById("loadicon4").style.color = "#F00;";
-                      document.getElementById("loadicon4").innerHTML = "error";
-                      document.getElementById("loadstatus4").innerHTML = "Your browser doesn't support offline mode.";
-                      document.getElementById("statusheader").innerHTML = "Error going offline.";
-                    }
+                    installServiceWorker();
                   }
                 });
+              }
+              if (delkeys.length == 0) {
+                installServiceWorker();
               }
             });
           } else {
