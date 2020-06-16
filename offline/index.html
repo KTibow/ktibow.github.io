@@ -69,6 +69,7 @@
     <div>
       <span id="loadicon4" class="icon">check_box_outline_blank</span> <p id="loadstatus4">Load service worker</p>
     </div>
+    <p id="servgets" style="display: block;"></p>
     <script>
       window.addEventListener("load", function() {
         setTimeout(function() {
@@ -101,6 +102,10 @@
                         document.getElementById("loadicon4").style.color = "green";
                         document.getElementById("loadicon4").innerHTML = "check_box";
                         document.getElementById("loadstatus4").innerHTML = "Loaded service worker";
+                        document.getElementById("statusheader").innerHTML = "You're ready to use my website offline.";
+                        navigator.serviceWorker.addEventListener('message', function(event) {
+                          document.getElementById("servgets").innerHTML += event.data.msg;
+                        });
                       }).catch(function(error) {
                         console.log('Service worker registration failed:', error);
                         document.getElementById("loadicon4").style.color = "red";
