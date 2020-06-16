@@ -149,21 +149,23 @@ self.addEventListener('install', function (event) {
   console.log("Service Worker: Done installing!");
 });
 self.addEventListener('fetch', function (event) {
-  console.log("Service Worker: We got a (no, not fish) fetch! " + event.request.url);
-  try {
-    const networkResponse = await fetch(event.request);
-    const clonedResponse = networkResponse.clone();
-    event.waitUntil((async function() {
+  event.respondWith((async function() {
+    console.log("Service Worker: We got a (no, not fish) fetch! " + event.request.url);
+    try {
+      const networkResponse = await fetch(event.request);
+      const clonedResponse = networkResponse.clone();
+      event.waitUntil((async function() {
+        const cache = await caches.open(cacheName);
+        console.log("Service Worker: Caching "+event.request.url);
+        await cache.put(event.request, clonedResponse);
+      })());
+      console.log("Service Worker: Returning response for "+event.request.url);
+      return networkResponse;
+    } catch {
+      console.log("Service Worker: 
       const cache = await caches.open(cacheName);
-      console.log("Service Worker: Caching "+event.request.url);
-      await cache.put(event.request, clonedResponse);
-    })());
-    console.log("Service Worker: Returning response for "+event.request.url);
-    return networkResponse;
-  } catch {
-    console.log("Service Worker: 
-    const cache = await caches.open(cacheName);
-    const response = await cache.match(event.request);
-    return response;
-  }
+      const response = await cache.match(event.request);
+      return response;
+    }
+  })());
 });
