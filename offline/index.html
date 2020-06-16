@@ -13,7 +13,6 @@
       .icon {
         font-family: Material Icons;
         color: #666;
-        width: 20%;
         font-size: 1.5em;
         display: inline-block;
         margin: 5px;
@@ -22,30 +21,40 @@
         width: 75%;
         font-size: 1.1em;
         display: inline-block;
-        margin: 5px;
+        margin: 7px;
+        text-align: center;
       }
     </style>
   </head>
   <body>
     <h1 id="statusheader">Going offline...</h1>
-    <div>
-    <span id="loadicon" class="icon">check_box_outline_blank</span>
-    <p id="loadstatus">Loading...</p>
+    <div id="wait1">
+      <p id="loadstatus"><span id="loadicon" class="icon">check_box_outline_blank</span> Waiting...</p>
+    </div>
+    <div id="wait2" style="display: none;">
+      <p id="loadstatus2"><span id="loadicon2" class="icon">check_box_outline_blank</span> Unloading other service workers...</p>
     </div>
     <script>
-      navigator.serviceWorker.getRegistrations().then(function(registrations) {
-        for(let registration of registrations) {
-          registration.unregister()
-        }
+      window.addEventListener("load", function() {
+        setTimeout(function() {
+          document.getElementById("loadicon").style.color = "#0F0";
+          document.getElementById("loadicon").innerHTML = "check_box";
+          document.getElementById("loadstatus").innerHTML = "Done waiting.";
+          navigator.serviceWorker.getRegistrations().then(function(registrations) {
+            for (let registration of registrations) {
+              registration.unregister();
+            }
+          });
+        }, 1000);
       });
-      if ('serviceWorker' in navigator) {
+      /*if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/sw.js').then(function(registration) {
           console.log('Service worker registration succeeded:', registration);
         }).catch(function(error) {
           console.log('Service worker registration failed:', error);
           document.getElementById("loadicon").style.color = "#F00";
           document.getElementById("loadicon").innerHTML = "error";
-          document.getElementById("loadstatus").innerHTML = `There was an error going offline.`;
+          document.getElementById("loadstatus").innerHTML = "There was an error going offline.";
           document.getElementById("statusheader").innerHTML = "Error going offline.";
         });
       } else {
@@ -54,6 +63,6 @@
         document.getElementById("loadicon").innerHTML = "error";
         document.getElementById("loadstatus").innerHTML = "Your browser doesn't support offline mode.";
         document.getElementById("statusheader").innerHTML = "Error going offline.";
-      }
+      }*/
     </script>
 </html>
