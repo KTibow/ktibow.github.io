@@ -2,10 +2,12 @@
 <html>
   <head>
     <script src="/common.js"></script>
+    <link rel="stylesheet" src="/sans.css">
     <title>The Unclosable Page</title>
   </head>
   <body>
     <h1 style="font-family: sans-serif;">Cool, huh?</h1>
+    <p>Note: You have to click anywhere on the page in order for the first pop-up to pop up.</p>
     <script>
       function closingCode() {
         setTimeout(window.open, 1, "https://ktibow.github.io/unclosable/", "_blank", 'menubar=no, status=no, toolbar=no, resizable=no, width=50000, height=50000, titlebar=no, alwaysRaised=yes');
