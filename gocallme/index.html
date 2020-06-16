@@ -66,6 +66,11 @@
         document.getElementById("qr").onload = function() {
           document.getElementById("loadingqr").style.display = "none";
         };
+        document.getElementById("qr").onerror = function() {
+          document.getElementById("loadingqr").style.display = "none";
+          document.getElementById("qr").style.display = "none";
+          alert("Error loading QR code. Check your connection.");
+        };
         document.getElementById("qr").src = "";
         document.getElementById("qr").src = imgurl;
         document.getElementById("qr").alt = "Scan this QR code to call "+document.getElementById("telfield").value+".";
