@@ -32,13 +32,27 @@ self.addEventListener('install', function (event) {
               dirlist.push(listpages[i].replace("index.html", ""));
             }
           }
+          var redirdirlist = [];
+          for (var i = 0; i < listpages.length; i++) {
+            if (typeof listpages[i] == "string" && listpages[i].includes("/index.html")) {
+              redirdirlist.push(listpages[i].replace("/index.html", ""));
+            }
+          }
           var indexlist = [];
           for (var i = 0; i < listpages.length; i++) {
             if (typeof listpages[i] == "string" && listpages[i].includes("index.html")) {
               indexlist.push(listpages[i]);
             }
           }
-          var cachelist = jscsslist.concat(imglist).concat(dirlist).concat(indexlist);
+          var gocallmelist = [
+            '/gocallme/',
+            '/gocallme/index.html',
+            '/gocallme/style.css',
+            '/gocallme/maskable_icon.png',
+            '/gocallme/manifest.json',
+            '/gocallme/sw.js'
+          ];
+          var cachelist = jscsslist.concat(imglist).concat(dirlist).concat(indexlist).concat(redirdirlist).concat(gocallmelist);
           var filelist = [];
           for (var i = 0; i < listpages.length; i++) {
             if (typeof listpages[i] == "string" && listpages[i].includes(".") && !listpages[i].includes("index.html") && !listpages[i].includes("yml") && !cachelist.includes(listpages[i])) {
@@ -49,7 +63,9 @@ self.addEventListener('install', function (event) {
           console.log("Caching JS+CSS caches:", jscsslist);
           console.log("Caching image caches:", imglist);
           console.log("Caching directory caches:", dirlist);
+          console.log("Caching redirect directory caches:", redirdirlist);
           console.log("Caching index.html files:", indexlist);
+          console.log("Caching gocallme files:", gocallmelist);
           console.log("Caching file caches:", filelist);
           cache.addAll(jscsslist)
             .then(function(){
@@ -72,11 +88,25 @@ self.addEventListener('install', function (event) {
                console.error("Error caching directories");
                console.trace();
             });
+          cache.addAll(redirdirlist)
+            .then(function(){
+               console.log("Cached redirect directories");
+            }).catch(function(){
+               console.error("Error caching redirect directories");
+               console.trace();
+            });
           cache.addAll(indexlist)
             .then(function(){
                console.log("Cached index.html files");
             }).catch(function(){
                console.error("Error caching index.html files");
+               console.trace();
+            });
+          cache.addAll(gocallmelist)
+            .then(function(){
+               console.log("Cached Go Call Me files");
+            }).catch(function(){
+               console.error("Error caching Go Call Me files");
                console.trace();
             });
           cache.addAll(filelist)
