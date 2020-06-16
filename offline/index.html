@@ -28,12 +28,12 @@
   </head>
   <body>
     <h1 id="statusheader">Going offline...</h1>
-    <div id="wait1">
-      <p id="loadstatus"><span id="loadicon" class="icon">check_box_outline_blank</span> Waiting...</p>
-    </div>
-    <div id="wait2" style="display: none;">
-      <p id="loadstatus2"><span id="loadicon2" class="icon">check_box_outline_blank</span> Unloading other service workers...</p>
-    </div>
+    <p id="wait1">
+      <span id="loadicon" class="icon">check_box_outline_blank</span> <p id="loadstatus">Waiting...</p>
+    </p>
+    <p id="wait2" style="display: none;">
+      <span id="loadicon2" class="icon">check_box_outline_blank</span> <p id="loadstatus2">Unloading other service workers...</p>
+    </p>
     <script>
       window.addEventListener("load", function() {
         setTimeout(function() {
