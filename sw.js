@@ -1,6 +1,6 @@
 var cacheName = "ktibowsite-v1";
 console.log("Service Worker: Hello there!");
-function postMessageToPage(message) {
+async function postMessageToPage(message) {
   if (!event.clientId) return;
   const client = await clients.get(event.clientId);
   if (!client) return;
