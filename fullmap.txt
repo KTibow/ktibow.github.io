@@ -58,9 +58,12 @@
 /cwk/my-first-codepen/index.html
 /cwk/index.html
 /index.html
+/fullmap.txt
 /classroom-logo.png
 /README.md
 /lighthouse_report.sh
+/offline
+/offline/index.html
 /sans.css
 /zoom
 /zoom/darkjoin.jpg
@@ -125,7 +128,6 @@
 /blog/2019/12/23
 /blog/2019/12/23/index.html
 /blog/2019/12/22
-/blog/2019/12/22/history
 /blog/2019/12/22/index.html
 /blog/2019/12/1
 /blog/2019/12/1/index.html
@@ -152,5 +154,6 @@
 /unclosable
 /unclosable/index.html
 /sitemapxml.py
+/sw.js
 /favicon.ico
 /analyzer.py
