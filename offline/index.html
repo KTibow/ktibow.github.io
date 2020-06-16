@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
   <head>
     <script defer src="/common.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -83,7 +83,7 @@
                   if (delkeys.length == keys.length) {
                     document.getElementById("loadicon3").style.color = "green";
                     document.getElementById("loadicon3").innerHTML = "check_box";
-                    document.getElementById("loadstatus3").innerHTML = "Deleted "+delkeys.length.toString()+" old caches.";
+                    document.getElementById("loadstatus3").innerHTML = "Deleted " + delkeys.length.toString() + " old caches.";
                     if ('serviceWorker' in navigator) {
                       navigator.serviceWorker.register('/sw.js').then(function(registration) {
                         console.log('Service worker registration succeeded:', registration);
@@ -106,7 +106,8 @@
                     }
                   }
                 });
-              });
+              }
+            });
           } else {
             document.getElementById("loadicon2").style.color = "red";
             document.getElementById("loadicon2").innerHTML = "error";
@@ -115,6 +116,6 @@
           }
         }, 2000);
       });
-      /**/
     </script>
+  </body>
 </html>
