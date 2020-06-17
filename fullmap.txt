@@ -1,6 +1,7 @@
 
 /LICENSE.md
 /map.png
+/old_sitemap.txt
 /BingSiteAuth.xml
 /sitemap.xml
 /robots.txt
