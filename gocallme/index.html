@@ -10,7 +10,7 @@
     <meta name="description" content="Are you tired of typing in phone numbers? Go Call Me generates a scannable, printable QR code and a link anyone can use to call you.">
     <script>
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/gocallme/sw.js').then(function() { console.log("Service Worker Registered"); });
+        navigator.serviceWorker.register('/sw.js').then(function() { console.log("Service Worker Registered"); });
       }
     </script>
     <link rel="manifest" href="/gocallme/manifest.json">
