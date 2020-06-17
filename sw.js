@@ -16,13 +16,16 @@ self.addEventListener('install', function (event) {
           }
           var jscsslist = [];
           for (var i = 0; i < listpages.length; i++) {
-            if (typeof listpages[i] == "string" && listpages[i].includes(".") && (listpages[i].includes("js") || listpages[i].includes("css"))) {
+            if (typeof listpages[i] == "string" && listpages[i].includes(".") &&
+                (listpages[i].includes("js") || listpages[i].includes("css"))) {
               jscsslist.push(listpages[i]);
             }
           }
           var imglist = [];
           for (var i = 0; i < listpages.length; i++) {
-            if (typeof listpages[i] == "string" && listpages[i].includes(".") && (listpages[i].includes("png") || listpages[i].includes("jpg") || listpages[i].includes("gif") || listpages[i].includes("ico"))) {
+            if (typeof listpages[i] == "string" && listpages[i].includes(".") &&
+                (listpages[i].includes("png") || listpages[i].includes("jpg") ||
+                 listpages[i].includes("gif") || listpages[i].includes("ico"))) {
               imglist.push(listpages[i]);
             }
           }
@@ -71,7 +74,9 @@ self.addEventListener('install', function (event) {
                                    .concat(gocallmelist).concat(corslist);
           var filelist = [];
           for (var i = 0; i < listpages.length; i++) {
-            if (typeof listpages[i] == "string" && listpages[i].includes(".") && !listpages[i].includes("index.html") && !listpages[i].includes("yml") && !cachelist.includes(listpages[i])) {
+            if (typeof listpages[i] == "string" && listpages[i].includes(".")
+                && !listpages[i].includes("index.html") && !listpages[i].includes("yml")
+                && !cachelist.includes(listpages[i]) && !listpages[i].includes("old_sitemap")) {
               filelist.push(listpages[i]);
             }
           }
@@ -133,7 +138,8 @@ self.addEventListener('install', function (event) {
               console.trace();
             });
           for (var i = 0; i < listpages.length; i++) {
-            if (typeof listpages[i] == "string" && !cachelist.includes(listpages[i]) && !cachelist.includes(listpages[i]+"/")) {
+            if (typeof listpages[i] == "string" && !cachelist.includes(listpages[i]) &&
+               !cachelist.includes(listpages[i]+"/")) {
               console.log("I didn't cache", listpages[i]);
             }
           }
@@ -149,7 +155,7 @@ self.addEventListener('install', function (event) {
           return caches.delete(key);
         }
       }));
-    })
+    })old_sitemap
   );
   console.log("Service Worker: Done installing!");
 });
