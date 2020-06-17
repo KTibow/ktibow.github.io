@@ -47,7 +47,7 @@ self.addEventListener('install', function (event) {
               indexlist.push(listpages[i]);
             }
           }
-          var gocallmelist = [
+          /*var gocallmelist = [
             '/gocallme/',
             '/gocallme/index.html',
             '/gocallme/style.css',
@@ -68,7 +68,7 @@ self.addEventListener('install', function (event) {
             console.log("Finished starting to cache CORS stuff");
           } catch {
             console.error("Error caching cross-origin stuff.");
-          }
+          }*/
           var cachelist = jscsslist.concat(imglist).concat(dirlist)
                                    .concat(indexlist).concat(redirdirlist)
                                    .concat(gocallmelist).concat(corslist);
