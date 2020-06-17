@@ -12,6 +12,21 @@ function wait(ms) {
     }
 }
 function loadDataStuff() {
+  var styl = document.createElement("style");
+  styl.innerHTML = `.padlink {
+padding: 5px 6px;
+margin: 3px;
+display: block;
+font-size: 1.04em;
+}
+@media all and (orientation: portrait) {
+.padlink {
+  border-radius: 3px;
+  background-color: #D6D6EA;
+  margin: 15px;
+}
+}`;
+  document.getElementsByTagName('body')[0].appendChild(styl);
   var sansvail = false;
   for (var li = 0; li < document.querySelectorAll("link").length; li++) {
     if (document.querySelectorAll("link")[li].href.includes("https://fonts.googleapis.com/css?family=Open+Sans")) {
@@ -61,20 +76,5 @@ function loadDataStuff() {
     ev.preventDefault();
   }
   document.oncopy = addLink;
-  var styl = document.createElement("style");
-  styl.innerHTML = `.padlink {
-padding: 5px 6px;
-margin: 3px;
-display: block;
-font-size: 1.04em;
-}
-@media all and (orientation: portrait) {
-.padlink {
-  border-radius: 3px;
-  background-color: #D6D6EA;
-  margin: 15px;
-}
-}`;
-  document.getElementsByTagName('body')[0].appendChild(styl);
 }
 window.addEventListener("load", loadDataStuff);
