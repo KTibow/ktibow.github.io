@@ -47,7 +47,7 @@ self.addEventListener('install', function (event) {
               indexlist.push(listpages[i]);
             }
           }
-          /*var gocallmelist = [
+          var gocallmelist = [
             '/gocallme/',
             '/gocallme/index.html',
             '/gocallme/style.css',
@@ -55,7 +55,7 @@ self.addEventListener('install', function (event) {
             '/gocallme/manifest.json',
             '/gocallme/sw.js'
           ];
-          var corslist = [
+          /*var corslist = [
             'https://fonts.googleapis.com/css?family=Open+Sans&display=swap',
             'https://fonts.googleapis.com/css?family=Open+Sans',
             'https://fonts.googleapis.com/icon?family=Material+Icons&display=swap'
@@ -71,7 +71,7 @@ self.addEventListener('install', function (event) {
           }*/
           var cachelist = jscsslist.concat(imglist).concat(dirlist)
                                    .concat(indexlist).concat(redirdirlist)
-                                   .concat(gocallmelist).concat(corslist);
+                                   .concat(gocallmelist);
           var filelist = [];
           for (var i = 0; i < listpages.length; i++) {
             if (typeof listpages[i] == "string" && listpages[i].includes(".")
