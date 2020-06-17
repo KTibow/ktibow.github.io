@@ -155,7 +155,7 @@ self.addEventListener('install', function (event) {
           return caches.delete(key);
         }
       }));
-    })old_sitemap
+    })
   );
   console.log("Service Worker: Done installing!");
 });
