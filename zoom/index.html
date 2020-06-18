@@ -3,8 +3,13 @@
   <head>
     <script defer src="/common.js"></script>
     <link rel="shortcut icon" type="image/png" href="https://d24cgw3uvb9a9h.cloudfront.net/favicon.ico">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet">
     <title>Zoom Improved! (unofficial)</title>
     <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+      }
       * {
         font-family: Lato, Helvetica Neue, Avenir, sans-serif;
       }
@@ -23,20 +28,34 @@
       }
       #thankszoom, #fromzimp {
         text-align: center;
-        margin: 20px;
+        margin: 12%;
       }
       a {
         color: #2D8CFF;
       }
+      #zoommessage {
+        width: 100%;
+        height: 100%;
+      }
     </style>
   </head>
   <body>
-    <h1 id="thankszoom" class="zimp"><b>Thanks for coming to my <span style="color: #2D8CFF;">Zoom</span> meeting.</b></h1>
-    <div id="fromzimp"><h1 style="display: inline;" class="zimp"><b>You can close this tab</b></h1><h1 style="display: inline;" class="zimp"> | or | </h1><h1 style="display: inline;" class="zimp"><b><a href="https://ktibow.github.io/zoom/#1-the-domain">make a Zoom Improved link</a></b></h1></div>
+    <div id="zoommessage">
+      <h1 id="thankszoom" class="zimp"><b>Thanks for coming to my <span style="color: #2D8CFF;">Zoom</span> meeting.</b></h1>
+      <div id="fromzimp">
+        <h1 style="display: inline;" class="zimp">
+          <b>You can close this tab</b>
+        </h1>
+        <h1 style="display: inline;" class="zimp"> | or | </h1>
+        <h1 style="display: inline;" class="zimp">
+          <b><a href="https://ktibow.github.io/zoom/#1-the-domain">make a Zoom Improved link</a></b>
+        </h1>
+      </div>
+      <p style="text-align: center; display: block; font-family: Material Icons;">arrow_downward</p>
+    </div>
     <script>
       if (!window.location.href.includes("from=zimp")) {
-        document.getElementById("fromzimp").style.display = "none";
-        document.getElementById("thankszoom").style.display = "none";
+        document.getElementById("zoommessage").style.display = "none";
       }
     </script>
     <h1>How to make an (unofficial) Zoom Improved link</h1>
