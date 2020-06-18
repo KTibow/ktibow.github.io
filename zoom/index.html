@@ -19,8 +19,10 @@
         color: #232333;
       }
       .zimp {
-        margin: 20px;
         text-align: center;
+      }
+      #thankszoom, #fromzimp {
+        margin: 20px;
       }
       a {
         color: #2D8CFF;
@@ -29,7 +31,7 @@
   </head>
   <body>
     <h1 id="thankszoom" class="zimp"><b>Thanks for coming to my <span style="color: #2D8CFF;">Zoom</span> meeting.</b></h1>
-    <h1 id="fromzimp" class="zimp"><b>Close this tab</b> | or | <b><a href="https://ktibow.github.io/zoom/#1-the-domain">make a Zoom Improved link</a></b></h1>
+    <div id="fromzimp"><h1 style="display: inline;" class="zimp"><b>You can close this tab</b></h1><h1 style="display: inline;" class="zimp"> | or | </h1><h1 style="display: inline;" class="zimp"><b><a href="https://ktibow.github.io/zoom/#1-the-domain">make a Zoom Improved link</a></b></h1></div>
     <script>
       if (!window.location.href.includes("from=zimp")) {
         document.getElementById("fromzimp").style.display = "none";
@@ -79,3 +81,5 @@
     </script>
   </body>
 </html>
+22
+        
