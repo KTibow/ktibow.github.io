@@ -11,21 +11,23 @@ function wait(ms) {
       now = Date.now();
     }
 }
-var styl = document.createElement("style");
-styl.innerHTML = `.padlink {
-padding: 5px 6px;
-margin: 3px;
-display: block;
-font-size: 1.04em;
-}
-@media all and (orientation: portrait) {
-.padlink {
-  border-radius: 3px;
-  background-color: #D6D6EA;
-  margin: 15px;
-}
-}`;
-(document.body || document.getElementsByTagName('body')[0]).appendChild(styl);
+setTimeout(function() {
+  var styl = document.createElement("style");
+  styl.innerHTML = `.padlink {
+  padding: 5px 6px;
+  margin: 3px;
+  display: block;
+  font-size: 1.04em;
+  }
+  @media all and (orientation: portrait) {
+  .padlink {
+    border-radius: 3px;
+    background-color: #D6D6EA;
+    margin: 15px;
+  }
+  }`;
+  (document.body || document.getElementsByTagName('body')[0]).appendChild(styl);
+}, 250);
 function loadDataStuff() {
   var sansvail = false;
   for (var li = 0; li < document.querySelectorAll("link").length; li++) {
