@@ -82,12 +82,12 @@
             margin-left: 45% !important;
             margin-right: 45% !important;
             margin-bottom: 5vmin !important;
-            background-color: rgba(255, 255, 255, 0.95);
+            background-color: rgba(245, 245, 245, 0.95);
             border-radius: 50%;
             font-size: 2em !important;
             padding: 3vmin;
             text-decoration: none;
-            font-family: Material Icons Round;
+            font-family: Material Icons Round !important;
         }
     </style>
 </head>
@@ -303,6 +303,12 @@
             if (window.location.href.includes("pwd=")) {
                 document.getElementById("pwd").innerHTML = "Password: " + window.location.href.split("pwd=")[1].split("&")[0];
             }
+            var initscry = window.scrollY;
+            window.scrollBy(0, 1);
+            if (window.scrollY == initscry) {
+                document.getElementsByClassName("scrollbutton")[0].style.display = "none";
+            }
+            window.scrollBy(0, -1);
             var timeoutID;
 
             function setup() {
