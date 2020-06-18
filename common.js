@@ -75,7 +75,7 @@ function loadDataStuff() {
     var selection;
     selection = window.getSelection();
     if (selection.toString().length > 100) {
-      var pagelink = "<!--// From <a href='"+document.location.href+"'>"+document.location.href+"</a>. &copy; Kendell R. Do not remove this attribution notice, but you can remove the part after \"Kendell R\".-->";
+      var pagelink = "<!--// From "+document.location.href+". © Kendell R. Do not remove this attribution notice (except in code), but you can make your own one as long as it has the source and \"© Kendell R.\"-->";
     } else {
       var pagelink = "";
     }
