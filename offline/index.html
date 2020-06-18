@@ -72,6 +72,9 @@
     <div>
       <span id="loadicon5" class="icon">check_box_outline_blank</span> <p id="loadstatus5">Cache website</p>
     </div>
+    <div>
+      <span id="loadicon6" class="icon">check_box_outline_blank</span> <p id="loadstatus6">Cache homepage</p>
+    </div>
     <script>
       function installServiceWorker(delkeys) {
         document.getElementById("loadicon3").style.color = "green";
@@ -89,6 +92,12 @@
               document.getElementById("loadicon5").innerHTML = "check_box";
               document.getElementById("loadstatus5").innerHTML = "Cached website.";
               document.getElementById("statusheader").innerHTML = "You're ready to use my website offline.";
+              document.getElementById("loadstatus6").innerHTML = "Caching homepage...";
+              setTimeout(function() {
+                document.getElementById("loadicon6").style.color = "green";
+                document.getElementById("loadicon6").innerHTML = "check_box";
+                window.location.href = "/";
+              }, 3000);
             }, 10000);
           }).catch(function(error) {
             console.log('Service worker registration failed:', error);
