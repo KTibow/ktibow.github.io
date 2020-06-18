@@ -11,20 +11,23 @@
         }
         #zoom > * {
             text-align: center;
-            font-family: Lato, Helvetica Neue, Avenir, Arial, Open Sans, sans-serif !important;
+            font-family: Lato, Helvetica Neue, Avenir, Arial, sans-serif !important;
         }
         #zoom > h1 {
             font-size: 2.7em;
+            font-family: Lato, Helvetica Neue, Avenir, Arial, sans-serif !important;
         }
         #zoom > a {
             display: block;
             font-size: 2.7em;
+            font-family: Lato, Helvetica Neue, Avenir, Arial, sans-serif !important;
         }
         #zoom > a[href] {
             color: #2D8CFF;
         }
         #zoom > h1 > span {
             font-size: 1em;
+            font-family: Lato, Helvetica Neue, Avenir, Arial, sans-serif !important;
         }
         .pbar {
             height: 40px;
@@ -229,8 +232,8 @@
             telLink.style.textAlign = "center";
             telLink.style.fontSize = "1.65em";
             telLink.style.display = "block";
-            telLink.style.backgroundColor = "lightgreen";
-            telLink.style.color = "white";
+            telLink.style.backgroundColor = "lawngreen";
+            telLink.style.color = "darkblue";
             telLink.style.padding = "15%";
             document.getElementById("gocallme").appendChild(telLink);
             telLink.click();
@@ -248,7 +251,7 @@
             call(number);
         }
         if (window.location.pathname.includes("zoom")) {
-            document.title = "Launch Zoom (unofficial)";
+            document.title = "Launching Zoom (unofficial)";
             var number = "";
             for (var i = 0; i < window.location.pathname.length; i++) {
                 if ("0123456789".includes(window.location.pathname.charAt(i))) {
