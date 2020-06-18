@@ -10,7 +10,7 @@
       html {
         height: 100%;
         width: 100%;
-        position: fixed;
+        position: absolute;
       }
       body {
         margin: 0;
@@ -26,8 +26,9 @@
       }
       img {
         width: 75%;
+        margin: 10%;
       }
-      h1, h2, h3 {
+      h1, h2, h3, h4 {
         font-weight: normal;
         color: #232333;
       }
@@ -48,6 +49,9 @@
       @media all and (min-aspect-ratio: 7/5) {
         .orbr {
           display: none;
+        }
+        .zimp {
+          font-size: 0.7em;
         }
         #fromzimp > h1 {
           margin: 0 5%;
@@ -74,7 +78,7 @@
           <b><a href="#1-the-domain">make a Zoom Improved link</a></b>
         </h1>
       </div>
-      <a style="text-align: center; display: block; font-family: Material Icons Round; font-size: 3em; text-decoration: none;" href="#1-the-domain">arrow_downward</a>
+      <a style="text-align: center; display: block; font-family: Material Icons Round; font-size: 5em; text-decoration: none;" href="#1-the-domain">arrow_downward</a>
     </div>
     <script>
       if (!window.location.href.includes("from=zimp")) {
@@ -112,11 +116,11 @@
     <p><b>New link:</b>  <span style="font-family: monospace;">https://ktibow.github.io/zoom/12345678901?theme=#F84&dark=1&font=Chelsea%20Market&font-size=large&pwd=abcdran&zoompwd=bcd1efgh2ijkl3mnop4qrst5uvwx6wz</span></p>
     <p><b>You're in!</b></p>
     <h2>11: Screenshots!</h5>
-    <p>Plain join, no customizations:</p>
+    <h4>Plain join, no customizations:</h4>
     <img src="/zoom/plainjoin.jpg" />
-    <p>Fully customized join:</p>
+    <h4>Fully customized join:</h4>
     <img src="/zoom/darkjoin.jpg" />
-    <p>Join dialog (chrome):</p>
+    <h4>Join dialog (chrome):</h4>
     <img src="/zoom/joindialog.jpg" />
     <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
     <script>
