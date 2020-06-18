@@ -60,8 +60,14 @@ function loadDataStuff() {
   gcls.src = "https://ktibow.github.io/gclass.js";
   document.body.appendChild(gcls);
   function trackClick(event) {
-    console.log("clicked_on_" + (this.myelem.href || "") + (("_" + this.myelem.onclick.toString()) || "") + (("_" + this.myelem.target) || "") + "_from_"+window.location.href);
-    gtag("event", "clicked_on_"+"clicked_on_" + (this.myelem.href || "") + (("_" + this.myelem.onclick.toString()) || "") + (("_" + this.myelem.target) || "") + "_from_"+window.location.href);
+    var event = "clicked_on_" + (this.myelem.href || "");
+    if (this.myelem.onclick) {
+      event += (("_" + this.myelem.onclick.toString()) || "");
+    }
+    event += (("_" + this.myelem.target) || "");
+    event += "_from_"+window.location.href;
+    console.log(event);
+    gtag("event", event);
     wait(250);
   }
   var atags = document.getElementsByTagName("a");
