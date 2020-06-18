@@ -3,12 +3,12 @@
   <head>
     <script defer src="/common.js"></script>
     <link rel="shortcut icon" type="image/png" href="https://d24cgw3uvb9a9h.cloudfront.net/favicon.ico">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round&display=swap" rel="stylesheet">
     <title>Zoom Improved! (unofficial)</title>
     <style>
       html, body {
         height: 100%;
-        margin: 0;
+        margin: 20px;
       }
       * {
         font-family: Lato, Helvetica Neue, Avenir, sans-serif;
@@ -37,6 +37,16 @@
         width: 100%;
         height: 100%;
       }
+      @media all and (min-aspect-ratio: 7/5) {
+        .orbr {
+          display: none;
+        }
+      }
+      @media all and (max-aspect-ratio: 8/5) {
+        #fromzimp > h1 {
+          margin: 20%;
+        }
+      }
     </style>
   </head>
   <body>
@@ -46,12 +56,14 @@
         <h1 style="display: inline;" class="zimp">
           <b>You can close this tab</b>
         </h1>
+        <br class="orbr">
         <h1 style="display: inline;" class="zimp"> | or | </h1>
+        <br class="orbr">
         <h1 style="display: inline;" class="zimp">
           <b><a href="https://ktibow.github.io/zoom/#1-the-domain">make a Zoom Improved link</a></b>
         </h1>
       </div>
-      <a style="text-align: center; display: block; font-family: Material Icons; font-size: 3em; text-decoration: none;" href="https://ktibow.github.io/zoom/#1-the-domain">arrow_downward</a>
+      <a style="text-align: center; display: block; font-family: Material Icons Round; font-size: 3em; text-decoration: none;" href="https://ktibow.github.io/zoom/#1-the-domain">arrow_downward</a>
     </div>
     <script>
       if (!window.location.href.includes("from=zimp")) {
@@ -101,5 +113,3 @@
     </script>
   </body>
 </html>
-22
-        
