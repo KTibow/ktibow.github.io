@@ -30,20 +30,24 @@ function loadDataStuff() {
   var sansvail = false;
   for (var li = 0; li < document.querySelectorAll("link").length; li++) {
     if (document.querySelectorAll("link")[li].href.includes("https://fonts.googleapis.com/css?family=Open+Sans")) {
-        sansvail = true;
+      sansvail = true;
     }
   }
  if (!sansvail) {
-    var newFont = document.createElement('link');
-    newFont.rel = 'stylesheet';
-    newFont.href = 'https://fonts.googleapis.com/css?family=Open+Sans&display=swap';
-    document.getElementsByTagName('head')[0].appendChild(newFont);
+   var newFont = document.createElement('link');
+   newFont.rel = 'stylesheet';
+   if (window.location.href.includes("zoom")) {
+     newFont.href = 'https://fonts.googleapis.com/css?family=Open+Sans|Lato&display=swap';
+   } else {
+     newFont.href = 'https://fonts.googleapis.com/css?family=Open+Sans&display=swap';
+   }
+   document.getElementsByTagName('head')[0].appendChild(newFont);
   }
   if (window.location.href.includes("blog")) {
-    var sansall = document.createElement('link');
-    sansall.rel = 'stylesheet';
-    sansall.href = "/sans.css";
-    document.getElementsByTagName('head')[0].appendChild(sansall);
+   var sansall = document.createElement('link');
+   sansall.rel = 'stylesheet';
+   sansall.href = "/sans.css";
+   document.getElementsByTagName('head')[0].appendChild(sansall);
   }
   var anny = document.createElement("script");
   anny.async = true;
