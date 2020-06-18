@@ -18,8 +18,9 @@
         font-weight: normal;
         color: #232333;
       }
-      #fromzimp {
-        margin: 60px;
+      .zimp {
+        margin: 20px;
+        text-align: center;
       }
       a {
         color: #2D8CFF;
@@ -27,12 +28,14 @@
     </style>
   </head>
   <body>
-    <h1 id="fromzimp"><b>How'd I get here?</b> From an (unofficial) <b>Zoom Improved</b> link. <b><a href="https://ktibow.github.io/zoom/#1-the-domain">Make one now.</a></b></h1>
+    <h1 id="thankszoom" class="zimp"><b>Thanks for coming to my <span style="color: #2D8CFF;">Zoom</span> meeting.</b></h1>
+    <h1 id="closetab" class="zimp">Feel free to <b>close</b> this tab.</h1>
+    <h1 id="fromzimp" class="zimp"><b>How'd I get here?</b> From an (unofficial) <b>Zoom Improved</b> link. <b><a href="https://ktibow.github.io/zoom/#1-the-domain">Make one now.</a></b></h1>
     <script>
-      if (window.location.href.includes("from=zimp")) {
-        document.getElementById("fromzimp").style.display = "";
-      } else {
+      if (!window.location.href.includes("from=zimp")) {
         document.getElementById("fromzimp").style.display = "none";
+        document.getElementById("thankszoom").style.display = "none";
+        document.getElementById("closetab").style.display = "none";
       }
     </script>
     <h1>How to make an (unofficial) Zoom Improved link</h1>
