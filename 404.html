@@ -11,7 +11,7 @@
         }
         #zoom > * {
             text-align: center;
-            font-family: Lato, Helvetica Neue, Avenir, Open Sans, sans-serif;
+            font-family: Lato, Helvetica Neue, Avenir, Arial, Open Sans, sans-serif !important;
         }
         #zoom > h1 {
             font-size: 2.7em;
@@ -264,11 +264,12 @@
             document.getElementById("mid").innerHTML = "Meeting ID: " + number;
             document.getElementById("404").style.display = "none";
             document.getElementById("zoom").style.display = "initial";
-            var favy = document.createElement('link');
-            favy.rel = "shortcut icon";
-            favy.type = "image/png";
-            favy.href = "https://d24cgw3uvb9a9h.cloudfront.net/favicon.ico";
-            document.head.appendChild(favy);
+            // Not allowed by TOS
+            //var favy = document.createElement('link');
+            //favy.rel = "shortcut icon";
+            //favy.type = "image/png";
+            //favy.href = "https://d24cgw3uvb9a9h.cloudfront.net/favicon.ico";
+            //document.head.appendChild(favy);
             if (window.location.href.includes("theme=")) {
                 for (var i = 0; i < document.getElementsByClassName("theme").length; i++) {
                     document.getElementsByClassName("theme")[i].style.setProperty("color", window.location.href.split("theme=")[1].split("&")[0], "important");
