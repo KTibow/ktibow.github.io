@@ -38,11 +38,7 @@ function loadDataStuff() {
  if (!sansvail) {
    var newFont = document.createElement('link');
    newFont.rel = 'stylesheet';
-   if (window.location.href.includes("zoom")) {
-     newFont.href = 'https://fonts.googleapis.com/css?family=Open+Sans|Lato&display=swap';
-   } else {
-     newFont.href = 'https://fonts.googleapis.com/css?family=Open+Sans&display=swap';
-   }
+   newFont.href = 'https://fonts.googleapis.com/css?family=Open+Sans&display=swap';
    document.getElementsByTagName('head')[0].appendChild(newFont);
   }
   if (window.location.href.includes("blog")) {
