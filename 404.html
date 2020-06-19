@@ -286,9 +286,11 @@
                 document.body.style.setProperty("color", "#F6F7F9", "important");
                 var children = document.body.getElementsByTagName('*');
                 for (var i = 0; i < children.length; i++) {
-                  var child = children[i];
-                  console.log("Whiting out", child);
-                  child.style.color = "#F6F7F9";
+                    var child = children[i];
+                    if (!child.className.includes("theme")) {
+                        console.log("Whiting out", child);
+                        child.style.color = "#F6F7F9";
+                    }
                 }
                 document.getElementsByClassName("pbar")[0].style.backgroundColor = "#E4E4ED";
             }
