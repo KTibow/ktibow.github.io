@@ -283,10 +283,11 @@
             }
             if (window.location.href.includes("dark=1") || window.matchMedia("(prefers-color-scheme: dark)").matches) {
                 document.body.style.backgroundColor = "black";
-                document.body.style.setProperty("color", "#F6F7F9", "important")
+                document.body.style.setProperty("color", "#F6F7F9", "important");
                 var children = document.body.children;
                 for (var i = 0; i < children.length; i++) {
                   var child = children[i];
+                  console.log("Whiting out", child);
                   child.style.color = "#F6F7F9";
                 }
                 document.getElementsByClassName("pbar")[0].style.backgroundColor = "#E4E4ED";
