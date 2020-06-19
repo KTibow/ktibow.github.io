@@ -15,6 +15,7 @@
         }
         #zoom > h1 {
             font-size: 3.3em;
+            color: #232333;
             font-family: Lato, Helvetica Neue, Avenir, Arial, sans-serif !important;
         }
         #zoom > a {
@@ -32,10 +33,11 @@
         #zoom > p {
             font-family: Open Sans, Arial, sans-serif !important;
             font-size: 1.2em;
+            color: #232333;
         }
         .pbar {
             height: 40px;
-            background-color: black;
+            background-color: #414155;
             margin-left: auto;
             margin-right: auto;
         }
@@ -112,19 +114,14 @@
                     number += window.location.pathname.charAt(i);
                 }
             }
-            alert("The page will close 25 seconds after you open it to keep your tabs tidy.");
-            var zoomtab = window.open("https://zoom.us/j/" + number, "_blank", "");
-
-            function closezoom(tab) {
-                tab.close();
-            }
-            setTimeout(closezoom, 25000, zoomtab);
+            zoomtab = window.open("https://zoom.us/j/" + number, "_blank", "");
         }
     </script>
     <div id="zoom">
         <h1>Launching <span style="color: #2D8CFF" class="theme">Zoom</span></h1>
         <p id="mid"></p>
         <p id="pwd"></p>
+        <p style="font-size: 0.5em;">Note: You are using an unofficial join page. Click "New tab" if this doesn't work.</p>
         <div class="pbar">
             <div class="pbar pval" id="themeback">
             </div>
@@ -325,8 +322,8 @@
             setup();
 
             function startTimer() {
-                // wait 100 seconds before calling goInactive
-                timeoutID = window.setTimeout(goInactive, 100000);
+                // wait 200 seconds before calling goInactive
+                timeoutID = window.setTimeout(goInactive, 200000);
             }
 
             function resetTimer(e) {
@@ -336,6 +333,7 @@
             }
 
             function goInactive() {
+                zoomtab.close();
                 window.close();
                 window.location.href = "https://ktibow.github.io/zoom/?from=zimp";
             }
@@ -348,9 +346,9 @@
         }
         function scroll() {
             var init = window.scrollY;
-            window.scrollBy(0, init + 1);
+            window.scrollBy(0, 10);
             if (window.scrollY != init) {
-                setTimeout(scroll, 3);
+                setTimeout(scroll, 1);
             } else {
                 console.log("Done scrolling");
             }
