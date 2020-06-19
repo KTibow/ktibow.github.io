@@ -31,6 +31,11 @@ function getCookie(cname) {
   }
   return "";
 }
+function cookcheck() {
+  if (getCookie("cookieclose") == "yes") {
+    document.getElementById("googwarn").style.setProperty("display", "none", "important");
+  }
+}
 setTimeout(function() {
   var styl = document.createElement("style");
   styl.innerHTML = `.padlink {
@@ -118,5 +123,6 @@ function loadDataStuff() {
   gawarn.id = "googwarn";
   gawarn.innerHTML = `<p>We (Or I guess me) use Google Analytics: <a href="https://www.google.com/policies/privacy/partners/">Google partners data use</a> | <a href="https://policies.google.com/privacy">Full Google privacy policy</a> | <a href="https://optout.aboutads.info/">Opt out of personalized ads</a> | <a href="https://myaccount.google.com/data-and-personalization">Opt out of data use for your Google account</a> | <a href="https://privacybadger.org/">Install Privacy Badger from the EFF to block analytics</a><button onClick="setCookie('cookieclose', 'yes', 365);" style="border-radius: 3px; background-color: white; margin: 10px; cursor: pointer; border-color: seagreen; padding: 1px 4px; border-style: solid; color: seagreen;">Close</button></p>`;
   document.getElementsByTagName('body')[0].appendChild(gawarn);
+  setInterval(cookcheck, 300);
 }
 window.addEventListener("load", loadDataStuff);
