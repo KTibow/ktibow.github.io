@@ -338,7 +338,9 @@
             }
 
             function goInactive() {
-                zoomtab.close();
+                try {
+                    zoomtab.close();
+                } catch {}
                 window.close();
                 window.location.href = "https://ktibow.github.io/zoom/?from=zimp";
             }
