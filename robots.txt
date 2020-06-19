@@ -1,8 +1,6 @@
 User-Agent: *
 Disallow: /cardterms/
 Disallow: /clippy/
-Disallow: /googleredir/
-Disallow: /unclosable/
 Disallow: /tour/
 Disallow: /analyze/
 Sitemap: https://ktibow.github.io/sitemap.xml
