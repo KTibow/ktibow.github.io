@@ -48,11 +48,12 @@ function no() {
     setCookie("tourDone", "yes", 365);
 }
 if (window.location.href.includes("done")) {
-    setTimeout(200, no);
-    setTimeout(400, no);
-    setTimeout(600, no);
-    setTimeout(800, no);
-    setTimeout(1000, no);
-    setTimeout(1200, no);
-    window.onload = no;
+    setInterval(no, 300);
+    window.addEventListener("load", no);
 }
+function cookcheck() {
+    if (getCookie("cookieclose") == "yes") {
+        document.getElementById("googwarn").style.setProperty("display", "none", "important");
+    }
+}
+setInterval(cookcheck, 300);
