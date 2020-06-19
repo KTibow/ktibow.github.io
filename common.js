@@ -5,11 +5,31 @@ function gtag() {
 gtag('js', new Date());
 gtag('config', 'UA-165' + '004437-1', { 'anonymize_ip': true });
 function wait(ms) {
-    var start = Date.now(),
-        now = start;
-    while (now - start < ms) {
-      now = Date.now();
+  var start = Date.now(),
+    now = start;
+  while (now - start < ms) {
+    now = Date.now();
+  }
+}
+function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  var expires = "expires=" + d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+function getCookie(cname) {
+  var name = cname + "=";
+  var ca = document.cookie.split(';');
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
     }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
 }
 setTimeout(function() {
   var styl = document.createElement("style");
@@ -22,7 +42,7 @@ setTimeout(function() {
   @media all and (orientation: portrait) {
   .padlink {
     border-radius: 3px;
-    background-color: #D6D6EA;
+    background-color: ` + (window.location.href.includes("blog") ? "#D6D6EA;" : "#EEE;") + `
     margin: 15px;
   }
   }`;
@@ -82,7 +102,21 @@ function loadDataStuff() {
     var copytext = selection + pagelink;
     ev.clipboardData.setData('text/plain', copytext);
     ev.preventDefault();
+    console.log("copied_"+selection.slice(0, 10)+"_on_"+document.location.href);
+    gtag("event", "copied_"+selection.slice(0, 10)+"_on_"+document.location.href);
   }
   document.oncopy = addLink;
+  var gawarn = document.createElement("div");
+  gawarn.style.position = "sticky";
+  gawarn.style.bottom = "0";
+  gawarn.style.textAlign = "center";
+  gawarn.style.backgroundColor = "rgba(240, 240, 240, 0.9)";
+  gawarn.style.borderRadius = "8px";
+  gawarn.style.padding = "8px";
+  gawarn.style.margin = "7px";
+  gawarn.style.fontSize = "0.7em";
+  gawarn.id = "googwarn";
+  gawarn.innerHTML = `<p>We (Or I guess me) use Google Analytics: <a href="https://www.google.com/policies/privacy/partners/">Google partners data use</a> | <a href="https://policies.google.com/privacy">Full Google privacy policy</a> | <a href="https://optout.aboutads.info/">Opt out of personalized ads</a> | <a href="https://myaccount.google.com/data-and-personalization">Opt out of data use for your Google account</a> | <a href="https://privacybadger.org/">Install Privacy Badger from the EFF to block analytics</a><button onClick="setCookie('cookieclose', 'yes', 365);" style="border-radius: 3px; background-color: white; margin: 10px; cursor: pointer; border-color: seagreen; padding: 1px 4px; border-style: solid; color: seagreen;">Close</button></p>`;
+  document.getElementsByTagName('body')[0].appendChild(gawarn);
 }
 window.addEventListener("load", loadDataStuff);
