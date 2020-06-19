@@ -283,8 +283,8 @@
             }
             if (window.location.href.includes("dark=1") || window.matchMedia("(prefers-color-scheme: dark)").matches) {
                 document.body.style.backgroundColor = "black";
-                document.body.style.color = "white";
-                document.getElementsByClassName("pbar")[0].style.backgroundColor = "white";
+                document.body.style.setProperty("color", "white", "important")
+                document.getElementsByClassName("pbar")[0].style.backgroundColor = "#E4E4ED";
             }
             if (window.location.href.includes("font=")) {
                 var newFont = document.createElement('link');
