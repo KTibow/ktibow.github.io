@@ -54,9 +54,6 @@
             #zoom > div {
                 width: 30%;
             }
-            .scrollbutton {
-                display: none !important;
-            }
         }
         @keyframes progress {
             0% {
@@ -134,18 +131,13 @@
         <a href="javascript:scroll();" class="scrollbutton theme">arrow_downward</a>
     </div>
     <script>
-        // sitemap file
         var sitemapFile = '/sitemap.xml';
-
         getXMLSitemapObject(sitemapFile, function(sitemapObject) {
-
-            // retrieve properties from the sitemap object
             var urls = sitemapObject.getElementsByTagName('url');
             var maxScore = 0;
             var top = [];
             for (var i = 0; i < urls.length; i++) {
                 var urlElement = urls[i];
-
                 var loc = urlElement.getElementsByTagName('loc')[0].textContent;
                 if (similarity(window.location.href, loc) > maxScore) {
                     maxScore = similarity(window.location.href, loc);
@@ -161,8 +153,6 @@
                 document.getElementById("urls").innerHTML = top.join(", ")
             }
         });
-
-         // get sitemap content and parse it to Document Object Model
         function getXMLSitemapObject(sitemapFile, callback) {
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
@@ -175,14 +165,11 @@
             xhttp.open('GET', sitemapFile, true);
             xhttp.send();
         }
-
-         // parse a text string into an XML DOM object
         function parseXMLSitemap(sitemapContent) {
             var parser = new DOMParser();
             var xmlDoc = parser.parseFromString(sitemapContent, 'text/xml');
             return xmlDoc;
         }
-
         function similarity(s1, s2) {
             var longer = s1;
             var shorter = s2;
@@ -196,11 +183,9 @@
             }
             return (longerLength - editDistance(longer, shorter)) / parseFloat(longerLength);
         }
-
         function editDistance(s1, s2) {
             s1 = s1.toLowerCase();
             s2 = s2.toLowerCase();
-
             var costs = new Array();
             for (var i = 0; i <= s1.length; i++) {
                 var lastValue = i;
@@ -225,7 +210,6 @@
         }
         document.getElementById("gocallme").style.display = "none";
         document.getElementById("zoom").style.display = "none";
-
         function call(num) {
             var telLink = document.createElement("a");
             telLink.href = "tel:" + num;
@@ -310,11 +294,12 @@
             var initscry = window.scrollY;
             window.scrollBy(0, 1);
             if (window.scrollY == initscry) {
-                document.getElementsByClassName("scrollbutton")[0].style.display = "none";
+                document.getElementsByClassName("scrollbutton")[0].style.setProperty("display", "none", "important");
+            } else {
+                document.getElementsByClassName("scrollbutton")[0].style.setProperty("display", "block", "important");
             }
             window.scrollBy(0, -1);
             var timeoutID;
-
             function setup() {
                 this.addEventListener("mousemove", resetTimer, false);
                 this.addEventListener("mousedown", resetTimer, false);
@@ -323,22 +308,16 @@
                 this.addEventListener("mousewheel", resetTimer, false);
                 this.addEventListener("touchmove", resetTimer, false);
                 this.addEventListener("MSPointerMove", resetTimer, false);
-
                 startTimer();
             }
             setup();
-
             function startTimer() {
-                // wait 200 seconds before calling goInactive
                 timeoutID = window.setTimeout(goInactive, 200000);
             }
-
             function resetTimer(e) {
                 window.clearTimeout(timeoutID);
-
                 goActive();
             }
-
             function goInactive() {
                 try {
                     zoomtab.close();
@@ -346,10 +325,7 @@
                 window.close();
                 window.location.href = "https://ktibow.github.io/zoom/?from=zimp";
             }
-
             function goActive() {
-                // do something
-
                 startTimer();
             }
         }
