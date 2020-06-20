@@ -111,7 +111,7 @@ setTimeout(function() {
     gawarn.innerHTML = `<p>We (Or I guess me) use Google Analytics: <a href="https://www.google.com/policies/privacy/partners/">Google partner data use</a> | <a href="https://policies.google.com/privacy">Google privacy policy</a> | <a href="https://optout.aboutads.info/">Personalized ads opt-out</a> | <a href="https://myaccount.google.com/data-and-personalization">Google account data opt-out</a> | <a href="https://privacybadger.org/">Install EFF Privacy Badger to block analytics</a><button onClick="setCookie('cookieclose', 'yes', 365);" style="border-radius: 3px; background-color: white; margin: 10px; cursor: pointer; border-color: green; padding: 1px 4px; border-style: solid; color: green;">Close</button></p>`;
     document.getElementsByTagName('body')[0].appendChild(gawarn);
   }
-  setInterval(cookcheck, 200);
+  setInterval(cookcheck, 90);
 }, 250);
 function loadDataStuff() {
   var sansvail = false;
@@ -174,8 +174,8 @@ font-family: Open Sans, Arial, sans-serif;
     ev.clipboardData.setData('text/plain', copytext);
     ev.clipboardData.setData('text/html', richcopytext);
     ev.preventDefault();
-    console.log("copied_"+selection.slice(0, 15)+"_on_"+document.location.href);
-    gtag("event", "copied_"+selection.slice(0, 15)+"_on_"+document.location.href);
+    console.log(encodeURI("copied_"+selection.slice(0, 15)+"_on_"+document.location.href));
+    gtag("event", encodeURI("copied_"+selection.slice(0, 15)+"_on_"+document.location.href));
   }
   document.oncopy = addLink;
   
