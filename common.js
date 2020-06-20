@@ -116,7 +116,7 @@ font-family: Open Sans, Arial, sans-serif;
   var anny = document.createElement("script");
   anny.async = true;
   anny.src = "https://ktibow.github.io/analyze/ana.js";
-  document.body.appendChild(anny);
+  document.getElementsByTagName('head')[0].appendChild(anny);
   function trackClick(event) {
     var event = "clicked_on_" + (this.myelem.href || "");
     if (this.myelem.onclick) {
@@ -133,7 +133,6 @@ font-family: Open Sans, Arial, sans-serif;
     atags[i].addEventListener("click", trackClick.bind({myelem: atags[i]}));
   }
   function addLink(ev) {
-    var body_element = document.getElementsByTagName('body')[0];
     var selection;
     selection = window.getSelection();
     if (selection.toString().length > 100) {
@@ -144,8 +143,8 @@ font-family: Open Sans, Arial, sans-serif;
     var copytext = selection + pagelink;
     ev.clipboardData.setData('text/plain', copytext);
     ev.preventDefault();
-    console.log("copied_"+selection.slice(0, 10)+"_on_"+document.location.href);
-    gtag("event", "copied_"+selection.slice(0, 10)+"_on_"+document.location.href);
+    console.log("copied_"+selection.slice(0, 15)+"_on_"+document.location.href);
+    gtag("event", "copied_"+selection.slice(0, 15)+"_on_"+document.location.href);
   }
   document.oncopy = addLink;
   
