@@ -36,6 +36,26 @@ function cookcheck() {
     document.getElementById("googwarn").style.setProperty("display", "none", "important");
   }
 }
+function getHTMLOfSelection() {
+  var range;
+  if (document.selection && document.selection.createRange) {
+    range = document.selection.createRange();
+    return range.htmlText;
+  } else if (window.getSelection) {
+    var selection = window.getSelection();
+    if (selection.rangeCount > 0) {
+      range = selection.getRangeAt(0);
+      var clonedSelection = range.cloneContents();
+      var div = document.createElement('div');
+      div.appendChild(clonedSelection);
+      return div.innerHTML;
+    } else {
+      return '';
+    }
+  } else {
+    return '';
+  }
+}
 class ClassroomShare extends HTMLElement {
 	constructor() {
 		super();
@@ -133,14 +153,14 @@ font-family: Open Sans, Arial, sans-serif;
     atags[i].addEventListener("click", trackClick.bind({myelem: atags[i]}));
   }
   function addLink(ev) {
-    var selection;
-    selection = window.getSelection();
-    if (selection.toString().length > 100) {
-      var pagelink = "<!--// From " + document.location.href + 
+    var selection = window.getSelection().toString();
+    var richSelection = getHTMLOfSelection();
+    if (selection.length > 100) {
+      var pagelink = " <!--// From " + document.location.href + 
           ". © Kendell R. Don't remove this attribution notice. Or you can follow the license: " +
           "https://github.com/KTibow/ktibow.github.io/blob/master/LICENSE.md-->";
-      var richpagelink = "From <a href=\"" +
-          document.location.href + ">" +
+      var richpagelink = " From <a href=\"" +
+          document.location.href + "\">" +
           document.location.href +"</a>. © Kendell R. Don't remove this attribution notice. " +
           "Or you can follow the <a href=\"" +
           "https://github.com/KTibow/ktibow.github.io/blob/master/LICENSE.md" +
@@ -150,7 +170,7 @@ font-family: Open Sans, Arial, sans-serif;
       var richpagelink = "";
     }
     var copytext = selection + pagelink;
-    var richcopytext = selection + richpagelink;
+    var richcopytext = richSelection + richpagelink;
     ev.clipboardData.setData('text/plain', copytext);
     ev.clipboardData.setData('text/html', richcopytext);
     ev.preventDefault();
