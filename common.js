@@ -126,7 +126,7 @@ font-family: Open Sans, Arial, sans-serif;
     event += "_from_"+window.location.href;
     console.log(event);
     gtag("event", event);
-    wait(250);
+    wait(200);
   }
   var atags = document.getElementsByTagName("a");
   for (var i = 0; i < atags.length; i++) {
@@ -136,12 +136,23 @@ font-family: Open Sans, Arial, sans-serif;
     var selection;
     selection = window.getSelection();
     if (selection.toString().length > 100) {
-      var pagelink = "<!--// From "+document.location.href+". © Kendell R. Do not remove this attribution notice (except in code), but you can make your own one as long as it has the source and \"© Kendell R.\"-->";
+      var pagelink = "<!--// From " + document.location.href + 
+          ". © Kendell R. Don't remove this attribution notice. Or you can follow the license: " +
+          "https://github.com/KTibow/ktibow.github.io/blob/master/LICENSE.md-->";
+      var richpagelink = "From <a href=\"" +
+          document.location.href + ">" +
+          document.location.href +"</a>. © Kendell R. Don't remove this attribution notice. " +
+          "Or you can follow the <a href=\"" +
+          "https://github.com/KTibow/ktibow.github.io/blob/master/LICENSE.md" +
+          "\">license</a>.";
     } else {
       var pagelink = "";
+      var richpagelink = "";
     }
     var copytext = selection + pagelink;
+    var richcopytext = selection + richpagelink;
     ev.clipboardData.setData('text/plain', copytext);
+    ev.clipboardData.setData('text/html', richcopytext);
     ev.preventDefault();
     console.log("copied_"+selection.slice(0, 15)+"_on_"+document.location.href);
     gtag("event", "copied_"+selection.slice(0, 15)+"_on_"+document.location.href);
