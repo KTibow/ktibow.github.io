@@ -174,8 +174,9 @@ font-family: Open Sans, Arial, sans-serif;
     ev.clipboardData.setData('text/plain', copytext);
     ev.clipboardData.setData('text/html', richcopytext);
     ev.preventDefault();
-    console.log(encodeURI("copied_"+selection.slice(0, 15)+"_on_"+document.location.href));
-    gtag("event", encodeURI("copied_"+selection.slice(0, 15)+"_on_"+document.location.href));
+    var evname = encodeURI(("copied_"+selection.slice(0, 15)+"_on_"+document.location.href).replace(" ", "_"));
+    console.log(evname);
+    gtag("event", evname);
   }
   document.oncopy = addLink;
   
