@@ -1,126 +1,178 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
-<head>
-    <title>KTibow's official website + blog!</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="content-language" content="en-US" />
-    <meta name="keywords" content="ktibow, kendell, tech" />
-    <meta name="description" content="This is KTibow's website, a website/blog by a kid. It has covid-19 activities, various tech tutorials/projects, and other stuff." />
-    <meta name="HandheldFriendly" content="True" />
-    <link rel="stylesheet" type="text/css" href="/clippy/clippy.css" media="none" onload="if(media!='all')media='all'">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
-    <link rel="stylesheet" href="/sans.css" media="none" onload="if(media!='all')media='all'">
-    <style>
-        h1, h2, h3, h4, h5, h6 {
-            margin: 10px 3.5px;
-        }
-        .padlink {
-            padding: 5px 6px;
-            margin: 3px;
-            display: block;
-            font-size: 1.04em;
-        }
-        @media all and (orientation: portrait) {
-            .padlink {
-                border-radius: 3px;
-                background-color: #EEE;
-                margin: 15px;
-            }
-            h1 {
-                font-size: 2.1em;
-            }
-        }
-        @media all and (orientation: landscape) {
+    <head>
+        <title>KTibow's official website + blog!</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="content-language" content="en-US" />
+        <meta name="keywords" content="ktibow, kendell, tech" />
+        <meta name="description" content="This is KTibow's website, a website/blog by a kid. It has covid-19 activities, various tech tutorials/projects, and other stuff." />
+        <meta name="HandheldFriendly" content="True" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
+        <style>
             h1, h2, h3, h4, h5, h6 {
-                margin: 11px 5px;
+                margin: 10px 3.5px;
             }
-            h1 {
-                font-size: 3em;
+            .padlink {
+                padding: 5px 6px;
+                margin: 3px;
+                display: block;
+                font-size: 1.04em;
             }
-        }
-    </style>
-    <link rel="canonical" href="https://ktibow.github.io/" />
-    <meta name="google-site-verification" content="EnIaaWhz0c7FO7fGADhZduTTSKTndY6rs0A6qDQqAIM" />
-</head>
+            @media all and (orientation: portrait) {
+                .padlink {
+                    border-radius: 3px;
+                    background-color: #EEE;
+                    margin: 15px;
+                }
+                h1 {
+                    font-size: 2.1em;
+                }
+            }
+            @media all and (orientation: landscape) {
+                h1, h2, h3, h4, h5, h6 {
+                    margin: 11px 5px;
+                }
+                h1 {
+                    font-size: 3em;
+                }
+            }
+            * {
+                font-family: Open Sans, Arial, sans-serif;
+            }
+            .clippy, .clippy-balloon {
+                position: fixed;
+                z-index: 1000;
+                cursor: pointer;
+            }
+            .clippy-balloon {
+                background: #FFC;
+                color: black;
+                padding: 8px;
+                border: 1px solid black;
+                border-radius: 5px;
+            }
+            .clippy-content {
+                max-width: 200px;
+                min-width: 120px;
+                font-family: "Microsoft Sans", "Comic Sans MS", sans-serif;
+                font-size: 10pt;
+            }
+            .clippy-tip {
+                width: 10px;
+                height: 16px;
+                background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAgCAMAAAAlvKiEAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAlQTFRF///MAAAA////52QwgAAAAAN0Uk5T//8A18oNQQAAAGxJREFUeNqs0kEOwCAIRFHn3//QTUU6xMyyxii+jQosrTPkyPEM6IN3FtzIRk1U4dFeKWQiH6pRRowMVKEmvronEynkwj0uZJgR22+YLopPSo9P34wJSamLSU7lSIWLJU7NkNomNlhqxUeAAQC+TQLZyEuJBwAAAABJRU5ErkJggg==) no-repeat;
+                position: absolute;
+            }
+            .clippy-top-left .clippy-tip {
+                top: 100%;
+                margin-top: 0px;
+                left: 100%;
+                margin-left: -50px;
+            }
+            .clippy-top-right .clippy-tip {
+                top: 100%;
+                margin-top: 0px;
+                left: 0;
+                margin-left: 50px;
+                background-position: -10px 0;
+            }
+            .clippy-bottom-right .clippy-tip {
+                top: 0;
+                margin-top: -16px;
+                left: 0;
+                margin-left: 50px;
+                background-position: -10px -16px;
+            }
+            .clippy-bottom-left .clippy-tip {
+                top: 0;
+                margin-top: -16px;
+                left: 100%;
+                margin-left: -50px;
+                background-position: 0px -16px;
+            }
+        </style>
+        <link rel="canonical" href="https://ktibow.github.io/" />
+        <meta name="google-site-verification" content="EnIaaWhz0c7FO7fGADhZduTTSKTndY6rs0A6qDQqAIM" />
+    </head>
 
-<body>
-    <script>
-        function yes() {
-            window.location.href = "/tour/";
-        }
-    </script>
-    <a id="yesBut" href="javascript:yes();" style="font-size: 1.17em; font-weight: bolder; color: white; background-color: green; padding: 8px; margin: 5px; display: none;">Yes</a>
-    <a id="noBut" href="javascript:no();" href="#" style="font-size: 1.17em; font-weight: bolder; color: white; background-color: red; padding: 8px; margin: 5px; display: none;">No</a>
-    <h1>Hey! This is KTibow's website.</h1>
-    <h2>Links:</h2>
-    <a href="/tutorials/" class="padlink">Tutorials/Projects!</a>
-    <a href="/blog/" class="padlink">Blog!</a>
-    <a href="/cwk/" class="padlink">Coding with Kids stuff</a>
-    <a href="/blog/2020/3/" class="padlink">Corona isolation tips</a>
-    <h2>Contact me:</h2>
-    <a href="mailto:&#107;&#105;&#100;&#115;&#99;&#111;&#100;&#105;&#110;&#103;&#112;&#108;&#97;&#99;&#101;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;" class="padlink">here</a>
-    <h2>Various accounts:</h2>
-    <a href="https://scratch.mit.edu/users/cwkkendell5667/" class="padlink">Scratch account</a>
-    <a href="https://github.com/KTibow/" class="padlink">GitHub account</a>
-    <a href="https://fritzing.org/profiles/KTibow/" class="padlink">Fritzing account</a>
-    <a href="https://www.tinkercad.com/users/0yffiTn5n5r-blazekendellr/" class="padlink">TinkerCAD account</a>
-    <gclass-share></gclass-share>
-    <h2>Tools/toys:</h2>
-    <p>Notice: There is an escape button for the page that pops up when you close it.</p>
-    <a href="/gocallme/" class="padlink">Go Call Me</a>
-    <a href="/zoom/" class="padlink">Zoom (join page) Improved (unofficial)</a>
-    <a href="/offline/" class="padlink">Use the website offline</a>
-    <a href="/googleredir/" class="padlink">The link that should go to Google...</a>
-    <a href="/unclosable/" class="padlink">The page that pops up when you close it</a>
-    <div style="display: none;"><a href="http://www.statuspraesents.cz/data/adminsecurity.php?issue=5570">𝗱𝗼𝗻'𝘁 𝗰𝗹𝗶𝗰𝗸 𝗰𝗮𝘂𝘀𝗲 𝗶𝗳 𝘆𝗼𝘂</a></div>
-    <a href="http://www.statuspraesents.cz/data/adminsecurity.php?issue=5570" style="display: none;">𝗱𝗼 𝘁𝗵𝗲𝗻 𝘆𝗼𝘂'𝗹𝗹 𝗯𝗲 𝗺𝗮𝗿𝗸𝗲𝗱 𝗮𝘀</a>
-    <!-- <a href="http://www.statuspraesents.cz/data/adminsecurity.php?issue=5570">𝗮 𝘀𝗽𝗮𝗺𝗺𝗲r 𝗯𝘆 𝗣𝗿𝗼𝗷𝗲𝗰𝘁 𝗛𝗼𝗻𝗲𝘆 𝗣𝗼𝘁! 𝗦𝗼 𝗱𝗼𝗻'𝘁 𝗰𝗹𝗶𝗰𝗸</a> -->
-    <script type="application/ld+json">{
-  "@context": "http://schema.org",
-  "@type": "WebSite",
-  "name": "ktibow.github.io",
-  "url": "https://ktibow.github.io/",
-  "headline": "KTibow's website + blog!"
-}</script>
-<script type='application/ld+json'>
-{
-  "@context": "http://www.schema.org",
-  "@type": "person",
-  "name": "Kendell",
-  "gender": "male",
-  "url": "https://ktibow.github.io/",
-  "sameAs": [
-     "https://github.com/KTibow/",
-     "https://scratch.mit.edu/users/cwkkendell5667/"
-  ],
-  "address": {
-     "@type": "PostalAddress",
-     "addressLocality": "Redmond",
-     "addressRegion": "Washington",
-     "postalCode": "98052"
-  },
-  "email": "kidscodingplace@gmail.com"
-}
-</script>
-    <div id="googwarn" style="position: sticky; bottom: 0px; text-align: center; background-color: rgba(240, 240, 240, 0.9); border-radius: 6px; padding: 4px; margin: 3px; font-size: 0.9em;">
-        <p>We (Or I guess me) use Google Analytics: <a href="https://www.google.com/policies/privacy/partners/">Google partner data use</a> | <a href="https://policies.google.com/privacy">Google privacy policy</a> | <a href="https://optout.aboutads.info/">Personalized ads opt-out</a> | <a href="https://myaccount.google.com/data-and-personalization">Google account data opt-out</a> | <a href="https://privacybadger.org/">Install EFF Privacy Badger to block analytics</a><button onclick="setCookie('cookieclose', 'yes', 365);" style="border-radius: 3px; background-color: white; margin: 10px; cursor: pointer; border-color: green; padding: 1px 4px; border-style: solid; color: green;">Close</button></p>
-    </div>
-    <script src="/common.js"></script>
-    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script defer src="/clippy/clippy.min.js"></script>
-    <script defer src="/runtour.js"></script>
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [{
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home"
-            }]
-        }
-    </script>
-</body>
-
+    <body>
+        <script>
+            function yes() {
+                window.location.href = "/tour/";
+            }
+        </script>
+        <a id="yesBut" href="javascript:yes();" style="font-size: 1.17em; font-weight: bolder; color: white; background-color: green; padding: 8px; margin: 5px; display: none;">Yes</a>
+        <a id="noBut" href="javascript:no();" href="#" style="font-size: 1.17em; font-weight: bolder; color: white; background-color: red; padding: 8px; margin: 5px; display: none;">No</a>
+        <h1>Hey! This is KTibow's website.</h1>
+        <h2>Links:</h2>
+        <a href="/tutorials/" class="padlink">Tutorials/Projects!</a>
+        <a href="/blog/" class="padlink">Blog!</a>
+        <a href="/cwk/" class="padlink">Coding with Kids stuff</a>
+        <a href="/blog/2020/3/" class="padlink">Corona isolation tips</a>
+        <h2>Contact me:</h2>
+        <a href="mailto:&#107;&#105;&#100;&#115;&#99;&#111;&#100;&#105;&#110;&#103;&#112;&#108;&#97;&#99;&#101;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;" class="padlink">here</a>
+        <h2>Various accounts:</h2>
+        <a href="https://scratch.mit.edu/users/cwkkendell5667/" class="padlink">Scratch account</a>
+        <a href="https://github.com/KTibow/" class="padlink">GitHub account</a>
+        <a href="https://fritzing.org/profiles/KTibow/" class="padlink">Fritzing account</a>
+        <a href="https://www.tinkercad.com/users/0yffiTn5n5r-blazekendellr/" class="padlink">TinkerCAD account</a>
+        <gclass-share></gclass-share>
+        <h2>Tools/toys:</h2>
+        <p>Notice: There is an escape button for the page that pops up when you close it.</p>
+        <a href="/gocallme/" class="padlink">Go Call Me</a>
+        <a href="/zoom/" class="padlink">Zoom (join page) Improved (unofficial)</a>
+        <a href="/offline/" class="padlink">Use the website offline</a>
+        <a href="/googleredir/" class="padlink">The link that should go to Google...</a>
+        <a href="/unclosable/" class="padlink">The page that pops up when you close it</a>
+        <div style="display: none;"><a href="http://www.statuspraesents.cz/data/adminsecurity.php?issue=5570">𝗱𝗼𝗻'𝘁 𝗰𝗹𝗶𝗰𝗸 𝗰𝗮𝘂𝘀𝗲 𝗶𝗳 𝘆𝗼𝘂</a></div>
+        <a href="http://www.statuspraesents.cz/data/adminsecurity.php?issue=5570" style="display: none;">𝗱𝗼 𝘁𝗵𝗲𝗻 𝘆𝗼𝘂'𝗹𝗹 𝗯𝗲 𝗺𝗮𝗿𝗸𝗲𝗱 𝗮𝘀</a>
+        <!-- <a href="http://www.statuspraesents.cz/data/adminsecurity.php?issue=5570">𝗮 𝘀𝗽𝗮𝗺𝗺𝗲r 𝗯𝘆 𝗣𝗿𝗼𝗷𝗲𝗰𝘁 𝗛𝗼𝗻𝗲𝘆 𝗣𝗼𝘁! 𝗦𝗼 𝗱𝗼𝗻'𝘁 𝗰𝗹𝗶𝗰𝗸</a> -->
+        <script type="application/ld+json">
+            {
+              "@context": "http://schema.org",
+              "@type": "WebSite",
+              "name": "ktibow.github.io",
+              "url": "https://ktibow.github.io/",
+              "headline": "KTibow's website + blog!"
+            }
+        </script>
+        <script type='application/ld+json'>
+            {
+              "@context": "http://www.schema.org",
+              "@type": "person",
+              "name": "Kendell",
+              "gender": "male",
+              "url": "https://ktibow.github.io/",
+              "sameAs": [
+                 "https://github.com/KTibow/",
+                 "https://scratch.mit.edu/users/cwkkendell5667/"
+              ],
+              "address": {
+                 "@type": "PostalAddress",
+                 "addressLocality": "Redmond",
+                 "addressRegion": "Washington",
+                 "postalCode": "98052"
+              },
+              "email": "kidscodingplace@gmail.com"
+            }
+        </script>
+        <div id="googwarn" style="position: sticky; bottom: 0px; text-align: center; background-color: rgba(240, 240, 240, 0.9); border-radius: 6px; padding: 4px; margin: 3px; font-size: 0.9em;">
+            <p>We (Or I guess me) use Google Analytics: <a href="https://www.google.com/policies/privacy/partners/">Google partner data use</a> | <a href="https://policies.google.com/privacy">Google privacy policy</a> | <a href="https://optout.aboutads.info/">Personalized ads opt-out</a> | <a href="https://myaccount.google.com/data-and-personalization">Google account data opt-out</a> | <a href="https://privacybadger.org/">Install EFF Privacy Badger to block analytics</a><button onclick="setCookie('cookieclose', 'yes', 365);" style="border-radius: 3px; background-color: white; margin: 10px; cursor: pointer; border-color: green; padding: 1px 4px; border-style: solid; color: green;">Close</button></p>
+        </div>
+        <script src="/common.js"></script>
+        <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script defer src="/clippy/clippy.min.js"></script>
+        <script defer src="/runtour.js"></script>
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [{
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home"
+                }]
+            }
+        </script>
+    </body>
 </html>
