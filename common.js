@@ -52,18 +52,20 @@ setTimeout(function() {
   }
   }`;
   (document.body || document.getElementsByTagName('body')[0]).appendChild(styl);
-  var gawarn = document.createElement("div");
-  gawarn.style.position = "sticky";
-  gawarn.style.bottom = "0";
-  gawarn.style.textAlign = "center";
-  gawarn.style.backgroundColor = "rgba(240, 240, 240, 0.9)";
-  gawarn.style.borderRadius = "6px";
-  gawarn.style.padding = "4px";
-  gawarn.style.margin = "3px";
-  gawarn.style.fontSize = "0.9em";
-  gawarn.id = "googwarn";
-  gawarn.innerHTML = `<p>We (Or I guess me) use Google Analytics: <a href="https://www.google.com/policies/privacy/partners/">Google partner data use</a> | <a href="https://policies.google.com/privacy">Google privacy policy</a> | <a href="https://optout.aboutads.info/">Personalized ads opt-out</a> | <a href="https://myaccount.google.com/data-and-personalization">Google account data opt-out</a> | <a href="https://privacybadger.org/">Install EFF Privacy Badger to block analytics</a><button onClick="setCookie('cookieclose', 'yes', 365);" style="border-radius: 3px; background-color: white; margin: 10px; cursor: pointer; border-color: green; padding: 1px 4px; border-style: solid; color: green;">Close</button></p>`;
-  document.getElementsByTagName('body')[0].appendChild(gawarn);
+  if (document.getElementById("googwarn") == null) {
+    var gawarn = document.createElement("div");
+    gawarn.style.position = "sticky";
+    gawarn.style.bottom = "0";
+    gawarn.style.textAlign = "center";
+    gawarn.style.backgroundColor = "rgba(240, 240, 240, 0.9)";
+    gawarn.style.borderRadius = "6px";
+    gawarn.style.padding = "4px";
+    gawarn.style.margin = "3px";
+    gawarn.style.fontSize = "0.9em";
+    gawarn.id = "googwarn";
+    gawarn.innerHTML = `<p>We (Or I guess me) use Google Analytics: <a href="https://www.google.com/policies/privacy/partners/">Google partner data use</a> | <a href="https://policies.google.com/privacy">Google privacy policy</a> | <a href="https://optout.aboutads.info/">Personalized ads opt-out</a> | <a href="https://myaccount.google.com/data-and-personalization">Google account data opt-out</a> | <a href="https://privacybadger.org/">Install EFF Privacy Badger to block analytics</a><button onClick="setCookie('cookieclose', 'yes', 365);" style="border-radius: 3px; background-color: white; margin: 10px; cursor: pointer; border-color: green; padding: 1px 4px; border-style: solid; color: green;">Close</button></p>`;
+    document.getElementsByTagName('body')[0].appendChild(gawarn);
+  }
   setInterval(cookcheck, 200);
 }, 250);
 function loadDataStuff() {
