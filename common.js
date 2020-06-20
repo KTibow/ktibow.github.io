@@ -107,19 +107,16 @@ function loadDataStuff() {
    document.getElementsByTagName('head')[0].appendChild(newFont);
   }
   if (window.location.href.includes("blog")) {
-   var sansall = document.createElement('link');
-   sansall.rel = 'stylesheet';
-   sansall.href = "/sans.css";
+   var sansall = document.createElement('style');
+   sansall.innerHTML = `* {
+font-family: Open Sans, Arial, sans-serif;
+}`;
    document.getElementsByTagName('head')[0].appendChild(sansall);
   }
   var anny = document.createElement("script");
   anny.async = true;
   anny.src = "https://ktibow.github.io/analyze/ana.js";
   document.body.appendChild(anny);
-  var gcls = document.createElement("script");
-  gcls.async = true;
-  gcls.src = "https://ktibow.github.io/gclass.js";
-  document.body.appendChild(gcls);
   function trackClick(event) {
     var event = "clicked_on_" + (this.myelem.href || "");
     if (this.myelem.onclick) {
