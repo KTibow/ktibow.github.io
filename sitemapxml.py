@@ -2,23 +2,19 @@ from urllib.parse import urlparse
 robots = open("robots.txt", "r").read()
 out = open("sitemap.xml", "w")
 out.write("""<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">""")
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">""")
 input = open("sitemap.txt", "r").read()
 robolist = robots.split("\n")
-print("Original robolist:")
-print(robolist)
 for i in range(3):
   print(robolist)
   robostat = robolist.copy()
   for r in robostat:
     if "user-agent" in r.lower() or "sitemap" in r.lower() or len(r) < 1:
-      print("Removing", r)
       try:
         robolist.remove(r)
       except ValueError:
         pass
     else:
-      print("Modifying", r)
       try:
         robolist[robolist.index(r)] = r.replace("Disallow: ", "")
       except ValueError:
@@ -32,18 +28,18 @@ for url in input.split("\n"):
     if rob in urlparse(url).path:
       print("Nope says", rob)
       allowed = False
-  print(allowed)
   if "https://ktibow.github.io/" in url and (allowed or url == "https://ktibow.github.io/"):
     out.write("""<url>
 <loc>"""+url+"""</loc>
 <priority>""")
     priority = 0.5
-    if url in ["https://ktibow.github.io/", "https://ktibow.github.io/blog/", "https://ktibow.github.io/tutorials/quick-pi/", "https://ktibow.github.io/blog/2020/3/"]:
-      priority = 0.75
     if url in ["https://ktibow.github.io/"]:
-      priority = 1
+      priority = 0.9
+    if url.count("/") == 4:
+      priority = 0.7
     if "blog" in url and url.count("/") < 7 and url.count("/") > 4:
-      priority = 0.25
+      priority = 0.3
+    print("Priority:", priority)
     out.write("0."+str(round(priority*100))+"""</priority>
 </url>""")
 out.write("</urlset>")
