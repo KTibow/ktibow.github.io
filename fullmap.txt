@@ -47,6 +47,7 @@
 /gocallme/maskable_icon.png
 /gocallme/index.html
 /gocallme/sw.js
+/old_sitemap.txt
 /check-if-works.sh
 /blog
 /blog/2019
@@ -115,15 +116,12 @@
 /LICENSE.md
 /sitemapxml.py
 /sans.css
-/map.png
 /analyzer.py
-/gclass.js
 /common.js
 /offline
 /offline/index.html
 /_config.yml
 /404.html
-/BingSiteAuth.xml
 /cardterms
 /cardterms/index.html
 /index.html
@@ -147,7 +145,6 @@
 /tutorials/backuplogoimg.jpg
 /fullmap.txt
 /sw.js
-/runtour.js
 /sitemap.xml
 /clippy
 /clippy/Clippy
