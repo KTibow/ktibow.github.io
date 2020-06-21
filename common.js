@@ -112,6 +112,11 @@ setTimeout(function() {
     document.getElementsByTagName('body')[0].appendChild(gawarn);
   }
   setInterval(cookcheck, 90);
+  document.addEventListener("mouseleave", function(event) {
+    if(event.clientY <= 0) {
+       console.log("I'm out");
+    }
+  });
 }, 250);
 function loadDataStuff() {
   var sansvail = false;
