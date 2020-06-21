@@ -57,28 +57,28 @@ function getHTMLOfSelection() {
   }
 }
 class ClassroomShare extends HTMLElement {
-	constructor() {
-		super();
+  constructor() {
+    super();
   }
-	connectedCallback() {
-		var currentPage = window.location;
-		var myAttributes = Array.from(this.attributes);
-		var mySharePage = "https://accounts.google.com/AccountChooser?continue=https%3A%2F%2Fclassroom.google.com%2Fshare%3Furl%3D"+currentPage;
-		var attr;
-		for (attr in myAttributes) {
-			mySharePage += "%26"+encodeURIComponent(myAttributes[attr].name)+"%3D"+encodeURIComponent(myAttributes[attr].value)
-		}
-		this.innerHTML = `<a href="${mySharePage}" style="text-decoration: none; display: inline-block; margin: 35px 10px 20px 32px; position: relative;">
-<img src="https://ktibow.github.io/classroom-logo.png" style="position: absolute; border-radius: 50%; height: 34px; top: -7px; left: -20px;" alt="">
-<span style="padding: 5px 8px 5px 24px; background-color: green; border-radius: 6px; color: white; font-family: Open Sans;">Share to Google Classroom</span>
-</a>`;
-		this.onmouseenter = function() {
-			this.style.filter = "brightness(92%)";
-		}
-		this.onmouseleave = function() {
-			this.style.filter = "brightness(100%)";
-		}
-	}
+  connectedCallback() {
+    var currentPage = window.location;
+    var myAttributes = Array.from(this.attributes);
+    var mySharePage = "https://accounts.google.com/AccountChooser?continue=https%3A%2F%2Fclassroom.google.com%2Fshare%3Furl%3D"+currentPage;
+    var attr;
+    for (attr in myAttributes) {
+      mySharePage += "%26"+encodeURIComponent(myAttributes[attr].name)+"%3D"+encodeURIComponent(myAttributes[attr].value);
+    }
+    this.innerHTML = `<a href="${mySharePage}" style="text-decoration: none; display: inline-block; margin: 35px 10px 20px 32px; position: relative;">
+    <img src="https://ktibow.github.io/classroom-logo.png" style="position: absolute; border-radius: 50%; height: 34px; top: -7px; left: -20px;" alt="">
+    <span style="padding: 5px 8px 5px 24px; background-color: green; border-radius: 6px; color: white; font-family: Open Sans;">Share to Google Classroom</span>
+    </a>`;
+    this.onmouseenter = function() {
+      this.style.filter = "brightness(92%)";
+    }
+    this.onmouseleave = function() {
+      this.style.filter = "brightness(100%)";
+    }
+  }
 }
 customElements.define("gclass-share", ClassroomShare);
 setTimeout(function() {
@@ -113,8 +113,25 @@ setTimeout(function() {
   }
   setInterval(cookcheck, 90);
   document.addEventListener("mouseleave", function(event) {
-    if(event.clientY <= 0) {
-       console.log("I'm out");
+    if (event.clientY <= 0) {
+      var locy = new URL(window.location.href);
+      var searchy = locy.searchParams;
+      searchy.set("utm_source", "usershare");
+      searchy.set("utm_medium", "copylink");
+      searchy.set("utm_campaign", "address_bar");
+      locy.search = searchy.toString();
+      window.history.pushState("addbar", "", locy.toString());
+    }
+  });
+  document.addEventListener("mouseenter", function(event) {
+    if (event.clientY >= 0) {
+      var locy = new URL(window.location.href);
+      var searchy = locy.searchParams;
+      searchy.delete("utm_source");
+      searchy.delete("utm_medium");
+      searchy.delete("utm_campaign");
+      locy.search = searchy.toString();
+      window.history.pushState("addbardone", "", locy.toString());
     }
   });
 }, 250);
