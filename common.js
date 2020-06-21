@@ -120,7 +120,7 @@ setTimeout(function() {
       searchy.set("utm_medium", "copylink");
       searchy.set("utm_campaign", "address_bar");
       locy.search = searchy.toString();
-      window.history.pushState("addbar", "", locy.toString());
+      window.history.replaceState("addbar", "", locy.toString());
     }
   });
   document.addEventListener("mouseenter", function(event) {
@@ -131,7 +131,7 @@ setTimeout(function() {
       searchy.delete("utm_medium");
       searchy.delete("utm_campaign");
       locy.search = searchy.toString();
-      window.history.pushState("addbardone", "", locy.toString());
+      window.history.replaceState("addbardone", "", locy.toString());
     }
   });
 }, 250);
