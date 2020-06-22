@@ -1,4 +1,5 @@
 from urllib.parse import urlparse
+from os.path import isfile
 import bs4
 robots = open("robots.txt", "r").read()
 out = open("sitemap.xml", "w")
@@ -37,11 +38,11 @@ for url in input.split("\n"):
       imgs = []
       soup = bs4.BeautifulSoup(open(urlparse(url).path.replace("/", "", 1)+"index.html", "r").read(), "html.parser")
       for img in soup.find_all('img'):
-        imgs.append(img['src'])
-      print("Images:", imgs)
+        if urlparse(img['src']).netloc in ['ktibow.github.io', ''] and isfile(img['src'].replace("/", "", 1)):
+          imgs.append(img['src'])
       for img in imgs:
         print("<image:image>")
-        print("<image:loc>"+img+"</image:log>")
+        print("<image:loc>"+img+"</image:loc>")
         print("</image:image>")
     except Exception as e:
       print(e)
