@@ -40,10 +40,11 @@ for url in input.split("\n"):
       for img in soup.find_all('img'):
         if urlparse(img['src']).netloc in ['ktibow.github.io', ''] and isfile(img['src'].replace("/", "", 1)):
           imgs.append(img['src'])
+          print("Image:", img['src'])
       for img in imgs:
-        print("<image:image>")
-        print("<image:loc>"+img+"</image:loc>")
-        print("</image:image>")
+        out.write("""<image:image>
+<image:loc>"""+img+"""</image:loc>
+</image:image>""")
     except Exception as e:
       print(e)
     out.write("<priority>")
