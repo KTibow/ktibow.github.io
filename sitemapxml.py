@@ -44,7 +44,8 @@ for url in input.split("\n"):
       for img in imgs:
         out.write("""<image:image>
 <image:loc>"""+img+"""</image:loc>
-</image:image>""")
+</image:image>
+""")
     except Exception as e:
       print(e)
     out.write("<priority>")
@@ -57,6 +58,7 @@ for url in input.split("\n"):
       priority = 0.3
     print("Priority:", priority)
     out.write("0."+str(round(priority*100))+"""</priority>
-</url>""")
+</url>
+""")
 out.write("</urlset>")
 out.close()
