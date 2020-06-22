@@ -35,7 +35,7 @@ for url in input.split("\n"):
 """)
     try:
       imgs = []
-      soup = bs4.BeautifulSoup(open(urlparse(url).path.replace("/", "", 1), "r").read(), "html.parser")
+      soup = bs4.BeautifulSoup(open(urlparse(url).path.replace("/", "", 1)+"index.html", "r").read(), "html.parser")
       for img in soup.find_all('img'):
         imgs += img['src']
       print("Images:", imgs)
