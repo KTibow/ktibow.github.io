@@ -119,7 +119,6 @@
 /common.js
 /offline
 /offline/index.html
-/_config.yml
 /404.html
 /cardterms
 /cardterms/index.html
