@@ -47,6 +47,7 @@
 /gocallme/maskable_icon.png
 /gocallme/index.html
 /gocallme/sw.js
+/old_sitemap.txt
 /check-if-works.sh
 /blog
 /blog/2019
