@@ -13,15 +13,8 @@ jobs:
     - name: Clone repo
       run: |
         git clone https://github.com/KTibow/ktibow.github.io.git ./
-#    - name: Update package sources
-#      run: sudo apt-get update
-#    - name: Check for valid commit
-#      run: |
-#        sudo apt-get install jq
-#        message=$(curl https://api.github.com/repos/KTibow/ktibow.github.io/git/commits/${{ github.sha }} | jq '.message')
-#        message="${message%\"}"
-#        message="${message#\"}"
-#        bash check-if-works.sh "$message"
+    - name: Install bs4
+      run: python3 -m pip install beautifulsoup4
     - name: Generate sitemap and commit
       run: |
         find . | grep -v ".*/\..*" | awk 'BEGIN{FIELDWIDTHS="1 1000"}{print $2}' > old_sitemap.txt
@@ -29,8 +22,6 @@ jobs:
         sh generate_sitemap.sh > sitemap.txt
         python3 sitemapxml.py
         rm sitemap.txt old_sitemap.txt
-    - name: Commit changes
-      run: |
         git config --local user.email "KTibow@users.noreply.github.com"
         git config --local user.name "KTibow"
         git add -A
