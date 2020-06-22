@@ -1,4 +1,5 @@
 from urllib.parse import urlparse
+import bs4
 robots = open("robots.txt", "r").read()
 out = open("sitemap.xml", "w")
 out.write("""<?xml version="1.0" encoding="UTF-8"?>
@@ -31,7 +32,20 @@ for url in input.split("\n"):
   if "https://ktibow.github.io/" in url and (allowed or url == "https://ktibow.github.io/"):
     out.write("""<url>
 <loc>"""+url+"""</loc>
-<priority>""")
+""")
+    try:
+      imgs = []
+      soup = bs4.BeautifulSoup(open(urlparse(url).path.replace("/", "", 1), "r").read(), "html.parser")
+      for img in soup.find_all('img'):
+        imgs += img['src']
+      print("Images:", imgs)
+      for img in images:
+        print("<image:image>")
+        print("<image:loc>"+img+"</image:log>")
+        print("</image:image>")
+    except Exception as e:
+      print(e)
+    out.write("<priority>")
     priority = 0.5
     if url in ["https://ktibow.github.io/"]:
       priority = 0.9
