@@ -32,7 +32,7 @@ function getCookie(cname) {
   return "";
 }
 function cookcheck() {
-  if (getCookie("cookieclose") == "yes") {
+  if (getCookie("cookieclose") == "yes" || navigator.doNotTrack == 1) {
     document.getElementById("googwarn").style.setProperty("display", "none", "important");
   }
 }
@@ -111,7 +111,7 @@ setTimeout(function() {
     gawarn.innerHTML = `<p>We (Or I guess me) use Google Analytics: <a href="https://www.google.com/policies/privacy/partners/">Google partner data use</a> | <a href="https://policies.google.com/privacy">Google privacy policy</a> | <a href="https://optout.aboutads.info/">Personalized ads opt-out</a> | <a href="https://myaccount.google.com/data-and-personalization">Google account data opt-out</a> | <a href="https://privacybadger.org/">Install EFF Privacy Badger to block analytics</a><button onClick="setCookie('cookieclose', 'yes', 365);" style="border-radius: 3px; background-color: white; margin: 10px; cursor: pointer; border-color: green; padding: 1px 4px; border-style: solid; color: green;">Close</button></p>`;
     document.getElementsByTagName('body')[0].appendChild(gawarn);
   }
-  setInterval(cookcheck, 90);
+  setInterval(cookcheck, 10);
   document.addEventListener("mouseleave", function(event) {
     if (event.clientY <= 0) {
       var locy = new URL(window.location.href);
