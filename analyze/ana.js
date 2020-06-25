@@ -11,17 +11,20 @@ this.addEventListener("mousewheel", resetTimer, false);
 this.addEventListener("touchmove", resetTimer, false);
 this.addEventListener("MSPointerMove", resetTimer, false);
 startTimer();
+console.log("Getting ready for analytics");
 }
 setup();
 function startTimer() {
-timeoutID = window.setTimeout(goInactive, 1000);
+timeoutID = window.setTimeout(goInactive, 10000);
 }
 function resetTimer(e) {
 window.clearTimeout(timeoutID);
 goActive();
 }
 function goInactive() {
+if (active) {
 stopactive = true;
+}
 }
 function goActive() {
 if (!active && !stopactive) {
