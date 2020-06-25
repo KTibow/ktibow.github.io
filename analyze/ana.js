@@ -26,6 +26,7 @@ stopactive = true;
 function goActive() {
 if (!active && !stopactive) {
 active = true;
+console.log("Starting analytics");
 (function(){
 var data = {
 "resource": {
