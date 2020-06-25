@@ -1,26 +1,53 @@
 if(navigator.doNotTrack != 1) {
+var timeoutID;
+var active = false;
+var stopactive = false;
+function setup() {
+this.addEventListener("mousemove", resetTimer, false);
+this.addEventListener("mousedown", resetTimer, false);
+this.addEventListener("keypress", resetTimer, false);
+this.addEventListener("DOMMouseScroll", resetTimer, false);
+this.addEventListener("mousewheel", resetTimer, false);
+this.addEventListener("touchmove", resetTimer, false);
+this.addEventListener("MSPointerMove", resetTimer, false);
+startTimer();
+}
+setup();
+function startTimer() {
+timeoutID = window.setTimeout(goInactive, 1000);
+}
+function resetTimer(e) {
+window.clearTimeout(timeoutID);
+goActive();
+}
+function goInactive() {
+stopactive = true;
+}
+function goActive() {
+if (!active && !stopactive) {
+active = true;
 (function(){
 var data = {
 "resource": {
-  "version":"1",
-  "macros":[{
-      "function":"__e"
-    },{
-      "function":"__cid"
-    }],
-  "tags":[{
-      "function":"__rep",
-      "once_per_event":true,
-      "vtp_containerId":["macro",1],
-      "tag_id":1
-    }],
-  "predicates":[{
-      "function":"_eq",
-      "arg0":["macro",0],
-      "arg1":"gtm.js"
-    }],
-  "rules":[
-    [["if",0],["add",0]]]
+"version":"1",
+"macros":[{
+"function":"__e"
+},{
+"function":"__cid"
+}],
+"tags":[{
+"function":"__rep",
+"once_per_event":true,
+"vtp_containerId":["macro",1],
+"tag_id":1
+}],
+"predicates":[{
+"function":"_eq",
+"arg0":["macro",0],
+"arg1":"gtm.js"
+}],
+"rules":[
+[["if",0],["add",0]]]
 },
 "runtime":[]
 };
@@ -29,7 +56,7 @@ var ca,da="function"==typeof Object.create?Object.create:function(a){var b=funct
 a.replace(/^\s+|\s+$/g,""):""},Ga=function(){return(new Date).getTime()},ya=function(){this.prefix="gtm.";this.values={}};ya.prototype.set=function(a,b){this.values[this.prefix+a]=b};ya.prototype.get=function(a){return this.values[this.prefix+a]};
 var Ha=function(a,b,c){return a&&a.hasOwnProperty(b)?a[b]:c},Ia=function(a){var b=!1;return function(){if(!b)try{a()}catch(c){}b=!0}},Ja=function(a,b){for(var c in b)b.hasOwnProperty(c)&&(a[c]=b[c])},Ka=function(a){for(var b in a)if(a.hasOwnProperty(b))return!0;return!1},La=function(a,b){for(var c=[],d=0;d<a.length;d++)c.push(a[d]),c.push.apply(c,b[a[d]]||[]);return c},Ma=function(a,b){for(var c={},d=c,e=a.split("."),f=0;f<e.length-1;f++)d=d[e[f]]={};d[e[e.length-1]]=b;return c},Na=function(a){var b=
 [];Aa(a,function(c,d){10>c.length&&d&&b.push(c)});return b.join(",")};/*
- jQuery v1.9.1 (c) 2005, 2012 jQuery Foundation, Inc. jquery.org/license. */
+jQuery v1.9.1 (c) 2005, 2012 jQuery Foundation, Inc. jquery.org/license. */
 var Oa=/\[object (Boolean|Number|String|Function|Array|Date|RegExp)\]/,Pa=function(a){if(null==a)return String(a);var b=Oa.exec(Object.prototype.toString.call(Object(a)));return b?b[1].toLowerCase():"object"},Qa=function(a,b){return Object.prototype.hasOwnProperty.call(Object(a),b)},Ra=function(a){if(!a||"object"!=Pa(a)||a.nodeType||a==a.window)return!1;try{if(a.constructor&&!Qa(a,"constructor")&&!Qa(a.constructor.prototype,"isPrototypeOf"))return!1}catch(c){return!1}for(var b in a);return void 0===
 b||Qa(a,b)},C=function(a,b){var c=b||("array"==Pa(a)?[]:{}),d;for(d in a)if(Qa(a,d)){var e=a[d];"array"==Pa(e)?("array"!=Pa(c[d])&&(c[d]=[]),c[d]=C(e,c[d])):Ra(e)?(Ra(c[d])||(c[d]={}),c[d]=C(e,c[d])):c[d]=e}return c};var qb;
 var rb=[],sb=[],tb=[],ub=[],vb=[],wb={},xb,yb,Ab,Bb=function(a,b){var c={};c["function"]="__"+a;for(var d in b)b.hasOwnProperty(d)&&(c["vtp_"+d]=b[d]);return c},Cb=function(a,b){var c=a["function"];if(!c)throw Error("Error: No function name given for function call.");var d=wb[c],e={},f;for(f in a)a.hasOwnProperty(f)&&0===f.indexOf("vtp_")&&(e[void 0!==d?f:f.substr(4)]=a[f]);return void 0!==d?d(e):qb(c,e,b)},Eb=function(a,b,c){c=c||[];var d={},e;for(e in a)a.hasOwnProperty(e)&&(d[e]=Db(a[e],b,c));
@@ -37,7 +64,7 @@ return d},Fb=function(a){var b=a["function"];if(!b)throw"Error: No function name
 !1;return d;case "map":d={};for(var l=1;l<a.length;l+=2)d[Db(a[l],b,c)]=Db(a[l+1],b,c);return d;case "template":d=[];for(var m=!1,q=1;q<a.length;q++){var r=Db(a[q],b,c);yb&&(m=m||r===yb.Gb);d.push(r)}return yb&&m?yb.ig(d):d.join("");case "escape":d=Db(a[1],b,c);if(yb&&sa(a[1])&&"macro"===a[1][0]&&yb.Ig(a))return yb.$g(d);d=String(d);for(var u=2;u<a.length;u++)Sa[a[u]]&&(d=Sa[a[u]](d));return d;case "tag":var p=a[1];if(!ub[p])throw Error("Unable to resolve tag reference "+p+".");return d={pe:a[2],
 index:p};case "zb":var t={arg0:a[2],arg1:a[3],ignore_case:a[5]};t["function"]=a[1];var v=Gb(t,b,c),w=!!a[4];return w||2!==v?w!==(1===v):null;default:throw Error("Attempting to expand unknown Value type: "+a[0]+".");}}return a},Gb=function(a,b,c){try{return xb(Eb(a,b,c))}catch(d){JSON.stringify(a)}return 2};var Hb=function(){var a=function(b){return{toString:function(){return b}}};return{yd:a("convert_case_to"),zd:a("convert_false_to"),Ad:a("convert_null_to"),Bd:a("convert_true_to"),Cd:a("convert_undefined_to"),Hh:a("debug_mode_metadata"),va:a("function"),ff:a("instance_name"),lf:a("live_only"),pf:a("malware_disabled"),qf:a("metadata"),Ih:a("original_vendor_template_id"),uf:a("once_per_event"),Jd:a("once_per_load"),Rd:a("setup_tags"),Td:a("tag_id"),Ud:a("teardown_tags")}}();var Ib=null,Lb=function(a){function b(r){for(var u=0;u<r.length;u++)d[r[u]]=!0}var c=[],d=[];Ib=Jb(a);for(var e=0;e<sb.length;e++){var f=sb[e],h=Kb(f);if(h){for(var k=f.add||[],l=0;l<k.length;l++)c[k[l]]=!0;b(f.block||[])}else null===h&&b(f.block||[])}for(var m=[],q=0;q<ub.length;q++)c[q]&&!d[q]&&(m[q]=!0);return m},Kb=function(a){for(var b=a["if"]||[],c=0;c<b.length;c++){var d=Ib(b[c]);if(0===d)return!1;if(2===d)return null}for(var e=a.unless||[],f=0;f<e.length;f++){var h=Ib(e[f]);if(2===h)return null;
 if(1===h)return!1}return!0},Jb=function(a){var b=[];return function(c){void 0===b[c]&&(b[c]=Gb(tb[c],a));return b[c]}};/*
- Copyright (c) 2014 Derek Brans, MIT license https://github.com/krux/postscribe/blob/master/LICENSE. Portions derived from simplehtmlparser, which is licensed under the Apache License, Version 2.0 */
+Copyright (c) 2014 Derek Brans, MIT license https://github.com/krux/postscribe/blob/master/LICENSE. Portions derived from simplehtmlparser, which is licensed under the Apache License, Version 2.0 */
 var D=window,E=document,gc=navigator,hc=E.currentScript&&E.currentScript.src,ic=function(a,b){var c=D[a];D[a]=void 0===c?b:c;return D[a]},jc=function(a,b){b&&(a.addEventListener?a.onload=b:a.onreadystatechange=function(){a.readyState in{loaded:1,complete:1}&&(a.onreadystatechange=null,b())})},kc=function(a,b,c){var d=E.createElement("script");d.type="text/javascript";d.async=!0;d.src=a;jc(d,b);c&&(d.onerror=c);var e;if(null===na)b:{var f=la.document,h=f.querySelector&&f.querySelector("script[nonce]");
 if(h){var k=h.nonce||h.getAttribute("nonce");if(k&&ma.test(k)){na=k;break b}}na=""}e=na;e&&d.setAttribute("nonce",e);var l=E.getElementsByTagName("script")[0]||E.body||E.head;l.parentNode.insertBefore(d,l);return d},lc=function(){if(hc){var a=hc.toLowerCase();if(0===a.indexOf("https://"))return 2;if(0===a.indexOf("http://"))return 3}return 1},mc=function(a,b){var c=E.createElement("iframe");c.height="0";c.width="0";c.style.display="none";c.style.visibility="hidden";var d=E.body&&E.body.lastChild||
 E.body||E.head;d.parentNode.insertBefore(c,d);jc(c,b);void 0!==a&&(c.src=a);return c},nc=function(a,b,c){var d=new Image(1,1);d.onload=function(){d.onload=null;b&&b()};d.onerror=function(){d.onerror=null;c&&c()};d.src=a;return d},oc=function(a,b,c,d){a.addEventListener?a.addEventListener(b,c,!!d):a.attachEvent&&a.attachEvent("on"+b,c)},pc=function(a,b,c){a.removeEventListener?a.removeEventListener(b,c,!1):a.detachEvent&&a.detachEvent("on"+b,c)},H=function(a){D.setTimeout(a,0)},qc=function(a,b){return a&&
@@ -210,4 +237,6 @@ function hn(){Sf.gtm_3pds=!0;Qc=D.google_tag_manager=D.google_tag_manager||{};if
 }}
 (function(a){a()})(hn);
 })()
+}
+}
 }
