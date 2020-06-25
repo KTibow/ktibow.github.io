@@ -38,12 +38,12 @@ for url in input.split("\n"):
       imgs = []
       soup = bs4.BeautifulSoup(open(urlparse(url).path.replace("/", "", 1)+"index.html", "r").read(), "html.parser")
       for img in soup.find_all('img'):
-        if urlparse(img['src']).netloc in ['ktibow.github.io', ''] and isfile(img['src'].replace("/", "", 1)):
-          imgs.append(img['src'])
-          print("Image:", img['src'])
+        if urlparse(img['src']).netloc in ['ktibow.github.io', ''] and isfile(urlparse(img['src']).path.replace("/", "", 1)):
+          imgs.append("https://ktibow.github.io" + urlparse(img['src']).path)
+          print("Image:", "https://ktibow.github.io" + urlparse(img['src']).path)
       for img in imgs:
         out.write("""<image:image>
-<image:loc>"""+img+"""</image:loc>
+<image:loc>""" + img + """</image:loc>
 </image:image>
 """)
     except Exception as e:
