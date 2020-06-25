@@ -3,7 +3,7 @@ function gtag() {
   dataLayer.push(arguments);
 }
 gtag('js', new Date());
-gtag('config', 'UA-165' + '004437-1', { 'anonymize_ip': true });
+gtag('config', 'UA-1650' + '04437-3', { 'anonymize_ip': true });
 function wait(ms) {
   var start = Date.now(),
     now = start;
