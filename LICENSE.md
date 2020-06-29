@@ -7,7 +7,7 @@ Permission is granted (because of this license), free of charge, to any people w
 - **distribute**
 
 with this stuff, as long as you:
-- Give a clearly stated, easily findable attribution notice in all copies or substantial portions of the stuff stating:
+- Give a clearly stated, easily findable attribution notice. Only if the text is more than 100 characters long. Do it in all copies or substantial portions of the stuff. It has to be stating (at least):
   - `© Kendell R. in (insert date here)`
   - links or URLs to:
     - the source of the stuff
