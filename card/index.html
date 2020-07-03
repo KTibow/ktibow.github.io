@@ -56,7 +56,8 @@
         max-width: 90vw;
         min-width: 80vw;
         max-height: 50vh;
-        border: 3px grey solid;
+        border: 3px #f8f8f8 solid;
+        border-radius: 1em;
         margin: 0 auto;
         padding: 20px;
       }
@@ -64,7 +65,7 @@
   </head>
   <body>
     <h1>Library Card</h1>
-    <p>Note: This site is made for phones.</p>
+    <h2>Your phone is your card.</h2>
     <div id="cardpromo" style="display: none;">
       <h2 id="promoheader">Simplify checkout at the library.</h2>
       <button id="setupcardbutton">Setup your card</button>
@@ -130,8 +131,8 @@
           setTimeout(function() {
             document.getElementById("cardpinimg").style.opacity = "0";
             document.getElementById("cardpinimg").style.display = "none";
-          }, 700);
-        }, 700);
+          }, 500);
+        }, 500);
       }
       function showdetails() {
         var cardstuff = localStorage.getItem("card").split(":");
