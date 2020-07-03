@@ -18,18 +18,52 @@
       body {
         margin: 15px;
       }
+      button {
+        cursor: pointer;
+        background-color: #08b;
+        color: white;
+        border: none;
+        border-radius: 1em;
+        padding: 1em;
+        font-size: 1em;
+        box-shadow: 4px 4px 2.5px #0bf;
+        margin: 0.5em;
+        transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+      }
+      button:hover {
+        background-color: #0080b0;
+      }
+      button:active {
+        background-color: #07a;
+        box-shadow: 3px 3px 2px #09d;
+        transform: translate(1px, 1px);
+      }
     </style>
   </head>
   <body>
     <h1>Library Card</h1>
     <div id="cardsetup" style="display: none;">
-      <h2>Simplify checkout at the library.</h2>
-      <button>Setup your card</button>
+      <h2 id="promoheader">Simplify checkout at the library.</h2>
+      <button onClick="setupcard();">Setup your card</button>
     </div>
     <script>
       if (localStorage.getItem("card") == null) {
         document.getElementById("cardsetup").style.display = "unset";
       }
+      function setupcard() {
+        document.getElementById("cardsetup").style.display = "none";
+      }
+      function choose(choices) {
+        var index = Math.floor(Math.random() * choices.length);
+        return choices[index];
+      }
+      function updatepromo() {
+        document.getElementById("promoheader").innerHTML = choose(["Simplify checkout at the library.",
+                                                                   "Forget about carrying your library card.",
+                                                                   "Turn checkout from 1-2-3-4-5-6-7 to 1-2-3.",
+                                                                   "You're the only one with access to your library card."]);
+      }
+      setInterval(updatepromo, 3000);
     </script>
   </body>
 </html>
