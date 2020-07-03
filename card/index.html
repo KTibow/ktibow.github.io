@@ -2,8 +2,6 @@
 <html>
   <head>
     <script src="/common.js"></script>
-    <script src="/card/jsaes.js"></script>
-    <script src="/card/jssha.js"></script>
     <title>Library Card</title>
     <style>
       * {
@@ -42,16 +40,28 @@
   </head>
   <body>
     <h1>Library Card</h1>
-    <div id="cardsetup" style="display: none;">
+    <div id="cardpromo" style="display: none;">
       <h2 id="promoheader">Simplify checkout at the library.</h2>
       <button onClick="setupcard();">Setup your card</button>
     </div>
+    <div id="cardsetup" style="display: none;">
+      <h2>Card setup</h2>
+      <label>
+        Card number: <input type="number"/>
+      </label>
+      <br/>
+      <label>
+        Card PIN: <input type="number"/>
+      </label>
+      <button>Save</button>
+    </div>
     <script>
       if (localStorage.getItem("card") == null) {
-        document.getElementById("cardsetup").style.display = "unset";
+        document.getElementById("cardpromo").style.display = "unset";
       }
       function setupcard() {
-        document.getElementById("cardsetup").style.display = "none";
+        document.getElementById("cardpromo").style.display = "none";
+        document.getElementById("cardsetup").style.display = "unset";
       }
       function choose(choices) {
         var index = Math.floor(Math.random() * choices.length);
@@ -61,9 +71,9 @@
         document.getElementById("promoheader").innerHTML = choose(["Simplify checkout at the library.",
                                                                    "Forget about carrying your library card.",
                                                                    "Turn checkout from 1-2-3-4-5-6-7 to 1-2-3.",
-                                                                   "You're the only one with access to your library card."]);
+                                                                   "Sign in to the library in less than a second."]);
       }
-      setInterval(updatepromo, 3000);
+      setInterval(updatepromo, 2000);
     </script>
   </body>
 </html>
