@@ -87,9 +87,9 @@
     </div>
     <div id="usecard" style="display: none;">
       <h2>Use card:</h2>
+      <button id="runcardbutton"><b>Show card</b></button><br/>
       <button id="setupcardbutton2">Change card details</button><br/>
       <button id="showdetailsbutton">Show card details</button><br/>
-      <button id="runcardbutton">Show card</button><br/>
       <img id="cardidimg">
       <img id="cardpinimg">
     </div>
@@ -126,13 +126,15 @@
       function runcard() {
         document.getElementById("cardidimg").style.opacity = "1";
         document.getElementById("cardidimg").style.display = "unset";
-        setTimeout(window.scrollBy, 50, 0, 1000);
+        setTimeout(window.scrollBy, 20, 0, 1000);
         setTimeout(function() {
+          setTimeout(window.scrollBy, 20, 0, 1000);
           document.getElementById("cardidimg").style.opacity = "0";
           document.getElementById("cardidimg").style.display = "none";
           document.getElementById("cardpinimg").style.opacity = "1";
           document.getElementById("cardpinimg").style.display = "unset";
           setTimeout(function() {
+             setTimeout(window.scrollBy, 20, 0, -1000);
             document.getElementById("cardpinimg").style.opacity = "0";
             document.getElementById("cardpinimg").style.display = "none";
           }, 670);
