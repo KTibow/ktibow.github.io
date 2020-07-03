@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="/common.js"></script>
+    <title>What Is Library Card?</title>
+    <link rel="manifest" href="/card/manifest.json">
+    <link rel="icon" sizes="853x853" href="/card/maskable_icon.png">
+    <meta name="theme-color" content="#00bbff">
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+      * {
+        font-family: Open Sans, Arial, sans-serif;
+      }
+      h1 {
+        color: #60E;
+        height: 2em;
+      }
+      h2, h3 {
+        color: #08b;
+      }
+      body {
+        margin: 15px;
+      }
+    </style>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').then(function() { console.log("Service Worker Registered"); });
+      }
+    </script>
+  </head>
+  <body>
+    <h1>What Is Library Card?</h1>
+    <p>Library Card is an installable web app. You can use it to quickly flash your phone at a barcode scanner and log in quickly.</p>
+  </body>
+</html>
