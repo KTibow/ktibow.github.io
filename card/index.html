@@ -36,6 +36,9 @@
         box-shadow: 3px 3px 2px #09d;
         transform: translate(1px, 1px);
       }
+      input {
+        height: 2em;
+      }
     </style>
   </head>
   <body>
@@ -47,21 +50,45 @@
     <div id="cardsetup" style="display: none;">
       <h2>Card setup</h2>
       <label>
-        Card number: <input type="number"/>
+        Card number:<br/><input type="number" id="cardnum"/>
       </label>
       <br/>
       <label>
-        Card PIN: <input type="number"/>
+        Card PIN:<br/><input type="number" id="cardpin"/>
       </label>
-      <button>Save</button>
+      <br/>
+      <button onClick="savecard();">Save</button>
+    </div>
+    <div id="usecard" style="display: none;">
+      <h2>Use card</h2>
+      <button onClick="setupcard();">Change card details</button>
+      <button>Show card details</button>
+      <button>Show card</button>
     </div>
     <script>
       if (localStorage.getItem("card") == null) {
         document.getElementById("cardpromo").style.display = "unset";
+      } else {
+        document.getElementById("usecard").style.display = "unset";
       }
       function setupcard() {
         document.getElementById("cardpromo").style.display = "none";
         document.getElementById("cardsetup").style.display = "unset";
+        document.getElementById("usecard").style.display = "none";
+      }
+      function savecard() {
+        var testreg = /^\d{4,12}$/;
+        var cardnum = document.getElementById("cardnum").value;
+        var cardpin = document.getElementById("cardpin").value;
+        if (!cardnum.match(testreg) || !cardpin.match(testreg)) {
+          alert("Check your card details. Max 12 digits, min 4 digits.");
+        } else {
+          localStorage.removeItem("card");
+          localStorage.setItem("card", cardnum + ":" + cardpin);
+          alert("Saved!");
+          document.getElementById("usecard").style.display = "unset";
+          document.getElementById("cardsetup").style.display = "none";
+        }
       }
       function choose(choices) {
         var index = Math.floor(Math.random() * choices.length);
