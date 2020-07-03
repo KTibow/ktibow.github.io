@@ -9,9 +9,27 @@
       * {
         font-family: Open Sans, Arial, sans-serif;
       }
+      h1 {
+        color: #03b;
+      }
+      h2, h3, h4, h5, h6 {
+        color: #08b;
+      }
+      body {
+        margin: 15px;
+      }
     </style>
   </head>
   <body>
     <h1>Library Card</h1>
+    <div id="cardsetup" style="display: none;">
+      <h2>Simplify checkout at the library.</h2>
+      <button>Setup your card</button>
+    </div>
+    <script>
+      if (localStorage.getItem("card") == null) {
+        document.getElementById("cardsetup").style.display = "unset";
+      }
+    </script>
   </body>
 </html>
