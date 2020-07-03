@@ -3,6 +3,15 @@
   <head>
     <script src="/common.js"></script>
     <title>Library Card</title>
+    <link rel="manifest" href="/card/manifest.json">
+    <link rel="icon" sizes="853x853" href="/gocallme/maskable_icon.png">
+    <meta name="theme-color" content="#00bbff">
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').then(function() { console.log("Service Worker Registered"); });
+      }
+    </script>
+    <meta name="description" content="Are you tired of typing in your library card? This web app lets you use barcodes to sign in really, really quick.">
     <style>
       * {
         font-family: Open Sans, Arial, sans-serif;
