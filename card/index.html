@@ -51,8 +51,6 @@
         height: 2em;
       }
       img {
-        opacity: 0;
-        display: none;
         transition: opacity 0.1s;
         max-width: calc(90vw - 40px);
         min-width: calc(80vw - 40px);
@@ -78,6 +76,8 @@
       }
       .imageWrapper {
         position: relative;
+        opacity: 0;
+        display: none;
       }
       .overlayImage {
         position: absolute;
@@ -110,12 +110,12 @@
       <button id="runcardbutton" class="emph">Show card</button><br/>
       <button id="setupcardbutton2">Change card details</button><br/>
       <button id="showdetailsbutton">Show card details</button><br/>
-      <div class="imageWrapper">
-        <img id="cardidimg" class="overlayImage">
+      <div id="cardidimg" class="imageWrapper">
+        <img class="overlayImage">
         <img class="line" src="/card/line.png">
       </div>
-      <div class="imageWrapper">
-        <img id="cardpinimg" class="overlayImage">
+      <div id="cardpinimg" class="imageWrapper">
+        <img class="overlayImage">
         <img class="line" src="/card/line.png">
       </div>
     </div>
