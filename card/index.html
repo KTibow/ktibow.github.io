@@ -54,13 +54,15 @@
         opacity: 0;
         display: none;
         transition: opacity 0.1s;
-        max-width: 90vw;
-        min-width: 80vw;
+        max-width: calc(90vw - 40px);
+        min-width: calc(80vw - 40px);
         max-height: 50vh;
         border: 3px #f8f8f8 solid;
         border-radius: 1em;
         margin: 0 auto;
         padding: 20px;
+        display: block;
+        height: 1.3in;
       }
     </style>
   </head>
@@ -72,7 +74,7 @@
       <button id="setupcardbutton">Setup your card</button>
     </div>
     <div id="cardsetup" style="display: none;">
-      <h2>Card setup</h2>
+      <h2>Card setup:</h2>
       <label>
         Card number:<br/><input type="number" id="cardnum"/>
       </label>
@@ -84,7 +86,7 @@
       <button id="savecardbutton">Save</button>
     </div>
     <div id="usecard" style="display: none;">
-      <h2>Use card</h2>
+      <h2>Use card:</h2>
       <button id="setupcardbutton2">Change card details</button><br/>
       <button id="showdetailsbutton">Show card details</button><br/>
       <button id="runcardbutton">Show card</button><br/>
@@ -148,8 +150,9 @@ Card PIN: ${cardstuff[1]}`);
       function updatepromo() {
         document.getElementById("promoheader").innerHTML = choose(["Simplify checkout at the library.",
                                                                    "Forget about carrying your library card.",
-                                                                   "Turn checkout from 1-2-3-4-5-6-7 to 1-2-3.",
-                                                                   "Sign in to the library in less than a second."]);
+                                                                   "Sign in to checkout with one tap.",
+                                                                   "Turn library checkout from 1-2-3-4-5-6-7-8 to 1-2-3.",
+                                                                   "Sign in to the library in just a couple seconds."]);
       }
       setInterval(updatepromo, 2000);
       document.getElementById("setupcardbutton").addEventListener("click", function(){setTimeout(setupcard, 400);}, true);
