@@ -51,6 +51,8 @@
         height: 2em;
       }
       img {
+        opacity: 0;
+        display: none;
         transition: opacity 0.1s;
         max-width: calc(90vw - 40px);
         min-width: calc(80vw - 40px);
@@ -62,27 +64,10 @@
         display: block;
         height: 1.3in;
       }
-      .line {
-        opacity: 1;
-        display: block;
-        margin: auto;
-        width: 90vw;
-        padding: 0;
-      }
       .emph {
         font-weight: bold;
         width: 80%;
         padding: 1.7em;
-      }
-      .imageWrapper {
-        position: relative;
-        opacity: 0;
-        display: none;
-      }
-      .overlayImage {
-        position: absolute;
-        top: 0;
-        left: 0;
       }
     </style>
   </head>
@@ -110,14 +95,8 @@
       <button id="runcardbutton" class="emph">Show card</button><br/>
       <button id="setupcardbutton2">Change card details</button><br/>
       <button id="showdetailsbutton">Show card details</button><br/>
-      <div id="cardidimg" class="imageWrapper">
-        <img class="overlayImage">
-        <img class="line" src="/card/line.png">
-      </div>
-      <div id="cardpinimg" class="imageWrapper">
-        <img class="overlayImage">
-        <img class="line" src="/card/line.png">
-      </div>
+      <img id="cardidimg">
+      <img id="cardpinimg">
     </div>
     <script>
       if (localStorage.getItem("card") == null) {
