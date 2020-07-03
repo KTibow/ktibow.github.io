@@ -45,7 +45,7 @@
     <h1>Library Card</h1>
     <div id="cardpromo" style="display: none;">
       <h2 id="promoheader">Simplify checkout at the library.</h2>
-      <button onClick="setupcard();">Setup your card</button>
+      <button onClick="setupcard()">Setup your card</button>
     </div>
     <div id="cardsetup" style="display: none;">
       <h2>Card setup</h2>
@@ -57,12 +57,12 @@
         Card PIN:<br/><input type="number" id="cardpin"/>
       </label>
       <br/>
-      <button onClick="savecard();">Save</button>
+      <button onClick="savecard()">Save</button>
     </div>
     <div id="usecard" style="display: none;">
       <h2>Use card</h2>
-      <button onClick="setupcard();">Change card details</button>
-      <button>Show card details</button>
+      <button onClick="setupcard()">Change card details</button><br/>
+      <button onClick="showdetails()">Show card details</button><br/>
       <button>Show card</button>
     </div>
     <script>
@@ -85,10 +85,14 @@
         } else {
           localStorage.removeItem("card");
           localStorage.setItem("card", cardnum + ":" + cardpin);
-          alert("Saved!");
           document.getElementById("usecard").style.display = "unset";
           document.getElementById("cardsetup").style.display = "none";
         }
+      }
+      function showdetails() {
+        var cardstuff = localStorage.getItem("card").split(":");
+        alert(`Card number: ${cardstuff[0]}
+Card PIN: ${cardstuff[1]}`);
       }
       function choose(choices) {
         var index = Math.floor(Math.random() * choices.length);
