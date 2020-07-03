@@ -69,8 +69,8 @@
       <button id="setupcardbutton2">Change card details</button><br/>
       <button id="showdetailsbutton">Show card details</button><br/>
       <button id="runcardbutton">Show card</button>
-      <img id="cardid">
-      <img id="cardpin">
+      <img id="cardidimg">
+      <img id="cardpinimg">
     </div>
     <script>
       if (localStorage.getItem("card") == null) {
@@ -93,22 +93,22 @@
           localStorage.removeItem("card");
           localStorage.setItem("card", cardnum + ":" + cardpin);
           document.getElementById("usecard").style.display = "unset";
-          document.getElementById("cardid").src = "https://barcodes4.me/barcode/c128c/" + cardnum + ".png";
-          document.getElementById("cardpin").src = "https://barcodes4.me/barcode/c128c/" + cardpin + ".png";
+          document.getElementById("cardidimg").src = "https://barcodes4.me/barcode/c128c/" + cardnum + ".png";
+          document.getElementById("cardpinimg").src = "https://barcodes4.me/barcode/c128c/" + cardpin + ".png";
           document.getElementById("cardsetup").style.display = "none";
         }
       }
       function runcard() {
-        document.getElementById("cardid").style.opacity = "1";
-        document.getElementById("cardid").style.display = "unset";
+        document.getElementById("cardidimg").style.opacity = "1";
+        document.getElementById("cardidimg").style.display = "unset";
         setTimeout(function() {
-          document.getElementById("cardid").style.opacity = "0";
-          document.getElementById("cardid").style.display = "none";
-          document.getElementById("cardpin").style.opacity = "1";
-          document.getElementById("cardpin").style.display = "unset";
+          document.getElementById("cardidimg").style.opacity = "0";
+          document.getElementById("cardidimg").style.display = "none";
+          document.getElementById("cardpinimg").style.opacity = "1";
+          document.getElementById("cardpinimg").style.display = "unset";
           setTimeout(function() {
-            document.getElementById("cardpin").style.opacity = "0";
-            document.getElementById("cardpin").style.display = "none";
+            document.getElementById("cardpinimg").style.opacity = "0";
+            document.getElementById("cardpinimg").style.display = "none";
           }, 700);
         }, 700);
       }
