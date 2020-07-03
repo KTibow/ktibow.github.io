@@ -64,10 +64,25 @@
         display: block;
         height: 1.3in;
       }
+      .line {
+        opacity: 1;
+        display: block;
+        margin: auto;
+        width: 90vw;
+        padding: 0;
+      }
       .emph {
         font-weight: bold;
         width: 80%;
         padding: 1.7em;
+      }
+      .imageWrapper {
+        position: relative;
+      }
+      .overlayImage {
+        position: absolute;
+        top: 0;
+        left: 0;
       }
     </style>
   </head>
@@ -95,8 +110,14 @@
       <button id="runcardbutton" class="emph">Show card</button><br/>
       <button id="setupcardbutton2">Change card details</button><br/>
       <button id="showdetailsbutton">Show card details</button><br/>
-      <img id="cardidimg">
-      <img id="cardpinimg">
+      <div class="imageWrapper">
+        <img id="cardidimg" class="overlayImage">
+        <img class="line" src="/card/line.png">
+      </div>
+      <div class="imageWrapper">
+        <img id="cardpinimg" class="overlayImage">
+        <img class="line" src="/card/line.png">
+      </div>
     </div>
     <script>
       if (localStorage.getItem("card") == null) {
