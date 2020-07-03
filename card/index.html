@@ -126,15 +126,15 @@
       function runcard() {
         document.getElementById("cardidimg").style.opacity = "1";
         document.getElementById("cardidimg").style.display = "unset";
-        setTimeout(window.scrollBy, 20, 0, 1000);
+        setTimeout(window.scrollBy, 40, 0, 1000);
         setTimeout(function() {
-          setTimeout(window.scrollBy, 20, 0, 1000);
+          setTimeout(window.scrollBy, 40, 0, 1000);
           document.getElementById("cardidimg").style.opacity = "0";
           document.getElementById("cardidimg").style.display = "none";
           document.getElementById("cardpinimg").style.opacity = "1";
           document.getElementById("cardpinimg").style.display = "unset";
           setTimeout(function() {
-             setTimeout(window.scrollBy, 20, 0, -1000);
+             setTimeout(window.scrollBy, 40, 0, -1000);
             document.getElementById("cardpinimg").style.opacity = "0";
             document.getElementById("cardpinimg").style.display = "none";
           }, 670);
@@ -195,6 +195,21 @@ Card PIN: ${cardstuff[1]}`);
               });
           });
       });
+      document.getElementById("cardidimg").style.opacity = "1";
+      document.getElementById("cardidimg").style.display = "unset";
+      setTimeout(window.scrollBy, 40, 0, 1000);
+      setTimeout(function() {
+        setTimeout(window.scrollBy, 40, 0, 1000);
+        document.getElementById("cardidimg").style.opacity = "0";
+        document.getElementById("cardidimg").style.display = "none";
+        document.getElementById("cardpinimg").style.opacity = "1";
+        document.getElementById("cardpinimg").style.display = "unset";
+        setTimeout(function() {
+          setTimeout(window.scrollBy, 40, 0, -1000);
+          document.getElementById("cardpinimg").style.opacity = "0";
+          document.getElementById("cardpinimg").style.display = "none";
+        }, 55);
+      }, 55);
     </script>
   </body>
 </html>
