@@ -45,7 +45,7 @@
     <h1>Library Card</h1>
     <div id="cardpromo" style="display: none;">
       <h2 id="promoheader">Simplify checkout at the library.</h2>
-      <button onClick="setupcard()">Setup your card</button>
+      <button id="setupcardbutton">Setup your card</button>
     </div>
     <div id="cardsetup" style="display: none;">
       <h2>Card setup</h2>
@@ -57,12 +57,12 @@
         Card PIN:<br/><input type="number" id="cardpin"/>
       </label>
       <br/>
-      <button onClick="savecard()">Save</button>
+      <button id="savecardbutton">Save</button>
     </div>
     <div id="usecard" style="display: none;">
       <h2>Use card</h2>
-      <button onClick="setupcard()">Change card details</button><br/>
-      <button onClick="showdetails()">Show card details</button><br/>
+      <button id="setupcardbutton2">Change card details</button><br/>
+      <button id="showdetailsbutton">Show card details</button><br/>
       <button>Show card</button>
     </div>
     <script>
@@ -105,6 +105,10 @@ Card PIN: ${cardstuff[1]}`);
                                                                    "Sign in to the library in less than a second."]);
       }
       setInterval(updatepromo, 2000);
+      document.getElementById("setupcardbutton").addEventListener("click", setupcard, true);
+      document.getElementById("setupcardbutton2").addEventListener("click", setupcard, true);
+      document.getElementById("savecardbutton").addEventListener("click", savecard, true);
+      document.getElementById("showdetailsbutton").addEventListener("click", showdetails, true);
     </script>
   </body>
 </html>
