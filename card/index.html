@@ -43,6 +43,11 @@
         opacity: 0;
         display: none;
         transition: opacity 0.1s;
+        width: 100%;
+        margin: 0 auto;0
+      }
+      @media all and (orientation: landscape) {
+        width: 33%;
       }
     </style>
   </head>
@@ -68,7 +73,7 @@
       <h2>Use card</h2>
       <button id="setupcardbutton2">Change card details</button><br/>
       <button id="showdetailsbutton">Show card details</button><br/>
-      <button id="runcardbutton">Show card</button>
+      <button id="runcardbutton">Show card</button><br/>
       <img id="cardidimg">
       <img id="cardpinimg">
     </div>
@@ -93,8 +98,8 @@
           localStorage.removeItem("card");
           localStorage.setItem("card", cardnum + ":" + cardpin);
           document.getElementById("usecard").style.display = "unset";
-          document.getElementById("cardidimg").src = "https://barcodes4.me/barcode/c128c/" + cardnum + ".png";
-          document.getElementById("cardpinimg").src = "https://barcodes4.me/barcode/c128c/" + cardpin + ".png";
+          document.getElementById("cardidimg").src = "https://barcodes4.me/barcode/i2of5/" + cardnum + ".png";
+          document.getElementById("cardpinimg").src = "https://barcodes4.me/barcode/i2of5/" + cardpin + ".png";
           document.getElementById("cardsetup").style.display = "none";
         }
       }
