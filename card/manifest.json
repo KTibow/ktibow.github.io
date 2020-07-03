@@ -1,0 +1,19 @@
+{
+  "short_name": "Library Card",
+  "name": "Library Card, the easiest way to checkout at the library",
+  "description": "Barcode generator for your library card that lets you checkout quickly",
+  "lang": "en-US",
+  "icons": [
+    {
+      "src": "/card/maskable_icon.png",
+      "type": "image/png",
+      "sizes": "853x853",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/card/",
+  "background_color": "#FFFFFF",
+  "display": "standalone",
+  "scope": "/card/",
+  "theme_color": "#00bbff"
+}
