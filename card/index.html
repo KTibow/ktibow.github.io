@@ -39,6 +39,11 @@
       input {
         height: 2em;
       }
+      img {
+        opacity: 0;
+        display: none;
+        transition: opacity 0.1s;
+      }
     </style>
   </head>
   <body>
@@ -63,7 +68,9 @@
       <h2>Use card</h2>
       <button id="setupcardbutton2">Change card details</button><br/>
       <button id="showdetailsbutton">Show card details</button><br/>
-      <button>Show card</button>
+      <button id="runcardbutton">Show card</button>
+      <img id="cardid"/>
+      <img id="cardpin"/>
     </div>
     <script>
       if (localStorage.getItem("card") == null) {
@@ -86,8 +93,25 @@
           localStorage.removeItem("card");
           localStorage.setItem("card", cardnum + ":" + cardpin);
           document.getElementById("usecard").style.display = "unset";
+          document.getElementById("cardid").src = "https://barcodes4.me/barcode/c128c/" + cardnum + ".png";
+          document.getElementById("cardpin").src = "https://barcodes4.me/barcode/c128c/" + cardpin + ".png";
           document.getElementById("cardsetup").style.display = "none";
         }
+      }
+      function runcard() {
+        document.getElementById("cardid").style.opacity = "1";
+        document.getElementById("cardid").style.display = "unset";
+        setTimeout(function() {
+          document.getElementById("cardid").style.opacity = "0";
+          document.getElementById("cardid").style.display = "none";
+          document.getElementById("cardpin").style.opacity = "1";
+          document.getElementById("cardpin").style.display = "unset";
+          setTimeout(function() {
+            document.getElementById("cardpin").style.opacity = "0";
+            document.getElementById("cardpin").style.display = "none";
+          }, 700);
+        }, 700);
+      }
       }
       function showdetails() {
         var cardstuff = localStorage.getItem("card").split(":");
@@ -105,10 +129,11 @@ Card PIN: ${cardstuff[1]}`);
                                                                    "Sign in to the library in less than a second."]);
       }
       setInterval(updatepromo, 2000);
-      document.getElementById("setupcardbutton").addEventListener("click", setupcard, true);
-      document.getElementById("setupcardbutton2").addEventListener("click", setupcard, true);
-      document.getElementById("savecardbutton").addEventListener("click", savecard, true);
-      document.getElementById("showdetailsbutton").addEventListener("click", showdetails, true);
+      document.getElementById("setupcardbutton").addEventListener("click", function(){setTimeout(setupcard, 400);}, true);
+      document.getElementById("setupcardbutton2").addEventListener("click", function(){setTimeout(setupcard, 400);}, true);
+      document.getElementById("savecardbutton").addEventListener("click", function(){setTimeout(savecard, 400);}, true);
+      document.getElementById("showdetailsbutton").addEventListener("click", function(){setTimeout(showdetails, 400);}, true);
+      document.getElementById("runcardbutton").addEventListener("click", function(){setTimeout(runcard, 400);}, true);
     </script>
   </body>
 </html>
