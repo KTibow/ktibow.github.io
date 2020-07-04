@@ -47,6 +47,12 @@
 /gocallme/maskable_icon.png
 /gocallme/index.html
 /gocallme/sw.js
+/card
+/card/what
+/card/what/index.html
+/card/manifest.json
+/card/maskable_icon.png
+/card/index.html
 /check-if-works.sh
 /blog
 /blog/2019
@@ -94,6 +100,8 @@
 /blog/2020/6
 /blog/2020/6/14
 /blog/2020/6/14/index.html
+/blog/2020/6/29
+/blog/2020/6/29/index.html
 /blog/2020/6/index.html
 /blog/2020/6/12
 /blog/2020/6/12/index.html

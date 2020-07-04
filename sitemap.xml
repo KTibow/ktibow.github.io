@@ -41,6 +41,10 @@
 <priority>0.70</priority>
 </url>
 <url>
+<loc>https://ktibow.github.io/card/</loc>
+<priority>0.70</priority>
+</url>
+<url>
 <loc>https://ktibow.github.io/blog/</loc>
 <priority>0.70</priority>
 </url>
@@ -134,6 +138,10 @@
 </url>
 <url>
 <loc>https://ktibow.github.io/blog/2020/6/14/</loc>
+<priority>0.50</priority>
+</url>
+<url>
+<loc>https://ktibow.github.io/blog/2020/6/29/</loc>
 <priority>0.50</priority>
 </url>
 <url>
