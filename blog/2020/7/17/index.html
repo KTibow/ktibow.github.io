@@ -17,6 +17,20 @@
             background-color: lightgrey;
             white-space: pre-wrap;
         }
+        img {
+            width: 33%;
+            margin: 10px auto;
+        }
+        @media all and (orientation: portrait) {
+            img {
+                width: 95%;
+            }
+        }
+    </style>
+    <style id="ghsc1">
+    .gist {
+        display: none !important;
+    }
     </style>
 </head>
 
@@ -25,8 +39,9 @@
     <p>&nbsp;&nbsp;&nbsp;&nbsp;I run Home Assistant for my home automation. I thought I would share some random snippets.</p>
     <p>&nbsp;&nbsp;&nbsp;&nbsp;As I've already said, I love <a href="https://github.com/N-l1/lovelace-soft-ui">N-l1's soft-ui for Lovelace</a>, so this is inspired by that.</p>
     <h4>Themes</h4>
-    <button onClick="document.getElementById('ghsc1').src = 'https://gist.github.com/KTibow/de92da9ebe316c0d63d2e01e98ed8657.js'">Show theme file</button>
-    <script src="" id="ghsc1"></script>
+    <img src="/blog/2020/7/17/2020-07-17-104740_1920x1080_scrot.png" />
+    <button onClick="document.getElementById('ghsc1').innerHTML = '';">Show theme file</button>
+    <script src="https://gist.github.com/KTibow/de92da9ebe316c0d63d2e01e98ed8657.js"></script>
     <code class="codeblock">
 class ClassroomShare extends HTMLElement {
   constructor() {
