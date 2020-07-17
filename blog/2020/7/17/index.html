@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <script async src="/common.js"></script>
+    <title>6/29/2020 Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        body {
+            background: lavender;
+        }
+        .codeblock {
+            display: block;
+            margin: 15px;
+        }
+        code {
+            background-color: lightgrey;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>7/17/2020: Random Home Assistant snippets</h1>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;I run Home Assistant for my home automation. I thought I would share some random snippets.</p>
+    <h4>Themes</h4>
+    <script src="https://gist.github.com/KTibow/de92da9ebe316c0d63d2e01e98ed8657.js"></script>
+    <code class="codeblock">
+class ClassroomShare extends HTMLElement {
+  constructor() {
+    super();
+  }
+  connectedCallback() {
+    var currentPage = window.location;
+    var myAttributes = Array.from(this.attributes);
+    var mySharePage = "https://accounts.google.com/AccountChooser?continue=https%3A%2F%2Fclassroom.google.com%2Fshare%3Furl%3D"+currentPage;
+    var attr;
+    for (attr in myAttributes) {
+      mySharePage += "%26"+encodeURIComponent(myAttributes[attr].name)+"%3D"+encodeURIComponent(myAttributes[attr].value);
+    }
+    this.innerHTML = `&lt;a href="${mySharePage}" style="text-decoration: none; display: inline-block; margin: 35px 10px 20px 32px; position: relative;"&gt;
+    &lt;img src="https://ktibow.github.io/classroom-logo.png" style="position: absolute; border-radius: 50%; height: 34px; top: -7px; left: -20px;" alt=""&gt;
+    &lt;span style="padding: 5px 8px 5px 24px; background-color: green; border-radius: 6px; color: white; font-family: Open Sans;"&gt;Share to Google Classroom&lt;/span&gt;
+    &lt;/a&gt;`;
+    this.onmouseenter = function() {
+      this.style.filter = "brightness(92%)";
+    }
+    this.onmouseleave = function() {
+      this.style.filter = "brightness(100%)";
+    }
+  }
+}
+customElements.define("gclass-share", ClassroomShare);
+    </code>
+</body>
+
+</html>
