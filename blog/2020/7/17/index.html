@@ -21,7 +21,12 @@
         }
     </style>
     <style id="ghsc1">
-    .gist {
+    .gist:nth-of-type(1) {
+        display: none !important;
+    }
+    </style>
+    <style id="ghsc2">
+    .gist:nth-of-type(2) {
         display: none !important;
     }
     </style>
@@ -35,6 +40,9 @@
     <img src="/blog/2020/7/17/2020-07-17-104740_1920x1080_scrot.png" />
     <button onClick="document.getElementById('ghsc1').innerHTML = '';">Show theme file</button>
     <script src="https://gist.github.com/KTibow/de92da9ebe316c0d63d2e01e98ed8657.js"></script>
+    <h4>Welcome</h4>
+    <button onClick="document.getElementById('ghsc2').innerHTML = '';">Show config file</button>
+    <script src="https://gist.github.com/KTibow/bfcdf8cf6b6bc7411c962acd0ed07e72.js"></script>
 </body>
 
 </html>
