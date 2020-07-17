@@ -8,9 +8,11 @@
     <style>
         body {
             background: lavender;
+            max-width: 90%;
+            margin: 10px auto;
         }
         img {
-            width: 55%;
+            width: 45%;
             margin: 15px auto;
             display: block;
         }
@@ -18,6 +20,9 @@
             img {
                 width: 95%;
             }
+        }
+        .gist {
+            margin: 20px;
         }
     </style>
     <style id="ghsc1">
@@ -30,19 +35,30 @@
         display: none !important;
     }
     </style>
+    <style id="ghsc3">
+    .gist:nth-of-type(3) {
+        display: none !important;
+    }
+    </style>
 </head>
 
 <body>
     <h1>7/17/2020: Random Home Assistant snippets</h1>
     <p>&nbsp;&nbsp;&nbsp;&nbsp;I run Home Assistant for my home automation. I thought I would share some random snippets.</p>
-    <p>&nbsp;&nbsp;&nbsp;&nbsp;As I've already said, I love <a href="https://github.com/N-l1/lovelace-soft-ui">N-l1's soft-ui for Lovelace</a>, so this is inspired by that.</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;As I've already said, I love <a href="https://github.com/N-l1/lovelace-soft-ui">N-l1's soft-ui for Lovelace</a>, so this is inspired by that. (Also some code samples from there. Thanks!)</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;Also, most of these require card-mod. Install it with HACS.</p>
     <h4>Themes</h4>
     <img src="/blog/2020/7/17/2020-07-17-104740_1920x1080_scrot.png" />
     <button onClick="document.getElementById('ghsc1').innerHTML = '';">Show theme file</button>
     <script src="https://gist.github.com/KTibow/de92da9ebe316c0d63d2e01e98ed8657.js"></script>
     <h4>Welcome</h4>
+    <img src="/blog/2020/7/17/2020-07-17-104740_1920x1080_scrot_2.png" />
     <button onClick="document.getElementById('ghsc2').innerHTML = '';">Show config file</button>
     <script src="https://gist.github.com/KTibow/bfcdf8cf6b6bc7411c962acd0ed07e72.js"></script>
+    <h4>Humidifier control</h4>
+    <img src="/blog/2020/7/17/2020-07-17-123335_1920x1080_scrot.png" />
+    <button onClick="document.getElementById('ghsc3').innerHTML = '';">Show config file</button>
+    <script src="https://gist.github.com/KTibow/b629f7644fce62fe190138c61769d989.js"></script>
 </body>
 
 </html>
