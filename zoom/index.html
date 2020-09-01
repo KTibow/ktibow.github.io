@@ -18,6 +18,9 @@
         min-height: 100%;
         height: unset;
       }
+      code {
+        display: block;
+      }
       #zoommessage > * {
         font-family: Lato, Helvetica Neue, Avenir, sans-serif;
       }
@@ -125,6 +128,30 @@
     <img src="/zoom/darkjoin.jpg" alt="Screenshot of customized Zoom Improved join page"/>
     <h4>Join dialog (chrome):</h4>
     <img src="/zoom/joindialog.jpg" alt="Screenshot of dialog asking to open Zoom in Chrome"/>
+    <h2>12: Tampermonkey/Greasemonkey/Violentmonkey script</h2>
+    <p>I whacked this script together to auto-change zoom links.</p>
+    <code>// ==UserScript==
+// @name         Change Zoom links
+// @version      0.1
+// @description  Change all Zoom links to use ktibow.github.io links
+// @author       Kendell R
+// @match        *://*/*
+// @grant        none
+// ==/UserScript==
+function changezoomlinks(j) {
+    'use strict';
+    var links = document.body.getElementsByTagName("a");
+    for (var i = 0; i < links.length; i++) {
+        var link = links[i];
+        if (/^(?:https?:\/\/)?(?:(?:us[0-9]{2}|[a-z]{2,6})?\.?zoom\.us)\/j\/[0-9]{8,15}(?:\?pwd=[0-9A-Za-z]{10,60})?$/.test(link.href)) {
+            console.log(link.href);
+            links[i].href = link.href.replace(/(?:(?:us[0-9]{2}|[a-z]{2,6})?\.?zoom\.us)\/j\//, "ktibow.github.io/zoom/");
+            links[i].href = link.href.replace(/\?pwd=/, "?zoompwd=");
+        }
+    }
+    setTimeout(changezoomlinks, j * 2, j);
+}
+changezoomlinks(1000);</code>
     <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
     <script>
       anchors.add();
