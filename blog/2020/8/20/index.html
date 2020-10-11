@@ -16,12 +16,12 @@
         <h1>8/20/2020: How to turn a Flask app from local to global</h1>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;First, you'll need a Heroku account, a already-existing Flask app, and a GitHub account. I won't explain how to get these. Use your brain or read another tutorial.</p>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;Next, create a new GitHub repo. Put your Flask app under the filename 'app.py'. If you depend on anything, including Flask, put it under your 'requirements.txt' file. Here's <a href="https://github.com/KTibow/scorecard/blob/master/requirements.txt">mine.</a></p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;You'll probably want the latest Python version. Put 'python-3.8.5' under 'runtime.txt', or the latest version.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;You'll probably want the latest Python version. Put <del>'python-3.8.5'</del><i>As of 10/11/2020, it's</i><ins>`python-3.9.0`</ins> under 'runtime.txt', or the latest version.</p>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;And just so other people can use it, if you haven't added it already, add a license. I recommend the MIT license or the Unlicense.</p>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;Want to verify your server works so nobody gets a non-booting server? Add <a href="https://github.com/KTibow/scorecard/blob/master/testboot.py">this file</a> under the name 'testboot.py'. If you want to detect the testing enviroment, you can use '"debuggy" in globals()'. Then to actually make it run automatically, copy and paste <a href="https://github.com/KTibow/scorecard/blob/master/.github/workflows/main.yml">this file</a>'s contents under the name '.github/workflows/main.yml'.</p>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;Okay. Put 'web: gunicorn app:app' in to the file 'Procfile' at the root directory. Almost done! I bet you'll enjoy all of the special features.</p>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;Now link your GitHub account to your Heroku account. Google it if you don't know how. Make a new Heroku app, and link it to your GitHub repo. Under build, enable automatic deploys, and enable 'Wait for CI to pass before building'. If everything's right, it should work!</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;You know, you're probably not going to email me. The only visitors I see are from other countries. And yes, I won't check my spam folder. And yes, I will know your email address if you email me. But I don't want to set up any other services, because I already juggle multiple tasks. So email me at k i d s c o d i n g p l a c e @ g m a i l . c o m</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;You know, you're probably not going to email me. The only visitors I see are from other countries. And yes, I won't check my spam folder. And yes, I will know your email address if you email me. But I don't want to set up any other services, because I already juggle multiple tasks. So email me at k i d s c o d i n g p l a c e, at g m a i l</p>
         <h2>Bye for now!</h2>
     </body>
 </html>
