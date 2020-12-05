@@ -40,6 +40,20 @@
       #deviceStatus {
         color: var(--color) !important;
       }
+      button {
+        background: var(--background);
+        box-shadow: var(--shadow);
+        border: none;
+        padding: 10px;
+        margin: 10px;
+        cursor: pointer;
+        font-family: Quicksand;
+      }
+      button:hover,
+      button:focus {
+        box-shadow: var(--inset-shadow);
+        outline: 0;
+      }
     </style>
   </head>
   <body>
@@ -85,6 +99,7 @@
       that just came up.
     </p>
     <p id="deviceStatus"></p>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.3.2/dist/confetti.browser.min.js"></script>
     <script>
       var devstat = document.getElementById("deviceStatus");
       if (
@@ -100,13 +115,33 @@
         devstat.innerHTML =
           "Click the button below, and then go to the tab with Schoology. Click inside the white box, and press Ctrl and V at the same time.";
       }
+      const fallbackCopy = (str) => {
+        const el = document.createElement("textarea");
+        el.value = str;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand("copy");
+        document.body.removeChild(el);
+      };
+
+      const copyToClipboard = (str) => {
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(str).catch(() => fallbackCopy(str));
+        } else {
+          fallbackCopy(str);
+        }
+      };
       function getSchoologyCss() {
         fetch("schoology/css.css")
           .then((result) => {
             return result.text();
           })
-          .then(console.log);
+          .then((result) => {
+            copyToClipboard(result);
+            confetti();
+          });
       }
     </script>
+    <button onclick="getSchoologyCss()">Get schoology.css</button>
   </body>
 </html>
