@@ -1,0 +1,650 @@
+/*
+CSS variables, and change the background.
+Change these hex codes and box-shadows to whatever you want.
+*/
+body {
+  --background: #f3f5f7;
+  --color: #4c3ff9;
+  --shadow: -5.5px -5.5px 5.5px 0 rgba(255, 255, 255, 0.5),
+    5.5px 5.5px 5.5px 0 rgba(0, 0, 0, 0.03);
+  --text: black;
+  --inset-shadow: inset -5.5px -5.5px 5.5px 0 rgba(255, 255, 255, 0.5),
+    inset 5.5px 5.5px 5.5px 0 rgba(0, 0, 0, 0.03);
+  background-color: var(--background);
+  background: var(--background) !important;
+}
+/**************************/
+/*                        */
+/*     General stuff      */
+/*                        */
+/**************************/
+/* Set some colors */
+* {
+  border-width: 0 !important;
+}
+.theme-2016 #right-column a {
+  color: var(--color) !important;
+}
+hr {
+  display: none;
+}
+::selection {
+  background-color: var(--color);
+  color: white;
+}
+a:not(.course-updates-left-menu):not(.submit-btn) {
+  color: var(--color);
+}
+/* Button tweaks */
+.submit-buttons * {
+  box-shadow: none;
+}
+.submit-btn,
+.cancel-btn,
+input[type="submit"],
+input[type="button"] {
+  border-width: 0 !important;
+  border-radius: 10px !important;
+}
+.submit-btn,
+input[type="submit"],
+input[type="button"]:not([value="Cancel"]) {
+  background: var(--color);
+}
+.cancel-btn,
+input[type="submit"][value="Cancel"],
+input[type="button"][value="Cancel"] {
+  background: var(--background) !important;
+  box-shadow: var(--shadow) !important;
+}
+.popups-buttons span {
+  background: var(--background) !important;
+}
+.submit-span-wrapper {
+  background: var(--background);
+}
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--text);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color);
+}
+/**************************/
+/*                        */
+/*  Footers and headers   */
+/*                        */
+/**************************/
+/* Backgrounds */
+header,
+nav,
+nav > ul > li * {
+  background: var(--background) !important;
+}
+/* Colors */
+nav > ul > li * {
+  color: var(--color) !important;
+}
+nav > ul > li > [role="menu"] > ol > li[data-message-index] {
+  margin: 20px;
+  box-shadow: var(--shadow);
+  list-style-type: none;
+}
+nav > ul > li > [role="menu"] > ol > li[data-message-index] * {
+  color: var(--text) !important;
+  border-width: 0;
+}
+nav
+  > ul
+  > li
+  > [role="menu"]
+  > ol
+  > li[data-message-index]
+  > a
+  > div:nth-of-type(1)
+  > span:nth-of-type(1) {
+  background-color: var(--color) !important;
+}
+/* Hide annoying stuff */
+._pendo-launcher-badge_,
+#site-navigation-footer {
+  display: none;
+}
+#container.clearfix {
+  margin: 0;
+}
+/* Update schoology logo to say "home" */
+nav > ul:nth-of-type(1) > li:nth-of-type(1) > a {
+  background: none !important;
+  height: 100% !important;
+}
+nav > ul:nth-of-type(1) > li:nth-of-type(1) > a::before {
+  content: "Home";
+  width: 16rem;
+  height: 100%;
+  line-height: 60px;
+  text-align: center;
+  display: block;
+  font-size: 2em;
+}
+/* Add shadows and margin to buttons */
+nav > ul > li {
+  margin: 10px;
+  border-radius: 10px;
+}
+nav > ul > li:not(:hover) {
+  box-shadow: var(--shadow);
+}
+nav > ul > li:hover > button,
+nav > ul > li:hover > div > button,
+nav > ul > li:hover a:not([href^="/messages/"]) {
+  box-shadow: var(--inset-shadow);
+}
+a[href="/home"] {
+  margin-top: 0 !important;
+  padding-right: 0;
+}
+/* Make badge for stuff be filled in */
+nav > ul > li > button > span {
+  background: var(--color) !important;
+  color: white !important;
+}
+/* Popups: remove some borders */
+div[data-sgy-sitenav="header-my-account-menu"] > ul,
+[role="menu"] {
+  border-width: 0 !important;
+}
+/* Don't cut off content */
+#body > #header.site-navigation {
+  height: unset;
+}
+/**************************/
+/*                        */
+/*       Home page        */
+/*                        */
+/**************************/
+/* Backgrounds */
+.s-enable-course-dashboard.theme-2016-layout #main {
+  background: var(--background) !important;
+}
+/* Navigation (Recent Activity / Course Dashboard) */
+ol.sgy-tabbed-navigation {
+  border-width: 0;
+}
+ol.sgy-tabbed-navigation > li {
+  border-width: 0 !important;
+  margin: 10px;
+}
+ol.sgy-tabbed-navigation > li > a {
+  box-shadow: var(--shadow);
+  padding: 10px;
+  border-radius: 10px;
+}
+ol.sgy-tabbed-navigation > li.active > a,
+ol.sgy-tabbed-navigation > li:hover > a {
+  box-shadow: var(--inset-shadow);
+}
+/* Course cards */
+.course-dashboard .sgy-card {
+  border-width: 0;
+  background: var(--background);
+  box-shadow: var(--shadow);
+  padding: 10px;
+  border-radius: 10px;
+}
+.course-dashboard .sgy-card:focus .sgy-card-lens:after,
+.course-dashboard .sgy-card:hover .sgy-card-lens:after {
+  background: transparent;
+}
+.course-dashboard .sgy-card:focus,
+.course-dashboard .sgy-card:hover {
+  box-shadow: var(--inset-shadow);
+}
+/* Hide the help icon */
+a.course-dashboard__accessibility-icon {
+  display: none;
+}
+/* Stuff on the right */
+#body #right-column-inner > .overdue-submissions,
+#body #right-column-inner > .upcoming-events,
+#body #right-column-inner > .drop-items {
+  background: var(--background);
+  box-shadow: var(--shadow);
+  padding: 15px;
+}
+#body #right-column-inner > div * {
+  border-width: 0;
+}
+/**************************/
+/*                        */
+/*      Course page       */
+/*                        */
+/**************************/
+#main-content-wrapper,
+#center-wrapper,
+#center-inner > #center-top,
+#course-profile-materials {
+  background: var(--background);
+}
+#center-top {
+  box-shadow: var(--shadow);
+  margin: 25px !important;
+  padding: 20px;
+}
+/* Hide annoying divider */
+#center-inner {
+  background-image: none !important;
+}
+#center-inner::after {
+  display: none;
+}
+/* Update button for course switcher and notification settings */
+.notification-settings-wrapper > a {
+  visibility: hidden;
+}
+.notification-settings-wrapper > a::before {
+  content: "⚙ Email notification settings";
+  visibility: visible;
+  box-shadow: var(--shadow);
+  padding: 10px;
+  font-family: apple color emoji, segoe ui emoji, noto color emoji,
+    android emoji, emojisymbols, emojione mozilla, twemoji mozilla,
+    segoe ui symbol;
+  color: var(--text);
+}
+#taught-courses-switcher {
+  width: 100%;
+  text-align: center;
+}
+#taught-courses-switcher > a {
+  visibility: hidden;
+  height: 44px;
+}
+#taught-courses-switcher > a > * {
+  display: none;
+}
+#taught-courses-switcher > a::before {
+  content: "🔀 Switch course";
+  visibility: visible;
+  box-shadow: var(--shadow);
+  padding: 10px;
+  font-family: apple color emoji, segoe ui emoji, noto color emoji,
+    android emoji, emojisymbols, emojione mozilla, twemoji mozilla,
+    segoe ui symbol;
+  color: var(--text);
+  display: inline-block;
+  margin-top: 5px;
+}
+/* Update some colors */
+.materials-filter-wrapper > div > div,
+div#center-top
+  > div.center-top-upper
+  > div.content-top-upper-wrapper
+  > span.course-title
+  > a {
+  color: var(--color);
+}
+.materials-filter-wrapper {
+  background: var(--background);
+}
+/**************************/
+/*                        */
+/*      Custom icons      */
+/*                        */
+/**************************/
+/* Calendar */
+#event-calendar {
+  background: none;
+}
+#event-calendar::before {
+  content: "📆";
+}
+a[href="/user-calendar"]::before {
+  content: "📆 ";
+}
+/* Submissions */
+#s-drop-item-submit-upload-form #attachment-links {
+  height: 60px;
+}
+#attachment-links * {
+  background-image: none !important;
+  margin: 5px;
+  border-radius: 5px;
+}
+#attachment-links li {
+  box-shadow: var(--shadow);
+}
+#file-selector > a::before {
+  content: "➕";
+  height: 32px;
+  width: 38px;
+  line-height: 32px;
+  font-size: 16px;
+  text-align: center;
+  display: inline-block;
+}
+#mediarecorder-selector > a::before {
+  content: "🎤";
+  height: 32px;
+  width: 38px;
+  line-height: 32px;
+  font-size: 16px;
+  text-align: center;
+  display: inline-block;
+}
+#link-selector > a::before {
+  content: "🔗";
+  height: 32px;
+  width: 38px;
+  line-height: 32px;
+  font-size: 16px;
+  text-align: center;
+  display: inline-block;
+}
+#resource-selector > a::before {
+  content: "📁";
+  height: 32px;
+  width: 38px;
+  line-height: 32px;
+  font-size: 16px;
+  text-align: center;
+  display: inline-block;
+}
+/* Folders */
+.folder-icon {
+  background: none !important;
+  width: auto !important;
+  height: auto !important;
+}
+.folder-icon::before {
+  content: "📂";
+  font-size: 2em;
+  position: relative;
+  bottom: 5px;
+}
+.folder-color-red::before {
+  filter: brightness(0.7) hue-rotate(310deg);
+}
+.folder-color-pink::before {
+  filter: brightness(0.9) hue-rotate(310deg);
+}
+.folder-color-orange::before {
+  filter: brightness(0.9) hue-rotate(350deg);
+}
+.folder-color-yellow::before {
+  filter: brightness(1.1) hue-rotate(10deg);
+}
+.folder-color-green::before {
+  filter: brightness(0.9) hue-rotate(50deg);
+}
+.folder-color-blue::before {
+  filter: brightness(0.9) hue-rotate(140deg);
+}
+.folder-color-purple::before {
+  filter: brightness(0.8) hue-rotate(220deg);
+}
+.folder-color-gray::before {
+  filter: brightness(0.8) grayscale(1);
+}
+.folder-color-black::before {
+  filter: brightness(0.3) grayscale(1);
+}
+.course-materials-simple .inline-icon::before {
+  font-size: 1em !important;
+  line-height: 2.5em;
+}
+/* Checkboxes */
+input[type="checkbox"] {
+  visibility: hidden;
+}
+input[type="checkbox"]::before {
+  content: "⬜";
+  visibility: visible;
+}
+input[type="checkbox"]:checked::before {
+  content: "✅";
+}
+/* Comment like buttons */
+a.like-details-btn {
+  background: none !important;
+  padding: 0 !important;
+  margin: 0;
+}
+a.like-details-btn::before {
+  content: "👍";
+}
+/* Navigator buttons */
+.navigator-buttons > span > a > span {
+  padding: 0 10px;
+  background: none !important;
+}
+.navigator-buttons > span > a {
+  box-shadow: var(--shadow);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0 10px;
+  display: block;
+  background: none !important;
+}
+.navigator-buttons > span:nth-of-type(1) > a > span::before {
+  content: "◀ ";
+  font-family: apple color emoji, segoe ui emoji, noto color emoji,
+    android emoji, emojisymbols, emojione mozilla, twemoji mozilla,
+    segoe ui symbol;
+}
+.navigator-buttons > span:nth-of-type(2) > a > span::after {
+  content: " ▶";
+  font-family: apple color emoji, segoe ui emoji, noto color emoji,
+    android emoji, emojisymbols, emojione mozilla, twemoji mozilla,
+    segoe ui symbol;
+}
+/* Info button */
+.info-container > span > span > img {
+  display: none;
+}
+.info-container > span > span::before {
+  content: "ℹ";
+  color: var(--color);
+  line-height: 22px;
+  font-family: apple color emoji, segoe ui emoji, noto color emoji,
+    android emoji, emojisymbols, emojione mozilla, twemoji mozilla,
+    segoe ui symbol;
+}
+/* Submit assignment */
+div.submit-assignment > a > span {
+  background: none !important;
+  margin-right: 0 !important;
+  width: 36px !important;
+}
+div.submit-assignment > a > span::before {
+  content: "➕📃";
+}
+/* Add submission to portfolio */
+.portfolio-add-submission-btn__link::before {
+  background: none;
+  content: "➕🗃";
+  font-family: apple color emoji, segoe ui emoji, noto color emoji,
+    android emoji, emojisymbols, emojione mozilla, twemoji mozilla,
+    segoe ui symbol;
+  width: unset;
+}
+.portfolio-add-submission-btn__link > img {
+  display: none;
+}
+/* Grading comment */
+.grading-grade > .infotip {
+  background: none;
+  padding: 2px !important;
+}
+.grading-grade > .infotip::before {
+  content: "💬";
+}
+/* Close a popup */
+.popups-close > a {
+  background: none;
+}
+.popups-close > a::before {
+  content: "❌";
+  font-family: apple color emoji, segoe ui emoji, noto color emoji,
+    android emoji, emojisymbols, emojione mozilla, twemoji mozilla,
+    segoe ui symbol;
+}
+/* Various icons */
+span.inline-icon.link-icon {
+  background: none;
+}
+span.inline-icon.link-icon::before {
+  content: "🔗";
+  font-size: 24px;
+}
+span.inline-icon.pdf-icon,
+span.inline-icon.page-icon,
+span.inline-icon.default-icon {
+  background: none;
+}
+span.inline-icon.pdf-icon::before,
+span.inline-icon.page-icon::before,
+span.inline-icon.default-icon::before {
+  content: "📃";
+  font-size: 24px;
+}
+span.inline-icon.video-icon {
+  background: none;
+}
+span.inline-icon.video-icon::before {
+  content: "📺";
+  font-size: 24px;
+}
+span.inline-icon.assignment-icon {
+  background: none;
+}
+#folder-contents-table
+  > tbody
+  > tr
+  > td
+  > div
+  > span.inline-icon.page-icon::before,
+#folder-contents-table
+  > tbody
+  > tr
+  > td
+  > div
+  > span.inline-icon.assignment-icon::before {
+  font-size: 1em;
+}
+span.inline-icon.assignment-icon::before {
+  content: "📝";
+  font-size: 24px;
+}
+.course-materials-simple .inline-icon.link-icon.with-fav > span {
+  display: none;
+}
+.course-materials-simple .inline-icon:not(.folder-icon)::before {
+  line-height: 1.5em !important;
+}
+/**************************/
+/*                        */
+/*       Assignment       */
+/*                        */
+/**************************/
+#center-top {
+  border: none !important;
+}
+.content-top-upper {
+  background: var(--background) !important;
+}
+.info-container > span {
+  text-align: center;
+  margin: 0 10px;
+  padding: 0 10px;
+  box-shadow: none;
+  background: var(--background);
+  border: none;
+}
+.comment {
+  box-shadow: var(--shadow);
+  margin: 30px 20px;
+  padding: 15px;
+}
+.s-comments-post-form {
+  box-shadow: var(--shadow);
+}
+.s-comments-post-form .submit-span-wrapper {
+  float: none !important;
+}
+#edit-comment-wrapper textarea {
+  background: var(--background);
+}
+.like-btn {
+  color: var(--color);
+}
+#main-inner > .info-container {
+  box-shadow: var(--shadow);
+  margin: 10px;
+  padding: 10px;
+}
+div.submit-assignment {
+  border: none;
+  box-shadow: var(--shadow);
+  display: inline-block;
+  margin: 10px 0;
+}
+div.submit-assignment > a.link-btn {
+  box-shadow: none;
+  background: none;
+}
+.portfolio-add-submission-btn__wrap {
+  background: none;
+  padding: 7px 10px 10px 10px;
+  box-shadow: var(--shadow);
+}
+/**************************/
+/*                        */
+/*         Popups         */
+/*                        */
+/**************************/
+#popups-loading,
+.popups-dropbox-viewer .popups-body,
+.popups-body,
+.popups-body .popups-tabs,
+.popups-tab-content.visible {
+  background: var(--background);
+}
+.resizable-textarea > span > textarea {
+  background: var(--background);
+  box-shadow: var(--shadow);
+}
+#edit-submission_ifr {
+  filter: brightness(0.95) hue-rotate(45deg);
+}
+.popups-tabs {
+  height: 45px;
+}
+.popups-box {
+  background: transparent !important;
+}
+.popups-title {
+  background: var(--background);
+  color: var(--text);
+  border-radius: 10px 10px 0 0;
+}
+.popups-tabs .popups-tab,
+.popups-tabs .popups-tab.active {
+  color: var(--color);
+  box-shadow: var(--shadow);
+  background: var(--background);
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+}
+.popups-tabs .popups-tab.active {
+  box-shadow: var(--inset-shadow);
+}
