@@ -1,23 +1,47 @@
 /*
+Schoology.css v0.2.0
+View history at https://github.com/KTibow/ktibow.github.io/commits/master/schoology/css.css
+*/
+
+/*
 CSS variables, and change the background.
 Change these hex codes and box-shadows to whatever you want.
 */
+
 body {
   --background: #f3f5f7;
   --color: #4c3ff9;
   --shadow: -5.5px -5.5px 5.5px 0 rgba(255, 255, 255, 0.5),
     5.5px 5.5px 5.5px 0 rgba(0, 0, 0, 0.03);
-  --text: black;
+  --text: #111;
+  --text-dark: #333;
+  --text-darker: #444;
   --inset-shadow: inset -5.5px -5.5px 5.5px 0 rgba(255, 255, 255, 0.5),
     inset 5.5px 5.5px 5.5px 0 rgba(0, 0, 0, 0.03);
   background-color: var(--background);
   background: var(--background) !important;
+  color: var(--text-dark);
 }
+/* Dark mode
+body {
+  --background: #292C30;
+  --color: #584dff;
+  --shadow: -5.25px -5.25px 5.25px 0 rgba(55, 55, 55, .6), 5.25px 5.25px 5.25px 0 rgba(0, 0, 0, .15);
+  --text: #EEE;
+  --text-dark: #CCC;
+  --text-darker: #BBB;
+  --inset-shadow: inset -5.25px -5.25px 5.25px 0 rgba(55, 55, 55, .6), inset 5.25px 5.25px 5.25px 0 rgba(0, 0, 0, .15);
+}
+*/
 /**************************/
 /*                        */
 /*     General stuff      */
 /*                        */
 /**************************/
+/* 3d view with background */
+#main {
+  background: var(--background);
+}
 /* Set some colors */
 * {
   border-width: 0 !important;
@@ -32,12 +56,20 @@ hr {
   background-color: var(--color);
   color: white;
 }
-a:not(.course-updates-left-menu):not(.submit-btn) {
+a:not(.course-updates-left-menu):not(.submit-btn),
+a:not(.course-updates-left-menu):not(.submit-btn).active {
   color: var(--color);
+}
+/* Shrink the cat pet I have down */
+#catpetcat1 {
+  transform: scale(0.5);
 }
 /* Button tweaks */
 .submit-buttons * {
   box-shadow: none;
+}
+.popups-body .submit-buttons > * {
+  margin: 0 10px;
 }
 .submit-btn,
 .cancel-btn,
@@ -63,6 +95,11 @@ input[type="button"][value="Cancel"] {
 .submit-span-wrapper {
   background: var(--background);
 }
+.link-btn {
+  color: white;
+  padding: 10px;
+  margin: 10px;
+}
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
@@ -80,13 +117,13 @@ input[type="button"][value="Cancel"] {
 }
 /**************************/
 /*                        */
-/*  Footers and headers   */
+/*  Headers and footers   */
 /*                        */
 /**************************/
-/* Backgrounds */
+/* Backgrounds (._2q19q is a card image in courses) */
 header,
 nav,
-nav > ul > li * {
+nav > ul > li *:not(._2q19q) {
   background: var(--background) !important;
 }
 /* Colors */
@@ -145,17 +182,94 @@ nav > ul > li:not(:hover) {
 }
 nav > ul > li:hover > button,
 nav > ul > li:hover > div > button,
-nav > ul > li:hover a:not([href^="/messages/"]) {
+nav
+  > ul
+  > li:hover
+  a:not([href^="/messages/"]):not([href^="/user/"]):not([href^="/school/"]):not([href^="/settings/"]):not([href^="/logout"]) {
   box-shadow: var(--inset-shadow);
 }
 a[href="/home"] {
   margin-top: 0 !important;
   padding-right: 0;
 }
-/* Make badge for stuff be filled in */
-nav > ul > li > button > span {
+/* Course dropdown */
+nav > ul:nth-of-type(1) > li:nth-of-type(2) > div > div,
+nav > ul:nth-of-type(1) > li:nth-of-type(3) > div > div {
+  box-shadow: none;
+}
+._3hM4e._3_a9F.zJU7e.util-width-zero-1OcAd._2oHes.util-last-child-margin-right-zero-1DVn4:not(:empty) {
+  box-shadow: var(--shadow);
+  padding: 10px;
+  margin: 10px;
+}
+._3hM4e._3_a9F.zJU7e.util-width-zero-1OcAd._2oHes.util-last-child-margin-right-zero-1DVn4:not(:empty):hover {
+  box-shadow: var(--inset-shadow);
+}
+._3hM4e._3_a9F.zJU7e.util-width-zero-1OcAd._2oHes.util-last-child-margin-right-zero-1DVn4
+  > article
+  > a {
+  outline: none !important;
+}
+/* Search */
+nav > ul:nth-of-type(2) > li:nth-of-type(1) > ul {
+  box-shadow: var(--shadow) !important;
+}
+/* DMs */
+nav > ul > li > div button[aria-label="New Message"] {
+  box-shadow: var(--shadow);
+  padding: 10px;
+}
+/* Notifications */
+nav > ul:nth-of-type(2) > li:nth-of-type(4) > div > div button {
+  box-shadow: var(--shadow);
+  margin: 10px;
+  border-radius: 10px;
+  padding: 20px;
+}
+nav
+  > ul:nth-of-type(2)
+  > li:nth-of-type(4)
+  > div
+  > div
+  > button[aria-selected="true"] {
+  box-shadow: var(--inset-shadow);
+}
+nav
+  > ul:nth-of-type(2)
+  > li:nth-of-type(4):hover
+  a {
+  box-shadow: none !important;
+}
+nav
+  > ul:nth-of-type(2)
+  > li:nth-of-type(4)
+  > div > div > div {
+box-shadow: var(--shadow);
+    margin: 20px;
+}
+/* Profile */
+nav > ul:nth-of-type(2) > li:nth-of-type(5) > div > ul {
+  box-shadow: none;
+}
+nav > ul:nth-of-type(2) > li:nth-of-type(5) > div > ul > li:not(:empty) {
+  margin: 15px 10px;
+  padding: 5px 10px;
+  box-shadow: var(--shadow);
+}
+/* Make badge for DMs and notifications be filled in */
+nav > ul:nth-of-type(2) > li > button > span {
   background: var(--color) !important;
   color: white !important;
+}
+nav
+  > ul:nth-of-type(2)
+  > li:nth-of-type(4)
+  > div
+  > div
+  > div
+  > div:nth-of-type(1)
+  > span {
+  background: var(--color) !important;
 }
 /* Popups: remove some borders */
 div[data-sgy-sitenav="header-my-account-menu"] > ul,
@@ -213,7 +327,7 @@ a.course-dashboard__accessibility-icon {
   display: none;
 }
 /* Stuff on the right */
-#body #right-column-inner > .overdue-submissions,
+#body #right-column-inner > .overdue-submissions:not(:empty),
 #body #right-column-inner > .upcoming-events,
 #body #right-column-inner > .drop-items {
   background: var(--background);
@@ -222,6 +336,75 @@ a.course-dashboard__accessibility-icon {
 }
 #body #right-column-inner > div * {
   border-width: 0;
+}
+.date-header > h4 {
+  text-transform: capitalize !important;
+}
+/* Fix accessibility stuff */
+a[href="#main"].skip {
+  color: white;
+  background: var(--color);
+}
+/**************************/
+/*                        */
+/*        DM page         */
+/*                        */
+/**************************/
+#tabs-wrapper, ul.tabs.primary {
+  float: none;
+  height: auto;
+}
+#tabs-wrapper > ul.tabs.primary {
+  background: var(--background);
+}
+#tabs-wrapper > ul.tabs.primary > li {
+  background: var(--background);
+  padding: 10px;
+  margin: 10px;
+  box-shadow: var(--shadow);
+  float: none;
+  display: inline-block;
+}
+#tabs-wrapper > ul.tabs.primary > li.active {
+  box-shadow: var(--inset-shadow);
+}
+#tabs-wrapper > ul.tabs.primary > li * {
+  background: var(--background) !important;
+}
+.sMessagingProcessed > div > fieldset,
+.sMessagingProcessed > div > fieldset > div.form-item,
+.sMessagingProcessed > div > fieldset #attachment-selector,
+.sMessagingProcessed > div > fieldset #attachment-selector > li,
+.sMessagingProcessed > div > fieldset > div > textarea,
+.sMessagingProcessed > div > fieldset a[href^="/messages/ajax/delete"].link-btn {
+  background: var(--background) !important;
+}
+.sMessagingProcessed > div > fieldset #attachment-selector {
+  width: calc(100% - 20px);
+}
+.sMessagingProcessed > div > fieldset #attachment-links {
+  height: auto !important;
+}
+.sMessagingProcessed > div > fieldset #attachment-selector,
+.sMessagingProcessed > div > fieldset #attachment-selector > li {
+  float: none !important;
+}
+.sMessagingProcessed > div > fieldset #attachment-selector > li {
+  display: inline-block;
+}
+.sMessagingProcessed > div > fieldset > div > textarea {
+  box-shadow: var(--inset-shadow);
+  margin-left: 5px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+.sMessagingProcessed > div > fieldset span.cancel-btn {
+  margin-left: 15px;
+}
+.sMessagingProcessed > div > fieldset a[href^="/messages/ajax/delete"].link-btn {
+  box-shadow: var(--shadow);
+  padding: 20px;
+  margin-top: -10px;
 }
 /**************************/
 /*                        */
@@ -259,6 +442,7 @@ a.course-dashboard__accessibility-icon {
     android emoji, emojisymbols, emojione mozilla, twemoji mozilla,
     segoe ui symbol;
   color: var(--text);
+  font-weight: normal;
 }
 #taught-courses-switcher {
   width: 100%;
@@ -282,6 +466,7 @@ a.course-dashboard__accessibility-icon {
   color: var(--text);
   display: inline-block;
   margin-top: 5px;
+  font-weight: normal;
 }
 /* Update some colors */
 .materials-filter-wrapper > div > div,
@@ -313,6 +498,10 @@ a[href="/user-calendar"]::before {
 /* Submissions */
 #s-drop-item-submit-upload-form #attachment-links {
   height: 60px;
+}
+#attachment-links {
+  box-shadow: var(--shadow);
+  padding: 10px 0 10px 10px;
 }
 #attachment-links * {
   background-image: none !important;
@@ -358,6 +547,20 @@ a[href="/user-calendar"]::before {
   text-align: center;
   display: inline-block;
 }
+#attachments-added-container > div > div {
+  background: var(--background);
+  box-shadow: var(--shadow);
+  margin: 15px -6px 15px !important;
+  padding: 25px 15px 20px 35px;
+}
+/*
+Schoology devs made progressShowHide
+edit details of the attatched item.
+You do you, site that works on Windows Phones.
+*/
+#attachments-added-container .progressShowHide {
+  color: var(--color);
+}
 /* Folders */
 .folder-icon {
   background: none !important;
@@ -369,6 +572,9 @@ a[href="/user-calendar"]::before {
   font-size: 2em;
   position: relative;
   bottom: 5px;
+}
+.fc-event .folder-icon::before {
+  font-size: 1em;
 }
 .folder-color-red::before {
   filter: brightness(0.7) hue-rotate(310deg);
@@ -419,7 +625,7 @@ a.like-details-btn {
   margin: 0;
 }
 a.like-details-btn::before {
-  content: "👍";
+  content: " 👍 ";
 }
 /* Navigator buttons */
 .navigator-buttons > span > a > span {
@@ -505,19 +711,24 @@ span.inline-icon.link-icon::before {
   content: "🔗";
   font-size: 24px;
 }
+span.inline-icon.link-icon.with-fav > span[style] {
+  display: none;
+}
 span.inline-icon.pdf-icon,
-span.inline-icon.page-icon,
-span.inline-icon.default-icon {
-  background: none;
+span.item-icon.page-icon,
+span.inline-icon.default-icon,
+span.inline-icon.video-icon {
+  background: none !important;
 }
 span.inline-icon.pdf-icon::before,
-span.inline-icon.page-icon::before,
+span.item-icon.page-icon::before,
 span.inline-icon.default-icon::before {
   content: "📃";
-  font-size: 24px;
+  font-size: 24px !important;
 }
-span.inline-icon.video-icon {
-  background: none;
+.subtree-folder-contents-table span.inline-icon::before,
+.subtree-folder-contents-table span.item-icon::before {
+  font-size: 1em !important;
 }
 span.inline-icon.video-icon::before {
   content: "📺";
@@ -526,12 +737,8 @@ span.inline-icon.video-icon::before {
 span.inline-icon.assignment-icon {
   background: none;
 }
-#folder-contents-table
-  > tbody
-  > tr
-  > td
-  > div
-  > span.inline-icon.page-icon::before,
+#folder-contents-table > tbody > tr > td > div > span.inline-icon.page-icon,
+.item-icon.page-icon::before,
 #folder-contents-table
   > tbody
   > tr
@@ -611,6 +818,7 @@ div.submit-assignment > a.link-btn {
 /*         Popups         */
 /*                        */
 /**************************/
+/* Backgrounds */
 #popups-loading,
 .popups-dropbox-viewer .popups-body,
 .popups-body,
@@ -618,12 +826,23 @@ div.submit-assignment > a.link-btn {
 .popups-tab-content.visible {
   background: var(--background);
 }
+table#edit-submission_toolbar1 *,
+td.mceToolbar {
+  background-color: var(--background) !important;
+}
+#popups-loading div {
+  background-color: var(--background);
+}
+/* Create tab */
 .resizable-textarea > span > textarea {
   background: var(--background);
   box-shadow: var(--shadow);
 }
 #edit-submission_ifr {
-  filter: brightness(0.95) hue-rotate(45deg);
+  filter: brightness(0.96);
+}
+span#tinymce-toggle-html {
+  background-color: var(--background);
 }
 .popups-tabs {
   height: 45px;
@@ -647,4 +866,62 @@ div.submit-assignment > a.link-btn {
 }
 .popups-tabs .popups-tab.active {
   box-shadow: var(--inset-shadow);
+}
+/* Tooltips */
+.popover-content,
+.tipsy-inner {
+  background: var(--background);
+  color: var(--text);
+}
+div[role="tooltip"].sgy-tooltop {
+  background: none;
+  box-shadow: var(--shadow);
+}
+/**************************/
+/*                        */
+/*          Dark          */
+/*                        */
+/**************************/
+/* Home right sidebar */
+.theme-2016 #right-column h3 {
+  color: var(--text);
+}
+.theme-2016 .date-header h4 {
+  color: var(--text-dark);
+}
+.theme-2016 #right-column h4 span:not(.subevent-count), .theme-2016 #right-column .empty {
+  color: var(--text-darker);
+}
+/* Home left sidebar */
+.sgy-card-context {
+  color: var(--text-dark);
+}
+.sgy-card-subcontext {
+  color: var(--text-darker);
+}
+/* Top tabs */
+.sgy-tabbed-navigation li.active a {
+  color: var(--text-darker);
+}
+/* Left sidebar in course page */
+.left-block dt {
+  color: var(--text-dark);
+}
+/* Right sidebar in course page */
+#event-selector .active {
+  color: var(--text);
+}
+/* Content in course page */
+.folder-visibility {
+  color: var(--text-dark);
+}
+.gray {
+  color: var(--text-darker);
+}
+/* DMs */
+body ul.primary li.active a, body ul.primary li.active a:hover {
+  color: var(--text);
+}
+body textarea, select {
+  color: var(--text);
 }
