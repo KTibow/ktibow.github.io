@@ -66,15 +66,16 @@
         outline: 0;
       }
       input[type="checkbox"] {
-        visibility: hidden;
+        right: 9999px;
+        position: absolute;
       }
-      input[type="checkbox"]::before {
+      input[type="checkbox"] ~ label::before {
         content: "⬜";
         visibility: visible;
         height: 1em;
         line-height: 1em;
       }
-      input[type="checkbox"]:checked::before {
+      input[type="checkbox"]:checked ~ label::before {
         content: "✅";
       }
     </style>
