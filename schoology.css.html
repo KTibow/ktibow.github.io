@@ -65,18 +65,13 @@
         box-shadow: var(--inset-shadow);
         outline: 0;
       }
-      input[type="checkbox"] {
-        right: 9999px;
-        position: absolute;
-      }
-      input[type="checkbox"] ~ label::before {
-        content: "⬜";
-        visibility: visible;
-        height: 1em;
-        line-height: 1em;
-      }
-      input[type="checkbox"]:checked ~ label::before {
-        content: "✅";
+      select {
+        display: block;
+        margin: 10px;
+        padding: 10px;
+        border: none;
+        background: var(--background);
+        box-shadow: var(--shadow);
       }
     </style>
   </head>
@@ -170,8 +165,11 @@
             return result.text();
           })
           .then((result) => {
-            if (document.getElementById("dark").checked) {
-              result = result.replace("/* Dark mode", "");
+            var darkDropdown = document.getElementById("darkMode");
+            if (darkDropdown.selectedIndex == 1) {
+              result = result.replace("@media (prefers-color-scheme: dark) {", "");
+            } else if (darkDropdown.selectedIndex == 2) {
+              result = result.replace("@media (prefers-color-scheme: dark) {", "@media (prefers-color-scheme: never) {");
             }
             copyToClipboard(result);
             // Confetti every half second
@@ -193,7 +191,12 @@
           });
       }
     </script>
-    <input type="checkbox" id="dark"><label for="dark">&nbsp;Click this to use dark mode.</label>
+    <label for="darkMode">Dark mode option</label>
+    <select id="darkMode">
+      <option value="nothing">Auto (based on your computer's option)</option>
+      <option value="force">On</option>
+      <option value="never">Off</option>
+    </select>
     <br />
     <button onclick="getSchoologyCss()">Get schoology.css</button>
     <br />
