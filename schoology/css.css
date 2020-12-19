@@ -1,5 +1,5 @@
 /*
-Schoology.css v0.2.0
+Schoology.css v0.2.1
 View history at https://github.com/KTibow/ktibow.github.io/commits/master/schoology/css.css
 */
 
@@ -18,21 +18,23 @@ body {
   --text-darker: #444;
   --inset-shadow: inset -5.5px -5.5px 5.5px 0 rgba(255, 255, 255, 0.5),
     inset 5.5px 5.5px 5.5px 0 rgba(0, 0, 0, 0.03);
+  --invert-filter: invert(0.04) hue-rotate(180deg);
   background-color: var(--background);
   background: var(--background) !important;
   color: var(--text-dark);
 }
-/* Dark mode
+@media (prefers-color-scheme: dark) {
 body {
-  --background: #292C30;
-  --color: #584dff;
+  --background: #26282C;
+  --color: #8b83ff;
   --shadow: -5.25px -5.25px 5.25px 0 rgba(55, 55, 55, .6), 5.25px 5.25px 5.25px 0 rgba(0, 0, 0, .15);
   --text: #EEE;
   --text-dark: #CCC;
   --text-darker: #BBB;
   --inset-shadow: inset -5.25px -5.25px 5.25px 0 rgba(55, 55, 55, .6), inset 5.25px 5.25px 5.25px 0 rgba(0, 0, 0, .15);
+  --invert-filter: invert(0.83) hue-rotate(180deg);
 }
-*/
+}
 /**************************/
 /*                        */
 /*     General stuff      */
