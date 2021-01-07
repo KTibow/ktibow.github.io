@@ -1,5 +1,5 @@
 /*
-Schoology.css v0.2.1
+Schoology.css v0.3.0
 View history at https://github.com/KTibow/ktibow.github.io/commits/master/schoology/css.css
 */
 
@@ -18,7 +18,7 @@ body {
   --text-darker: #444;
   --inset-shadow: inset -5.5px -5.5px 5.5px 0 rgba(255, 255, 255, 0.5),
     inset 5.5px 5.5px 5.5px 0 rgba(0, 0, 0, 0.03);
-  --invert-filter: invert(0.04) hue-rotate(180deg);
+  --invert-filter: invert(0.04);
   background-color: var(--background);
   background: var(--background) !important;
   color: var(--text-dark);
@@ -40,7 +40,7 @@ body {
 /*     General stuff      */
 /*                        */
 /**************************/
-/* 3d view with background */
+/* 3d view in devtools with background */
 #main {
   background: var(--background);
 }
@@ -101,6 +101,14 @@ input[type="button"][value="Cancel"] {
   color: white;
   padding: 10px;
   margin: 10px;
+  background: var(--background);
+}
+.popups-buttons span, .cancel-only .popups-buttons span:first-child {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+}
+a.link-btn:active, span.link-btn:active, div.link-btn:active, .cancel-btn:active, #edit-cancel:active {
+  background: var(--background);
 }
 /* Scrollbar */
 ::-webkit-scrollbar {
@@ -258,6 +266,24 @@ nav > ul:nth-of-type(2) > li:nth-of-type(5) > div > ul > li:not(:empty) {
   padding: 5px 10px;
   box-shadow: var(--shadow);
 }
+/* Use emoji */
+[data-sgy-sitenav="header-my-account-menu"] > button > div > div:nth-of-type(1) > img {
+  z-index: 1;
+  position: absolute;
+  left: 1.5rem;
+}
+[data-sgy-sitenav="header-my-account-menu"] > button > div > div:nth-of-type(1) > img[src=
+"https://asset-cdn.schoology.com/system/files/imagecache/profile_tiny/sites/all/themes/schoology_theme/images/user-default.gif"
+] {
+  visibility: hidden;
+}
+[data-sgy-sitenav="header-my-account-menu"] > button > div > div:nth-of-type(1)::before {
+  content: "😀";
+  font-size: 1.5em;
+  position: absolute;
+  z-index: 0;
+  left: 1.5rem;
+}
 /* Make badge for DMs and notifications be filled in */
 nav > ul:nth-of-type(2) > li > button > span {
   background: var(--color) !important;
@@ -382,10 +408,12 @@ a[href="#main"].skip {
   background: var(--background) !important;
 }
 .sMessagingProcessed > div > fieldset #attachment-selector {
-  width: calc(100% - 20px);
+  width: calc(100% - 20px) !important;
 }
 .sMessagingProcessed > div > fieldset #attachment-links {
   height: auto !important;
+  margin-top: 10px !important;
+  margin-left: 2.5px !important;
 }
 .sMessagingProcessed > div > fieldset #attachment-selector,
 .sMessagingProcessed > div > fieldset #attachment-selector > li {
@@ -407,6 +435,12 @@ a[href="#main"].skip {
   box-shadow: var(--shadow);
   padding: 20px;
   margin-top: -10px;
+}
+/* Threads */
+.thread-wrapper > .s_message_box {
+  box-shadow: var(--shadow);
+  padding: 10px 15px;
+  margin: 10px;
 }
 /**************************/
 /*                        */
@@ -482,6 +516,22 @@ div#center-top
 .materials-filter-wrapper {
   background: var(--background);
 }
+/* Student progress */
+#folder-completion-status {
+  box-shadow: var(--shadow);
+}
+#course-profile-materials-folders {
+  margin-top: 0;
+}
+/* Sidebar */
+#sidebar-left > div > div > ul > li > ul > li {
+  box-shadow: var(--shadow);
+  margin: 20px;
+  padding: 5px 10px;
+}
+#sidebar-left > div > div > ul > li > ul > li.active-trail {
+  box-shadow: var(--inset-shadow);
+}
 /**************************/
 /*                        */
 /*      Custom icons      */
@@ -554,6 +604,92 @@ a[href="/user-calendar"]::before {
   box-shadow: var(--shadow);
   margin: 15px -6px 15px !important;
   padding: 25px 15px 20px 35px;
+}
+#attachments-added-container > div > div.orange {
+  background: var(--color);
+}
+/* Filter type of assignment */
+.materials-filter-wrapper .action-links-unfold-text {
+  color: var(--color);
+}
+.materials-filter-wrapper > img {
+  display: none;
+}
+.materials-filter-wrapper::after {
+  content: "🔻";
+  position: absolute;
+  right: 10px;
+  top: 0;
+  z-index: -1;
+  line-height: 2.5em;
+}
+/* Student progress */
+#folder-completion-status span {
+  display: none;
+}
+#folder-completion-status::before {
+  content: "✔ ";
+  font-family: apple color emoji, segoe ui emoji, noto color emoji,
+    android emoji, emojisymbols, emojione mozilla, twemoji mozilla,
+    segoe ui symbol;
+}
+#report-wrapper .status-bar.full,
+.popups-student-progress .status-bar.full {
+  background: none;
+  text-indent: 0;
+}
+.popups-student-progress .status-bar.full::before {
+  content: "✔ ";
+  font-family: apple color emoji, segoe ui emoji, noto color emoji,
+    android emoji, emojisymbols, emojione mozilla, twemoji mozilla,
+    segoe ui symbol;
+}
+/* Left sidebar in courses */
+#menu-s-main li li:not(.active-trail):not(:hover) {
+  filter: grayscale(1);
+}
+#left-nav #menu-s-main .menu .menu a {
+  padding-left: 3px;
+}
+a.course-materials-left-menu span {
+  background: none !important;
+}
+a.course-materials-left-menu::before {
+  content: "📚 ";
+  font-size: 18px;
+  line-height: 100%;
+}
+a.course-updates-left-menu span {
+  background: none !important;
+}
+a.course-updates-left-menu::before {
+  content: "📜 ";
+  font-size: 18px;
+  line-height: 100%;
+}
+a.course-student-grade-left-menu span {
+  background: none !important;
+}
+a.course-student-grade-left-menu::before {
+  content: "📊 ";
+  font-size: 18px;
+  line-height: 100%;
+}
+a.course-student-competency-left-menu span {
+  background: none !important;
+}
+a.course-student-competency-left-menu::before {
+  content: "🎯 ";
+  font-size: 18px;
+  line-height: 100%;
+}
+a.course-student-attendance-left-menu span {
+  background: none !important;
+}
+a.course-student-attendance-left-menu::before {
+  content: "📆 ";
+  font-size: 18px;
+  line-height: 100%;
 }
 /*
 Schoology devs made progressShowHide
@@ -695,15 +831,23 @@ div.submit-assignment > a > span::before {
 .grading-grade > .infotip::before {
   content: "💬";
 }
-/* Close a popup */
+/* Close a popup and delete a file */
+.popups-close:hover {
+  background: none;
+}
 .popups-close > a {
   background: none;
 }
-.popups-close > a::before {
+.popups-close > a::before, .progressDelete::before {
   content: "❌";
   font-family: apple color emoji, segoe ui emoji, noto color emoji,
     android emoji, emojisymbols, emojione mozilla, twemoji mozilla,
     segoe ui symbol;
+}
+.progressDelete {
+  filter: none !important;
+  opacity: 1 !important;
+  text-decoration: none !important;
 }
 /* Various icons */
 span.inline-icon.link-icon {
@@ -838,10 +982,10 @@ td.mceToolbar {
 /* Create tab */
 .resizable-textarea > span > textarea {
   background: var(--background);
-  box-shadow: var(--shadow);
+  box-shadow: var(--inset-shadow);
 }
 #edit-submission_ifr {
-  filter: brightness(0.96);
+  filter: var(--invert-filter);
 }
 span#tinymce-toggle-html {
   background-color: var(--background);
@@ -851,6 +995,7 @@ span#tinymce-toggle-html {
 }
 .popups-box {
   background: transparent !important;
+  padding: 0 !important;
 }
 .popups-title {
   background: var(--background);
@@ -868,6 +1013,10 @@ span#tinymce-toggle-html {
 }
 .popups-tabs .popups-tab.active {
   box-shadow: var(--inset-shadow);
+}
+/* Attatchments */
+#attachment-selector.drag-hover, #attachment-links.drag-hover, #attachment-file-chunked.drag-hover {
+  background-color: var(--color) !important;
 }
 /* Tooltips */
 .popover-content,
@@ -925,5 +1074,114 @@ body ul.primary li.active a, body ul.primary li.active a:hover {
   color: var(--text);
 }
 body textarea, select {
+  color: var(--text) !important;
+}
+/* Popups (people who like this) */
+.popups-body .submit-buttons, .popups-buttons-inner {
+  background: var(--background);
+}
+/* Comments on comments */
+.s_grade_item_assignment #content-wrapper div#s_comments .s_comments_level .s_comments_level, .s_grade_item_assessment #content-wrapper div#s_comments .s_comments_level .s_comments_level {
+  background: var(--background);
+}
+/* Left sidebar in assignments */
+#sidebar-left .active-trail a, #left-nav #menu-s-main .menu .menu a.active, #sidebar-left .menu .expanded.active-trail a.active, #sidebar-left #left-nav .menu .expanded.active-trail .active-trail-dist-1 a, #sidebar-left #left-nav .menu .expanded.active-trail .menu .active-trail-dist-2 a {
+  background-color: transparent;
+}
+#sidebar-left li a {
+  color: var(--text-dark);
+}
+#sidebar-left li a:hover {
   color: var(--text);
+}
+#left-nav #menu-s-main .menu .menu a.active, #sidebar-left .menu .expanded.active-trail a.active, #sidebar-left #left-nav .menu .expanded.active-trail .active-trail-dist-1 a {
+  color: var(--text);
+}
+/* Grades */
+.grade-title, .grading-grade-translated {
+  color: var(--text);
+}
+.grading-grade .max-points {
+  color: var(--text-dark);
+}
+.grading-grade .received-grade {
+  color: var(--text);
+}
+/* Dropdown in materials in left sidebar */
+#course-materials-dropdown a {
+  background-color: var(--background) !important;
+}
+/* Buttons */
+#edit-cancel, a.cancel-btn, button.cancel-btn, span.cancel-btn, .popups-buttons input {
+  color: var(--text);
+}
+/* Attachments */
+#attachment-selector > li > * {
+  transition: transform 0.13s;
+}
+#attachment-selector > li > *:hover {
+  background: var(--background) !important;
+  transform: scale(1.03);
+}
+/* Assignment discussions */
+.discussion-view #content-wrapper,
+.discussion-view .sticky-wrapper h2.page-title,
+.discussion-view .sticky-wrapper .s-comments-post-form, .discussion-view .sticky-wrapper .s-comments-post-form-new,
+.discussion-view .discussion-content #s_comments .discussion-card,
+.discussion-view #comment-placeholder,
+.discussion-action-bar,
+.discussion-view #content-wrapper .discussion-content div#s_comments .s_comments_level .s_comments_level {
+  background: var(--background);
+}
+.discussion-view p,
+.discussion-view #comment-placeholder,
+.post-count,
+.dropdown-toggle {
+  color: var(--text);
+}
+#edit-comment_ifr {
+  filter: var(--invert-filter);
+}
+.discussion-view .discussion-content #s_comments .discussion-card {
+  box-shadow: none;
+}
+.discussion-view #content-wrapper .comment-contents a:not(.link-btn),
+.discussion-view #content-wrapper .comment-contents .clickable,
+.discussion-view .content-top-upper .clickable {
+  color: var(--color);
+}
+/* Student Progress */
+#completion-user-switcher-wrapper {
+  background: var(--background);
+}
+/**************************/
+/*                        */
+/*       Schoology+       */
+/*                        */
+/**************************/
+body {
+  --primary-color: var(--background);
+  --primary: var(--background);
+  --accent: var(--background);
+  --secondary: var(--background);
+  --link-color: var(--color);
+  --hover-color: transparent;
+  --border-color: transparent;
+  --background-url: none;
+  --contrast-border: transparent;
+}
+body a.link-btn, ul.tabs li a {
+  color: var(--text) !important;
+}
+footer li a, header li a, .splus-modal-footer-text a, body a.link-btn.active, div.courses-left-menu, .portfolio-list a.btn, a._3_bfp {
+  color: var(--color) !important;
+}
+.splus-modal-button {
+  padding: 10px;
+  margin: 10px;
+  background: var(--background);
+  box-shadow: var(--shadow);
+}
+.splus-modal-button input.form-submit {
+  background: var(--background);
 }
