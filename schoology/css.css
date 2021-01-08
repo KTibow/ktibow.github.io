@@ -1,5 +1,5 @@
 /*
-Schoology.css v0.3.0
+Schoology.css v0.3.1
 View history at https://github.com/KTibow/ktibow.github.io/commits/master/schoology/css.css
 */
 
@@ -24,16 +24,18 @@ body {
   color: var(--text-dark);
 }
 @media (prefers-color-scheme: dark) {
-body {
-  --background: #26282C;
-  --color: #8b83ff;
-  --shadow: -5.25px -5.25px 5.25px 0 rgba(55, 55, 55, .6), 5.25px 5.25px 5.25px 0 rgba(0, 0, 0, .15);
-  --text: #EEE;
-  --text-dark: #CCC;
-  --text-darker: #BBB;
-  --inset-shadow: inset -5.25px -5.25px 5.25px 0 rgba(55, 55, 55, .6), inset 5.25px 5.25px 5.25px 0 rgba(0, 0, 0, .15);
-  --invert-filter: invert(0.83) hue-rotate(180deg);
-}
+  body {
+    --background: #26282c;
+    --color: #8b83ff;
+    --shadow: -5.25px -5.25px 5.25px 0 rgba(55, 55, 55, 0.6),
+      5.25px 5.25px 5.25px 0 rgba(0, 0, 0, 0.15);
+    --text: #eee;
+    --text-dark: #ccc;
+    --text-darker: #bbb;
+    --inset-shadow: inset -5.25px -5.25px 5.25px 0 rgba(55, 55, 55, 0.6),
+      inset 5.25px 5.25px 5.25px 0 rgba(0, 0, 0, 0.15);
+    --invert-filter: invert(0.83) hue-rotate(180deg);
+  }
 }
 /**************************/
 /*                        */
@@ -103,11 +105,16 @@ input[type="button"][value="Cancel"] {
   margin: 10px;
   background: var(--background);
 }
-.popups-buttons span, .cancel-only .popups-buttons span:first-child {
+.popups-buttons span,
+.cancel-only .popups-buttons span:first-child {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
 }
-a.link-btn:active, span.link-btn:active, div.link-btn:active, .cancel-btn:active, #edit-cancel:active {
+a.link-btn:active,
+span.link-btn:active,
+div.link-btn:active,
+.cancel-btn:active,
+#edit-cancel:active {
   background: var(--background);
 }
 /* Scrollbar */
@@ -239,23 +246,17 @@ nav > ul:nth-of-type(2) > li:nth-of-type(4) > div > div button {
 nav
   > ul:nth-of-type(2)
   > li:nth-of-type(4)
-  > div
+  > div
   > div
   > button[aria-selected="true"] {
   box-shadow: var(--inset-shadow);
 }
-nav
-  > ul:nth-of-type(2)
-  > li:nth-of-type(4):hover
-  a {
+nav > ul:nth-of-type(2) > li:nth-of-type(4):hover a {
   box-shadow: none !important;
 }
-nav
-  > ul:nth-of-type(2)
-  > li:nth-of-type(4)
-  > div > div > div {
-box-shadow: var(--shadow);
-    margin: 20px;
+nav > ul:nth-of-type(2) > li:nth-of-type(4) > div > div > div {
+  box-shadow: var(--shadow);
+  margin: 20px;
 }
 /* Profile */
 nav > ul:nth-of-type(2) > li:nth-of-type(5) > div > ul {
@@ -267,7 +268,11 @@ nav > ul:nth-of-type(2) > li:nth-of-type(5) > div > ul > li:not(:empty) {
   box-shadow: var(--shadow);
 }
 /* Use emoji */
-[data-sgy-sitenav="header-my-account-menu"] > button > div > div:nth-of-type(1) > img {
+[data-sgy-sitenav="header-my-account-menu"]
+  > button
+  > div
+  > div:nth-of-type(1)
+  > img {
   z-index: 1;
   position: absolute;
   left: 1.5rem;
@@ -277,7 +282,10 @@ nav > ul:nth-of-type(2) > li:nth-of-type(5) > div > ul > li:not(:empty) {
 ] {
   visibility: hidden;
 }
-[data-sgy-sitenav="header-my-account-menu"] > button > div > div:nth-of-type(1)::before {
+[data-sgy-sitenav="header-my-account-menu"]
+  > button
+  > div
+  > div:nth-of-type(1)::before {
   content: "😀";
   font-size: 1.5em;
   position: absolute;
@@ -355,6 +363,7 @@ a.course-dashboard__accessibility-icon {
   display: none;
 }
 /* Stuff on the right */
+#body #right-column-inner > .quick-access-wrapper,
 #body #right-column-inner > .overdue-submissions:not(:empty),
 #body #right-column-inner > .upcoming-events,
 #body #right-column-inner > .drop-items {
@@ -378,7 +387,8 @@ a[href="#main"].skip {
 /*        DM page         */
 /*                        */
 /**************************/
-#tabs-wrapper, ul.tabs.primary {
+#tabs-wrapper,
+ul.tabs.primary {
   float: none;
   height: auto;
 }
@@ -404,7 +414,10 @@ a[href="#main"].skip {
 .sMessagingProcessed > div > fieldset #attachment-selector,
 .sMessagingProcessed > div > fieldset #attachment-selector > li,
 .sMessagingProcessed > div > fieldset > div > textarea,
-.sMessagingProcessed > div > fieldset a[href^="/messages/ajax/delete"].link-btn {
+.sMessagingProcessed
+  > div
+  > fieldset
+  a[href^="/messages/ajax/delete"].link-btn {
   background: var(--background) !important;
 }
 .sMessagingProcessed > div > fieldset #attachment-selector {
@@ -431,7 +444,10 @@ a[href="#main"].skip {
 .sMessagingProcessed > div > fieldset span.cancel-btn {
   margin-left: 15px;
 }
-.sMessagingProcessed > div > fieldset a[href^="/messages/ajax/delete"].link-btn {
+.sMessagingProcessed
+  > div
+  > fieldset
+  a[href^="/messages/ajax/delete"].link-btn {
   box-shadow: var(--shadow);
   padding: 20px;
   margin-top: -10px;
@@ -608,6 +624,7 @@ a[href="/user-calendar"]::before {
 #attachments-added-container > div > div.orange {
   background: var(--color);
 }
+/* Down arrows */
 /* Filter type of assignment */
 .materials-filter-wrapper .action-links-unfold-text {
   color: var(--color);
@@ -622,6 +639,25 @@ a[href="/user-calendar"]::before {
   top: 0;
   z-index: -1;
   line-height: 2.5em;
+}
+/* Order to sort in recent activity */
+#edge-filters-btn {
+  background-color: var(--background) !important;
+  color: white !important;
+  filter: none !important;
+  box-shadow: var(--shadow);
+  padding: 10px;
+  background: none !important;
+}
+#edge-filters-btn::after {
+  content: "🔻";
+}
+/* Show more in notifications */
+.sEdgeMore-processed {
+  padding-left: 0;
+}
+.sEdgeMore-processed::before {
+  content: "🔻";
 }
 /* Student progress */
 #folder-completion-status span {
@@ -756,7 +792,13 @@ input[type="checkbox"]::before {
 input[type="checkbox"]:checked::before {
   content: "✅";
 }
-/* Comment like buttons */
+/* Like buttons */
+.s-like-sentence span {
+  display: none;
+}
+.s-like-sentence {
+  padding-left: 0;
+}
 a.like-details-btn {
   background: none !important;
   padding: 0 !important;
@@ -838,7 +880,8 @@ div.submit-assignment > a > span::before {
 .popups-close > a {
   background: none;
 }
-.popups-close > a::before, .progressDelete::before {
+.popups-close > a::before,
+.progressDelete::before {
   content: "❌";
   font-family: apple color emoji, segoe ui emoji, noto color emoji,
     android emoji, emojisymbols, emojione mozilla, twemoji mozilla,
@@ -902,6 +945,59 @@ span.inline-icon.assignment-icon::before {
 }
 .course-materials-simple .inline-icon:not(.folder-icon)::before {
   line-height: 1.5em !important;
+}
+/**************************/
+/*                        */
+/*      Notification      */
+/*                        */
+/**************************/
+/* Assignment icon */
+span.inline-icon.page-icon,
+span.inline-icon.grade-item-icon {
+  background: none;
+}
+span.inline-icon.page-icon::before,
+span.inline-icon.grade-item-icon::before {
+  content: "📝";
+  font-size: 24px;
+}
+/* Assignment comment */
+span.notify-icon.dropbox-revision-comment {
+  background: none;
+}
+span.notify-icon.dropbox-revision-comment::before {
+  content: "💬";
+  font-size: 24px;
+}
+/* Grade */
+span.notify-icon.grade-post {
+  background: none;
+}
+span.notify-icon.grade-post::before {
+  content: "📊";
+  font-size: 24px;
+}
+/* New stuff */
+span.notify-icon.course-materials-added {
+  background: none;
+}
+span.notify-icon.course-materials-added::before {
+  content: "➕";
+  font-size: 24px;
+}
+/* Badge icon */
+span.notify-icon.badge-icon {
+  background: none;
+}
+span.notify-icon.badge-icon::before {
+  content: "⭐";
+  font-size: 24px;
+}
+/* Mini scaling */
+span.mini::before,
+span.inline-icon.mini::before,
+span.notify-icon::before {
+  font-size: 12px !important;
 }
 /**************************/
 /*                        */
@@ -1015,7 +1111,9 @@ span#tinymce-toggle-html {
   box-shadow: var(--inset-shadow);
 }
 /* Attatchments */
-#attachment-selector.drag-hover, #attachment-links.drag-hover, #attachment-file-chunked.drag-hover {
+#attachment-selector.drag-hover,
+#attachment-links.drag-hover,
+#attachment-file-chunked.drag-hover {
   background-color: var(--color) !important;
 }
 /* Tooltips */
@@ -1040,7 +1138,8 @@ div[role="tooltip"].sgy-tooltop {
 .theme-2016 .date-header h4 {
   color: var(--text-dark);
 }
-.theme-2016 #right-column h4 span:not(.subevent-count), .theme-2016 #right-column .empty {
+.theme-2016 #right-column h4 span:not(.subevent-count),
+.theme-2016 #right-column .empty {
   color: var(--text-darker);
 }
 /* Home left sidebar */
@@ -1070,22 +1169,44 @@ div[role="tooltip"].sgy-tooltop {
   color: var(--text-darker);
 }
 /* DMs */
-body ul.primary li.active a, body ul.primary li.active a:hover {
+body ul.primary li.active a,
+body ul.primary li.active a:hover {
   color: var(--text);
 }
-body textarea, select {
+body textarea,
+select {
   color: var(--text) !important;
 }
 /* Popups (people who like this) */
-.popups-body .submit-buttons, .popups-buttons-inner {
+.popups-body .submit-buttons,
+.popups-buttons-inner {
   background: var(--background);
 }
 /* Comments on comments */
-.s_grade_item_assignment #content-wrapper div#s_comments .s_comments_level .s_comments_level, .s_grade_item_assessment #content-wrapper div#s_comments .s_comments_level .s_comments_level {
+.s_grade_item_assignment
+  #content-wrapper
+  div#s_comments
+  .s_comments_level
+  .s_comments_level,
+.s_grade_item_assessment
+  #content-wrapper
+  div#s_comments
+  .s_comments_level
+  .s_comments_level {
   background: var(--background);
 }
 /* Left sidebar in assignments */
-#sidebar-left .active-trail a, #left-nav #menu-s-main .menu .menu a.active, #sidebar-left .menu .expanded.active-trail a.active, #sidebar-left #left-nav .menu .expanded.active-trail .active-trail-dist-1 a, #sidebar-left #left-nav .menu .expanded.active-trail .menu .active-trail-dist-2 a {
+#sidebar-left .active-trail a,
+#left-nav #menu-s-main .menu .menu a.active,
+#sidebar-left .menu .expanded.active-trail a.active,
+#sidebar-left #left-nav .menu .expanded.active-trail .active-trail-dist-1 a,
+#sidebar-left
+  #left-nav
+  .menu
+  .expanded.active-trail
+  .menu
+  .active-trail-dist-2
+  a {
   background-color: transparent;
 }
 #sidebar-left li a {
@@ -1094,11 +1215,14 @@ body textarea, select {
 #sidebar-left li a:hover {
   color: var(--text);
 }
-#left-nav #menu-s-main .menu .menu a.active, #sidebar-left .menu .expanded.active-trail a.active, #sidebar-left #left-nav .menu .expanded.active-trail .active-trail-dist-1 a {
+#left-nav #menu-s-main .menu .menu a.active,
+#sidebar-left .menu .expanded.active-trail a.active,
+#sidebar-left #left-nav .menu .expanded.active-trail .active-trail-dist-1 a {
   color: var(--text);
 }
 /* Grades */
-.grade-title, .grading-grade-translated {
+.grade-title,
+.grading-grade-translated {
   color: var(--text);
 }
 .grading-grade .max-points {
@@ -1112,7 +1236,11 @@ body textarea, select {
   background-color: var(--background) !important;
 }
 /* Buttons */
-#edit-cancel, a.cancel-btn, button.cancel-btn, span.cancel-btn, .popups-buttons input {
+#edit-cancel,
+a.cancel-btn,
+button.cancel-btn,
+span.cancel-btn,
+.popups-buttons input {
   color: var(--text);
 }
 /* Attachments */
@@ -1126,11 +1254,17 @@ body textarea, select {
 /* Assignment discussions */
 .discussion-view #content-wrapper,
 .discussion-view .sticky-wrapper h2.page-title,
-.discussion-view .sticky-wrapper .s-comments-post-form, .discussion-view .sticky-wrapper .s-comments-post-form-new,
+.discussion-view .sticky-wrapper .s-comments-post-form,
+.discussion-view .sticky-wrapper .s-comments-post-form-new,
 .discussion-view .discussion-content #s_comments .discussion-card,
 .discussion-view #comment-placeholder,
 .discussion-action-bar,
-.discussion-view #content-wrapper .discussion-content div#s_comments .s_comments_level .s_comments_level {
+.discussion-view
+  #content-wrapper
+  .discussion-content
+  div#s_comments
+  .s_comments_level
+  .s_comments_level {
   background: var(--background);
 }
 .discussion-view p,
@@ -1167,13 +1301,21 @@ body {
   --link-color: var(--color);
   --hover-color: transparent;
   --border-color: transparent;
-  --background-url: none;
+  --active: transparent;
   --contrast-border: transparent;
+  --background-url: none;
 }
-body a.link-btn, ul.tabs li a {
+body a.link-btn,
+ul.tabs li a {
   color: var(--text) !important;
 }
-footer li a, header li a, .splus-modal-footer-text a, body a.link-btn.active, div.courses-left-menu, .portfolio-list a.btn, a._3_bfp {
+footer li a,
+header li a,
+.splus-modal-footer-text a,
+body a.link-btn.active,
+div.courses-left-menu,
+.portfolio-list a.btn,
+a._3_bfp {
   color: var(--color) !important;
 }
 .splus-modal-button {
