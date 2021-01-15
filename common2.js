@@ -52,3 +52,8 @@ if (window.location.href.includes("/blog/")) {
     openSansUser.innerHTML = "* { font-family: Open Sans, sans-serif; }";
     document.head.appendChild(openSansUser);
 }
+/* Viewport */
+var newViewport = document.createElement("meta");
+newViewport.name = "viewport";
+newViewport.content = "width=device-width, initial-scale=1";
+document.head.appendChild(newViewport);
