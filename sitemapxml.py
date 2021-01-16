@@ -47,7 +47,7 @@ for url in input.split("\n"):
         try:
             imgs = []
             the_path = urlparse(url).path.replace("/", "", 1) + "index.html"
-            if the_path == "schoology/index.html":
+            if the_path in ["schoology/index.html", "schoologyindex.html"]:
                 the_path = "schoology.css.html"
             soup = bs4.BeautifulSoup(
                 open(the_path).read(),
