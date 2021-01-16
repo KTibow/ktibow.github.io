@@ -163,7 +163,7 @@
       function getSchoologyCss() {
         var darkDropdown = document.getElementById("darkMode");
         gTag("event", "copy_schoology_css", {
-          "darkMode": darkDropdown.options[darkDropdown.selectedIndex].value
+          "dark_mode": darkDropdown.options[darkDropdown.selectedIndex].value
         });
         fetch("schoology/css.css")
           .then((result) => {
@@ -193,6 +193,11 @@
               clearInterval(confettiId);
             }, 2501);
           });
+      }
+      document.querySelector("video").onplay = () => {
+        gTag("event", "video_start", {
+          "video_title": "Schoology.css promo"
+        });
       }
     </script>
     <label for="darkMode">Dark mode option</label>
