@@ -2,12 +2,10 @@
 <html lang="en">
 
 <head>
-    <script src="/common.js"></script>
+    <script src="/common2.js"></script>
     <title>KTibow's tech tutorials</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Various tech tutorials about interesting things, like backing up your Raspberry Pi to OneDrive." />
     <meta http-equiv="content-language" content="en" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" />
     <style>
         .card {
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -19,12 +17,13 @@
             padding: 10px;
             margin: 10px;
         }
-        .card: hover {
+        .card:hover {
             box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
         }
         img {
             border-radius: 5px;
             margin: 5px;
+            width: 100%;
         }
         .container {
             padding: 2px 16px;
@@ -32,7 +31,7 @@
         * {
             font-family: Open Sans;
         }
-        @media all and (orientation:portrait) {
+        @media (orientation: portrait) {
             .card {
                 width: 80%;
             }
@@ -44,7 +43,7 @@
     <h2>Projects I've made</h2>
     <div class="card">
         <a href="/gocallme/">
-            <img src="/gocallme/maskable_icon.png" alt="Go Call Me logo" style="width:100%">
+            <img src="/gocallme/maskable_icon.png" alt="Go Call Me logo">
             <div class="container">
                 <h4>Go Call Me</h4> 
                 <p>Go Call Me generates a URL and QR code you can go to or scan to call a phone number.</p>
@@ -53,7 +52,7 @@
     </div>
     <div class="card">
         <a href="/infinity-mirror/">
-            <img src="/infinity-mirror/IMG_20200717_141323.jpg" alt="Infinity mirror picture" style="width:100%">
+            <img src="/infinity-mirror/IMG_20200717_141323.jpg" alt="Infinity mirror picture">
             <div class="container">
                 <h4>Smart infinity mirror</h4> 
                 <p>I made a smart infinity mirror from a cheapo amazon one and an ESP32. Complete with instructions!</p>
@@ -62,7 +61,7 @@
     </div>
     <div class="card">
         <a href="/zoom/">
-            <img src="/tutorials/zimp.png" alt="Screenshot from joining Zoom Improved" style="width:100%">
+            <img src="/tutorials/zimp.png" alt="Screenshot from joining Zoom Improved">
             <div class="container">
                 <h4>Zoom improved: original</h4> 
                 <p>A website with a new UI to join zoom, with the original in an iframe.</p>
@@ -71,7 +70,7 @@
     </div>
     <div class="card">
         <a href="https://simple-zoom-joiner.herokuapp.com">
-            <img src="/tutorials/simple-zoom-joiner.png" alt="Screenshot from joining the simple version" style="width:100%">
+            <img src="/tutorials/simple-zoom-joiner.png" alt="Screenshot from joining the simple version">
             <div class="container">
                 <h4>Simple zoom joiner</h4> 
                 <p>A barebones joiner with support for other platforms on a Heroku app. Note that it sometimes sleeps.</p>
@@ -82,7 +81,7 @@
     <h2>Tutorials for making</h2>
     <div class="card">
         <a href="/tutorials/pip-yun/">
-            <img src="/tutorials/pyart.png" alt="Python logo" style="width:100%">
+            <img src="/tutorials/pyart.png" alt="Python logo">
             <div class="container">
                 <h4>Installing Python Pip on an Arduino Yun</h4> 
                 <p>Halfway finished, but interesting.</p>
@@ -91,7 +90,7 @@
     </div>
     <div class="card">
         <a href="/tutorials/quick-pi/">
-            <img src="/tutorials/rasppi.jpg" alt="Raspberry pi transfer image" style="width:100%">
+            <img src="/tutorials/rasppi.jpg" alt="Raspberry pi transfer image">
             <div class="container">
                 <h4>Set up a second Raspberry Pi with only an existing one.</h4> 
                 <p>An easy guide with step-by-step instructions!</p>
@@ -100,7 +99,7 @@
     </div>
     <div class="card">
         <a href="/pi-DriveUp/">
-            <img src="/tutorials/backuplogoimg.jpg" alt="Raspberry pi backup image" style="width:100%">
+            <img src="/tutorials/backuplogoimg.jpg" alt="Raspberry pi backup image">
             <div class="container">
                 <h4>Backup your Raspberry Pi to OneDrive easily.</h4> 
                 <p>Another easy guide with step-by-step instructions!</p>
@@ -111,7 +110,7 @@
     <h2>Random libraries and stuff</h2>
     <div class="card">
         <a href="/requireit/">
-            <img src="/tutorials/requireit.png" alt="Pip on run image" style="width:100%">
+            <img src="/tutorials/requireit.png" alt="Pip on run image">
             <div class="container">
                 <h4>Streamline your Python code experience!</h4> 
                 <p>Forget about telling your Python program users to install dependencies.</p>
@@ -120,7 +119,7 @@
     </div>
     <div class="card">
         <a href="https://family-richards.github.io/emailHelpers/">
-            <img src="/tutorials/pyart-helpers.png" alt="Python helping send email image" style="width:100%">
+            <img src="/tutorials/pyart-helpers.png" alt="Python helping send email image">
             <div class="container">
                 <h4>Simple email for Python</h4> 
                 <p>If smtplib confuses you, try emailHelpers instead.</p>
@@ -129,7 +128,7 @@
     </div>
     <div class="card">
         <a href="/esp32-ota/">
-            <img src="/tutorials/espota.png" alt="Screenshot of ESP32 OTA upload interface" style="width:100%">
+            <img src="/tutorials/espota.png" alt="Screenshot of ESP32 OTA upload interface">
             <div class="container">
                 <h4>Stylish OTA for ESP32</h4> 
                 <p>When you make a cool ESP32 project, it helps to go wire-free.</p>
@@ -137,7 +136,7 @@
         </a>
     </div>
     <div class="card">
-        <img src="/tutorials/ha-themes.png" alt="Two screenshots of Home Assistant themes" style="width:100%">
+        <img src="/tutorials/ha-themes.png" alt="Two screenshots of Home Assistant themes">
         <div class="container">
             <h4>Soft UI themes for Home Assistant</h4> 
             <p>These themes make soft UI easy. Here's the <a href="https://github.com/KTibow/lovelace-dark-soft-ui-theme">dark one</a>, and here's the <a href="https://github.com/KTibow/lovelace-light-soft-ui-theme">light one.</a></p>
