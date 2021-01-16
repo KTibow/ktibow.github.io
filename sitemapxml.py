@@ -1,6 +1,6 @@
 from urllib.parse import urlparse
 from os.path import isfile
-import bs4
+import bs4, traceback
 
 robots = open("robots.txt", "r").read()
 out = open("sitemap.xml", "w")
@@ -70,8 +70,8 @@ for url in input.split("\n"):
 </image:image>
 """
                 )
-        except Exception as e:
-            print(e)
+        except Exception:
+            print(traceback.format_exc())
         out.write("<priority>")
         priority = 0.5
         if url in ["https://ktibow.github.io/"]:
