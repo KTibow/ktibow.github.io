@@ -162,7 +162,7 @@
       };
       function getSchoologyCss() {
         var darkDropdown = document.getElementById("darkMode");
-        gTag("event", "copy_schoology_css", {
+        gTag("event", "css_installed", {
           "dark_mode": darkDropdown.options[darkDropdown.selectedIndex].value
         });
         fetch("schoology/css.css")
