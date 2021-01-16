@@ -161,12 +161,15 @@
         }
       };
       function getSchoologyCss() {
+        var darkDropdown = document.getElementById("darkMode");
+        gTag("event", "copy_schoology_css", {
+          "darkMode": darkDropdown.options[darkDropdown.selectedIndex].value
+        });
         fetch("schoology/css.css")
           .then((result) => {
             return result.text();
           })
           .then((result) => {
-            var darkDropdown = document.getElementById("darkMode");
             if (darkDropdown.selectedIndex == 1) {
               result = result.replace("@media (prefers-color-scheme: dark) {", "");
             } else if (darkDropdown.selectedIndex == 2) {
