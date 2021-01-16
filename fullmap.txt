@@ -22,6 +22,7 @@
 /schoology.css.html
 /generate_sitemap.sh
 /LICENSE.md
+/old_sitemap.txt
 /unclosable
 /unclosable/index.html
 /gocallme
