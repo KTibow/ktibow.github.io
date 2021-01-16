@@ -7,8 +7,8 @@
     <link rel="icon" sizes="853x853" href="/card/maskable_icon.png">
     <meta name="theme-color" content="#00bbff">
     <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js').then(function() { console.log("Service Worker Registered"); });
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/sw.js").then(function() { console.log("Service Worker registered"); });
       }
     </script>
     <meta name="description" content="Are you tired of typing in your library card? This web app lets you use barcodes to sign in really, really quick.">
@@ -71,71 +71,56 @@
   </head>
   <body>
     <h1>Library Card</h1>
-    <h2>Your phone is your card. <a href="/card/what/">help</a></h2>
-    <div id="cardpromo" style="display: none;">
-      <h2 id="promoheader">Simplify checkout at the library.</h2>
-      <button id="setupcardbutton">Setup your card</button>
+    <h2>Your phone is your card. <a href="/card/what/">Help</a></h2>
+    <div id="cardPromo" style="display: none;">
+      <h2 id="promoHeader">Simplify checkout at the library.</h2>
+      <button id="setupCardButton">Setup your card</button>
     </div>
-    <div id="cardsetup" style="display: none;">
+    <div id="cardSetup" style="display: none;">
       <h2>Card setup:</h2>
       <label>
-        Card number:<br/><input type="number" id="cardnum"/>
+        Card number:<br/><input type="number" id="cardNumber"/>
       </label>
       <br/>
       <label>
-        Card PIN:<br/><input type="number" id="cardpin"/>
+        Card PIN:<br/><input type="number" id="cardPin"/>
       </label>
       <br/>
-      <button id="savecardbutton">Save</button>
+      <button id="saveCardDetailsButton">Save</button>
     </div>
-    <div id="usecard" style="display: none;">
+    <div id="useTheCard" style="display: none;">
       <h2>Use card:</h2>
-      <button id="runcardbutton" class="emph">Show card</button><br/>
-      <button id="setupcardbutton2">Change card details</button>
-      <button id="showdetailsbutton">Show card details</button><br/>
-      <img id="cardidimg">
-      <img id="cardpinimg">
+      <button id="showCardButton" class="emph">Show card</button><br/>
+      <button id="reconfigureCard">Change card details</button>
+      <button id="showCardDetailsButton">Show card details</button><br/>
+      <img id="cardNumberImage">
+      <img id="cardPinImage">
     </div>
     <script src="code.js"></script>
     <br/>
-    <button id="add2hs" class="emph">Add to Home Screen</button>
+    <button id="addHomeScreenButton" class="emph">Add to Home Screen</button>
     <script>
       let deferredPrompt;
-      const addBtn = document.getElementById("add2hs");
-      window.addEventListener('beforeinstallprompt', (e) => {
-          e.preventDefault();
-          deferredPrompt = e;
-          addBtn.style.setProperty("opacity", "1", "important");
-          addBtn.style.setProperty("visibility", "visible", "important");
-          addBtn.addEventListener('click', (e) => {
-              addBtn.style.setProperty("opacity", "0", "important");
-              addBtn.style.setProperty("visibility", "hidden", "important");
+      const addButton = document.getElementById("addHomeScreenButton");
+      window.addEventListener("beforeinstallprompt", (event) => {
+          event.preventDefault();
+          deferredPrompt = event;
+          addButton.style.setProperty("opacity", "1", "important");
+          addButton.style.setProperty("visibility", "visible", "important");
+          addButton.addEventListener("click", (event) => {
+              addButton.style.setProperty("opacity", "0", "important");
+              addButton.style.setProperty("visibility", "hidden", "important");
               deferredPrompt.prompt();
               deferredPrompt.userChoice.then((choiceResult) => {
-                  if (choiceResult.outcome === 'accepted') {
-                      console.log('User accepted the A2HS prompt');
+                  if (choiceResult.outcome === "accepted") {
+                      console.log("User accepted the A2HS prompt");
                   } else {
-                      console.log('User dismissed the A2HS prompt');
+                      console.log("User dismissed the A2HS prompt");
                   }
                   deferredPrompt = null;
               });
           });
       });
-      document.getElementById("cardidimg").style.opacity = "1";
-      document.getElementById("cardidimg").style.display = "unset";
-      setTimeout(window.scrollBy, 40, 0, 1000);
-      setTimeout(function() {
-        setTimeout(window.scrollBy, 40, 0, 1000);
-        document.getElementById("cardidimg").style.opacity = "0";
-        document.getElementById("cardidimg").style.display = "none";
-        document.getElementById("cardpinimg").style.opacity = "1";
-        document.getElementById("cardpinimg").style.display = "unset";
-        setTimeout(function() {
-          setTimeout(window.scrollBy, 40, 0, -1000);
-          document.getElementById("cardpinimg").style.opacity = "0";
-          document.getElementById("cardpinimg").style.display = "none";
-        }, 55);
-      }, 55);
     </script>
   </body>
 </html>
