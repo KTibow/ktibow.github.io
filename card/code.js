@@ -9,12 +9,12 @@ if (localStorage.getItem("card") == null) {
   document.getElementById("cardpinimg").src =
     "https://barcodes4.me/barcode/i2of5/" + cardstuff[1] + ".png?resolution=4";
 }
-function setupcard() {
+function setupCard() {
   document.getElementById("cardpromo").style.display = "none";
   document.getElementById("cardsetup").style.display = "unset";
   document.getElementById("usecard").style.display = "none";
 }
-function savecard() {
+function saveCard() {
   var testreg = /^\d{4,12}$/;
   var cardnum = document.getElementById("cardnum").value;
   var cardpin = document.getElementById("cardpin").value;
@@ -31,7 +31,7 @@ function savecard() {
     document.getElementById("cardsetup").style.display = "none";
   }
 }
-function runcard() {
+function runCard() {
   document.getElementById("cardidimg").style.opacity = "1";
   document.getElementById("cardidimg").style.display = "unset";
   setTimeout(window.scrollBy, 40, 0, 1000);
@@ -48,7 +48,7 @@ function runcard() {
     }, 670);
   }, 670);
 }
-function showdetails() {
+function showDetails() {
   var cardstuff = localStorage.getItem("card").split(":");
   alert(`Card number: ${cardstuff[0]}
 Card PIN: ${cardstuff[1]}`);
@@ -57,7 +57,7 @@ function choose(choices) {
   var index = Math.floor(Math.random() * choices.length);
   return choices[index];
 }
-function updatepromo() {
+function updatePromo() {
   document.getElementById("promoheader").innerHTML = choose([
     "Simplify checkout at the library.",
     "Forget about carrying your library card.",
@@ -67,39 +67,18 @@ function updatepromo() {
     "You're wasting more time than you think finding your card.",
   ]);
 }
-setInterval(updatepromo, 2000);
-document.getElementById("setupcardbutton").addEventListener(
-  "click",
-  () => {
-    setTimeout(setupcard, 400);
-  },
-  true
-);
-document.getElementById("setupcardbutton2").addEventListener(
-  "click",
-  () => {
-    setTimeout(setupcard, 400);
-  },
-  true
-);
-document.getElementById("savecardbutton").addEventListener(
-  "click",
-  () => {
-    setTimeout(savecard, 400);
-  },
-  true
-);
-document.getElementById("showdetailsbutton").addEventListener(
-  "click",
-  () => {
-    setTimeout(showdetails, 400);
-  },
-  true
-);
-document.getElementById("runcardbutton").addEventListener(
-  "click",
-  () => {
-    setTimeout(runcard, 400);
-  },
-  true
-);
+setInterval(updatePromo, 2000);
+for (clickConfig of [
+  ["setupcardbutton", setupCard],
+  ["setupcardbutton2", setupCard],
+  ["savecardbutton", saveCard],
+  ["showdetailsbutton", showDetails],
+  ["runcardbutton", runCard]]) {
+  document.getElementById(clickConfig[0]).addEventListener(
+    "click",
+    () => {
+      setTimeout(clickConfig[1], 400);
+    },
+    true
+  );
+}
