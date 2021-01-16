@@ -37,11 +37,11 @@ var gaTag = document.createElement("script");
 gaTag.src = "https://www.googletagmanager.com/gtag/js?id=G-8ZRE2X4NSL";
 document.body.appendChild(gaTag);
 window.dataLayer = window.dataLayer || [];
-function addConfig() {
+function gTag() {
     window.dataLayer.push(arguments);
 }
-addConfig('js', new Date());
-addConfig('config', 'G-8ZRE2X4NSL');
+gTag('js', new Date());
+gTag('config', 'G-8ZRE2X4NSL');
 /* Fonts */
 var openSans = document.createElement('link');
 openSans.rel = 'stylesheet';
