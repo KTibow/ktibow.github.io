@@ -15,7 +15,6 @@ function setupCard() {
   document.getElementById("useTheCard").style.display = "none";
 }
 function saveCard() {
-  console.log(is_first);
   var validRegex = /^\d{4,12}$/;
   var cardNumber = document.getElementById("cardNumber").value;
   var cardPin = document.getElementById("cardPin").value;
@@ -28,6 +27,11 @@ function saveCard() {
     document.getElementById("cardNumberImage").src = getBarcodeURL(cardNumber);
     document.getElementById("cardPinImage").src = getBarcodeURL(cardPin);
     document.getElementById("cardSetup").style.display = "none";
+    if (is_first) {
+      gTag("event", "sign_up", {
+        "method": "card_number"
+      });
+    }
   }
 }
 function useCard() {
