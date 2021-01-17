@@ -1,3 +1,6 @@
+body {
+  background-color: hsl(0, 0%, var(--background-l));
+}
 h1 {
   color: hsl(265, 100%, var(--h1-l));
 }
