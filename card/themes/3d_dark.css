@@ -1,0 +1,26 @@
+body {
+  background-color: hsl(0, 0%, 10%);
+}
+h1 {
+  color: hsl(265, 100%, 60%);
+}
+h2, h3 {
+  color: hsl(195, 100%, 45%);
+}
+button {
+  background-color: hsl(195, 100%, 62.5%);
+  color: black;
+  box-shadow: 4px 4px 2.5px hsl(195, 100%, 50%);
+  border-radius: 1em;
+}
+button:hover {
+  background-color: hsl(195, 100%, 67.5%);
+}
+button:active {
+  background-color: hsl(195, 100%, 75%);
+  box-shadow: 3px 3px 2px hsl(195, 100%, 60%);
+  transform: translate(1px, 1px);
+}
+img {
+  box-shadow: 4px 4px 2.5px hsl(195, 100%, 20%);
+}
