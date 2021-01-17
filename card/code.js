@@ -1,57 +1,61 @@
+function getBarcodeURL(number) {
+  return `https://bwipjs-api.metafloor.com/?bcid=interleaved2of5&text=${number}`;
+}
 if (localStorage.getItem("card") == null) {
-  document.getElementById("cardpromo").style.display = "unset";
+  document.getElementById("cardPromo").style.display = "block";
 } else {
-  var cardstuff = localStorage.getItem("card").split(":");
-  document.getElementById("usecard").style.display = "unset";
+  var cardData = localStorage.getItem("card").split(":");
+  document.getElementById("useTheCard").style.display = "block";
   document.getElementById(
-    "cardidimg"
-  ).src = `https://bwipjs-api.metafloor.com/?bcid=interleaved2of5&text=${cardstuff[0]}`;
-  document.getElementById("cardpinimg").src =
-    "https://barcodes4.me/barcode/i2of5/" + cardstuff[1] + ".png?resolution=4";
+    "cardNumberImage"
+  ).src = getBarcodeURL(cardData[0]);
+  document.getElementById("cardPinImage").src =getBarcodeURL(cardData[1]);
 }
 function setupCard() {
-  document.getElementById("cardpromo").style.display = "none";
-  document.getElementById("cardsetup").style.display = "unset";
-  document.getElementById("usecard").style.display = "none";
+  document.getElementById("cardPromo").style.display = "none";
+  document.getElementById("cardSetup").style.display = "block";
+  document.getElementById("useTheCard").style.display = "none";
 }
 function saveCard() {
-  var testreg = /^\d{4,12}$/;
-  var cardnum = document.getElementById("cardnum").value;
-  var cardpin = document.getElementById("cardpin").value;
-  if (!cardnum.match(testreg) || !cardpin.match(testreg)) {
+  var validRegex = /^\d{4,12}$/;
+  var cardNumber = document.getElementById("cardNumber").value;
+  var cardPin = document.getElementById("cardPin").value;
+  if (!cardNumber.match(validRegex) || !cardPin.match(validRegex)) {
     alert("Check your card details. Max 12 digits, min 4 digits.");
   } else {
     localStorage.removeItem("card");
-    localStorage.setItem("card", cardnum + ":" + cardpin);
-    document.getElementById("usecard").style.display = "unset";
-    document.getElementById("cardidimg").src =
-      "https://barcodes4.me/barcode/i2of5/" + cardnum + ".png?resolution=4";
-    document.getElementById("cardpinimg").src =
-      "https://barcodes4.me/barcode/i2of5/" + cardpin + ".png?resolution=4";
-    document.getElementById("cardsetup").style.display = "none";
+    localStorage.setItem("card", `${cardNumber}:${cardPin}`;
+    document.getElementById("useTheCard").style.display = "block";
+    document.getElementById("cardNumberImage").src =getBarcodeURL(cardNumber)
+    document.getElementById("cardPinImage").src =getBarcodeURL(cardPin);
+    document.getElementById("cardSetup").style.display = "none";
   }
 }
-function runCard() {
-  document.getElementById("cardidimg").style.opacity = "1";
-  document.getElementById("cardidimg").style.display = "unset";
-  setTimeout(window.scrollBy, 40, 0, 1000);
-  setTimeout(function () {
-    setTimeout(window.scrollBy, 40, 0, 1000);
-    document.getElementById("cardidimg").style.opacity = "0";
-    document.getElementById("cardidimg").style.display = "none";
-    document.getElementById("cardpinimg").style.opacity = "1";
-    document.getElementById("cardpinimg").style.display = "unset";
-    setTimeout(function () {
+function useCard() {
+  document.getElementById("cardNumberImage").style.opacity = "1";
+  document.getElementById("cardNumberImage").style.display = "inline";
+  setTimeout(() => {
+    window.scrollBy(0, 1000);
+  }, 40);
+  setTimeout(() => {
+    window.scrollBy(0, 1000);
+  }, 710);
+  setTimeout(() => {
+    document.getElementById("cardNumberImage").style.opacity = "0";
+    document.getElementById("cardNumberImage").style.display = "none";
+    document.getElementById("cardPinImage").style.opacity = "1";
+    document.getElementById("cardPinImage").style.display = "inline";
+    setTimeout(() => {
       setTimeout(window.scrollBy, 40, 0, -1000);
-      document.getElementById("cardpinimg").style.opacity = "0";
-      document.getElementById("cardpinimg").style.display = "none";
+      document.getElementById("cardPinImage").style.opacity = "0";
+      document.getElementById("cardPinImage").style.display = "none";
     }, 670);
   }, 670);
 }
 function showDetails() {
-  var cardstuff = localStorage.getItem("card").split(":");
-  alert(`Card number: ${cardstuff[0]}
-Card PIN: ${cardstuff[1]}`);
+  var cardData = localStorage.getItem("card").split(":");
+  alert(`Card number: ${cardData[0]}
+Card PIN: ${cardData[1]}`);
 }
 function choose(choices) {
   var index = Math.floor(Math.random() * choices.length);
@@ -69,11 +73,11 @@ function updatePromo() {
 }
 setInterval(updatePromo, 2000);
 for (clickConfig of [
-  ["setupcardbutton", setupCard],
-  ["setupcardbutton2", setupCard],
-  ["savecardbutton", saveCard],
-  ["showdetailsbutton", showDetails],
-  ["runcardbutton", runCard]]) {
+  ["setupCardButton", setupCard],
+  ["reconfigureCard", setupCard],
+  ["saveCardDetailsButton", saveCard],
+  ["showCardDetailsButton", showDetails],
+  ["showCardButton", useCard]]) {
   document.getElementById(clickConfig[0]).addEventListener(
     "click",
     () => {
