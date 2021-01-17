@@ -1,7 +1,7 @@
 h1 {
   color: hsl(265, 100%, 50%);
 }
-h2, h3 {
+h2, h3, a {
   color: hsl(195, 100%, 37.5%);
 }
 button {
