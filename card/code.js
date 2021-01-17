@@ -29,7 +29,7 @@ function saveCard() {
     document.getElementById("cardSetup").style.display = "none";
     if (is_first) {
       gTag("event", "sign_up", {
-        "method": "card_number"
+        method: "card_number"
       });
     }
   }
