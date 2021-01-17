@@ -5,16 +5,16 @@ h2, h3 {
   color: hsl(195, 100%, 37.5%);
 }
 button {
-  background-color: #08b;
+  background-color: hsl(195, 100%, 37.5%);
   color: white;
   box-shadow: 4px 4px 2.5px hsl(195, 100%, 50%);
   border-radius: 1em;
 }
 button:hover {
-  background-color: #0080b0;
+  background-color: hsl(195, 100%, 35%);
 }
 button:active {
-  background-color: #07a;
+  background-color: hsl(195, 100%, 32.5%);
   box-shadow: 3px 3px 2px hsl(195, 100%, 40%);
   transform: translate(1px, 1px);
 }
