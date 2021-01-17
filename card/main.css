@@ -1,0 +1,34 @@
+* {
+  font-family: Open Sans, Arial, sans-serif;
+}
+h1 {
+  height: 2em;
+}
+h2, h3 {
+  height: 2em;
+}
+body {
+  margin: 15px;
+}
+button {
+  cursor: pointer;
+  display: block;
+  font-size: 1em;
+  border: none;
+  padding: 1.4em;
+  margin: 1em;
+  width: 90%;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, opacity 0.3s, visibility 0.3s;
+}
+input {
+  height: 2em;
+}
+img {
+  opacity: 0;
+  image-rendering: crisp-edges;
+  width: calc(85vw - 40px);
+  margin: 0 auto;
+  padding: 20px;
+  display: block;
+  height: 1.3in;
+}
