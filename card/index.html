@@ -38,6 +38,7 @@
         border-radius: 1em;
         padding: 1.4em;
         margin: 5%;
+        width: 90%;
         transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, opacity 0.3s, visibility 0.3s;
       }
       button:hover {
@@ -94,8 +95,8 @@
       <button id="showCardButton" onclick="useCard()" class="emph">Show card</button><br/>
       <button id="reconfigureCard" onclick="setupCard(); is_first = false">Change card details</button>
       <button id="showCardDetailsButton" onclick="showDetails()">Show card details</button><br/>
-      <img id="cardNumberImage">
-      <img id="cardPinImage">
+      <img id="cardNumberImage" style="display: none;">
+      <img id="cardPinImage" style="display: none;">
     </div>
     <script src="code.js"></script>
     <br/>
