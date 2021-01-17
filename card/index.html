@@ -64,11 +64,6 @@
         display: block;
         height: 1.3in;
       }
-      .emph {
-        font-weight: bold;
-        width: 80%;
-        padding: 1.7em;
-      }
     </style>
   </head>
   <body>
@@ -92,15 +87,15 @@
     </div>
     <div id="useTheCard" style="display: none;">
       <h2>Use card:</h2>
-      <button id="showCardButton" onclick="useCard()">Show card</button><br/>
+      <button id="showCardButton" onclick="useCard()">Show card</button>
       <button id="reconfigureCard" onclick="setupCard(); is_first = false">Change card details</button>
-      <button id="showCardDetailsButton" onclick="showDetails()">Show card details</button><br/>
+      <button id="showCardDetailsButton" onclick="showDetails()">Show card details</button>
       <img id="cardNumberImage" style="display: none;">
       <img id="cardPinImage" style="display: none;">
     </div>
     <script src="code.js"></script>
     <br/>
-    <button id="addHomeScreenButton" class="emph">Add to Home Screen</button>
+    <button id="addHomeScreenButton">Add to Home Screen</button>
     <script>
       let deferredPrompt;
       const addButton = document.getElementById("addHomeScreenButton");
