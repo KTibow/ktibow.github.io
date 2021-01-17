@@ -71,8 +71,6 @@ function updatePromo() {
 }
 setInterval(updatePromo, 2000);
 for (clickConfig of [
-  ["setupCardButton", setupCard],
-  ["reconfigureCard", setupCard],
   ["saveCardDetailsButton", saveCard],
   ["showCardDetailsButton", showDetails],
   ["showCardButton", useCard],
