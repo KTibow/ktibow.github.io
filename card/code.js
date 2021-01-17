@@ -24,7 +24,7 @@ function saveCard() {
     alert("Check your card details. Max 12 digits, min 4 digits.");
   } else {
     localStorage.removeItem("card");
-    localStorage.setItem("card", `${cardNumber}:${cardPin}`;
+    localStorage.setItem("card", `${cardNumber}:${cardPin}`);
     document.getElementById("useTheCard").style.display = "block";
     document.getElementById("cardNumberImage").src =getBarcodeURL(cardNumber)
     document.getElementById("cardPinImage").src =getBarcodeURL(cardPin);
