@@ -60,7 +60,7 @@ function choose(choices) {
   return choices[index];
 }
 function updatePromo() {
-  document.getElementById("promoheader").innerHTML = choose([
+  document.getElementById("promoHeader").innerHTML = choose([
     "Simplify checkout at the library.",
     "Forget about carrying your library card.",
     "Sign in to checkout with one tap.",
