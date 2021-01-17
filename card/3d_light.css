@@ -1,0 +1,23 @@
+h1 {
+  color: #60E;
+}
+h2, h3 {
+  color: #08b;
+}
+button {
+  background-color: #08b;
+  color: white;
+  box-shadow: 4px 4px 2.5px #0bf;
+  border-radius: 1em;
+}
+button:hover {
+  background-color: #0080b0;
+}
+button:active {
+  background-color: #07a;
+  box-shadow: 3px 3px 2px #09d;
+  transform: translate(1px, 1px);
+}
+img {
+  box-shadow: 4px 4px 2.5px #aef;
+}
