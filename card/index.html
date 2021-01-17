@@ -74,7 +74,7 @@
     <h2>Your phone is your card. <a href="/card/what/">Help</a></h2>
     <div id="cardPromo" style="display: none;">
       <h2 id="promoHeader">Simplify checkout at the library.</h2>
-      <button id="setupCardButton" onclick="setupCard()">Setup your card</button>
+      <button id="setupCardButton" onclick="setupCard(true)">Setup your card</button>
     </div>
     <div id="cardSetup" style="display: none;">
       <h2>Card setup:</h2>
@@ -91,7 +91,7 @@
     <div id="useTheCard" style="display: none;">
       <h2>Use card:</h2>
       <button id="showCardButton" onclick="useCard()" class="emph">Show card</button><br/>
-      <button id="reconfigureCard" onclick="setupCard()">Change card details</button>
+      <button id="reconfigureCard" onclick="setupCard(false)">Change card details</button>
       <button id="showCardDetailsButton" onclick="showDetails()">Show card details</button><br/>
       <img id="cardNumberImage">
       <img id="cardPinImage">
