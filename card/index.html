@@ -86,13 +86,13 @@
         Card PIN:<br/><input type="number" id="cardPin"/>
       </label>
       <br/>
-      <button id="saveCardDetailsButton">Save</button>
+      <button id="saveCardDetailsButton" onclick="saveCard()">Save</button>
     </div>
     <div id="useTheCard" style="display: none;">
       <h2>Use card:</h2>
-      <button id="showCardButton" class="emph">Show card</button><br/>
+      <button id="showCardButton" onclick="useCard()" class="emph">Show card</button><br/>
       <button id="reconfigureCard" onclick="setupCard()">Change card details</button>
-      <button id="showCardDetailsButton">Show card details</button><br/>
+      <button id="showCardDetailsButton" pnclick="showDetails()">Show card details</button><br/>
       <img id="cardNumberImage">
       <img id="cardPinImage">
     </div>
