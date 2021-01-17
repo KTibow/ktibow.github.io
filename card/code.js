@@ -6,10 +6,8 @@ if (localStorage.getItem("card") == null) {
 } else {
   var cardData = localStorage.getItem("card").split(":");
   document.getElementById("useTheCard").style.display = "block";
-  document.getElementById(
-    "cardNumberImage"
-  ).src = getBarcodeURL(cardData[0]);
-  document.getElementById("cardPinImage").src =getBarcodeURL(cardData[1]);
+  document.getElementById("cardNumberImage").src = getBarcodeURL(cardData[0]);
+  document.getElementById("cardPinImage").src = getBarcodeURL(cardData[1]);
 }
 function setupCard() {
   document.getElementById("cardPromo").style.display = "none";
@@ -26,8 +24,8 @@ function saveCard() {
     localStorage.removeItem("card");
     localStorage.setItem("card", `${cardNumber}:${cardPin}`);
     document.getElementById("useTheCard").style.display = "block";
-    document.getElementById("cardNumberImage").src =getBarcodeURL(cardNumber)
-    document.getElementById("cardPinImage").src =getBarcodeURL(cardPin);
+    document.getElementById("cardNumberImage").src = getBarcodeURL(cardNumber);
+    document.getElementById("cardPinImage").src = getBarcodeURL(cardPin);
     document.getElementById("cardSetup").style.display = "none";
   }
 }
@@ -77,7 +75,8 @@ for (clickConfig of [
   ["reconfigureCard", setupCard],
   ["saveCardDetailsButton", saveCard],
   ["showCardDetailsButton", showDetails],
-  ["showCardButton", useCard]]) {
+  ["showCardButton", useCard],
+]) {
   document.getElementById(clickConfig[0]).addEventListener(
     "click",
     () => {
