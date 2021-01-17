@@ -8,5 +8,5 @@ if (localStorage.getItem("dark") !== null) {
 }
 var styler = document.createElement("link");
 styler.rel = "stylesheet";
-styler.href = `${themeChoice}_${darkMode}.css`;
+styler.href = `themes/${themeChoice}_${darkMode}.css`;
 document.head.appendChild(styler);
