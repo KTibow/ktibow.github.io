@@ -4,7 +4,8 @@
 h1 {
   height: 2em;
 }
-h2, h3 {
+h2,
+h3 {
   height: 2em;
 }
 body {
@@ -18,7 +19,8 @@ button {
   padding: 1.4em;
   margin: 1em;
   width: 90%;
-  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, opacity 0.3s, visibility 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s,
+    opacity 0.3s, visibility 0.3s;
 }
 input {
   height: 2em;
