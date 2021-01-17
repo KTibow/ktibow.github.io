@@ -70,16 +70,3 @@ function updatePromo() {
   ]);
 }
 setInterval(updatePromo, 2000);
-for (clickConfig of [
-  ["saveCardDetailsButton", saveCard],
-  ["showCardDetailsButton", showDetails],
-  ["showCardButton", useCard],
-]) {
-  document.getElementById(clickConfig[0]).addEventListener(
-    "click",
-    () => {
-      setTimeout(clickConfig[1], 400);
-    },
-    true
-  );
-}
