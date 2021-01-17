@@ -15,6 +15,7 @@ function setupCard() {
   document.getElementById("useTheCard").style.display = "none";
 }
 function saveCard() {
+  console.log(is_first);
   var validRegex = /^\d{4,12}$/;
   var cardNumber = document.getElementById("cardNumber").value;
   var cardPin = document.getElementById("cardPin").value;
