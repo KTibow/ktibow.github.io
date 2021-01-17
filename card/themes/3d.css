@@ -1,0 +1,25 @@
+h1 {
+  color: hsl(265, 100%, var(--h1-l));
+}
+h2,
+h3,
+a {
+  color: hsl(195, 100%, var(--blue-l));
+}
+button {
+  background-color: hsl(195, 100%, var(--blue-l));
+  color: white;
+  box-shadow: 4px 4px 2.5px hsl(195, 100%, 50%);
+  border-radius: 1em;
+}
+button:hover {
+  background-color: hsl(195, 100%, var(--blue-dark-l));
+}
+button:active {
+  background-color: hsl(195, 100%, var(--blue-darker-l));
+  box-shadow: 3px 3px 2px hsl(195, 100%, var(--blue-accent-l));
+  transform: translate(1px, 1px);
+}
+img {
+  box-shadow: 4px 4px 2.5px hsl(195, 100%, var(--blue-on-background-l));
+}
