@@ -1,13 +1,13 @@
 h1 {
-  color: #60E;
+  color: hsl(265, 100%, 50%);
 }
 h2, h3 {
-  color: #08b;
+  color: hsl(195, 100%, 37.5%);
 }
 button {
   background-color: #08b;
   color: white;
-  box-shadow: 4px 4px 2.5px #0bf;
+  box-shadow: 4px 4px 2.5px hsl(195, 100%, 50%);
   border-radius: 1em;
 }
 button:hover {
@@ -15,9 +15,9 @@ button:hover {
 }
 button:active {
   background-color: #07a;
-  box-shadow: 3px 3px 2px #09d;
+  box-shadow: 3px 3px 2px hsl(195, 100%, 40%);
   transform: translate(1px, 1px);
 }
 img {
-  box-shadow: 4px 4px 2.5px #aef;
+  box-shadow: 4px 4px 2.5px hsl(195, 100%, 80%);
 }
