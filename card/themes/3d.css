@@ -10,19 +10,19 @@ a {
   color: hsl(195, 100%, var(--blue-l));
 }
 button {
-  background-color: hsl(195, 100%, var(--blue-l));
-  color: white;
+  background-color: hsl(195, 100%, var(--button-l));
+  color: hsl(0, 0%, var(--button-text-l));
   box-shadow: 4px 4px 2.5px hsl(195, 100%, 50%);
   border-radius: 1em;
 }
 button:hover {
-  background-color: hsl(195, 100%, var(--blue-dark-l));
+  background-color: hsl(195, 100%, var(--button-hover-l));
 }
 button:active {
-  background-color: hsl(195, 100%, var(--blue-darker-l));
-  box-shadow: 3px 3px 2px hsl(195, 100%, var(--blue-accent-l));
+  background-color: hsl(195, 100%, var(--button-active-l));
+  box-shadow: 3px 3px 2px hsl(195, 100%, var(--button-active-shadow-l));
   transform: translate(1px, 1px);
 }
 img {
-  box-shadow: 4px 4px 2.5px hsl(195, 100%, var(--blue-on-background-l));
+  box-shadow: 4px 4px 2.5px hsl(195, 100%, var(--image-shadow-l));
 }
