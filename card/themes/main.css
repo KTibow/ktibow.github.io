@@ -49,3 +49,6 @@ img {
     filter: brightness(5) blur(5px);
   }
 }
+.altButton {
+  filter: hue-rotate(70deg);
+}
