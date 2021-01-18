@@ -57,7 +57,7 @@ function useCard() {
     document.getElementById("cardPinImage").style.opacity = "0";
     document.getElementById("cardPinImage").style.display = "none";
     window.scrollBy(0, -1000);
-  }, 1333);
+  }, 2333);
 }
 function showDetails() {
   var cardNumber = document.getElementById("cardNumber").value;
