@@ -15,6 +15,7 @@ button {
   color: hsl(0, 0%, var(--button-text-l));
   box-shadow: 4px 4px 2.5px hsl(195, 100%, 50%);
   border-radius: 1em;
+  display: block;
 }
 button:hover {
   background-color: hsl(195, 100%, var(--button-hover-l));
