@@ -8,8 +8,10 @@ if (localStorage.getItem("cardNumber") == null) {
   var cardNumber = localStorage.getItem("cardNumber");
   var cardPin = localStorage.getItem("cardPin");
   document.getElementById("useTheCard").style.display = "block";
-  document.getElementById("cardNumberImage").src = getBarcodeURL(cardNumber);
-  document.getElementById("cardPinImage").src = getBarcodeURL(cardPin);
+  window.onload = () => {
+    document.getElementById("cardNumberImage").src = getBarcodeURL(cardNumber);
+    document.getElementById("cardPinImage").src = getBarcodeURL(cardPin);
+  };
 }
 function setupCard() {
   document.getElementById("cardPromo").style.display = "none";
