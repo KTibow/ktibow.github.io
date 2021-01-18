@@ -3,11 +3,11 @@ function getBarcodeURL(number) {
   return `https://bwipjs-api.metafloor.com/?bcid=interleaved2of5&text=${number}&barcolor=${color}`;
 }
 if (localStorage.getItem("cardNumber") == null) {
-  document.getElementById("cardPromo").style.display = "block";
+  document.getElementById("cardPromo").style.display = "inline-block";
 } else {
   var cardNumber = localStorage.getItem("cardNumber");
   var cardPin = localStorage.getItem("cardPin");
-  document.getElementById("useTheCard").style.display = "block";
+  document.getElementById("useTheCard").style.display = "inline-block";
   window.onload = () => {
     document.getElementById("cardNumberImage").src = getBarcodeURL(cardNumber);
     document.getElementById("cardPinImage").src = getBarcodeURL(cardPin);
@@ -15,7 +15,7 @@ if (localStorage.getItem("cardNumber") == null) {
 }
 function setupCard() {
   document.getElementById("cardPromo").style.display = "none";
-  document.getElementById("cardSetup").style.display = "block";
+  document.getElementById("cardSetup").style.display = "inline-block";
   document.getElementById("useTheCard").style.display = "none";
 }
 function saveCard() {
@@ -28,7 +28,7 @@ function saveCard() {
     localStorage.removeItem("card");
     localStorage.setItem("cardNumber", cardNumber);
     localStorage.setItem("cardPin", cardPin);
-    document.getElementById("useTheCard").style.display = "block";
+    document.getElementById("useTheCard").style.display = "inline-block";
     document.getElementById("cardNumberImage").src = getBarcodeURL(cardNumber);
     document.getElementById("cardPinImage").src = getBarcodeURL(cardPin);
     document.getElementById("cardSetup").style.display = "none";
