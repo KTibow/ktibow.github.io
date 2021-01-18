@@ -1,12 +1,21 @@
-var themeChoice = "3d";
-var darkMode = "light";
+/* main.css */
+var mainStyle = document.createElement("link");
+mainStyle.rel = "stylesheet";
+mainStyle.href = "themes/main.css";
+document.head.appendChild(mainStyle);
+/* Base styling */
+var baseStyle = document.createElement("link");
+baseStyle.rel = "stylesheet";
+baseStyle.href = "themes/3d.css";
 if (localStorage.getItem("theme") !== null) {
-  themeChoice = localStorage.getItem("theme");
+  baseStyle.href = `themes/${localStorage.getItem("theme")}.css`;
 }
+document.head.appendChild(baseStyle);
+/* Color styling */
+var colorStyle = document.createElement("link");
+colorStyle.rel = "stylesheet";
+colorStyle.href = `themes/${localStorage.getItem("theme")}_light.css`;
 if (localStorage.getItem("dark") !== null) {
-  darkMode = localStorage.getItem("dark");
+  colorStyle.href = `themes/${localStorage.getItem("theme")}_${localStorage.getItem("dark")}.css`;
 }
-var styler = document.createElement("link");
-styler.rel = "stylesheet";
-styler.href = `themes/${themeChoice}_${darkMode}.css`;
-document.head.appendChild(styler);
+document.head.appendChild(colorStyle);
