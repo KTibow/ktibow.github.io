@@ -16,6 +16,10 @@ var colorStyle = document.createElement("link");
 colorStyle.rel = "stylesheet";
 colorStyle.href = `themes/${localStorage.getItem("theme")}_light.css`;
 if (localStorage.getItem("dark") !== null) {
-  colorStyle.href = `themes/${localStorage.getItem("theme")}_${localStorage.getItem("dark")}.css`;
+  if (localStorage.getItem("theme") !== null) {
+    colorStyle.href = `themes/${localStorage.getItem("theme")}_${localStorage.getItem("dark")}.css`;
+  } else {
+    colorStyle.href = `themes/3d_${localStorage.getItem("dark")}.css`;
+  }
 }
 document.head.appendChild(colorStyle);
