@@ -34,3 +34,18 @@ img {
   display: block;
   height: 1.3in;
 }
+.placeholder {
+  animation: infinite 0.5s throbPlaceholder;
+  border: 2px solid #111;
+}
+@keyframes throbPlaceholder {
+  0% {
+    filter: brightness(5) blur(5px);
+  }
+  50% {
+    filter: brightness(10) blur(5px);
+  }
+  100% {
+    filter: brightness(5) blur(5px);
+  }
+}
