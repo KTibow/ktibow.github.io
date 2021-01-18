@@ -1,0 +1,25 @@
+body {
+  background-color: hsl(0, 0%, var(--background-l));
+  --bar-color: 8844FF;
+}
+h1 {
+  color: hsl(265, 100%, var(--h1-l));
+}
+h2,
+h3,
+a {
+  color: hsl(195, 100%, var(--blue-l));
+}
+button {
+  background-color: hsl(195, 100%, var(--button-l));
+  color: hsl(0, 0%, var(--button-text-l));
+  display: inline-block;
+  width: 10em;
+  height: 10em;
+}
+button:hover {
+  background-color: hsl(195, 100%, var(--button-hover-l));
+}
+button:active {
+  background-color: hsl(195, 100%, var(--button-active-l));
+}
