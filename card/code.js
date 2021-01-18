@@ -1,5 +1,6 @@
 function getBarcodeURL(number) {
-  return `https://bwipjs-api.metafloor.com/?bcid=interleaved2of5&text=${number}`;
+  var color = getComputedStyle(document.body).getPropertyValue("--bar-color");
+  return `https://bwipjs-api.metafloor.com/?bcid=interleaved2of5&text=${number}&barcolor=${color}`;
 }
 if (localStorage.getItem("card") == null) {
   document.getElementById("cardPromo").style.display = "block";
