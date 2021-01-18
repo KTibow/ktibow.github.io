@@ -1,5 +1,6 @@
 body {
   background-color: hsl(0, 0%, var(--background-l));
+  --bar-color: "8844FF";
 }
 h1 {
   color: hsl(265, 100%, var(--h1-l));
@@ -24,5 +25,5 @@ button:active {
   transform: translate(1px, 1px);
 }
 img {
-  box-shadow: 4px 4px 2.5px hsl(195, 100%, var(--image-shadow-l));
+  box-shadow: 4px 4px 2.5px hsl(265, 100%, var(--image-shadow-l));
 }
