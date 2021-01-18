@@ -29,6 +29,7 @@ img {
   opacity: 0;
   image-rendering: crisp-edges;
   width: calc(85vw - 40px);
+  max-width: 80vw;
   margin: 0 auto;
   padding: 20px;
   display: block;
