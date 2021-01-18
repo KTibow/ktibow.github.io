@@ -42,23 +42,22 @@ function saveCard() {
 function useCard() {
   document.getElementById("cardNumberImage").style.opacity = "1";
   document.getElementById("cardNumberImage").style.display = "inline";
+  document.getElementById("cardNumberImage").classList.add("placeholder")
+  window.scrollBy(0, 1000);
   setTimeout(() => {
-    window.scrollBy(0, 1000);
-  }, 40);
+    document.getElementById("cardNumberImage").classList.remove("placeholder")
+  }, 1000);
   setTimeout(() => {
-    window.scrollBy(0, 1000);
-  }, 710);
-  setTimeout(() => {
-    document.getElementById("cardNumberImage").style.opacity = "0";
-    document.getElementById("cardNumberImage").style.display = "none";
     document.getElementById("cardPinImage").style.opacity = "1";
     document.getElementById("cardPinImage").style.display = "inline";
-    setTimeout(() => {
-      setTimeout(window.scrollBy, 40, 0, -1000);
-      document.getElementById("cardPinImage").style.opacity = "0";
-      document.getElementById("cardPinImage").style.display = "none";
-    }, 670);
-  }, 670);
+    document.getElementById("cardNumberImage").style.opacity = "0";
+    document.getElementById("cardNumberImage").style.display = "none";
+  }, 1667);
+  setTimeout(() => {
+    document.getElementById("cardPinImage").style.opacity = "0";
+    document.getElementById("cardPinImage").style.display = "none";
+    window.scrollBy(0, -1000);
+  }, 1333);
 }
 function showDetails() {
   var cardNumber = document.getElementById("cardNumber").value;
