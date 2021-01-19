@@ -6,4 +6,5 @@ body {
   --item-background-hover: rgba(255, 255, 255, 0.5);
   --item-background-active: rgba(255, 255, 255, 0.3);
   --item-color: #222;
+  --bar-color: 000000;
 }
