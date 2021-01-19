@@ -33,7 +33,7 @@ button {
   background: var(--item-background);
   backdrop-filter: blur(5px);
   border-radius: 5px;
-  width: min(35%, 8.2em);
+  width: min(40%, 8.2em);
   height: 8.2em;
   filter: unset !important;
   color: var(--item-color);
