@@ -30,4 +30,5 @@ label {
 input {
   background: hsl(0, 0%, var(--input-background-l));
   color: hsl(0, 0%, var(--input-text-l));
+  border: none;
 }
