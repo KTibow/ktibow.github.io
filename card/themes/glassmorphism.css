@@ -8,9 +8,6 @@ html {
   );
 }
 @media (orientation: portrait) {
-  html {
-    height: unset;
-  }
   button {
     margin: 0.5em;
   }
