@@ -8,4 +8,6 @@ body {
   --button-active-l: 32.5%;
   --button-active-shadow-l: 40%;
   --image-shadow-l: 80%;
+  --input-text-l: 5%;
+  --input-background-l: 95%;
 }
