@@ -29,3 +29,9 @@ button {
   filter: unset !important;
   color: var(--item-color);
 }
+button:hover {
+  background: var(--item-background-hover);
+}
+button:active {
+  background: var(--item-background-active);
+}
