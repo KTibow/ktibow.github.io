@@ -58,3 +58,8 @@ input {
   border: none;
   margin: 10px 0;
 }
+img {
+  border-radius: 5px;
+  background: var(--item-background);
+  backdrop-filter: blur(10px);
+}
