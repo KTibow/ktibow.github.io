@@ -6,4 +6,6 @@ body {
   --button-text-l: 0%;
   --button-hover-l: 65%;
   --button-active-l: 70%;
+  --input-text-l: 85%;
+  --input-background-l: 15%;
 }
