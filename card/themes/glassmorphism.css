@@ -16,6 +16,9 @@ body {
   --bar-color: FFFFFF;
   --section-display: inline;
 }
+a {
+  color: var(--item-color);
+}
 h1, h2, h3 {
   background: var(--item-background);
   backdrop-filter: blur(5px);
@@ -40,4 +43,8 @@ button:hover {
 }
 button:active {
   background: var(--item-background-active);
+}
+input {
+  background: transparent;
+  border: none;
 }
