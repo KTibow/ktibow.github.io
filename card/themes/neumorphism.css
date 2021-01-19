@@ -1,0 +1,7 @@
+body {
+  background: var(--background);
+}
+button {
+  background: var(--background);
+  box-shadow: var(--shadow);
+}
