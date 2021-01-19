@@ -1,5 +1,4 @@
 html {
-  height: 100%;
   /* Blue to purple */
   background-color: hsl(265, 100%, var(--background-l));
   background: linear-gradient(
