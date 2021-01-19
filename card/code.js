@@ -79,4 +79,7 @@ function updatePromo() {
     "You're wasting more time than you think finding your card.",
   ]);
 }
+function chooseTheme() {
+  window.location.href = "/card/themes/";
+}
 setInterval(updatePromo, 2000);

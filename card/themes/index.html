@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script defer src="/common2.js"></script>
+    <title>Choose a theme</title>
+    <link rel="manifest" href="/card/manifest.json">
+    <link rel="icon" sizes="853x853" href="/card/maskable_icon.png">
+    <meta name="theme-color" content="#00bbff">
+    <script src="../theme.js"></script>
+    <style>
+      * {
+        font-family: Open Sans, Arial, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Choose a theme</h1>
+    <select id="themeDropdown">
+      <option value="3d">3D (default)</option>
+      <option value="flat">Flat (windows 8-ish)</option>
+      <option value="glassmorphism">Glassmorphism (gradient background)</option>
+      <option value="neumorphism">Neumorphism (looks like stuff pushing up from rubber)</option>
+    </select>
+    <br/>
+    Dark mode <input type="checkbox">
+    <br/>
+    <button onclick="saveTheme();">Save theme</button>
+    <script>
+      function saveTheme() {
+        window.localStorage.setItem("theme", document.getElementById("themeDropdown").value);
+        if (document.querySelector("input").value == "on") {
+          window.localStorage.setItem("dark", "dark");
+        } else {
+          window.localStorage.setItem("dark", "light");
+        }
+        window.location.href = "/card/";
+      }
+    </script>
+  </body>
+</html>

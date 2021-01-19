@@ -1,7 +1,29 @@
-body {
+body, input {
   background: var(--background);
+  color: var(--color);
+  --bar-color: 8844FF;
 }
 button {
   background: var(--background);
   box-shadow: var(--shadow);
+  color: var(--color);
+  border-radius: 10px;
+  width: 40%;
+  height: 5em;
+}
+button:hover, button:active {
+  box-shadow: var(--strong-shadow);
+}
+input {
+  background: var(--background);
+  border: none;
+  box-shadow: var(--inset-shadow);
+  height: 3em;
+}
+.altButton {
+  filter: none;
+  font-weight: bold;
+}
+h1, h2, h3, a {
+  color: #8844FF;
 }

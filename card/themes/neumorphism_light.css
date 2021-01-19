@@ -1,0 +1,7 @@
+body {
+  --background: #F3F5F7;
+  --color: #333;
+  --shadow: -5.5px -5.5px 5.5px 0 rgba(255, 255, 255, 0.5), 5.5px 5.5px 5.5px 0 rgba(0, 0, 0, 0.03);
+  --strong-shadow: -10px -10px 10px 0 rgba(255, 255, 255, 0.5), 10px 10px 10px 0 rgba(0, 0, 0, 0.03);
+  --inset-shadow: inset -5.5px -5.5px 5.5px 0 rgba(255, 255, 255, 0.5), inset 5.5px 5.5px 5.5px 0 rgba(0, 0, 0, 0.03);
+}

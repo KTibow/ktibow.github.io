@@ -16,7 +16,7 @@ button {
   font-size: 1em;
   border: none;
   padding: 1.4em;
-  margin: 1em;
+  margin: 0.7em;
   width: 90%;
   transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s,
     opacity 0.3s, visibility 0.3s;
@@ -27,6 +27,7 @@ input {
 img {
   opacity: 0;
   image-rendering: crisp-edges;
+  image-rendering: pixelated;
   width: calc(85vw - 40px);
   max-width: 80vw;
   margin: 0 auto;
