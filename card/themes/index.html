@@ -28,7 +28,7 @@
     <script>
       function saveTheme() {
         window.localStorage.setItem("theme", document.getElementById("themeDropdown").value);
-        if (document.querySelector("input").value == "on") {
+        if (document.querySelector("input").checked) {
           window.localStorage.setItem("dark", "dark");
         } else {
           window.localStorage.setItem("dark", "light");
