@@ -15,7 +15,8 @@ h1, h2, h3 {
   background: var(--item-background);
   backdrop-filter: blur(5px);
   border-radius: 5px;
-  padding: 15px;
+  line-height: 2em;
+  padding: 8px 15px;
   margin: 1rem;
   display: table;
   color: var(--item-color);
