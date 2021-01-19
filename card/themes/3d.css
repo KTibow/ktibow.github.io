@@ -29,3 +29,11 @@ button:active {
 img {
   box-shadow: 4px 4px 2.5px hsl(265, 100%, var(--image-shadow-l));
 }
+label {
+  color: hsl(0, 0%, var(--input-text-l));
+}
+input {
+  background: hsl(0, 0%, var(--input-background-l));
+  color: hsl(0, 0%, var(--input-text-l));
+  border: none;
+}
