@@ -43,18 +43,16 @@
     </div>
     <script src="code.js"></script>
     <button onclick="chooseTheme()">Switch theme</button>
-    <button id="addHomeScreenButton" class="altButton" style="opacity: 0; visibility: hidden;">Add to Home Screen</button>
+    <button id="addHomeScreenButton" class="altButton" style="display: none;">Add to Home Screen</button>
     <script>
       let deferredPrompt;
       const addButton = document.getElementById("addHomeScreenButton");
       window.addEventListener("beforeinstallprompt", (event) => {
           event.preventDefault();
           deferredPrompt = event;
-          addButton.style.setProperty("opacity", "1", "important");
-          addButton.style.setProperty("visibility", "visible", "important");
+          addButton.style = ""
           addButton.addEventListener("click", (event) => {
-              addButton.style.setProperty("opacity", "0", "important");
-              addButton.style.setProperty("visibility", "hidden", "important");
+              addButton.style.display = "none";
               deferredPrompt.prompt();
               deferredPrompt.userChoice.then((choiceResult) => {
                   if (choiceResult.outcome === "accepted") {
