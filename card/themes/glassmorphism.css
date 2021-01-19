@@ -7,9 +7,17 @@ html {
     hsl(265, 100%, var(--background-l))
   );
 }
+@media (orientation: portrait) {
+  html {
+    height: unset;
+  }
+  button {
+    margin: 0.5em;
+  }
+}
 body {
-  --bar-color: 8844FF;
-  --section-display: inline-block;
+  --bar-color: FFFFFF;
+  --section-display: inline;
 }
 h1, h2, h3 {
   background: var(--item-background);
