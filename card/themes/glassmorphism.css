@@ -54,9 +54,6 @@ label, select {
   border-radius: 5px;
   border: none;
 }
-option {
-  background: #222;
-}
 input {
   background: var(--item-background);
   color: var(--item-color);
