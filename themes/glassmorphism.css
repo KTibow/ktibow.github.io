@@ -13,8 +13,6 @@ h1, h2, h3, a.block {
   background: var(--item-background);
   color: var(--item-color);
   padding: 1em;
+  margin: 1rem;
   border-radius: 10px;
-}
-a.block {
-  margin: 1em;
 }
