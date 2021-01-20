@@ -8,10 +8,10 @@ html {
     hsl(265, 100%, var(--background-l))
   );
 }
-h1, a.block {
+h1, h2, h3, a.block {
   display: table;
   background: var(--item-background);
   color: var(--item-color);
-  padding: 15px;
+  padding: 1em;
   border-radius: 10px;
 }
