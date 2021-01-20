@@ -1,3 +1,5 @@
 html {
   --background-l: 60%;
+  --item-color: rgba(255, 255, 255, 0.4);
+  --item-color: #111;
 }
