@@ -23,6 +23,7 @@ input {
 .altButton {
   filter: none;
   font-weight: bold;
+  box-shadow: var(--strong-shadow);
 }
 h1, h2, h3, a {
   color: #8844FF;
