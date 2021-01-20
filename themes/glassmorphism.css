@@ -1,0 +1,10 @@
+html {
+  min-height: 100%;
+  /* Blue to purple */
+  background-color: hsl(265, 100%, var(--background-l));
+  background: linear-gradient(
+    -45deg,
+    hsl(195, 100%, var(--background-l)),
+    hsl(265, 100%, var(--background-l))
+  );
+}
