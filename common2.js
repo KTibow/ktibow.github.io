@@ -51,13 +51,13 @@ if (window.location.href.includes("/blog/")) {
     var openSansUser = document.createElement('style');
     openSansUser.innerHTML = "* { font-family: Open Sans, sans-serif; }";
     document.head.appendChild(openSansUser);
+    /* Load themes */
+    var themeTag = document.createElement("script");
+    themeTag.src = "/themes/chooser.js";
+    document.body.appendChild(themeTag);
 }
 /* Viewport */
 var newViewport = document.createElement("meta");
 newViewport.name = "viewport";
 newViewport.content = "width=device-width, initial-scale=1";
 document.head.appendChild(newViewport);
-/* Load themes */
-var themeTag = document.createElement("script");
-themeTag.src = "/themes/chooser.js";
-document.body.appendChild(themeTag);
