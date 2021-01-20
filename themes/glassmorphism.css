@@ -8,3 +8,8 @@ html {
     hsl(265, 100%, var(--background-l))
   );
 }
+h1 {
+  display: block;
+  background: var(--item-background);
+  color: var(--item-color);
+}
