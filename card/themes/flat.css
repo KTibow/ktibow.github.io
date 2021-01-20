@@ -15,8 +15,8 @@ button {
   background-color: hsl(195, 100%, var(--button-l));
   color: hsl(0, 0%, var(--button-text-l));
   display: inline-block;
-  width: min(25vw, 9em);
-  height: min(25vw, 9em);
+  width: min(20vw, 9em);
+  height: min(20vw, 9em);
 }
 button:hover {
   background-color: hsl(195, 100%, var(--button-hover-l));
