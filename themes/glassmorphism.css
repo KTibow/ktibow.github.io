@@ -8,7 +8,7 @@ html {
     hsl(265, 100%, var(--background-l))
   );
 }
-h1, a.standalone {
+h1, a.block {
   display: table;
   background: var(--item-background);
   color: var(--item-color);
