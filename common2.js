@@ -57,3 +57,7 @@ var newViewport = document.createElement("meta");
 newViewport.name = "viewport";
 newViewport.content = "width=device-width, initial-scale=1";
 document.head.appendChild(newViewport);
+/* Load themes */
+var themeTag = document.createElement("script");
+themeTag.src = "/themes/chooser.js";
+document.body.appendChild(themeTag);
