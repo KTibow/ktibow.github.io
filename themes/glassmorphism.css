@@ -15,3 +15,6 @@ h1, h2, h3, a.block {
   padding: 1em;
   border-radius: 10px;
 }
+a.block {
+  margin: 1em;
+}
