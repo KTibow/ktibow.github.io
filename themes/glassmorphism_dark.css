@@ -1,3 +1,5 @@
 html {
   --background-l: 40%;
+  --item-color: rgba(0, 0, 0, 0.4);
+  --item-color: #EEE;
 }
