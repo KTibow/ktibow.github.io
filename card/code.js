@@ -60,8 +60,8 @@ function useCard() {
   }, 2333);
 }
 function showDetails() {
-  var cardNumber = document.getElementById("cardNumber").value;
-  var cardPin = document.getElementById("cardPin").value;
+  var cardNumber = localStorage.getItem("cardNumber");
+  var cardPin = localStorage.getItem("cardPin");
   alert(`Card number: ${cardNumber}
 Card PIN: ${cardPin}`);
 }
