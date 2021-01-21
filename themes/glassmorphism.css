@@ -16,3 +16,14 @@ h1, h2, h3, a.block {
   margin: 1rem;
   border-radius: 10px;
 }
+p {
+  color: var(--item-color);
+}
+a:not(.block) {
+  display: inline-block;
+  background: var(--item-background);
+  color: var(--item-color);
+  padding: 0.5em;
+  margin: 0.3rem;
+  border-radius: 10px;
+}
