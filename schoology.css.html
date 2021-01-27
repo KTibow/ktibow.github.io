@@ -79,6 +79,17 @@
         background: var(--background);
         box-shadow: var(--shadow);
       }
+      #natrap {
+        position: fixed;
+        left: calc(50vw - 330px);
+        top: calc(50vh - 319px);
+        background: var(--background);
+        color: var(--text);
+        z-index: 1;
+        border-radius: 20px;
+        padding: 20px;
+        box-shadow: var(--shadow);
+      }
     </style>
   </head>
   <body>
@@ -87,7 +98,7 @@
       <br />
       <h2>Watch the video (you should, it explains jargon):</h2>
     </div>
-    <video src="/schoology/mp4.mp4" controls></video>
+    <video src="schoology/mp4.mp4" controls></video>
     <div class="wrapper">
       <h1>🚀 Let's do this!</h1>
       <br />
@@ -205,6 +216,11 @@
           "video_title": "Schoology.css promo"
         });
       }
+      window.addEventListener("mouseout", (evt) => {
+        if (!evt.toElement && !evt.relatedTarget) {
+          document.querySelector("#natrap").style.display = "unset";
+        }
+      });
     </script>
     <label for="darkMode">Dark mode option</label>
     <select id="darkMode">
@@ -230,7 +246,22 @@
     <button onclick="window.location='https://forms.gle/61sFqbjC784RQhcG7'">
       Send feedback (please, please answer this google form!)
     </button>
+    <div id="natrap" style="display: none;">
+      <button
+        style="display: block; float: right;"
+        onclick="document.querySelector('#natrap').style.display = 'none';"
+      >
+        ❌
+      </button>
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSf6YhFZtc88gAPobTxqd1b_2mTNAaiHcoH9edzXGaexPkQAVg/viewform?embedded=true"
+        width="640" height="598" frameborder="0" marginheight="0" marginwidth="0"
+      >
+      Loading…
+      </iframe>
+    </div>
     <p style="font-size: 50%; color: gray;">schoology.css is not affiliated with Schoology Inc. Schoology, the SCHOOLOGY® wordmark, and the S logo are registered and unregistered trademarks of Schoology, Inc. in the United States. All product names, logos, and brands are property of their respective owners.</p>
+
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
