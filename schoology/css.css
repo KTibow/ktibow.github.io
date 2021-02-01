@@ -1,5 +1,5 @@
 /*
-Schoology.css v0.3.1
+Schoology.css v0.3.2
 View history at https://github.com/KTibow/ktibow.github.io/commits/master/schoology/css.css
 */
 
@@ -132,6 +132,54 @@ div.link-btn:active,
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color);
 }
+/* Loader */
+@keyframes load {
+  0% {
+    padding: 20px;
+    border-radius: 5px;
+  }
+  12.5% {
+    padding: 20px;
+    border-radius: 20px 5px 5px 5px;
+  }
+  25% {
+    padding: 20px;
+    border-radius: 5px;
+  }
+  37.5% {
+    padding: 20px;
+    border-radius: 5px 20px 5px 5px;
+  }
+  50% {
+    padding: 20px;
+    border-radius: 5px;
+  }
+  62.5% {
+    padding: 20px;
+    border-radius: 5px 5px 20px 5px;
+  }
+  75% {
+    padding: 20px;
+    border-radius: 5px;
+  }
+  87.5% {
+    padding: 20px;
+    border-radius: 5px 5px 5px 20px;
+  }
+  100% {
+    padding: 20px;
+    border-radius: 5px;
+  }
+}
+img[alt="Loading"], .ajax-loader, div[role="menu"] div[aria-busy="true"] {
+  background: var(--color);
+  width: 0;
+  height: 0;
+  animation: infinite 1s load;
+}
+div[role="menu"] div[aria-busy="true"] {
+  background: var(--color) !important;
+}
 /**************************/
 /*                        */
 /*  Headers and footers   */
@@ -228,7 +276,7 @@ nav > ul:nth-of-type(1) > li:nth-of-type(3) > div > div {
   outline: none !important;
 }
 /* Search */
-nav > ul:nth-of-type(2) > li:nth-of-type(1) > ul {
+nav > ul:nth-of-type(2) > li:nth-last-of-type(4) > ul {
   box-shadow: var(--shadow) !important;
 }
 /* DMs */
@@ -237,7 +285,7 @@ nav > ul > li > div button[aria-label="New Message"] {
   padding: 10px;
 }
 /* Notifications */
-nav > ul:nth-of-type(2) > li:nth-of-type(4) > div > div button {
+nav > ul:nth-of-type(2) > li:nth-last-of-type(3) > div > div button {
   box-shadow: var(--shadow);
   margin: 10px;
   border-radius: 10px;
@@ -245,24 +293,24 @@ nav > ul:nth-of-type(2) > li:nth-of-type(4) > div > div button {
 }
 nav
   > ul:nth-of-type(2)
-  > li:nth-of-type(4)
+  > li:nth-last-of-type(3)
   > div
   > div
   > button[aria-selected="true"] {
   box-shadow: var(--inset-shadow);
 }
-nav > ul:nth-of-type(2) > li:nth-of-type(4):hover a {
+nav > ul:nth-of-type(2) > li:nth-last-of-type(3):hover a {
   box-shadow: none !important;
 }
-nav > ul:nth-of-type(2) > li:nth-of-type(4) > div > div > div {
+nav > ul:nth-of-type(2) > li:nth-last-of-type(3) > div > div > div {
   box-shadow: var(--shadow);
   margin: 20px;
 }
 /* Profile */
-nav > ul:nth-of-type(2) > li:nth-of-type(5) > div > ul {
+nav > ul:nth-of-type(2) > li:nth-last-of-type(2) > div > ul {
   box-shadow: none;
 }
-nav > ul:nth-of-type(2) > li:nth-of-type(5) > div > ul > li:not(:empty) {
+nav > ul:nth-of-type(2) > li:nth-last-of-type(2) > div > ul > li:not(:empty) {
   margin: 15px 10px;
   padding: 5px 10px;
   box-shadow: var(--shadow);
@@ -923,7 +971,8 @@ span.inline-icon.video-icon::before {
   content: "📺";
   font-size: 24px;
 }
-span.inline-icon.assignment-icon {
+span.inline-icon.assignment-icon,
+span.mini-icon.grade-item-icon {
   background: none;
 }
 #folder-contents-table > tbody > tr > td > div > span.inline-icon.page-icon,
@@ -936,7 +985,8 @@ span.inline-icon.assignment-icon {
   > span.inline-icon.assignment-icon::before {
   font-size: 1em;
 }
-span.inline-icon.assignment-icon::before {
+span.inline-icon.assignment-icon::before,
+span.mini-icon.grade-item-icon::before {
   content: "📝";
   font-size: 24px;
 }
@@ -995,6 +1045,7 @@ span.notify-icon.badge-icon::before {
 }
 /* Mini scaling */
 span.mini::before,
+span.mini-icon::before,
 span.inline-icon.mini::before,
 span.notify-icon::before {
   font-size: 12px !important;
@@ -1125,6 +1176,21 @@ span#tinymce-toggle-html {
 div[role="tooltip"].sgy-tooltop {
   background: none;
   box-shadow: var(--shadow);
+}
+/* Loading animation */
+#popups-loading div {
+  background: none !important;
+}
+#popups-loading div::after {
+  background: var(--color);
+  content: " ";
+  width: 0;
+  height: 0;
+  vertical-align: -10px;
+  right: 10px;
+  display: inline-block;
+  position: absolute;
+  animation: infinite 1s load;
 }
 /**************************/
 /*                        */
@@ -1284,9 +1350,16 @@ span.cancel-btn,
 .discussion-view .content-top-upper .clickable {
   color: var(--color);
 }
+.comment[style^="background-image: none;"] {
+  background-color: var(--background) !important;
+}
 /* Student Progress */
 #completion-user-switcher-wrapper {
   background: var(--background);
+}
+/* More notifications */
+.s-notifications-mini .edge-sentence {
+  color: var(--text);
 }
 /**************************/
 /*                        */
@@ -1315,7 +1388,8 @@ header li a,
 body a.link-btn.active,
 div.courses-left-menu,
 .portfolio-list a.btn,
-a._3_bfp {
+a._3_bfp,
+span.other-items-link.clickable {
   color: var(--color) !important;
 }
 .splus-modal-button {
@@ -1326,4 +1400,23 @@ a._3_bfp {
 }
 .splus-modal-button input.form-submit {
   background: var(--background);
+}
+/* Quick access */
+.quick-access-course a.icon {
+  background: none;
+}
+.quick-access-course a.icon-grades::before {
+  content: "📊";
+  font-size: calc(1em + 3px);
+}
+.quick-access-course a.icon-mastery::before {
+  content: "🎯";
+  font-size: calc(1em + 3px);
+}
+.quick-access-course a.icon-settings::before {
+  content: "⚙";
+  font-size: calc(1em + 3px);
+  font-family: apple color emoji, segoe ui emoji, noto color emoji,
+    android emoji, emojisymbols, emojione mozilla, twemoji mozilla,
+    segoe ui symbol;
 }
