@@ -8,10 +8,6 @@
 <priority>0.70</priority>
 </url>
 <url>
-<loc>https://ktibow.github.io/card/themes/</loc>
-<priority>0.50</priority>
-</url>
-<url>
 <loc>https://ktibow.github.io/tutorials/</loc>
 <image:image>
 <image:loc>https://ktibow.github.io/gocallme/maskable_icon.png</image:loc>
@@ -264,10 +260,6 @@
 </url>
 <url>
 <loc>https://ktibow.github.io/offline/</loc>
-<priority>0.70</priority>
-</url>
-<url>
-<loc>https://ktibow.github.io/themes/</loc>
 <priority>0.70</priority>
 </url>
 <url>
