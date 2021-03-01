@@ -5,4 +5,5 @@ Disallow: /tour/
 Disallow: /analyze/
 Disallow: /pwa-test/
 Disallow: /card/what/
+Disallow: /themes/
 Sitemap: https://ktibow.github.io/sitemap.xml
