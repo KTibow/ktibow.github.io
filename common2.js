@@ -1,4 +1,4 @@
-/* Google analytics warning */
+/* Google analytics + Clarity warning */
 var wrapper = document.createElement("div");
 wrapper.innerHTML = `
 <div id="analyticsWarning" style="
@@ -9,7 +9,7 @@ wrapper.innerHTML = `
     width: 100vw;
     left: 0;
     bottom: 0;
-"><p>I use Google Analytics because I don't want to make stuff nobody looks at. (Yes I hate cookie consent too) <button style="
+"><p>I use Google Analytics + Microsoft Clarity because I don't want to make stuff nobody looks at. (Yes I hate cookie consent too) <button style="
     margin: 5px 15px;
     padding: 5px;
     font-size: 1em;
@@ -42,6 +42,12 @@ function gTag() {
 }
 gTag('js', new Date());
 gTag('config', 'G-8ZRE2X4NSL');
+/* Actually load Clarity */
+(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "5n19twop6u");
 /* Fonts */
 var openSans = document.createElement('link');
 openSans.rel = 'stylesheet';
