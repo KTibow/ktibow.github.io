@@ -47,7 +47,7 @@ gTag('config', 'G-8ZRE2X4NSL');
     c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
     t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
     y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-})(window, document, "clarity", "script", "5n19twop6u");
+})(window, document, "clarity", "script", "5n1cw0ice8");
 /* Fonts */
 var openSans = document.createElement('link');
 openSans.rel = 'stylesheet';
