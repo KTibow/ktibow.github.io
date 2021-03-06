@@ -216,9 +216,11 @@
           "video_title": "Schoology.css promo"
         });
       }
+      window.hasLeftBefore = false;
       window.addEventListener("mouseout", (evt) => {
-        if (!evt.toElement && !evt.relatedTarget) {
+        if (!evt.toElement && !evt.relatedTarget && !window.hasLeftBefore) {
           document.querySelector("#natrap").style.display = "unset";
+          window.hasLeftBefore = true;
         }
       });
     </script>
@@ -241,7 +243,6 @@
       Want even more features,
       such as getting notified when grades are posted?
       Try installing Schoology Plus. It's not made by me, but I use it.
-      If you want to enable the dark theme option, <a href="https://schoologypl.us/docs/beta/darktheme">follow these instructions</a>.
     </p>
     <button onclick="window.location='https://forms.gle/61sFqbjC784RQhcG7'">
       Send feedback (please, please answer this google form!)
