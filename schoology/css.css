@@ -1,6 +1,14 @@
 /*
-Schoology.css v0.3.2
+Schoology.css v0.3.3
 View history at https://github.com/KTibow/ktibow.github.io/commits/master/schoology/css.css
+Publishing checklist:
+- Update extension number
+- Deploy to style extension - school
+- Deploy to style extension - personal - firefox
+- Deploy to style extension - personal - chrome
+- Deploy online - userstyles.org
+- Deploy online - ktibow.github.io
+- Deploy online - android app
 */
 
 /*
@@ -171,7 +179,49 @@ div.link-btn:active,
     border-radius: 5px;
   }
 }
-img[alt="Loading"], .ajax-loader, div[role="menu"] div[aria-busy="true"] {
+@keyframes load-mini {
+  0% {
+    padding: 8px;
+    border-radius: 2px;
+  }
+  12.5% {
+    padding: 8px;
+    border-radius: 8px 2px 2px 2px;
+  }
+  25% {
+    padding: 8px;
+    border-radius: 2px;
+  }
+  37.5% {
+    padding: 8px;
+    border-radius: 2px 8px 2px 2px;
+  }
+  50% {
+    padding: 8px;
+    border-radius: 2px;
+  }
+  62.5% {
+    padding: 8px;
+    border-radius: 2px 2px 8px 2px;
+  }
+  75% {
+    padding: 8px;
+    border-radius: 2px;
+  }
+  87.5% {
+    padding: 8px;
+    border-radius: 2px 2px 2px 8px;
+  }
+  100% {
+    padding: 8px;
+    border-radius: 2px;
+  }
+}
+img[alt="Loading"],
+.ajax-loader,
+div[role="menu"] div[aria-busy="true"],
+.loading-spinner,
+.throbber {
   background: var(--color);
   width: 0;
   height: 0;
@@ -180,12 +230,17 @@ img[alt="Loading"], .ajax-loader, div[role="menu"] div[aria-busy="true"] {
 div[role="menu"] div[aria-busy="true"] {
   background: var(--color) !important;
 }
+/* Have never seen this, found this in the source code, just being sure */
+.loading-spinner {
+  animation: infinite 1s load-mini;
+}
 /**************************/
 /*                        */
 /*  Headers and footers   */
 /*                        */
 /**************************/
 /* Backgrounds (._2q19q is a card image in courses) */
+#header,
 header,
 nav,
 nav > ul > li *:not(._2q19q) {
@@ -700,11 +755,25 @@ a[href="/user-calendar"]::before {
 #edge-filters-btn::after {
   content: "🔻";
 }
+/* Filter type of notifications */
+.ui-selectmenu-icon {
+  background: none;
+}
+.ui-selectmenu-icon::before {
+  content: "🔻";
+}
 /* Show more in notifications */
 .sEdgeMore-processed {
   padding-left: 0;
 }
 .sEdgeMore-processed::before {
+  content: "🔻";
+}
+/* Random thing I found in styles */
+.ajax-more {
+  background: none;
+}
+.ajax-more::before {
   content: "🔻";
 }
 /* Student progress */
@@ -996,11 +1065,59 @@ span.mini-icon.grade-item-icon::before {
 .course-materials-simple .inline-icon:not(.folder-icon)::before {
   line-height: 1.5em !important;
 }
+/* Icons that I'm not even sure exist, but I found in the source code */
+.admin-icon,
+.admin-icon-shield {
+  background: none;
+}
+.admin-icon::before,
+.admin-icon-shield::before {
+  content: "🛡";
+  font-family: apple color emoji, segoe ui emoji, noto color emoji,
+    android emoji, emojisymbols, emojione mozilla, twemoji mozilla,
+    segoe ui symbol;
+}
+.blue-arrow-right,
+.green-arrow-right,
+.arrow,
+.arrow-right,
+.school-arrow-right {
+  background: none;
+}
+.blue-arrow-right::before,
+.green-arrow-right::before,
+.arrow::before,
+.arrow-right::before,
+.arrow-right.black::before,
+.school-arrow-right::before {
+  content: "▶";
+  font-family: apple color emoji, segoe ui emoji, noto color emoji,
+    android emoji, emojisymbols, emojione mozilla, twemoji mozilla,
+    segoe ui symbol;
+}
+.green-arrow-right::before {
+  filter: hue-rotate(-50deg);
+}
+.arrow::before,
+.arrow-right::before {
+  filter: hue-rotate(-170deg);
+}
+.arrow-right.black::before {
+  filter: hue-rotate(-170deg) grayscale(1) brightness(0.8);
+}
+.school-arrow-right::before {
+  filter: hue-rotate(50deg) brightness(1.5);
+}
 /**************************/
 /*                        */
 /*      Notification      */
 /*                        */
 /**************************/
+/* Force filter color */
+#notif-filter-page-button:hover,
+#notif-filter-page-button.ui-state-active {
+  color: var(--color) !important;
+}
 /* Assignment icon */
 span.inline-icon.page-icon,
 span.inline-icon.grade-item-icon {
@@ -1361,6 +1478,10 @@ span.cancel-btn,
 .s-notifications-mini .edge-sentence {
   color: var(--text);
 }
+/* Dropdown */
+.ui-selectmenu-menu {
+  background: var(--background);
+}
 /**************************/
 /*                        */
 /*       Schoology+       */
@@ -1419,4 +1540,43 @@ span.other-items-link.clickable {
   font-family: apple color emoji, segoe ui emoji, noto color emoji,
     android emoji, emojisymbols, emojione mozilla, twemoji mozilla,
     segoe ui symbol;
+}
+/**************************/
+/*                        */
+/*       Mobile app       */
+/*                        */
+/**************************/
+@media (orientation: portrait) {
+  body {
+    --shadow: -11px -11px 11px 0 rgba(255, 255, 255, 0.5),
+      11px 11px 11px 0 rgba(0, 0, 0, 0.03);
+    --inset-shadow: inset -11px -11px 11px 0 rgba(255, 255, 255, 0.5),
+      inset 11px 11px 11px 0 rgba(0, 0, 0, 0.03);
+  }
+  @media (prefers-color-scheme: dark) {
+    body {
+      --shadow: -10.5px -10.5px 10.5px 0 rgba(55, 55, 55, 0.6),
+        10.5px 10.5px 10.5px 0 rgba(0, 0, 0, 0.15);
+      --inset-shadow: inset -10.5px -10.5px 10.5px 0 rgba(55, 55, 55, 0.6),
+        inset 10.5px 10.5px 10.5px 0 rgba(0, 0, 0, 0.15);
+    }
+  }
+  header {
+    width: unset !important;
+  }
+  nav ul:nth-of-type(1) li:not(:nth-of-type(1)) {
+    display: none;
+  }
+  nav ul:nth-of-type(2) li {
+    max-width: 5rem;
+    max-height: 5rem;
+  }
+  nav svg {
+    width: 2rem;
+    height: 2rem;
+  }
+  nav > ul:nth-of-type(1) > li:nth-of-type(1),
+  nav > ul:nth-of-type(1) > li:nth-of-type(1) > a::before {
+    width: 12rem;
+  }
 }
