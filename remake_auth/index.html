@@ -24,6 +24,7 @@
     <h1 class="loginForum">Log in</h1>
     <label class="loginForum">Password: <input type="password"></label>
     <p class="loginForum">You will be logged in automatically once you enter in the correct password.</p>
+    <p class="remembered" style="display: none;">Your login password was automatically remembered.</p>
     <button style="display: none;">Log in</button>
     <script>
       var encrypted_password = "nufsihtam";
@@ -57,6 +58,7 @@
           elem.style.display = "none";
         }
         document.querySelector("button").style.display = "";
+        document.querySelector(".remembered").style.display = "";
       }
     </script>
   </body>
