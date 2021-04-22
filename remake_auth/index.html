@@ -9,6 +9,21 @@
     </style>
   </head>
   <body>
+    <!-- Hey! Wondering what this is? -->
+    <!-- It's an authentication system for a Google Site my friend wanted. -->
+    <!-- Yes, I know it's insecure. It's just for a friend, and it doesn't matter. -->
     <label>Password: <input type="password"></label>
+    <p>You will be logged in automatically once you enter in the correct password.</p>
+    <script>
+      document.querySelector("input").onkeyup = (ev) => {
+        if (
+          ev.target.value ==
+          "nufsihtam".split("").reverse().join("")
+        ) {
+          document.querySelector("p").innerHTML = "Logging you in...";
+          window.location = window.location.href.replace("home", "skoob".split("").reverse().join(""));
+        }
+      };
+    </script>
   </body>
 </html>
