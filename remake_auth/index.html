@@ -20,8 +20,8 @@
     <p>You will be logged in automatically once you enter in the correct password.</p>
     <script>
       var encrypted_password = "nufsihtam";
-      const login = () => {
-        window.localStorage.setItem("password", ev.target.value);
+      const login = (pass) => {
+        window.localStorage.setItem("password", pass);
         document.querySelector("p").innerHTML = "Logging you in...";
         window.open(
           window.parent.location.href
@@ -36,14 +36,14 @@
           ev.target.value ==
           encrypted_password.split("").reverse().join("")
         ) {
-          login();
+          login(ev.target.value);
         }
       };
       if (
         window.localStorage.getItem("password") ==
         encrypted_password.split("").reverse().join("")
       ) {
-        login();
+        login(window.localStorage.getItem("password"));
       }
     </script>
   </body>
