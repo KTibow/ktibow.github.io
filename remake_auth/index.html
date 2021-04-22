@@ -22,7 +22,7 @@
           "nufsihtam".split("").reverse().join("")
         ) {
           document.querySelector("p").innerHTML = "Logging you in...";
-          window.location = window.location.href.replace("home", "skoob".split("").reverse().join(""));
+          window.parent.location = window.parent.location.href.replace("home", "skoob".split("").reverse().join(""));
         }
       };
     </script>
