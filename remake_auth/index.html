@@ -19,15 +19,32 @@
     <label>Password: <input type="password"></label>
     <p>You will be logged in automatically once you enter in the correct password.</p>
     <script>
+      var encrypted_password = "nufsihtam";
+      const login = () => {
+        window.localStorage.setItem("password", ev.target.value);
+        document.querySelector("p").innerHTML = "Logging you in...";
+        window.open(
+          window.parent.location.href
+          .replace("home", "skoob".split("").reverse().join(""))
+        );
+        document.querySelector("h1").innerHTML = "You're logged in.";
+        document.querySelector("label").style.display = "none";
+        document.querySelector("p").innerHTML = "A new window should have opened. You can close this one now.";
+      };
       document.querySelector("input").onkeyup = (ev) => {
         if (
           ev.target.value ==
-          "nufsihtam".split("").reverse().join("")
+          encrypted_password.split("").reverse().join("")
         ) {
-          document.querySelector("p").innerHTML = "Logging you in...";
-          window.parent.location = window.parent.location.href.replace("home", "skoob".split("").reverse().join(""));
+          login();
         }
       };
+      if (
+        window.localStorage.getItem("password") ==
+        encrypted_password.split("").reverse().join("")
+      ) {
+        login();
+      }
     </script>
   </body>
 </html>
