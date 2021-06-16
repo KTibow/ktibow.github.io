@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Quicksand:bold&display=swap');
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+@keyframes hide {
+  0% {
+    display: none;
+  }
+  100% {
+    display: block;
+  }
+}
+.questions {
+  width: calc(100vw - 1rem);
+  min-height: 100vh;
+  background: #47b3ff;
+  animation: hide 8s;
+}
+.questions h1 {
+  font-size: 3em;
+}
+.questions h1,
+.questions h2 {
+  font-family: Quicksand, Segoe UI, sans-serif;
+  color: black;
+  margin: 0;
+  padding: 1rem;
+}
+.questions p,
+.questions li {
+  font-family: Open Sans, Segoe UI, sans-serif;
+  color: black;
+  margin: 0;
+  padding: 1rem 3rem;
+}
+
+::-webkit-scrollbar {
+  width: 1rem;
+}
+::-webkit-scrollbar-track {
+  background: hsl(10deg 68% 42%);
+}
+::-webkit-scrollbar-thumb {
+  background: #fff6;
+}
+
+li b + img {
+  display: block;
+  max-width: 100%;
+  background: #fff3;
+  border-radius: 1em;
+}
+
+iframe {
+  aspect-ratio: 2;
+}
+
+@supports not (aspect-ratio: 2) {
+  iframe {
+    width: calc(100vw - 1rem);
+    height: calc((100vw - 1rem) / 3);
+  }
+}
+
+@media (orientation: portrait) {
+  iframe {
+    aspect-ratio: 1;
+  }
+}

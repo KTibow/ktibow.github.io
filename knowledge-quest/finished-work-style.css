@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Quicksand:bold&display=swap');
+
+h1, h2, h3,
+.anchorHeading {
+  font-family: Quicksand, Segoe UI, sans-serif !important;
+}
+
+p, a, i {
+  font-family: Open Sans, Segoe UI, sans-serif;
+}
+
+@media (min-aspect-ratio: 9/10) {
+  body > h1, #toc, #contents {
+    margin: 0 20vw;
+  }
+}
+
+code {
+  background: #8883;
+  padding: 0.2em;
+  border-radius: 0.2em;
+}

@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Quicksand:bold|Material+Icons&display=swap');
+
+@keyframes delayed-scroll {
+  0% {
+    overflow-y: hidden;
+  }
+  99% {
+    overflow-y: hidden;
+  }
+  100% {
+    overflow-y: unset;
+  }
+}
+@keyframes slide-in {
+  0% {
+    width: 100vw;
+  }
+  80% {
+    width: 100vw;
+  }
+  100% {
+    width: calc(100vw - 1rem);
+  }
+}
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: hsl(10deg 68% 42%);
+  animation: delayed-scroll 4s;
+}
+.main-overlay {
+  width: calc(100vw - 1rem);
+  animation: slide-in 4s;
+  height: 100vh;
+  background: tomato;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.main-overlay h1 {
+  font-family: Quicksand, Segoe UI, Helvetica, sans-serif;
+  font-size: min(3em, 7.5vw);
+  animation: fade-in 2s !important;
+  opacity: 1 !important;
+}
+@keyframes come-from-bottom {
+  0% {
+    bottom: -0.9em;
+  }
+  50% {
+    bottom: -0.9em;
+  }
+  100% {
+    bottom: 0.1em;
+  }
+}
+.main-overlay .material-icons {
+  position: absolute;
+  bottom: 0.1em;
+  font-size: 2em;
+  animation: come-from-bottom 4s;
+}
+
+@keyframes hide {
+  0% {
+    display: none;
+  }
+  100% {
+    display: block;
+  }
+}
+.questions {
+  width: calc(100vw - 1rem);
+  background: cornflowerblue;
+  animation: hide 8s;
+}
+.questions h2 {
+  font-family: Quicksand, Segoe UI, sans-serif;
+  color: white;
+  margin: 0;
+  padding: 1rem;
+}
+.questions p {
+  font-family: Open Sans, Segoe UI, sans-serif;
+  color: white;
+  margin: 0;
+  padding: 1rem 3rem;
+}
+
+::-webkit-scrollbar {
+  width: 1rem;
+}
+::-webkit-scrollbar-track {
+  background: hsl(10deg 68% 42%);
+}
+::-webkit-scrollbar-thumb {
+  background: #fff6;
+}
+
+.contents {
+  background: #8247ff;
+  width: calc(100vw - 1rem);
+  color: white;
+  font-family: Open Sans, Segoe UI, sans-serif;
+}
+.contents a {
+  color: white;
+  background: #fff2;
+  animation: all 1s;
+  display: inline-block;
+  width: calc(50% - 10vw - 2.15rem);
+  margin: 5vw;
+  padding: 1rem;
+  text-align: center;
+}

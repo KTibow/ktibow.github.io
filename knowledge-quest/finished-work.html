@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Finished Knowledge Quest Result</title>
+    <link rel="stylesheet" href="finished-work-style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <h1>Finished Result</h1>
+    <div id="toc">
+      <h2>Table of Contents</h2>
+    </div>
+    <div id="contents">
+      <h2>A quick SSH explainer</h2>
+      <p>I feel like my classmates, my teacher, and you probably don't already know what SSH and related tools are, so I'm going to go over some key programs that I generated questions about in my semantic map.</p>
+      <h3>SSH</h3>
+      <p>SSH is a program for remotely accessing another computer's command line securely. You can authenticate using a password or a key file stored on both the remote computer and the computer trying to access it.</p>
+      <h3>SCP</h3>
+      <p>SCP is a program to transfer files over SSH, with the same security.</p>
+      <h2>The SSH protocol</h2>
+      <p>Once you authenticate over SSH, if you use it for a shell, it sets up a TCP connection. Over that, it sends your commands in an encrypted form. It uses OpenSSL for the encryption, and you can configure it to use many different methods (<a href="https://security.stackexchange.com/questions/131010/which-host-key-algorithm-is-best-to-use-for-ssh/155487#155487">here's a list</a>).</p>
+      <h3>SSH keys</h3>
+      <p>SSH keys are a system for authentication I mentioned earlier. You generate an identification file and a public key file, then copy the public key file over to the host you want to be able to log in to. Then, instead of entering your password, your identity is verified.</p>
+      <p>A rough outline of the verification process is that first, the host you want to log in to generates a random challenge. It sends it to you, and you encrypt it with your identification file. Then you send the encrypted version back, and the host decrypts it with the public key it has, and verifies it matches. Since only you can generate the properly encrypted version if you have your identification file, and only you have it, it's secure.</p>
+      <p>There are multiple utilities to generate them. The most common one is <code>ssh-keygen</code>. On Windows, you can also use PuTTY. They take a random source, like <code>/dev/random</code> on Mac and Linux (a stream of random bytes generated from user input), and generate two key files based on that.</p>
+        <h3>Security vulnerabilities</h3>
+        <p>SSH has two major versions: SSH1, and SSH2. SSH1 has multiple security vulnerabilities. In the past, SSH also defaulted to an insecure method of encryption, but it has changed since then.</p>
+        <h2>SSH server</h2>
+        <h3>The session</h3>
+        <p>The SSH server is constantly listening for connections on port 22, and when a client tries to connect, it asks for authentication. If it succeeds, it initiates the main connection. The client can ask to forward certain things during this time. Then, either an interactive shell is set up or a single command is executed. Finally, when the client is ready, it can ask the server to close the connection.</p>
+        <h3>The shell</h3>
+        <p>When the client asks for a command, SSH uses the default shell, found in <code>/etc/passwd</code>. A brief outline of how Bash (a common default shell) works is first it parses your command, then it expands it, then executes it, and finally returns the result.</p>
+        <h2>SCP</h2>
+        <p>SCP is based on RCP, but instead of using the insecure RSH (remote shell) protocol, SCP utilizes the SSH protocol. When you tell it to upload a file, it secretly runs an instance of SCP on the remote computer via SSH. Then it pipes the files into the connection, and then the remote SCP instance saves the file.</p>
+      <i>© Kendell R, 2021</i>
+    </div>
+    <script src="table-of-contents.js">
+    </script>
+  </body>
+</html>
