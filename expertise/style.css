@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.card {
+    @apply flex-1 min-w-[20vmax] bg-neutral-600 rounded-lg m-2 p-2;
+}
+
+.card h2 {
+    @apply text-2xl font-bold;
+}
+
+.card li {
+    @apply inline-block list-none bg-neutral-500 rounded-md m-1 p-2;
+}
+
+.card a {
+    @apply block text-blue-400 hover:text-blue-200;
+}
