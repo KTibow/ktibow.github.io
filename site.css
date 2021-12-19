@@ -479,8 +479,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 13rem;
 }
 
+.mb-52 {
+  margin-bottom: 13rem;
+}
+
 .block {
   display: block;
+}
+
+.inline-block {
+  display: inline-block;
 }
 
 .flex {
@@ -515,6 +523,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .bg-\[url\(layered-steps-haikei\.svg\)\] {
   background-image: url(layered-steps-haikei.svg);
+}
+
+.bg-\[url\(blob-scatter-haikei\.svg\)\] {
+  background-image: url(blob-scatter-haikei.svg);
 }
 
 .bg-cover {
