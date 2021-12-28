@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.code {
+  @apply bg-neutral-700 rounded-lg m-2 p-2;
+}
