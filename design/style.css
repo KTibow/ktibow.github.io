@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+ul {
+    @apply list-disc;
+}
 .code {
-  @apply bg-neutral-700 rounded-lg m-2 p-2;
+    @apply bg-neutral-700 rounded-lg m-1 p-1 inline-block;
 }
