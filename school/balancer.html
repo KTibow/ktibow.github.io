@@ -1,0 +1,95 @@
+<html>
+  <head>
+    <title>Auto Balancer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="This tool balances chemical reaction equations for you by finding working coefficients.">
+    <style>
+      body {
+        background: #222;
+        color: white;
+        font-family: system-ui, Roboto, sans-serif;
+      }
+      input, button {
+        background: #333;
+        color: white;
+        border: none;
+        padding: 10px;
+        font-family: system-ui, Roboto, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Automatic Formula Balancer</h1>
+    <p>This tool finds the correct molecule coefficients to balance chemical reaction equations.</p>
+    <p>It tries all possible coefficients (from 1 to 7) on all molecules inputted.</p>
+    <p>It currently has no support for parenthesis.</p>
+    <h2>How to use</h2>
+    <p>Example: The "proper" formula (unbalanced)</p>
+    <p>NO<sub>2</sub> + H<sub>2</sub>O → H<sub>3</sub> + O + NO</p>
+    <p>would become (when putting into the field)</p>
+    <p>NO2+H2O>H3+O+NO</p>
+    <input type="text" placeholder="Input unbalanced formula">
+    <button>Solve</button>
+    <p id="progress"></p>
+    <p><b>Solution</b></p>
+    <p id="output">Input a formula first.</p>
+    <p><b>Personal use only (no academic/illegal use).</b></p>
+    <script>
+      const checkFormula = (counts, formula) => {
+        let charge = {};
+        const molecules = formula.split(/[\+\>]/g);
+        const beforeReactionCount = formula.split(">")[0].split("+").length;
+        for (let moleculeIndex = 0; moleculeIndex < molecules.length; moleculeIndex++) {
+          const multiplier = counts[moleculeIndex];
+          const atoms = molecules[moleculeIndex].match(/[A-Z][a-z]?[0-9]*/g);
+          for (atom of atoms) {
+            const atomCount = atom.match(/[0-9]+/);
+            const atomName = atom.replace(atomCount, "");
+            if (!charge[atomName]) {
+              charge[atomName] = 0;
+            }
+            charge[atomName] += Number(atomCount || 1) * multiplier * (moleculeIndex < beforeReactionCount ? 1 : -1);
+          }
+        }
+        let isSolution = true;
+        Object.values(charge).forEach((atomCharge) => {
+          if (atomCharge != 0) {
+            isSolution = false;
+          }
+        });
+        return isSolution;
+      };
+      let checked = 0;
+      const recursiveCheck = (formula, stack) => {
+        if (formula.split(/[\+\>]/g).length == stack.length) {
+          checked++;
+          if (!document.querySelector("#output").innerText && checkFormula(stack, formula)) {
+            const beforeReactionCount = formula.split(">")[0].split("+").length;
+            const beforeReaction = stack.slice(0, beforeReactionCount).join(", ");
+            const afterReaction = stack.slice(beforeReactionCount).join(", ");
+            document.querySelector("#output").innerText = `${beforeReaction} > ${afterReaction}`;
+            document.querySelector("#progress").innerText = "Found!";
+          }
+          if (checked == Math.pow(7, stack.length) && document.querySelector("#progress").innerText != "Found!") {
+            document.querySelector("#progress").innerText = "No solution (with the tested coefficients).";
+          }
+        } else {
+          recursiveCheck(formula, [1, ...stack]);
+          recursiveCheck(formula, [2, ...stack]);
+          recursiveCheck(formula, [3, ...stack]);
+          recursiveCheck(formula, [4, ...stack]);
+          recursiveCheck(formula, [5, ...stack]);
+          recursiveCheck(formula, [6, ...stack]);
+          recursiveCheck(formula, [7, ...stack]);
+        }
+      }
+      document.querySelector("button").onclick = () => {
+        const formula = document.querySelector("input").value;
+        checked = 0;
+        document.querySelector("#output").innerText = "";
+        document.querySelector("#progress").innerText = "Checking...";
+        setTimeout(() => recursiveCheck(formula, []), 0);
+      };
+    </script>
+  </body>
+</html>
