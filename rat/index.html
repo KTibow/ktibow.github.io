@@ -17,6 +17,7 @@
         type="file"
         class="bg-slate-800 text-white m-4 p-4 w-full rounded-md" />
       <div id="result">Waiting for a file.</div>
+      <dialog id="code" class="bg-slate-800 bg-opacity-90 text-white"></dialog>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.0/dist/jszip.min.js"></script>
     <script>
@@ -179,15 +180,21 @@
               }
               if (
                 content.match(
-                  /(https?):\/\/((ptb\.|canary\.)?discord(app)?\.com)\/api(\/)?(v\d{1,2})?\/webhooks\/(\d{17,19})\/([\w\-]{68})/i
-                ) ||
-                content.includes("Java-DiscordWebhook-BY-Gelox_")
+                  /https?:\/\/(?:ptb\.|canary\.)?discord(?:app)?\.com\/api(?:\/)?(v\d{1,2})?\/webhooks\/\d{17,21}\/[\w\-]{68}/i
+                )
               ) {
                 topics.uploading.matches.push({
                   location: fileName,
                   match:
-                    "(https?):\/\/((ptb\.|canary\.)?discord(app)?\.com)\/api(\/)?(v\d{1,2})?\/webhooks\/(\d{17,19})\/([\w\-]{68})/i",
+                    "(https?):\/\/((ptb\.|canary\.)?discord(app)?\.com)\/api(\/)?(v\d{1,2})?\/webhooks\/(\d{17,19})\/([\w\-]{68})",
                   desc: "This mod tries to upload data to a Discord webhook.",
+                });
+              }
+              if (content.includes("Java-DiscordWebhook-BY-Gelox_")) {
+                topics.uploading.matches.push({
+                  location: fileName,
+                  match: "Java-DiscordWebhook-BY-Gelox_",
+                  desc: "This mod has a module for Discord webhooks.",
                 });
               }
               if (content.includes("http://api.breadcat.cc:80")) {
@@ -224,18 +231,42 @@
           outputArea.innerHTML = "";
           for (const type in topics) {
             const topic = topics[type];
-            outputArea.innerHTML += `<h2 class="text-2xl">${topic.name}</h2><p class="italic">${topic.desc}</p>`;
+            const heading = document.createElement("h2");
+            heading.innerHTML = `${topic.name} (${topic.desc})`;
+            heading.className = "font-bold";
+            outputArea.append(heading);
             const list = document.createElement("ul");
             for (const match of topic.matches) {
               const listItem = document.createElement("li");
               listItem.className = "list-disc list-outside";
               listItem.innerHTML =
                 `<strong class="font-bold">${match.match}</strong> in ` +
-                `${match.location}<br>` +
+                `<span class="text-blue-500 cursor-pointer">${match.location}</span><br>` +
                 match.desc;
-              list.appendChild(listItem);
+              listItem
+                .querySelector("span")
+                .addEventListener("click", async () => {
+                  const file = match.location;
+                  const fileContent = await zip.files[file].async("string");
+
+                  const dialog = document.querySelector("dialog");
+                  const header = document.createElement("h2");
+                  header.innerHTML = `${file}`;
+                  header.className = "text-2xl font-bold";
+                  const code = document.createElement("pre");
+                  code.append(document.createTextNode(fileContent));
+                  code.className = "text-sm whitespace-pre-wrap";
+                  const dismiss = document.createElement("button");
+                  dismiss.innerHTML = "Dismiss";
+                  dismiss.className =
+                    "bg-gradient-to-b from-blue-800 to-blue-500 bg-[length:100%_200%] hover:bg-[0_100%] transition-all duration-1000 font-bold py-2 px-4 rounded";
+                  dismiss.addEventListener("click", () => dialog.close());
+                  dialog.append(header, code, dismiss);
+                  dialog.showModal();
+                });
+              list.append(listItem);
             }
-            outputArea.appendChild(list);
+            outputArea.append(list);
           }
         };
         reader.readAsArrayBuffer(file);
