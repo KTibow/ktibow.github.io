@@ -91,6 +91,13 @@ selector.addEventListener("change", () => {
             desc: "This mod tries to read data about your Discord account.",
           });
         }
+        if (content.match(/session[-_ ]id/i)) {
+          topics.collection.matches.push({
+            location: fileName,
+            match: "session id",
+            desc: "This mod mentions the words session id. This could be positive or dangerous.",
+          });
+        }
         if (content.includes("\\Google\\Chrome\\User Data\\Default")) {
           topics.collection.matches.push({
             location: fileName,
