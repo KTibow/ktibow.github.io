@@ -186,7 +186,7 @@
                 topics.uploading.matches.push({
                   location: fileName,
                   match:
-                    "(https?):\/\/((ptb\.|canary\.)?discord(app)?\.com)\/api(\/)?(v\d{1,2})?\/webhooks\/(\d{17,19})\/([\w\-]{68})",
+                    "https?://discordapp.com/api/v\\d/webhooks/\\d{17,21}/[\\w\\-]{68}",
                   desc: "This mod tries to upload data to a Discord webhook.",
                 });
               }
@@ -231,10 +231,12 @@
           outputArea.innerHTML = "";
           for (const type in topics) {
             const topic = topics[type];
-            const heading = document.createElement("h2");
+            const topicTag = document.createElement("details");
+            if (type != "obfuscation") topicTag.setAttribute("open", "open");
+            const heading = document.createElement("summary");
             heading.innerHTML = `${topic.name} (${topic.desc})`;
-            heading.className = "font-bold";
-            outputArea.append(heading);
+            heading.className = "font-bold text-xl my-2 cursor-pointer";
+            topicTag.appendChild(heading);
             const list = document.createElement("ul");
             for (const match of topic.matches) {
               const listItem = document.createElement("li");
@@ -250,14 +252,15 @@
                   const fileContent = await zip.files[file].async("string");
 
                   const dialog = document.querySelector("dialog");
+                  dialog.innerHTML = "";
                   const header = document.createElement("h2");
-                  header.innerHTML = `${file}`;
+                  header.innerText = `${file}`;
                   header.className = "text-2xl font-bold";
                   const code = document.createElement("pre");
                   code.append(document.createTextNode(fileContent));
                   code.className = "text-sm whitespace-pre-wrap";
                   const dismiss = document.createElement("button");
-                  dismiss.innerHTML = "Dismiss";
+                  dismiss.innerText = "Dismiss";
                   dismiss.className =
                     "bg-gradient-to-b from-blue-800 to-blue-500 bg-[length:100%_200%] hover:bg-[0_100%] transition-all duration-1000 font-bold py-2 px-4 rounded";
                   dismiss.addEventListener("click", () => dialog.close());
@@ -266,7 +269,8 @@
                 });
               list.append(listItem);
             }
-            outputArea.append(list);
+            topicTag.appendChild(list);
+            outputArea.appendChild(topicTag);
           }
         };
         reader.readAsArrayBuffer(file);
