@@ -8,7 +8,7 @@
     <meta name="description" content="KTibow's resume - links to past work" />
     <title>Past Work | KTibow</title>
   </head>
-  <body class="bg-neutral-800 text-white">
+  <body class="bg-neutral-900 text-white">
     <h1 class="text-2xl font-bold">Past Work</h1>
     <p>My projects tend to be powerful, simple, and look good.</p>
     <p>Filter by language:</p>
@@ -32,191 +32,162 @@
       });
     </script>
     <template-example element-name="prev-work">
-      <div class="flex-1 min-w-[20vmax] bg-neutral-700 rounded-lg m-2 p-2">
+      <div
+        class="card relative flex-1 min-w-[20vmax]
+        bg-neutral-800 rounded-lg m-2 p-2
+        {{#prog-lang}} {{.}} {{/prog-lang}}">
         <h2 class="text-2xl font-bold">{{name}}</h2>
         <p>{{desc}}</p>
         {{#category}}
-        <li>{{.}}</li>
-        {{/category}} {{#url}}
-        <a href="{{url}}">{{text}} {{^text}}View site{{/text}}</a>
-        {{/url}} {{^url}}Not available on the web{{/url}}
+        <li class="list-none inline-block bg-neutral-700 p-2 m-2 rounded-md">
+          {{.}}
+        </li>
+        {{/category}}
+        <br />
+        <br />
+        <span class="absolute bottom-0">
+          {{#url}}
+          <a href="{{url}}" class="text-blue-500">{{text}}</a>
+          {{/url}}{{^url}}Not available on the web{{/url}}
+        </span>
       </div>
     </template-example>
     <main class="flex flex-wrap">
       <prev-work
         name="Skyclient: Mod work"
-        desc="I've worked on some mods that are part of the Skyclient Minecraft mod installer."
-        category="['Java', 'Forge mod loader']"
-      ></prev-work>
+        desc="I've worked on some mods that are part of the Skyclient Minecraft mod installer, whether Skyclient-exclusive or not."
+        category="['Java', 'Forge mod loader']"></prev-work>
+      <prev-work
+        name="Skyclient: Website work"
+        desc="I made a website for the Skyclient Minecraft mod installer, and even made a web-based version of Skyclient."
+        category="['HTML', 'Modern web APIs', 'CSS', 'JavaScript']"
+        prog-lang="['Web', 'JavaScript']"
+        text="View site"
+        url="https://skyclient.co"></prev-work>
+      <prev-work
+        name="Flips"
+        desc="A collection of calculators for the game Hypixel Skyblock."
+        category="['HTML', 'Modern web APIs', 'CSS', 'JavaScript']"
+        prog-lang="['Python', 'Web', 'JavaScript']"
+        text="View site"
+        url="https://skyclient.co"></prev-work>
+      <prev-work
+        name="Fiomba"
+        desc="A project about controlling an old type of Roomba remotely."
+        category="['Raspberry Pi', 'MQTT', 'Serial']"
+        prog-lang="['Python', 'Hardware']"
+        text="Read docs"
+        url="/2vFiomba/"></prev-work>
+      <prev-work
+        name="Unspam"
+        desc="A ChatTriggers module to block advertisements sent by players in the in-game chat of Minecraft."
+        category="['JavaScript', 'Artificial Intelligence']"
+        prog-lang="['JavaScript']"
+        text="View info"
+        url="https://hypixel.net/threads/forge-chattriggers-unspam-v2-2-0-dynamically-hide-spam-messages.4720941/"></prev-work>
+      <prev-work
+        name="Tank Scorecard / Tunt"
+        desc="An exercise to make an online game for/with some of my relatives. Ultimately never got finished."
+        category="['Flask', 'Multiplayer', 'GitHub Actions']"
+        prog-lang="['Python', 'JavaScript', 'Web']"
+        text="View website code"
+        url="https://github.com/KTibow/scorecard"></prev-work>
+      <prev-work
+        name="👍"
+        desc="A cancelled browser extension to streamline my school workflow."
+        category="['Browser extension', 'JavaScript', 'Reverse Engineering']"
+        prog-lang="['JavaScript', 'Web']"
+        text="View code"
+        url="https://github.com/KTibow/thumbs-up"></prev-work>
+      <prev-work
+        name="Requireit"
+        desc="A convenience library to install Python packages on run."
+        category="['Python module', 'Minfification', 'Low-level Python']"
+        prog-lang="['Python']"
+        text="View code"
+        url="https://github.com/KTibow/requireit"></prev-work>
+      <prev-work
+        name="GoCallMe"
+        desc="A site you could use to make URLs to open the tel: protocol."
+        category="['Backendless', 'Web APIs', 'Media queries']"
+        prog-lang="['JavaScript', 'Web']"
+        text="View website code"
+        url="https://github.com/KTibow/ktibow.github.io/tree/oldish-master/gocallme"></prev-work>
+      <prev-work
+        name="Infinity Mirror"
+        desc="A tutorial for hooking up an infinity mirror with a custom LED strip to Home Assistant."
+        category="['Arduino', 'Hardware', 'Data grinding']"
+        prog-lang="['Hardware']"
+        text="View docs"
+        url="https://github.com/KTibow/infinity-mirror"></prev-work>
+      <prev-work
+        name="Zoom Improved"
+        desc="A web service to launch Zoom meetings with a better, customizable interface."
+        category="['Backendless', 'Web APIs', 'Reverse Engineering']"
+        prog-lang="['JavaScript', 'Web']"
+        text="View website code"
+        url="https://github.com/KTibow/ktibow.github.io/tree/oldish-master/zoom"></prev-work>
+      <prev-work
+        name="Simple Zoom Joiner"
+        desc="A very tiny server to launch a variety of meetings with a custom experience."
+        category="['Minfification', 'Customizable', 'Reverse Engineering']"
+        prog-lang="['Python', 'JavaScript', 'Web']"
+        text="View code"
+        url="https://github.com/KTibow/simple-zoom-joiner/blob/main/app.py"></prev-work>
     </main>
+    <!--
     <div>
-      <div class="card JavaScript Web">
-        <h2>Misc work on Skyclient</h2>
-        <p>
-          I've contributed in many ways to the Skyclient Minecraft mod installer, from making a
-          website, to revamping the custom main menu, to fixing bugs and adding features to the
-          mods.
-        </p>
-        <li>Minecraft modding</li>
-        <li>Web APIs</li>
-        <li>JS libraries</li>
-        <a href="https://skyclient.co/">View site</a>
-      </div>
-      <div class="card Python JavaScript Web">
-        <h2>Flips</h2>
-        <p>This is a collection of calculators for the game Hypixel Skyblock.</p>
-        <li>Sanic</li>
-        <li>APIs</li>
-        <li>Data grinding</li>
-        <li>JS libraries</li>
-        <a href="https://flips.ml/">View site</a>
-      </div>
-      <div class="card Python Hardware">
-        <h2>Fiomba</h2>
-        <p>Fiomba is a project about controlling an old type of Roomba remotely.</p>
-        <li>Raspberry Pi</li>
-        <li>MQTT</li>
-        <li>Serial Port</li>
-        <a href="/2vFiomba/">View site</a>
-      </div>
-      <div class="card JavaScript">
-        <h2>Unspam</h2>
-        <p>Unspam is a Minecraft module (using ChatTriggers) that auto-hides spam messages.</p>
-        <li>Java</li>
-        <li>Javascript</li>
-        <li>Artificial Intelligence</li>
-        <a
-          href="https://hypixel.net/threads/forge-chattriggers-unspam-v2-2-0-dynamically-hide-spam-messages.4720941/"
-        >
-          View site
-        </a>
-      </div>
-      <div class="card Python JavaScript Web">
-        <h2>Tank Scorecard / Tunt</h2>
-        <p>
-          This was an exercise to make a game with some friends; Ultimately never got finished
-          because I have a busy life.
-        </p>
-        <li>Flask</li>
-        <li>Multiplayer</li>
-        <li>Github Actions</li>
-        <a href="https://github.com/KTibow/scorecard">View site</a>
-      </div>
-      <div class="card JavaScript Web">
-        <h2>Thumbs Up</h2>
-        <p>This was a cancelled browser extension to customize my school workflow.</p>
-        <li>Browser extension</li>
-        <li>Javascript</li>
-        <li>Reverse Engineering</li>
-        <a href="https://github.com/KTibow/thumbs-up">View site</a>
-      </div>
-      <div class="card Python">
-        <h2>Requireit</h2>
-        <p>This was a convinience library to auto-install packages.</p>
-        <li>Python module</li>
-        <li>Minfification</li>
-        <li>Low-level Python</li>
-        <a href="https://github.com/KTibow/requireit">View site</a>
-      </div>
-      <div class="card JavaScript Web">
-        <h2>GoCallMe</h2>
-        <p>
-          This was a site you could use to make URLS that would open the
-          <code>tel:</code>
-          protocol.
-        </p>
-        <li>Backendless</li>
-        <li>Web APIs</li>
-        <li>Media queries</li>
-        <a
-          href="https://github.com/KTibow/ktibow.github.io/tree/oldish-master"
-          title="My personal site was recently revamped, so the code remains, but not the webpage."
-        >
-          Site no longer hosted
-        </a>
-      </div>
-      <div class="card Hardware">
-        <h2>Infinity Mirror</h2>
-        <p>
-          This was a tutorial for hooking up an infinity mirror with a smart LED strip to Home
-          Assistant.
-        </p>
-        <li>C code</li>
-        <li>Hardware</li>
-        <li>Data grinding</li>
-        <a href="https://github.com/KTibow/infinity-mirror">View site</a>
-      </div>
-      <div class="card JavaScript Web">
-        <h2>Zoom Improved</h2>
-        <p>This was a unique web service to launch Zoom meetings with a better experience.</p>
-        <li>Backendless</li>
-        <li>Customizable</li>
-        <li>Copying low-level behavior</li>
-        <a
-          href="https://github.com/KTibow/ktibow.github.io/tree/oldish-master"
-          title="My personal site was recently revamped, so the code remains, but not the webpage."
-        >
-          Site no longer hosted
-        </a>
-      </div>
-      <div class="card Python JavaScript Web">
-        <h2>Simple Zoom joiner</h2>
-        <p>
-          This was a very tiny site that launched a variety of meetings with a better experience.
-        </p>
-        <li>Minfification</li>
-        <li>Customizable</li>
-        <li>Copying low-level behavior</li>
-        <a href="https://github.com/KTibow/simple-zoom-joiner/blob/main/app.py">View site</a>
-      </div>
       <div class="card Web">
         <h2>schoology.css</h2>
         <p>
-          This was a stylesheet that modifed Schoology, a place where teachers can give students
-          assignments, to look better.
+          This was a stylesheet that modifed Schoology, a place where teachers
+          can give students assignments, to look better.
         </p>
         <li>Backendless</li>
         <li>Pure CSS</li>
         <li>Data grinding</li>
         <a
           href="https://github.com/KTibow/ktibow.github.io/tree/oldish-master"
-          title="My personal site was recently revamped, so the code remains, but not the webpage."
-        >
+          title="My personal site was recently revamped, so the code remains, but not the webpage.">
           Site no longer hosted
         </a>
       </div>
       <div class="card JavaScript Web">
         <h2>Library Card</h2>
-        <p>This was a PWA that emulated your library card number and PIN by flashing barcodes.</p>
+        <p>
+          This was a PWA that emulated your library card number and PIN by
+          flashing barcodes.
+        </p>
         <li>Backendless</li>
         <li>PWA</li>
         <li>Themable</li>
         <a
           href="https://github.com/KTibow/ktibow.github.io/tree/oldish-master"
-          title="My personal site was recently revamped, so the code remains, but not the webpage."
-        >
+          title="My personal site was recently revamped, so the code remains, but not the webpage.">
           Site no longer hosted
         </a>
       </div>
       <div class="card JavaScript Web">
         <h2>Web Serial Console</h2>
         <p>
-          This was a first of its kind simple online serial console (admittedly to bypass serial
-          console apps being blocked by parents).
+          This was a first of its kind simple online serial console (admittedly
+          to bypass serial console apps being blocked by parents).
         </p>
         <li>Backendless</li>
         <li>Web APIs</li>
         <li>Web Libraries</li>
         <a
           href="https://github.com/KTibow/fridge"
-          title="My personal site was recently revamped, so the code remains, but not the webpage."
-        >
+          title="My personal site was recently revamped, so the code remains, but not the webpage.">
           Site no longer hosted
         </a>
       </div>
       <div class="card Python">
         <h2>emailHelpers</h2>
-        <p>This was a wrapper for the smtplib and email packages in Python I made in a day.</p>
+        <p>
+          This was a wrapper for the smtplib and email packages in Python I made
+          in a day.
+        </p>
         <li>Python module</li>
         <li>OOP</li>
         <li>Documentation</li>
@@ -225,15 +196,15 @@
       <div class="card Hardware">
         <h2>ESP32 OTA</h2>
         <p>
-          This was a script to add a web interface usable for sending compiled code OTA to an ESP32.
+          This was a script to add a web interface usable for sending compiled
+          code OTA to an ESP32.
         </p>
         <li>C code</li>
         <li>Hardware web servers</li>
         <li>OTA</li>
         <a
           href="https://github.com/KTibow/ktibow.github.io/tree/oldish-master"
-          title="My personal site was recently revamped, so the code remains, but not the webpage."
-        >
+          title="My personal site was recently revamped, so the code remains, but not the webpage.">
           Site no longer hosted
         </a>
       </div>
@@ -254,7 +225,9 @@
       </div>
       <div class="card Python JavaScript Web">
         <h2>Skyblock Money</h2>
-        <p>This was a newer calculator for flipping in the game Hypixel Skyblock.</p>
+        <p>
+          This was a newer calculator for flipping in the game Hypixel Skyblock.
+        </p>
         <li>Sanic</li>
         <li>APIs</li>
         <li>OAuth</li>
@@ -267,21 +240,22 @@
         <li>Backendless</li>
         <li>Pure CSS</li>
         <li>Data grinding</li>
-        <a href="https://github.com/KTibow/lovelace-light-soft-ui-theme">View site</a>
+        <a href="https://github.com/KTibow/lovelace-light-soft-ui-theme">
+          View site
+        </a>
       </div>
       <div class="card JavaScript Web">
         <h2>Setting up a Pi from another Pi</h2>
         <p>
-          This was an interactive tutorial about how to format and set up another Raspberry Pi SD
-          card from an existing one.
+          This was an interactive tutorial about how to format and set up
+          another Raspberry Pi SD card from an existing one.
         </p>
         <li>Backendless</li>
         <li>Interactive</li>
         <li>Linux command line</li>
         <a
           href="https://github.com/KTibow/ktibow.github.io/tree/oldish-master"
-          title="My personal site was recently revamped, so the code remains, but not the webpage."
-        >
+          title="My personal site was recently revamped, so the code remains, but not the webpage.">
           Site no longer hosted
         </a>
       </div>
@@ -291,8 +265,7 @@
         <li>Python module</li>
         <li>Fixing dependencies</li>
         <a
-          href="https://github.com/home-assistant/core/pulls?q=is%3Apr+is%3Amerged+author%3AKTibow+"
-        >
+          href="https://github.com/home-assistant/core/pulls?q=is%3Apr+is%3Amerged+author%3AKTibow+">
           View site
         </a>
       </div>
@@ -303,8 +276,7 @@
         <li>Fixing dependencies</li>
         <li>Broken links</li>
         <a
-          href="https://github.com/home-assistant/home-assistant.io/pulls?q=is%3Apr+is%3Amerged+author%3AKTibow+"
-        >
+          href="https://github.com/home-assistant/home-assistant.io/pulls?q=is%3Apr+is%3Amerged+author%3AKTibow+">
           View site
         </a>
       </div>
@@ -315,12 +287,11 @@
         <li>Fixing dependencies</li>
         <li>Data grinding</li>
         <a
-          href="https://github.com/home-assistant/frontend/pulls?q=is%3Apr+is%3Amerged+author%3AKTibow+"
-        >
+          href="https://github.com/home-assistant/frontend/pulls?q=is%3Apr+is%3Amerged+author%3AKTibow+">
           View site
         </a>
       </div>
-    </div>
+    </div>-->
     <script src="https://unpkg.com/json5@^2.0.0/dist/index.min.js"></script>
     <script src="https://unpkg.com/mustache@^4.2.0/mustache.min.js"></script>
     <script src="/assets/examples.js"></script>
