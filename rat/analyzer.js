@@ -13,6 +13,7 @@ selector.addEventListener("change", () => {
         "Something went wrong. It might not be a valid jar.";
       console.error(e);
     }
+    const urls = [];
     const topics = {
       obfuscation: {
         name: "Obfuscation",
@@ -35,193 +36,168 @@ selector.addEventListener("change", () => {
         matches: [],
       },
     };
-    const urls = [];
     await Promise.all(
       Object.keys(zip.files).map(async (fileName) => {
         const file = zip.files[fileName];
         if (file.dir) return;
         /** @type {string} */
         const content = await file.async("text");
-        if (content.includes("HWID")) {
-          topics.collection.matches.push({
-            location: fileName,
-            match: "HWID",
+        const filters = [
+          {
+            match: content.includes("HWID"),
+            name: "HWID",
+            category: "collection",
             desc: "This mod probably tries to get your hardware ID.",
-          });
-        }
-        if (content.includes('"APPDATA"')) {
-          topics.collection.matches.push({
-            location: fileName,
-            match: '"APPDATA"',
+          },
+          {
+            match: content.includes('"APPDATA"'),
+            name: '"APPDATA"',
+            category: "collection",
             desc: "This mod might try to get data that apps store.",
-          });
-        }
-        if (content.includes("createScreenCapture")) {
-          topics.collection.matches.push({
-            location: fileName,
-            match: "createScreenCapture",
+          },
+          {
+            match: content.includes("createScreenCapture"),
+            name: "createScreenCapture",
+            category: "collection",
             desc: "This mod tries to take a screenshot of your screen.",
-          });
-        }
-        if (content.includes(" ey") && content.includes("blackboard")) {
-          topics.collection.matches.push({
-            location: fileName,
-            match: '" ey", and "blackboard"',
+          },
+          {
+            match: content.includes(" ey") && content.includes("blackboard"),
+            name: '" ey", and "blackboard"',
+            category: "collection",
             desc: "This mod *might* try to read your session id from the data Minecraft gets when launched.",
-          });
-        }
-        if (content.includes("func_148254_d")) {
-          topics.collection.matches.push({
-            location: fileName,
-            match: "func_148254_d",
+          },
+          {
+            match: content.includes("func_148254_d"),
+            name: "func_148254_d",
+            category: "collection",
             desc: "This mod tries to get your session id.",
-          });
-        }
-        if (content.includes("func_111286_b")) {
-          topics.collection.matches.push({
-            location: fileName,
-            match: "func_111286_b",
+          },
+          {
+            match: content.includes("func_111286_b"),
+            name: "func_111286_b",
+            category: "collection",
             desc: "This mod tries to get your session id.",
-          });
-        }
-        if (content.match(/https:\/\/discordapp\.com\/api\/v\d\/users\/@me/i)) {
-          topics.collection.matches.push({
-            location: fileName,
-            match: "https://discordapp.com/api/vd/users/@me",
+          },
+          {
+            match: content.match(
+              /https:\/\/discordapp\.com\/api\/v\d\/users\/@me/i
+            ),
+            name: "https://discordapp.com/api/vd/users/@me",
+            category: "collection",
             desc: "This mod tries to read data about your Discord account.",
-          });
-        }
-        if (content.match(/session[-_ ]id/i)) {
-          topics.collection.matches.push({
-            location: fileName,
-            match: "session id",
+          },
+          {
+            match: content.match(/session[-_ ]id/i),
+            name: "session id",
+            category: "collection",
             desc: "This mod mentions the words session id. This could be positive or dangerous.",
-          });
-        }
-        if (content.includes("\\Google\\Chrome\\User Data\\Default")) {
-          topics.collection.matches.push({
-            location: fileName,
-            match: "\\Google\\Chrome\\User Data\\Default",
+          },
+          {
+            match: content.includes("\\Google\\Chrome\\User Data\\Default"),
+            name: "\\Google\\Chrome\\User Data\\Default",
+            category: "collection",
             desc: "This mod tries to read data from browsers, including passwords.",
-          });
-        }
-        if (content.match(/https?:\/\/checkip\.amazonaws\.com/i)) {
-          topics.collection.matches.push({
-            location: fileName,
-            match: "https?://checkip.amazonaws.com",
+          },
+          {
+            match: content.match(/https?:\/\/checkip\.amazonaws\.com/i),
+            name: "https?://checkip.amazonaws.com",
+            category: "collection",
             desc: "This mod tries to find your IP address.",
-          });
-        }
-        if (content.includes("SmolPeePeeEnergy")) {
-          topics.signatures.matches.push({
-            location: fileName,
-            match: "SmolPeePeeEnergy",
+          },
+          {
+            match: content.includes("SmolPeePeeEnergy"),
+            name: "SmolPeePeeEnergy",
+            category: "signatures",
             desc: "Signature from Breadcat, a rat maker.",
-          });
-        }
-        if (content.includes("BreadOS/69.420")) {
-          topics.signatures.matches.push({
-            location: fileName,
-            match: "BreadOS/69.420",
+          },
+          {
+            match: content.includes("BreadOS/69.420"),
+            name: "BreadOS/69.420",
+            category: "signatures",
             desc: "Signature from Breadcat, a rat maker.",
-          });
-        }
-        if (content.includes("Forge Mod Handler")) {
-          topics.signatures.matches.push({
-            location: fileName,
-            match: "Forge Mod Handler",
+          },
+          {
+            match: content.includes("Forge Mod Handler"),
+            name: "Forge Mod Handler",
+            category: "signatures",
             desc: "Signature from Breadcat, a rat maker.",
-          });
-        }
-        if (content.includes("SKID DOWN")) {
-          topics.signatures.matches.push({
-            location: fileName,
-            match: "SKID DOWN",
+          },
+          {
+            match: content.includes("SKID DOWN"),
+            name: "SKID DOWN",
+            category: "signatures",
             desc: "Signature from Custom Payload, a rat maker.",
-          });
-        }
-        if (content.includes("Branchlock")) {
-          topics.obfuscation.matches.push({
-            location: fileName,
-            match: "Branchlock",
+          },
+          {
+            match: content.includes("Branchlock"),
+            name: "Branchlock",
+            category: "obfuscation",
             desc: "Uses the obfuscator Branchlock.",
-          });
-        }
-        if (content.match(/[lI]{8,}/)) {
-          topics.obfuscation.matches.push({
-            location: fileName,
-            match: "[lI]{8,}",
+          },
+          {
+            match: content.match(/[lI]{8,}/),
+            name: "[lI]{8,}",
+            category: "obfuscation",
             desc: "Has random lIIlI-type nonsense, probably obfuscation.",
-          });
-        }
-        if (
-          content.includes(
-            "qolskyblockmod.pizzaclient.features.misc.SessionProtection"
-          )
-        ) {
-          topics.obfuscation.matches.push({
-            location: fileName,
-            match: "qolskyblockmod.pizzaclient.features.misc.SessionProtection",
+          },
+          {
+            match: content.includes(
+              "qolskyblockmod.pizzaclient.features.misc.SessionProtection"
+            ),
+            name: "qolskyblockmod.pizzaclient.features.misc.SessionProtection",
+            category: "obfuscation",
             desc: "Tries to block a mod from protecting your session id.",
-          });
-        }
-        if (
-          content.match(
-            /https?:\/\/(?:ptb\.|canary\.)?discord(?:app)?\.com\/api(?:\/)?(v\d{1,2})?\/webhooks\/\d{17,21}\/[\w\-]{68}/i
-          )
-        ) {
-          topics.uploading.matches.push({
-            location: fileName,
-            match:
-              "https?://discordapp.com/api/v\\d/webhooks/\\d{17,21}/[\\w\\-]{68}",
+          },
+          {
+            match: content.match(
+              /https?:\/\/(?:ptb\.|canary\.)?discord(?:app)?\.com\/api(?:\/)?(v\d{1,2})?\/webhooks\/\d{17,21}\/[\w\-]{68}/i
+            ),
+            name: "https?://discordapp.com/api/v\\d/webhooks/\\d{17,21}/[\\w\\-]{68}",
+            category: "uploading",
             desc: "This mod tries to upload data to a Discord webhook.",
-          });
-        }
-        if (
-          content.includes("Java-DiscordWebhook-BY-Gelox_") ||
-          (content.match(/[Aa]vatarUrl/) && content.match(/[Ee]mbed/))
-        ) {
-          topics.uploading.matches.push({
-            location: fileName,
+          },
+          {
             match:
-              '"Java-DiscordWebhook-BY-Gelox_" OR things related to webhooks, eg avatarUrl, embeds',
+              content.includes("Java-DiscordWebhook-BY-Gelox_") ||
+              (content.match(/[Aa]vatarUrl/) && content.match(/[Ee]mbed/)),
+            name: '"Java-DiscordWebhook-BY-Gelox_" OR things related to webhooks, eg avatarUrl, embeds',
+            category: "uploading",
             desc: "This mod has a module for Discord webhooks.",
-          });
-        }
-        if (content.includes("http://api.breadcat.cc:80")) {
-          topics.uploading.matches.push({
-            location: fileName,
-            match: "http://api.breadcat.cc:80",
+          },
+          {
+            match: content.includes("http://api.breadcat.cc:80"),
+            name: "http://api.breadcat.cc:80",
+            category: "uploading",
             desc: "This mod tries to upload data to Breadcat's (a rat maker) web server.",
-          });
-        }
-        if (content.includes("https://api.anonfiles.com/upload")) {
-          topics.uploading.matches.push({
-            location: fileName,
-            match: "https://api.anonfiles.com/upload",
+          },
+          {
+            match: content.includes("https://api.anonfiles.com/upload"),
+            name: "https://api.anonfiles.com/upload",
+            category: "uploading",
             desc: "This mod tries to upload data to Anonfiles, a file hosting site.",
-          });
-        }
-        if (content.includes("media.guilded.gg")) {
-          topics.uploading.matches.push({
-            location: fileName,
-            match: "media.guilded.gg",
+          },
+          {
+            match: content.includes("media.guilded.gg"),
+            name: "media.guilded.gg",
+            category: "uploading",
             desc: "This mod might try to upload data to a Guilded webhook.",
-          });
-        }
-        if (content.includes("herokuapp.com")) {
-          topics.uploading.matches.push({
-            location: fileName,
-            match: "herokuapp.com",
+          },
+          {
+            match: content.includes("herokuapp.com"),
+            name: "herokuapp.com",
+            category: "uploading",
             desc: "This mod might try to upload data to a private Heroku server.",
-          });
-        }
-        if (content.includes("pastebin.com/raw/")) {
-          topics.uploading.matches.push({
-            location: fileName,
-            match: "pastebin.com/raw/",
+          },
+          {
+            match: content.includes("pastebin.com/raw/"),
+            name: "pastebin.com/raw/",
+            category: "uploading",
             desc: "This mod might try to find data on Pastebin, like a way to upload data.",
-          });
+          },
+        ];
+        for (const match of filters.filter((f) => f.match)) {
+          topics[match.category].matches.push({ location: fileName, ...match });
         }
         const urlsInFile =
           content.match(
@@ -241,11 +217,12 @@ selector.addEventListener("change", () => {
       heading.className = "font-bold text-xl my-2 cursor-pointer";
       topicTag.appendChild(heading);
       const list = document.createElement("ul");
+
       for (const match of topic.matches) {
         const listItem = document.createElement("li");
         listItem.className = "list-disc list-outside";
         listItem.innerHTML =
-          `<strong class="font-bold">${match.match}</strong> in ` +
+          `<strong class="font-bold">${match.name}</strong> in ` +
           `<span class="text-blue-500 cursor-pointer">${match.location}</span><br>` +
           match.desc;
         listItem.querySelector("span").addEventListener("click", async () => {
