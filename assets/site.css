@@ -937,12 +937,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 13rem;
 }
 
-.mt-16 {
+.my-16 {
   margin-top: 4rem;
-}
-
-.mb-16 {
-  margin-bottom: 4rem;
 }
 
 .mb-96 {
@@ -1059,8 +1055,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-image: url(/assets/blob-scatter-haikei.svg);
 }
 
-.bg-\[url\(\.\/layered-steps-haikei\.svg\)\] {
-  background-image: url(./layered-steps-haikei.svg);
+.bg-\[url\(\.\/stacked-waves-haikei\.svg\)\] {
+  background-image: url(./stacked-waves-haikei.svg);
 }
 
 .bg-gradient-to-b {
