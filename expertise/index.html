@@ -8,11 +8,11 @@
     <meta name="description" content="KTibow's resume - links to past work" />
     <title>Past Work | KTibow</title>
   </head>
-  <body class="bg-neutral-900 text-white">
+  <body class="bg-neutral-900 text-white m-2">
     <h1 class="text-2xl font-bold">Past Work</h1>
-    <p>My projects tend to be powerful, simple, and look good.</p>
+    <p>I try to make these powerful, simple, and look good.</p>
     <p>Filter by language:</p>
-    <select class="bg-neutral-700">
+    <select class="bg-neutral-700 rounded-md p-2">
       <option value="card">All</option>
       <option>Python</option>
       <option>JavaScript</option>
@@ -34,29 +34,31 @@
     <template-example element-name="prev-work">
       <div
         class="card relative flex-1 min-w-[20vmax]
-        bg-neutral-800 rounded-lg m-2 p-2
+        bg-neutral-800 rounded-lg p-2
         {{#prog-lang}} {{.}} {{/prog-lang}}">
         <h2 class="text-2xl font-bold">{{name}}</h2>
         <p>{{desc}}</p>
-        {{#category}}
-        <li class="list-none inline-block bg-neutral-700 p-2 m-2 rounded-md">
-          {{.}}
-        </li>
-        {{/category}}
+        <div class="flex gap-2 flex-wrap">
+          {{#category}}
+          <li class="list-none inline-block bg-neutral-700 p-2 rounded-md">
+            {{.}}
+          </li>
+          {{/category}}
+        </div>
         <br />
         <br />
-        <span class="absolute bottom-0">
+        <span class="absolute bottom-2">
           {{#url}}
-          <a href="{{url}}" class="text-blue-500">{{text}}</a>
+          <a href="{{url}}" class="text-blue-400">{{text}}</a>
           {{/url}}{{^url}}Not available on the web{{/url}}
         </span>
       </div>
     </template-example>
-    <main class="flex flex-wrap">
+    <main class="flex flex-wrap gap-2 mt-2">
       <prev-work
         name="RatRater"
         desc="An app that detects if a Forge mod (written in Java) is malicious or not by searching the class files for signals."
-        category="['Java', 'Regex', 'Reverse Engineering']"
+        category="['Java', 'Regex', 'Reverse engineering']"
         prog-lang="['Web', 'JavaScript']"
         text="View site"
         url="/RatRater/"></prev-work>
@@ -88,7 +90,7 @@
       <prev-work
         name="Unspam"
         desc="A ChatTriggers module to block advertisements sent by players in the in-game chat of Minecraft."
-        category="['JavaScript', 'Artificial Intelligence']"
+        category="['JavaScript', 'Artificial intelligence']"
         prog-lang="['JavaScript']"
         text="View info"
         url="https://hypixel.net/threads/forge-chattriggers-unspam-v2-2-0-dynamically-hide-spam-messages.4720941/"></prev-work>
@@ -102,14 +104,14 @@
       <prev-work
         name="👍"
         desc="A cancelled browser extension to streamline my school workflow."
-        category="['Browser extension', 'JavaScript', 'Reverse Engineering']"
+        category="['Browser extension', 'JavaScript', 'Reverse engineering']"
         prog-lang="['JavaScript', 'Web']"
         text="View code"
         url="https://github.com/KTibow/thumbs-up"></prev-work>
       <prev-work
         name="Requireit"
         desc="A convenience library to install Python packages on run."
-        category="['Python module', 'Minfification', 'Low-level Python']"
+        category="['Python module', 'Minfification', 'Low-level python']"
         prog-lang="['Python']"
         text="View code"
         url="https://github.com/KTibow/requireit"></prev-work>
@@ -130,14 +132,14 @@
       <prev-work
         name="Zoom Improved"
         desc="A web service to launch Zoom meetings with a better, customizable interface."
-        category="['Backendless', 'Web APIs', 'Reverse Engineering']"
+        category="['Backendless', 'Web APIs', 'Reverse engineering']"
         prog-lang="['JavaScript', 'Web']"
         text="View website code"
         url="https://github.com/KTibow/ktibow.github.io/tree/oldish-master/zoom"></prev-work>
       <prev-work
         name="Simple Zoom Joiner"
         desc="A very tiny server to launch a variety of meetings with a custom experience."
-        category="['Minfification', 'Customizable', 'Reverse Engineering']"
+        category="['Minfification', 'Customizable', 'Reverse engineering']"
         prog-lang="['Python', 'JavaScript', 'Web']"
         text="View code"
         url="https://github.com/KTibow/simple-zoom-joiner/blob/main/app.py"></prev-work>
