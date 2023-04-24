@@ -6,13 +6,16 @@
     <link rel="stylesheet" href="../assets/site.css" />
     <meta name="accent-color" content="#324AD5" />
     <meta name="description" content="KTibow's resume - links to past work" />
-    <title>Past Work | KTibow</title>
+    <title>Past Work @KTibow</title>
   </head>
-  <body class="bg-neutral-900 text-white m-2">
+  <body class="m-2 bg-neutral-900 text-white">
     <h1 class="text-2xl font-bold">Past Work</h1>
-    <p>This is a list of a bunch of my projects. I've gotten better over time, but I always tried to make these good quality.</p>
+    <p>
+      This is a list of a bunch of my projects. I've gotten better over time, but I always tried to
+      make these good quality.
+    </p>
     <p>Filter by language:</p>
-    <select class="bg-neutral-700 rounded-md p-2">
+    <select class="rounded-md bg-neutral-700 p-2">
       <option value="card">All</option>
       <option>Python</option>
       <option>JavaScript</option>
@@ -39,9 +42,9 @@
       >
         <h2 class="text-2xl font-bold">{{name}}</h2>
         <p>{{desc}}</p>
-        <div class="flex gap-2 flex-wrap">
+        <div class="flex flex-wrap gap-2">
           {{#category}}
-          <li class="list-none inline-block bg-neutral-700 p-2 rounded-md">{{.}}</li>
+          <li class="inline-block list-none rounded-md bg-neutral-700 p-2">{{.}}</li>
           {{/category}}
         </div>
         <br />
@@ -53,7 +56,7 @@
         </span>
       </div>
     </template-example>
-    <main class="flex flex-wrap gap-2 mt-2">
+    <main class="mt-2 flex flex-wrap gap-2">
       <prev-work
         name="M3 Svelte"
         desc="A Svelte component library that implements Material Design 3 (Material You)."
@@ -92,20 +95,18 @@
         url="https://github.com/search?q=org%3Ahome-assistant+is%3Amerged+author%3AKTibow&type=pullrequests"
       ></prev-work>
       <prev-work
-        name="Flips"
-        desc="A collection of calculators for the game Hypixel Skyblock."
-        category="['HTML', 'Modern web APIs', 'CSS', 'JavaScript']"
-        prog-lang="['Python', 'Web', 'JavaScript']"
-        text="View site"
-        url="https://skyclient.co"
-      ></prev-work>
-      <prev-work
         name="Fiomba"
         desc="A project about controlling an old type of Roomba remotely."
         category="['Raspberry Pi', 'MQTT', 'Serial']"
         prog-lang="['Python', 'Hardware']"
         text="Read docs"
         url="/2vFiomba/"
+      ></prev-work>
+      <prev-work
+        name="Flips"
+        desc="A collection of calculators for the game Hypixel Skyblock."
+        category="['HTML', 'Modern web APIs', 'CSS', 'JavaScript']"
+        prog-lang="['Python', 'Web', 'JavaScript']"
       ></prev-work>
       <prev-work
         name="Unspam"

@@ -8,40 +8,37 @@
     <title>@KTibow</title>
   </head>
   <body
-    class="bg-[url(low-poly-grid-haikei.svg)] bg-no-repeat bg-cover bg-fixed text-white flex items-center justify-center min-h-screen">
-    <div class="bg-neutral-800 rounded-lg p-4 flex lg:max-w-prose">
-      <div class="text-center border-r-neutral-400 pr-4 border-r-2">
+    class="flex min-h-screen items-center justify-center bg-[url(low-poly-grid-haikei.svg)] bg-cover bg-fixed bg-no-repeat text-white"
+  >
+    <div class="flex gap-4 bg-neutral-900/70 p-4 backdrop-blur-xl md:rounded-2xl lg:max-w-prose">
+      <div class="shrink-0 border-r border-r-neutral-200/20 pr-4 text-center">
         <h1 class="text-xl lg:text-3xl">KTibow</h1>
-        <img src="assets/icon.svg" class="w-16 lg:w-32 rounded-full" />
+        <img src="assets/icon.svg" class="w-16 rounded-full sm:w-32" />
       </div>
-      <div class="pl-4">
-        <p class="font-bold">about me</p>
-        <ul class="list-disc list-inside">
-          <li>yet another developer</li>
-          <li>
-            <a
-              href="https://github.com/KTibow"
-              class="text-indigo-400 border-b-current hover:border-b-2 transition-all">
-              GitHub profile
-            </a>
-          </li>
-          <li>
-            <a
-              href="/expertise/"
-              class="text-indigo-400 border-b-current hover:border-b-2 transition-all">
-              list of random stuff i've made
-            </a>
-          </li>
-        </ul>
-        <p class="font-bold">talking with me</p>
-        <ul class="list-disc list-inside">
-          <li>
-            online on discord a lot, KTibow#3960, if i deny your friend request
-            send another to make sure you're not a bot
-          </li>
-          <li>male</li>
-          <li>sleeping from 8PM-6AM PST</li>
-        </ul>
+      <div>
+        <p class="font-bold">who am i?</p>
+        <p>yet another developer. see my GitHub for more info. also online on Discord a lot.</p>
+        <div class="my-2 grid grid-cols-2 gap-2">
+          <a
+            href="https://github.com/KTibow"
+            class="item-bg flex items-center justify-center rounded-md p-2"
+          >
+            GitHub
+          </a>
+          <a
+            href="https://discord.com/users/794377681331945524"
+            class="item-bg flex items-center justify-center rounded-md p-2"
+          >
+            KTibow#3960
+          </a>
+          <a href="/expertise/" class="item-bg flex items-center justify-center rounded-md p-2">
+            List of my projects
+          </a>
+          <a href="/misc/" class="item-bg flex items-center justify-center rounded-md p-2">
+            Other things on this site
+          </a>
+        </div>
+        <p>(if i deny your friend request on Discord, send another so i know you're not a bot)</p>
       </div>
     </div>
   </body>
