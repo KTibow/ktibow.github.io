@@ -1005,10 +1005,6 @@ video {
   bottom: 0.5rem;
 }
 
-.m-2 {
-  margin: 0.5rem;
-}
-
 .m-4 {
   margin: 1rem;
 }
@@ -1023,6 +1019,11 @@ video {
   margin-bottom: 0.5rem;
 }
 
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .mb-16 {
   margin-bottom: 4rem;
 }
@@ -1033,10 +1034,6 @@ video {
 
 .mt-16 {
   margin-top: 4rem;
-}
-
-.mt-2 {
-  margin-top: 0.5rem;
 }
 
 .mt-52 {
@@ -1234,6 +1231,10 @@ video {
 
 .font-bold {
   font-weight: 700;
+}
+
+.italic {
+  font-style: italic;
 }
 
 .text-blue-400 {
