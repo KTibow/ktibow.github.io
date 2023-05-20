@@ -11,8 +11,8 @@
   <body class="m-4 bg-neutral-900 text-white">
     <h1 class="text-2xl font-bold">Past Work</h1>
     <p>
-      This is a list of a bunch of my projects. I've gotten better over time, but I always tried to
-      make these good quality.
+      This is a list of a bunch of my projects. I've gotten better over time,
+      but I always tried to make these good quality.
     </p>
     <p>Filter by language:</p>
     <select class="my-4 rounded-md bg-neutral-700 p-2">
@@ -44,7 +44,9 @@
         <p>{{desc}}</p>
         <div class="flex flex-wrap gap-2">
           {{#category}}
-          <li class="inline-block list-none rounded-md bg-neutral-700 p-2">{{.}}</li>
+          <li class="inline-block list-none rounded-md bg-neutral-700 p-2">
+            {{.}}
+          </li>
           {{/category}}
         </div>
         <br />
@@ -100,7 +102,7 @@
         category="['Raspberry Pi', 'MQTT', 'Serial']"
         prog-lang="['Python', 'Hardware']"
         text="Read docs"
-        url="/2vFiomba/"
+        url="/blog/2vFiomba/"
       ></prev-work>
       <prev-work
         name="Flips"
