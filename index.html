@@ -11,7 +11,7 @@
     class="flex min-h-screen items-center justify-center bg-[url(low-poly-grid-haikei.svg)] bg-cover bg-fixed bg-no-repeat text-white"
   >
     <div
-      class="flex gap-4 bg-neutral-900/70 p-4 backdrop-blur-xl md:rounded-2xl lg:max-w-prose"
+      class="main-box flex gap-4 bg-neutral-900/70 p-4 backdrop-blur-xl md:rounded-2xl lg:max-w-prose"
     >
       <div class="relative w-16 shrink-0 sm:w-32">
         <h1 class="text-center text-xl lg:text-3xl">KTibow</h1>
@@ -61,6 +61,20 @@
         position: absolute;
         top: 50%;
         transform: translate(0, -50%);
+      }
+      .main-box {
+        animation: load 1s cubic-bezier(0, 0, 0, 1);
+      }
+      @keyframes load {
+        0% {
+          clip-path: inset(50% 0);
+        }
+        15% {
+          clip-path: inset(50% 0);
+        }
+        100% {
+          clip-path: inset(0 0);
+        }
       }
     </style>
   </body>
