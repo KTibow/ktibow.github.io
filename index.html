@@ -13,10 +13,11 @@
     <div
       class="flex gap-4 bg-neutral-900/70 p-4 backdrop-blur-xl md:rounded-2xl lg:max-w-prose"
     >
-      <div class="shrink-0 border-r border-r-neutral-200/20 pr-4 text-center">
-        <h1 class="text-xl lg:text-3xl">KTibow</h1>
-        <img src="assets/icon.svg" class="w-16 rounded-full sm:w-32" />
+      <div class="relative w-16 shrink-0 sm:w-32">
+        <h1 class="text-center text-xl lg:text-3xl">KTibow</h1>
+        <img src="assets/icon.svg" class="v-center rounded-full" />
       </div>
+      <div class="w-px shrink-0 bg-white/20"></div>
       <div>
         <p class="font-bold">who am i?</p>
         <p>
@@ -55,5 +56,12 @@
         </p>
       </div>
     </div>
+    <style>
+      .v-center {
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+      }
+    </style>
   </body>
 </html>
