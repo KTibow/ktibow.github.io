@@ -70,7 +70,7 @@ void Algo_Input(int* param_1, int param_2, int param_3, int param_4)
   iStack_2c = param_3;
   local_28 = param_4;
   if (interTime > 970) {
-    uVar8 = 0x19 - interCnt;
+    uVar8 = 25 - interCnt;
     if ((int)uVar8 < 0) {
       uVar8 = 0;
     }
@@ -91,7 +91,7 @@ void Algo_Input(int* param_1, int param_2, int param_3, int param_4)
       preRawdata._0_4_ = *param_1;
       preRawdata._4_4_ = param_1[1];
       preRawdata._8_4_ = param_1[2];
-      if (param_3 == 0x12) {
+      if (param_3 == 18) {
         preRawdata._0_4_ = preRawdata._0_4_ << 2;
         preRawdata._4_4_ = preRawdata._4_4_ << 2;
         preRawdata._8_4_ = preRawdata._8_4_ << 2;
@@ -134,7 +134,7 @@ void Algo_Input(int* param_1, int param_2, int param_3, int param_4)
       if (iVar3 < 0) {
         iVar3 = -iVar3;
       }
-      if (0x12bf < iVar3) {
+      if (iVar3 > 4799) {
         ppgPower25Hz = local_b4;
         local_b4 = prePPGAfterFilter;
       }
@@ -196,7 +196,7 @@ void Algo_Input(int* param_1, int param_2, int param_3, int param_4)
       } else {
         signalSafeGuardCnt = 0;
       }
-      if (((firstLock == '\0') && (0xf < iVar5 * 100 + 128 >> 8)) &&
+      if (((firstLock == '\0') && (15 < iVar5 * 100 + 128 >> 8)) &&
           (runningAlltime == 30)) {
         ProtectTic = 5;
         if ((param_3 == 0) && (local_40 == 1)) {
@@ -282,13 +282,13 @@ void Algo_Input(int* param_1, int param_2, int param_3, int param_4)
         if ((0 < badSignalCnt) || ((ProtectTic != 0 && (param_3 == 0))))
           goto label_5;
       } else {
-        badSignalCnt = 0x1e;
+        badSignalCnt = 30;
       label_5:
         if (HRpatch != 0) {
           if (HRlast - HRpatch < 1280) {
             iVar6 = HRpatch + ((HRlast - HRpatch) * 405 >> 13);
           } else {
-            iVar6 = HRpatch + 0x3f;
+            iVar6 = HRpatch + 63;
           }
         }
       }
@@ -306,7 +306,7 @@ void Algo_Input(int* param_1, int param_2, int param_3, int param_4)
       if (firstLock != '\0') {
         param_3 = 1;
       }
-      if (abnormalHighHRCnt == 0x1e) {
+      if (abnormalHighHRCnt == 30) {
         HRlast = HRlast >> 1;
         param_3 = 0;
       }
@@ -376,8 +376,7 @@ void Algo_Input(int* param_1, int param_2, int param_3, int param_4)
         A major part of the function seems to be a loop, probably processing a
         batch of new heart rate data. The function seems to be in readiness to
         calculate bpm even if the <code>interTime</code> value is greater than a
-        threshold (0x3ca), which is probably some time duration, perhaps a
-        minute.
+        threshold (970), which is probably some time duration.
       </p>
       <p>
         Within this loop, the function performs preprocessing operations on raw
