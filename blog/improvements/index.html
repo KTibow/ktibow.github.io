@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/site.css" />
+    <meta name="accent-color" content="#324AD5" />
+    <title>Life improvements @KTibow</title>
+  </head>
+  <body class="bg-neutral-900 text-white">
+    <main class="prose prose-invert mx-auto my-4">
+      <h1>Life improvements I've done</h1>
+      <p>
+        Note: I wrote this on a plane because I got bored. I didn't have
+        internet.
+      </p>
+      <p>
+        This is somewhat inspired by me coming onto some guy's blog (while
+        researching adaptive-lighting) where he talks about how he did a project
+        where he spent some time improving his life.
+        <a
+          href="https://socraticowl.com/post/kaizen-experiment/"
+          class="text-blue-400"
+        >
+          (link)
+        </a>
+      </p>
+    </main>
+    <div class="the-grid">
+      <div class="bg-cyan-300/30">
+        <p class="font-bold">Home Assistant</p>
+        <p>Manages lights and tracks data throughout the day.</p>
+      </div>
+      <div class="bg-teal-300/30">
+        <p class="font-bold">Automatic watch syncer</p>
+        <p>
+          Syncs the time, weather, and schedule to my Bangle.js daily at 6AM.
+        </p>
+      </div>
+      <div class="bg-red-300/30">
+        <p class="font-bold">Colemak</p>
+        <p>
+          Keyboard layout optimized for ergonomics, used on both my personal and
+          school computers.
+        </p>
+      </div>
+      <div class="bg-green-300/30">
+        <p class="font-bold">Custom school websites</p>
+        <p>
+          Utilities I coded to view recently posted assignments, connect to the
+          web filters, use GPT, chat (direct, unblockable), etc.
+        </p>
+      </div>
+      <div class="bg-indigo-300/30">
+        <p class="font-bold">More soon?</p>
+        <p>
+          At the time of writing, I actually can't think of that many - but I
+          have plans for other stuff already.
+        </p>
+      </div>
+      <div class="bg-orange-300/30">
+        <p class="font-bold">Alert system (HA)</p>
+        <p>This is a plan</p>
+      </div>
+      <div class="bg-blue-300/30">
+        <p class="font-bold">Sleep automations</p>
+        <p>This is a plan</p>
+      </div>
+      <div class="bg-yellow-300/30">
+        <p class="font-bold">Apps</p>
+        <p>email systems, google voice, books, etc. does this even count?</p>
+      </div>
+    </div>
+    <style>
+      .the-grid {
+        display: grid;
+        max-width: 65ch;
+        margin: 0 auto;
+        gap: 1.5rem;
+      }
+      @media (min-width: 640px) {
+        .the-grid {
+          grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        }
+      }
+      .the-grid > div {
+        border-radius: 1rem;
+        padding: 1rem 1.5rem;
+      }
+    </style>
+  </body>
+</html>

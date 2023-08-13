@@ -12,64 +12,65 @@
     class="flex min-h-screen items-center justify-center bg-[url(low-poly-grid-haikei.svg)] bg-cover bg-fixed bg-no-repeat text-white"
   >
     <div
-      class="main-box flex gap-4 bg-neutral-900/70 p-4 backdrop-blur-xl md:rounded-2xl lg:max-w-prose"
+      class="main-box bg-neutral-900/70 p-4 font-mono backdrop-blur-xl min-[320px]:rounded-2xl lg:max-w-prose"
     >
-      <div class="relative w-16 shrink-0 sm:w-32">
-        <h1 class="text-center text-xl lg:text-3xl">KTibow</h1>
-        <img src="assets/icon.svg" class="v-center rounded-full" />
-      </div>
-      <div class="w-px shrink-0 bg-white/20"></div>
-      <div>
-        <p class="font-bold">who am i?</p>
-        <p>
-          yet another developer. see my GitHub for more info. also online on
-          Discord a lot.
-        </p>
-        <div class="my-2 grid grid-cols-2 gap-2">
-          <a
-            href="https://github.com/KTibow"
-            class="item-bg rounded-md p-2 text-center"
-          >
-            GitHub
-          </a>
-          <a
-            href="https://discord.com/users/794377681331945524"
-            class="item-bg rounded-md p-2 text-center font-mono"
-          >
-            ktibow
-          </a>
-          <a href="/expertise/" class="item-bg rounded-md p-2 text-center">
-            List of my projects
-          </a>
-          <a href="/blog/" class="item-bg rounded-md p-2 text-center">
-            Blog posts
-          </a>
+      <p class="mb-2 text-xl">> neofetch</p>
+      <div class="flex gap-4">
+        <img
+          src="assets/icon.svg"
+          class="w-16 self-center rounded-full sm:w-32"
+        />
+        <div class="font-mono">
+          <p>KTibow</p>
+          <p class="mb-2">yet another developer</p>
+          <p>
+            <a href="https://github.com/KTibow"> more info (GitHub) </a>
+          </p>
+          <p>
+            <a href="https://discord.com/users/794377681331945524">
+              contact me (Discord)*
+            </a>
+          </p>
+          <p>
+            <a href="/expertise/">my work</a>
+          </p>
+          <p>
+            <a href="/blog/">my blog</a>
+          </p>
+          <p class="mt-2">
+            * anti-bot measure: send a 2nd friend request if needed
+          </p>
         </div>
-        <p>
-          (if i deny your friend request on Discord, send another so i know
-          you're not a bot)
-        </p>
       </div>
     </div>
     <style>
-      .v-center {
-        position: absolute;
-        top: 50%;
-        transform: translate(0, -50%);
-      }
       .main-box {
         animation: load 1s cubic-bezier(0, 0, 0, 1);
       }
       @keyframes load {
         0% {
-          clip-path: inset(50% 0);
+          clip-path: inset(0 0 100% 0);
         }
         15% {
-          clip-path: inset(50% 0);
+          clip-path: inset(0 0 100% 0);
         }
         100% {
           clip-path: inset(0 0);
         }
+      }
+      a {
+        color: rgb(204 212 255);
+        text-decoration-line: underline;
+        text-decoration-color: rgb(204 212 255 / 0.5);
+        text-decoration-thickness: 0.125rem;
+        transition: text-decoration 200ms;
+      }
+      a:hover,
+      a:focus-visible {
+        text-decoration-color: rgb(204 212 255 / 0.75);
+      }
+      a:active {
+        text-decoration-color: rgb(204 212 255 / 1);
       }
     </style>
   </body>
