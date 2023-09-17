@@ -12,21 +12,30 @@
     class="flex min-h-screen items-center justify-center bg-[url(low-poly-grid-haikei.svg)] bg-cover bg-fixed bg-no-repeat text-white"
   >
     <div
-      class="main-box overflow-hidden bg-neutral-900/80 font-mono backdrop-blur-xl min-[320px]:rounded-2xl lg:max-w-prose"
+      class="overflow-hidden bg-neutral-900/80 font-mono backdrop-blur-xl min-[320px]:rounded-2xl lg:max-w-prose"
     >
       <p class="mb-2 bg-neutral-900 px-4 py-2 text-center">> neofetch</p>
-      <div class="flex gap-6 p-4 pb-6">
+      <div class="the-anim flex gap-6 p-4 pb-6">
         <img
           src="assets/icon.svg"
           class="w-16 self-center rounded-full sm:w-32"
         />
         <div class="font-mono">
-          <p>KTibow</p>
-          <p>yet another developer</p>
-          <p>probably a better ui designer than you</p>
-          <p>spends too much time on Discord</p>
-          <p class="mb-1 mt-2">
-            <a href="https://github.com/KTibow"> more info (GitHub) </a>
+          <p class="font-bold">KTibow</p>
+          <details>
+            <summary class="flex cursor-pointer">yet another developer</summary>
+            <p class="text-sm">
+              i also do ui design, theres a >50% chance i'm better than you at
+              it
+            </p>
+            <p class="mt-2 text-sm">
+              communication: i spend a lot of time on Discord. if i have
+              problems communicating, sorry - i have autism and i'm continously
+              improving my communication skills.
+            </p>
+          </details>
+          <p class="mb-1 mt-4">
+            <a href="https://github.com/KTibow">more info (GitHub)</a>
           </p>
           <p class="mb-1">
             <a href="https://discord.com/users/794377681331945524">
@@ -39,14 +48,14 @@
           <p>
             <a href="/blog/">my blog</a>
           </p>
-          <p class="mt-2">
+          <p class="mt-4 text-sm">
             * anti-bot measure: send a 2nd friend request if needed
           </p>
         </div>
       </div>
     </div>
     <style>
-      .main-box {
+      .the-anim {
         animation: load 1s cubic-bezier(0, 0, 0, 1);
       }
       @keyframes load {
@@ -59,6 +68,14 @@
         100% {
           clip-path: inset(0 0);
         }
+      }
+      summary::after {
+        margin-left: auto;
+        margin-right: 0.5rem;
+        content: " ▼";
+      }
+      details[open] summary:after {
+        content: " ▲";
       }
       a {
         display: block;
