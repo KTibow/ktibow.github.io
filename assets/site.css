@@ -1063,12 +1063,12 @@ video {
   margin-bottom: 1rem;
 }
 
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
-
 .mb-1 {
   margin-bottom: 0.25rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
 }
 
 .mb-8 {
@@ -1159,6 +1159,10 @@ video {
   align-self: center;
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .rounded {
   border-radius: 0.25rem;
 }
@@ -1184,6 +1188,22 @@ video {
   background-color: rgb(46 52 64 / var(--tw-bg-opacity));
 }
 
+.bg-blue-300\/30 {
+  background-color: rgb(147 197 253 / 0.3);
+}
+
+.bg-cyan-300\/30 {
+  background-color: rgb(103 232 249 / 0.3);
+}
+
+.bg-green-300\/30 {
+  background-color: rgb(134 239 172 / 0.3);
+}
+
+.bg-indigo-300\/30 {
+  background-color: rgb(165 180 252 / 0.3);
+}
+
 .bg-neutral-700 {
   --tw-bg-opacity: 1;
   background-color: rgb(64 64 64 / var(--tw-bg-opacity));
@@ -1203,8 +1223,8 @@ video {
   background-color: rgb(23 23 23 / 0.7);
 }
 
-.bg-cyan-300\/30 {
-  background-color: rgb(103 232 249 / 0.3);
+.bg-orange-300\/30 {
+  background-color: rgb(253 186 116 / 0.3);
 }
 
 .bg-red-300\/30 {
@@ -1215,32 +1235,12 @@ video {
   background-color: rgb(94 234 212 / 0.3);
 }
 
-.bg-indigo-300\/30 {
-  background-color: rgb(165 180 252 / 0.3);
-}
-
-.bg-orange-300\/30 {
-  background-color: rgb(253 186 116 / 0.3);
-}
-
-.bg-blue-300\/30 {
-  background-color: rgb(147 197 253 / 0.3);
-}
-
-.bg-lime-300\/30 {
-  background-color: rgb(190 242 100 / 0.3);
-}
-
-.bg-sky-300\/30 {
-  background-color: rgb(125 211 252 / 0.3);
-}
-
-.bg-green-300\/30 {
-  background-color: rgb(134 239 172 / 0.3);
-}
-
 .bg-yellow-300\/30 {
   background-color: rgb(253 224 71 / 0.3);
+}
+
+.bg-neutral-900\/80 {
+  background-color: rgb(23 23 23 / 0.8);
 }
 
 .bg-\[url\(\/assets\/blob-scatter-haikei\.svg\)\] {
@@ -1273,6 +1273,24 @@ video {
 
 .p-4 {
   padding: 1rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.pb-6 {
+  padding-bottom: 1.5rem;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .font-mono {
