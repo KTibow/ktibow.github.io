@@ -1,15 +1,19 @@
 <html>
   <head>
     <title>Auto Balancer</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="This tool balances chemical reaction equations for you by finding working coefficients.">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="This tool balances chemical reaction equations for you by finding working coefficients."
+    />
     <style>
       body {
         background: #222;
         color: white;
         font-family: system-ui, Roboto, sans-serif;
       }
-      input, button {
+      input,
+      button {
         background: #333;
         color: white;
         border: none;
@@ -20,15 +24,21 @@
   </head>
   <body>
     <h1>Automatic Formula Balancer</h1>
-    <p>This tool finds the correct molecule coefficients to balance chemical reaction equations.</p>
-    <p>It tries all possible coefficients (from 1 to 7) on all molecules inputted.</p>
+    <p>
+      This tool finds the correct molecule coefficients to balance chemical
+      reaction equations.
+    </p>
+    <p>
+      It tries all possible coefficients (from 1 to 7) on all molecules
+      inputted.
+    </p>
     <p>It currently has no support for parenthesis.</p>
     <h2>How to use</h2>
     <p>Example: The "proper" formula (unbalanced)</p>
     <p>NO<sub>2</sub> + H<sub>2</sub>O → H<sub>3</sub> + O + NO</p>
     <p>would become (when putting into the field)</p>
     <p>NO2+H2O>H3+O+NO</p>
-    <input type="text" placeholder="Input unbalanced formula">
+    <input type="text" placeholder="Input unbalanced formula" />
     <button>Solve</button>
     <p id="progress"></p>
     <p><b>Solution</b></p>
@@ -39,7 +49,11 @@
         let charge = {};
         const molecules = formula.split(/[\+\>]/g);
         const beforeReactionCount = formula.split(">")[0].split("+").length;
-        for (let moleculeIndex = 0; moleculeIndex < molecules.length; moleculeIndex++) {
+        for (
+          let moleculeIndex = 0;
+          moleculeIndex < molecules.length;
+          moleculeIndex++
+        ) {
           const multiplier = counts[moleculeIndex];
           const atoms = molecules[moleculeIndex].match(/[A-Z][a-z]?[0-9]*/g);
           for (atom of atoms) {
@@ -48,7 +62,10 @@
             if (!charge[atomName]) {
               charge[atomName] = 0;
             }
-            charge[atomName] += Number(atomCount || 1) * multiplier * (moleculeIndex < beforeReactionCount ? 1 : -1);
+            charge[atomName] +=
+              Number(atomCount || 1) *
+              multiplier *
+              (moleculeIndex < beforeReactionCount ? 1 : -1);
           }
         }
         let isSolution = true;
@@ -63,15 +80,26 @@
       const recursiveCheck = (formula, stack) => {
         if (formula.split(/[\+\>]/g).length == stack.length) {
           checked++;
-          if (!document.querySelector("#output").innerText && checkFormula(stack, formula)) {
+          if (
+            !document.querySelector("#output").innerText &&
+            checkFormula(stack, formula)
+          ) {
             const beforeReactionCount = formula.split(">")[0].split("+").length;
-            const beforeReaction = stack.slice(0, beforeReactionCount).join(", ");
+            const beforeReaction = stack
+              .slice(0, beforeReactionCount)
+              .join(", ");
             const afterReaction = stack.slice(beforeReactionCount).join(", ");
-            document.querySelector("#output").innerText = `${beforeReaction} > ${afterReaction}`;
+            document.querySelector(
+              "#output",
+            ).innerText = `${beforeReaction} > ${afterReaction}`;
             document.querySelector("#progress").innerText = "Found!";
           }
-          if (checked == Math.pow(7, stack.length) && document.querySelector("#progress").innerText != "Found!") {
-            document.querySelector("#progress").innerText = "No solution (with the tested coefficients).";
+          if (
+            checked == Math.pow(7, stack.length) &&
+            document.querySelector("#progress").innerText != "Found!"
+          ) {
+            document.querySelector("#progress").innerText =
+              "No solution (with the tested coefficients).";
           }
         } else {
           recursiveCheck(formula, [1, ...stack]);
@@ -82,7 +110,7 @@
           recursiveCheck(formula, [6, ...stack]);
           recursiveCheck(formula, [7, ...stack]);
         }
-      }
+      };
       document.querySelector("button").onclick = () => {
         const formula = document.querySelector("input").value;
         checked = 0;

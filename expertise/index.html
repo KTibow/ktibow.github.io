@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -15,7 +15,7 @@
       but I always tried to make these good quality.
     </p>
     <p>Filter by language:</p>
-    <select class="my-4 rounded-md bg-neutral-700 p-2">
+    <select class="mt-2 mb-6 rounded-md bg-neutral-700 p-2">
       <option value="card">All</option>
       <option>Python</option>
       <option>JavaScript</option>
@@ -59,6 +59,12 @@
       </div>
     </template-example>
     <main class="flex flex-wrap gap-2">
+      <prev-work
+        name="SchoolHub"
+        desc="A series of private websites that gets stuff I need and useful utilities in one place."
+        category="['Svelte', 'API integration', 'UX', 'UI']"
+        prog-lang="['Web', 'JavaScript']"
+      ></prev-work>
       <prev-work
         name="M3 Svelte"
         desc="A Svelte component library that implements Material Design 3 (Material You)."
@@ -199,163 +205,6 @@
         url="https://github.com/KTibow/simple-zoom-joiner/blob/main/app.py"
       ></prev-work>
     </main>
-    <!--
-    <div>
-      <div class="card Web">
-        <h2>schoology.css</h2>
-        <p>
-          This was a stylesheet that modifed Schoology, a place where teachers
-          can give students assignments, to look better.
-        </p>
-        <li>Backendless</li>
-        <li>Pure CSS</li>
-        <li>Data grinding</li>
-        <a
-          href="https://github.com/KTibow/ktibow.github.io/tree/oldish-master"
-          title="My personal site was recently revamped, so the code remains, but not the webpage.">
-          Site no longer hosted
-        </a>
-      </div>
-      <div class="card JavaScript Web">
-        <h2>Library Card</h2>
-        <p>
-          This was a PWA that emulated your library card number and PIN by
-          flashing barcodes.
-        </p>
-        <li>Backendless</li>
-        <li>PWA</li>
-        <li>Themable</li>
-        <a
-          href="https://github.com/KTibow/ktibow.github.io/tree/oldish-master"
-          title="My personal site was recently revamped, so the code remains, but not the webpage.">
-          Site no longer hosted
-        </a>
-      </div>
-      <div class="card JavaScript Web">
-        <h2>Web Serial Console</h2>
-        <p>
-          This was a first of its kind simple online serial console (admittedly
-          to bypass serial console apps being blocked by parents).
-        </p>
-        <li>Backendless</li>
-        <li>Web APIs</li>
-        <li>Web Libraries</li>
-        <a
-          href="https://github.com/KTibow/fridge"
-          title="My personal site was recently revamped, so the code remains, but not the webpage.">
-          Site no longer hosted
-        </a>
-      </div>
-      <div class="card Python">
-        <h2>emailHelpers</h2>
-        <p>
-          This was a wrapper for the smtplib and email packages in Python I made
-          in a day.
-        </p>
-        <li>Python module</li>
-        <li>OOP</li>
-        <li>Documentation</li>
-        <a href="https://family-richards.github.io/emailHelpers/">View site</a>
-      </div>
-      <div class="card Hardware">
-        <h2>ESP32 OTA</h2>
-        <p>
-          This was a script to add a web interface usable for sending compiled
-          code OTA to an ESP32.
-        </p>
-        <li>C code</li>
-        <li>Hardware web servers</li>
-        <li>OTA</li>
-        <a
-          href="https://github.com/KTibow/ktibow.github.io/tree/oldish-master"
-          title="My personal site was recently revamped, so the code remains, but not the webpage.">
-          Site no longer hosted
-        </a>
-      </div>
-      <div class="card Web">
-        <h2>Home Assistant Soft theme</h2>
-        <p>This is a light-weighter soft UI theme for Home Assistant.</p>
-        <li>Backendless</li>
-        <li>Pure CSS</li>
-        <a href="https://github.com/KTibow/lovelace-soft-theme">View site</a>
-      </div>
-      <div class="card Python JavaScript Web">
-        <h2>Bazaar Money</h2>
-        <p>This was a calculator for flipping in the game Hypixel Skyblock.</p>
-        <li>Flask</li>
-        <li>APIs</li>
-        <li>Data grinding</li>
-        <a href="https://bazaar-money.ktibow.repl.co/">View site</a>
-      </div>
-      <div class="card Python JavaScript Web">
-        <h2>Skyblock Money</h2>
-        <p>
-          This was a newer calculator for flipping in the game Hypixel Skyblock.
-        </p>
-        <li>Sanic</li>
-        <li>APIs</li>
-        <li>OAuth</li>
-        <li>Data grinding</li>
-        <a href="https://skyblock-money.ml/">View site</a>
-      </div>
-      <div class="card Web">
-        <h2>Home Assistant Soft UI old theme</h2>
-        <p>This was a CSS-heavy Home Assistant theme to add Soft UI.</p>
-        <li>Backendless</li>
-        <li>Pure CSS</li>
-        <li>Data grinding</li>
-        <a href="https://github.com/KTibow/lovelace-light-soft-ui-theme">
-          View site
-        </a>
-      </div>
-      <div class="card JavaScript Web">
-        <h2>Setting up a Pi from another Pi</h2>
-        <p>
-          This was an interactive tutorial about how to format and set up
-          another Raspberry Pi SD card from an existing one.
-        </p>
-        <li>Backendless</li>
-        <li>Interactive</li>
-        <li>Linux command line</li>
-        <a
-          href="https://github.com/KTibow/ktibow.github.io/tree/oldish-master"
-          title="My personal site was recently revamped, so the code remains, but not the webpage.">
-          Site no longer hosted
-        </a>
-      </div>
-      <div class="card Python">
-        <h2>Home Assistant Backend contributions</h2>
-        <p>These are some Pull Requests I've made to Home Assistant.</p>
-        <li>Python module</li>
-        <li>Fixing dependencies</li>
-        <a
-          href="https://github.com/home-assistant/core/pulls?q=is%3Apr+is%3Amerged+author%3AKTibow+">
-          View site
-        </a>
-      </div>
-      <div class="card Web">
-        <h2>Home Assistant Docs contributions</h2>
-        <p>These are some Pull Requests I've made to Home Assistant.</p>
-        <li>Backendless</li>
-        <li>Fixing dependencies</li>
-        <li>Broken links</li>
-        <a
-          href="https://github.com/home-assistant/home-assistant.io/pulls?q=is%3Apr+is%3Amerged+author%3AKTibow+">
-          View site
-        </a>
-      </div>
-      <div class="card JavaScript Web">
-        <h2>Home Assistant Frontend contributions</h2>
-        <p>These are some Pull Requests I've made to Home Assistant.</p>
-        <li>Backendless</li>
-        <li>Fixing dependencies</li>
-        <li>Data grinding</li>
-        <a
-          href="https://github.com/home-assistant/frontend/pulls?q=is%3Apr+is%3Amerged+author%3AKTibow+">
-          View site
-        </a>
-      </div>
-    </div>-->
     <script src="https://unpkg.com/json5@^2.0.0/dist/index.min.js"></script>
     <script src="https://unpkg.com/mustache@^4.2.0/mustache.min.js"></script>
     <script src="/assets/examples.js"></script>
