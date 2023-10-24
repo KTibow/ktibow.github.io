@@ -9,31 +9,33 @@
     <title>Past Work @KTibow</title>
   </head>
   <body class="m-4 bg-neutral-900 text-white">
-    <h1 class="text-2xl font-bold">Past Work</h1>
-    <p>
-      This is a list of a bunch of my projects. I've gotten better over time,
-      but I always tried to make these good quality.
-    </p>
-    <p>Filter by language:</p>
-    <select class="mt-2 mb-6 rounded-md bg-neutral-700 p-2">
-      <option value="card">All</option>
-      <option>Python</option>
-      <option>JavaScript</option>
-      <option>Web</option>
-      <option>Hardware</option>
-    </select>
-    <script>
-      document.querySelector("select").value = "card";
-      document.querySelector("select").addEventListener("change", (ev) => {
-        for (let project of document.querySelectorAll(".card")) {
-          if (project.classList.contains(ev.target.value)) {
-            project.style.display = "block";
-          } else {
-            project.style.display = "none";
+    <main class="prose prose-invert mx-auto my-4">
+      <h1>Past Work</h1>
+      <p>
+        This is a list of a bunch of my projects. I've gotten better over time,
+        but I always tried to make these good quality.
+      </p>
+      <p class="mb-2">Filter by language:</p>
+      <select class="mb-6 rounded-md bg-neutral-700 p-2">
+        <option value="card">All</option>
+        <option>Python</option>
+        <option>JavaScript</option>
+        <option>Web</option>
+        <option>Hardware</option>
+      </select>
+      <script>
+        document.querySelector("select").value = "card";
+        document.querySelector("select").addEventListener("change", (ev) => {
+          for (let project of document.querySelectorAll(".card")) {
+            if (project.classList.contains(ev.target.value)) {
+              project.style.display = "block";
+            } else {
+              project.style.display = "none";
+            }
           }
-        }
-      });
-    </script>
+        });
+      </script>
+    </main>
     <template-example element-name="prev-work">
       <div
         class="card relative flex-1 min-w-[16rem]
