@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/assets/site.css" />
+    <link rel="stylesheet" href="/base.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/nord.min.css"
@@ -71,13 +71,13 @@ void Algo_Input(int* param_1, int param_2, int param_3, int param_4)
   local_28 = param_4;
   if (interTime > 970) {
     uVar8 = 25 - interCnt;
-    if ((int)uVar8 < 0) {
+    if ((int)uVar8 &lt; 0) {
       uVar8 = 0;
     }
     interCnt = 0;
     interTime = 0;
-    if ((int)uVar8 < 18) {
-      if ((int)uVar8 < 1)
+    if ((int)uVar8 &lt; 18) {
+      if ((int)uVar8 &lt; 1)
         goto label_6;
     } else {
       uVar8 = 18;
@@ -92,9 +92,9 @@ void Algo_Input(int* param_1, int param_2, int param_3, int param_4)
       preRawdata._4_4_ = param_1[1];
       preRawdata._8_4_ = param_1[2];
       if (param_3 == 18) {
-        preRawdata._0_4_ = preRawdata._0_4_ << 2;
-        preRawdata._4_4_ = preRawdata._4_4_ << 2;
-        preRawdata._8_4_ = preRawdata._8_4_ << 2;
+        preRawdata._0_4_ = preRawdata._0_4_ &lt;&lt; 2;
+        preRawdata._4_4_ = preRawdata._4_4_ &lt;&lt; 2;
+        preRawdata._8_4_ = preRawdata._8_4_ &lt;&lt; 2;
       }
     }
     if ((uVar8 == 0) && (uVar10 != 0)) {
@@ -107,21 +107,21 @@ void Algo_Input(int* param_1, int param_2, int param_3, int param_4)
     }
     iVar9 = local_3c - preAccnorm;
     bus = iVar9 * 16;
-    if (bus < 0) {
+    if (bus &lt; 0) {
       bus = iVar9 * -16;
     }
     prePPGUC = prePPGUC + ((bus - prePPGUC) * 261 + 16384 >> 15);
     if (prePPGUC > 255) {
       prePPGUC = 256;
     }
-    if (prePPGUC < -255) {
+    if (prePPGUC &lt; -255) {
       prePPGUC = -256;
     }
-    if (iVar9 < 0) {
+    if (iVar9 &lt; 0) {
       iVar9 = -iVar9;
     }
     preAccnorm = local_3c;
-    if (accGapMax <= iVar9) {
+    if (accGapMax &lt;= iVar9) {
       accGapMax = iVar9;
     }
     if (param_3 == 1) {
@@ -131,7 +131,7 @@ void Algo_Input(int* param_1, int param_2, int param_3, int param_4)
         prePPGAfterFilter = local_b4;
       }
       iVar3 = prePPGAfterFilter - local_b4;
-      if (iVar3 < 0) {
+      if (iVar3 &lt; 0) {
         iVar3 = -iVar3;
       }
       if (iVar3 > 4799) {
@@ -150,19 +150,19 @@ void Algo_Input(int* param_1, int param_2, int param_3, int param_4)
     local_38 = modle5_7();
     iVar4 = modle5_3(iVar3);
     bigbus = iVar4;
-    modle5_13(iVar2 << 4, RLCGroup, auStack_ac);
+    modle5_13(iVar2 &lt;&lt; 4, RLCGroup, auStack_ac);
     oneSecondCnt = oneSecondCnt + '\x01';
-    if (prePPGUC < 96) {
+    if (prePPGUC &lt; 96) {
       absoluteStillCnt = absoluteStillCnt + 1;
     } else {
       absoluteStillCnt = 0;
     }
     if (local_28 == 0) {
       absoluteStillCnt = 0;
-    } else if (199 < absoluteStillCnt) {
+    } else if (199 &lt; absoluteStillCnt) {
       absoluteStillCnt = 200;
     }
-    if ('\x18' < oneSecondCnt) {
+    if ('\x18' &lt; oneSecondCnt) {
       oneSecondCnt = '\0';
       rlcSwitchCnt = rlcSwitchCnt + 1;
       modle5_15(auStack_ac, lockOn, firstLock, (undefined4)enhanceRange,
@@ -173,22 +173,22 @@ void Algo_Input(int* param_1, int param_2, int param_3, int param_4)
       modle5_14(auStack_ac, &local_4c, &heartRate, local_48);
       reliability =
           modle5_8(auStack_ac, local_48[0], local_4c, iVar9, &PPGpowerFromSpec);
-      if ((PPGpowerReal < 0) && (firstLock == '\0')) {
+      if ((PPGpowerReal &lt; 0) && (firstLock == '\0')) {
         reliability = 0;
       }
       uVar7 = (uint)(absoluteStillCnt == 200);
-      if (runningAlltime < 30) {
+      if (runningAlltime &lt; 30) {
         runningAlltime = runningAlltime + 1;
       }
       iVar5 = preRawReliability - reliability;
       iVar2 = iVar5;
-      if (iVar5 < 0) {
+      if (iVar5 &lt; 0) {
         iVar2 = -iVar5;
       }
-      if ((iVar2 * 100 + 128 >> 8 < 5) &&
-          (79 < (reliability * 100 + 128) >> 8)) {
+      if ((iVar2 * 100 + 128 >> 8 &lt; 5) &&
+          (79 &lt; (reliability * 100 + 128) >> 8)) {
         signalSafeGuardCnt = signalSafeGuardCnt + 1;
-        if (4 < signalSafeGuardCnt) {
+        if (4 &lt; signalSafeGuardCnt) {
           absoluteStillCnt = 0;
           uVar7 = 0;
           signalSafeGuardCnt = 5;
@@ -196,7 +196,7 @@ void Algo_Input(int* param_1, int param_2, int param_3, int param_4)
       } else {
         signalSafeGuardCnt = 0;
       }
-      if (((firstLock == '\0') && (15 < iVar5 * 100 + 128 >> 8)) &&
+      if (((firstLock == '\0') && (15 &lt; iVar5 * 100 + 128 >> 8)) &&
           (runningAlltime == 30)) {
         ProtectTic = 5;
         if ((param_3 == 0) && (local_40 == 1)) {
@@ -209,57 +209,57 @@ void Algo_Input(int* param_1, int param_2, int param_3, int param_4)
       iVar2 = preRawheartRate - heartRate;
       if (param_3 == 0) {
         if (ProtectTic == 0) {
-          if (iVar2 + 12800 < 0 != SCARRY4(iVar2, 12800)) {
+          if (iVar2 + 12800 &lt; 0 != SCARRY4(iVar2, 12800)) {
             bVar12 = SBORROW4(heartRate, 35840);
             iVar5 = heartRate + -35840;
             bVar11 = heartRate == 35840;
             if (heartRate > 35840)
               goto label_3;
           }
-        } else if (iVar2 < 1) {
-          if (preRawheartRate < 23041) {
-            if (iVar2 + 2560 < 1280) {
+        } else if (iVar2 &lt; 1) {
+          if (preRawheartRate &lt; 23041) {
+            if (iVar2 + 2560 &lt; 1280) {
               heartRate = preRawheartRate - iVar2 / 2;
             }
-            if (iVar2 + 3840 < 1280) {
+            if (iVar2 + 3840 &lt; 1280) {
               heartRate = preRawheartRate + 512;
             }
-            if (iVar2 + 3840 < 0 != SCARRY4(iVar2, 3840)) {
+            if (iVar2 + 3840 &lt; 0 != SCARRY4(iVar2, 3840)) {
               heartRate = preRawheartRate;
             }
           }
-          if (preRawheartRate - 23040U < 5121) {
-            if (iVar2 + 2560U < 1280) {
+          if (preRawheartRate - 23040U &lt; 5121) {
+            if (iVar2 + 2560U &lt; 1280) {
               heartRate = preRawheartRate + 256;
             }
-            if (iVar2 + 2560 < 0 != SCARRY4(iVar2, 2560)) {
+            if (iVar2 + 2560 &lt; 0 != SCARRY4(iVar2, 2560)) {
               heartRate = preRawheartRate;
             }
           }
-          if (28160 < preRawheartRate) {
-            if (iVar2 + 3840U < 1280) {
+          if (28160 &lt; preRawheartRate) {
+            if (iVar2 + 3840U &lt; 1280) {
               heartRate = preRawheartRate + 512;
             }
-            if (iVar2 + 3840 < 0 != SCARRY4(iVar2, 3840))
+            if (iVar2 + 3840 &lt; 0 != SCARRY4(iVar2, 3840))
               goto label_4;
           }
-        } else if (preRawheartRate < 28161) {
-          if (iVar2 - 2561U < 1280) {
+        } else if (preRawheartRate &lt; 28161) {
+          if (iVar2 - 2561U &lt; 1280) {
             heartRate = preRawheartRate + -1280;
           }
           bVar12 = SBORROW4(iVar2, 3840);
           iVar5 = iVar2 + -3840;
           bVar11 = iVar2 == 3840;
         label_3:
-          if (!bVar11 && iVar5 < 0 == bVar12)
+          if (!bVar11 && iVar5 &lt; 0 == bVar12)
             goto label_4;
         }
       } else if (ProtectTic != 0) {
-        if ((iVar2 + 7680 < 0 != SCARRY4(iVar2, 7680)) &&
+        if ((iVar2 + 7680 &lt; 0 != SCARRY4(iVar2, 7680)) &&
             (heartRate > 40960)) {
           heartRate = preRawheartRate;
         }
-        if ((iVar2 > 5120) && (heartRate < 16640)) {
+        if ((iVar2 > 5120) && (heartRate &lt; 16640)) {
         label_4:
           heartRate = preRawheartRate;
         }
@@ -274,18 +274,18 @@ void Algo_Input(int* param_1, int param_2, int param_3, int param_4)
       iVar5 = preHR;
       iVar15 = param_3;
       modle5_5(&HRlast);
-      if (0 < badSignalCnt) {
+      if (0 &lt; badSignalCnt) {
         badSignalCnt = badSignalCnt + -1;
       }
       iVar6 = HRlast;
-      if (accGapMax < 60000) {
-        if ((0 < badSignalCnt) || ((ProtectTic != 0 && (param_3 == 0))))
+      if (accGapMax &lt; 60000) {
+        if ((0 &lt; badSignalCnt) || ((ProtectTic != 0 && (param_3 == 0))))
           goto label_5;
       } else {
         badSignalCnt = 30;
       label_5:
         if (HRpatch != 0) {
-          if (HRlast - HRpatch < 1280) {
+          if (HRlast - HRpatch &lt; 1280) {
             iVar6 = HRpatch + ((HRlast - HRpatch) * 405 >> 13);
           } else {
             iVar6 = HRpatch + 63;
@@ -293,11 +293,11 @@ void Algo_Input(int* param_1, int param_2, int param_3, int param_4)
         }
       }
       HRpatch = iVar6;
-      if ((iVar6 - preHR) + 256U < 513) {
+      if ((iVar6 - preHR) + 256U &lt; 513) {
         HRpatch = preHR;
       }
-      if ((iVar4 < 81) && (37119 < HRlast)) {
-        if (abnormalHighHRCnt < 30) {
+      if ((iVar4 &lt; 81) && (37119 &lt; HRlast)) {
+        if (abnormalHighHRCnt &lt; 30) {
           abnormalHighHRCnt = abnormalHighHRCnt + 1;
         }
       } else {
@@ -322,13 +322,13 @@ void Algo_Input(int* param_1, int param_2, int param_3, int param_4)
         do {
           RLCGroup[iVar2] = 1;
           iVar2 = iVar2 + 1;
-        } while (iVar2 < 12);
+        } while (iVar2 &lt; 12);
       }
       accGapMax = 0;
     }
     uVar8 = uVar8 - 1;
   label_6:
-    if ((int)uVar8 < 0) {
+    if ((int)uVar8 &lt; 0) {
       isBusy = 0;
       return;
     }
