@@ -38,10 +38,58 @@
         <li>1024px: 2 -> 0.018px error, 1 -> 0.178px error</li>
         <li>1080px: 2 -> 0.017px error, 1 -> 0.169px error</li>
       </ul>
+      <p>Here's a calculator too.</p>
+      <div class="flex flex-col gap-2">
+        <input
+          type="number"
+          id="vbHeight"
+          placeholder="viewbox's height"
+          class="bg-neutral-800 rounded-lg p-2"
+        />
+        <input
+          type="number"
+          id="displayHeight"
+          placeholder="pixel height"
+          class="bg-neutral-800 rounded-lg p-2"
+        />
+        <input
+          type="number"
+          id="density"
+          placeholder="density of display (default 1)"
+          class="bg-neutral-800 rounded-lg p-2"
+        />
+        <output id="result"></output>
+      </div>
+
       <p>
         Warning: When converting to absolute, SVGO sometimes loses precision,
         since it rounds twice.
       </p>
+      <script>
+        const vbHeight = document.getElementById("vbHeight");
+        const displayHeight = document.getElementById("displayHeight");
+        const density = document.getElementById("density");
+        const result = document.getElementById("result");
+
+        const calculate = () => {
+          const vb = vbHeight.value;
+          const disp = displayHeight.value;
+          const d = density.value || 1;
+
+          const pxPortion = 1 / vb;
+          const pxSize = +pxPortion * +disp * +d;
+          if (isFinite(pxSize))
+            result.innerText = `
+1 pixel svg = ${pxSize.toFixed(3)} pixels on screen
+0.1 pixel svg = ${(pxSize * 0.1).toFixed(3)} pixels on screen
+0.01 pixel svg = ${(pxSize * 0.01).toFixed(3)} pixels on screen
+0.001 pixel svg = ${(pxSize * 0.001).toFixed(3)} pixels on screen`.trim();
+          else result.innerText = "";
+        };
+        vbHeight.addEventListener("input", calculate);
+        displayHeight.addEventListener("input", calculate);
+        density.addEventListener("input", calculate);
+      </script>
     </main>
   </body>
 </html>
