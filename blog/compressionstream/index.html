@@ -19,7 +19,8 @@
         Throughout my experiments, I've found that ZIP was generally worse than
         other methods, mainly because each file gets its own stream. This means
         that the file name is stored in plain text, and data shared across files
-        is treated as separate. This makes it just larger.
+        is treated as separate. This makes it just larger, as demonstrated in
+        the FSR breakdown.
       </p>
       <h2>NEU breakdown</h2>
       <p>
@@ -85,10 +86,87 @@
       <p>
         <em
           >Yes, this means that just using zopflipng and using xz could subtract
-          5MB from the archive. That doesn't mean that's practical, but it's
+          5 MB from the archive. That doesn't mean that's practical, but it's
           interesting to look at.</em
         >
       </p>
+      <h2>FSR breakdown</h2>
+      <p>
+        FSR is a large texture pack using PNGs and ZIP, and my endeavors have
+        shown that the archive format can make as much a difference as the file
+        format.
+      </p>
+      <p>
+        "Compressed": zopflipng (with <code>--lossy_transparent -m</code>) and
+        rewritten JSON
+      </p>
+      <table>
+        <tr>
+          <td>Format</td>
+          <td>Base size</td>
+          <td>Compressed size</td>
+        </tr>
+        <tr>
+          <td>Folder</td>
+          <td>4.4 MB</td>
+          <td>2.1 MB</td>
+        </tr>
+        <tr>
+          <td>.zip</td>
+          <td>4.5 MB - 4.9 MB</td>
+          <td>3.3 MB</td>
+        </tr>
+        <tr>
+          <td>.tar.gz</td>
+          <td>1.9 - 2.0 MB</td>
+          <td>885 - 957 kB</td>
+        </tr>
+        <tr>
+          <td>.tar.xz</td>
+          <td>1.7 MB</td>
+          <td>704 kB</td>
+        </tr>
+        <!-- <tr>
+          <td>Base</td>
+          <td>.zip (og)</td>
+          <td>4.9 MB</td>
+        </tr>
+        <tr>
+          <td>Base</td>
+          <td>.zip (7z)</td>
+          <td>4.5 MB</td>
+        </tr>
+        <tr>
+          <td>Base</td>
+          <td>.tar.xz</td>
+          <td>1.7 MB</td>
+        </tr>
+        <tr>
+          <td>Compressed</td>
+          <td>folder</td>
+          <td>2.1 MB</td>
+        </tr>
+        <tr>
+          <td>Compressed</td>
+          <td>.zip (7z)</td>
+          <td>3.3 MB</td>
+        </tr>
+        <tr>
+          <td>Compressed</td>
+          <td>.tar.gz (zlib)</td>
+          <td>957 kB</td>
+        </tr>
+        <tr>
+          <td>Compressed</td>
+          <td>.tar.gz (zopf)</td>
+          <td>704 kB</td>
+        </tr>
+        <tr>
+          <td>Compressed</td>
+          <td>.tar.xz</td>
+          <td>704 kB</td>
+        </tr> -->
+      </table>
     </main>
     <style>
       .bg {
