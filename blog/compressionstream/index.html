@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/base.css" />
+    <meta name="accent-color" content="#324AD5" />
+    <title>A stream of thoughts on compression @KTibow</title>
+  </head>
+  <body class="bg-neutral-900 text-white">
+    <div class="bg">
+      <img src="./bg.avif" class="bg" />
+    </div>
+    <main class="prose prose-invert mx-auto my-4">
+      <h1>A stream of thoughts on compression</h1>
+      <p>It's a stream about compression. Get it? Compression stream? Ha ha.</p>
+      <h2>Zip would be better if compression was cross-file</h2>
+      <p>
+        Throughout my experiments, I've found that ZIP was generally worse than
+        other methods, mainly because each file gets its own stream. This means
+        that the file name is stored in plain text, and data shared across files
+        is treated as separate. This makes it just larger.
+      </p>
+      <h2>NEU breakdown</h2>
+      <p>
+        NEU is a large Java Archive, so I've been trying to figure out effective
+        ways to reduce its size for a while now. I recently tried making
+        tarballs organized by file type and using xz compression - here's what
+        that yielded.
+      </p>
+      <table>
+        <tr>
+          <td>Type</td>
+          <td>.tar</td>
+          <td>.tar.xz</td>
+        </tr>
+        <tr>
+          <td>Archives</td>
+          <td>12.380 MB</td>
+          <td>10.302 MB</td>
+        </tr>
+        <tr>
+          <td>Images</td>
+          <td>13.486 MB</td>
+          <td>12.476 MB</td>
+        </tr>
+        <tr>
+          <td>Class files</td>
+          <td>12.667 MB</td>
+          <td>2.135 MB</td>
+        </tr>
+        <tr>
+          <td>Other files</td>
+          <td>2.999 MB</td>
+          <td>0.346 MB</td>
+        </tr>
+        <tr>
+          <td>Sum</td>
+          <td>41.5 MB</td>
+          <td>25.3 MB</td>
+        </tr>
+      </table>
+      <p>
+        For context: The original zip was 29.1 MB and the original sum of file
+        contents were 37.8 MB.
+      </p>
+      <h3>After optimizing images (with zopflipng)</h3>
+      <table>
+        <tr>
+          <td>Type</td>
+          <td>.tar</td>
+          <td>.tar.xz</td>
+        </tr>
+        <tr>
+          <td>Images</td>
+          <td>11.940 MB</td>
+          <td>11.187 MB</td>
+        </tr>
+        <tr>
+          <td>Total</td>
+          <td>40.0 MB</td>
+          <td>24.0 MB</td>
+        </tr>
+      </table>
+      <p>
+        <em
+          >Yes, this means that just using zopflipng and using xz could subtract
+          5MB from the archive. That doesn't mean that's practical, but it's
+          interesting to look at.</em
+        >
+      </p>
+    </main>
+    <style>
+      .bg {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 32rem;
+        z-index: -1;
+      }
+      .bg img {
+        position: absolute;
+        inset: 0;
+        object-fit: cover;
+        object-position: top;
+      }
+      .bg::after {
+        position: absolute;
+        content: "";
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          rgb(23 23 23 / 0.6) 0%,
+          rgb(23 23 23 / 0.612) 10%,
+          rgb(23 23 23 / 0.636) 20%,
+          rgb(23 23 23 / 0.704) 40%,
+          rgb(23 23 23 / 0.792) 60%,
+          rgb(23 23 23 / 0.892) 80%,
+          rgb(23 23 23 / 0.944) 90%,
+          rgb(23 23 23 / 1) 100%
+        );
+      }
+    </style>
+  </body>
+</html>
