@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800">
+  <path fill="#fff" d="M0 0h800v800H0z"/>
+  <g fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="2" paint-order="fill stroke markers">
+    <path stroke-opacity=".2" d="M41 0v800M81 0v800M121 0v800M161 0v800M201 0v800M241 0v800M281 0v800M321 0v800M361 0v800M401 0v800M441 0v800M481 0v800M521 0v800M561 0v800M601 0v800M641 0v800M681 0v800M721 0v800M761 0v800M0 733h800M0 667h800M0 601h800M0 533h800M0 467h800M0 401h800M0 333h800M0 267h800M0 201h800M0 133h800M0 67h800"/>
+    <path stroke-opacity=".25" d="M201 0v800M401 0v800M601 0v800M0 533h800M0 267h800"/>
+  </g>
+  <path fill="none" stroke="#000" stroke-miterlimit="10" stroke-opacity=".9" stroke-width="3" d="M0 0v800"/>
+  <g font-family="Arial" font-size="14" text-anchor="middle">
+    <text x="-8.9" y="6682.47" fill="none" stroke="#fff" stroke-miterlimit="2" stroke-width="3" text-decoration="normal" transform="scale(2)">0</text>
+    <text x="-8.9" y="6682.47" text-decoration="normal" transform="scale(2)">0</text>
+    <text x="100" y="393.81" fill="none" stroke="#fff" stroke-miterlimit="2" stroke-width="3" text-decoration="normal" transform="scale(2)">10</text>
+    <text x="100" y="393.81" fill="#969696" text-decoration="normal" transform="scale(2)">10</text>
+    <text x="200" y="393.81" fill="none" stroke="#fff" stroke-miterlimit="2" stroke-width="3" text-decoration="normal" transform="scale(2)">20</text>
+    <text x="200" y="393.81" fill="#969696" text-decoration="normal" transform="scale(2)">20</text>
+    <text x="300" y="393.81" fill="none" stroke="#fff" stroke-miterlimit="2" stroke-width="3" text-decoration="normal" transform="scale(2)">30</text>
+    <text x="300" y="393.81" fill="#969696" text-decoration="normal" transform="scale(2)">30</text>
+    <text x="389.2" y="393.81" fill="none" stroke="#fff" stroke-miterlimit="2" stroke-width="3" text-decoration="normal" transform="scale(2)">40</text>
+    <text x="389.2" y="393.81" fill="#969696" text-decoration="normal" transform="scale(2)">40</text>
+    <text x="10.8" y="393.81" fill="none" stroke="#fff" stroke-miterlimit="2" stroke-width="3" text-decoration="normal" transform="scale(2)">94</text>
+    <text x="10.8" y="393.81" fill="#969696" text-decoration="normal" transform="scale(2)">94</text>
+    <text x="10.8" y="270.47" fill="none" stroke="#fff" stroke-miterlimit="2" stroke-width="3" text-decoration="normal" transform="scale(2)">96</text>
+    <text x="10.8" y="270.47" fill="#969696" text-decoration="normal" transform="scale(2)">96</text>
+    <text x="10.8" y="137.14" fill="none" stroke="#fff" stroke-miterlimit="2" stroke-width="3" text-decoration="normal" transform="scale(2)">98</text>
+    <text x="10.8" y="137.14" fill="#969696" text-decoration="normal" transform="scale(2)">98</text>
+    <text x="14.7" y="13.81" fill="none" stroke="#fff" stroke-miterlimit="2" stroke-width="3" text-decoration="normal" transform="scale(2)">100</text>
+    <text x="14.7" y="13.81" fill="#969696" text-decoration="normal" transform="scale(2)">100</text>
+  </g>
+  <path fill="none" stroke="#c74440" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="5" d="M0 685.72 182.88-11"/>
+  <path fill="none" stroke="#2d70b3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="5" d="m0 685.72 42.58-13.64 43.74-13.44 45.12-13.32 46.3-13.12 47.66-12.94 49.2-12.84 50.6-12.66 52.14-12.5 53.92-12.38 55.46-12.2 57.22-12.04 59.2-11.92 61.12-11.8 63.08-11.6 65.24-11.5 7.42-1.26"/>
+</svg>
