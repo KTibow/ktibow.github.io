@@ -10,9 +10,9 @@ import raccoon from "./raccoon.png?url";
   }
   const el = document.createElement("div");
   let nekoPosX = 32;
-  let nekoPosY = 256;
+  let nekoPosY = 32;
   let mousePosX = 0;
-  let mousePosY = 0;
+  let mousePosY = 128;
 
   let frameCount = 0;
   let idleTime = 0;
