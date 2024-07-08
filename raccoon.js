@@ -1,6 +1,7 @@
+import raccoon from "./raccoon.png?url";
 // mit license; by adryd
 
-(function oneko() {
+(function () {
   const isReduced = window.matchMedia(
     `(prefers-reduced-motion: reduce)`
   ).matches;
@@ -9,7 +10,7 @@
   }
   const el = document.createElement("div");
   let nekoPosX = 32;
-  let nekoPosY = 32;
+  let nekoPosY = 256;
   let mousePosX = 0;
   let mousePosY = 0;
 
@@ -87,7 +88,7 @@
     el.style.height = "32px";
     el.style.position = "fixed";
     el.style.pointerEvents = "none";
-    el.style.backgroundImage = "url('./raccoon.png')";
+    el.style.backgroundImage = `url(${raccoon})`;
     el.style.imageRendering = "pixelated";
     el.style.left = `${nekoPosX - 16}px`;
     el.style.top = `${nekoPosY - 16}px`;
