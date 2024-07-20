@@ -73,6 +73,7 @@
     <div class="flex flex-col gap-2 items-center justify-center panel">
       <span class="text-4xl" id="time"></span>
       <span id="indicator"></span>
+      <span id="warning"></span>
     </div>
 
     <dialog
@@ -122,6 +123,15 @@
         setTimeout(updateTime, 60000 - (Date.now() % 60000));
       };
       updateTime();
+
+      if (Date.now() > 1721493000000 && Date.now() < 1722171600000) {
+        document.getElementById("warning").innerText = "I'm offline until " + new Date(1722171600000).toLocaleString(undefined, {
+          month: 'long',
+          day: 'numeric',
+        });
+      } else {
+        document.getElementById("warning").remove();
+      }
     </script>
     <style>
       body {
