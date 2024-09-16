@@ -8,42 +8,52 @@
     <meta name="accent-color" content="#324AD5" />
     <title>@KTibow</title>
   </head>
-  <body class="grid lg:grid-cols-2 lg:grid-rows-2 gap-8 p-4 lg:p-8">
-    <div class="flex flex-col gap-2 panel">
-      <p class="text-3xl">hi. i'm <strong>Kendell R</strong>.</p>
-      <p class="text-2xl">you'll see me as @KTibow, but you can call me kti.</p>
+  <body class="flex flex-col p-4 gap-4 lg:p-8">
+    <div class="p-2 gap-2 panel">
+      <img src="/favicon.svg" class="w-32 rounded-full float-right" />
+      <h1 class="text-3xl">@KTibow</h1>
+      <p class="text-xl">i'm Kendell, a developer from the pacific northwest</p>
+      <details class="mt-2">
+        <summary class="cursor-pointer">View more</summary>
+        <p>i like building code and ui. shoutout to zopfli, avif, and esm.</p>
+        <p>
+          i also like chatting. i'm online most of the time. sorry if i'm having
+          trouble communicating, i do have autism.
+        </p>
+        <p>it's <span id="time"></span> where i live.</p>
+      </details>
     </div>
-    <div class="flex flex-col gap-2 rounded-2xl panel">
-      <p class="text-lg">some things i do:</p>
-      <p>
-        developing, my main passion. i like new js tooling much more than old js
-        tooling.
-      </p>
-      <p>ui design sometimes. i even reimplemented material 3.</p>
-      <p>
-        minification, it makes things faster! shoutout to zopfli, avif, and svgo
-        for being great tools to reduce image size.
-      </p>
-      <p>
-        being terminally online. if i'm having problems communicating, sorry - i
-        have autism and i'm continously learning.
-      </p>
-      <img class="self-start" src="https://www.eff.org/files/br.gif" />
+    <div class="flex flex-col p-2 gap-2 panel">
+      <h2 class="text-3xl">
+        would you consider a <span class="text-red-200">sponsorship</span>?
+      </h2>
+      <a
+        href="https://github.com/sponsors/KTibow"
+        class="text-red-200 underline text-xl"
+      >
+        sponsor today
+      </a>
+      <div
+        class="flex items-center gap-2 overflow-auto whitespace-nowrap mt-4 [&>*]:p-2 [&>*]:rounded-full [&>*]:bg-black/10"
+      >
+        reasons to be a sponsor:
+        <div>get a manually optimized svg</div>
+        <div>advertise yourself</div>
+        <div>supports my open source work</div>
+        <div>makes you look charitable</div>
+        <div>supports my education</div>
+        <div>prioritizes your questions</div>
+      </div>
     </div>
-    <div class="flex flex-col gap-2 panel links">
-      <a href="https://github.com/sponsors/KTibow">
-        <span class="m-auto text-lg">sponsor my work</span>
-      </a>
-      <a href="/blog/">
-        <span class="m-auto text-lg">blog</span>
-      </a>
+    <div class="flex flex-col p-2 gap-2 panel links">
+      <h2 class="text-3xl">links</h2>
+      <a href="/blog/">blog</a>
       <a href="https://github.com/KTibow">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="32"
           height="32"
           viewBox="0 0 32 32"
-          class="m-auto"
         >
           <path
             fill="currentColor"
@@ -58,7 +68,6 @@
           width="32"
           height="32"
           viewBox="0 0 32 32"
-          class="m-auto"
         >
           <path
             fill="currentColor"
@@ -66,31 +75,25 @@
           />
         </svg>
       </button>
-      <a href="/expertise/">
-        <span class="m-auto">past projects</span>
-      </a>
+      <a href="/expertise/">past projects</a>
     </div>
-    <div class="flex flex-col gap-2 items-center justify-center panel">
-      <span class="text-4xl" id="time"></span>
-      <span id="indicator"></span>
-    </div>
-
     <dialog
       class="max-w-xl p-6 text-lg rounded-2xl bg-neutral-900"
       id="dialog-discord"
     >
-      <p class="mb-2">discord username: ktibow</p>
+      <p class="mb-2">
+        discord username:
+        <a
+          href="https://discord.com/users/794377681331945524"
+          class="text-indigo-200"
+          >ktibow</a
+        >
+      </p>
       <p class="mb-4">
         note that i often decline friend requests. try another time if the first
         one doesn't get through.
       </p>
       <div class="flex gap-4">
-        <a
-          class="bg-neutral-800 hover:bg-indigo-900 p-2 rounded-lg transition-all"
-          href="https://discord.com/users/794377681331945524"
-        >
-          open
-        </a>
         <form method="dialog" class="contents">
           <button
             class="bg-neutral-800 hover:bg-indigo-900 p-2 rounded-lg transition-all"
@@ -117,7 +120,6 @@
         });
 
         document.getElementById("time").innerText = time;
-        document.getElementById("indicator").innerText = `time where I live.`;
 
         setTimeout(updateTime, 60000 - (Date.now() % 60000));
       };
@@ -136,42 +138,41 @@
         color: rgb(228, 225, 233);
         font-family: ui-monospace, monospace;
       }
+
       .panel {
-        outline: solid rgb(255 255 255 / 0.2);
-        outline-width: 2px;
-        outline-offset: 0.75rem;
-        border-radius: 1.5rem;
+        background-color: rgb(0 0 0 / 0.2);
+        border-radius: 0.5rem;
       }
-      .links > * {
+
+      .links {
+        flex-grow: 1;
+      }
+      .links > a,
+      .links > button {
         display: flex;
+        align-items: center;
+
         padding: 0.5rem;
-        border-radius: 1.5rem;
+        border-radius: 0.5rem;
         background-color: rgb(38 38 38);
         transition: 150ms;
         flex-grow: 1;
       }
-      .links > :hover {
+      .links > a:hover,
+      .links > button:hover {
         background-color: rgb(49 46 129);
       }
-      .links > :nth-child(1) {
-        flex-basis: 30%;
-      }
       .links > :nth-child(2) {
-        flex-basis: 27%;
+        flex-basis: 35px;
       }
       .links > :nth-child(3) {
-        flex-basis: 24%;
+        flex-basis: 30px;
       }
       .links > :nth-child(4) {
-        flex-basis: 21%;
+        flex-basis: 25px;
       }
       .links > :nth-child(5) {
-        flex-basis: 18%;
-      }
-      #more-info {
-        padding: 0.5rem 0;
-        font-size: 0.75em;
-        font-weight: 600;
+        flex-basis: 20px;
       }
     </style>
     <script src="./raccoon.js" type="module"></script>
