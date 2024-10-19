@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Redacted+Script:wght@400&display=swap"
+    />
+    <link rel="stylesheet" href="/base.css" />
+    <meta name="accent-color" content="#324AD5" />
+    <title>What Do You Do When Cloudflare Pages Gets Blocked?</title>
+  </head>
+  <body class="bg-neutral-900 text-white">
+    <div class="bg">
+      <img src="./bg.avif" class="bg" />
+    </div>
+    <main class="prose prose-invert mx-auto my-4">
+      <h1>What Do You Do When Cloudflare Pages Gets Blocked?</h1>
+      <p>
+        Cloudflare Pages is an absolutely awesome platform. Thanks to
+        Cloudflare's customers, it's completely subsidized, and provides
+        generous static and dynamic hosting. I host almost all my SvelteKit
+        projects on it, and when combined with SvelteKit's prefetching, it is
+        incredibly fast.
+      </p>
+      <p>
+        However, recently my district blocked Cloudflare Pages for being a
+        "games" site. At the same time, other static hosting sites are
+        unblocked. This is unjust: "bad actors" (kids who want to play games)
+        can simply make more GitHub Pages while I have to find new hosting
+        platforms. I've tried to argue this point to no avail, so it's time to
+        make sure I can access my projects from school.
+      </p>
+      <h2>What Other Platforms Can I Use?</h2>
+      <ul>
+        <li>GitHub Pages (limited to static stuff)</li>
+        <li>Fly</li>
+        <li>Azure App Service</li>
+        <li>Azure Functions (limited to dynamic stuff)</li>
+        <li>
+          <span style="font-family: Redacted Script">Rti</span> (limited to
+          dynamic stuff)
+        </li>
+        <li>
+          <span style="font-family: Redacted Script">Cmersio</span> (possibly
+          used as <span style="font-family: Redacted Script">blotyr</span>)
+        </li>
+      </ul>
+      <h2>How Will My Public-Ish Dynamic-Ish Projects Work?</h2>
+      <p>
+        After an awful lot of ideating, I've decided to move certain, more
+        useful projects to my GitHub Pages. They'll make cross origin calls to
+        servers to load data when needed. This is the fastest, cheapest, and
+        most sustainable option.
+      </p>
+      <p>
+        I decided to use Azure Functions, which has the drawback of having
+        terrible logging. If you're ever in my shoes, things will be a lot
+        easier if you use the CLI directly and include the word "pnpm" in your
+        queries about why functions aren't showing up.
+      </p>
+      <p>Try it out:</p>
+      <ul>
+        <li><a href="/1984/">Search engine without blocked sites</a></li>
+        <li>[Link removed]</li>
+      </ul>
+      <h2>How Will My Private Projects Work?</h2>
+      <p>You won't know.</p>
+    </main>
+    <style>
+      .bg {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 32rem;
+        z-index: -1;
+      }
+      .bg img {
+        position: absolute;
+        inset: 0;
+        object-fit: cover;
+        object-position: top;
+      }
+      .bg::after {
+        position: absolute;
+        content: "";
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          rgb(23 23 23 / 0.6) 0%,
+          rgb(23 23 23 / 0.612) 10%,
+          rgb(23 23 23 / 0.636) 20%,
+          rgb(23 23 23 / 0.704) 40%,
+          rgb(23 23 23 / 0.792) 60%,
+          rgb(23 23 23 / 0.892) 80%,
+          rgb(23 23 23 / 0.944) 90%,
+          rgb(23 23 23 / 1) 100%
+        );
+      }
+    </style>
+  </body>
+</html>
