@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/base.css" />
+    <meta name="accent-color" content="#324AD5" />
+    <title>Simon Fraser University admissions</title>
+  </head>
+  <body class="bg-neutral-900 text-white">
+    <div class="bg">
+      <img src="./bg.avif" class="bg" />
+    </div>
+    <main class="prose prose-invert mx-auto my-4">
+      <h1>Simon Fraser University admissions</h1>
+      <p>
+        If you're a human seeing this, that's very interesting. This page is
+        only for some custom scripts I have running to explain the admissions of
+        various universities, since their official website has their info spread
+        across many pages.
+      </p>
+      <h2>English requirement</h2>
+      <p>
+        Complete the last 3 years of education in English with a good grade.
+        (There are other options for non-native speakers but that's not what I'm
+        going to cover here.)
+      </p>
+      <h2>Quantitative and Analytical Skills requirement</h2>
+      <p>
+        Complete a grade 11/12 math course with a passing grade. (Technically
+        there are other options for IB folks or folks in countries that use the
+        General Certificate of Education or for transfer students but that's not
+        what I'm going to cover here.)
+      </p>
+      <h2>General requirements</h2>
+      <p>
+        The SAT/ACT requirement is optional for students applying for Fall 2024
+        admission onwards. Applicants who have a SAT or ACT are welcome to
+        submit their test score. Applicants will not be at a disadvantage if
+        they cannot or choose not to submit a test score. Applicants must also
+        present a minimum of 3 senior level academic courses, including English,
+        and submit an interim transcript showing final grades for all courses
+        completed and a list of all senior courses currently in progress.
+      </p>
+    </main>
+    <style>
+      .bg {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 32rem;
+        z-index: -1;
+      }
+      .bg img {
+        position: absolute;
+        inset: 0;
+        object-fit: cover;
+      }
+      .bg::after {
+        position: absolute;
+        content: "";
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          rgb(23 23 23 / 0.6) 0%,
+          rgb(23 23 23 / 0.612) 10%,
+          rgb(23 23 23 / 0.636) 20%,
+          rgb(23 23 23 / 0.704) 40%,
+          rgb(23 23 23 / 0.792) 60%,
+          rgb(23 23 23 / 0.892) 80%,
+          rgb(23 23 23 / 0.944) 90%,
+          rgb(23 23 23 / 1) 100%
+        );
+      }
+    </style>
+  </body>
+</html>
