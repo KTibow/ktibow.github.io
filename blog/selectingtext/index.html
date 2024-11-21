@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/base.css" />
+    <meta name="accent-color" content="#324AD5" />
+    <title>Selecting is easy, actually</title>
+  </head>
+  <body class="bg-neutral-900 text-white">
+    <div class="bg">
+      <img src="./bg.avif" class="bg" />
+    </div>
+    <main class="prose prose-invert mx-auto my-4">
+      <h1>Selecting is easy, actually</h1>
+      <p>You probably know about the simple ways to select text:</p>
+      <ul>
+        <li>Click and drag</li>
+        <li>Ctrl+a</li>
+        <li>In a text editor, click and shift+click</li>
+        <li>In a text editor, click and shift+up/down/left/right</li>
+      </ul>
+      <p>
+        However, there are some more obscure ways. I'm posting them here because
+        it seems generally knowledgeable people or LLMs often don't know about
+        them.
+      </p>
+      <ul>
+        <li>
+          <em>Anywhere</em>, click and use techniques like
+          shift+click/up/down/left/right
+        </li>
+        <li>In Firefox, ctrl+drag on a table</li>
+        <li>
+          Change your selection to a word/paragraph by double clicking or triple
+          clicking respectively, and optionally drag from there
+        </li>
+      </ul>
+      <p>
+        You should really try out the first one. Dragging is tedious and easy to
+        mess up compared to two clicks.
+      </p>
+    </main>
+    <style>
+      .bg {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 32rem;
+        z-index: -1;
+      }
+      .bg img {
+        position: absolute;
+        inset: 0;
+        object-fit: cover;
+        object-position: top;
+      }
+      .bg::after {
+        position: absolute;
+        content: "";
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          rgb(23 23 23 / 0.6) 0%,
+          rgb(23 23 23 / 0.612) 10%,
+          rgb(23 23 23 / 0.636) 20%,
+          rgb(23 23 23 / 0.704) 40%,
+          rgb(23 23 23 / 0.792) 60%,
+          rgb(23 23 23 / 0.892) 80%,
+          rgb(23 23 23 / 0.944) 90%,
+          rgb(23 23 23 / 1) 100%
+        );
+      }
+    </style>
+  </body>
+</html>
