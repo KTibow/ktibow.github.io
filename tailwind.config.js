@@ -1,4 +1,5 @@
-module.exports = {
+import typography from "@tailwindcss/typography";
+export default {
   content: ["**/*.html"],
   theme: {
     extend: {
@@ -7,5 +8,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [typography],
 };
