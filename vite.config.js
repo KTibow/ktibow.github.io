@@ -1,6 +1,7 @@
 import fg from "fast-glob";
-import { writeFile } from "fs/promises";
+import { mkdir, writeFile } from "fs/promises";
 import { defineConfig } from "vite";
+import tailwindcss from "@tailwindcss/vite";
 
 const html = await fg(["**/*.html", "!build/**/*", "!public/**/*"]);
 
@@ -11,9 +12,13 @@ const sitemapPlugin = {
     const blogs = await fg(["blog/**/*.html"]);
     const pages = [...blogs]
       .map(
-        (path) => "https://ktibow.github.io/" + path.replace(/index\.html$/, "")
+        (path) =>
+          "https://ktibow.github.io/" + path.replace(/index\.html$/, ""),
       )
       .join("\n");
+    try {
+      await mkdir("build");
+    } catch {}
     await writeFile("build/sitemap.txt", pages);
   },
 };
@@ -27,5 +32,5 @@ export default defineConfig({
       input: html,
     },
   },
-  plugins: [sitemapPlugin],
+  plugins: [sitemapPlugin, tailwindcss()],
 });
