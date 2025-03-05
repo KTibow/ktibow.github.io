@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/base.css" />
+    <meta name="accent-color" content="#324AD5" />
+    <title>Simply match curly brackets @KTibow</title>
+  </head>
+  <body class="bg-neutral-900 text-white">
+    <div class="bg">
+      <img src="./bg.avif" class="bg" />
+    </div>
+    <main class="prose prose-invert mx-auto my-4">
+      <h1>Simply match curly brackets</h1>
+      <p>
+        Making LLMs output JSON is a common problem, and making them
+        <em>only</em> output the JSON is a surprisingly large part of it. While
+        some commercial LLMs were trained on the task, others will say "Here's
+        the output in JSON format:" regardless of your prompt, sabotaging your
+        efforts to <code>JSON.parse</code> the output.
+      </p>
+      <p>
+        The most complicated solution is structured outputs. You could also just
+        use a <code>{</code> prefill to get most of the structured outputs
+        effect. But a simpler solution is something like
+      </p>
+      <pre>
+const jsonText = text.slice(text.indexOf("{"), text.lastIndexOf("}") + 1);</pre
+      >
+      <p>
+        This has the benefit of letting the LLM think before responding, since
+        it matches an object <em>anywhere</em>. Of course, you can adapt this to
+        work with array responses by using <code>[</code> and
+        <code>]</code> instead of curly brackets, and you can rewrite this to
+        port it to a different language.
+      </p>
+      <p>That's the post. Sorry if you expected something longer.</p>
+    </main>
+    <style>
+      .bg {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 32rem;
+        z-index: -1;
+      }
+      .bg img {
+        position: absolute;
+        inset: 0;
+        object-fit: cover;
+        object-position: top;
+      }
+      .bg::after {
+        position: absolute;
+        content: "";
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          rgb(23 23 23 / 0.6) 0%,
+          rgb(23 23 23 / 0.612) 10%,
+          rgb(23 23 23 / 0.636) 20%,
+          rgb(23 23 23 / 0.704) 40%,
+          rgb(23 23 23 / 0.792) 60%,
+          rgb(23 23 23 / 0.892) 80%,
+          rgb(23 23 23 / 0.944) 90%,
+          rgb(23 23 23 / 1) 100%
+        );
+      }
+    </style>
+  </body>
+</html>
