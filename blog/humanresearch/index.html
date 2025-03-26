@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/base.css" />
+    <meta name="accent-color" content="#324AD5" />
+    <title>Human Research</title>
+  </head>
+  <body class="bg-neutral-900 text-white">
+    <div class="bg">
+      <img src="./bg.avif" class="bg" />
+    </div>
+    <main class="prose prose-invert mx-auto my-4">
+      <h1>Human Research</h1>
+      <p>Deep Research is neat, but in my experience Gemini/Perplexity/Grok's versions aren't as good as the OpenAI or human experience. They often don't actually answer my question. As such, I've switched over to doing research myself and publishing it here for anyone who needs it, even including AI.</p>
+      <p>Here are the current pages. More will come soon.</p>
+      <ul>
+        <li><a href="./phi-4/">Why is Phi 4 Multimodal so cheap?</a></li>
+      </ul>
+    </main>
+    <style>
+      .bg {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 32rem;
+        z-index: -1;
+      }
+      .bg img {
+        position: absolute;
+        inset: 0;
+        object-fit: cover;
+        object-position: top;
+      }
+      .bg::after {
+        position: absolute;
+        content: "";
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          rgb(23 23 23 / 0.6) 0%,
+          rgb(23 23 23 / 0.612) 10%,
+          rgb(23 23 23 / 0.636) 20%,
+          rgb(23 23 23 / 0.704) 40%,
+          rgb(23 23 23 / 0.792) 60%,
+          rgb(23 23 23 / 0.892) 80%,
+          rgb(23 23 23 / 0.944) 90%,
+          rgb(23 23 23 / 1) 100%
+        );
+      }
+    </style>
+  </body>
+</html>

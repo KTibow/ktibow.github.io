@@ -16,6 +16,8 @@ const sitemapPlugin = {
           "https://ktibow.github.io/" + path.replace(/index\.html$/, ""),
       )
       .join("\n");
+    pages.push("https://ktibow.github.io/");
+    pages.push("https://ktibow.github.io/expertise/");
     try {
       await mkdir("build");
     } catch {}
