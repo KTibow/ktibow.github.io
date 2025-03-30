@@ -38,6 +38,10 @@
   ];
 </script>
 
+<svelte:head>
+  <title>@KTibow's blog</title>
+</svelte:head>
+
 <div class="flex flex-wrap flex-grow gap-2 p-6">
   {#each blogPosts as post}
     <a href="/blog/{post.slug}/" class="entry">
