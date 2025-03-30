@@ -2,6 +2,7 @@
   import Ripple from "$lib/Ripple.svelte";
 
   const blogPosts = [
+    { slug: "sleep", title: "How one estimates sleep cycles" },
     { slug: "humanresearch", title: "Human Research" },
     { slug: "interesting", title: "31% of 2FA codes are interesting" },
     { slug: "gflash", title: "Why is Gemini Flash so popular?" },
