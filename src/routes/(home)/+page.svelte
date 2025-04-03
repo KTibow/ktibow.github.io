@@ -2,7 +2,6 @@
   import HomeBackground from "./HomeBackground.svelte";
   import Raccoon from "./Raccoon.svelte";
 
-  let dialog: HTMLDialogElement;
   let time = $state("");
   let isLoaded = true;
   const updateTime = () => {
@@ -75,34 +74,15 @@
       />
     </svg>
   </a>
-  <button class="link" onclick={() => dialog.showModal()} aria-label="Discord">
+  <a class="link" href="https://discord.gg/DSzZQxpzHR" aria-label="Discord">
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
       <path
         fill="currentColor"
         d="M25.7 7.1C23.9 6.3 22 5.7 20 5.3h-.1c-.2.4-.5 1-.7 1.5c-2.2-.3-4.3-.3-6.4 0c-.2-.5-.5-1-.7-1.5H12c-2 .3-3.9.9-5.7 1.8C2.7 12.5 1.7 17.8 2.2 23v.1c2.4 1.8 4.7 2.8 7 3.5h.1c.5-.7 1-1.5 1.4-2.3v-.1c-.8-.3-1.5-.6-2.2-1c-.1 0-.1-.1 0-.1c.1-.1.3-.2.4-.3H9c4.6 2.1 9.5 2.1 14.1 0h.1c.1.1.3.2.4.3c.1 0 0 .1 0 .1c-.7.4-1.4.8-2.2 1c0 0-.1.1 0 .1c.4.8.9 1.6 1.4 2.3h.1c2.3-.7 4.6-1.8 7-3.5V23c.6-6-1-11.2-4.2-15.9M11.4 19.9c-1.4 0-2.5-1.3-2.5-2.8s1.1-2.8 2.5-2.8s2.5 1.3 2.5 2.8c0 1.5-1.1 2.8-2.5 2.8m9.3 0c-1.4 0-2.5-1.3-2.5-2.8s1.1-2.8 2.5-2.8s2.5 1.3 2.5 2.8c0 1.5-1.1 2.8-2.5 2.8"
       />
     </svg>
-  </button>
+  </a>
   <a class="link" href="/expertise/">past projects</a>
-  <dialog class="max-w-xl p-6 text-lg rounded-2xl bg-surface-container-low" bind:this={dialog}>
-    <p class="mb-2">
-      discord username:
-      <a href="https://discord.com/users/794377681331945524" class="text-primary">ktibow</a>
-    </p>
-    <p class="mb-4">
-      note that i often decline friend requests. try another time if the first one doesn't get
-      through.
-    </p>
-    <div class="flex gap-4">
-      <form method="dialog" class="contents">
-        <button
-          class="bg-surface-container-high hover:bg-primary-container p-2 rounded-lg transition-all"
-        >
-          close
-        </button>
-      </form>
-    </div>
-  </dialog>
 </div>
 
 <Raccoon />
