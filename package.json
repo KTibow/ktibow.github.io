@@ -7,16 +7,16 @@
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "^3.0.8",
-    "@sveltejs/kit": "^2.20.2",
+    "@sveltejs/kit": "^2.20.4",
     "@tailwindcss/typography": "^0.5.16",
-    "@tailwindcss/vite": "^4.0.17",
+    "@tailwindcss/vite": "^4.1.3",
     "fast-glob": "^3.3.3",
     "prettier": "^3.5.3",
     "prettier-plugin-svelte": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
-    "svelte": "^5.25.3",
-    "svelte-highlight": "^7.8.2",
-    "tailwindcss": "^4.0.17",
-    "vite": "^6.2.3"
+    "svelte": "^5.25.8",
+    "svelte-highlight": "^7.8.3",
+    "tailwindcss": "^4.1.3",
+    "vite": "^6.2.5"
   }
 }
