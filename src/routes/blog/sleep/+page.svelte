@@ -6,7 +6,7 @@
   import myView from "./my-view.png";
 </script>
 
-<BlogHeader {bg} title="How one estimates sleep cycles" />
+<BlogHeader {bg} title="How one estimates sleep stages" />
 <p>
   You sleep a lot. It's not unlikely that you also track your sleep, whether with a watch, ring, or
   mattress pad. But how do these pieces of technology <em>know</em>? How do they turn heart rate and
