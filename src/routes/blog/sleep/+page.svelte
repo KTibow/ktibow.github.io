@@ -50,8 +50,8 @@
 </p>
 <img src={basicView} class="invert hue-rotate-180" alt="4 charts" />
 <p>
-  We start with a view of the sleep stages. We have sleep cycles every 90 minutes or so, or 4-6
-  times a night. More info:
+  We start with a view of the sleep stages (called a hypnogram). We have sleep cycles every 90
+  minutes or so, or 4-6 times a night. More info:
 </p>
 <table>
   <thead>

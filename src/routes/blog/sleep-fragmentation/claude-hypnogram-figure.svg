@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Background -->
+  <rect width="800" height="600" fill="white"/>
+
+  <!-- Title -->
+  <text x="100" y="30" font-family="Arial" font-size="22" font-weight="bold">Stage of Sleep</text>
+
+  <!-- Y-axis labels -->
+  <text x="80" y="100" text-anchor="end" font-family="Arial" font-size="16">Awake</text>
+  <text x="80" y="190" text-anchor="end" font-family="Arial" font-size="16">REM</text>
+  <text x="80" y="280" text-anchor="end" font-family="Arial" font-size="16">Non REM 1</text>
+  <text x="80" y="370" text-anchor="end" font-family="Arial" font-size="16">Non REM 2</text>
+  <text x="80" y="460" text-anchor="end" font-family="Arial" font-size="16">Non REM 3</text>
+
+  <!-- Axes -->
+  <line x1="100" y1="500" x2="750" y2="500" stroke="black" stroke-width="2"/>
+  <line x1="100" y1="100" x2="100" y2="500" stroke="black" stroke-width="2"/>
+
+  <!-- X-axis ticks and labels -->
+  <line x1="150" y1="500" x2="150" y2="505" stroke="black" stroke-width="2"/>
+  <text x="150" y="525" text-anchor="middle" font-family="Arial" font-size="14">1</text>
+  <line x1="222" y1="500" x2="222" y2="505" stroke="black" stroke-width="2"/>
+  <text x="222" y="525" text-anchor="middle" font-family="Arial" font-size="14">2</text>
+  <line x1="294" y1="500" x2="294" y2="505" stroke="black" stroke-width="2"/>
+  <text x="294" y="525" text-anchor="middle" font-family="Arial" font-size="14">3</text>
+  <line x1="366" y1="500" x2="366" y2="505" stroke="black" stroke-width="2"/>
+  <text x="366" y="525" text-anchor="middle" font-family="Arial" font-size="14">4</text>
+  <line x1="438" y1="500" x2="438" y2="505" stroke="black" stroke-width="2"/>
+  <text x="438" y="525" text-anchor="middle" font-family="Arial" font-size="14">5</text>
+  <line x1="510" y1="500" x2="510" y2="505" stroke="black" stroke-width="2"/>
+  <text x="510" y="525" text-anchor="middle" font-family="Arial" font-size="14">6</text>
+  <line x1="582" y1="500" x2="582" y2="505" stroke="black" stroke-width="2"/>
+  <text x="582" y="525" text-anchor="middle" font-family="Arial" font-size="14">7</text>
+  <line x1="654" y1="500" x2="654" y2="505" stroke="black" stroke-width="2"/>
+  <text x="654" y="525" text-anchor="middle" font-family="Arial" font-size="14">8</text>
+  <line x1="726" y1="500" x2="726" y2="505" stroke="black" stroke-width="2"/>
+  <text x="726" y="525" text-anchor="middle" font-family="Arial" font-size="14">9</text>
+
+  <!-- X-axis label -->
+  <text x="425" y="555" text-anchor="middle" font-family="Arial" font-size="16">Hours of Sleep</text>
+
+  <!-- Y-axis ticks -->
+  <line x1="95" y1="100" x2="100" y2="100" stroke="black" stroke-width="2"/>
+  <line x1="95" y1="190" x2="100" y2="190" stroke="black" stroke-width="2"/>
+  <line x1="95" y1="280" x2="100" y2="280" stroke="black" stroke-width="2"/>
+  <line x1="95" y1="370" x2="100" y2="370" stroke="black" stroke-width="2"/>
+  <line x1="95" y1="460" x2="100" y2="460" stroke="black" stroke-width="2"/>
+
+  <!-- Sleep stage line - Adjusted for new spacing with NREM3&4 combined -->
+  <polyline points="
+    100,100
+    125,100
+    125,190
+    132,190
+    132,280
+    140,280
+    140,370
+    147,370
+    147,460
+    222,460
+    222,370
+    240,370
+    240,280
+    258,280
+    258,190
+    294,190
+    294,370
+    312,370
+    312,460
+    366,460
+    384,460
+    384,370
+    402,370
+    402,280
+    420,280
+    420,190
+    438,190
+    438,100
+    456,100
+    456,190
+    474,190
+    474,280
+    474,370
+    492,370
+    492,460
+    492,370
+    510,370
+    510,280
+    528,280
+    528,190
+    536,190
+    536,100
+    582,100
+    582,280
+    600,280
+    600,370
+    618,370
+    618,280
+    636,280
+    636,190
+    654,190
+    654,100
+    672,100
+    672,190
+    690,190
+    690,280
+    708,280
+    708,190
+    726,190
+    726,370
+    744,370
+    744,190
+    750,190
+    750,100
+  " fill="none" stroke="black" stroke-width="2"/>
+</svg>

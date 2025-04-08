@@ -15,6 +15,7 @@
 {/snippet}
 
 <div class="flex flex-wrap flex-grow gap-2 p-6">
+  {@render blog("sleep-fragmentation", "Fragmentation and statistics in sleep")}
   {@render blog("sleep", "How one estimates sleep stages")}
   {@render blog("humanresearch", "Human Research")}
   {@render blog("cssinjection/work.pdf", "CSS Injection is All You Need")}
