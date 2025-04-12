@@ -18,7 +18,7 @@
 </p>
 
 <h2>Gathering materials</h2>
-<p>To collect training data, we can track sleep in a process called polysymnography, where:</p>
+<p>To collect training data, we can track sleep in a process called polysomnography, where:</p>
 <ul>
   <li>The subject goes to a sleep clinic</li>
   <li>
