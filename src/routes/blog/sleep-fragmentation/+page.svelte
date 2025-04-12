@@ -93,7 +93,7 @@
 <br />
 
 <p>
-  Futher reading: <a href="/blog/sleep/">how it's hard to even guess hypnograms at a high level</a>
+  Further reading: <a href="/blog/sleep/">how it's hard to even guess hypnograms at a high level</a>
 </p>
 <p>
   Citing: Metzner, Claus & Schilling, Achim & Traxdorf, Maximilian & Schulze, Holger & Krauss,
