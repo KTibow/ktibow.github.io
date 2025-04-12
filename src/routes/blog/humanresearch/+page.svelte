@@ -22,4 +22,7 @@
   <li>
     <a href="./newsystems/">Who is New Systems</a>
   </li>
+  <li>
+    <a href="./surfacepower/">Surface power requirements</a>
+  </li>
 </ul>
