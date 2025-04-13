@@ -6,7 +6,6 @@
   let isLoaded = true;
   const updateTime = () => {
     if (!isLoaded) {
-      console.log("bye");
       return;
     }
 

@@ -278,7 +278,7 @@
   </p>
 </article>
 <div class="flex flex-wrap gap-2 p-6">
-  {#each prevProjects as { name, desc, category, platform, text, url }}
+  {#each prevProjects.filter( (project) => (platform == "All" ? true : (project.platform || []).includes(platform)), ) as { name, desc, category, text, url }}
     <div class="relative flex-1 min-w-64 bg-surface-container-low rounded-2xl p-2">
       <h2 class="text-2xl font-bold">{name}</h2>
       <p>{desc}</p>
