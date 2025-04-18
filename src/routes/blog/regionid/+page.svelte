@@ -11,8 +11,8 @@
 
 <BlogHeader {bg} title="Using FlashAlert's API" />
 <p>
-  The trick thing with FlashAlert's API is that it doesn't document how to switch which area the
-  feed is for and you get newswire information on. Turns out you can use the <code>RegionID</code> option
+  The tricky thing with FlashAlert's API is that it doesn't document how to switch which area the
+  feed that provides newswire information is for. Turns out you can use the <code>RegionID</code> option
   for this:
 </p>
 <ul>
