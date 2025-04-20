@@ -32,7 +32,7 @@
 <div class="wrapper">
   <div class="flex gap-2">
     <div class="flex flex-col justify-center rounded-full px-8 bg-background grow">
-      <h1 class="text-3xl font-mono">@KTibow</h1>
+      <h1 class="text-3xl font-wb">@KTibow</h1>
       <p class="text-xl">i'm Kendell, a developer from the pacific northwest</p>
     </div>
     <img src="/favicon.svg" alt="logo: a few squircles" class="w-32 rounded-full bg-background" />
@@ -48,9 +48,7 @@
   </details>
 
   <a class="link flex flex-col justify-center" href="https://github.com/sponsors/KTibow">
-    <h2 class="text-3xl font-mono">
-      would you consider a <span class="font-bold">sponsorship</span>?
-    </h2>
+    <h2 class="text-3xl font-wb">would you consider a sponsorship?</h2>
     <div
       class="flex flex-wrap items-center justify-center gap-2 overflow-auto whitespace-nowrap mt-4 [&>*]:p-2 [&>*]:rounded-full [&>*]:bg-black/10"
     >

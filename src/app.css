@@ -1,7 +1,8 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 @theme {
-  --font-sans: Inter, Roboto, Noto Sans, sans-serif, system-ui;
+  --font-sans: Inter, Roboto, Noto Sans, system-ui, sans-serif;
+  --font-wb: Workbench, system-ui;
   --color-primary: rgb(var(--m3-scheme-primary));
   --color-on-primary: rgb(var(--m3-scheme-on-primary));
   --color-primary-container: rgb(var(--m3-scheme-primary-container));
