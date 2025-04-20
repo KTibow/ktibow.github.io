@@ -35,3 +35,34 @@
   rapidly getting implemented though - follow along at
   <a href="https://bugs.launchpad.net/ubuntu-concept/+bug/2084191">bug 2084191</a>.
 </p>
+
+<h2>Apr 20 2025 update</h2>
+<p>
+  I built Jens Glathe's device tree, and external displays now work. The steps I took were something
+  like
+</p>
+<ul>
+  <li>
+    Clone <code>https://github.com/jglathe/linux_ms_dev_kit</code> and switch to
+    <code>jg/ubuntu-qcom-x1e-6.15rc</code>
+  </li>
+  <li>Make sure all necessary packages are installed</li>
+  <li>
+    Run <code
+      >cpp -nostdinc -I. -Iinclude -undef -x assembler-with-cpp
+      arch/arm64/boot/dts/qcom/x1e80100-lenovo-yoga-slim7x.dts > usable.dts</code
+    >
+  </li>
+  <li>Run <code>dtc -I dts -O dtb -o compiled.dtb usable.dts</code></li>
+  <li>
+    Back up your current device tree with <code
+      >sudo cp /boot/dtbs/6.14.0-15-generic/qcom/x1e80100-lenovo-yoga-slim7x.dtb
+      /boot/dtbs/6.14.0-15-generic/qcom/x1e80100-lenovo-yoga-slim7x.dtb.bak</code
+    >, and copy in the new one with
+    <code
+      >sudo cp ./compiled.dtb /boot/dtbs/6.14.0-15-generic/qcom/x1e80100-lenovo-yoga-slim7x.dtb</code
+    >
+  </li>
+  <li>Reboot and there you go</li>
+</ul>
+<p>Oddly, I can't turn off the internal display without it crashing on me yet.</p>
