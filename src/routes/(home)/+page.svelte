@@ -52,15 +52,15 @@
       would you consider a <span class="font-bold">sponsorship</span>?
     </h2>
     <div
-      class="flex items-center gap-2 overflow-auto whitespace-nowrap mt-4 [&>*]:p-2 [&>*]:rounded-full [&>*]:bg-black/10"
+      class="flex flex-wrap items-center justify-center gap-2 overflow-auto whitespace-nowrap mt-4 [&>*]:p-2 [&>*]:rounded-full [&>*]:bg-black/10"
     >
       reasons to be a sponsor:
       <div>get a manually optimized svg</div>
       <div>advertise yourself</div>
       <div>supports my open source work</div>
-      <div>makes you look charitable</div>
-      <div>supports my education</div>
-      <div>prioritizes your questions</div>
+      <div class="max-xl:hidden">makes you look charitable</div>
+      <div class="max-xl:hidden">supports my education</div>
+      <div class="max-xl:hidden">prioritizes your questions</div>
     </div>
   </a>
   <a class="link" href="/blog/">blog</a>
