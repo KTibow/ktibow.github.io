@@ -25,4 +25,7 @@
   <li>
     <a href="./surfacepower/">Surface power requirements</a>
   </li>
+  <li>
+    <a href="./meatrice/">Meat + Rice</a>
+  </li>
 </ul>
