@@ -28,4 +28,7 @@
   <li>
     <a href="./meatrice/">Meat + Rice</a>
   </li>
+  <li>
+    <a href="./apexams/">AP exams in 2025</a>
+  </li>
 </ul>
