@@ -4,7 +4,7 @@
 
 <BlogHeader title="Meat + Rice" />
 <p>
-  The Doordash resturant Meat + Rice was recently mentioned in <a
+  The Doordash restaurant Meat + Rice was recently mentioned in <a
     href="https://x.com/zaryaismywife/status/1913009821550248153"
     >a popular tweet by @zaryaismywife</a
   >.

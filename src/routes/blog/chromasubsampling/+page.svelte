@@ -5,7 +5,7 @@
 
 <BlogHeader {bg} title="Why do we still use chroma subsampling" />
 <p>
-  Chroma subsampling is a simple idea. Our eyes are more sensitive to colors than they are to light,
+  Chroma subsampling is a simple idea. Our eyes are less sensitive to colors than they are to light,
   and most colors within a range are close to each other, so we can only send the chroma for every 4
   pixels instead of for every 1.
 </p>
