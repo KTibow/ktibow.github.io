@@ -31,4 +31,7 @@
   <li>
     <a href="./apexams/">AP exams in 2025</a>
   </li>
+  <li>
+    <a href="./provisionedthroughput/">GCP Provisioned Throughput pricing</a>
+  </li>
 </ul>
