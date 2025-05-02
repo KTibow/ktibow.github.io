@@ -40,4 +40,7 @@
   <li>
     <a href="./projectmichigan/">What was Apple's Project Michigan</a>
   </li>
+  <li>
+    <a href="./hlebaseline/">Humanity's Last Exam baseline</a>
+  </li>
 </ul>
