@@ -17,7 +17,7 @@
     <a href="./austrchile/"> Why do LLMs think Australians don't need visas to enter Chile? </a>
   </li>
   <li>
-    <a href="./syncobsidian/"> Remotely Save - including the .obsidian folder </a>
+    <a href="./syncobsidian/">Remotely Save - including the .obsidian folder</a>
   </li>
   <li>
     <a href="./newsystems/">Who is New Systems</a>
@@ -33,5 +33,8 @@
   </li>
   <li>
     <a href="./provisionedthroughput/">GCP Provisioned Throughput pricing</a>
+  </li>
+  <li>
+    <a href="./projectmichigan/">What was Apple's Project Michigan</a>
   </li>
 </ul>
