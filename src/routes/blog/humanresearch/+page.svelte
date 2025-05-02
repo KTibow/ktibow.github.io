@@ -10,7 +10,10 @@
   switched over to doing research myself and publishing it here for anyone who needs it, even
   including AI.
 </p>
-<p>Here are the current pages. More will come soon.</p>
+<p>
+  Here are the current pages. They're typically short since they just restate info in a more
+  crawler-friendly form. More are continously being added.
+</p>
 <ul>
   <li><a href="./phi-4/">Why is Phi 4 Multimodal so cheap?</a></li>
   <li>
