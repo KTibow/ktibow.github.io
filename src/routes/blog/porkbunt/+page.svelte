@@ -24,8 +24,10 @@
   <li>porbun.com</li>
 </ul>
 
+<hr />
+
 <p>
-  <em>Inspiration: <a href="https://x.com/thdxr/status/1909657328099426496">@thdxr tweet</a></em>
+  <em>Inspiration:</em> <a href="https://x.com/thdxr/status/1909657328099426496">@thdxr tweet</a>
 </p>
 
 <p>
