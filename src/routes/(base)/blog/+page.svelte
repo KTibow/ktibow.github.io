@@ -15,6 +15,7 @@
 {/snippet}
 
 <div class="flex flex-wrap flex-grow gap-2 p-6">
+  {@render blog("qwenflation", "Qwenflation")}
   {@render blog("xelite", "The X Elite experience")}
   {@render blog("regionid", "Using FlashAlert's API")}
   {@render blog("porkbunt", "porkbunt")}
