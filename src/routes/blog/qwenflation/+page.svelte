@@ -59,3 +59,30 @@
   <a href="/blog/reasoningtax/">reasoning tax</a>, and it and future generations will never see the
   same affordability as Qwen 2.5.
 </p>
+
+<hr />
+
+<h2>2 days later</h2>
+<p>Things have only gotten stupider. Now, Qwen 30B A3B is:</p>
+<ul>
+  <li>more expensive than the 235b version (now $0.1/0.1)</li>
+  <li>more expensive than past dense versions (still $0.06/0.18)</li>
+  <li>the same price as current dense versions (still $0.1/0.3)</li>
+  <li>
+    slower than the free host that's <a
+      href="https://chutes.ai/app/chute/96b5aab1-6a45-578b-8897-6f927b3aa87f?tab=source"
+      >just running sglang</a
+    >
+  </li>
+  <li>
+    slower than <a
+      href="https://discord.com/channels/1091220969173028894/1366352006159269989/1367531445635121212"
+      >your own 4090 running ggml (OpenRouter Discord)</a
+    >
+  </li>
+</ul>
+<p>
+  I would start a company that just wraps Fly / Hyperbolic / SF Compute / some other gpu provider
+  and hosts it at a better price, except I don't really want to figure out taxes and registration
+  and all that.
+</p>
