@@ -82,7 +82,7 @@
   </li>
 </ul>
 <p>
-  I would start a company that just wraps Fly / Hyperbolic / SF Compute / some other gpu provider
+  I would start a company that just wraps Fly / Hyperbolic / SF Compute / some other GPU provider
   and hosts it at a better price, except I don't really want to figure out taxes and registration
   and all that.
 </p>
