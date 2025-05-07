@@ -23,7 +23,7 @@
   {@render blog("sleep", "How one estimates sleep stages")}
   {@render blog("humanresearch", "Human Research")}
   {@render blog("cssinjection/work.pdf", "CSS Injection is All You Need")}
-  {@render blog("interesting", "31% of 2FA codes are interesting")}
+  {@render blog("interesting", "Almost 32% of 2FA codes are interesting")}
   {@render blog("gflash", "Why is Gemini Flash so popular?")}
   {@render blog("simplymatch", "Simply match curly brackets")}
   {@render blog("reasoningtax", "I invented a new term")}

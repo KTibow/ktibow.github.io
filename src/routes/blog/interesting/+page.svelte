@@ -3,7 +3,7 @@
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {bg} title="31% of 2FA codes are interesting" />
+<BlogHeader {bg} title="Almost 32% of 2FA codes are interesting" />
 <p>
   Today on HN, <a
     href="https://blog.jacobstechtavern.com/p/building-a-2fa-app-that-detects-patterns"
