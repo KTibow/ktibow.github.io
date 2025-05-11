@@ -1,0 +1,45 @@
+<script lang="ts">
+  import BlogHeader from "$lib/BlogHeader.svelte";
+  import CaptionedImage from "$lib/CaptionedImage.svelte";
+  import CaptionedMedia from "$lib/CaptionedMedia.svelte";
+  import bg from "./bg.avif";
+  import more from "./more.png";
+  import logowhere from "./logowhere.png";
+  import sohot from "./sohot.png";
+  import pointerer from "./pointerer.jpeg";
+  import geminimeter from "./geminimeter.mp4";
+  import arcgen from "./arcgen.jpeg";
+</script>
+
+<BlogHeader {bg} title="Googlol" />
+<p>
+  Google is a 325 billion dollar company. So why are they so inattentive to detail that it made me
+  go to the effort of setting this page up? Perhaps paying attention to the finer aspects isn't
+  profitable.
+</p>
+
+<div class="flex flex-col items-start gap-4">
+  <CaptionedImage src={more} alt="Symmetry might have fallen out of fashion" dark />
+  <CaptionedImage src={logowhere} alt="What's Wikipedia's logo? We will never know" dark />
+  <CaptionedImage
+    src={sohot}
+    alt="This badge was added to AI studio when Gemini image gen was cool and never removed"
+    dark
+  />
+  <CaptionedImage
+    src={pointerer}
+    alt="Someone forgot to set pointer events none, so this element stops you from clicking"
+    dark
+  />
+</div>
+
+<h2>Aside - Gemini's own silly mistakes</h2>
+<div class="flex flex-col items-start gap-4">
+  <CaptionedMedia alt="Gemini made a meter where the needle goes upside down">
+    <video autoplay loop muted playsinline src={geminimeter}></video>
+  </CaptionedMedia>
+  <CaptionedImage
+    src={arcgen}
+    alt="Gemini image generation corrupts an ARC AGI task when asked to complete it"
+  />
+</div>
