@@ -19,17 +19,17 @@
 </p>
 
 <div class="flex flex-col items-start gap-4">
-  <CaptionedImage src={more} alt="Symmetry might have fallen out of fashion" dark />
-  <CaptionedImage src={logowhere} alt="What's Wikipedia's logo? We will never know" dark />
+  <CaptionedImage src={more} alt="Symmetry might have fallen out of fashion" view="dark" />
+  <CaptionedImage src={logowhere} alt="What's Wikipedia's logo? We will never know" view="dark" />
   <CaptionedImage
     src={sohot}
     alt="This badge was added to AI studio when Gemini image gen was cool and never removed"
-    dark
+    view="dark"
   />
   <CaptionedImage
     src={pointerer}
     alt="Someone forgot to set pointer events none, so this element stops you from clicking"
-    dark
+    view="dark"
   />
 </div>
 

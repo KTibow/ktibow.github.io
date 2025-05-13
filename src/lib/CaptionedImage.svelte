@@ -1,9 +1,19 @@
 <script lang="ts">
   import CaptionedMedia from "./CaptionedMedia.svelte";
 
-  let { src, alt, dark = false }: { src: string; alt: string; dark?: boolean } = $props();
+  let {
+    src,
+    alt,
+    view = "light",
+  }: { src: string; alt: string; view?: "light" | "makedark" | "dark" } = $props();
 </script>
 
-<CaptionedMedia {alt} {dark}>
-  <img {src} {alt} class="m-0!" />
+<CaptionedMedia {alt} dark={view != "light"}>
+  <img {src} {alt} class="m-0!" class:invert={view == "makedark"} />
 </CaptionedMedia>
+
+<style>
+  .invert {
+    filter: invert(1) hue-rotate(180deg);
+  }
+</style>
