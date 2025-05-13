@@ -1,5 +1,6 @@
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
+  import CaptionedImage from "$lib/CaptionedImage.svelte";
   import bg from "./bg.avif";
   import img0 from "./0.png";
   import img1 from "./1.png";
@@ -72,18 +73,22 @@
   On the surface level, they look very good. But once you open one, you see the placeholder text,
   and you start wondering if it's satire. Here's what I mean.
 </p>
-<p>
-  <strong>Honestly perplexing</strong>: Every time there's a contact slide, the email is "no reply".
-  That doesn't really make sense for a
-  <em>contact</em> email...
-</p>
-<img src={screenshot1} alt="" />
-<p><strong>Buzzword overload</strong>: This slide from "Sales Pitch"</p>
-<img src={screenshot3} alt="" />
-<p>
-  <strong>Confusing</strong>: "Educational games" has a hardcoded winner
-</p>
-<img src={screenshot4} alt="" />
+<div class="flex flex-col items-start gap-4">
+  <CaptionedImage
+    src={screenshot1}
+    alt={"Honestly perplexing: Every time there's a contact slide, the email is \"no reply\". That doesn't really make sense for a *contact* email..."}
+  />
+  <CaptionedImage
+    src={screenshot3}
+    alt={'Buzzword overload: This slide from "Sales Pitch"'}
+    view="dark"
+  />
+  <CaptionedImage
+    src={screenshot4}
+    alt={'Confusing: "Educational games" has a hardcoded winner'}
+    view="dark"
+  />
+</div>
 <p>
   <strong>Surely satire</strong>: "Product overview minimal". Let's go over it.
 </p>
@@ -119,15 +124,17 @@
 </p>
 
 <h2>On a positive note</h2>
-<p>
-  <strong>Just interesting</strong>: "Class overview" uses vectors for a raster font graphic. (The
-  other templates use a lot of vectors too, including for icons.)
-</p>
-<img src={screenshot2} alt="" />
-<p>
-  <strong>Clever</strong>: "Course overview" uses Noto Emoji for monochrome icons.
-</p>
-<img src={screenshot6} alt="" />
+<div class="flex flex-col items-start gap-4">
+  <CaptionedImage
+    src={screenshot2}
+    alt={'Interesting: "Class overview" uses vectors to represent a raster.'}
+  />
+  <CaptionedImage
+    src={screenshot6}
+    alt={'Clever: "Course overview" uses Noto Emoji for monochrome icons.'}
+    view="dark"
+  />
+</div>
 <p>
   All templates use free fonts from Google Fonts. It goes to show that you can make something
   without losing money.
