@@ -10,6 +10,7 @@
   import changeCount from "./change-count.png";
   import transitionProbabilities from "./transition-probabilities.png";
   import hypnogram8000685 from "./hypnogram-8000685.png";
+  import CaptionedImage from "$lib/CaptionedImage.svelte";
 </script>
 
 <BlogHeader title="Fragmentation and statistics in sleep" {bg} />
@@ -24,29 +25,34 @@
   the sleep stages of one night.
 </p>
 <p>
-  But if I download hypnograms from the internet (Sleep EDFX/ISRUC) and analyze them, even phases
-  you would expect to be very long mostly occur in one or two epochs:
+  But if I download hypnograms from the internet (Sleep EDFX/ISRUC) and analyze them, things look a
+  bit different.
 </p>
-<img src={n3Lengths} alt="A histogram of N3 lengths" class="invert hue-rotate-180" />
-<p>And individual hypnograms look more like this:</p>
-<img src={hypnogramFigure} alt="A hypnogram" class="invert hue-rotate-180" />
+<div class="flex flex-col items-start gap-4">
+  <CaptionedImage
+    src={n3Lengths}
+    alt="N3 lengths are only one or two epochs, much shorter than expected"
+    view="makedark"
+  />
+  <CaptionedImage
+    src={hypnogramFigure}
+    alt="An individual hypnogram fluctuates a lot"
+    view="makedark"
+  />
+  <CaptionedImage
+    src={changeCount}
+    alt="Reading the histogram: Most nights have >100 stage changes"
+    view="makedark"
+  />
+</div>
 <p>What is this? Sleep fragmentation.</p>
 <br />
 
 <p>
   Hypnograms that your sleep tracker show you are rough approximations. We don't actually have rigid
   cycles where each one is just 3 stages - we drift through the different stages of sleep throughout
-  the night. In fact, these open hypnograms typically have over 100 different stage changes in one
-  night:
+  the night. The most important part of this is N1.
 </p>
-<img
-  src={changeCount}
-  alt="A histogram of number of stage transitions per night"
-  class="invert hue-rotate-180"
-/>
-<p>But to understand sleep fragmentation, you need to understand N1.</p>
-<br />
-
 <p>
   N1 is an abbreviation of NREM 1, which is an abbreviation of Non REM 1, which is a special kind of
   sleep. It's typically grouped into light sleep, but it's actually lighter than light sleep. You
