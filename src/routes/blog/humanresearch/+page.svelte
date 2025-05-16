@@ -43,4 +43,7 @@
   <li>
     <a href="./hlebaseline/">Humanity's Last Exam baseline</a>
   </li>
+  <li>
+    <a href="./samcord/">Sam Altman is on Discord</a>
+  </li>
 </ul>
