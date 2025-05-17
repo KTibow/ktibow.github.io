@@ -4,7 +4,10 @@
 
   const now = new Date();
   const advancements = {
+    "Codex in ChatGPT": new Date("May 16 2025"),
     "Qwen 3": new Date("April 29 2025"),
+    "Sycophantgate end": new Date("April 29 2025"),
+    "Sycophantgate start": new Date("April 25 2025"),
     "O3 public access": new Date("April 16 2025"),
     "GPT-4.1": new Date("April 14 2025"),
     "Llama 4": new Date("April 5 2025"),
