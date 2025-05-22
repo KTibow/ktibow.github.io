@@ -21,6 +21,7 @@
     "Gemini 2": new Date("December 11 2024"),
     "Start of 12 days of OpenAI": new Date("December 5 2024"),
     O1: new Date("September 12 2024"),
+    "Reflection scandal": new Date("September 5 2024"),
     "Claude 3.5 Sonnet": new Date("June 20 2024"),
     "Gemini 1.5 updates @ I/O 2024": new Date("May 14 2024"),
     "Llama 3": new Date("April 18 2024"),
