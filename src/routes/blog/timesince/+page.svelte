@@ -51,6 +51,6 @@
   {@const daysSince = Math.round((now.getTime() - date.getTime()) / (1000 * 60 * 60 * 24))}
   <div class="flex justify-between">
     <p class="font-bold">{name}</p>
-    <p class="tabular-nums">{date.toLocaleDateString()} - {daysSince} days ago</p>
+    <p class="tabular-nums">{date.toLocaleDateString()} - {daysSince} {daysSince == 1 ? "day" : "days"} ago</p>
   </div>
 {/each}
