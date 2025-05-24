@@ -46,4 +46,7 @@
   <li>
     <a href="./samcord/">Sam Altman is on Discord</a>
   </li>
+  <li>
+    <a href="./wherepreload/">Where's the modulepreloads in my SvelteKit app?</a>
+  </li>
 </ul>
