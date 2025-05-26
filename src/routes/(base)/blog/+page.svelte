@@ -15,6 +15,7 @@
 {/snippet}
 
 <div class="flex flex-wrap flex-grow gap-2 p-6">
+  {@render blog("humanresearch", "Human Research")}
   {@render blog("googlol", "Googlol")}
   {@render blog("timesince", "Time since major AI advancements")}
   {@render blog("qwenflation", "Qwenflation")}
@@ -23,7 +24,6 @@
   {@render blog("porkbunt", "porkbunt")}
   {@render blog("sleep-fragmentation", "Fragmentation and statistics in sleep")}
   {@render blog("sleep", "How one estimates sleep stages")}
-  {@render blog("humanresearch", "Human Research")}
   {@render blog("cssinjection/work.pdf", "CSS Injection is All You Need")}
   {@render blog("interesting", "Almost 32% of 2FA codes are interesting")}
   {@render blog("gflash", "Why is Gemini Flash so popular?")}
