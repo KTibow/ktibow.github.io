@@ -4,6 +4,7 @@
 
   const now = new Date();
   const advancements = {
+    "Deepseek V3 0528": new Date("May 28 2025"),
     "Claude 4": new Date("May 22 2025"),
     "New checkpoints and apps @ I/O 2025": new Date("May 20 2025"),
     "Codex in ChatGPT": new Date("May 16 2025"),
@@ -51,6 +52,9 @@
   {@const daysSince = Math.round((now.getTime() - date.getTime()) / (1000 * 60 * 60 * 24))}
   <div class="flex justify-between">
     <p class="font-bold">{name}</p>
-    <p class="tabular-nums">{date.toLocaleDateString()} - {daysSince} {daysSince == 1 ? "day" : "days"} ago</p>
+    <p class="tabular-nums">
+      {date.toLocaleDateString()} - {daysSince}
+      {daysSince == 1 ? "day" : "days"} ago
+    </p>
   </div>
 {/each}
