@@ -44,7 +44,7 @@
 <ul>
   <li>
     Clone <code>https://github.com/jglathe/linux_ms_dev_kit</code> and switch to
-    <code>jg/ubuntu-qcom-x1e-6.15.0</code>
+    <code>jg/ubuntu-qcom-x1e-6.15rc</code>
   </li>
   <li>Make sure all necessary packages are installed</li>
   <li>
