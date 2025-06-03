@@ -261,7 +261,7 @@
   <meta name="description" content="KTibow's resume - links to past work" />
 </svelte:head>
 
-<article class="prose self-center pt-6">
+<article class="prose sm:self-center mt-6">
   <h1 class="flex justify-between">
     Past Work
     <select class="px-4 rounded-full bg-surface-container text-base" bind:value={platform}>
@@ -277,7 +277,7 @@
     make these good quality.
   </p>
 </article>
-<div class="flex flex-wrap gap-2 p-6">
+<div class="flex flex-wrap gap-2 m-6">
   {#each prevProjects.filter( (project) => (platform == "All" ? true : (project.platform || []).includes(platform)), ) as { name, desc, category, text, url }}
     <div class="relative flex-1 min-w-64 bg-surface-container-low rounded-2xl p-2">
       <h2 class="text-2xl font-bold">{name}</h2>
