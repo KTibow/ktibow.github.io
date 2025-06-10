@@ -49,4 +49,7 @@
   <li>
     <a href="./wherepreload/">Where's the modulepreloads in my SvelteKit app?</a>
   </li>
+  <li>
+    <a href="./wwdc2025/">WWDC 2025 Freeform snapshot</a>
+  </li>
 </ul>
