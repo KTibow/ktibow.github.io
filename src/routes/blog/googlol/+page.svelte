@@ -9,6 +9,7 @@
   import pointerer from "./pointerer.jpeg";
   import geminimeter from "./geminimeter.mp4";
   import arcgen from "./arcgen.jpeg";
+  import untrue from "./untrue.png";
 </script>
 
 <BlogHeader {bg} title="Googlol" />
@@ -31,6 +32,7 @@
     alt="Someone forgot to set pointer events none, so this element stops you from clicking"
     view="dark"
   />
+  <CaptionedImage src={untrue} alt="Nothing here is helpful (taken on Jun 11)" view="dark" />
 </div>
 
 <h2>Aside - Gemini's own silly mistakes</h2>
