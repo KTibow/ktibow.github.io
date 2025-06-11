@@ -4,6 +4,7 @@
 
   const now = new Date();
   const advancements = {
+    "O3 price cuts": new Date("Jun 10 2025"),
     "Deepseek V3 0528": new Date("May 28 2025"),
     "Claude 4": new Date("May 22 2025"),
     "New checkpoints and apps @ I/O 2025": new Date("May 20 2025"),
