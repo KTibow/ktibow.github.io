@@ -59,8 +59,8 @@
   much more efficient to use Tangent to read a technical explanation or run a program you wrote than
   to try to figure out what method hasn't been blocked by your school in their hatred of code.
   <em
-    >The filtering I'm under even has a specific categorization for platforms where you can make
-    free websites to be blocked.</em
+    >The filtering I'm under even has a specific categorization so IT can block all platforms where
+    you can make free websites!</em
   >
 </p>
 <p>
