@@ -64,7 +64,7 @@
   >
 </p>
 <p>
-  The next version of Tangent will also be a lot more open. I expect this to be hard, as
-  implementing different protocols and triaging what can and can't be open sourced always is, but I
-  think I'll have the time to make it work. Tangent will be ready next year.
+  Tangent as a computer will also be a lot more open. I expect this to be hard, as implementing
+  different protocols and triaging what can and can't be open sourced always is, but I think I'll
+  have the time to make it work. Tangent will be ready next year.
 </p>
