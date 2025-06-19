@@ -3,6 +3,20 @@
 
   const prevProjects = [
     {
+      name: "Tangent",
+      desc: "What I use at school every day.",
+      category: ["Svelte", "API and resources", "Most ambitious project (?)"],
+      platform: ["Web", "JavaScript"],
+    },
+    {
+      name: "LMB",
+      desc: "Language Model Board, a better way to view the LM Arena results.",
+      category: ["Svelte", "Reverse engineering", "Made with AI"],
+      platform: ["Web", "JavaScript"],
+      text: "View site",
+      url: "/lmb/",
+    },
+    {
       name: "Synthetitastic",
       desc: "An accelerationist set of synthetic data.",
       category: ["LLMs", "Synthetic data", "RL"],
@@ -25,14 +39,6 @@
       platform: ["Web", "JavaScript"],
       text: "View code",
       url: "https://github.com/KTibow/groq-bot",
-    },
-    {
-      name: "LMB",
-      desc: "Language Model Board, a better way to view the LM Arena results.",
-      category: ["Svelte", "Reverse engineering", "Made with AI"],
-      platform: ["Web", "JavaScript"],
-      text: "View site",
-      url: "/lmb/",
     },
     {
       name: "Excalidraw slides",
@@ -67,27 +73,15 @@
       url: "/m3-svelte/",
     },
     {
-      name: "🤫",
-      desc: "A web app for planning next year's schedule.",
+      name: "Pln",
+      desc: "An experiment I made to plan schedules.",
       category: ["APIs", "Data ingestion", "AI"],
       platform: ["Web", "JavaScript"],
     },
     {
-      name: "🤫",
-      desc: "It's school related.",
-      category: ["Svelte", "API integration", "Resourcefulness", "UX"],
-      platform: ["Web", "JavaScript"],
-    },
-    {
-      name: "🤫",
-      desc: "It's school related.",
+      name: "Stereotype",
+      desc: "An experiment I did with CLIP.",
       category: ["Compression", "Images", "Image embeddings"],
-      platform: ["Web", "JavaScript"],
-    },
-    {
-      name: "🤫",
-      desc: "The backbone of two projects I use for school.",
-      category: ["APIs", "Reverse engineering"],
       platform: ["Web", "JavaScript"],
     },
     {
