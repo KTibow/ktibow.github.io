@@ -52,4 +52,7 @@
   <li>
     <a href="./wwdc2025/">WWDC 2025 Freeform snapshot</a>
   </li>
+  <li>
+    <a href="./why8123/">Why does Home Assistant run on port 8123</a>
+  </li>
 </ul>
