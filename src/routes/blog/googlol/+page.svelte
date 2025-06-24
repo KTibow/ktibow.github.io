@@ -10,6 +10,7 @@
   import geminimeter from "./geminimeter.mp4";
   import arcgen from "./arcgen.jpeg";
   import untrue from "./untrue.png";
+  import nocode from "./nocode.png";
 </script>
 
 <BlogHeader {bg} title="Googlol" />
@@ -33,6 +34,7 @@
     view="dark"
   />
   <CaptionedImage src={untrue} alt="Nothing here is helpful (taken on Jun 11)" view="dark" />
+  <CaptionedImage src={nocode} alt="No code snippets for you" view="dark" />
 </div>
 
 <h2>Aside - Gemini's own silly mistakes</h2>
