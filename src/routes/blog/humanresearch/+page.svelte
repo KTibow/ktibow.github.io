@@ -17,7 +17,7 @@
 <ul>
   <li><a href="./phi-4/">Why is Phi 4 Multimodal so cheap?</a></li>
   <li>
-    <a href="./austrchile/"> Why do LLMs think Australians don't need visas to enter Chile? </a>
+    <a href="./austrchile/">Why do LLMs think Australians don't need visas to enter Chile?</a>
   </li>
   <li>
     <a href="./syncobsidian/">Remotely Save - including the .obsidian folder</a>
@@ -54,5 +54,8 @@
   </li>
   <li>
     <a href="./why8123/">Why does Home Assistant run on port 8123</a>
+  </li>
+  <li>
+    <a href="./claudiussennett/">Who is Claudius Sennett</a>
   </li>
 </ul>
