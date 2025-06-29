@@ -16,6 +16,7 @@
 
 <div class="flex flex-wrap flex-grow gap-2 p-6">
   {@render blog("humanresearch", "Human Research")}
+  {@render blog("sdate", "Sdate is from 1993 of course")}
   {@render blog("tangentcomputer", "Tangent is dead; long live Tangent")}
   {@render blog("mcpfp", "MCP from first principles")}
   {@render blog("googlol", "Googlol")}
