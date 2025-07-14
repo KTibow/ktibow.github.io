@@ -1,0 +1,3657 @@
+{
+  "lysandre": {
+    "name": "Lysandre",
+    "orgs": [
+      "blhf",
+      "ft-hf-o-c",
+      "gg-hf-g",
+      "gg-hf-gm",
+      "gg-tt",
+      "ll-re",
+      "llhf",
+      "lbhf",
+      "nltpt",
+      "sllhf",
+      "hsramall"
+    ],
+    "affiliation": "Hugging Face"
+  },
+  "ArthurZ": {
+    "name": "Arthur Zucker",
+    "orgs": [
+      "blhf",
+      "ft-hf-o-c",
+      "gg-hf",
+      "gg-hf-g",
+      "gg-tt",
+      "ll-re",
+      "llhf",
+      "nltpt",
+      "sllhf",
+      "hsramall"
+    ],
+    "affiliation": "Hugging Face"
+  },
+  "philschmid": {
+    "name": "Philipp Schmid",
+    "orgs": ["blhf", "gg-hf", "gg-hf-g", "gg-hf-gm", "gg-tt", "llhf", "hsramall"],
+    "affiliation": "Google"
+  },
+  "mfuntowicz": {
+    "name": "Morgan Funtowicz",
+    "orgs": ["blhf", "gg-hf", "gg-tt", "hsramall"],
+    "affiliation": "Hugging Face"
+  },
+  "reach-vb": {
+    "name": "Vaibhav Srivastav",
+    "orgs": [
+      "blhf",
+      "ft-hf-o-c",
+      "gg-hf",
+      "gg-hf-g",
+      "gg-hf-gm",
+      "gg-tt",
+      "ll-re",
+      "llhf",
+      "lbhf",
+      "nltpt",
+      "sllhf",
+      "yet-another-org-whynot",
+      "hsramall"
+    ],
+    "affiliation": "Hugging Face"
+  },
+  "Hamid-Nazeri": {
+    "name": "Hamid Shojanazeri",
+    "orgs": ["blhf", "ll-re", "llhf", "lbhf", "nltpt", "sllhf", "hsramall"],
+    "affiliation": "Meta"
+  },
+  "vontimitta": {
+    "name": "Varun Vontimitta",
+    "orgs": ["blhf", "ll-re", "llhf", "lbhf", "nltpt", "sllhf", "yet-another-org-whynot"],
+    "affiliation": "Meta"
+  },
+  "maximgroshev": {
+    "name": "Maxim Groshev",
+    "orgs": ["blhf", "llhf", "sllhf"]
+  },
+  "wukaixingxp": {
+    "name": "Kai Wu",
+    "orgs": ["blhf", "ll-re", "llhf", "lbhf", "nltpt", "sllhf", "yet-another-org-whynot"],
+    "affiliation": "Meta"
+  },
+  "mreso": {
+    "name": "Matthias Reso",
+    "orgs": ["blhf", "ll-re", "llhf", "nltpt", "sllhf", "hsramall"],
+    "affiliation": "Meta"
+  },
+  "betodepaola": {
+    "name": "Alberto de Paola",
+    "orgs": ["blhf", "ll-re", "llhf", "nltpt", "sllhf", "yet-another-org-whynot", "hsramall"],
+    "affiliation": "Meta"
+  },
+  "ejsd1989": {
+    "name": "Eissa Jamil",
+    "orgs": ["blhf", "ll-re", "llhf", "nltpt", "sllhf", "hsramall"],
+    "affiliation": "Meta"
+  },
+  "ChesterHuMeta": {
+    "name": "Chester Hu",
+    "orgs": ["blhf", "ll-re", "llhf", "nltpt", "sllhf"],
+    "affiliation": "Meta"
+  },
+  "ssuchyta": {
+    "name": "Scott Suchyta",
+    "orgs": ["blhf", "ft-hf-o-c", "gg-hf-g", "gg-hf-gm", "ll-re", "llhf", "nltpt", "sllhf"],
+    "affiliation": "NVIDIA"
+  },
+  "jaislas": {
+    "name": "jaime campos salas",
+    "orgs": ["blhf", "llhf", "nltpt", "sllhf", "hsramall"],
+    "affiliation": "AWS"
+  },
+  "hxgy610": {
+    "name": "Henry",
+    "orgs": ["blhf", "ll-re", "llhf", "nltpt", "sllhf", "hsramall"]
+  },
+  "huntingcarlisle": {
+    "name": "Hunter Carlisle",
+    "orgs": ["blhf", "llhf", "nltpt", "sllhf"],
+    "affiliation": "AWS"
+  },
+  "kamranjkhan": {
+    "name": "Kamran Khan",
+    "orgs": ["blhf", "llhf", "nltpt", "sllhf"],
+    "affiliation": "AWS"
+  },
+  "lanking": {
+    "name": "Qing Lan",
+    "orgs": ["blhf", "llhf", "nltpt", "sllhf", "hsramall"],
+    "affiliation": "AWS"
+  },
+  "hemamsin": {
+    "name": "Hemant Singh",
+    "orgs": ["blhf", "llhf", "nltpt", "sllhf"]
+  },
+  "zhaozuy": {
+    "name": "Zuyi Zhao",
+    "orgs": ["blhf", "llhf", "nltpt", "sllhf", "hsramall"],
+    "affiliation": "AWS"
+  },
+  "ulrichkr": {
+    "name": "Kyle Ulrich",
+    "orgs": ["blhf", "ll-re", "llhf", "nltpt", "sllhf", "hsramall"],
+    "affiliation": "AWS"
+  },
+  "davidthomas426": {
+    "name": "David Thomas",
+    "orgs": ["blhf", "llhf", "nltpt", "sllhf"]
+  },
+  "cknatarajanaws": {
+    "name": "Natarajan Kumar",
+    "orgs": ["blhf", "nltpt", "sllhf"]
+  },
+  "jlunt": {
+    "name": "Jonathan",
+    "orgs": ["blhf", "llhf", "sllhf"]
+  },
+  "hannanjg": {
+    "name": "Josh Hannan",
+    "orgs": ["blhf", "llhf", "sllhf"]
+  },
+  "deveshr": {
+    "name": "DR",
+    "orgs": ["blhf", "llhf", "nltpt", "sllhf", "hsramall"]
+  },
+  "nonatofabio": {
+    "name": "Fabio Nonato",
+    "orgs": ["blhf"]
+  },
+  "seanshi-scale": {
+    "name": "Sean Shi",
+    "orgs": ["blhf", "llhf", "sllhf"],
+    "affiliation": "Scale AI"
+  },
+  "JRosenkranz": {
+    "name": "Joshua Rosenkranz",
+    "orgs": ["blhf", "llhf", "nltpt", "sllhf"],
+    "affiliation": "IBM"
+  },
+  "Yunfeng-scale": {
+    "name": "Yunfeng Bai",
+    "orgs": ["blhf", "nltpt"],
+    "affiliation": "Scale AI"
+  },
+  "BLS111": {
+    "name": "Brandt Springman",
+    "orgs": ["blhf", "llhf", "nltpt", "sllhf"],
+    "affiliation": "Dell"
+  },
+  "taozhang9527": {
+    "name": "Tao Zhang",
+    "orgs": ["blhf", "ll-re", "llhf", "sllhf", "hsramall"],
+    "affiliation": "Dell"
+  },
+  "Khushdholi": {
+    "name": "Khushboo Rathi",
+    "orgs": ["blhf", "llhf", "sllhf", "hsramall"],
+    "affiliation": "Dell"
+  },
+  "AshMahg": {
+    "name": "Ashraf Mahgoub",
+    "orgs": ["blhf", "nltpt"]
+  },
+  "mdouglas": {
+    "name": "Matthew Douglas",
+    "orgs": ["blhf", "gg-hf-g", "llhf", "sllhf"],
+    "affiliation": "Hugging Face"
+  },
+  "vlasenkoalexey": {
+    "name": "Vlasenko",
+    "orgs": ["blhf", "gg-hf-gm", "llhf", "nltpt", "sllhf"],
+    "affiliation": "Google"
+  },
+  "kathy-yu": {
+    "name": "Kathy Yu",
+    "orgs": ["blhf", "gg-hf", "gg-hf-g", "gg-hf-gm", "gv-hf", "ll-re", "llhf", "nltpt", "sllhf"],
+    "affiliation": "Google"
+  },
+  "pengchong": {
+    "name": "Pengchong Jin",
+    "orgs": ["blhf", "gg-hf", "gg-tt", "ll-re", "nltpt"],
+    "affiliation": "Google"
+  },
+  "aurick": {
+    "name": "Aurick Qiao",
+    "orgs": ["blhf", "llhf", "sllhf"],
+    "affiliation": "Snowflake"
+  },
+  "bafoleco-db": {
+    "name": "Bay Foley-Cox",
+    "orgs": ["blhf"],
+    "affiliation": "Databricks"
+  },
+  "ankitmathur": {
+    "name": "Ankit Mathur",
+    "orgs": ["blhf", "ft-hf-o-c", "llhf", "sllhf", "hsramall"],
+    "affiliation": "Databricks"
+  },
+  "saakethn": {
+    "name": "Saaketh Narayan",
+    "orgs": ["blhf", "llhf", "sllhf"],
+    "affiliation": "Databricks"
+  },
+  "rogerpengyu": {
+    "name": "Roger (Peng) Yu",
+    "orgs": ["blhf"],
+    "affiliation": "Google"
+  },
+  "vpbala": {
+    "name": "Bala  Venkataraman",
+    "orgs": ["blhf", "llhf", "nltpt", "sllhf"],
+    "affiliation": "Microsoft"
+  },
+  "tjaschek": {
+    "name": "Tim Jaschek",
+    "orgs": ["blhf", "gg-hf-g", "ll-re", "llhf", "nltpt", "sllhf"],
+    "affiliation": "Groq"
+  },
+  "bfontain": {
+    "name": "Bruce Fontaine",
+    "orgs": ["blhf", "llhf", "sllhf"],
+    "affiliation": "Databricks"
+  },
+  "cli999": {
+    "name": "Cheng Li",
+    "orgs": ["blhf", "llhf", "sllhf"],
+    "affiliation": "Databricks"
+  },
+  "genquan": {
+    "name": "Duan",
+    "orgs": ["blhf", "gg-hf", "llhf", "nltpt", "sllhf"],
+    "affiliation": "Google"
+  },
+  "mpmsft": {
+    "name": "Miseon Park",
+    "orgs": ["blhf", "ll-re", "llhf", "nltpt", "sllhf", "hsramall"],
+    "affiliation": "Microsoft"
+  },
+  "n-mos": {
+    "name": "Nik",
+    "orgs": ["blhf", "nltpt"],
+    "affiliation": "Databricks"
+  },
+  "srsaggam": {
+    "name": "s",
+    "orgs": ["blhf", "ll-re", "llhf", "nltpt", "sllhf"]
+  },
+  "vivram": {
+    "name": "Vivek Ramaswamy",
+    "orgs": ["blhf", "ft-hf-o-c", "ll-re", "llhf", "nltpt", "sllhf"],
+    "affiliation": "Microsoft"
+  },
+  "tgokal": {
+    "name": "Thasmika Gokal",
+    "orgs": ["blhf", "llhf", "nltpt", "sllhf", "hsramall"],
+    "affiliation": "Microsoft"
+  },
+  "alvarobartt": {
+    "name": "Alvaro Bartolome",
+    "orgs": ["blhf", "gg-hf", "gg-hf-g", "llhf", "nltpt", "sllhf"],
+    "affiliation": "Hugging Face"
+  },
+  "irenedea": {
+    "name": "Irene Dea",
+    "orgs": ["blhf"],
+    "affiliation": "Databricks"
+  },
+  "glabred": {
+    "name": "Jeffrey Chen",
+    "orgs": ["blhf"],
+    "affiliation": "Databricks"
+  },
+  "olivierdehaene": {
+    "name": "Olivier Dehaene",
+    "orgs": ["blhf", "llhf", "sllhf"],
+    "affiliation": "Apple"
+  },
+  "abhi-db": {
+    "name": "Abhinav Venigalla",
+    "orgs": ["blhf", "hsramall"],
+    "affiliation": "Databricks"
+  },
+  "Titus-von-Koeller": {
+    "name": "Titus von Koeller",
+    "orgs": ["blhf"],
+    "affiliation": "Hugging Face"
+  },
+  "youkaichao": {
+    "name": "Kaichao",
+    "orgs": ["blhf", "nltpt"],
+    "affiliation": "vLLM"
+  },
+  "wskwon": {
+    "name": "Woosuk Kwon",
+    "orgs": ["blhf", "ft-hf-o-c", "gg-hf-g", "gg-tt", "ll-re", "nltpt", "hsramall"],
+    "affiliation": "vLLM"
+  },
+  "simon-mo": {
+    "name": "Simon Mo",
+    "orgs": ["blhf", "ft-hf-o-c", "ll-re", "nltpt", "sllhf", "hsramall"],
+    "affiliation": "vLLM"
+  },
+  "datdo-msft": {
+    "name": "Dat Do",
+    "orgs": ["blhf", "ll-re", "llhf", "nltpt", "sllhf"],
+    "affiliation": "Microsoft"
+  },
+  "guptaaman": {
+    "name": "Aman Gupta",
+    "orgs": ["blhf", "llhf", "sllhf"],
+    "affiliation": "Microsoft"
+  },
+  "raghotham": {
+    "name": "Raghotham Murthy",
+    "orgs": ["blhf", "ll-re", "llhf", "lbhf", "nltpt", "sllhf"],
+    "affiliation": "Meta"
+  },
+  "thomwolf": {
+    "name": "Thomas Wolf",
+    "orgs": ["ft-hf-o-c"],
+    "affiliation": "Hugging Face"
+  },
+  "zhuohan123": {
+    "name": "Zhuohan  Li",
+    "orgs": ["ft-hf-o-c", "hsramall"],
+    "affiliation": "OpenAI"
+  },
+  "cdvorak-openai": {
+    "name": "Casey Dvorak",
+    "orgs": ["ft-hf-o-c"],
+    "affiliation": "OpenAI"
+  },
+  "lewtun": {
+    "name": "Lewis Tunstall",
+    "orgs": ["ft-hf-o-c", "ll-re", "nltpt"],
+    "affiliation": "Hugging Face"
+  },
+  "marcsun13": {
+    "name": "Marc Sun",
+    "orgs": ["ft-hf-o-c", "gg-hf-g", "ll-re", "llhf", "sllhf"],
+    "affiliation": "Hugging Face"
+  },
+  "qgallouedec": {
+    "name": "Quentin Gallouédec",
+    "orgs": ["ft-hf-o-c"],
+    "affiliation": "Hugging Face"
+  },
+  "ollama": {
+    "name": "ollama",
+    "orgs": ["ft-hf-o-c", "gg-hf-g", "gg-hf-gm", "gg-tt", "gv-hf", "ll-re", "nltpt"],
+    "affiliation": "Ollama"
+  },
+  "Narsil": {
+    "name": "Nicolas Patry",
+    "orgs": ["ft-hf-o-c", "gg-hf", "gg-tt", "nltpt", "hsramall"],
+    "affiliation": "Hugging Face"
+  },
+  "Nvidia-BarathAnandan": {
+    "name": "Barathwaj Anandan",
+    "orgs": ["ft-hf-o-c"],
+    "affiliation": "NVIDIA"
+  },
+  "gojira": {
+    "name": "Keiji Kanazawa",
+    "orgs": ["ft-hf-o-c"],
+    "affiliation": "Microsoft"
+  },
+  "cyrilvallez": {
+    "name": "Cyril Vallez",
+    "orgs": ["ft-hf-o-c", "gg-hf-gm", "ll-re"],
+    "affiliation": "Hugging Face"
+  },
+  "nouamanetazi": {
+    "name": "Nouamane Tazi",
+    "orgs": ["ft-hf-o-c", "ll-re"],
+    "affiliation": "Hugging Face"
+  },
+  "danieldk": {
+    "name": "Daniël de Kok",
+    "orgs": ["ft-hf-o-c", "ll-re", "llhf", "sllhf"],
+    "affiliation": "Hugging Face"
+  },
+  "Vicenterivera": {
+    "name": "Vicente Rivera",
+    "orgs": ["ft-hf-o-c"],
+    "affiliation": "Microsoft"
+  },
+  "rdicecco": {
+    "name": "Roberto",
+    "orgs": ["ft-hf-o-c", "gg-hf-gm"],
+    "affiliation": "Groq"
+  },
+  "koajoel": {
+    "name": "Jiang Liu",
+    "orgs": ["ft-hf-o-c"],
+    "affiliation": "AMD"
+  },
+  "jeffdaily": {
+    "name": "Jeff Daily",
+    "orgs": ["ft-hf-o-c"],
+    "affiliation": "AMD"
+  },
+  "zhenygu": {
+    "name": "Zhenyu Gu",
+    "orgs": ["ft-hf-o-c"],
+    "affiliation": "AMD"
+  },
+  "Jm4akxzjhdf": {
+    "name": "xiaoh",
+    "orgs": ["ft-hf-o-c"],
+    "affiliation": "Unknown"
+  },
+  "sunghcho": {
+    "name": "Sunghoon Choi",
+    "orgs": ["ft-hf-o-c"],
+    "affiliation": "Rutgers University"
+  },
+  "jialianww": {
+    "name": "Jialian Wu",
+    "orgs": ["ft-hf-o-c"],
+    "affiliation": "AMD"
+  },
+  "GiusFra": {
+    "name": "Giuseppe Franco",
+    "orgs": ["ft-hf-o-c"],
+    "affiliation": "AMD"
+  },
+  "pcameron": {
+    "name": "Pashmina Cameron",
+    "orgs": ["ft-hf-o-c"],
+    "affiliation": "Microsoft"
+  },
+  "omarkilani": {
+    "name": "Omar Kilani",
+    "orgs": ["ft-hf-o-c", "nltpt"],
+    "affiliation": "Groq"
+  },
+  "kvaishnavi": {
+    "name": "Kunal Vaishnavi",
+    "orgs": ["ft-hf-o-c"],
+    "affiliation": "Microsoft"
+  },
+  "seungrokj": {
+    "name": "seungrok jung",
+    "orgs": ["ft-hf-o-c", "ll-re", "sllhf"],
+    "affiliation": "AMD"
+  },
+  "NSB": {
+    "name": "Niles Burbank",
+    "orgs": ["ft-hf-o-c", "gg-hf-g", "gg-hf-gm"],
+    "affiliation": "AMD"
+  },
+  "nickfraser": {
+    "name": "Nick Fraser",
+    "orgs": ["ft-hf-o-c"],
+    "affiliation": "AMD"
+  },
+  "hongxiayang01": {
+    "name": "Hongxia Yang",
+    "orgs": ["ft-hf-o-c", "gg-hf-g", "ll-re"],
+    "affiliation": "AMD"
+  },
+  "andyll7772": {
+    "name": "Andy Luo",
+    "orgs": ["ft-hf-o-c", "gg-hf-g", "gg-hf-gm", "ll-re", "nltpt"],
+    "affiliation": "AMD"
+  },
+  "AMDAIer": {
+    "name": "Liz Li",
+    "orgs": ["ft-hf-o-c", "ll-re"],
+    "affiliation": "AMD"
+  },
+  "ggerganov": {
+    "name": "Georgi Gerganov",
+    "orgs": ["ft-hf-o-c", "gg-hf-g", "gg-hf-gm"],
+    "affiliation": "Independent"
+  },
+  "JohnQin": {
+    "name": "John qin",
+    "orgs": ["ft-hf-o-c"],
+    "affiliation": "Independent"
+  },
+  "tlwu": {
+    "name": "Tianlei Wu",
+    "orgs": ["ft-hf-o-c"],
+    "affiliation": "ONNX Runtime"
+  },
+  "dllehr-amd": {
+    "name": "Douglas Lehr",
+    "orgs": ["ft-hf-o-c"],
+    "affiliation": "AMD"
+  },
+  "alfuyao": {
+    "name": "Yao Fu",
+    "orgs": ["ft-hf-o-c"],
+    "affiliation": "AMD"
+  },
+  "Haich": {
+    "name": "Zhang ",
+    "orgs": ["ft-hf-o-c"],
+    "affiliation": "AMD"
+  },
+  "3outeille": {
+    "name": "Ferdinand Mom",
+    "orgs": ["ft-hf-o-c"],
+    "affiliation": "Hugging Face"
+  },
+  "naromero77amd": {
+    "name": "Nichols A. Romero",
+    "orgs": ["ft-hf-o-c", "gg-hf-g", "gg-hf-gm"],
+    "affiliation": "AMD"
+  },
+  "rohitharkhani": {
+    "name": "Rohit Harkhani",
+    "orgs": ["ft-hf-o-c"],
+    "affiliation": "Microsoft"
+  },
+  "santyagi": {
+    "name": "Sanskriti Tyagi",
+    "orgs": ["ft-hf-o-c"],
+    "affiliation": "Microsoft"
+  },
+  "eqhylxx": {
+    "name": "Lily Liu",
+    "orgs": ["ft-hf-o-c"],
+    "affiliation": "OpenAI"
+  },
+  "vithursant": {
+    "name": "Vithursan Thangarasa",
+    "orgs": ["ft-hf-o-c", "ll-re"],
+    "affiliation": "Cerebras"
+  },
+  "andreihagiescu": {
+    "name": "Andrei Hagiescu",
+    "orgs": ["ft-hf-o-c"],
+    "affiliation": "Cerebras"
+  },
+  "alextsaptsinos": {
+    "name": "Alexandros Tsaptsinos",
+    "orgs": ["ft-hf-o-c", "ll-re"],
+    "affiliation": "Cerebras"
+  },
+  "emma-c-cerebras": {
+    "name": "Emma Call",
+    "orgs": ["ft-hf-o-c", "ll-re"],
+    "affiliation": "Cerebras"
+  },
+  "indianspeedster": {
+    "name": "Chandra shekhar Pandey",
+    "orgs": ["ft-hf-o-c"],
+    "affiliation": "AMD"
+  },
+  "Kailashg26": {
+    "name": "Kailash Gogineni",
+    "orgs": ["ft-hf-o-c"],
+    "affiliation": "George Washington University"
+  },
+  "spandantiwari": {
+    "name": "Spandan Tiwari",
+    "orgs": ["ft-hf-o-c", "nltpt"],
+    "affiliation": "AMD"
+  },
+  "bowenbaoamd": {
+    "name": "Bowen Bao",
+    "orgs": ["ft-hf-o-c", "nltpt"],
+    "affiliation": "AMD"
+  },
+  "mahdicv": {
+    "name": "Mahdi Ghodsi",
+    "orgs": ["ft-hf-o-c"],
+    "affiliation": "AMD"
+  },
+  "icolbert": {
+    "name": "Ian Colbert",
+    "orgs": ["ft-hf-o-c"],
+    "affiliation": "AMD"
+  },
+  "hqiu-ooo": {
+    "name": "HD Qiu",
+    "orgs": ["ft-hf-o-c"],
+    "affiliation": "OpenAI"
+  },
+  "cdnamz": {
+    "name": "Cade Daniel",
+    "orgs": ["ft-hf-o-c", "ll-re", "llhf", "sllhf"],
+    "affiliation": "Databricks"
+  },
+  "wangxun1010": {
+    "name": "wangxun1010",
+    "orgs": ["ft-hf-o-c"],
+    "affiliation": "Independent"
+  },
+  "testingtin": {
+    "name": "testingtin",
+    "orgs": ["ft-hf-o-c", "gg-hf-gm", "ll-re", "llhf", "nltpt", "sllhf"],
+    "affiliation": "HazyResearch"
+  },
+  "aliguori": {
+    "name": "Anthony Liguori",
+    "orgs": ["ft-hf-o-c"],
+    "affiliation": "AWS"
+  },
+  "mange": {
+    "name": "Magnus Sahlgren",
+    "orgs": ["ft-hf-o-c"],
+    "affiliation": "AI Sweden"
+  },
+  "TobiasWilhelmsson": {
+    "name": "Tobias Wilhelmsson",
+    "orgs": ["ft-hf-o-c"],
+    "affiliation": "AI Sweden"
+  },
+  "Ekgren": {
+    "name": "Ariel Ekgren",
+    "orgs": ["ft-hf-o-c"],
+    "affiliation": "AI Sweden"
+  },
+  "SaylorTwift": {
+    "name": "Nathan Habib",
+    "orgs": [
+      "ft-hf-o-c",
+      "gg-hf",
+      "gg-hf-g",
+      "gg-tt",
+      "ll-re",
+      "llhf",
+      "lbhf",
+      "sllhf",
+      "hsramall"
+    ],
+    "affiliation": "Hugging Face"
+  },
+  "harsh-amd": {
+    "name": "Harsh Menon",
+    "orgs": ["ft-hf-o-c"],
+    "affiliation": "AMD"
+  },
+  "Sonbolyb": {
+    "name": "Sonbol Yazdanbakhsh",
+    "orgs": ["ft-hf-o-c"],
+    "affiliation": "AMD"
+  },
+  "pcuenq": {
+    "name": "Pedro Cuenca",
+    "orgs": [
+      "gg-hf",
+      "gg-hf-g",
+      "gg-hf-gm",
+      "gg-tt",
+      "gv-hf",
+      "ll-re",
+      "llhf",
+      "lbhf",
+      "nltpt",
+      "sllhf",
+      "yet-another-org-whynot",
+      "hsramall"
+    ],
+    "affiliation": "Hugging Face"
+  },
+  "clefourrier": {
+    "name": "Clémentine Fourrier",
+    "orgs": ["gg-hf", "gg-tt", "llhf", "lbhf", "nltpt", "sllhf", "hsramall"],
+    "affiliation": "Hugging Face"
+  },
+  "gaghack": {
+    "name": "graghack01",
+    "orgs": ["gg-hf", "gg-tt", "llhf", "nltpt", "sllhf"]
+  },
+  "lavrai": {
+    "name": "Lav Rai",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "mingkong98": {
+    "name": "Bo Wu",
+    "orgs": ["gg-hf", "gv-hf", "ll-re"],
+    "affiliation": "Google"
+  },
+  "FL33TW00D-HF": {
+    "name": "Christopher Fleetwood",
+    "orgs": ["gg-hf", "gg-hf-g", "gg-hf-gm"],
+    "affiliation": "Hugging Face"
+  },
+  "mmoynihan": {
+    "name": "Michael Moynihan",
+    "orgs": ["gg-hf", "gg-hf-gm", "gg-tt"],
+    "affiliation": "Google"
+  },
+  "akhaliq": {
+    "name": "AK",
+    "orgs": ["gg-hf"],
+    "affiliation": "Hugging Face"
+  },
+  "ysharma": {
+    "name": "yuvraj sharma",
+    "orgs": ["gg-hf", "gg-tt", "llhf", "nltpt", "hsramall"],
+    "affiliation": "Hugging Face"
+  },
+  "va-ibh-v": {
+    "name": "Vaibhav Singh",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "achandrasekar": {
+    "name": "Ashok Chandrasekar",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "kenthua": {
+    "name": "Kent Hua",
+    "orgs": ["gg-hf"]
+  },
+  "moficodes": {
+    "name": "Mofi Rahman",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "vilobhmm": {
+    "name": "Vilobh Meshram",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "nkovela": {
+    "name": "Neel Kovelamudi",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "paultimothymooney": {
+    "name": "Paul M",
+    "orgs": ["gg-hf", "gg-tt"],
+    "affiliation": "Google"
+  },
+  "yuhuichen1015": {
+    "name": "Yu-Hui Chen",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "qchong": {
+    "name": "Quddus Chong",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "algoartist": {
+    "name": "Raj",
+    "orgs": ["gg-hf"]
+  },
+  "kfswain": {
+    "name": "Kellen Swain",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "dolevish": {
+    "name": "Dolev Ish-Am",
+    "orgs": ["gg-hf"],
+    "affiliation": "AWS"
+  },
+  "tengomucho": {
+    "name": "Alvaro Moran",
+    "orgs": ["gg-hf", "gg-tt"],
+    "affiliation": "Hugging Face"
+  },
+  "jarekkaz": {
+    "name": "Jarek Kazmierczak",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "puvi044": {
+    "name": "Puvi Pandian",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "jesschen": {
+    "name": "Jessica Chen",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "rngy": {
+    "name": "Rohit Yengisetty",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "jkh52": {
+    "name": "Joseph Anttila Hall",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "annapendleton": {
+    "name": "Anna Pendleton",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "mastersingh24": {
+    "name": "Gari Singh",
+    "orgs": ["gg-hf"]
+  },
+  "Linchenn": {
+    "name": "Lin Chen",
+    "orgs": ["gg-hf"]
+  },
+  "Marksherwood": {
+    "name": "Mark Sherwood",
+    "orgs": ["gg-hf", "gg-hf-gm"],
+    "affiliation": "Google"
+  },
+  "yichunkuo": {
+    "name": "Yi-Chun Kuo",
+    "orgs": ["gg-hf"]
+  },
+  "ktonthat": {
+    "name": "Kris Tonthat",
+    "orgs": ["gg-hf", "gg-hf-gm"],
+    "affiliation": "Google"
+  },
+  "talumbau": {
+    "name": "T.J. Alumbaugh",
+    "orgs": ["gg-hf"]
+  },
+  "schmidt-sebastian": {
+    "name": "Sebastian Schmidt",
+    "orgs": ["gg-hf"]
+  },
+  "nutsiepully": {
+    "name": "Pulkit",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "kavithr": {
+    "name": "Kavitha Rajendran",
+    "orgs": ["gg-hf"]
+  },
+  "woodyhoko": {
+    "name": "Ho Ko",
+    "orgs": ["gg-hf"]
+  },
+  "alanwaketan": {
+    "name": "Jiewen Tan",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "alizaidis": {
+    "name": "Ali Zaidi",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "chenjiel": {
+    "name": "Chenjie Luo",
+    "orgs": ["gg-hf"],
+    "affiliation": "NVIDIA"
+  },
+  "wdenniss": {
+    "name": "William Denniss",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "vszalvay": {
+    "name": "Victor Szalvay",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "CindyXing123": {
+    "name": "Cindy Xing",
+    "orgs": ["gg-hf"]
+  },
+  "jacobmurry": {
+    "name": "Jacob Murry",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "amundson": {
+    "name": "Julie Amundson",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "shauheenz": {
+    "name": "Shauheen Zahirazami",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "yaoyu-33": {
+    "name": "Yu Yao",
+    "orgs": ["gg-hf"],
+    "affiliation": "NVIDIA"
+  },
+  "Finiks": {
+    "name": "Olivier Bourgeois",
+    "orgs": ["gg-hf"]
+  },
+  "kelvinye2000": {
+    "name": "Kelvin",
+    "orgs": ["gg-hf"]
+  },
+  "postmasters": {
+    "name": "Nam Nguyen",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "Xenova": {
+    "name": "Joshua",
+    "orgs": [
+      "gg-hf",
+      "gg-hf-g",
+      "gg-hf-gm",
+      "gg-tt",
+      "gv-hf",
+      "llhf",
+      "nltpt",
+      "sllhf",
+      "hsramall"
+    ],
+    "affiliation": "Hugging Face"
+  },
+  "jeffmoser": {
+    "name": "Jeff Moser",
+    "orgs": ["gg-hf"],
+    "affiliation": "Kaggle (Google)"
+  },
+  "kaggle-team": {
+    "name": "Kaggle Team",
+    "orgs": ["gg-hf"],
+    "affiliation": "Kaggle (Google)"
+  },
+  "dstnluong": {
+    "name": "Dustin Luong",
+    "orgs": ["gg-hf"]
+  },
+  "clairefeng2024": {
+    "name": "Claire Feng",
+    "orgs": ["gg-hf"]
+  },
+  "rajeshthallam": {
+    "name": "Rajesh Thallam",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "RCrowe": {
+    "name": "Robert Crowe",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "hysts": {
+    "name": "hysts",
+    "orgs": ["gg-hf", "gg-hf-g", "gg-hf-gm", "gg-tt", "llhf"],
+    "affiliation": "Hugging Face"
+  },
+  "osanseviero": {
+    "name": "Omar Sanseviero",
+    "orgs": ["gg-hf", "gg-hf-g", "gg-hf-gm", "gg-tt", "gv-hf"],
+    "affiliation": "Hugging Face"
+  },
+  "broyal": {
+    "name": "Brandon Royal",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "mishig": {
+    "name": "Mishig Davaadorj",
+    "orgs": ["gg-hf", "nltpt"],
+    "affiliation": "Hugging Face"
+  },
+  "nsarrazin": {
+    "name": "Nathan Sarrazin",
+    "orgs": ["gg-hf", "gg-tt", "llhf", "nltpt", "sllhf", "hsramall"],
+    "affiliation": "Hugging Face"
+  },
+  "alexb2": {
+    "name": "Alex Bulankou",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "anjeffrey": {
+    "name": "Jeffrey An",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "megrisdal": {
+    "name": "Meg Risdal",
+    "orgs": ["gg-hf", "gg-tt", "llhf", "nltpt", "sllhf"],
+    "affiliation": "Kaggle (Google)"
+  },
+  "lvwerra": {
+    "name": "Leandro von Werra",
+    "orgs": ["gg-hf", "hsramall"],
+    "affiliation": "Hugging Face"
+  },
+  "iislucas": {
+    "name": "Lucas Dixon",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "PhilCulliton": {
+    "name": "Phil Culliton",
+    "orgs": ["gg-hf", "gg-hf-g", "gg-hf-gm", "gg-tt", "gv-hf"],
+    "affiliation": "Google"
+  },
+  "ddsh": {
+    "name": "Robert Dadashi",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "lberrada": {
+    "name": "Leonard Berrada",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "trisfromgoogle": {
+    "name": "Tris Warkentin",
+    "orgs": ["gg-hf", "gg-tt"],
+    "affiliation": "Google"
+  },
+  "nv-dongm": {
+    "name": "Dong Meng",
+    "orgs": ["gg-hf", "gg-hf-g", "gg-hf-gm", "gg-tt", "gv-hf"],
+    "affiliation": "NVIDIA"
+  },
+  "giffmana": {
+    "name": "Lucas Beyer",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "botevmg": {
+    "name": "Aleksandar Botev",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "minwoo33park": {
+    "name": "Minwoo Park",
+    "orgs": ["gg-hf", "gg-tt", "llhf"]
+  },
+  "loubnabnl": {
+    "name": "Loubna Ben Allal",
+    "orgs": ["gg-hf"],
+    "affiliation": "Hugging Face"
+  },
+  "AnushanF": {
+    "name": "Anushan Fernando",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "slsmith": {
+    "name": "Sam Smith",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "IzzyPutterman": {
+    "name": "Izzy Putterman",
+    "orgs": ["gg-hf", "gg-tt", "ll-re"],
+    "affiliation": "NVIDIA"
+  },
+  "gmuraru": {
+    "name": "George-Cristian Muraru",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "sohamde": {
+    "name": "Soham De",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "jrd971000": {
+    "name": "Ali Taghibakhshi",
+    "orgs": ["gg-hf"],
+    "affiliation": "NVIDIA"
+  },
+  "rajatsen91": {
+    "name": "Rajat Sen",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "siriuz42": {
+    "name": "Yichen Zhou",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "alozowski": {
+    "name": "Alina Lozovskaya",
+    "orgs": ["gg-hf", "gg-hf-g", "ll-re", "nltpt"],
+    "affiliation": "Hugging Face"
+  },
+  "RyanMullins": {
+    "name": "Ryan Mullins",
+    "orgs": ["gg-hf", "gg-hf-g", "gg-hf-gm", "gg-tt"],
+    "affiliation": "Google"
+  },
+  "ArthurConmyGDM": {
+    "name": "Arthur Conmy (GDM Account)",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "NeelNanda2": {
+    "name": "Neel Nanda",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "unkmaster": {
+    "name": "Pooya",
+    "orgs": ["gg-hf"]
+  },
+  "joaogante": {
+    "name": "Joao Gante",
+    "orgs": ["gg-hf", "llhf", "nltpt", "sllhf"],
+    "affiliation": "Hugging Face"
+  },
+  "Manojkilaru": {
+    "name": "Manoj Kilaru",
+    "orgs": ["gg-hf", "gg-tt", "gv-hf"],
+    "affiliation": "NVIDIA"
+  },
+  "nilayc": {
+    "name": "Nilay Chauhan",
+    "orgs": ["gg-hf", "gg-hf-g", "gg-hf-gm", "gv-hf", "ll-re", "nltpt"],
+    "affiliation": "Google"
+  },
+  "fgtnsky": {
+    "name": "Wenjun Z",
+    "orgs": ["gg-hf"]
+  },
+  "jenchen41": {
+    "name": "Jennifer Chen",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "shifucun": {
+    "name": "Bo Xu",
+    "orgs": ["gg-hf"]
+  },
+  "reinald": {
+    "name": "Reinald Kim Amplayo",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "premrama": {
+    "name": "Prem Ramaswami",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "cellks": {
+    "name": "Christie Ellks",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "keyurs": {
+    "name": "Keyur Shah",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "katblack": {
+    "name": "Kat Black",
+    "orgs": ["gg-hf", "gg-hf-gm", "gg-tt", "gv-hf"],
+    "affiliation": "Google"
+  },
+  "victorinox25": {
+    "name": "Victor Cotruta",
+    "orgs": ["gg-hf", "gg-tt"],
+    "affiliation": "Google"
+  },
+  "jethac": {
+    "name": "Jetha Chan",
+    "orgs": ["gg-hf", "gg-hf-g", "gg-hf-gm", "gg-tt", "gv-hf"],
+    "affiliation": "Google"
+  },
+  "bebechien": {
+    "name": "Juyeong Ji",
+    "orgs": ["gg-hf", "gg-hf-g", "gg-hf-gm", "gg-tt", "gv-hf"],
+    "affiliation": "Google"
+  },
+  "ariG23498": {
+    "name": "Aritra Roy Gosthipaty",
+    "orgs": ["gg-hf", "gg-hf-g", "gg-hf-gm", "gv-hf", "ll-re", "nltpt"],
+    "affiliation": "Hugging Face"
+  },
+  "glenng": {
+    "name": "glenn",
+    "orgs": ["gg-hf", "gg-hf-g", "gg-hf-gm", "gg-tt", "gv-hf"],
+    "affiliation": "Google"
+  },
+  "bzhanggo": {
+    "name": "Biao Zhang",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "mishacamry": {
+    "name": "Michael",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "x-test": {
+    "name": "Cecilia Chen",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "guymorlan": {
+    "name": "Guy Mor Lan",
+    "orgs": ["gg-hf"],
+    "affiliation": "Google"
+  },
+  "avadi": {
+    "name": "Amit Vadi",
+    "orgs": ["gg-hf-g", "gg-hf-gm"],
+    "affiliation": "Google"
+  },
+  "asierarranz": {
+    "name": "Asier Arranz",
+    "orgs": ["gg-hf-g", "gg-hf-gm", "gg-tt"],
+    "affiliation": "NVIDIA"
+  },
+  "PK2": {
+    "name": "pradeepkuppala",
+    "orgs": ["gg-hf-g"]
+  },
+  "v17i": {
+    "name": "Vishal D.",
+    "orgs": ["gg-hf-g", "gg-tt", "gv-hf"],
+    "affiliation": "Google"
+  },
+  "ssmoot": {
+    "name": "Sara Smoot",
+    "orgs": ["gg-hf-g", "gg-hf-gm", "gv-hf"],
+    "affiliation": "Google"
+  },
+  "rajeevp": {
+    "name": "Rajeev Patwari",
+    "orgs": ["gg-hf-g", "gg-hf-gm", "nltpt"],
+    "affiliation": "AMD"
+  },
+  "vladkol-eqwu": {
+    "name": "Vlad Kolesnikov",
+    "orgs": ["gg-hf-g", "gg-hf-gm"],
+    "affiliation": "Google"
+  },
+  "irbg": {
+    "name": "Ian Ballantyne",
+    "orgs": ["gg-hf-g", "gg-hf-gm"],
+    "affiliation": "Google"
+  },
+  "Renu11": {
+    "name": "Patel",
+    "orgs": ["gg-hf-g", "gg-hf-gm"],
+    "affiliation": "Google"
+  },
+  "inardini": {
+    "name": "Ivan Nardini",
+    "orgs": ["gg-hf-g", "gg-tt"],
+    "affiliation": "Google"
+  },
+  "changyuz": {
+    "name": "KCFindstr",
+    "orgs": ["gg-hf-g", "llhf", "nltpt", "sllhf"],
+    "affiliation": "Google"
+  },
+  "rpilgrim": {
+    "name": "Rory Pilgirm",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "Google"
+  },
+  "cankirmizi": {
+    "name": "Can Kirmizi",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "Google"
+  },
+  "fmahvar": {
+    "name": "Fereshteh Mahvar",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "Google"
+  },
+  "tiffanychen": {
+    "name": "Tiffany Chen",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "Google"
+  },
+  "lirony": {
+    "name": "Liron Yatziv",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "Google"
+  },
+  "tthelin": {
+    "name": "Tim Thelin",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "Google"
+  },
+  "a519522": {
+    "name": "Lin Yang",
+    "orgs": ["gg-hf-g"]
+  },
+  "andrew-sellergren": {
+    "name": "Andrew",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "Google"
+  },
+  "dangolden1": {
+    "name": "Daniel Golden",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "Google"
+  },
+  "lkv": {
+    "name": "Lavanya KV",
+    "orgs": ["gg-hf-g", "gg-hf-gm"],
+    "affiliation": "Google"
+  },
+  "ng1997": {
+    "name": "nitin narayan govilkar",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "Google"
+  },
+  "lakshmikala": {
+    "name": "kadali789",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "Google"
+  },
+  "tatianama1": {
+    "name": "Tatiana Matejovicova",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "Google"
+  },
+  "bramsterling": {
+    "name": "Bram Sterling",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "Google"
+  },
+  "a30041839": {
+    "name": "Haoliang Zhang",
+    "orgs": ["gg-hf-g", "gg-hf-gm"],
+    "affiliation": "Google"
+  },
+  "huguensjean": {
+    "name": "Huguens Jean",
+    "orgs": ["gg-hf-g", "gv-hf"],
+    "affiliation": "Google"
+  },
+  "kazemz": {
+    "name": "Sahar Kazemzadeh",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "Google"
+  },
+  "jettibharat": {
+    "name": "bharat narayana",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "Google"
+  },
+  "GopiUppari": {
+    "name": "Uppari Gopi",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "Google"
+  },
+  "Nababar": {
+    "name": "Nabila Babar",
+    "orgs": ["gg-hf-g", "gg-hf-gm"],
+    "affiliation": "Google"
+  },
+  "skhas": {
+    "name": "sujit k",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "Google"
+  },
+  "merve": {
+    "name": "merve",
+    "orgs": ["gg-hf-g", "gg-hf-gm", "gv-hf", "ll-re", "nltpt"],
+    "affiliation": "Hugging Face"
+  },
+  "imayank007": {
+    "name": "Mayank Chaturvedi",
+    "orgs": ["gg-hf-g", "gg-hf-gm"],
+    "affiliation": "Google"
+  },
+  "ngxson": {
+    "name": "Xuan-Son Nguyen",
+    "orgs": ["gg-hf-g", "gg-hf-gm", "yet-another-org-whynot"],
+    "affiliation": "Hugging Face"
+  },
+  "chenyuzhang16": {
+    "name": "Chenyu Zhang",
+    "orgs": ["gg-hf-g"]
+  },
+  "drbh": {
+    "name": "David Holtz",
+    "orgs": ["gg-hf-g", "gv-hf"],
+    "affiliation": "Hugging Face"
+  },
+  "gusthema": {
+    "name": "Luiz Gustavo Martins",
+    "orgs": ["gg-hf-g", "gg-hf-gm", "gg-tt", "gv-hf"],
+    "affiliation": "Google"
+  },
+  "tylermullen": {
+    "name": "Tyler Mullen",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "Google"
+  },
+  "fzmu727": {
+    "name": "Fangzhou Mu",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "NVIDIA"
+  },
+  "danielhanchen": {
+    "name": "Daniel Han-Chen",
+    "orgs": ["gg-hf-g", "gg-hf-gm", "gg-tt"],
+    "affiliation": "Unsloth"
+  },
+  "yagilb": {
+    "name": "Yagil Burowski",
+    "orgs": ["gg-hf-g", "gg-hf-gm"],
+    "affiliation": "LM Studio"
+  },
+  "rickpereira": {
+    "name": "Raique Pereira",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "Google"
+  },
+  "GWEfsdf": {
+    "name": "JB",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "Google"
+  },
+  "AarushSah": {
+    "name": "Aarush Sah",
+    "orgs": ["gg-hf-g", "gg-hf-gm", "ll-re"],
+    "affiliation": "Groq"
+  },
+  "mohitsha": {
+    "name": "Mohit Sharma",
+    "orgs": ["gg-hf-g", "ll-re"],
+    "affiliation": "Hugging Face"
+  },
+  "prince-canuma": {
+    "name": "Prince Canuma",
+    "orgs": ["gg-hf-g", "gg-hf-gm"],
+    "affiliation": "Independent"
+  },
+  "dougreid": {
+    "name": "Douglas Reid",
+    "orgs": ["gg-hf-g", "gg-hf-gm"],
+    "affiliation": "Google"
+  },
+  "janwas": {
+    "name": "Jan Wassenberg",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "Google"
+  },
+  "alekandreev": {
+    "name": "Alek Andreev",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "Google"
+  },
+  "michellecasbon": {
+    "name": "Michelle Casbon",
+    "orgs": ["gg-hf-g", "gg-tt"],
+    "affiliation": "Google"
+  },
+  "KeighBee": {
+    "name": "Kyle Birnbaum",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "Hugging Face"
+  },
+  "RaushanTurganbay": {
+    "name": "Raushan Turganbay",
+    "orgs": ["gg-hf-g", "gg-hf-gm", "nltpt"],
+    "affiliation": "Hugging Face"
+  },
+  "ashkamathwork": {
+    "name": "Aishwarya Kamath",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "Google"
+  },
+  "will-thompson-k": {
+    "name": "Will Thompson",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "Google"
+  },
+  "tainc": {
+    "name": "Tai Ngee Chia",
+    "orgs": ["gg-hf-g", "gg-hf-gm", "gg-tt"],
+    "affiliation": "AI Singapore"
+  },
+  "gonnet": {
+    "name": "Pedro Gonnet",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "Google"
+  },
+  "alexcombessie": {
+    "name": "Alex Combessie",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "Giskard"
+  },
+  "pierlj": {
+    "name": "Pierre Le Jeune",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "Giskard"
+  },
+  "mrpeerat": {
+    "name": "peerat limkonchotiwat",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "AI Singapore"
+  },
+  "shreyapa": {
+    "name": "Shreya Pathak",
+    "orgs": ["gg-hf-g", "gg-hf-gm"],
+    "affiliation": "Google"
+  },
+  "hishamchow": {
+    "name": "Hisham Chowdhury",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "AMD"
+  },
+  "zackli4ai": {
+    "name": "Zack Li",
+    "orgs": ["gg-hf-g"]
+  },
+  "RaymondAISG": {
+    "name": "Raymond Ng",
+    "orgs": ["gg-hf-g", "gg-hf-gm", "gg-tt"],
+    "affiliation": "AI Singapore"
+  },
+  "ngannt": {
+    "name": "Nguyen Thanh Ngan",
+    "orgs": ["gg-hf-g", "gg-hf-gm", "gg-tt"],
+    "affiliation": "AI Singapore"
+  },
+  "wheynelau": {
+    "name": "Wayne Lau",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "AI Singapore"
+  },
+  "samwit": {
+    "name": "Sam Witteveen",
+    "orgs": ["gg-hf-g", "gg-hf-gm", "gg-tt"],
+    "affiliation": "Red Dragon AI"
+  },
+  "hamsarajan": {
+    "name": "Rengarajan Hamsawardhini",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "AI Singapore"
+  },
+  "BryanSwk": {
+    "name": "Bryan Siow",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "AI Singapore"
+  },
+  "morugan": {
+    "name": "Morgane Riviere",
+    "orgs": ["gg-hf-g", "gg-tt"],
+    "affiliation": "Google"
+  },
+  "xianbin": {
+    "name": "Xianbin",
+    "orgs": ["gg-hf-g", "gg-hf-gm", "gg-tt"],
+    "affiliation": "AI Singapore"
+  },
+  "slaren": {
+    "name": "slaren",
+    "orgs": ["gg-hf-g", "gg-hf-gm"],
+    "affiliation": "GGML"
+  },
+  "canyon289": {
+    "name": "Ravin Kumar",
+    "orgs": ["gg-hf-g", "gg-tt"],
+    "affiliation": "Google"
+  },
+  "mattbit": {
+    "name": "Matteo",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "Giskard"
+  },
+  "sanmikoyejo": {
+    "name": "Sanmi Koyejo",
+    "orgs": ["gg-hf-g", "gg-hf-gm", "gg-tt"],
+    "affiliation": "Stanford"
+  },
+  "afirstenberg": {
+    "name": "Allen Firstenberg",
+    "orgs": ["gg-hf-g"]
+  },
+  "mlabonne": {
+    "name": "Maxime Labonne",
+    "orgs": ["gg-hf-g", "gg-hf-gm", "gg-tt"],
+    "affiliation": "Liquid AI"
+  },
+  "hanneshapke": {
+    "name": "Hannes Hapke",
+    "orgs": ["gg-hf-g", "gg-hf-gm"],
+    "affiliation": "GDE"
+  },
+  "lmassaron": {
+    "name": "Luca Massaron",
+    "orgs": ["gg-hf-g", "gg-hf-gm", "gg-tt"],
+    "affiliation": "GDE"
+  },
+  "adithyavh": {
+    "name": "Adithya VH",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "AI Singapore"
+  },
+  "Jian-Gang": {
+    "name": "Jian Gang Ngui",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "AI Singapore"
+  },
+  "vfcarida": {
+    "name": "Vinicius Caridá",
+    "orgs": ["gg-hf-g", "gg-hf-gm", "gg-tt"],
+    "affiliation": "Independent"
+  },
+  "Yosephine": {
+    "name": "Yosephine",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "AI Singapore"
+  },
+  "abetlen": {
+    "name": "Andrei",
+    "orgs": ["gg-hf-g", "gg-tt"]
+  },
+  "leonardhussenot": {
+    "name": "Léonard Hussenot",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "Google"
+  },
+  "abhinav-joshi": {
+    "name": "Abhinav Joshi",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "Exploration Lab"
+  },
+  "fergusfinn": {
+    "name": "Fergus Finn",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "Doubleword"
+  },
+  "joshc8c7": {
+    "name": "Josh",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "Doubleword"
+  },
+  "jamesdborin": {
+    "name": "Jamie@TitanML",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "Doubleword"
+  },
+  "raileymontalan": {
+    "name": "Railey Montalan",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "AI Singapore"
+  },
+  "kashif": {
+    "name": "Kashif Rasul",
+    "orgs": ["gg-hf-g", "gg-hf-gm"],
+    "affiliation": "Hugging Face"
+  },
+  "pedrogengo": {
+    "name": "Pedro Gabriel Gengo Lourenco",
+    "orgs": ["gg-hf-g", "gg-tt"]
+  },
+  "exploration-lab-user": {
+    "name": "Exploration Lab",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "Exploration Lab"
+  },
+  "kdana": {
+    "name": "Dana Kurniawan",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "Google"
+  },
+  "ayushi-uwc": {
+    "name": "Ayushi Agarwal",
+    "orgs": ["gg-hf-g", "gg-hf-gm"],
+    "affiliation": "United We Care"
+  },
+  "suryark94": {
+    "name": "Surya Ravikumar",
+    "orgs": ["gg-hf-g"]
+  },
+  "Akira00000610": {
+    "name": "Akira Warita",
+    "orgs": ["gg-hf-g", "gg-hf-gm"],
+    "affiliation": "NTT Data"
+  },
+  "mrisher-playfully": {
+    "name": "Mark Risher",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "Google"
+  },
+  "kazuo11": {
+    "name": "Kazuo Tanaka",
+    "orgs": ["gg-hf-g"]
+  },
+  "yo-nttd": {
+    "name": "Yuta Ojima",
+    "orgs": ["gg-hf-g", "gg-hf-gm"],
+    "affiliation": "NTT Data"
+  },
+  "Sanjeet": {
+    "name": "Singh",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "Exploration Lab"
+  },
+  "rmerhej": {
+    "name": "Ramona Merhej",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "Google"
+  },
+  "davzoku": {
+    "name": "Walter",
+    "orgs": ["gg-hf-g"],
+    "affiliation": "AI Singapore"
+  },
+  "abar-uwc": {
+    "name": "Ayush",
+    "orgs": ["gg-hf-g"]
+  },
+  "thadstarnercorp": {
+    "name": "Thad Eugene Starner",
+    "orgs": ["gg-hf-g"]
+  },
+  "eyvinec": {
+    "name": "Edouard YVINEC",
+    "orgs": ["gg-hf-g"]
+  },
+  "lmmy": {
+    "name": "Lmmy",
+    "orgs": ["gg-hf-g", "gg-hf-gm"],
+    "affiliation": "LM Studio"
+  },
+  "rwightman": {
+    "name": "Ross Wightman",
+    "orgs": ["gg-hf-gm", "gv-hf"],
+    "affiliation": "Hugging Face"
+  },
+  "zhyncs": {
+    "name": "Yineng Zhang",
+    "orgs": ["gg-hf-gm"],
+    "affiliation": "SGLang"
+  },
+  "sindhuraghuram": {
+    "name": "Sindhu Raghuram",
+    "orgs": ["gg-hf-gm"],
+    "affiliation": "Google"
+  },
+  "yucheng2022": {
+    "name": "yuchengwang",
+    "orgs": ["gg-hf-gm", "gg-tt"]
+  },
+  "leslysandra": {
+    "name": "Lesly zerna",
+    "orgs": ["gg-hf-gm", "gg-tt"],
+    "affiliation": "GDE"
+  },
+  "ravithejads": {
+    "name": "Ravi Theja",
+    "orgs": ["gg-hf-gm", "gg-tt"],
+    "affiliation": "Mistral"
+  },
+  "gabriel-preda": {
+    "name": "Gabriel Preda",
+    "orgs": ["gg-hf-gm"],
+    "affiliation": "GDE"
+  },
+  "RichmondMongo": {
+    "name": "Richmond Alake",
+    "orgs": ["gg-hf-gm", "gg-tt"],
+    "affiliation": "MongoDB"
+  },
+  "rishiraj": {
+    "name": "Rishiraj Acharya",
+    "orgs": ["gg-hf-gm", "gg-tt"],
+    "affiliation": "GDE"
+  },
+  "tmuraoka": {
+    "name": "Tomoka Muraoka",
+    "orgs": ["gg-hf-gm"],
+    "affiliation": "NTT Data"
+  },
+  "winglian": {
+    "name": "wing lian",
+    "orgs": ["gg-hf-gm", "gg-tt"]
+  },
+  "adityakusupati": {
+    "name": "Aditya Kusupati",
+    "orgs": ["gg-hf-gm"],
+    "affiliation": "Google"
+  },
+  "rakeshshivanna": {
+    "name": "Rakesh S",
+    "orgs": ["gg-hf-gm"],
+    "affiliation": "Google"
+  },
+  "joefernandez-gg": {
+    "name": "Joe Fernandez",
+    "orgs": ["gg-hf-gm", "gv-hf"],
+    "affiliation": "Google"
+  },
+  "wanxinxw": {
+    "name": "Xin Wang",
+    "orgs": ["gg-hf-gm"],
+    "affiliation": "Google"
+  },
+  "ob11": {
+    "name": "brandon ong",
+    "orgs": ["gg-hf-gm", "gg-tt"],
+    "affiliation": "AI Singapore"
+  },
+  "sumiyayuki": {
+    "name": "Yuki Sumiya",
+    "orgs": ["gg-hf-gm"]
+  },
+  "stevenmhernandez": {
+    "name": "Steven M. Hernandez",
+    "orgs": ["gg-hf-gm"],
+    "affiliation": "Google"
+  },
+  "togetherhaiku": {
+    "name": "Harish K",
+    "orgs": ["gg-hf-gm", "ll-re"]
+  },
+  "mryab": {
+    "name": "Max Ryabinin",
+    "orgs": ["gg-hf-gm", "ll-re", "llhf", "nltpt", "sllhf"],
+    "affiliation": "Together AI"
+  },
+  "Puranjay14": {
+    "name": "Puranjay Datta",
+    "orgs": ["gg-hf-gm"],
+    "affiliation": "Google"
+  },
+  "sahilg06": {
+    "name": "Sahil Goyal",
+    "orgs": ["gg-hf-gm"],
+    "affiliation": "Google"
+  },
+  "JustinTong": {
+    "name": "Xinyuan Tong",
+    "orgs": ["gg-hf-gm"],
+    "affiliation": "SGLang"
+  },
+  "robertgshaw": {
+    "name": "Robert Shaw",
+    "orgs": ["gg-hf-gm"],
+    "affiliation": "Red Hat"
+  },
+  "tezan": {
+    "name": "T E",
+    "orgs": ["gg-hf-gm"]
+  },
+  "BalakrishnaCh": {
+    "name": "Balakrishna Chennamsetti",
+    "orgs": ["gg-hf-gm"],
+    "affiliation": "Google"
+  },
+  "sergiopaniego": {
+    "name": "Sergio Paniego",
+    "orgs": ["gg-hf-gm"],
+    "affiliation": "Hugging Face"
+  },
+  "Steveeeeeeen": {
+    "name": "Steven Zheng",
+    "orgs": ["gg-hf-gm"],
+    "affiliation": "Hugging Face"
+  },
+  "mattjcly": {
+    "name": "Matt Clayton",
+    "orgs": ["gg-hf-gm"],
+    "affiliation": "LM Studio"
+  },
+  "fcorti": {
+    "name": "Francesco Corti",
+    "orgs": ["gg-hf-gm"],
+    "affiliation": "Docker"
+  },
+  "ignaciolopezluna020": {
+    "name": "Ignacio López Luna",
+    "orgs": ["gg-hf-gm"],
+    "affiliation": "Docker"
+  },
+  "doringeman": {
+    "name": "Dorin",
+    "orgs": ["gg-hf-gm"],
+    "affiliation": "Docker"
+  },
+  "neilmehta24": {
+    "name": "Neil Mehta",
+    "orgs": ["gg-hf-gm"],
+    "affiliation": "LM Studio"
+  },
+  "riseqdf": {
+    "name": "Danfeng Qin",
+    "orgs": ["gg-hf-gm"],
+    "affiliation": "Google"
+  },
+  "shelajev": {
+    "name": "Oleg Šelajev",
+    "orgs": ["gg-hf-gm"],
+    "affiliation": "Docker"
+  },
+  "ramkrishna2910": {
+    "name": "Ramakrishnan Sivakumar",
+    "orgs": ["gg-hf-gm", "llhf", "sllhf"],
+    "affiliation": "AMD"
+  },
+  "kiview": {
+    "name": "Kevin Wittek",
+    "orgs": ["gg-hf-gm"],
+    "affiliation": "Docker"
+  },
+  "josipdj": {
+    "name": "Josip Djolonga",
+    "orgs": ["gg-hf-gm"],
+    "affiliation": "Google"
+  },
+  "tomaarsen": {
+    "name": "Tom Aarsen",
+    "orgs": ["gg-hf-gm", "gg-tt"],
+    "affiliation": "Hugging Face"
+  },
+  "sahildua2305": {
+    "name": "Sahil Dua",
+    "orgs": ["gg-hf-gm"],
+    "affiliation": "Google"
+  },
+  "hschechter": {
+    "name": "Henrique Schechter",
+    "orgs": ["gg-hf-gm"],
+    "affiliation": "Google"
+  },
+  "alicelisak": {
+    "name": "Alice Lisak",
+    "orgs": ["gg-hf-gm"],
+    "affiliation": "Google"
+  },
+  "kathleenatgoogle": {
+    "name": "Kathleen Kenealy",
+    "orgs": ["gg-tt"],
+    "affiliation": "Google"
+  },
+  "guidozuc": {
+    "name": "Guido Zuccon",
+    "orgs": ["gg-tt"],
+    "affiliation": "ielab"
+  },
+  "Molbap": {
+    "name": "Pablo Montalvo",
+    "orgs": ["gg-tt", "gv-hf", "ll-re", "yet-another-org-whynot"],
+    "affiliation": "Hugging Face"
+  },
+  "Crystalcareai": {
+    "name": "Lucas Atkins",
+    "orgs": ["gg-tt"],
+    "affiliation": "Arcee AI"
+  },
+  "aashay-sarvam": {
+    "name": "Sachdeva",
+    "orgs": ["gg-tt", "nltpt"],
+    "affiliation": "Sarvam AI"
+  },
+  "grasskin": {
+    "name": "Gabriel Rasskin",
+    "orgs": ["gg-tt"],
+    "affiliation": "Google"
+  },
+  "HarshitaDiddee": {
+    "name": "Diddee",
+    "orgs": ["gg-tt"],
+    "affiliation": "Independent"
+  },
+  "srush": {
+    "name": "Sasha Rush",
+    "orgs": ["gg-tt"],
+    "affiliation": "Cornell Tech"
+  },
+  "martonkodok": {
+    "name": "Marton Kodok",
+    "orgs": ["gg-tt"],
+    "affiliation": "Google"
+  },
+  "rahular": {
+    "name": "Rahul Aralikatte",
+    "orgs": ["gg-tt"],
+    "affiliation": "Google"
+  },
+  "gneubig": {
+    "name": "Graham Neubig",
+    "orgs": ["gg-tt"],
+    "affiliation": "Carnegie Mellon University"
+  },
+  "mohit-sarvam": {
+    "name": "Mohit",
+    "orgs": ["gg-tt", "llhf", "sllhf"],
+    "affiliation": "Sarvam AI"
+  },
+  "TitanMLData": {
+    "name": "Hamish Hall",
+    "orgs": ["gg-tt"],
+    "affiliation": "Doubleword"
+  },
+  "sameershaik": {
+    "name": "shaik sameer",
+    "orgs": ["gg-tt"]
+  },
+  "yuli-aisg": {
+    "name": "Huang Yuli",
+    "orgs": ["gg-tt"],
+    "affiliation": "AI Singapore"
+  },
+  "gary-wei": {
+    "name": "Gary Wei",
+    "orgs": ["gg-tt"]
+  },
+  "samanehs": {
+    "name": "Samaneh Saadat",
+    "orgs": ["gg-tt"]
+  },
+  "lucianommartins": {
+    "name": "Luciano Martins",
+    "orgs": ["gg-tt"],
+    "affiliation": "Google"
+  },
+  "keelin": {
+    "name": "Keelin McDonell",
+    "orgs": ["gg-tt", "gv-hf"],
+    "affiliation": "Google"
+  },
+  "emozilla": {
+    "name": "Jeffrey Quesnelle",
+    "orgs": ["gg-tt"],
+    "affiliation": "Nous"
+  },
+  "wrzhao": {
+    "name": "wzhao",
+    "orgs": ["gg-tt", "llhf"],
+    "affiliation": "Google"
+  },
+  "karan4d": {
+    "name": "karan4d",
+    "orgs": ["gg-tt"],
+    "affiliation": "Nous"
+  },
+  "teknium": {
+    "name": "Teknium",
+    "orgs": ["gg-tt"],
+    "affiliation": "Nous"
+  },
+  "thomasmesnard": {
+    "name": "Thomas Mesnard",
+    "orgs": ["gg-tt", "gv-hf"],
+    "affiliation": "Google"
+  },
+  "mgornergoogle": {
+    "name": "Martin Goörner",
+    "orgs": ["gg-tt"],
+    "affiliation": "Google"
+  },
+  "vukosi": {
+    "name": "Vukosi Marivate",
+    "orgs": ["gg-tt"]
+  },
+  "mattdangerw": {
+    "name": "Matthew Watson",
+    "orgs": ["gg-tt", "gv-hf"],
+    "affiliation": "Google"
+  },
+  "hijohnnylin": {
+    "name": "Johnny Lin",
+    "orgs": ["gg-tt"]
+  },
+  "jbloom": {
+    "name": "Joseph Bloom",
+    "orgs": ["gg-tt"],
+    "affiliation": "UK AISI"
+  },
+  "ctigges": {
+    "name": "Curt Tigges",
+    "orgs": ["gg-tt"],
+    "affiliation": "Decode Research"
+  },
+  "pi19404": {
+    "name": "pi",
+    "orgs": ["gg-tt"],
+    "affiliation": "Miko"
+  },
+  "hingeankit": {
+    "name": "Ankit Hinge",
+    "orgs": ["gg-tt"],
+    "affiliation": "Cropin"
+  },
+  "samfisher007": {
+    "name": "Sam Fisher",
+    "orgs": ["gg-tt"],
+    "affiliation": "Miko"
+  },
+  "praveenpankaj": {
+    "name": "Praveen",
+    "orgs": ["gg-tt"]
+  },
+  "AnjaliBShah": {
+    "name": "Anjali Shah",
+    "orgs": ["gg-tt", "gv-hf"],
+    "affiliation": "NVIDIA"
+  },
+  "dusty-nv": {
+    "name": "Dustin Franklin",
+    "orgs": ["gg-tt"],
+    "affiliation": "NVIDIA"
+  },
+  "andsteing": {
+    "name": "Andreas P. Steiner",
+    "orgs": ["gv-hf"],
+    "affiliation": "Google"
+  },
+  "mjlm": {
+    "name": "Matthias Minderer",
+    "orgs": ["gv-hf"],
+    "affiliation": "Google"
+  },
+  "DummyDadumdum": {
+    "name": "Dummy",
+    "orgs": ["gv-hf"]
+  },
+  "VictorsVector": {
+    "name": "Victor Geislinger",
+    "orgs": ["gv-hf"],
+    "affiliation": "Google"
+  },
+  "Divyashreepathihalli": {
+    "name": "Divyashree Shivakumar Sreepathihalli",
+    "orgs": ["gv-hf"],
+    "affiliation": "Google"
+  },
+  "dkeysers": {
+    "name": "Daniel Keysers",
+    "orgs": ["gv-hf"],
+    "affiliation": "Google"
+  },
+  "windmaple": {
+    "name": "Wei",
+    "orgs": ["gv-hf"]
+  },
+  "sineeli": {
+    "name": "Siva Sravana Kumar Neeli",
+    "orgs": ["gv-hf"],
+    "affiliation": "Google"
+  },
+  "benny-tingyu": {
+    "name": "Ting Yu",
+    "orgs": ["gv-hf"],
+    "affiliation": "Google"
+  },
+  "pngwn": {
+    "name": "Pete",
+    "orgs": ["gv-hf"],
+    "affiliation": "Hugging Face"
+  },
+  "selamw": {
+    "name": "Selam Waktola",
+    "orgs": ["gv-hf"],
+    "affiliation": "Google"
+  },
+  "e-bug": {
+    "name": "Emanuele Bugliarello",
+    "orgs": ["gv-hf"],
+    "affiliation": "Google"
+  },
+  "qubvel-hf": {
+    "name": "Pavel Iakubovskii",
+    "orgs": ["gv-hf", "nltpt"],
+    "affiliation": "Hugging Face"
+  },
+  "mitsch": {
+    "name": "Michael Tschannen",
+    "orgs": ["gv-hf"],
+    "affiliation": "Google"
+  },
+  "ibomohsin": {
+    "name": "Ibrahim Alabdulmohsin",
+    "orgs": ["gv-hf"],
+    "affiliation": "Google"
+  },
+  "luccafong": {
+    "name": "Lucia Fang",
+    "orgs": ["ll-re", "yet-another-org-whynot"],
+    "affiliation": "Meta"
+  },
+  "yecharlotteqi": {
+    "name": "Ye (Charlotte) Qi",
+    "orgs": ["ll-re"],
+    "affiliation": "Meta"
+  },
+  "houseroad": {
+    "name": "Lu Fang",
+    "orgs": ["ll-re"],
+    "affiliation": "Meta"
+  },
+  "youngkent": {
+    "name": "Keyun Tong",
+    "orgs": ["ll-re"],
+    "affiliation": "Meta"
+  },
+  "HDCharles": {
+    "name": "charles hernandez",
+    "orgs": ["ll-re"],
+    "affiliation": "Meta"
+  },
+  "maleksan": {
+    "name": "Aleksandr Malyshev",
+    "orgs": ["ll-re", "nltpt"],
+    "affiliation": "Meta"
+  },
+  "noseman52": {
+    "name": "Jinho Hwang",
+    "orgs": ["ll-re"]
+  },
+  "Div2023": {
+    "name": "D.V.",
+    "orgs": ["ll-re"]
+  },
+  "robertgshaw2": {
+    "name": "Robert Shaw",
+    "orgs": ["ll-re"],
+    "affiliation": "Red Hat"
+  },
+  "yhshin99": {
+    "name": "Yong Hoon Shin",
+    "orgs": ["ll-re", "yet-another-org-whynot"],
+    "affiliation": "Meta"
+  },
+  "cthi": {
+    "name": "Chris Thi",
+    "orgs": ["ll-re"],
+    "affiliation": "Meta"
+  },
+  "chenyang78": {
+    "name": "Yang Chen",
+    "orgs": ["ll-re"],
+    "affiliation": "Meta"
+  },
+  "dansalib": {
+    "name": "Daniel Salib",
+    "orgs": ["ll-re"],
+    "affiliation": "Meta"
+  },
+  "zhewenl": {
+    "name": "Zhewen Li",
+    "orgs": ["ll-re"],
+    "affiliation": "Meta"
+  },
+  "jmswen": {
+    "name": "Jon S.",
+    "orgs": ["ll-re"]
+  },
+  "joshuadeng": {
+    "name": "Joshua Deng",
+    "orgs": ["ll-re"],
+    "affiliation": "Meta"
+  },
+  "sicongc": {
+    "name": "Sicong Che",
+    "orgs": ["ll-re"],
+    "affiliation": "Meta"
+  },
+  "zzh142857": {
+    "name": "Zhenghao Zhao",
+    "orgs": ["ll-re"],
+    "affiliation": "Meta"
+  },
+  "richardzou5": {
+    "name": "Richard Zou",
+    "orgs": ["ll-re"],
+    "affiliation": "Meta"
+  },
+  "Sanyam": {
+    "name": "Sanyam Bhutani",
+    "orgs": ["ll-re", "nltpt"],
+    "affiliation": "Meta"
+  },
+  "morgendave": {
+    "name": "Zhiwei Zhao",
+    "orgs": ["ll-re", "yet-another-org-whynot"],
+    "affiliation": "Meta"
+  },
+  "liuzijing2014": {
+    "name": "Zijing Liu",
+    "orgs": ["ll-re"],
+    "affiliation": "Meta"
+  },
+  "wangwenchen": {
+    "name": "Wenchen Wang",
+    "orgs": ["ll-re"],
+    "affiliation": "Meta"
+  },
+  "medmekk": {
+    "name": "Mohamed Mekkouri",
+    "orgs": ["ll-re"],
+    "affiliation": "Hugging Face"
+  },
+  "ebsmothers": {
+    "name": "Evan Smothers",
+    "orgs": ["ll-re", "hsramall"],
+    "affiliation": "Meta"
+  },
+  "jianan-gu": {
+    "name": "jianan",
+    "orgs": ["ll-re", "llhf", "nltpt", "sllhf", "hsramall"],
+    "affiliation": "Intel"
+  },
+  "leopck": {
+    "name": "Stanley",
+    "orgs": ["ll-re"],
+    "affiliation": "Intel"
+  },
+  "hongming": {
+    "name": "zheng hongming",
+    "orgs": ["ll-re"],
+    "affiliation": "Intel"
+  },
+  "katuni4ka": {
+    "name": "Ekaterina Aidova",
+    "orgs": ["ll-re", "llhf", "sllhf"],
+    "affiliation": "Cerebras"
+  },
+  "ekurtic": {
+    "name": "Eldar Kurtic",
+    "orgs": ["ll-re"],
+    "affiliation": "Red Hat"
+  },
+  "neuralink": {
+    "name": "neuralink",
+    "orgs": ["ll-re"],
+    "affiliation": "Hugging Face"
+  },
+  "lwilkinson": {
+    "name": "Lucas Wilkinson",
+    "orgs": ["ll-re"],
+    "affiliation": "Red Hat"
+  },
+  "andrewrreed": {
+    "name": "Andrew Reed",
+    "orgs": ["ll-re"],
+    "affiliation": "Hugging Face"
+  },
+  "drisspg": {
+    "name": "Driss Guessous",
+    "orgs": ["ll-re"],
+    "affiliation": "Meta"
+  },
+  "scale-ai-service-acct": {
+    "name": "Scale AI",
+    "orgs": ["ll-re"],
+    "affiliation": "Scale AI"
+  },
+  "vishalsubbiah": {
+    "name": "vishal subbiah",
+    "orgs": ["ll-re"],
+    "affiliation": "Cerebras"
+  },
+  "yashikagandhi": {
+    "name": "Gandhi",
+    "orgs": ["ll-re"],
+    "affiliation": "Google"
+  },
+  "siddhave": {
+    "name": "Siddharth Venkatesan",
+    "orgs": ["ll-re", "nltpt"],
+    "affiliation": "AWS"
+  },
+  "PrabhuChakra": {
+    "name": "Chakravarthy Nagarajan",
+    "orgs": ["ll-re"],
+    "affiliation": "AWS"
+  },
+  "reid-goodbar": {
+    "name": "Reid Goodbar",
+    "orgs": ["ll-re"],
+    "affiliation": "SambaNova"
+  },
+  "rthekiniath-sambanova": {
+    "name": "Roshan Thekiniath",
+    "orgs": ["ll-re"],
+    "affiliation": "SambaNova"
+  },
+  "jayr014": {
+    "name": "Jay Rainton",
+    "orgs": ["ll-re"],
+    "affiliation": "SambaNova"
+  },
+  "bol20162021": {
+    "name": "Bo Li",
+    "orgs": ["ll-re"],
+    "affiliation": "SambaNova"
+  },
+  "hyungtae": {
+    "name": "Hyungtae Kim",
+    "orgs": ["ll-re"],
+    "affiliation": "Snowflake"
+  },
+  "daweih": {
+    "name": "Dawei Huang",
+    "orgs": ["ll-re"],
+    "affiliation": "SambaNova"
+  },
+  "jeffra": {
+    "name": "Jeff Rasley",
+    "orgs": ["ll-re", "llhf", "sllhf"],
+    "affiliation": "Microsoft"
+  },
+  "anushadudi": {
+    "name": "Anusha Dudi",
+    "orgs": ["ll-re"],
+    "affiliation": "Meta"
+  },
+  "jinhuang1": {
+    "name": "Jin Huang",
+    "orgs": ["ll-re"]
+  },
+  "Pavankumar22": {
+    "name": "Pavan Kumar Sunder",
+    "orgs": ["ll-re"],
+    "affiliation": "AWS"
+  },
+  "acphile99": {
+    "name": "Hengzhi Pei",
+    "orgs": ["ll-re"],
+    "affiliation": "AWS"
+  },
+  "mrttre": {
+    "name": "Trevor",
+    "orgs": ["ll-re"]
+  },
+  "tuowenz": {
+    "name": "Tuowen Zhao",
+    "orgs": ["ll-re"],
+    "affiliation": "SambaNova"
+  },
+  "snova-ryany": {
+    "name": "Ryan Yu",
+    "orgs": ["ll-re"],
+    "affiliation": "SambaNova"
+  },
+  "varunmo": {
+    "name": "Varun Morishetty",
+    "orgs": ["ll-re"],
+    "affiliation": "AWS"
+  },
+  "kkokkie2360": {
+    "name": "Chang S",
+    "orgs": ["ll-re", "llhf", "nltpt", "sllhf"]
+  },
+  "slin1237": {
+    "name": "Simo Lin",
+    "orgs": ["ll-re", "llhf", "nltpt", "sllhf"],
+    "affiliation": "SGLang"
+  },
+  "mebluemouse": {
+    "name": "Yun Du",
+    "orgs": ["ll-re"]
+  },
+  "kbuki": {
+    "name": "K B",
+    "orgs": ["ll-re"]
+  },
+  "han-wang": {
+    "name": "Han Wang",
+    "orgs": ["ll-re"],
+    "affiliation": "SambaNova"
+  },
+  "dzhulgakov": {
+    "name": "Dmytro Dzhulgakov",
+    "orgs": ["ll-re", "llhf", "nltpt", "sllhf"],
+    "affiliation": "Fireworks"
+  },
+  "khetan": {
+    "name": "Ashish Khetan",
+    "orgs": ["ll-re", "hsramall"],
+    "affiliation": "AWS"
+  },
+  "mingranw": {
+    "name": "Mingran Wang",
+    "orgs": ["ll-re"],
+    "affiliation": "SambaNova"
+  },
+  "pragaash": {
+    "name": "Pragaash Ponnusamy",
+    "orgs": ["ll-re", "llhf", "nltpt", "sllhf"],
+    "affiliation": "Together AI"
+  },
+  "shubhamchandak94": {
+    "name": "Shubham Chandak",
+    "orgs": ["ll-re"]
+  },
+  "pradyunr": {
+    "name": "Pradyun Ramadorai",
+    "orgs": ["ll-re", "nltpt"]
+  },
+  "ashishdatta-cf": {
+    "name": "Ashish Datta",
+    "orgs": ["ll-re"],
+    "affiliation": "Cloudflare"
+  },
+  "mchenco": {
+    "name": "Michelle Chen",
+    "orgs": ["ll-re", "llhf", "nltpt"],
+    "affiliation": "Cloudflare"
+  },
+  "florentgbelidji": {
+    "name": "Florent Gbelidji",
+    "orgs": ["ll-re"],
+    "affiliation": "Hugging Face"
+  },
+  "balarjun-aws": {
+    "name": "Arjun Balasubramanian",
+    "orgs": ["ll-re"],
+    "affiliation": "AWS"
+  },
+  "rnadimp": {
+    "name": "Rohith Nadimpally",
+    "orgs": ["ll-re"]
+  },
+  "Vivekg91": {
+    "name": "Vivek Gangasani",
+    "orgs": ["ll-re"]
+  },
+  "workersai": {
+    "name": "workersai",
+    "orgs": ["ll-re", "llhf", "nltpt"],
+    "affiliation": "Cloudflare"
+  },
+  "jingqiao": {
+    "name": "Jingqiao Zhang",
+    "orgs": ["ll-re", "nltpt"]
+  },
+  "evakravi": {
+    "name": "Kravitz",
+    "orgs": ["ll-re", "nltpt"]
+  },
+  "lupesko": {
+    "name": "Hagay Lupesko",
+    "orgs": ["ll-re"],
+    "affiliation": "Cerebras"
+  },
+  "rstanich": {
+    "name": "Robert Stanich",
+    "orgs": ["ll-re", "nltpt"],
+    "affiliation": "IBM"
+  },
+  "tsjohnso": {
+    "name": "Travis Johnson",
+    "orgs": ["ll-re"],
+    "affiliation": "IBM"
+  },
+  "gevadyla": {
+    "name": "Dylan Geva",
+    "orgs": ["ll-re"]
+  },
+  "aish9": {
+    "name": "aishani bhalla",
+    "orgs": ["ll-re"]
+  },
+  "mwyatt": {
+    "name": "Michael Wyatt",
+    "orgs": ["ll-re"],
+    "affiliation": "Snowflake"
+  },
+  "arunsu": {
+    "name": "Arun",
+    "orgs": ["ll-re"]
+  },
+  "davzaman": {
+    "name": "Davina",
+    "orgs": ["ll-re"],
+    "affiliation": "Cloudflare"
+  },
+  "joerunde": {
+    "name": "Joe Runde",
+    "orgs": ["ll-re"]
+  },
+  "bvrockwell": {
+    "name": "Brittany Rockwell",
+    "orgs": ["ll-re"],
+    "affiliation": "Google"
+  },
+  "flexwang": {
+    "name": "Flex Wang",
+    "orgs": ["ll-re", "nltpt"],
+    "affiliation": "Snowflake"
+  },
+  "Pernekhan": {
+    "name": "Utemuratov",
+    "orgs": ["ll-re"],
+    "affiliation": "DeepInfra"
+  },
+  "puniomp": {
+    "name": "Marco Punio",
+    "orgs": ["ll-re", "llhf", "sllhf"],
+    "affiliation": "AWS"
+  },
+  "cmodi": {
+    "name": "Chirag Modi",
+    "orgs": ["ll-re", "nltpt", "yet-another-org-whynot"],
+    "affiliation": "Meta"
+  },
+  "malavsh": {
+    "name": "Malav Shastri",
+    "orgs": ["ll-re"]
+  },
+  "mpuzovic": {
+    "name": "Milos Puzovic",
+    "orgs": ["ll-re", "nltpt"],
+    "affiliation": "Arm"
+  },
+  "jrc": {
+    "name": "Joe Cummings",
+    "orgs": ["ll-re", "llhf", "nltpt", "sllhf"],
+    "affiliation": "Meta"
+  },
+  "rtanase": {
+    "name": "Razvan Tanase",
+    "orgs": ["ll-re", "hsramall"]
+  },
+  "Xinxinli": {
+    "name": "Xin Li",
+    "orgs": ["ll-re"],
+    "affiliation": "CentML"
+  },
+  "langep": {
+    "name": "Patrick Lange",
+    "orgs": ["ll-re"],
+    "affiliation": "AWS"
+  },
+  "websterbei": {
+    "name": "Webster Bei",
+    "orgs": ["ll-re"],
+    "affiliation": "Fireworks"
+  },
+  "benchislett": {
+    "name": "Benjamin Chislett",
+    "orgs": ["ll-re"],
+    "affiliation": "CentML"
+  },
+  "tamdavidibm": {
+    "name": "David Tam",
+    "orgs": ["ll-re", "nltpt"]
+  },
+  "kmehant": {
+    "name": "Mehant",
+    "orgs": ["ll-re"],
+    "affiliation": "IBM"
+  },
+  "mattmcclean": {
+    "name": "Matt McClean",
+    "orgs": ["ll-re"],
+    "affiliation": "AWS"
+  },
+  "thilakrajs": {
+    "name": "Thilakraj Sripal",
+    "orgs": ["ll-re"]
+  },
+  "aronbjornb": {
+    "name": "Aron Bjarnason",
+    "orgs": ["ll-re"],
+    "affiliation": "AWS"
+  },
+  "josejg": {
+    "name": "Jose Javier",
+    "orgs": ["ll-re", "nltpt"],
+    "affiliation": "Databricks"
+  },
+  "jonaskuebler": {
+    "name": "Jonas Kübler",
+    "orgs": ["ll-re"],
+    "affiliation": "AWS"
+  },
+  "mtk-deep": {
+    "name": "mtk-deep",
+    "orgs": ["ll-re", "nltpt"]
+  },
+  "mtk-tljj": {
+    "name": "Tim Lee",
+    "orgs": ["ll-re", "nltpt"]
+  },
+  "nikhil-arm": {
+    "name": "NikhilGupta",
+    "orgs": ["ll-re"],
+    "affiliation": "Arm"
+  },
+  "aristsakpinisaws": {
+    "name": "Aris Tsakpinis",
+    "orgs": ["ll-re"]
+  },
+  "subramen2": {
+    "name": "suraj subramanian",
+    "orgs": ["ll-re", "llhf", "nltpt", "sllhf"],
+    "affiliation": "Meta"
+  },
+  "jharmison": {
+    "name": "James Harmison",
+    "orgs": ["ll-re"],
+    "affiliation": "Red Hat"
+  },
+  "djsh-groq": {
+    "name": "Dhananjay Singh",
+    "orgs": ["ll-re"],
+    "affiliation": "Groq"
+  },
+  "erwangranger": {
+    "name": "Erwan Granger",
+    "orgs": ["ll-re"],
+    "affiliation": "Red Hat"
+  },
+  "MLProductionization": {
+    "name": "MLProductionization Team",
+    "orgs": ["ll-re", "nltpt"],
+    "affiliation": "Databricks"
+  },
+  "heyjustinai": {
+    "name": "justin lee",
+    "orgs": ["ll-re"],
+    "affiliation": "Meta"
+  },
+  "jlong2": {
+    "name": "John Long",
+    "orgs": ["ll-re"],
+    "affiliation": "SambaNova"
+  },
+  "rajarshisaha95": {
+    "name": "Rajarshi Saha",
+    "orgs": ["ll-re"],
+    "affiliation": "AWS"
+  },
+  "AnujQCom": {
+    "name": "Anuj Gupta",
+    "orgs": ["ll-re", "nltpt"]
+  },
+  "vbaddi618": {
+    "name": "Vinayak",
+    "orgs": ["ll-re", "nltpt"],
+    "affiliation": "Qualcomm"
+  },
+  "jrcalzada": {
+    "name": "Jose Calzada",
+    "orgs": ["ll-re"]
+  },
+  "hjshah": {
+    "name": "Hardik Shah",
+    "orgs": ["ll-re", "llhf", "nltpt", "sllhf"],
+    "affiliation": "Meta"
+  },
+  "tharunmeta": {
+    "name": "Tharun Tej Tammineni",
+    "orgs": ["ll-re"],
+    "affiliation": "Meta"
+  },
+  "mmilenkovic": {
+    "name": "Mihailo",
+    "orgs": ["ll-re"]
+  },
+  "jianyuhuang": {
+    "name": "Jianyu Huang",
+    "orgs": ["ll-re"],
+    "affiliation": "Meta"
+  },
+  "ianr007": {
+    "name": "Ian Roche",
+    "orgs": ["ll-re"],
+    "affiliation": "Dell"
+  },
+  "bronzafa": {
+    "name": "Fabricio Bronzati",
+    "orgs": ["ll-re"],
+    "affiliation": "Dell"
+  },
+  "utkarsh19467": {
+    "name": "SHUKLA",
+    "orgs": ["ll-re"],
+    "affiliation": "Microsoft"
+  },
+  "wxpjimmy": {
+    "name": "jimmy wang",
+    "orgs": ["ll-re"],
+    "affiliation": "Microsoft"
+  },
+  "liangjason": {
+    "name": "Jason Liang",
+    "orgs": ["ll-re", "nltpt"]
+  },
+  "samuelselvan": {
+    "name": "Samuel Selvan",
+    "orgs": ["ll-re", "llhf", "hsramall"],
+    "affiliation": "Meta"
+  },
+  "burtenshaw": {
+    "name": "ben burtenshaw",
+    "orgs": ["ll-re"],
+    "affiliation": "Hugging Face"
+  },
+  "jsulz": {
+    "name": "Jared Sulzdorf",
+    "orgs": ["ll-re"],
+    "affiliation": "Hugging Face"
+  },
+  "bchenfireworks": {
+    "name": "Ben Chen",
+    "orgs": ["ll-re", "llhf", "nltpt", "sllhf"],
+    "affiliation": "Fireworks"
+  },
+  "taowan": {
+    "name": "Tao Wang",
+    "orgs": ["ll-re", "llhf", "nltpt", "sllhf"]
+  },
+  "VijitSingh": {
+    "name": "Vijit Singh",
+    "orgs": ["ll-re"]
+  },
+  "akuruvill": {
+    "name": "ann kuruvila",
+    "orgs": ["ll-re"]
+  },
+  "balaatdell": {
+    "name": "Balachandran Rajendran",
+    "orgs": ["ll-re"],
+    "affiliation": "Dell"
+  },
+  "Surprhld": {
+    "name": "surabhi prahalad",
+    "orgs": ["ll-re"]
+  },
+  "grayjh": {
+    "name": "John Gray",
+    "orgs": ["ll-re"],
+    "affiliation": "AWS"
+  },
+  "ichernev": {
+    "name": "Iskren Chernev",
+    "orgs": ["ll-re"],
+    "affiliation": "DeepInfra"
+  },
+  "pabhatia-ms": {
+    "name": "parikshit bhatia",
+    "orgs": ["ll-re"]
+  },
+  "prithu-dasgupta": {
+    "name": "Prithu Dasgupta",
+    "orgs": ["ll-re", "nltpt"],
+    "affiliation": "Databricks"
+  },
+  "ashwinbmeta": {
+    "name": "Ashwin Bharambe",
+    "orgs": ["ll-re", "llhf", "nltpt", "sllhf"],
+    "affiliation": "Meta"
+  },
+  "jtkipp": {
+    "name": "Jesse Kipp",
+    "orgs": ["ll-re"],
+    "affiliation": "Cloudflare"
+  },
+  "nilejones": {
+    "name": "Nile Jones",
+    "orgs": ["ll-re"]
+  },
+  "ericmsmith": {
+    "name": "Eric Michael Smith",
+    "orgs": ["ll-re"],
+    "affiliation": "Meta"
+  },
+  "cynikolai": {
+    "name": "Cyrus Nikolaidis",
+    "orgs": ["ll-re", "llhf"],
+    "affiliation": "Meta"
+  },
+  "jeffxtang": {
+    "name": "Jeff Tang",
+    "orgs": ["ll-re"]
+  },
+  "kplm": {
+    "name": "Kate P",
+    "orgs": ["ll-re", "llhf", "nltpt"],
+    "affiliation": "Meta"
+  },
+  "terencezhang2024": {
+    "name": "Terence Zhang",
+    "orgs": ["ll-re"],
+    "affiliation": "Meta"
+  },
+  "DonG94": {
+    "name": "Donnie Gerhart",
+    "orgs": ["ll-re"],
+    "affiliation": "Dell"
+  },
+  "petrodeg": {
+    "name": "Petro Degtiarenko",
+    "orgs": ["ll-re"]
+  },
+  "tryrobbo": {
+    "name": "ThomasR",
+    "orgs": ["llhf", "nltpt", "sllhf"],
+    "affiliation": "Meta"
+  },
+  "janavranes": {
+    "name": "Jana Vranes",
+    "orgs": ["llhf"],
+    "affiliation": "Meta"
+  },
+  "hanlintang": {
+    "name": "Hanlin Tang",
+    "orgs": ["llhf", "sllhf", "hsramall"],
+    "affiliation": "Databricks"
+  },
+  "gabrielmbmb": {
+    "name": "Gabriel Martín Blázquez",
+    "orgs": ["llhf", "sllhf"],
+    "affiliation": "Hugging Face"
+  },
+  "bnavyata": {
+    "name": "Navyata Bawa",
+    "orgs": ["llhf", "nltpt", "sllhf"],
+    "affiliation": "Meta"
+  },
+  "daking": {
+    "name": "Daniel King",
+    "orgs": ["llhf", "nltpt", "sllhf"],
+    "affiliation": "Databricks"
+  },
+  "brianchu": {
+    "name": "Brian",
+    "orgs": ["llhf", "sllhf"],
+    "affiliation": "Databricks"
+  },
+  "meghaaa": {
+    "name": "Megha Agarwal",
+    "orgs": ["llhf", "sllhf", "hsramall"],
+    "affiliation": "Databricks"
+  },
+  "BrainAnalyticsTechnologies": {
+    "name": "Jean Yim",
+    "orgs": ["llhf"]
+  },
+  "ashwinb": {
+    "name": "Ashwin B",
+    "orgs": ["llhf", "nltpt", "sllhf"],
+    "affiliation": "Meta"
+  },
+  "dltn": {
+    "name": "Dalton Flanagan",
+    "orgs": ["llhf", "sllhf"],
+    "affiliation": "Meta"
+  },
+  "ailabby": {
+    "name": "Jeff Tang",
+    "orgs": ["llhf", "nltpt", "sllhf", "hsramall"]
+  },
+  "pgarbacki": {
+    "name": "Pawel Garbacki",
+    "orgs": ["llhf", "sllhf"],
+    "affiliation": "Fireworks"
+  },
+  "octoai-ops": {
+    "name": "OctoAI",
+    "orgs": ["llhf", "nltpt", "sllhf"],
+    "affiliation": "OctoAI"
+  },
+  "yard1": {
+    "name": "Antoni Baum",
+    "orgs": ["llhf", "sllhf"],
+    "affiliation": "Anyscale"
+  },
+  "comaniac": {
+    "name": "Cody Yu",
+    "orgs": ["llhf", "sllhf"]
+  },
+  "divchenko": {
+    "name": "Dmytro Ivchenko",
+    "orgs": ["llhf", "nltpt", "sllhf"],
+    "affiliation": "Fireworks"
+  },
+  "richardliaw": {
+    "name": "Richard Liaw",
+    "orgs": ["llhf", "sllhf"],
+    "affiliation": "Anyscale"
+  },
+  "kouroshh": {
+    "name": "Kourosh Hakhamaneshi",
+    "orgs": ["llhf", "sllhf"],
+    "affiliation": "Anyscale"
+  },
+  "plliao": {
+    "name": "PEI-LUN LIAO",
+    "orgs": ["llhf"],
+    "affiliation": "Databricks"
+  },
+  "ydshieh": {
+    "name": "Yih-Dar SHIEH",
+    "orgs": ["llhf"],
+    "affiliation": "Hugging Face"
+  },
+  "mbuehle": {
+    "name": "Melanie Hart Buehler",
+    "orgs": ["llhf", "sllhf"],
+    "affiliation": "Intel"
+  },
+  "qiacheng": {
+    "name": "qiacheng li",
+    "orgs": ["llhf", "sllhf"],
+    "affiliation": "Intel"
+  },
+  "samankh": {
+    "name": "saman ",
+    "orgs": ["llhf", "nltpt", "sllhf"],
+    "affiliation": "AMD"
+  },
+  "aaron-jw": {
+    "name": "JW",
+    "orgs": ["llhf", "nltpt", "sllhf"]
+  },
+  "lquachamd": {
+    "name": "Liem Quach",
+    "orgs": ["llhf", "nltpt", "sllhf"],
+    "affiliation": "AMD"
+  },
+  "GuobingChen": {
+    "name": "Guobing Chen",
+    "orgs": ["llhf", "sllhf", "hsramall"],
+    "affiliation": "Intel"
+  },
+  "syparam": {
+    "name": "Syanth Paramananthan",
+    "orgs": ["llhf", "nltpt", "sllhf"],
+    "affiliation": "AMD"
+  },
+  "technillogue": {
+    "name": "s",
+    "orgs": ["llhf", "sllhf"],
+    "affiliation": "Microsoft"
+  },
+  "jhoover": {
+    "name": "Joe Hoover",
+    "orgs": ["llhf", "sllhf", "hsramall"],
+    "affiliation": "Apple"
+  },
+  "pratyush-sarvam": {
+    "name": "Pratyush Kumar",
+    "orgs": ["llhf", "sllhf"],
+    "affiliation": "Sarvam AI"
+  },
+  "eliebak": {
+    "name": "Elie Bakouch",
+    "orgs": ["llhf", "nltpt", "sllhf"],
+    "affiliation": "Hugging Face"
+  },
+  "plaguss": {
+    "name": "Agustín Piqueres Lajarín",
+    "orgs": ["llhf", "sllhf"],
+    "affiliation": "Hugging Face"
+  },
+  "Lessw2020": {
+    "name": "Less Wright",
+    "orgs": ["llhf", "sllhf"],
+    "affiliation": "Meta"
+  },
+  "psbang008": {
+    "name": "P B",
+    "orgs": ["llhf", "sllhf"]
+  },
+  "dolaameng": {
+    "name": "Li Ma",
+    "orgs": ["llhf", "nltpt", "sllhf"]
+  },
+  "hfkwr": {
+    "name": "Rohit Patel",
+    "orgs": ["llhf", "lbhf", "sllhf"],
+    "affiliation": "Meta"
+  },
+  "mohami": {
+    "name": "amin",
+    "orgs": ["llhf", "sllhf"]
+  },
+  "liangshen68": {
+    "name": "Liang Shen",
+    "orgs": ["llhf", "nltpt", "sllhf"]
+  },
+  "anups": {
+    "name": "Anup S",
+    "orgs": ["llhf", "nltpt", "sllhf"]
+  },
+  "jingqzha": {
+    "name": "Jingqiao Zhang",
+    "orgs": ["llhf", "sllhf"],
+    "affiliation": "Oracle"
+  },
+  "carljparker": {
+    "name": "Carl Parker",
+    "orgs": ["llhf", "sllhf"],
+    "affiliation": "Meta"
+  },
+  "vaishgup": {
+    "name": "Vaishali",
+    "orgs": ["llhf", "nltpt"],
+    "affiliation": "Dell"
+  },
+  "Wauplin": {
+    "name": "Lucain Pouget",
+    "orgs": ["llhf", "sllhf"],
+    "affiliation": "Hugging Face"
+  },
+  "dvilasuero": {
+    "name": "Daniel Vila",
+    "orgs": ["llhf", "sllhf"],
+    "affiliation": "Hugging Face"
+  },
+  "Rocketknight1": {
+    "name": "Matthew Carrigan",
+    "orgs": ["llhf", "sllhf", "hsramall"],
+    "affiliation": "Hugging Face"
+  },
+  "victor": {
+    "name": "Victor Mustar",
+    "orgs": ["llhf", "sllhf"],
+    "affiliation": "Hugging Face"
+  },
+  "mrao23": {
+    "name": "Mayoor Rao",
+    "orgs": ["llhf", "nltpt", "sllhf"],
+    "affiliation": "Oracle"
+  },
+  "SR-AMD": {
+    "name": "Sharad Reddy",
+    "orgs": ["llhf", "nltpt", "sllhf"],
+    "affiliation": "AMD"
+  },
+  "replicate-staff": {
+    "name": "Replicant",
+    "orgs": ["llhf", "sllhf"],
+    "affiliation": "Replicate"
+  },
+  "nkcheng": {
+    "name": "Norman K Cheng",
+    "orgs": ["lbhf"],
+    "affiliation": "Meta"
+  },
+  "jeetshah": {
+    "name": "Jeet",
+    "orgs": ["lbhf"],
+    "affiliation": "Meta"
+  },
+  "anvitb": {
+    "name": "Bodiwala",
+    "orgs": ["lbhf"]
+  },
+  "itayneeman": {
+    "name": "Itay Neeman",
+    "orgs": ["nltpt"],
+    "affiliation": "OctoAI"
+  },
+  "mkalika": {
+    "name": "Max",
+    "orgs": ["nltpt"],
+    "affiliation": "Together AI"
+  },
+  "nkothariCF": {
+    "name": "Nikhil Kothari",
+    "orgs": ["nltpt"],
+    "affiliation": "Cloudflare"
+  },
+  "ChengaFEI": {
+    "name": "Cheng Fei",
+    "orgs": ["nltpt"],
+    "affiliation": "AWS"
+  },
+  "sonbol": {
+    "name": "Sonbol Yazdanbakhsh",
+    "orgs": ["nltpt"],
+    "affiliation": "AMD"
+  },
+  "tosterberg": {
+    "name": "Tyler Osterberg",
+    "orgs": ["nltpt"],
+    "affiliation": "AWS"
+  },
+  "lokiiiiii94": {
+    "name": "Lokeshwaran Ravi",
+    "orgs": ["nltpt"]
+  },
+  "hfan8828": {
+    "name": "Hongmin Fan",
+    "orgs": ["nltpt"],
+    "affiliation": "Google"
+  },
+  "kiritipendyala": {
+    "name": "Kiriti Pendyala",
+    "orgs": ["nltpt"],
+    "affiliation": "AMD"
+  },
+  "yusharon": {
+    "name": "jiayi yu",
+    "orgs": ["nltpt"]
+  },
+  "LoganGrasbyCF": {
+    "name": "Grasby",
+    "orgs": ["nltpt"],
+    "affiliation": "Cloudflare"
+  },
+  "harryzorus": {
+    "name": "Harish  Tummalacherla",
+    "orgs": ["nltpt"],
+    "affiliation": "AWS"
+  },
+  "powderluv": {
+    "name": "Anush Elangovan",
+    "orgs": ["nltpt"],
+    "affiliation": "AMD"
+  },
+  "Uchiha19524": {
+    "name": "SitaRam Chaitanya",
+    "orgs": ["nltpt"]
+  },
+  "amacias": {
+    "name": "Adrian Macias",
+    "orgs": ["nltpt"],
+    "affiliation": "AMD"
+  },
+  "Xiaoqun2023": {
+    "name": "Xiaoqun Wang",
+    "orgs": ["nltpt"]
+  },
+  "logangrado": {
+    "name": "Logan",
+    "orgs": ["nltpt"],
+    "affiliation": "AMD"
+  },
+  "jrb": {
+    "name": "Jared Baldridge",
+    "orgs": ["nltpt"],
+    "affiliation": "Together AI"
+  },
+  "heheda": {
+    "name": "heheda",
+    "orgs": ["nltpt"]
+  },
+  "jggg-aws": {
+    "name": "Jonathan Guinegagne",
+    "orgs": ["nltpt"],
+    "affiliation": "AWS"
+  },
+  "pbontrager": {
+    "name": "Philip",
+    "orgs": ["nltpt"],
+    "affiliation": "Meta"
+  },
+  "joshhay95": {
+    "name": "Josh Hay",
+    "orgs": ["nltpt"],
+    "affiliation": "Groq"
+  },
+  "fmello93": {
+    "name": "Felipe Mello",
+    "orgs": ["nltpt"],
+    "affiliation": "Meta"
+  },
+  "tyler-cox": {
+    "name": "Tyler Cox",
+    "orgs": ["nltpt"],
+    "affiliation": "Dell"
+  },
+  "amd-rocm": {
+    "name": "AMD ROCm",
+    "orgs": ["nltpt", "sllhf"],
+    "affiliation": "AMD"
+  },
+  "vtchen02": {
+    "name": "Vincent Tao Chen",
+    "orgs": ["nltpt"],
+    "affiliation": "Databricks"
+  },
+  "victorsun": {
+    "name": "Victor Sun",
+    "orgs": ["nltpt"],
+    "affiliation": "Databricks"
+  },
+  "jakeleland-dell": {
+    "name": "Jake Leland",
+    "orgs": ["nltpt"],
+    "affiliation": "Dell"
+  },
+  "brandonkeiji": {
+    "name": "Brandon Keiji",
+    "orgs": ["nltpt"],
+    "affiliation": "Google"
+  },
+  "rosbo": {
+    "name": "Vincent Roseberry",
+    "orgs": ["nltpt"],
+    "affiliation": "Google"
+  },
+  "qianqiannie-msft": {
+    "name": "Qianqian Nie",
+    "orgs": ["nltpt"],
+    "affiliation": "Microsoft"
+  },
+  "ankits0052": {
+    "name": "Ankit Shah",
+    "orgs": ["nltpt", "sllhf"]
+  },
+  "kartikayk": {
+    "name": "Kartikay",
+    "orgs": ["nltpt", "hsramall"]
+  },
+  "gasoonjia": {
+    "name": "Songhao Jia",
+    "orgs": ["nltpt"],
+    "affiliation": "Meta"
+  },
+  "larryliu1992": {
+    "name": "Mengwei Liu",
+    "orgs": ["nltpt"],
+    "affiliation": "Meta"
+  },
+  "KhookieThief": {
+    "name": "Jack Khuu",
+    "orgs": ["nltpt"],
+    "affiliation": "Meta"
+  },
+  "iseeyuan": {
+    "name": "Mengtao Yuan",
+    "orgs": ["nltpt"],
+    "affiliation": "Meta"
+  },
+  "vmpuri": {
+    "name": "Varun Puri",
+    "orgs": ["nltpt"],
+    "affiliation": "Meta"
+  },
+  "devleenadas": {
+    "name": "DevleenaDas",
+    "orgs": ["nltpt"],
+    "affiliation": "AMD"
+  },
+  "shailens": {
+    "name": "Shailen Sobhee",
+    "orgs": ["nltpt"],
+    "affiliation": "AMD"
+  },
+  "yingliuhf": {
+    "name": "Ying Liu",
+    "orgs": ["nltpt", "sllhf"],
+    "affiliation": "Fireworks"
+  },
+  "sezedai": {
+    "name": "De Huo",
+    "orgs": ["nltpt"]
+  },
+  "tarun31": {
+    "name": "Tarun K",
+    "orgs": ["nltpt"]
+  },
+  "jfchi": {
+    "name": "Jianfeng Chi",
+    "orgs": ["nltpt"],
+    "affiliation": "Meta"
+  },
+  "maheshp9": {
+    "name": "Mahesh Pasupuleti",
+    "orgs": ["nltpt"]
+  },
+  "parhamdb": {
+    "name": "Parham Beheshti",
+    "orgs": ["nltpt"]
+  },
+  "kaam12": {
+    "name": "Kaamraan Khan",
+    "orgs": ["nltpt"]
+  },
+  "subhashtalluri": {
+    "name": "Subhash Talluri",
+    "orgs": ["nltpt"],
+    "affiliation": "AWS"
+  },
+  "sethli": {
+    "name": "Seth Li",
+    "orgs": ["nltpt"],
+    "affiliation": "Snowflake"
+  },
+  "jcatana": {
+    "name": "Josh Catana",
+    "orgs": ["nltpt"]
+  },
+  "Andy-MTK": {
+    "name": "Po-Hsiang Yu",
+    "orgs": ["nltpt"]
+  },
+  "chezhen": {
+    "name": "Chen Zheng",
+    "orgs": ["nltpt"]
+  },
+  "telgamal": {
+    "name": "Tarek Elgamal",
+    "orgs": ["nltpt"],
+    "affiliation": "Meta"
+  },
+  "abrooks9944": {
+    "name": "Alex Brooks",
+    "orgs": ["nltpt"],
+    "affiliation": "IBM"
+  },
+  "microsoftemployee194843": {
+    "name": "microsoftemployee194843",
+    "orgs": ["nltpt"],
+    "affiliation": "Microsoft"
+  },
+  "mransby-groq": {
+    "name": "Michael Ransby",
+    "orgs": ["nltpt"],
+    "affiliation": "Groq"
+  },
+  "byjlw": {
+    "name": "Jesse White",
+    "orgs": ["nltpt"]
+  },
+  "edbeeching": {
+    "name": "Edward Beeching",
+    "orgs": ["nltpt"],
+    "affiliation": "Hugging Face"
+  },
+  "BenjaminB": {
+    "name": "Benjamin Bossan",
+    "orgs": ["nltpt"],
+    "affiliation": "Hugging Face"
+  },
+  "gmudaniel": {
+    "name": "gmudaniel",
+    "orgs": ["nltpt"]
+  },
+  "SocialLocalMobile": {
+    "name": "Mergen Nachin",
+    "orgs": ["nltpt"],
+    "affiliation": "Meta"
+  },
+  "atchyutha": {
+    "name": "atchyutha",
+    "orgs": ["nltpt"]
+  },
+  "jdchang": {
+    "name": "Jonathan Chang",
+    "orgs": ["nltpt"],
+    "affiliation": "Databricks"
+  },
+  "averyngo": {
+    "name": "Avery Ngo",
+    "orgs": ["nltpt"],
+    "affiliation": "IBM"
+  },
+  "zchenyu": {
+    "name": "Chenyu Zhao",
+    "orgs": ["nltpt"],
+    "affiliation": "Fireworks"
+  },
+  "kasianenko": {
+    "name": "Igor Kasianenko",
+    "orgs": ["nltpt"],
+    "affiliation": "Meta"
+  },
+  "connortreacy": {
+    "name": "Connor Treacy",
+    "orgs": ["nltpt"],
+    "affiliation": "Meta"
+  },
+  "regisss": {
+    "name": "Régis Pierrard",
+    "orgs": ["sllhf"],
+    "affiliation": "Hugging Face"
+  },
+  "eljoseph": {
+    "name": "Elias Joseph",
+    "orgs": ["sllhf"],
+    "affiliation": "AMD"
+  },
+  "chunyli": {
+    "name": "Chunyu Li",
+    "orgs": ["sllhf"]
+  },
+  "m-ric": {
+    "name": "Aymeric Roucher",
+    "orgs": ["sllhf"],
+    "affiliation": "Hugging Face"
+  },
+  "quanhungtran1": {
+    "name": "Quan Tran",
+    "orgs": ["sllhf"]
+  },
+  "vivekkkhetan": {
+    "name": "vVvek Khetan",
+    "orgs": ["sllhf"]
+  },
+  "HaiShaw": {
+    "name": "Hai Xiao",
+    "orgs": ["yet-another-org-whynot"],
+    "affiliation": "AMD"
+  },
+  "ZixiQi": {
+    "name": "Zixi Qi",
+    "orgs": ["yet-another-org-whynot"],
+    "affiliation": "Meta"
+  },
+  "seyeong": {
+    "name": "han",
+    "orgs": ["yet-another-org-whynot"]
+  },
+  "jothomson04": {
+    "name": "John Thomson",
+    "orgs": ["hsramall"]
+  },
+  "dmehra": {
+    "name": "Disha Mehra",
+    "orgs": ["hsramall"],
+    "affiliation": "NVIDIA"
+  },
+  "Bhavanat21": {
+    "name": "Bhavana Tumma",
+    "orgs": ["hsramall"]
+  },
+  "novaturient95": {
+    "name": "Ayush Mishra",
+    "orgs": ["hsramall"]
+  },
+  "sssrijan": {
+    "name": "Shashwat Srijan",
+    "orgs": ["hsramall"]
+  },
+  "jemannil": {
+    "name": "Jerry Mannil",
+    "orgs": ["hsramall"]
+  },
+  "vivekmadan2": {
+    "name": "Vivek Madan",
+    "orgs": ["hsramall"]
+  },
+  "RandomTree": {
+    "name": "Kanip",
+    "orgs": ["hsramall"],
+    "affiliation": "AWS"
+  },
+  "rganti": {
+    "name": "Raghu Ganti",
+    "orgs": ["hsramall"],
+    "affiliation": "IBM"
+  },
+  "liangan1": {
+    "name": "Zhang, Liangang",
+    "orgs": ["hsramall"],
+    "affiliation": "Intel"
+  },
+  "asfandyarq": {
+    "name": "Asfandyar Qureshi",
+    "orgs": ["hsramall"],
+    "affiliation": "Databricks"
+  },
+  "dskhudia": {
+    "name": "Daya Khudia",
+    "orgs": ["hsramall"],
+    "affiliation": "Databricks"
+  },
+  "zomo": {
+    "name": "Ying Chen",
+    "orgs": ["hsramall"],
+    "affiliation": "Databricks"
+  },
+  "shichengz": {
+    "name": "Shicheng Zhou",
+    "orgs": ["hsramall"],
+    "affiliation": "Databricks"
+  },
+  "smurching": {
+    "name": "Sid Murching",
+    "orgs": ["hsramall"],
+    "affiliation": "Databricks"
+  },
+  "martasd": {
+    "name": "Marta SD",
+    "orgs": ["hsramall"],
+    "affiliation": "NVIDIA"
+  },
+  "hkotesova": {
+    "name": "Hanna Kotesova",
+    "orgs": ["hsramall"],
+    "affiliation": "Microsoft"
+  },
+  "orangetin": {
+    "name": "orangetin",
+    "orgs": ["hsramall"],
+    "affiliation": "Together AI"
+  },
+  "csris": {
+    "name": "Charles Srisuwananukorn",
+    "orgs": ["hsramall"],
+    "affiliation": "Together AI"
+  },
+  "carson-together": {
+    "name": "Carson Lam",
+    "orgs": ["hsramall"],
+    "affiliation": "Together AI"
+  },
+  "andreasjansson": {
+    "name": "Andreas Jansson",
+    "orgs": ["hsramall"],
+    "affiliation": "Replicate"
+  },
+  "maddiedawson": {
+    "name": "Maddie Dawson",
+    "orgs": ["hsramall"],
+    "affiliation": "Databricks"
+  },
+  "gincendio": {
+    "name": "Gaurav Singh",
+    "orgs": ["hsramall"],
+    "affiliation": "Microsoft"
+  },
+  "ybelkada": {
+    "name": "Younes B",
+    "orgs": ["hsramall"],
+    "affiliation": "Hugging Face"
+  },
+  "skasturi": {
+    "name": "Sasidhar Kasturi",
+    "orgs": ["hsramall"],
+    "affiliation": "Microsoft"
+  }
+}
