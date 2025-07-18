@@ -58,4 +58,7 @@
   <li>
     <a href="./claudiussennett/">Who is Claudius Sennett</a>
   </li>
+  <li>
+    <a href="./phantasmagoriavocals">Listen to the raw vocals from Phantasmagoria</a>
+  </li>
 </ul>
