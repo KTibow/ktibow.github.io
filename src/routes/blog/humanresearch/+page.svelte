@@ -59,6 +59,9 @@
     <a href="./claudiussennett/">Who is Claudius Sennett</a>
   </li>
   <li>
-    <a href="./phantasmagoriavocals">Listen to the raw vocals from Phantasmagoria</a>
+    <a href="./phantasmagoriavocals/">Listen to the raw vocals from Phantasmagoria</a>
+  </li>
+  <li>
+    <a href="./lightbumper/">Light bumpers are funny</a>
   </li>
 </ul>
