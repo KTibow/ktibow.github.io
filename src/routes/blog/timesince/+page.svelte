@@ -4,6 +4,7 @@
 
   const now = new Date();
   const advancements = {
+    "Qwen updates": new Date("July 24 2025"),
     K2: new Date("July 11 2025"),
     "Grok 4": new Date("July 9 2025"),
     "O3 price cuts": new Date("June 10 2025"),
