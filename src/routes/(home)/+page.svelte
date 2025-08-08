@@ -48,7 +48,7 @@
   </details>
 
   <a class="link flex flex-col justify-center" href="https://github.com/sponsors/KTibow">
-    <h2 class="text-3xl font-wb">would you consider a sponsorship?</h2>
+    <h2 class="text-3xl font-wb">consider a sponsorship</h2>
     <div
       class="flex flex-wrap items-center justify-center gap-2 overflow-auto whitespace-nowrap mt-4 [&>*]:p-2 [&>*]:rounded-full [&>*]:bg-black/10"
     >
