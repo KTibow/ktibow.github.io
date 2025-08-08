@@ -14,8 +14,19 @@
   </a>
 {/snippet}
 
+<nav class="flex flex-wrap gap-2 p-6 pb-0">
+  <span class="pill selected">blog - you are here</span>
+  <a class="pill" href="/blog/humanresearch/">
+    <Ripple />
+    semimicroblog - human research
+  </a>
+  <a class="pill" href="https://x.com/anametolast">
+    <Ripple />
+    microblog - x
+  </a>
+</nav>
+
 <div class="flex flex-wrap flex-grow gap-2 p-6">
-  {@render blog("humanresearch", "Human Research")}
   {@render blog("roombamotors", "Roombas, motors, and noise")}
   {@render blog("slamffusion", "SLAMffusion")}
   {@render blog("crofai", "CrofAI updated my worldview")}
@@ -67,6 +78,21 @@
 </div>
 
 <style>
+  .pill {
+    display: inline-flex;
+    height: 2rem;
+    align-items: center;
+    position: relative;
+    user-select: none;
+
+    border-radius: 9999px;
+    padding: 0 1rem;
+    background-color: rgb(var(--m3-scheme-surface-container-low));
+    &.selected {
+      background-color: rgb(var(--m3-scheme-secondary-container));
+      color: rgb(var(--m3-scheme-on-secondary-container));
+    }
+  }
   .entry {
     flex: 1 1 16rem;
     border-radius: 1rem;
