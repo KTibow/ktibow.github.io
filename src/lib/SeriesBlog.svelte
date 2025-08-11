@@ -1,0 +1,41 @@
+<script lang="ts">
+  import { page } from "$app/state";
+  import Ripple from "./Ripple.svelte";
+  const pages = {
+    blog: { url: "/blog/", description: "big thoughts" },
+    semimicroblog: { url: "/blog/humanresearch/", description: "human research" },
+    microblog: { url: "https://x.com/anametolast", description: "X" },
+    ultramicroblog: { url: "/ultramicroblog/", description: "small thoughts" },
+  };
+</script>
+
+<nav class="flex flex-wrap gap-2 p-6 pb-0">
+  {#each Object.entries(pages) as [name, { url, description }]}
+    {#if page.url.pathname == url}
+      <span class="pill selected">{name} - you are here</span>
+    {:else}
+      <a class="pill" href={url}>
+        <Ripple />
+        {name} - {description}
+      </a>
+    {/if}
+  {/each}
+</nav>
+
+<style>
+  .pill {
+    display: inline-flex;
+    height: 2rem;
+    align-items: center;
+    position: relative;
+    user-select: none;
+
+    border-radius: 9999px;
+    padding: 0 1rem;
+    background-color: rgb(var(--m3-scheme-surface-container-low));
+    &.selected {
+      background-color: rgb(var(--m3-scheme-secondary-container));
+      color: rgb(var(--m3-scheme-on-secondary-container));
+    }
+  }
+</style>

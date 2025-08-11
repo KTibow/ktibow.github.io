@@ -9,7 +9,7 @@
   import attemptX from "./attempt_x.mp4";
   import attemptY from "./attempt_y.mp4";
   import CaptionedMedia from "$lib/CaptionedMedia.svelte";
-  import RoombaSeries from "$lib/RoombaSeries.svelte";
+  import SeriesRoomba from "$lib/SeriesRoomba.svelte";
 </script>
 
 <BlogHeader {bg} title="SLAMffusion" />
@@ -102,7 +102,7 @@
     <video autoplay loop muted playsinline src={attemptY}></video>
   </CaptionedMedia>
 </div>
-<RoombaSeries />
+<SeriesRoomba />
 
 <style>
   video {
