@@ -10,8 +10,7 @@ const curlFetch = (url) => {
 const html = curlFetch("https://www.cyberciti.biz/");
 
 // Find h1 links using regex
-const articleMatches =
-  html.match(/<h1[^>]*>.*?<a[^>]*href="([^"]*)".*?>(.*?)<\/a>/gs) || [];
+const articleMatches = html.match(/<h1[^>]*>.*?<a[^>]*href="([^"]*)".*?>(.*?)<\/a>/gs) || [];
 console.log(articleMatches);
 let count = 0;
 
@@ -28,9 +27,7 @@ for (const match of articleMatches) {
   const articleHtml = curlFetch(articleUrl);
 
   const publishedMatch =
-    articleHtml.match(
-      /<meta property="article:published_time" content="([^"]*)"/,
-    ) || [];
+    articleHtml.match(/<meta property="article:published_time" content="([^"]*)"/) || [];
   const publishedTime = publishedMatch[1];
 
   if (publishedTime) {

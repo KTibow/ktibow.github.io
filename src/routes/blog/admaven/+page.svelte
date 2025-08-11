@@ -12,8 +12,8 @@
 </p>
 <p>
   AdMaven has been asking the ReVanced team if they would like to integrate their solution into
-  <a href="https://revanced.app">revanced.app</a> for a long time now. It seems easy enough in
-  theory - let the users see some ads before downloading and get some thousands of dollars monthly.
+  <a href="https://revanced.app">revanced.app</a> for a long time now. It seems easy enough in theory
+  - let the users see some ads before downloading and get some thousands of dollars monthly.
 </p>
 <p>But due to a couple factors, I don't think we should implement it. Here's why.</p>
 <h2>1. It doesn't comply with Better Ads</h2>

@@ -4,8 +4,8 @@
 
 <BlogHeader title="Remotely Save - including the .obsidian folder" />
 <p>
-  To include the <code>.obsidian</code> folder when syncing with Remotely Save, enable the option
-  that looks like
+  To include the <code>.obsidian</code> folder when syncing with Remotely Save, enable the option that
+  looks like
 </p>
 <blockquote>
   <p><strong>Sync Config Dir (experimental)</strong></p>

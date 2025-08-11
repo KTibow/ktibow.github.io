@@ -24,14 +24,8 @@
   </head>
   <body>
     <h1>Automatic Formula Balancer</h1>
-    <p>
-      This tool finds the correct molecule coefficients to balance chemical
-      reaction equations.
-    </p>
-    <p>
-      It tries all possible coefficients (from 1 to 7) on all molecules
-      inputted.
-    </p>
+    <p>This tool finds the correct molecule coefficients to balance chemical reaction equations.</p>
+    <p>It tries all possible coefficients (from 1 to 7) on all molecules inputted.</p>
     <p>It currently has no support for parenthesis.</p>
     <h2>How to use</h2>
     <p>Example: The "proper" formula (unbalanced)</p>
@@ -49,11 +43,7 @@
         let charge = {};
         const molecules = formula.split(/[\+\>]/g);
         const beforeReactionCount = formula.split(">")[0].split("+").length;
-        for (
-          let moleculeIndex = 0;
-          moleculeIndex < molecules.length;
-          moleculeIndex++
-        ) {
+        for (let moleculeIndex = 0; moleculeIndex < molecules.length; moleculeIndex++) {
           const multiplier = counts[moleculeIndex];
           const atoms = molecules[moleculeIndex].match(/[A-Z][a-z]?[0-9]*/g);
           for (atom of atoms) {
@@ -63,9 +53,7 @@
               charge[atomName] = 0;
             }
             charge[atomName] +=
-              Number(atomCount || 1) *
-              multiplier *
-              (moleculeIndex < beforeReactionCount ? 1 : -1);
+              Number(atomCount || 1) * multiplier * (moleculeIndex < beforeReactionCount ? 1 : -1);
           }
         }
         let isSolution = true;
@@ -80,18 +68,11 @@
       const recursiveCheck = (formula, stack) => {
         if (formula.split(/[\+\>]/g).length == stack.length) {
           checked++;
-          if (
-            !document.querySelector("#output").innerText &&
-            checkFormula(stack, formula)
-          ) {
+          if (!document.querySelector("#output").innerText && checkFormula(stack, formula)) {
             const beforeReactionCount = formula.split(">")[0].split("+").length;
-            const beforeReaction = stack
-              .slice(0, beforeReactionCount)
-              .join(", ");
+            const beforeReaction = stack.slice(0, beforeReactionCount).join(", ");
             const afterReaction = stack.slice(beforeReactionCount).join(", ");
-            document.querySelector(
-              "#output",
-            ).innerText = `${beforeReaction} > ${afterReaction}`;
+            document.querySelector("#output").innerText = `${beforeReaction} > ${afterReaction}`;
             document.querySelector("#progress").innerText = "Found!";
           }
           if (

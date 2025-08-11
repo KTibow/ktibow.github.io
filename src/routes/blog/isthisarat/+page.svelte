@@ -6,8 +6,8 @@
 <p class="font-bold">Background</p>
 <ul>
   <li>
-    <a href="https://isthisarat.com/">Is This A Rat</a> is a site made by Vytal where you can check
-    if a jar is a rat using AI
+    <a href="https://isthisarat.com/">Is This A Rat</a> is a site made by Vytal where you can check if
+    a jar is a rat using AI
   </li>
   <li>
     A rat refers to a Skyblock mod that lets the attacker log on to your Minecraft account,
@@ -44,7 +44,8 @@
 <p>
   You can also use tools that show you possible flags like
   <a href="https://ktibow.github.io/RatRater/">RatRater</a>
-  <a href="https://ktibow.github.io/RatRater2/"> (or 2, which has less flags but better browsing)</a
+  <a href="https://ktibow.github.io/RatRater2/">
+    (or 2, which has less flags but better browsing)</a
   >. Compared to the other options, RatRater is not definitive. It gives you a list of possible
   flags to investigate. Whatever you do, just stay safe out there.
 </p>
