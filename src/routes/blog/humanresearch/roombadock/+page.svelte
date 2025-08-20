@@ -1,0 +1,34 @@
+<script>
+  import BlogHeader from "$lib/BlogHeader.svelte";
+  import CaptionedImage from "$lib/CaptionedImage.svelte";
+  import SeriesRoomba from "$lib/SeriesRoomba.svelte";
+  import oidock from "./oidock.png";
+  import oidockmeasured from "./oidockmeasured.png";
+</script>
+
+<BlogHeader title="Roomba dock IR" />
+<p>
+  I have an iRobot Roomba dock model 17070. This is what the IR beams are supposed to look like.
+</p>
+<div class="flex flex-col items-start gap-4">
+  <CaptionedImage src={oidock} view="makedark" alt="Dock IR according to the Open Interface" />
+  <CaptionedImage src={oidockmeasured} view="makedark" alt="+ est measurements" />
+</div>
+<p>But in fact:</p>
+<ul>
+  <li>
+    The force field is a circle, but it actually extends 15 inches past the emitter in all
+    directions.
+  </li>
+  <li>
+    The buoys are shaped like shown, but are also much larger. Near the dock, they go less than a
+    few inches out, but 6 feet or so out they deviate almost a foot and a half. They go across the
+    room - seriously, I've tested them and they're still readable at 21 feet, although not through
+    the main "omni" receiver.
+  </li>
+</ul>
+<p>
+  One more thing: the "left"/"right" receivers don't work in Passive. The Roomba has to be docking
+  or the mode has to be safe or higher.
+</p>
+<SeriesRoomba />

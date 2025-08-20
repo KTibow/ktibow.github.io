@@ -64,4 +64,7 @@
   <li>
     <a href="./lightbumper/">Light bumpers are funny</a>
   </li>
+  <li>
+    <a href="./roombadock/">Roomba dock IR</a>
+  </li>
 </ul>

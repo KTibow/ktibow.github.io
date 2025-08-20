@@ -6,6 +6,7 @@
     "/blog/humanresearch/lightbumper/",
     "/blog/slamffusion/",
     "/blog/roombamotors/",
+    "/blog/humanresearch/roombadock/",
   ];
 
   const currentIndex = $derived(seriesPosts.findIndex((post) => page.url.pathname == post));
