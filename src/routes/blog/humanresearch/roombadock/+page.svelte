@@ -21,10 +21,19 @@
     directions.
   </li>
   <li>
-    The buoys are shaped like shown, but are also much larger. Near the dock, they go less than a
-    few inches out, but 6 feet or so out they deviate almost a foot and a half. They go across the
-    room - seriously, I've tested them and they're still readable at 21 feet, although not through
-    the main "omni" receiver.
+    The buoys are shaped like shown, but are also much larger.
+    <ul>
+      <li>Near the dock, they go less than a few inches out.</li>
+      <li>6 feet or so out they deviate almost a foot and a half.</li>
+      <li>
+        They go across the room - seriously, I've tested them and they're still readable at 21 feet,
+        although not through the main "omni" receiver.
+      </li>
+      <li>
+        Also, the buoys are transmitted from the pill-shaped carveout on the dock, while the force
+        field is transmitted from the circle on the top.
+      </li>
+    </ul>
   </li>
 </ul>
 <p>
