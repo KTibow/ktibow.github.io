@@ -24,7 +24,13 @@
     The buoys are shaped like shown, but are also much larger.
     <ul>
       <li>Near the dock, they go less than a few inches out.</li>
-      <li>6 feet or so out they deviate almost a foot and a half.</li>
+      <li>
+        6 feet or so out they (at least the red buoy) deviate almost a foot and a half out and 5
+        inches in.
+      </li>
+      <li>
+        At 10 feet, the outward deviation doesn't grow but the inward deviation has, to 7 inches.
+      </li>
       <li>
         They go across the room - seriously, I've tested them and they're still readable at 21 feet,
         although not through the main "omni" receiver.
