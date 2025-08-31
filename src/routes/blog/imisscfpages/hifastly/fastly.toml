@@ -1,0 +1,15 @@
+# This file describes a Fastly Compute package. To learn more visit:
+# https://www.fastly.com/documentation/reference/compute/fastly-toml
+
+authors = [""]
+cloned_from = "https://github.com/fastly/compute-starter-kit-rust-default"
+description = ""
+language = "rust"
+manifest_version = 3
+name = "hifastly"
+service_id = "oIioWbzFanpxkHexOqksju"
+
+[local_server]
+
+[scripts]
+  build = "cargo build --profile release"
