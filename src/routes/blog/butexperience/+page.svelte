@@ -118,7 +118,7 @@
   let selectedProvider: Provider | undefined = $state(undefined);
 
   function selectProvider(provider: Provider) {
-    selectedProvider = selectedProvider == provider ? undefined : provider;
+    selectedProvider = selectedProvider?.name == provider.name ? undefined : provider;
   }
 </script>
 
