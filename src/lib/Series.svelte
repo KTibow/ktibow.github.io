@@ -1,18 +1,22 @@
-<script>
+<script lang="ts">
   import { page } from "$app/state";
   import Ripple from "./Ripple.svelte";
 
-  const seriesPosts = [
-    "/blog/humanresearch/lightbumper/",
-    "/blog/slamffusion/",
-    "/blog/roombamotors/",
-    "/blog/humanresearch/roombadock/",
+  const series = [
+    [
+      "/blog/humanresearch/lightbumper/",
+      "/blog/slamffusion/",
+      "/blog/roombamotors/",
+      "/blog/humanresearch/roombadock/",
+    ],
+    ["/blog/farewellcfpages/", "/blog/imisscfpages/", "/blog/lowselfconfidence/"],
   ];
 
-  const currentIndex = $derived(seriesPosts.findIndex((post) => page.url.pathname == post));
-  const previousPost = $derived(currentIndex > 0 ? seriesPosts[currentIndex - 1] : null);
+  const thisSeries = $derived(series.find((s) => s.includes(page.url.pathname))!);
+  const currentIndex = $derived(thisSeries.findIndex((post) => post == page.url.pathname));
+  const previousPost = $derived(currentIndex > 0 ? thisSeries[currentIndex - 1] : null);
   const nextPost = $derived(
-    currentIndex < seriesPosts.length - 1 ? seriesPosts[currentIndex + 1] : null,
+    currentIndex < thisSeries.length - 1 ? thisSeries[currentIndex + 1] : null,
   );
 </script>
 
@@ -31,7 +35,7 @@
   {/if}
 
   <span class="text-sm text-on-surface-variant justify-self-center col-2">
-    Part {currentIndex + 1} of {seriesPosts.length}
+    Part {currentIndex + 1} of {thisSeries.length}
   </span>
 
   {#if nextPost}

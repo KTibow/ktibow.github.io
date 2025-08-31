@@ -1,6 +1,6 @@
 <script lang="ts">
   import BlogHeader from "$lib/BlogHeader.svelte";
-  import SeriesRoomba from "$lib/SeriesRoomba.svelte";
+  import Series from "$lib/Series.svelte";
   import bg from "./bg.avif";
   const listFormatter = new Intl.ListFormat("en");
 </script>
@@ -107,4 +107,4 @@
   never know.
 </p>
 
-<SeriesRoomba />
+<Series />

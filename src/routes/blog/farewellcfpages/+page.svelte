@@ -1,5 +1,6 @@
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
+  import Series from "$lib/Series.svelte";
   import bg from "./bg.avif";
 </script>
 
@@ -43,3 +44,5 @@
 <h2>2025 update</h2>
 <p>GitHub Pages got blocked too :/</p>
 <p>I've switched to another static hosting provider. It actually wasn't in my original list.</p>
+
+<Series />

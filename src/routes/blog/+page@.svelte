@@ -18,6 +18,7 @@
 {/snippet}
 
 <div class="flex flex-wrap flex-grow gap-2 p-6">
+  {@render blog("lowselfconfidence", "I can't go faster than static platforms")}
   {@render blog("imisscfpages", "A Cloudflare-Shaped Hole")}
   {@render blog("roombamotors", "Roombas, motors, and noise")}
   {@render blog("slamffusion", "SLAMffusion")}

@@ -1,6 +1,6 @@
 <script lang="ts">
   import BlogHeader from "$lib/BlogHeader.svelte";
-  import SeriesRoomba from "$lib/SeriesRoomba.svelte";
+  import Series from "$lib/Series.svelte";
   const bumpers = {
     Left: 39.6,
     "Front Left": 18,
@@ -84,4 +84,4 @@
     helps with choosing how to bounce off of walls.
   </li>
 </ul>
-<SeriesRoomba />
+<Series />

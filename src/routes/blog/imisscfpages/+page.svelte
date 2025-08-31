@@ -1,5 +1,6 @@
 <script lang="ts">
   import BlogHeader from "$lib/BlogHeader.svelte";
+  import Series from "$lib/Series.svelte";
   import bg from "./bg.avif";
 
   const colors: Record<string, [string, string]> = {
@@ -40,8 +41,8 @@
   Methodology: time to serve "hi" (NOT STATIC) from the nearest free server to my home network.
 </p>
 <p>
-  Why is Cloudflare Pages blocked? Because it became a common place to host "games", so now I have
-  to find more niche places.
+  Why is Cloudflare blocked? Because it became a common place to host "games", so now I have to find
+  more niche places.
 </p>
 <p>Why do I need servers?</p>
 <ul>
@@ -100,14 +101,14 @@
 </p>
 
 <h2>Baselines (currently blocked)</h2>
+<h3>Cloudflare Workers</h3>
+<p>80-100ms.</p>
 <h3>Vercel</h3>
 <p>
   Vercel's the fastest... just for static assets? Their home page is 3x faster than Cloudflare's,
   but their <strong>Functions</strong> take 160-180 ms by default and 150-170ms when the region is manually
   configured.
 </p>
-<h3>Cloudflare Workers</h3>
-<p>80-100ms.</p>
 
 <h2>Conclusion</h2>
 <p>
@@ -143,3 +144,5 @@
   better-than-Workers latency, all unblocked, all free, and diverse in function. I'm excited to use
   them.
 </p>
+
+<Series />

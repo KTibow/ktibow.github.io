@@ -1,7 +1,7 @@
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import CaptionedImage from "$lib/CaptionedImage.svelte";
-  import SeriesRoomba from "$lib/SeriesRoomba.svelte";
+  import Series from "$lib/Series.svelte";
   import oidock from "./oidock.png";
   import oidockmeasured from "./oidockmeasured.png";
 </script>
@@ -46,4 +46,4 @@
   One more thing: the "left"/"right" receivers don't work in Passive. The Roomba has to be docking
   or the mode has to be safe or higher.
 </p>
-<SeriesRoomba />
+<Series />
