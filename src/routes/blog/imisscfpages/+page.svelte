@@ -123,6 +123,7 @@
       class="h-12 flex items-center pl-2 rounded-lg overflow-ellipsis whitespace-nowrap overflow-hidden"
     >
       {source}
+      <span class="text-transparent text-[0px]">{latency}ms average latency</span>
     </div>
   {/each}
 </div>
