@@ -75,7 +75,7 @@
     {
       name: "Fastly Serverless",
       hostname: "⚠️",
-      speed: "⚠️",
+      speed: "✅",
       freeTier: "✅",
       workarounds: workaroundArchetypes.computeOnlyLimited,
     },
