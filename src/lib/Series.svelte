@@ -9,7 +9,12 @@
       "/blog/roombamotors/",
       "/blog/humanresearch/roombadock/",
     ],
-    ["/blog/farewellcfpages/", "/blog/imisscfpages/", "/blog/lowselfconfidence/"],
+    [
+      "/blog/farewellcfpages/",
+      "/blog/imisscfpages/",
+      "/blog/lowselfconfidence/",
+      "/blog/butexperience/",
+    ],
   ];
 
   const thisSeries = $derived(series.find((s) => s.includes(page.url.pathname))!);
