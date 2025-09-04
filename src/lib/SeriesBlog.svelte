@@ -6,6 +6,7 @@
     semimicroblog: { url: "/blog/humanresearch/", description: "human research" },
     microblog: { url: "https://x.com/anametolast", description: "X" },
     ultramicroblog: { url: "/ultramicroblog/", description: "small thoughts" },
+    projects: { url: "/expertise/", description: "past work" },
   };
 </script>
 

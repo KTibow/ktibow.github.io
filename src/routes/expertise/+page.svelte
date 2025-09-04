@@ -1,4 +1,6 @@
 <script lang="ts">
+  import SeriesBlog from "$lib/SeriesBlog.svelte";
+
   let platform = "All";
 
   const prevProjects = [
@@ -255,6 +257,7 @@
   <meta name="description" content="KTibow's resume - links to past work" />
 </svelte:head>
 
+<SeriesBlog />
 <article class="prose sm:self-center mt-6">
   <h1 class="flex justify-between">
     Past Work
@@ -270,6 +273,7 @@
     This is a list of a bunch of my projects. I've gotten better over time, but I always tried to
     make these good quality.
   </p>
+  <p>Right now this list isn't the most up to date compared to my GitHub.</p>
 </article>
 <div class="flex flex-wrap gap-2 m-6">
   {#each prevProjects.filter( (project) => (platform == "All" ? true : (project.platform || []).includes(platform)), ) as { name, desc, category, text, url }}
