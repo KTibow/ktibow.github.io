@@ -74,9 +74,13 @@
     display: flex;
     gap: 0.5rem;
     margin: auto;
+    @media (width < 37.5rem) {
+      flex-direction: column;
+    }
     > * {
       display: flex;
       align-items: center;
+      justify-content: center;
       height: 6rem;
       padding-inline: 1.5rem;
       font-size: 1.5rem;
@@ -92,13 +96,25 @@
       }
       transition: all 0.1s;
       border-radius: 0.5rem;
-      &:first-child {
-        border-start-start-radius: 1rem;
-        border-end-start-radius: 1rem;
+      @media (width >= 37.5rem) {
+        &:first-child {
+          border-start-start-radius: 1rem;
+          border-end-start-radius: 1rem;
+        }
+        &:last-child {
+          border-start-end-radius: 1rem;
+          border-end-end-radius: 1rem;
+        }
       }
-      &:last-child {
-        border-start-end-radius: 1rem;
-        border-end-end-radius: 1rem;
+      @media (width < 37.5rem) {
+        &:first-child {
+          border-start-start-radius: 1rem;
+          border-start-end-radius: 1rem;
+        }
+        &:last-child {
+          border-end-start-radius: 1rem;
+          border-end-end-radius: 1rem;
+        }
       }
     }
   }
