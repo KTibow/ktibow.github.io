@@ -67,4 +67,7 @@
   <li>
     <a href="./roombadock/">Roomba dock IR</a>
   </li>
+  <li>
+    <a href="./oauthmintrust/">Minimally trusting the server and client in OAuth 1</a>
+  </li>
 </ul>

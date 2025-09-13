@@ -1,0 +1,60 @@
+<script>
+  import BlogHeader from "$lib/BlogHeader.svelte";
+</script>
+
+<BlogHeader title="Minimally trusting the server and client in OAuth 1" />
+<p>If you model who's trusted with what in OAuth 1:</p>
+<p><strong>Any environment</strong></p>
+<ul>
+  <li>Can safely transport a presigned OAuth 1 request</li>
+  <li>Can safely forward traffic</li>
+</ul>
+<p><strong>Only dev-trusted environments (server)</strong></p>
+<ul>
+  <li>Can safely have an app secret</li>
+  <li>
+    Can safely perform OAuth 1 signing (OAuth 1 requires an app secret, unlike OAuth 2 has PKCE (a
+    process to get auth for clientside use that can be started from the client) so doesn't)
+  </li>
+</ul>
+<p><strong>Only user-trusted environments (ideally just client)</strong></p>
+<ul>
+  <li>Can view API responses</li>
+</ul>
+<p>
+  it's clear that it's designed for server-side applications. You can't fire off a clientside auth
+  request since you can't sign requests from the client, you can't do it with a server without
+  trusting the server with your responses, and you can't make a traffic forwarder that can sign the
+  request without being able to see the response because TLS is symmetric post-handshake.
+</p>
+<p>
+  However, you <em>can</em> sign a request on the server. You can just spin up a microservice dedicated
+  to signing requests. Remember, signed requests can be safely publicized.
+</p>
+<p>
+  From there it's up to the client to send it from there. They could connect directly if CORS is
+  allowed, or if not, use a traffic forwarder like epoxy-server or something else Wisplike.
+</p>
+<!-- <p>
+  One of OAuth 1's most problematic parts is that an app secret is part of signing every request.
+  This makes sense if you're a social media analytics tool and you don't want others using your rate
+  limits on your dime, but it's really problematic for other purposes. What if I just want to make
+  an app that gets quick links from Schoology? It should be able to work without a server. And yet
+  every request must be backed by a secret.
+</p>
+<p>
+  So you're in this situation where the app secret can only be in dev-trusted areas and responses
+  can only go to user-trusted environments. A reverse proxy wouldn't be user-trusted. CORS or a Wisp
+  proxy (forwards requests without terminating TLS) would put the app secret in a dev-untrusted
+  environment. You can't make a modded Wisp proxy that signs requests without being able to read
+  responses because TLS is symmetric (outside of the handshake). Nothing seems to work.
+</p>
+<p>
+  But then you remember that while OAuth 1 means no PKCE, it also means options for non-plaintext
+  authorization. We must sign our requests inside a dev-trusted environment, but we don't have to
+  fire our requests in a dev-trusted environment; we can fire them in a user-trusted environment.
+</p>
+<p>
+  All that's to say we can just host a signing service (and if no CORS, a Wisp proxy). Then users
+  just need to trust devs with their request and devs don't need to trust the user with anything.
+</p> -->
