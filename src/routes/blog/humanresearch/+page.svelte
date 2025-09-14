@@ -70,4 +70,7 @@
   <li>
     <a href="./oauthmintrust/">Minimally trusting the server and client in OAuth 1</a>
   </li>
+  <li>
+    <a href="./httpsoverhttps/">HTTPS over HTTP(S) is not possible</a>
+  </li>
 </ul>
