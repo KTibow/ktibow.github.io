@@ -20,7 +20,7 @@
       >Monoserve</a
     >,
     <a href="https://github.com/KTibow/monoidentity">Monoidentity</a>, and
-    <a href="https://github.com/KTibow/school-districts">school-districts</a>.
+    <a href="https://github.com/KTibow/school-districts">school-districts</a>).
   </p>
   <p>
     June 2025-August 2025: A failed attempt to rewrite Tangent (I learned that it makes sense to
