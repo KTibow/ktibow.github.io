@@ -22,6 +22,7 @@
 {/snippet}
 
 <div class="flex flex-wrap flex-grow gap-2 p-6">
+  {@render blog("roombadockillustrated", "Roomba dock IR, illustrated")}
   {@render blog("httpsoverhttps", "HTTPS over HTTP(S) is not possible")}
   {@render blog("oauthmintrust", "Minimally trusting the server and client in OAuth 1")}
   {@render blog("roombadock", "Roomba dock IR")}

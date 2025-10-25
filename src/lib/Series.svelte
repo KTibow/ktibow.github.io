@@ -8,6 +8,7 @@
       "/blog/slamffusion/",
       "/blog/roombamotors/",
       "/blog/humanresearch/roombadock/",
+      "/blog/humanresearch/roombadockillustrated/",
     ],
     [
       "/blog/farewellcfpages/",
