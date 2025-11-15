@@ -1,0 +1,65 @@
+<script>
+  import BlogHeader from "$lib/BlogHeader.svelte";
+  import CaptionedImage from "$lib/CaptionedImage.svelte";
+  import CaptionedMedia from "$lib/CaptionedMedia.svelte";
+  import bg from "./bg.avif";
+  import ref1 from "./ref1.png";
+  import ref2 from "./ref2.mp4";
+</script>
+
+<BlogHeader title="just one more prompt bro" {bg} />
+<p>But what if you actually did that? What if you actually just kept prompting?</p>
+<p>
+  Well you won't be able to write any web browsers or TLS implementations, but you can get much
+  further than you think, as long as <em>there is a sense of direction</em>. Two examples from M3
+  Svelte:
+</p>
+
+<h2>Making a nice looking ripple</h2>
+<p>
+  Material 3 has an interesting ripple. It's not flat like previous versions or shiny like plastic -
+  it's closer to how water ripples when you touch it (see <a
+    href="https://youtu.be/atA4fhDnhlQ?t=54">this clip</a
+  >) thanks to its dithering. I wanted to implement this with SVG, but I had no idea where to start.
+  So in November 2024, I asked AI (some GPT I think) "make a ripple in svg that goes from complete
+  opacity with no noise for a bit to a noisy fade to complete transparency".
+</p>
+<p>
+  Of course its first try didn't work. Same goes for its second, and its third, and so on. But I
+  kept telling it how its render failed, and kept telling it to try something else. It had many
+  options to try - SVG is a large spec.
+</p>
+<p>
+  That's how I found out about <code>&lt;feDisplacementMap&gt;</code>. It shifts pixels around, and
+  combined with <code>&lt;feTurbulence&gt;</code>, you get this great ripple effect:
+</p>
+<div class="flex flex-col items-start">
+  <CaptionedImage src={ref1} view="dark" alt="Really, used in M3 Svelte" />
+</div>
+
+<h2>Making automatically transitioning paths</h2>
+<p>
+  One of SVG's limitations is that 99.99% of the time, you can't morph one path to another. Most
+  folks pull in something like <a href="https://github.com/veltman/flubber">flubber</a>, which
+  doesn't use the browser's native path interpolation and weighs 19kB (post-compression!)
+</p>
+<p>
+  Another approach is precalculation, doing something like "generate the path at 0.1% and 99.9%",
+  but then you have to run this for every single pair of paths you want to animate between.
+</p>
+<p>
+  So in November 2025, I uploaded the Material 3 shape library and my SVGs from there to Claude
+  (since I'm on Pro, it has a computer), and asked it to make something better. You can view the
+  chat <a href="https://claude.ai/share/4e2a75bd-bb79-414c-8419-d0f11a1b5713">here</a>. Of course,
+  this wasn't a single shot - I first came up with the idea of converting every shape to a
+  polyline-like path with a fixed number and constant arrangement of points to allow universal
+  morphing, then led it to represent every shape in this format, then ran a smaller scale trial
+  comparing this to Flubber and debugged a few bugs, then ran a larger scale trial on all shapes,
+  guiding it to improve accuracy while keeping animation working and file size low.
+</p>
+<p>Similarly, I got this working!</p>
+<div class="flex flex-col items-start">
+  <CaptionedMedia alt="Shipped; this is the demo from ktibow.github.io/m3-svelte/" dark>
+    <video autoplay loop muted playsinline src={ref2}></video>
+  </CaptionedMedia>
+</div>
