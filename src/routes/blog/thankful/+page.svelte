@@ -46,6 +46,9 @@
   <p>GitHub</p>
   <p>"Everything Apps"</p>
   <p>YC and HN</p>
+  <p>Linux (kernel)</p>
+  <p>Debian, Ubuntu, Fedora</p>
+  <p>GNU</p>
   <p>GNOME</p>
   <p>Qualcomm</p>
   <p>Intel</p>
