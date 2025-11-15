@@ -97,6 +97,13 @@
   <p>Prettier</p>
   <p>Tailwind (to some degree)</p>
   <p>Firefox</p>
+  <p>Ian's Shoelace Site</p>
+  <p>llama.cpp</p>
+  <p>Wikipedia</p>
+  <p>Brave</p>
+  <p>Exa</p>
+  <p>uBlock</p>
+  <p>SVG</p>
 </div>
 <p>
   That's what I could write down for now. Don't try to derive anything deep from this list, I'm just
