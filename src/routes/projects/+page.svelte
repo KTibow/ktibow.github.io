@@ -94,6 +94,7 @@
     <a href="https://github.com/KTibow/excalimath">modified font</a>.
   </p>
   <p>Contributions to Rolldown/OXC (you can search them on GitHub).</p>
+  <p>Some frontend work for CrofAI (unreleased as of writing).</p>
   <h3>2024</h3>
   <img src={year2024} alt="2024 projects timeline" class="rounded-lg" />
   <p>
@@ -128,6 +129,7 @@
     described as "more helpful than a majority of forumers".
   </p>
   <p>Contributions to Lawnicons (you can search them on GitHub).</p>
+  <p>Some frontend work for ReVanced, although didn't get far due to politics.</p>
   <h3>2023</h3>
   <img src={year2023} alt="2023 projects timeline" class="rounded-lg" />
   <p>
@@ -150,6 +152,7 @@
     <a href="https://github.com/KTibow/home-assistant-theme">home-assistant-theme</a>, a site that
     generates Material 3-style themes for HA.
   </p>
+  <p>Some frontend work for IsThisARat.</p>
   <h3>2022</h3>
   <img src={year2022} alt="2022 projects timeline" class="rounded-lg" />
   <p>
