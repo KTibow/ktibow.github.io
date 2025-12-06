@@ -1,4 +1,4 @@
-import fg from "fast-glob";
+import { glob } from "tinyglobby";
 import { mkdir, writeFile } from "node:fs/promises";
 import { defineConfig } from "vite";
 import tailwindcss from "@tailwindcss/vite";
@@ -8,13 +8,19 @@ import { sveltekit } from "@sveltejs/kit/vite";
 const sitemapPlugin = {
   name: "sitemap-plugin",
   async closeBundle() {
-    const blogs = await fg(["src/routes/blog/**/+page.svelte"]);
-    const pages = [...blogs].map(
-      (path) => `https://ktibow.github.io/${path.split("/").slice(2, -1).join("/")}/`,
+    const pages = [];
+    (await glob(["src/routes/blog/**/+page.svelte"])).forEach((path) =>
+      pages.push(`https://ktibow.github.io/${path.split("/").slice(2, -1).join("/")}/`),
     );
+    (await glob(["src/routes/**/humanresearch/**/+page.svelte"])).forEach((path) => {
+      const parts = path.split("/");
+      pages.push(`https://ktibow.github.io/blog/humanresearch/${parts.at(-2)}/`);
+    });
     pages.push("https://ktibow.github.io/");
     pages.push("https://ktibow.github.io/blog/");
-    pages.push("https://ktibow.github.io/expertise/");
+    pages.push("https://ktibow.github.io/blog/humanresearch/");
+    pages.push("https://ktibow.github.io/ultramicroblog/");
+    pages.push("https://ktibow.github.io/projects/");
     try {
       await mkdir("build");
     } catch {}
