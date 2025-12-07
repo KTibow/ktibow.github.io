@@ -33,10 +33,10 @@
 
     border-radius: 9999px;
     padding: 0 1rem;
-    background-color: rgb(var(--m3-scheme-surface-container-low));
+    background-color: var(--m3c-surface-container-low);
     &.selected {
-      background-color: rgb(var(--m3-scheme-secondary-container));
-      color: rgb(var(--m3-scheme-on-secondary-container));
+      background-color: var(--m3c-secondary-container);
+      color: var(--m3c-on-secondary-container);
     }
   }
 </style>

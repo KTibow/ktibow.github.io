@@ -118,9 +118,9 @@
   }
 
   /* .gradient {
-    background: linear-gradient(transparent, rgb(var(--m3-scheme-surface-container-low) / 0.8));
+    background: linear-gradient(transparent, oklab(from var(--m3c-surface-container-low) l a b / 0.8));
     &.light {
-      background: linear-gradient(transparent, rgb(var(--m3-scheme-inverse-surface) / 0.8));
+      background: linear-gradient(transparent, oklab(from var(--m3c-inverse-surface) l a b / 0.8));
     }
   } */
 </style>

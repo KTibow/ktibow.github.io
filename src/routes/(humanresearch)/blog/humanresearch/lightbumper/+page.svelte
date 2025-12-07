@@ -43,7 +43,7 @@
   you seen their positions?
 </p>
 <svg viewBox="0 0 100 50">
-  <path d="M 0 50 A 50 50 0 0 1 100 50" fill="rgb(var(--m3-scheme-primary-container))" />
+  <path d="M 0 50 A 50 50 0 0 1 100 50" fill="var(--m3c-primary-container)" />
   {#each Object.entries(bumpers) as [name, angle]}
     {@const x1 = 50 + 45 * Math.cos((-angle * Math.PI) / 180 - Math.PI * 0.5)}
     {@const x2 = 50 + 49 * Math.cos((-angle * Math.PI) / 180 - Math.PI * 0.5)}
@@ -56,7 +56,7 @@
       {x2}
       {y1}
       {y2}
-      stroke="rgb(var(--m3-scheme-on-primary-container))"
+      stroke="var(--m3c-on-primary-container)"
       stroke-width="2"
       stroke-linecap="round"
       onmouseover={() => (hoveredBumper = name as Bumper)}

@@ -4,18 +4,12 @@
   import bg from "./bg.avif";
 
   const colors: Record<string, [string, string]> = {
-    vps: [
-      "rgb(var(--m3-scheme-primary-container-subtle))",
-      "rgb(var(--m3-scheme-on-primary-container-subtle))",
-    ],
-    container: [
-      "rgb(var(--m3-scheme-primary-container))",
-      "rgb(var(--m3-scheme-on-primary-container))",
-    ],
-    serverless: ["rgb(var(--m3-scheme-primary))", "rgb(var(--m3-scheme-on-primary))"],
+    vps: ["var(--m3c-primary-container-subtle)", "var(--m3c-on-primary-container-subtle)"],
+    container: ["var(--m3c-primary-container)", "var(--m3c-on-primary-container)"],
+    serverless: ["var(--m3c-primary)", "var(--m3c-on-primary)"],
     "serverless blocked": [
-      "rgb(var(--m3-scheme-inverse-surface))",
-      "rgb(var(--m3-scheme-inverse-on-surface) / 0.5)",
+      "var(--m3c-inverse-surface)",
+      "oklab(from var(--m3c-inverse-on-surface) l a b / 0.5)",
     ],
   };
   const barChart: [string, number, [string, string]][] = [

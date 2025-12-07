@@ -51,7 +51,7 @@
     flex: 1 1 16rem;
     border-radius: 1rem;
     padding: 1rem;
-    background-color: rgb(var(--m3-scheme-surface-container-low));
+    background-color: var(--m3c-surface-container-low);
     position: relative;
   }
 </style>

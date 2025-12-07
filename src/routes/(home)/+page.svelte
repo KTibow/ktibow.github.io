@@ -88,11 +88,11 @@
         width: 3rem;
         height: 3rem;
       }
-      background-color: rgb(var(--m3-scheme-background));
-      color: rgb(var(--m3-scheme-on-background));
+      background-color: var(--m3c-background);
+      color: var(--m3c-on-background);
       &:hover {
-        background-color: rgb(var(--m3-scheme-primary-container));
-        color: rgb(var(--m3-scheme-on-primary-container));
+        background-color: var(--m3c-primary-container);
+        color: var(--m3c-on-primary-container);
       }
       transition: all 0.1s;
       border-radius: 0.5rem;
