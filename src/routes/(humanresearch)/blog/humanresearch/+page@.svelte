@@ -22,6 +22,7 @@
 {/snippet}
 
 <div class="flex flex-wrap flex-grow gap-2 p-6">
+  {@render blog("crosgallery", "Internals of the CrOS gallery")}
   {@render blog("geoxorkanro", "Geoxor-Kanro beef")}
   {@render blog("roombadockillustrated", "Roomba dock IR, illustrated")}
   {@render blog("httpsoverhttps", "HTTPS over HTTP(S) is not possible")}
