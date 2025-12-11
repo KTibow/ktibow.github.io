@@ -102,135 +102,145 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="200 0 1000 1000" fill="white">
   <g fill="none">
     <path
-      stroke="#4caf50"
-      stroke-width="254.5473"
-      d="M265 425.4835c435 0 435-115.2263 870-115.2263"
+      stroke="#9e9e9e"
+      stroke-width="133.9918"
+      d="M265 553.4568c435 0 435-169.5062 870-169.5062"
       opacity=".4"
     />
     <path
-      stroke="#81c784"
-      stroke-width="161.1523"
-      d="M265 112.4074c435 0 435-10 870-10"
+      stroke="#4caf50"
+      stroke-width="128.5597"
+      d="M265 179.3827c435 0 435-20.8642 870-20.8642"
+      opacity=".4"
+    />
+    <path
+      stroke="#9e9e9e"
+      stroke-width="123.1276"
+      d="M265 682.0165c435 0 435 30.6172 870 30.6172"
       opacity=".4"
     />
     <path
       stroke="#ff9800"
-      stroke-width="120.8642"
-      d="M265 836.461c435 0 435-24.5063 870-24.5063"
+      stroke-width="119.5062"
+      d="M265 896.6255c435 0 435-62.6749 870-62.6749"
       opacity=".4"
     />
     <path
-      stroke="#4caf50"
-      stroke-width="115.3704"
-      d="M265 610.4424c435 0 435 83.395 870 83.395"
+      stroke="#e0e0e0"
+      stroke-width="90.535"
+      d="M265 431.1934c435 0 435 174.609 870 174.609"
       opacity=".4"
     />
     <path
-      stroke="#81c784"
-      stroke-width="95.2263"
-      d="M265 240.5967c435 0 435 347.9424 870 347.9424"
+      stroke="#e0e0e0"
+      stroke-width="90.535"
+      d="M265 340.6584c435 0 435-68.9712 870-68.9712"
       opacity=".4"
     />
+    <path stroke="#81c784" stroke-width="74.2387" d="M265 57.1193h870" opacity=".4" />
     <path
       stroke="#ff9800"
-      stroke-width="75.0823"
-      d="M265 738.4877c435 0 435-261.5844 870-261.5844"
-      opacity=".4"
-    />
-    <path
-      stroke="#9e9e9e"
-      stroke-width="23.8066"
-      d="M265 952.6029c435 0 435-60.9877 870-60.9877"
-      opacity=".4"
-    />
-    <path
-      stroke="#9e9e9e"
-      stroke-width="10.9877"
-      d="M265 935.2058c435 0 435-409.7737 870-409.7737"
+      stroke-width="74.2387"
+      d="M265 799.753c435 0 435-311.6872 870-311.6872"
       opacity=".4"
     />
     <path
       stroke="#4caf50"
-      stroke-width="10.9877"
-      d="M265 673.6214c435 0 435 249.0535 870 249.0535"
-      opacity=".4"
-    />
-    <path
-      stroke="#e0e0e0"
-      stroke-width="7.3251"
-      d="M265 916.0494c435 0 435-40 870-40"
-      opacity=".4"
-    />
-    <path
-      stroke="#e0e0e0"
-      stroke-width="5.4938"
-      d="M265 909.64c435 0 435-392.4486 870-392.4486"
+      stroke-width="14.4856"
+      d="M265 250.9053c435 0 435 302.3869 870 302.3869"
       opacity=".4"
     />
     <path
       stroke="#81c784"
-      stroke-width="3.6626"
-      d="M265 978.1687c435 0 435-72.819 870-72.819"
+      stroke-width="10.8642"
+      d="M265 99.6708c435 0 435 440.9465 870 440.9465"
       opacity=".4"
     />
     <path
       stroke="#9e9e9e"
-      stroke-width="1.8313"
-      d="M265 965.4218c435 0 435-36.3374 870-36.3374"
+      stroke-width="9.0535"
+      d="M265 748.107c435 0 435 167.3663 870 167.3663"
+      opacity=".4"
+    />
+    <path
+      stroke="#4caf50"
+      stroke-width="3.6214"
+      d="M265 259.9588c435 0 435 649.177 870 649.177"
+      opacity=".4"
+    />
+    <path
+      stroke="#e0e0e0"
+      stroke-width="1.8107"
+      d="M265 272.6749c435 0 435-48.9712 870-48.9712"
+      opacity=".4"
+    />
+    <path
+      stroke="#e0e0e0"
+      stroke-width="1.8107"
+      d="M265 979.0947c435 0 435-82.675 870-82.675"
       opacity=".4"
     />
     <path
       stroke="#81c784"
-      stroke-width="1.8313"
-      d="M265 690.0309c435 0 435-251.5844 870-251.5844"
+      stroke-width="1.8107"
+      d="M265 967.284c435 0 435-72.675 870-72.675"
       opacity=".4"
     />
-    <path stroke="#81c784" stroke-width="1.8313" d="M265 20.9156h870" opacity=".4" />
+    <path
+      stroke="#e0e0e0"
+      stroke-width="1.8107"
+      d="M265 284.4856c435 0 435-58.9712 870-58.9712"
+      opacity=".4"
+    />
   </g>
-  <path fill="#2196f3" d="M1135 20h15v510.9259h-15z" />
-  <path fill="#81c784" d="M250 20h15v1.8313h-15z" />
-  <path fill="#81c784" d="M250 31.8313h15v256.3786h-15z" />
-  <path fill="#81c784" d="M250 976.3374h15V980h-15z" />
-  <path fill="#81c784" d="M250 689.1152h15v1.8313h-15z" />
-  <path fill="#4caf50" d="M250 298.2099h15v380.9053h-15z" />
-  <path fill="#64b5f6" d="M1135 917.1811h15V930h-15z" />
-  <path fill="#2196f3" d="M1135 540.9259h15V907.181h-15z" />
-  <path fill="#e0e0e0" d="M250 906.893h15v12.8189h-15z" />
-  <path fill="#9e9e9e" d="M250 929.7119h15v36.6255h-15z" />
-  <path fill="#ff9800" d="M250 700.9465h15V896.893h-15z" />
+  <path fill="#2196f3" d="M1135 20h15v505.1852h-15z" />
+  <path fill="#81c784" d="M250 20h15v85.1029h-15z" />
+  <path fill="#81c784" d="M250 966.3786h15v1.8107h-15z" />
+  <path fill="#4caf50" d="M250 115.1029h15v146.6667h-15z" />
+  <path fill="#64b5f6" d="M1135 907.3251h15V920h-15z" />
+  <path fill="#2196f3" d="M1135 535.1852h15v362.1399h-15z" />
+  <path fill="#e0e0e0" d="M250 283.5802h15v1.8107h-15z" />
+  <path fill="#e0e0e0" d="M250 295.3909h15v181.07h-15z" />
+  <path fill="#e0e0e0" d="M250 978.1893h15V980h-15z" />
+  <path fill="#e0e0e0" d="M250 271.7695h15v1.8107h-15z" />
+  <path fill="#9e9e9e" d="M250 486.4609h15v266.1728h-15z" />
+  <path fill="#ff9800" d="M250 762.6337h15v193.7449h-15z" />
   <g font-family="sans-serif" font-size="11">
-    <text x="271" y="20.9156" dy=".35em"
-      >Accel - MS 1<tspan fill-opacity=".7">&nbsp;(1)</tspan></text
+    <text x="271" y="62.5514" dy=".35em"
+      >Accel - MS 1<tspan fill-opacity=".7">&nbsp;(47)</tspan></text
     >
-    <text x="271" y="160.0206" dy=".35em"
-      >Accel - MS 2<tspan fill-opacity=".7">&nbsp;(140)</tspan></text
+    <text x="271" y="188.4362" dy=".35em"
+      >Accel - My MS<tspan fill-opacity=".7">&nbsp;(81)</tspan></text
     >
-    <text x="271" y="488.6626" dy=".35em"
-      >Accel - My MS<tspan fill-opacity=".7">&nbsp;(208)</tspan></text
+    <text x="271" y="272.6749" dy=".35em"
+      >Non-accel - MS 2<tspan fill-opacity=".7">&nbsp;(1)</tspan></text
     >
-    <text x="271" y="690.0309" dy=".35em"
-      >Accel - MS 3<tspan fill-opacity=".7">&nbsp;(1)</tspan></text
+    <text x="271" y="284.4856" dy=".35em"
+      >Non-accel - MS 3<tspan fill-opacity=".7">&nbsp;(1)</tspan></text
     >
-    <text x="271" y="798.9198" dy=".35em"
-      >Unknown/Transfer<tspan fill-opacity=".7">&nbsp;(107)</tspan></text
+    <text x="271" y="385.9259" dy=".35em"
+      >Non-accel - MS 1<tspan fill-opacity=".7">&nbsp;(100)</tspan></text
     >
-    <text x="271" y="913.3025" dy=".35em"
-      >Non-accel - MS 2<tspan fill-opacity=".7">&nbsp;(7)</tspan></text
+    <text x="271" y="619.5473" dy=".35em"
+      >Non-accel - My MS<tspan fill-opacity=".7">&nbsp;(147)</tspan></text
     >
-    <text x="271" y="948.0247" dy=".35em"
-      >Non-accel - My MS<tspan fill-opacity=".7">&nbsp;(20)</tspan></text
+    <text x="271" y="967.284" dy=".35em"
+      >Accel - MS 4<tspan fill-opacity=".7">&nbsp;(1)</tspan></text
     >
-    <text x="271" y="978.1687" dy=".35em"
-      >Accel - MS 4<tspan fill-opacity=".7">&nbsp;(2)</tspan></text
+    <text x="271" y="979.0947" dy=".35em"
+      >Non-accel - MS 4<tspan fill-opacity=".7">&nbsp;(1)</tspan></text
     >
-    <text x="1129" y="275.463" dy=".35em" text-anchor="end"
+    <text x="1129" y="272.5926" dy=".35em" text-anchor="end"
       >AP - My HS<tspan fill-opacity=".7">&nbsp;(279)</tspan></text
     >
-    <text x="1129" y="724.0535" dy=".35em" text-anchor="end"
+    <text x="1129" y="716.2551" dy=".35em" text-anchor="end"
       >Non-AP - My HS<tspan fill-opacity=".7">&nbsp;(200)</tspan></text
     >
-    <text x="1129" y="923.5905" dy=".35em" text-anchor="end"
+    <text x="1129" y="913.6626" dy=".35em" text-anchor="end"
       >Non-AP - Other HS<tspan fill-opacity=".7">&nbsp;(7)</tspan></text
+    >
+    <text x="271" y="859.5062" dy=".35em"
+      >Unknown/Transfer<tspan fill-opacity=".7">&nbsp;(107)</tspan></text
     >
   </g>
 </svg>
