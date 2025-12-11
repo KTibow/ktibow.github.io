@@ -13,7 +13,7 @@
 
 <div class="relative">
   <aside
-    class="p-6 rounded-2xl border-current/50 border xl:absolute xl:ml-2 xl:left-full xl:w-[min(65ch,calc(50dvw-32.5ch))]"
+    class="p-6 rounded-2xl border-current/50 border xl:absolute xl:ml-2 xl:left-full xl:w-[min(65ch,calc(50dvw-33ch))]"
   >
     <h2 class="mt-0">Flawed methodology?</h2>
     <p>
