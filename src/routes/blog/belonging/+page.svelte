@@ -4,13 +4,6 @@
 </script>
 
 <BlogHeader {bg} title="On belonging" />
-<p>
-  I recently read Alvin Chang's article <a href="https://pudding.cool/2025/02/middle-school/"
-    >The Middle Ages</a
-  >. I strongly agree that your sense of belonging depends on your environment, but I believe
-  there's nothing inherently bad about middle schools.
-</p>
-
 <div class="relative">
   <aside
     class="p-6 rounded-2xl border-current/50 border xl:absolute xl:ml-2 xl:left-full xl:w-[min(65ch,calc(50dvw-33ch))]"
@@ -21,7 +14,7 @@
       where they really feel what it's like to belong. Looking back, they might say that they didn't
       really belong back then. The opposite, a really bad year, can also have an impact (that's why
       I'm writing this). But the nature of the binary, singular question "do you feel like you
-      belong?" that Panorama asked doesn't capture this at all.
+      belong?" that Alvin uses doesn't capture this at all.
     </p>
     <p class="mb-0">
       The definition of belonging might change from year to year or student to student too. Does it
@@ -31,10 +24,13 @@
   </aside>
 </div>
 <p>
-  There are a few models of middle schools, and not all are bad for belonging. Some from other
-  countries have stable cohorts, some even pinning the teacher! I personally went to a school that
-  had a gifted program (which I'll refer to as acceleration), which had a side effect of giving me a
-  mostly stable cohort.
+  I recently read Alvin Chang's article <a href="https://pudding.cool/2025/02/middle-school/"
+    >The Middle Ages</a
+  >. I strongly agree that your sense of belonging depends on your environment, but I believe
+  there's nothing <em>inherently</em> bad about middle schools. Not all models are bad for belonging!
+  Some from other countries have stable cohorts, some even pinning the teacher! I personally went to
+  a school that had a gifted program (which I'll refer to as acceleration), which had a side effect of
+  giving me a mostly stable cohort.
 </p>
 
 <table class="data-table">
@@ -248,7 +244,8 @@
 
 <p>
   What about more systemic things, like the number of different classes, and the number of teachers
-  and sections per class? The ways these change from <span
+  and sections per class? Can these explain why I don't share many classes with anyone? Well, the
+  ways these change from <span
     class="inline-flex items-center gap-1 text-[color-mix(in_oklab,var(--m3c-primary),var(--m3c-primary-container-subtle)_20%)]"
   >
     <span class="w-3 h-3 rounded-full bg-primary-container-subtle"></span>
