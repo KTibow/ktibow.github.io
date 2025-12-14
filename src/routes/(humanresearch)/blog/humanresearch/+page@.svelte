@@ -22,6 +22,7 @@
 {/snippet}
 
 <div class="flex flex-wrap flex-grow gap-2 p-6">
+  {@render blog("ononprimary", "Why M3 Svelte has on on primary")}
   {@render blog("crosgallery", "Internals of the CrOS gallery")}
   {@render blog("geoxorkanro", "Geoxor-Kanro beef")}
   {@render blog("roombadockillustrated", "Roomba dock IR, illustrated")}
