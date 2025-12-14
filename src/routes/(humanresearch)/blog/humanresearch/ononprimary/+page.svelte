@@ -37,10 +37,11 @@
   )} and {@render color("#000000", "on primary container")} (monochrome), or even {@render color(
     "#aa9dc8",
     "primary container",
-  )} and {@render color("#000000", "on primary container")} (high contrast). When placed on {@render color(
-    "#453a5f",
-    "on primary",
-  )}, this makes the icon literally invisible or at least ugly.
+  )} and {@render color("#000000", "on primary container")} (high contrast). So when you use {@render color(
+    "#000000",
+    "on primary container",
+  )} as the foreground against {@render color("#453a5f", "on primary")}, this makes the icon
+  literally invisible or at least ugly.
 </p>
 <div class="flex flex-col items-start gap-2">
   <CaptionedImage src={fromsvelte} alt="Invisible checkmark in M3 Svelte" view="dark" />
