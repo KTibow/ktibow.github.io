@@ -18,6 +18,7 @@
 {/snippet}
 
 <div class="flex flex-wrap flex-grow gap-2 p-6">
+  {@render blog("mixinsbullish", "I'm bullish on CSS mixins")}
   {@render blog("belonging", "On belonging")}
   {@render blog("m3svelte6", "M3 Svelte 6")}
   {@render blog("gemini3", "Gemini 3: you need to actually make the hype transfer")}
