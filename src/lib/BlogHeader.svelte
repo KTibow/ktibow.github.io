@@ -8,14 +8,14 @@
 
 {#if bg}
   <img src={bg} alt="" />
-  <div class="shadow"></div>
+  <div class="img-shadow"></div>
 {/if}
 
 <h1>{title}</h1>
 
 <style>
   img,
-  .shadow {
+  .img-shadow {
     position: absolute;
     inset: 0;
     margin: 0;
@@ -27,7 +27,7 @@
     object-fit: cover;
     object-position: top;
   }
-  .shadow {
+  .img-shadow {
     content: "";
     background: linear-gradient(
       to bottom,
