@@ -3,6 +3,8 @@
 @theme {
   --font-sans: Inter, Roboto, Noto Sans, system-ui, sans-serif;
   --font-wb: Workbench, system-ui;
+}
+@theme inline {
   --color-background: var(--m3c-background);
   --color-on-background: var(--m3c-on-background);
   --color-surface: var(--m3c-surface);
