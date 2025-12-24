@@ -3,9 +3,9 @@
   import Ripple from "./Ripple.svelte";
   const pages = {
     blog: { url: "/blog/", description: "big thoughts" },
-    semimicroblog: { url: "/blog/humanresearch/", description: "human research" },
+    milliblog: { url: "/blog/humanresearch/", description: "human research" },
     microblog: { url: "https://x.com/anametolast", description: "X" },
-    ultramicroblog: { url: "/ultramicroblog/", description: "small thoughts" },
+    nanoblog: { url: "/nanoblog/", description: "small thoughts" },
     projects: { url: "/projects/", description: "past work" },
   };
 </script>

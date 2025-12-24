@@ -19,7 +19,7 @@
 </script>
 
 <svelte:head>
-  <title>Ultramicroblog</title>
+  <title>Nanoblog</title>
 </svelte:head>
 
 <SeriesBlog />

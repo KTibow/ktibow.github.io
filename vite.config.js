@@ -19,7 +19,7 @@ const sitemapPlugin = {
     pages.push("https://ktibow.github.io/");
     pages.push("https://ktibow.github.io/blog/");
     pages.push("https://ktibow.github.io/blog/humanresearch/");
-    pages.push("https://ktibow.github.io/ultramicroblog/");
+    pages.push("https://ktibow.github.io/nanoblog/");
     pages.push("https://ktibow.github.io/projects/");
     try {
       await mkdir("build");
