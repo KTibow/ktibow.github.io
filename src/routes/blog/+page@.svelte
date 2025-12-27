@@ -18,6 +18,7 @@
 {/snippet}
 
 <div class="flex flex-wrap flex-grow gap-2 p-6">
+  {@render blog("sveltemojis", "Replacing Svelte class names with emojis for fun and profit")}
   {@render blog("skillissueskillissue", `Not understanding "skill issue" is a skill issue`)}
   {@render blog("saneio", "A sane IO format")}
   {@render blog("mixinsbullish", "I'm bullish on CSS mixins")}
