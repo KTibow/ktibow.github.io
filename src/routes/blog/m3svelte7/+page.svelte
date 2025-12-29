@@ -13,8 +13,8 @@
 <h2>You need to update your CSS</h2>
 <p>
   A good start is to regenerate your theme. This takes care of using the new <code>etc</code> entry
-  point folder, dropping deprecated colors, and adding a <code>--m3-density()</code>. There are a
-  few other things you need to do:
+  point folder, dropping deprecated colors and deprecated workarounds, and adding a
+  <code>--m3-density()</code>. There are a few other things you need to do:
 </p>
 <ul>
   <li>
@@ -103,7 +103,7 @@
   one Button) now near 10 kB, or just 2.32 kB compressed.
 </p>
 <p>
-  There's more to go: I'm planning to start using CSS Modules and tune token-shaker to handle
-  dynamic usage (eg colors) soon, which I hope will bring the size of a M3 Svelte button reasonably
-  close to a manually created one.
+  There's more to go: I'm planning to start using CSS Modules and convert colors to shakeable tokens
+  soon, which I hope will bring the size of a M3 Svelte button reasonably close to a manually
+  created one.
 </p>
