@@ -97,13 +97,12 @@
   by 11.82 kB.
 </p>
 <p>
-  Switching to Sans Flex, and other recent optimizations (like dropping unused colors and setting a <code
-    >--m3-density()</code
-  >), decreased a barebones setup's CSS size by 2.6 kB. A token shaked barebones setup (rendering
-  one Button) now near 10 kB, or just 2.32 kB compressed.
+  Switching to Sans Flex, and other recent optimizations (like converting colors to tokens,
+  switching to light-dark(), and using a specialized <code>--m3-density()</code>), decreased a
+  barebones setup's CSS size by 5.29 kB. A token shaked barebones setup (rendering one Button) is
+  now 7.09 kB, or just 1.78 kB compressed.
 </p>
 <p>
-  There's more to go: I'm planning to start using CSS Modules and convert colors to shakeable tokens
-  soon, which I hope will bring the size of a M3 Svelte button reasonably close to a manually
-  created one.
+  There's more to do: I'm planning to start using CSS Modules soon, which I hope will bring the size
+  of a M3 Svelte button reasonably close to a manually created one.
 </p>
