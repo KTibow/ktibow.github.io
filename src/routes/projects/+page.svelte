@@ -1,5 +1,6 @@
 <script lang="ts">
   import SeriesBlog from "$lib/SeriesBlog.svelte";
+  import year2025 from "./2025.png";
   import year2024 from "./2024.png";
   import year2023 from "./2023.png";
   import year2022 from "./2022.png";
@@ -69,6 +70,7 @@
 <article class="prose mt-0 m-6">
   <h2>Non-school arc</h2>
   <h3>2025</h3>
+  <img src={year2025} alt="2025 projects timeline" class="rounded-lg" />
   <p>
     <a href="https://github.com/KTibow/schoology-docs-md">schoology-docs-md</a>, the Schoology docs
     converted to Markdown.
