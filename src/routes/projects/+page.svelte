@@ -158,7 +158,7 @@
   <h3>2022</h3>
   <img src={year2022} alt="2022 projects timeline" class="rounded-lg" />
   <p>
-    <a href="https://github.com/KTibow/m3-svelte">m3-svelte</a>, a Svelte library for Material
+    <a href="https://github.com/KTibow/m3-svelte">M3 Svelte</a>, a Svelte library for Material
     3/You.
   </p>
   <p>
