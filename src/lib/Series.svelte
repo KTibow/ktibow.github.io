@@ -16,6 +16,7 @@
       "/blog/lowselfconfidence/",
       "/blog/butexperience/",
     ],
+    ["/blog/sleep/", "/blog/sleep-fragmentation/"],
   ];
 
   const thisSeries = $derived(series.find((s) => s.includes(page.url.pathname))!);

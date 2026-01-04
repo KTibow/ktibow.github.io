@@ -1,5 +1,6 @@
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
+  import Series from "$lib/Series.svelte";
   import bg from "./bg.avif";
   import hypnogramFigure from "./claude-hypnogram-figure.svg";
   import n3Lengths from "./n3-lengths.png";
@@ -106,6 +107,8 @@
   Patrick. (2021). Sleep as a random walk: a super-statistical analysis of EEG data across sleep
   stages. Communications Biology. 4. 1385. 10.1038/s42003-021-02912-6.
 </p>
+
+<Series />
 
 <style>
   .grid {

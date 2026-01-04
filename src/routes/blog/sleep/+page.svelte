@@ -1,5 +1,6 @@
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
+  import Series from "$lib/Series.svelte";
   import bg from "./bg.avif";
   import basicView from "./basic-view.png";
   import moreView from "./more-view.png";
@@ -139,3 +140,5 @@
   <li>Waking up from 6:50</li>
 </ul>
 <p>But I hope you've learned that it's not easy to predict sleep cycles.</p>
+
+<Series />
