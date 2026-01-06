@@ -12,6 +12,7 @@
   import untrue from "./untrue.png";
   import nocode from "./nocode.png";
   import richharris from "./richharris.png";
+  import yesno from "./yesno.png";
 </script>
 
 <BlogHeader {bg} title="Googlol" />
@@ -41,6 +42,7 @@
     alt={'"There is no prominent comic character named Rich Harris"'}
     view="dark"
   />
+  <CaptionedImage src={yesno} alt="The no button here literally does nothing" view="dark" />
 </div>
 
 <h2>Aside - Gemini's own silly mistakes</h2>
