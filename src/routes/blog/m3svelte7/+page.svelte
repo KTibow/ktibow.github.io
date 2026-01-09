@@ -83,7 +83,7 @@
   Most components now check for truthiness instead of whether the prop exists at all when deciding
   between states. This means you can't do <code>{`href={undefined}`}</code> to make a fake link, but
   there's no reason you would want to do that. It also means you can do
-  <code>{`onclick={loaded ? run() : undefined}`}</code> without getting TS errors or having to make two
+  <code>{`onclick={loaded ? run : undefined}`}</code> without getting TS errors or having to make two
   separate branches, one with onclick and one without.
 </p>
 
