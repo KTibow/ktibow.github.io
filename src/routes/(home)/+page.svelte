@@ -34,8 +34,8 @@
 <details class="text-center text-background">
   <summary class="text-xl">view more</summary>
   <p>
-    i like writing code and web apps, but i also like making things fast. shoutout to tree shaking
-    and e18e.
+    i like writing code and web apps, but i also like making things fast. shoutout to e18e and
+    voidzero.
   </p>
   <p>
     i also like chatting - i'm online most of the time. sorry if i'm having trouble communicating, i
@@ -72,7 +72,7 @@
 <style>
   .connected {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.25rem;
     margin: auto;
     @media (width < 37.5rem) {
       flex-direction: column;
@@ -83,10 +83,10 @@
       justify-content: center;
       height: 6rem;
       padding-inline: 1.5rem;
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       > svg {
-        width: 3rem;
-        height: 3rem;
+        width: 1.75em;
+        height: 1.75em;
       }
       background-color: var(--m3c-background);
       color: var(--m3c-on-background);
