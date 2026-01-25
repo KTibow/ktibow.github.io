@@ -130,7 +130,7 @@
     <a href="https://github.com/KTibow/skygpt">SkyGPT</a>, a RAG-based Hypixel Skyblock chatbot
     described as "more helpful than a majority of forumers".
   </p>
-  <p>Contributions to Lawnicons (you can search them on GitHub).</p>
+  <p>Vigorous contributions to Lawnicons and SVGO (you can search them on GitHub).</p>
   <p>Some frontend work for ReVanced, although didn't get far due to politics.</p>
   <h3>2023</h3>
   <img src={year2023} alt="2023 projects timeline" class="rounded-lg" />

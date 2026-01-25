@@ -6,6 +6,7 @@
     microblog: { url: "https://x.com/anametolast", description: "X" },
     nanoblog: { url: "/nanoblog/", description: "small thoughts" },
     projects: { url: "/projects/", description: "past work" },
+    home: { url: "/", description: "about me" },
   };
 </script>
 
@@ -19,7 +20,6 @@
       </a>
     {/if}
   {/each}
-  <a class="pill layer ml-auto" href="/">back home</a>
 </nav>
 
 <style>
@@ -36,6 +36,11 @@
     &.selected {
       background-color: var(--m3c-secondary-container);
       color: var(--m3c-on-secondary-container);
+    }
+    &:last-child {
+      @media (width >= 64rem) {
+        margin-left: auto;
+      }
     }
   }
 </style>

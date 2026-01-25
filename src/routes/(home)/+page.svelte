@@ -1,6 +1,8 @@
 <script lang="ts">
-  import HomeBackground from "./HomeBackground.svelte";
+  import SeriesBlog from "$lib/SeriesBlog.svelte";
   import Raccoon from "./Raccoon.svelte";
+  import bg from "./bg.svg?url";
+  import cursor from "./cursor.svg?url";
 
   let time = $state("");
   let isLoaded = true;
@@ -22,6 +24,16 @@
     updateTime();
     return () => (isLoaded = false);
   });
+
+  const bodyProps = [
+    `cursor: url("${cursor}"), auto`,
+    `background-image: url("${bg}")`,
+    `background-color: var(--m3c-primary)`,
+    `background-size: 100%`,
+    `background-repeat: no-repeat`,
+    `background-attachment: fixed`,
+    `background-position: top center`,
+  ].join(";");
 </script>
 
 <svelte:head>
@@ -37,8 +49,9 @@
   >
 {/snippet}
 
-<HomeBackground />
-<div class="flex max-lg:flex-col self-center gap-6 my-auto text-surface">
+{@html `<style>body { ${bodyProps} }</style>`}
+<SeriesBlog />
+<main class="flex max-lg:flex-col self-center gap-6 mx-2 my-auto text-surface">
   <div class="flex flex-col">
     <h1 class="text-5xl font-wb mb-auto">Kendell</h1>
     <p class="link">{time}</p>
@@ -48,19 +61,14 @@
     >
     <a class="link layer" href="https://discord.gg/DSzZQxpzHR">Discord {@render arrow()}</a>
   </div>
-  <div class="content">
-    <div>
-      <p>
-        EHLO! i like making things; these are some things i've made. i also have a passion for
-        minification (shoutout e18e and voidzero) and chatting.
-      </p>
-    </div>
-    <a class="layer" href="/blog/">Blog</a>
-    <a class="layer" href="/blog/humanresearch/">Milliblog</a>
-    <a class="layer" href="/nanoblog/">Nanoblog</a>
-    <a class="layer" href="/projects/">Projects</a>
+  <div>
+    <p>
+      EHLO! i like making things; these are some things i've made. you might also know me for my
+      chatting (where i'm known as KTibow) or for my interest in minification (e18e, svgo, etc are
+      awesome).
+    </p>
   </div>
-</div>
+</main>
 
 <Raccoon />
 
@@ -76,26 +84,7 @@
       margin-bottom: -0.5rem;
     }
   }
-  .content {
-    display: grid;
-    grid-template-rows: 1fr auto;
-    gap: 0.5rem;
-    > * {
-      padding: 1rem;
-      border-radius: 1rem;
-    }
-    > div {
-      background-color: var(--m3c-on-surface);
-      grid-column: 1 / span 2;
-    }
-    > a {
-      background-color: var(--m3c-surface);
-      color: var(--m3c-on-surface);
-    }
-  }
   p {
-    @media (width >= 64rem) {
-      max-width: 25rem;
-    }
+    max-width: 25rem;
   }
 </style>
