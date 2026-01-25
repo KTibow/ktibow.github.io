@@ -1,6 +1,5 @@
 <script lang="ts">
   import { page } from "$app/state";
-  import Ripple from "./Ripple.svelte";
 
   const series = [
     [
@@ -31,9 +30,8 @@
   {#if previousPost}
     <a
       href={previousPost}
-      class="inline-flex items-center p-2 px-4 text-sm font-medium bg-surface-container-low text-primary rounded-full col-1 justify-self-start relative"
+      class="inline-flex items-center p-2 px-4 text-sm font-medium bg-surface-container-low text-primary rounded-full col-1 justify-self-start relative layer"
     >
-      <Ripple />
       <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
       </svg>
@@ -48,9 +46,8 @@
   {#if nextPost}
     <a
       href={nextPost}
-      class="inline-flex items-center p-2 px-4 text-sm font-medium bg-surface-container-low text-primary rounded-full col-3 justify-self-end relative"
+      class="inline-flex items-center p-2 px-4 text-sm font-medium bg-surface-container-low text-primary rounded-full col-3 justify-self-end relative layer"
     >
-      <Ripple />
       Next
       <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />

@@ -1,5 +1,4 @@
 <script lang="ts">
-  import Ripple from "$lib/Ripple.svelte";
   import SeriesBlog from "$lib/SeriesBlog.svelte";
 </script>
 
@@ -15,8 +14,7 @@
 
 {#snippet blog(page: string, title: string)}
   {@const url = `/blog/humanresearch/${page}/`}
-  <a href={url} class="entry">
-    <Ripple />
+  <a href={url} class="entry layer">
     {@html title}
   </a>
 {/snippet}

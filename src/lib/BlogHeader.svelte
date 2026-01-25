@@ -31,14 +31,14 @@
     content: "";
     background: linear-gradient(
       to bottom,
-      oklab(from var(--m3c-background) l a b / 0.6) 0%,
-      oklab(from var(--m3c-background) l a b / 0.612) 10%,
-      oklab(from var(--m3c-background) l a b / 0.636) 20%,
-      oklab(from var(--m3c-background) l a b / 0.704) 40%,
-      oklab(from var(--m3c-background) l a b / 0.792) 60%,
-      oklab(from var(--m3c-background) l a b / 0.892) 80%,
-      oklab(from var(--m3c-background) l a b / 0.944) 90%,
-      oklab(from var(--m3c-background) l a b / 1) 100%
+      oklab(from var(--m3c-surface) l a b / 0.6) 0%,
+      oklab(from var(--m3c-surface) l a b / 0.612) 10%,
+      oklab(from var(--m3c-surface) l a b / 0.636) 20%,
+      oklab(from var(--m3c-surface) l a b / 0.704) 40%,
+      oklab(from var(--m3c-surface) l a b / 0.792) 60%,
+      oklab(from var(--m3c-surface) l a b / 0.892) 80%,
+      oklab(from var(--m3c-surface) l a b / 0.944) 90%,
+      oklab(from var(--m3c-surface) l a b / 1) 100%
     );
   }
 </style>

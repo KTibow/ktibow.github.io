@@ -1,6 +1,5 @@
 <script lang="ts">
   import { page } from "$app/state";
-  import Ripple from "$lib/Ripple.svelte";
   import ErrorBackground from "./ErrorBackground.svelte";
 </script>
 
@@ -21,9 +20,8 @@
   </div>
   <a
     href="/"
-    class="row-2 col-2 flex relative p-2 rounded-2xl items-center bg-surface-container-low no-underline"
+    class="row-2 col-2 flex relative p-2 rounded-2xl items-center bg-surface-container-low no-underline layer"
   >
-    <Ripple />
     Go home
   </a>
 </div>

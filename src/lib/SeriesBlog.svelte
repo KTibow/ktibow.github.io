@@ -1,6 +1,5 @@
 <script lang="ts">
   import { page } from "$app/state";
-  import Ripple from "./Ripple.svelte";
   const pages = {
     blog: { url: "/blog/", description: "big thoughts" },
     milliblog: { url: "/blog/humanresearch/", description: "human research" },
@@ -15,12 +14,12 @@
     {#if page.url.pathname == url}
       <span class="pill selected">{name} - you are here</span>
     {:else}
-      <a class="pill" href={url}>
-        <Ripple />
+      <a class="pill layer" href={url}>
         {name} - {description}
       </a>
     {/if}
   {/each}
+  <a class="pill layer ml-auto" href="/">back home</a>
 </nav>
 
 <style>
