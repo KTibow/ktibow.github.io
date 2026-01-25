@@ -1,5 +1,6 @@
 <script module>
-  export const date = "2025-08-31";
+	export const title = "But you haven't matched the experience";
+	export const date = "2025-08-31";
 </script>
 
 <script lang="ts">
@@ -126,7 +127,7 @@
   }
 </script>
 
-<BlogHeader {date} title="But you haven't matched the experience" />
+<BlogHeader {date} {title} />
 <p>The hierarchy of needs for a website might look like</p>
 <svg viewBox="0 0 1000 1000">
   <style>

@@ -1,12 +1,13 @@
 <script module>
-  export const date = "2025-04-26";
+	export const title = "GCP Provisioned Throughput pricing";
+	export const date = "2025-04-26";
 </script>
 
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
 </script>
 
-<BlogHeader {date} title="GCP Provisioned Throughput pricing" />
+<BlogHeader {date} {title} />
 <p>
   As of writing, 1 GSU is $2700/month. GSUs represent something close to compute, which makes them
   hard to comprehend, so let's convert them to other units. (Note: You can't buy fractional GSUs and

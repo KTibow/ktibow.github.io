@@ -1,4 +1,5 @@
 <script module>
+  export const title = "Why is Gemini Flash so popular?";
   export const date = "2025-03-04";
 </script>
 
@@ -7,7 +8,7 @@
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {date} {bg} title="Why is Gemini Flash so popular?" />
+<BlogHeader {date} {title} {bg} />
 <p>
   Gemini 2.0 Flash definitely has its virtues. It's a fast, low-latency model that has high quality
   for its price. If you look at one API gateway, OpenRouter, it processes around 321B tokens a week

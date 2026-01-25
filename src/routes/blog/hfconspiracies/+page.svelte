@@ -1,4 +1,5 @@
 <script module>
+  export const title = "Hugging Face Conspiracies";
   export const date = "2025-07-13";
 </script>
 
@@ -124,7 +125,7 @@
   });
 </script>
 
-<BlogHeader {date} {bg} title="Hugging Face Conspiracies" />
+<BlogHeader {date} {title} {bg} />
 <p>
   Imagine this. You're scrolling X and you come across <a
     href="https://x.com/kalomaze/status/1943843818887163989">a post by kalomaze</a

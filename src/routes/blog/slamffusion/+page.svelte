@@ -1,4 +1,5 @@
 <script module>
+  export const title = "SLAMffusion";
   export const date = "2025-07-25";
 </script>
 
@@ -16,7 +17,7 @@
   import Series from "$lib/Series.svelte";
 </script>
 
-<BlogHeader {date} {bg} title="SLAMffusion" />
+<BlogHeader {date} {title} {bg} />
 <p>
   SLAM stands for Simultaneous Localization and Mapping, a robotics technique for when you need to
   use sensor data to accurately build a map and find yourself in it. It's about compensating for

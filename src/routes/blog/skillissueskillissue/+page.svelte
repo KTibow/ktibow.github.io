@@ -1,4 +1,5 @@
 <script module>
+  export const title = `Not understanding "skill issue" is a skill issue`;
   export const date = "2025-12-25";
 </script>
 
@@ -7,7 +8,7 @@
   import bg from "./bg.svg";
 </script>
 
-<BlogHeader {date} {bg} title={`Not understanding "skill issue" is a skill issue`} />
+<BlogHeader {date} {title} {bg} />
 <p>
   When I was younger, the phrase "skill issue" was raw nonsensical bait to me. I think part of why
   was because I saw skill and knowledge as the same thing - I thought you could just learn about

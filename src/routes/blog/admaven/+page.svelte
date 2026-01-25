@@ -1,4 +1,5 @@
 <script module>
+  export const title = "We probably shouldn't use AdMaven";
   export const date = "2024-02-03";
 </script>
 
@@ -7,7 +8,7 @@
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {date} {bg} title="We probably shouldn't use AdMaven" />
+<BlogHeader {date} {title} {bg} />
 <p>
   <strong
     >All opinions here are my own. Please contact me if there are any factually incorrect

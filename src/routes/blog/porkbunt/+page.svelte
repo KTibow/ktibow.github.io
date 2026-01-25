@@ -1,4 +1,5 @@
 <script module>
+  export const title = "porkbunt";
   export const date = "2025-04-08";
 </script>
 
@@ -7,7 +8,7 @@
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {date} {bg} title="porkbunt" />
+<BlogHeader {date} {title} {bg} />
 
 <p>
   You probably already know that GoDaddy isn't the most wholesome company. There's a <a

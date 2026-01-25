@@ -1,12 +1,13 @@
 <script module>
-  export const date = "2025-11-29";
+	export const title = "Geoxor-Kanro beef";
+	export const date = "2025-11-29";
 </script>
 
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
 </script>
 
-<BlogHeader {date} title="Geoxor-Kanro beef" />
+<BlogHeader {date} {title} />
 <p>
   This post is a little different: while Human Research is always infodumps, for this post I
   collected its in a <a

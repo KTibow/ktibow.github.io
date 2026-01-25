@@ -1,4 +1,5 @@
 <script module>
+  export const title = "My gripes with the HA frontend";
   export const date = "2024-02-07";
 </script>
 
@@ -7,7 +8,7 @@
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {date} {bg} title="My gripes with the HA frontend" />
+<BlogHeader {date} {title} {bg} />
 <h2>Slow dev workflow</h2>
 <p>
   The frontend uses Webpack. This means that a lot has to be rebuilt every time that something

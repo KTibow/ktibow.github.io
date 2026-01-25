@@ -1,4 +1,5 @@
 <script module>
+  export const title = "Time since major AI advancements";
   export const date = "2025-05-11";
 </script>
 
@@ -52,7 +53,7 @@
   };
 </script>
 
-<BlogHeader {date} {bg} title="Time since major AI advancements" />
+<BlogHeader {date} {title} {bg} />
 <p>
   This is a timeline of major AI advancements. It's made for myself to look back on the past and
   think about how fast AI moves, so it's rather simple and uses relative dates.

@@ -1,4 +1,5 @@
 <script module>
+  export const title = "The Own Wife eval";
   export const date = "2025-01-13";
 </script>
 
@@ -7,7 +8,7 @@
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {date} {bg} title="The Own Wife eval" />
+<BlogHeader {date} {title} {bg} />
 <p>
   On January 17, 2025, <code>@dubesor</code> posted a new evaluation prompt in the LMSYS Discord.
 </p>

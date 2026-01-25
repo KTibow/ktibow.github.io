@@ -1,4 +1,5 @@
 <script module>
+  export const title = "Replacing Svelte class names with emojis for fun and profit";
   export const date = "2025-12-27";
 </script>
 
@@ -10,7 +11,7 @@
   import themeDemo from "./theme-demo.png";
 </script>
 
-<BlogHeader {date} {bg} title="Replacing Svelte class names with emojis for fun and profit" />
+<BlogHeader {date} {title} {bg} />
 <p>
   Svelte tags every component with class names that look like <code>svelte-abc123</code>. But
   doesn't that seem wasteful? It makes your HTML and CSS larger just to scope styles.

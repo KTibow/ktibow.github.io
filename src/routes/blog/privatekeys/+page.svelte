@@ -1,4 +1,5 @@
 <script module>
+  export const title = "A world where private keys caught on";
   export const date = "2026-01-19";
 </script>
 
@@ -7,7 +8,7 @@
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {date} {bg} title="A world where private keys caught on" />
+<BlogHeader {date} {title} {bg} />
 <p>
   <em
     >Disclaimer: I only have a surface level understanding of cryptography, and some of it came from

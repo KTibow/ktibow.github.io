@@ -1,12 +1,13 @@
 <script module>
-  export const date = "2025-09-14";
+	export const title = "HTTPS over HTTP(S) is not possible";
+	export const date = "2025-09-14";
 </script>
 
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
 </script>
 
-<BlogHeader {date} title="HTTPS over HTTP(S) is not possible" />
+<BlogHeader {date} {title} />
 <p>
   Say you want to make a CORS proxy that can't see what it's passing through. It seems the norm is
   to use Wisp or similar over WebSockets, but that seems bloated. In the woke year of 2025, surely

@@ -1,4 +1,5 @@
 <script module>
+  export const title = "Sdate is from 1993 of course";
   export const date = "2025-06-29";
 </script>
 
@@ -27,7 +28,7 @@
   }
 </script>
 
-<BlogHeader {date} {bg} title="Sdate is from 1993 of course" />
+<BlogHeader {date} {title} {bg} />
 
 <label class="mb-4">
   <input type="checkbox" bind:checked={eternalSeptemberMode} />

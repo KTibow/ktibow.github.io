@@ -1,4 +1,5 @@
 <script module>
+  export const title = "What Do You Do When Cloudflare Pages Gets Blocked?";
   export const date = "2024-09-15";
 </script>
 
@@ -8,7 +9,7 @@
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {date} {bg} title="What Do You Do When Cloudflare Pages Gets Blocked?" />
+<BlogHeader {date} {title} {bg} />
 <p>
   Cloudflare Pages is an absolutely awesome platform. Thanks to Cloudflare's customers, it's
   completely subsidized, and provides generous static and dynamic hosting. I host almost all my

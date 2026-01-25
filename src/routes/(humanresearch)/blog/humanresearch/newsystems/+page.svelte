@@ -1,12 +1,13 @@
 <script module>
-  export const date = "2025-03-26";
+	export const title = "Who is New Systems";
+	export const date = "2025-03-26";
 </script>
 
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
 </script>
 
-<BlogHeader {date} title="Who is New Systems" />
+<BlogHeader {date} {title} />
 <ul>
   <li>
     Self description: New Systems is an experimental project aimed at improving Toronto's systems

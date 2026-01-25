@@ -1,5 +1,6 @@
 <script module>
-  export const date = "2023-12-14";
+	export const title = "How I published 165 icon sets to NPM";
+	export const date = "2023-12-14";
 </script>
 
 <script>
@@ -8,7 +9,7 @@
   import Snippet from "$lib/Snippet.svelte";
 </script>
 
-<BlogHeader {date} title="How I published 165 icon sets to NPM" />
+<BlogHeader {date} {title} />
 <h2>Problem</h2>
 <ul>
   <li>

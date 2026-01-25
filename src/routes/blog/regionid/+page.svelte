@@ -1,4 +1,5 @@
 <script module>
+  export const title = "Using FlashAlert's API";
   export const date = "2025-04-18";
 </script>
 
@@ -13,7 +14,7 @@
   </a>
 {/snippet}
 
-<BlogHeader {date} {bg} title="Using FlashAlert's API" />
+<BlogHeader {date} {title} {bg} />
 <p>
   The tricky thing with FlashAlert's API is that it doesn't document how to switch which area the
   feed that provides newswire information is for. Turns out you can use the <code>RegionID</code> option

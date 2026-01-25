@@ -1,12 +1,13 @@
 <script module>
-  export const date = "2023-04-29";
+	export const title = "AI isn't good without good UI/UX";
+	export const date = "2023-04-29";
 </script>
 
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
 </script>
 
-<BlogHeader {date} title="AI isn't good without good UI/UX" />
+<BlogHeader {date} {title} />
 <p>
   This post was originally a bit of a long rant, but I changed my opinion since the original post.
   This post is now a summary of my opinion then and my opinion now.

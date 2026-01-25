@@ -1,4 +1,5 @@
 <script module>
+  export const title = "Rant: Why aren't you using ESM";
   export const date = "2024-11-08";
 </script>
 
@@ -7,7 +8,7 @@
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {date} {bg} title="Rant: Why aren't you using ESM" />
+<BlogHeader {date} {title} {bg} />
 
 <p>
   I'll start this post by saying that I know there are alternatives, like Deno. They're great, and I

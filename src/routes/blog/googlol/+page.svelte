@@ -1,4 +1,5 @@
 <script module>
+  export const title = "Googlol";
   export const date = "2025-05-11";
 </script>
 
@@ -19,7 +20,7 @@
   import yesno from "./yesno.png";
 </script>
 
-<BlogHeader {date} {bg} title="Googlol" />
+<BlogHeader {date} {title} {bg} />
 <p>
   Google is a 325 billion dollar company. So why are they so inattentive to detail that it made me
   go to the effort of setting this page up? Perhaps paying attention to the finer aspects isn't

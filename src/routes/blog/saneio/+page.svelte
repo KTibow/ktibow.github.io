@@ -1,4 +1,5 @@
 <script module>
+  export const title = "A sane IO format";
   export const date = "2025-12-17";
 </script>
 
@@ -9,7 +10,7 @@
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {date} {bg} title="A sane IO format" />
+<BlogHeader {date} {title} {bg} />
 <p>
   These days everyone is making their own API format for AI IO. OpenAI Chat Completions, OpenAI
   Responses, Anthropic Messages, Google Generate Content, Google Interactions, etc. Everything has

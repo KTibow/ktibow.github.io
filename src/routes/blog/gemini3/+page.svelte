@@ -1,4 +1,5 @@
 <script module>
+  export const title = "Gemini 3: you need to actually make the hype transfer";
   export const date = "2025-11-18";
 </script>
 
@@ -7,7 +8,7 @@
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {date} title="Gemini 3: you need to actually make the hype transfer" {bg} />
+<BlogHeader {date} {title} {bg} />
 <p>
   This is a list of grievances written in rage about how I can't use what's been hyped for the last
   month. Not sure if you want to read this.

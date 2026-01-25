@@ -1,5 +1,7 @@
 <script module>
+  export const title = "University of British Columbia admissions";
   export const date = "2024-11-08";
+  export const noindex = true;
 </script>
 
 <script>
@@ -7,12 +9,7 @@
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {date} {bg} title="University of British Columbia admissions" />
-<p>
-  If you're a human seeing this, that's very interesting. This page is only for some custom scripts
-  I have running to explain the admissions of various universities, since their official website
-  can't be read statically.
-</p>
+<BlogHeader {date} {title} {noindex} {bg} />
 <h2>General US admission requirements</h2>
 <ul>
   <li>

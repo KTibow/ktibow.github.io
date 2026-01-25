@@ -1,5 +1,6 @@
 <script module>
-  export const date = "2026-01-23";
+	export const title = "Gemini 3 thinks Spherical Embedding Compression is a sham";
+	export const date = "2026-01-23";
 </script>
 
 <script>
@@ -10,7 +11,7 @@
   import code from "./code.py?url";
 </script>
 
-<BlogHeader {date} title="Gemini 3 thinks Spherical Embedding Compression is a sham" />
+<BlogHeader {date} {title} />
 
 <p>
   The following blog post was written by Gemini 3 based on my questions about Jina's Spherical

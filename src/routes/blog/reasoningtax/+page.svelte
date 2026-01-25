@@ -1,4 +1,5 @@
 <script module>
+  export const title = "I invented a new term";
   export const date = "2025-01-19";
 </script>
 
@@ -10,7 +11,7 @@
   import screenshot2 from "./Screenshot From 2025-02-07 18-34-51.png";
 </script>
 
-<BlogHeader {date} {bg} title="I invented a new term" />
+<BlogHeader {date} {title} {bg} />
 <p>I think I invented the term "reasoning tax". Let me explain.</p>
 
 <h2>Context</h2>

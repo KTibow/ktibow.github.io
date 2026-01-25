@@ -1,4 +1,5 @@
 <script module>
+  export const title = "Simon Fraser University admissions";
   export const date = "2024-11-08";
 </script>
 
@@ -7,12 +8,7 @@
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {date} {bg} title="Simon Fraser University admissions" />
-<p>
-  If you're a human seeing this, that's very interesting. This page is only for some custom scripts
-  I have running to explain the admissions of various universities, since their official website has
-  their info spread across many pages.
-</p>
+<BlogHeader {date} {title} {bg} />
 <h2>English requirement</h2>
 <p>
   Complete the last 3 years of education in English with a good grade. (There are other options for

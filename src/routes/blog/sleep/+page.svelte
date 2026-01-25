@@ -1,4 +1,5 @@
 <script module>
+  export const title = "How one estimates sleep stages";
   export const date = "2025-03-30";
 </script>
 
@@ -11,7 +12,7 @@
   import myView from "./my-view.png";
 </script>
 
-<BlogHeader {date} {bg} title="How one estimates sleep stages" />
+<BlogHeader {date} {title} {bg} />
 <p>
   You sleep a lot. It's not unlikely that you also track your sleep, whether with a watch, ring, or
   mattress pad. But how do these pieces of technology <em>know</em>? How do they turn heart rate and

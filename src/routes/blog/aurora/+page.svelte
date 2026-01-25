@@ -1,4 +1,5 @@
 <script module>
+  export const title = "Unlinking Zigbee devices (Aurora)";
   export const date = "2024-07-13";
 </script>
 
@@ -7,7 +8,7 @@
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {date} {bg} title="Unlinking Zigbee devices (Aurora)" />
+<BlogHeader {date} {title} {bg} />
 <p class="font-italic">
   This post is very specific, as to hopefully reach anyone with the exact same problem.
 </p>

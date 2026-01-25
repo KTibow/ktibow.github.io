@@ -1,4 +1,5 @@
 <script module>
+  export const title = "Grade math";
   export const date = "2024-05-12";
 </script>
 
@@ -8,7 +9,7 @@
   import graph from "./desmos-graph.svg";
 </script>
 
-<BlogHeader {date} {bg} title="Grade math" />
+<BlogHeader {date} {title} {bg} />
 <p>
   For a bit now I've been experimenting with grade math. That is, recalculating your grade,
   sometimes under different circumstances. Some of this got programmed into an internal app that

@@ -1,4 +1,5 @@
 <script module>
+  export const title = "Why do we still use chroma subsampling";
   export const date = "2024-01-24";
 </script>
 
@@ -7,7 +8,7 @@
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {date} {bg} title="Why do we still use chroma subsampling" />
+<BlogHeader {date} {title} {bg} />
 <p>
   Chroma subsampling is a simple idea. Our eyes are less sensitive to colors than they are to light,
   and most colors within a range are close to each other, so we can only send the chroma for every 4

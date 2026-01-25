@@ -1,12 +1,13 @@
 <script module>
-  export const date = "2023-07-01";
+	export const title = "Material menus are goofy";
+	export const date = "2023-07-01";
 </script>
 
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
 </script>
 
-<BlogHeader {date} title="Material menus are goofy" />
+<BlogHeader {date} {title} />
 <p>
   Menus have been part of Material Design for a while. I have been using Material Design for a
   while. Both are still true in the present. But

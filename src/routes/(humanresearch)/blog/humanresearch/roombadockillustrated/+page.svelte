@@ -1,5 +1,6 @@
 <script module>
-  export const date = "2025-10-25";
+	export const title = "Roomba dock IR, illustrated";
+	export const date = "2025-10-25";
 </script>
 
 <script>
@@ -11,7 +12,7 @@
   import Series from "$lib/Series.svelte";
 </script>
 
-<BlogHeader {date} title="Roomba dock IR, illustrated" />
+<BlogHeader {date} {title} />
 <img src={dock} alt="Roomba dock" />
 <img src={roomba} alt="Roomba" />
 <img src={dockIr} alt="Roomba dock IR" />

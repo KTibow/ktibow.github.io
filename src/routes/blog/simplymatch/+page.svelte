@@ -1,4 +1,5 @@
 <script module>
+  export const title = "Simply match curly brackets";
   export const date = "2025-02-07";
 </script>
 
@@ -9,7 +10,7 @@
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {date} {bg} title="Simply match curly brackets" />
+<BlogHeader {date} {title} {bg} />
 <p>
   Making LLMs output JSON is a common problem, and making them
   <em>only</em> output the JSON is a surprisingly large part of it. While some commercial LLMs were

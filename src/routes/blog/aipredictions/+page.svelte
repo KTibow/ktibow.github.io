@@ -1,12 +1,13 @@
 <script module>
-  export const date = "2023-11-25";
+	export const title = "2024 AI predictions";
+	export const date = "2023-11-25";
 </script>
 
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
 </script>
 
-<BlogHeader {date} title="2024 AI predictions" />
+<BlogHeader {date} {title} />
 <ul>
   <li>
     <p>AI that processes information on the scale of time</p>

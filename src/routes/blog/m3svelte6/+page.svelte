@@ -1,4 +1,5 @@
 <script module>
+  export const title = "M3 Svelte 6";
   export const date = "2025-12-06";
 </script>
 
@@ -7,7 +8,7 @@
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {date} title="M3 Svelte 6" {bg} />
+<BlogHeader {date} {title} {bg} />
 
 <h2>Variables changed</h2>
 <p>

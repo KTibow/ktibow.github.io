@@ -1,5 +1,6 @@
 <script module>
-  export const date = "2022-02-20";
+	export const title = "2vFiomba";
+	export const date = "2022-02-20";
 </script>
 
 <script>
@@ -7,7 +8,7 @@
   import logo from "./logo.svg";
 </script>
 
-<BlogHeader {date} title="2vFiomba" />
+<BlogHeader {date} {title} />
 <img src={logo} alt="2vFiomba" class="w-full" />
 <h2>Background</h2>
 <p>

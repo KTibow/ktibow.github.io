@@ -1,12 +1,13 @@
 <script module>
-  export const date = "2025-03-26";
+	export const title = "Why is Phi 4 Multimodal so cheap?";
+	export const date = "2025-03-26";
 </script>
 
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
 </script>
 
-<BlogHeader {date} title="Why is Phi 4 Multimodal so cheap?" />
+<BlogHeader {date} {title} />
 <p>Phi 4 Multimodal is the current cheapest transcription model, as this table shows:</p>
 <table>
   <thead>

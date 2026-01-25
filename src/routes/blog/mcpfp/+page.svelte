@@ -1,4 +1,5 @@
 <script module>
+  export const title = "MCP from first principles";
   export const date = "2025-06-02";
 </script>
 
@@ -9,7 +10,7 @@
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {date} {bg} title="MCP from first principles" />
+<BlogHeader {date} {title} {bg} />
 <p>
   MCP (at its core) is a standard for providing tools to LLMs. If I were to ask you to write a spec
   for MCP, it would probably look something like this:

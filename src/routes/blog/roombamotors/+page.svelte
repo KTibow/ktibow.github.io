@@ -1,4 +1,5 @@
 <script module>
+  export const title = "Roombas, motors, and noise";
   export const date = "2025-07-27";
 </script>
 
@@ -9,7 +10,7 @@
   const listFormatter = new Intl.ListFormat("en");
 </script>
 
-<BlogHeader {date} {bg} title="Roombas, motors, and noise" />
+<BlogHeader {date} {title} {bg} />
 <p>
   I have a Create 2. I can drive it in 3 ways, going from most direct to least. All of them have
   some limits; today we're looking into them.

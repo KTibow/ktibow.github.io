@@ -1,5 +1,6 @@
 <script module>
-  export const date = "2023-07-30";
+	export const title = "VC31 explanation";
+	export const date = "2023-07-30";
 </script>
 
 <script>
@@ -8,7 +9,7 @@
   import c from "svelte-highlight/languages/c";
 </script>
 
-<BlogHeader {date} title="VC31 explanation" />
+<BlogHeader {date} {title} />
 <p>
   Espruino recently added a blob from the manufacturer of the HRM sensor, VCare, to improve its
   accuracy. This post will try to explain the Algo_Input function.

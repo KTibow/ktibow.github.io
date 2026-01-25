@@ -1,5 +1,15 @@
 <script lang="ts">
   import SeriesBlog from "$lib/SeriesBlog.svelte";
+
+  const dates = import.meta.glob<string>("./*/+page.svelte", { eager: true, import: "date" });
+  const titles = import.meta.glob<string>("./*/+page.svelte", { eager: true, import: "title" });
+  const blogs = Object.keys(dates)
+    .sort((a, b) => dates[b].localeCompare(dates[a]))
+    .map((path) => {
+      const id = path.split("/")[1];
+      const title = titles[path];
+      return { id, title };
+    });
 </script>
 
 <svelte:head>
@@ -12,40 +22,10 @@
   that aren't currently on the (clear and scrapable) internet.
 </h2>
 
-{#snippet blog(page: string, title: string)}
-  {@const url = `/blog/humanresearch/${page}/`}
-  <a href={url} class="entry layer">
-    {@html title}
-  </a>
-{/snippet}
-
-<div class="flex flex-wrap flex-grow gap-2 p-6">
-  {@render blog("sphericalembeddings", "Gemini 3 thinks Spherical Embedding Compression is a sham")}
-  {@render blog("iconmeteora", "What happened to the app/game called ICON/Meteora Metaverse")}
-  {@render blog("ononprimary", "Why M3 Svelte has on on primary")}
-  {@render blog("crosgallery", "Internals of the CrOS gallery")}
-  {@render blog("geoxorkanro", "Geoxor-Kanro beef")}
-  {@render blog("roombadockillustrated", "Roomba dock IR, illustrated")}
-  {@render blog("httpsoverhttps", "HTTPS over HTTP(S) is not possible")}
-  {@render blog("oauthmintrust", "Minimally trusting the server and client in OAuth 1")}
-  {@render blog("roombadock", "Roomba dock IR")}
-  {@render blog("lightbumper", "Light bumpers are funny")}
-  {@render blog("phantasmagoriavocals", "Listen to the raw vocals from Phantasmagoria")}
-  {@render blog("claudiussennett", "Who is Claudius Sennett")}
-  {@render blog("why8123", "Why does Home Assistant run on port 8123")}
-  {@render blog("wwdc2025", "WWDC 2025 Freeform snapshot")}
-  {@render blog("wherepreload", "Where's the modulepreloads in my SvelteKit app?")}
-  {@render blog("samcord", "Sam Altman is on Discord")}
-  {@render blog("hlebaseline", "Humanity's Last Exam baseline")}
-  {@render blog("projectmichigan", "What was Apple's Project Michigan")}
-  {@render blog("provisionedthroughput", "GCP Provisioned Throughput pricing")}
-  {@render blog("apexams", "AP exams in 2025")}
-  {@render blog("meatrice", "Meat + Rice")}
-  {@render blog("surfacepower", "Surface power requirements")}
-  {@render blog("newsystems", "Who is New Systems")}
-  {@render blog("syncobsidian", "Remotely Save - including the .obsidian folder")}
-  {@render blog("austrchile", "Why do LLMs think Australians don't need visas to enter Chile?")}
-  {@render blog("phi-4", "Why is Phi 4 Multimodal so cheap?")}
+<div class="flex flex-wrap grow gap-2 p-6">
+  {#each blogs as { id, title }}
+    <a href="/blog/humanresearch/{id}/" class="entry layer">{title}</a>
+  {/each}
 </div>
 
 <style>

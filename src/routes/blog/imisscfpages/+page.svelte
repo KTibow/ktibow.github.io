@@ -1,4 +1,5 @@
 <script module>
+  export const title = "A Cloudflare-Shaped Hole";
   export const date = "2025-08-31";
 </script>
 
@@ -30,7 +31,7 @@
   const maxLatency = Math.max(...barChart.map(([, latency]) => latency));
 </script>
 
-<BlogHeader {date} {bg} title="A Cloudflare-Shaped Hole" />
+<BlogHeader {date} {title} {bg} />
 <p>
   It's been almost a year since <a href="/blog/farewellcfpages"
     >Cloudflare Pages and Workers were blocked for me</a

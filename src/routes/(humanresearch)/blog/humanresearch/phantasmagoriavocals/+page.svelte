@@ -1,5 +1,6 @@
 <script module>
-  export const date = "2025-07-18";
+	export const title = "Listen to the raw vocals from Phantasmagoria";
+	export const date = "2025-07-18";
 </script>
 
 <script>
@@ -17,7 +18,7 @@
   import gliitchakeEdit from "./gliitchake_edit.wav";
 </script>
 
-<BlogHeader {date} title="Listen to the raw vocals from Phantasmagoria" />
+<BlogHeader {date} {title} />
 <p>
   Mr. Bill messes a lot with the vocals in Phantasmagoria. Here you can hear the raw ones, so you
   can remember them for what they are.

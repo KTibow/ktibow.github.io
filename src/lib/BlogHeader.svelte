@@ -1,9 +1,15 @@
 <script lang="ts">
-  let { title, bg, date }: { title: string; bg?: string; date?: string } = $props();
+  import { page } from "$app/state";
+  let { date, title, bg }: { date: string; title: string; noindex?: boolean; bg?: string } =
+    $props();
+  let noindex = $derived(page.route.id?.startsWith("/blog/(noindex)"));
 </script>
 
 <svelte:head>
-  <title>{title} @KTibow</title>
+  <title>{title}</title>
+  {#if noindex}
+    <meta name="robots" content="noindex" />
+  {/if}
 </svelte:head>
 
 {#if bg}
@@ -22,6 +28,12 @@
         day: "numeric",
       })}</time
     >
+  </p>
+{/if}
+{#if noindex}
+  <p>
+    If you're a human seeing this, that's very interesting. This page is internal and was marked to
+    not be indexed by search engines.
   </p>
 {/if}
 

@@ -1,12 +1,13 @@
 <script module>
-  export const date = "2025-04-20";
+	export const title = "AP exams in 2025";
+	export const date = "2025-04-20";
 </script>
 
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
 </script>
 
-<BlogHeader {date} title="AP exams in 2025" />
+<BlogHeader {date} {title} />
 <p>
   <em>
     This is a plain text version of the <a

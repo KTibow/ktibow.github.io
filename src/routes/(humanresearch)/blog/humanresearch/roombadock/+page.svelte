@@ -1,5 +1,6 @@
 <script module>
-  export const date = "2025-08-19";
+	export const title = "Roomba dock IR";
+	export const date = "2025-08-19";
 </script>
 
 <script>
@@ -10,7 +11,7 @@
   import oidockmeasured from "./oidockmeasured.png";
 </script>
 
-<BlogHeader {date} title="Roomba dock IR" />
+<BlogHeader {date} {title} />
 <p>
   I have an iRobot Roomba dock model 17070. This is what the IR beams are supposed to look like.
 </p>

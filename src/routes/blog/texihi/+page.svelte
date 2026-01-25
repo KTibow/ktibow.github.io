@@ -1,4 +1,5 @@
 <script module>
+  export const title = "TeXIHI";
   export const date = "2025-01-03";
 </script>
 
@@ -10,7 +11,7 @@
   import screenshot from "./screenshot.png";
 </script>
 
-<BlogHeader {date} {bg} title="TeXIHI" />
+<BlogHeader {date} {title} {bg} />
 <p>
   Last Sunday, I decided to use real LaTeX for my homework. I spent more hours than I would like to
   admit on it, yet I'm very satisfied with the results.

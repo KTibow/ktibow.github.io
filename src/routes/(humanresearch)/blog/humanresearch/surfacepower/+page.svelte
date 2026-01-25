@@ -1,12 +1,13 @@
 <script module>
-  export const date = "2025-04-12";
+	export const title = "Surface power requirements";
+	export const date = "2025-04-12";
 </script>
 
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
 </script>
 
-<BlogHeader {date} title="Surface power requirements" />
+<BlogHeader {date} {title} />
 <p>
   <em
     >This is a plain text version of the interactive <a

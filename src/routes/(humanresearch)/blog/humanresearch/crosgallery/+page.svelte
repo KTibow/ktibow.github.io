@@ -1,12 +1,13 @@
 <script module>
-  export const date = "2025-12-08";
+	export const title = "Internals of the CrOS gallery";
+	export const date = "2025-12-08";
 </script>
 
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
 </script>
 
-<BlogHeader {date} title="Internals of the CrOS gallery" />
+<BlogHeader {date} {title} />
 <p>
   The gallery is internally called "media app". You can open it by typing in "chrome://media-app".
 </p>

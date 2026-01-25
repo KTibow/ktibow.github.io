@@ -1,5 +1,6 @@
 <script module>
-  export const date = "2025-05-01";
+	export const title = "Humanity's Last Exam baseline";
+	export const date = "2025-05-01";
 </script>
 
 <script>
@@ -8,7 +9,7 @@
   import Snippet from "$lib/Snippet.svelte";
 </script>
 
-<BlogHeader {date} title="Humanity's Last Exam baseline" />
+<BlogHeader {date} {title} />
 <p>
   We should not freak out over a 1.7B model getting 4.8% on Humanity's Last Exam - the random
   guessing baseline is around 4.65%.

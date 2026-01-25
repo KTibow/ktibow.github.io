@@ -1,4 +1,5 @@
 <script module>
+  export const title = "I can't go faster than static platforms";
   export const date = "2025-08-31";
 </script>
 
@@ -8,7 +9,7 @@
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {date} {bg} title="I can't go faster than static platforms" />
+<BlogHeader {date} {title} {bg} />
 <p>At least that's what I think. Do I have too low self confidence? Let's find out.</p>
 <p>
   "I" is 40-60ms here, the speed that GCP/Fly VMs/containers can serve the text "hi". So the

@@ -1,4 +1,5 @@
 <script module>
+  export const title = "Almost 32% of 2FA codes are interesting";
   export const date = "2025-03-07";
 </script>
 
@@ -7,7 +8,7 @@
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {date} {bg} title="Almost 32% of 2FA codes are interesting" />
+<BlogHeader {date} {title} {bg} />
 <p>
   Today on HN, <a
     href="https://blog.jacobstechtavern.com/p/building-a-2fa-app-that-detects-patterns"

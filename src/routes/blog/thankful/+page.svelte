@@ -1,4 +1,5 @@
 <script module>
+  export const title = "Things I'm thankful for";
   export const date = "2025-11-08";
 </script>
 
@@ -7,7 +8,7 @@
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {date} title="Things I'm thankful for" {bg} />
+<BlogHeader {date} {title} {bg} />
 <div class="list not-prose">
   <p>My dad</p>
   <p>My mom</p>

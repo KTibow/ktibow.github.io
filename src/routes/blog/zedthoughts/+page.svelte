@@ -1,4 +1,5 @@
 <script module>
+  export const title = "What I think of Zed";
   export const date = "2024-11-21";
 </script>
 
@@ -7,7 +8,7 @@
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {date} {bg} title="What I think of Zed" />
+<BlogHeader {date} {title} {bg} />
 <p>I've had a few phases with Zed:</p>
 <ul>
   <li>When it first came to Linux, I built it and tried it out</li>

@@ -1,5 +1,6 @@
 <script module>
-  export const date = "2025-07-20";
+	export const title = "Light bumpers are funny";
+	export const date = "2025-07-20";
 </script>
 
 <script lang="ts">
@@ -40,7 +41,7 @@
   const listFormatter = new Intl.ListFormat("en");
 </script>
 
-<BlogHeader {date} title="Light bumpers are funny" />
+<BlogHeader {date} {title} />
 <p>
   Roombas are known for bumping into things. Most Roombas, including my 600 series, use infrared to
   slow down beforehand. iRobot calls this technique light bumpers or light touch bumpers. But have

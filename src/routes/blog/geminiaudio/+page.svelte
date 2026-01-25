@@ -1,4 +1,5 @@
 <script module>
+  export const title = "Gemini > Whisper??";
   export const date = "2024-10-19";
 </script>
 
@@ -7,7 +8,7 @@
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {date} {bg} title="Gemini may be > Whisper" />
+<BlogHeader {date} {title} {bg} />
 <p>
   Audio transcription has been getting a lot better recently. In 2022, OpenAI's Whisper shocked the
   space with actually accurate transcription. From there, it's been getting cheaper and cheaper,
@@ -64,6 +65,7 @@
 </p>
 <br />
 <p>
-  <em>2025 update:</em> Phi 4 Multimodal is out, and it's even cheaper! $0.004/hour. (Some say that Whisper
-  actually just costs $0.001/hour to run, but I haven't checked this.)
+  <em>2025 update:</em> Phi 4 Multimodal is out, and it's even cheaper! $0.004/hour.
+  <a href="/blog/humanresearch/phi-4/">I investigated this.</a> (Some say that Whisper actually just
+  costs $0.001/hour to run, but I haven't checked this.)
 </p>

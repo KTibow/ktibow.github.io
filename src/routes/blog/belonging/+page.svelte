@@ -1,4 +1,5 @@
 <script module>
+  export const title = "On belonging";
   export const date = "2025-12-10";
 </script>
 
@@ -7,7 +8,7 @@
   import bg from "./bg.svg";
 </script>
 
-<BlogHeader {date} {bg} title="On belonging" />
+<BlogHeader {date} {title} {bg} />
 <div class="relative">
   <aside
     class="p-6 rounded-2xl border-current/50 border xl:absolute xl:ml-2 xl:left-full xl:w-[min(65ch,calc(50dvw-33ch))]"

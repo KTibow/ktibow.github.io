@@ -1,12 +1,13 @@
 <script module>
-  export const date = "2023-08-11";
+	export const title = "Life improvements I've done";
+	export const date = "2023-08-11";
 </script>
 
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
 </script>
 
-<BlogHeader {date} title="Life improvements I've done" />
+<BlogHeader {date} {title} />
 <p>Note: I wrote this on a plane because I got bored. I didn't have internet.</p>
 <p>
   This is somewhat inspired by me coming onto some guy's blog (while researching adaptive-lighting)

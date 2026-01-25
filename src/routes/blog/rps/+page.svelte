@@ -1,4 +1,5 @@
 <script module>
+  export const title = "The Rock Paper Scissors eval";
   export const date = "2024-12-25";
 </script>
 
@@ -7,7 +8,7 @@
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {date} {bg} title="The Rock Paper Scissors eval" />
+<BlogHeader {date} {title} {bg} />
 <p>
   On January 3, 2025, <code>@carrotsticks4363</code> posted a rather funny exchange with ChatGPT in the
   LMSYS Discord. It went something like

@@ -1,12 +1,13 @@
 <script module>
-  export const date = "2025-12-21";
+	export const title = "What happened to the app/game called ICON/Meteora Metaverse";
+	export const date = "2025-12-21";
 </script>
 
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
 </script>
 
-<BlogHeader {date} title="What happened to the app/game called ICON/Meteora Metaverse" />
+<BlogHeader {date} {title} />
 <p>
   It was pulled from Play and App stores. Claude says <code>com.iconlab.icon</code>'s last update
   was in January 22 2024, with delisting on April 12 2025.

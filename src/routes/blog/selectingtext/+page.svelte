@@ -1,4 +1,5 @@
 <script module>
+  export const title = "Selecting is easy, actually";
   export const date = "2024-11-08";
 </script>
 
@@ -7,7 +8,7 @@
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {date} {bg} title="Selecting is easy, actually" />
+<BlogHeader {date} {title} {bg} />
 <p>You probably know about the simple ways to select text:</p>
 <ul>
   <li>Click and drag</li>

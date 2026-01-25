@@ -1,5 +1,20 @@
 <script lang="ts">
   import SeriesBlog from "$lib/SeriesBlog.svelte";
+
+  const dates = import.meta.glob<string>("./*/+page.svelte", { eager: true, import: "date" });
+  const titles = import.meta.glob<string>("./*/+page.svelte", { eager: true, import: "title" });
+  const blogs = Object.keys(dates)
+    .sort((a, b) => dates[b].localeCompare(dates[a]))
+    .map((path) => {
+      const url = `/blog/${path.split("/")[1]}/`;
+      const title = titles[path];
+      return { url, title };
+    });
+  blogs.splice(
+    blogs.findIndex(({ url }) => url == "/blog/sleep/"),
+    0,
+    { url: "/blog/cssinjection/work.pdf", title: "CSS Injection is All You Need" },
+  );
 </script>
 
 <svelte:head>
@@ -8,76 +23,10 @@
 
 <SeriesBlog />
 
-{#snippet blog(page: string, title: string)}
-  {@const url = page.includes(".") ? `/blog/${page}` : `/blog/${page}/`}
-  <a href={url} class="entry layer">
-    {@html title}
-  </a>
-{/snippet}
-
-<div class="flex flex-wrap flex-grow gap-2 p-6">
-  {@render blog("privatekeys", "A world where private keys caught on")}
-  {@render blog("m3svelte7", "M3 Svelte 7")}
-  {@render blog("sveltemojis", "Replacing Svelte class names with emojis for fun and profit")}
-  {@render blog("skillissueskillissue", `Not understanding "skill issue" is a skill issue`)}
-  {@render blog("saneio", "A sane IO format")}
-  {@render blog("mixinsbullish", "I'm bullish on CSS mixins")}
-  {@render blog("belonging", "On belonging")}
-  {@render blog("m3svelte6", "M3 Svelte 6")}
-  {@render blog("gemini3", "Gemini 3: you need to actually make the hype transfer")}
-  {@render blog("onemoreprompt", "just one more prompt bro")}
-  {@render blog("thankful", "Things I'm thankful for")}
-  {@render blog("butexperience", "But you haven't matched the experience")}
-  {@render blog("lowselfconfidence", "I can't go faster than static platforms")}
-  {@render blog("imisscfpages", "A Cloudflare-Shaped Hole")}
-  {@render blog("roombamotors", "Roombas, motors, and noise")}
-  {@render blog("slamffusion", "SLAMffusion")}
-  {@render blog("crofai", "CrofAI updated my worldview")}
-  {@render blog("hfconspiracies", "Hugging Face Conspiracies")}
-  {@render blog("sdate", "Sdate is from 1993 of course")}
-  {@render blog("tangentcomputer", "Tangent is dead; long live Tangent")}
-  {@render blog("mcpfp", "MCP from first principles")}
-  {@render blog("googlol", "Googlol")}
-  {@render blog("timesince", "Time since major AI advancements")}
-  {@render blog("qwenflation", "Qwenflation")}
-  {@render blog("xelite", "The X Elite experience")}
-  {@render blog("regionid", "Using FlashAlert's API")}
-  {@render blog("porkbunt", "porkbunt")}
-  {@render blog("sleep-fragmentation", "Fragmentation and statistics in sleep")}
-  {@render blog("sleep", "How one estimates sleep stages")}
-  {@render blog("cssinjection/work.pdf", "CSS Injection is All You Need")}
-  {@render blog("interesting", "Almost 32% of 2FA codes are interesting")}
-  {@render blog("gflash", "Why is Gemini Flash so popular?")}
-  {@render blog("simplymatch", "Simply match curly brackets")}
-  {@render blog("reasoningtax", "I invented a new term")}
-  {@render blog("infidelity", "The Own Wife eval")}
-  {@render blog("texihi", "TeXIHI")}
-  {@render blog("rps", "The Rock Paper Scissors eval")}
-  {@render blog("focussis", "What <em>is</em> Focus SIS")}
-  {@render blog("nixcraft", "Why I don't like nixCraft")}
-  {@render blog("zedthoughts", "What I think of Zed")}
-  {@render blog("slidestemplates", "Slides Templates are funny")}
-  {@render blog("selectingtext", "Selecting is easy, actually")}
-  {@render blog("geminiaudio", "Gemini > Whisper????")}
-  {@render blog("farewellcfpages", "What Do You Do When Cloudflare Pages Gets Blocked?")}
-  {@render blog("aurora", "Unlinking Zigbee devices (Aurora)")}
-  {@render blog("routellm", "Ripping off RouteLLM")}
-  {@render blog("grading", "Grade math")}
-  {@render blog("compressionstream", "A stream of thoughts on compression")}
-  {@render blog("llama3", "Llama 3 fails some basic tests")}
-  {@render blog("useesm", "Rant: Why aren't you using ESM (downranked)")}
-  {@render blog("hafrontend", "My gripes with the HA frontend")}
-  {@render blog("admaven", "We probably shouldn't use AdMaven")}
-  {@render blog("chromasubsampling", "Why do we still use chroma subsampling")}
-  {@render blog("floatprecision", "You don't need that big of a float precision")}
-  {@render blog("toiconsets", "How I published 165 icon sets to NPM")}
-  {@render blog("aipredictions", "2024 AI predictions")}
-  {@render blog("improvements", "Life improvements I've done")}
-  {@render blog("vcareexplanation", "VC31 explanation")}
-  {@render blog("materialmenus", "Material menus are goofy")}
-  {@render blog("isthisarat", "Is This A Rat has problems")}
-  {@render blog("thebestai", "AI isn't good without good UI/UX")}
-  {@render blog("2vFiomba", "2vFiomba")}
+<div class="flex flex-wrap grow gap-2 p-6">
+  {#each blogs as { url, title }}
+    <a href={url} class="entry layer">{title}</a>
+  {/each}
 </div>
 
 <style>
