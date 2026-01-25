@@ -28,7 +28,7 @@
     {@const date = new Date(timestamp)}
     <p class="flex justify-between">
       <span>{content}</span>
-      <span>{formatDate(date)}</span>
+      <time datetime={date.toISOString()}>{formatDate(date)}</time>
     </p>
   {/each}
 </div>
