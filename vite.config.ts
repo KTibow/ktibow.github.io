@@ -1,11 +1,10 @@
 import { glob } from "tinyglobby";
 import { mkdir, writeFile } from "node:fs/promises";
-import { defineConfig } from "vite";
+import { defineConfig, type Plugin } from "vite";
 import tailwindcss from "@tailwindcss/vite";
 import { sveltekit } from "@sveltejs/kit/vite";
 
-/** @type {import("vite").Plugin} */
-const sitemapPlugin = {
+const sitemapPlugin: Plugin = {
   name: "sitemap-plugin",
   async closeBundle() {
     const pages = [];

@@ -11,5 +11,6 @@
     "strict": true,
     "moduleResolution": "bundler",
     "moduleDetection": "force"
-  }
+  },
+  "exclude": ["src/routes/blog/**/*.js"]
 }
