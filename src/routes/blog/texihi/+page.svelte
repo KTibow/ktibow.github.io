@@ -1,3 +1,7 @@
+<script module>
+  export const date = "2025-01-03";
+</script>
+
 <script>
   import latex from "svelte-highlight/languages/latex";
   import BlogHeader from "$lib/BlogHeader.svelte";
@@ -6,7 +10,7 @@
   import screenshot from "./screenshot.png";
 </script>
 
-<BlogHeader {bg} title="TeXIHI" />
+<BlogHeader {date} {bg} title="TeXIHI" />
 <p>
   Last Sunday, I decided to use real LaTeX for my homework. I spent more hours than I would like to
   admit on it, yet I'm very satisfied with the results.

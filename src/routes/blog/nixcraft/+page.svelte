@@ -1,3 +1,7 @@
+<script module>
+  export const date = "2024-12-07";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import bg from "./bg.avif";
@@ -6,7 +10,7 @@
   import nixcraft3 from "./nixcraft3.png";
 </script>
 
-<BlogHeader {bg} title="Why I don't like nixCraft" />
+<BlogHeader {date} {bg} title="Why I don't like nixCraft" />
 <p>
   I should first clarify what nixCraft is. nixCraft looks like and acts like a corporation, but it's
   just one Indian guy, Vivek Gite. He calls himself nixCraft everywhere.

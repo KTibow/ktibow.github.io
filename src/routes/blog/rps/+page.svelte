@@ -1,9 +1,13 @@
+<script module>
+  export const date = "2024-12-25";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {bg} title="The Rock Paper Scissors eval" />
+<BlogHeader {date} {bg} title="The Rock Paper Scissors eval" />
 <p>
   On January 3, 2025, <code>@carrotsticks4363</code> posted a rather funny exchange with ChatGPT in the
   LMSYS Discord. It went something like

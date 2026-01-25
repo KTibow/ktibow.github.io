@@ -1,10 +1,14 @@
+<script module>
+  export const date = "2025-06-27";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import CaptionedImage from "$lib/CaptionedImage.svelte";
   import cube from "./cube.avif";
 </script>
 
-<BlogHeader title="Who is Claudius Sennett" />
+<BlogHeader {date} title="Who is Claudius Sennett" />
 
 <p>
   Claudius Sennett is the name used by Claude Sonnet in Anthropic's recent vending machine

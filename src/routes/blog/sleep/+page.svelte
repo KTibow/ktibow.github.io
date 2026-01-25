@@ -1,3 +1,7 @@
+<script module>
+  export const date = "2025-03-30";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import Series from "$lib/Series.svelte";
@@ -7,7 +11,7 @@
   import myView from "./my-view.png";
 </script>
 
-<BlogHeader {bg} title="How one estimates sleep stages" />
+<BlogHeader {date} {bg} title="How one estimates sleep stages" />
 <p>
   You sleep a lot. It's not unlikely that you also track your sleep, whether with a watch, ring, or
   mattress pad. But how do these pieces of technology <em>know</em>? How do they turn heart rate and

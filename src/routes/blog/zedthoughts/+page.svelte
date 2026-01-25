@@ -1,9 +1,13 @@
+<script module>
+  export const date = "2024-11-21";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {bg} title="What I think of Zed" />
+<BlogHeader {date} {bg} title="What I think of Zed" />
 <p>I've had a few phases with Zed:</p>
 <ul>
   <li>When it first came to Linux, I built it and tried it out</li>

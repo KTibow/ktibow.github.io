@@ -1,8 +1,12 @@
+<script module>
+  export const date = "2025-05-15";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
 </script>
 
-<BlogHeader title="Sam Altman is on Discord" />
+<BlogHeader {date} title="Sam Altman is on Discord" />
 <p>
   Sam Altman is on Discord. He's only posted a few times in the OpenAI Discord, but he is on
   Discord. His display name is <code>sama99</code>, and his username (likely automatically converted

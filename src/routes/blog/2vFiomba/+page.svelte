@@ -1,9 +1,13 @@
+<script module>
+  export const date = "2022-02-20";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import logo from "./logo.svg";
 </script>
 
-<BlogHeader title="2vFiomba" />
+<BlogHeader {date} title="2vFiomba" />
 <img src={logo} alt="2vFiomba" class="w-full" />
 <h2>Background</h2>
 <p>

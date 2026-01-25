@@ -1,9 +1,13 @@
+<script module>
+  export const date = "2024-04-27";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {bg} title="A stream of thoughts on compression" />
+<BlogHeader {date} {bg} title="A stream of thoughts on compression" />
 <p>It's a stream about compression. Get it? Compression stream? Ha ha.</p>
 <h2>Zip would be better if compression was cross-file</h2>
 <p>

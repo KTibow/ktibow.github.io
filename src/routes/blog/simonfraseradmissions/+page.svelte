@@ -1,9 +1,13 @@
+<script module>
+  export const date = "2024-11-08";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {bg} title="Simon Fraser University admissions" />
+<BlogHeader {date} {bg} title="Simon Fraser University admissions" />
 <p>
   If you're a human seeing this, that's very interesting. This page is only for some custom scripts
   I have running to explain the admissions of various universities, since their official website has

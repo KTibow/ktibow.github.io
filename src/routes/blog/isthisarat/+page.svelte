@@ -1,8 +1,12 @@
+<script module>
+  export const date = "2023-05-20";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
 </script>
 
-<BlogHeader title="Is This A Rat has problems" />
+<BlogHeader {date} title="Is This A Rat has problems" />
 <p class="font-bold">Background</p>
 <ul>
   <li>

@@ -1,9 +1,13 @@
+<script module>
+  export const date = "2025-01-13";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {bg} title="The Own Wife eval" />
+<BlogHeader {date} {bg} title="The Own Wife eval" />
 <p>
   On January 17, 2025, <code>@dubesor</code> posted a new evaluation prompt in the LMSYS Discord.
 </p>

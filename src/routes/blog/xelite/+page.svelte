@@ -1,9 +1,13 @@
+<script module>
+  export const date = "2025-04-19";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {bg} title="The X Elite experience" />
+<BlogHeader {date} {bg} title="The X Elite experience" />
 <p>
   I got a new X Elite laptop recently, specifically the Lenovo Yoga Slim 7x. This is the obligatory
   blog post about running Linux on it.

@@ -1,3 +1,7 @@
+<script module>
+  export const date = "2025-07-18";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import pleasureseeker from "./pleasureseeker.mp3";
@@ -13,7 +17,7 @@
   import gliitchakeEdit from "./gliitchake_edit.wav";
 </script>
 
-<BlogHeader title="Listen to the raw vocals from Phantasmagoria" />
+<BlogHeader {date} title="Listen to the raw vocals from Phantasmagoria" />
 <p>
   Mr. Bill messes a lot with the vocals in Phantasmagoria. Here you can hear the raw ones, so you
   can remember them for what they are.

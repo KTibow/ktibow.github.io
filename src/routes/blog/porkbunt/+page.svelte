@@ -1,9 +1,13 @@
+<script module>
+  export const date = "2025-04-08";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {bg} title="porkbunt" />
+<BlogHeader {date} {bg} title="porkbunt" />
 
 <p>
   You probably already know that GoDaddy isn't the most wholesome company. There's a <a

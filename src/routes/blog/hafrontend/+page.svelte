@@ -1,9 +1,13 @@
+<script module>
+  export const date = "2024-02-07";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {bg} title="My gripes with the HA frontend" />
+<BlogHeader {date} {bg} title="My gripes with the HA frontend" />
 <h2>Slow dev workflow</h2>
 <p>
   The frontend uses Webpack. This means that a lot has to be rebuilt every time that something

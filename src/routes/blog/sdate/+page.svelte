@@ -1,3 +1,7 @@
+<script module>
+  export const date = "2025-06-29";
+</script>
+
 <script lang="ts">
   import BlogHeader from "$lib/BlogHeader.svelte";
   import bg from "./bg.avif";
@@ -23,7 +27,7 @@
   }
 </script>
 
-<BlogHeader {bg} title="Sdate is from 1993 of course" />
+<BlogHeader {date} {bg} title="Sdate is from 1993 of course" />
 
 <label class="mb-4">
   <input type="checkbox" bind:checked={eternalSeptemberMode} />

@@ -1,9 +1,13 @@
+<script module>
+  export const date = "2024-07-07";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {bg} title="Ripping off RouteLLM" />
+<BlogHeader {date} {bg} title="Ripping off RouteLLM" />
 <h2>The context</h2>
 <p>
   RouteLLM, a project by LMSYS and Anyscale, is designed to route queries between LLMs. They trained

@@ -1,9 +1,13 @@
+<script module>
+  export const date = "2025-12-06";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader title="M3 Svelte 6" {bg} />
+<BlogHeader {date} title="M3 Svelte 6" {bg} />
 
 <h2>Variables changed</h2>
 <p>

@@ -1,3 +1,7 @@
+<script module>
+  export const date = "2023-12-18";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
 
@@ -20,7 +24,7 @@
   });
 </script>
 
-<BlogHeader title="You don't need that big of a float precision" />
+<BlogHeader {date} title="You don't need that big of a float precision" />
 <p>
   So I love using SVGO for optimizing my SVGs. One of the integral parameters is <code
     >floatPrecision</code

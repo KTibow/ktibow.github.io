@@ -1,9 +1,13 @@
+<script module>
+  export const date = "2024-02-03";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {bg} title="We probably shouldn't use AdMaven" />
+<BlogHeader {date} {bg} title="We probably shouldn't use AdMaven" />
 <p>
   <strong
     >All opinions here are my own. Please contact me if there are any factually incorrect

@@ -1,5 +1,5 @@
 <script lang="ts">
-  let { title, bg }: { title: string; bg?: string } = $props();
+  let { title, bg, date }: { title: string; bg?: string; date?: string } = $props();
 </script>
 
 <svelte:head>
@@ -12,6 +12,18 @@
 {/if}
 
 <h1>{title}</h1>
+{#if date}
+  {@const [y, m, d] = date.split("-").map((n) => +n)}
+  <p class="opacity-60 -mt-8 mb-8">
+    <time datetime={date}
+      >{new Date(y, m - 1, d).toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      })}</time
+    >
+  </p>
+{/if}
 
 <style>
   img,

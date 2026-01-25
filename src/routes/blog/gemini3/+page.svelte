@@ -1,9 +1,13 @@
+<script module>
+  export const date = "2025-11-18";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader title="Gemini 3: you need to actually make the hype transfer" {bg} />
+<BlogHeader {date} title="Gemini 3: you need to actually make the hype transfer" {bg} />
 <p>
   This is a list of grievances written in rage about how I can't use what's been hyped for the last
   month. Not sure if you want to read this.

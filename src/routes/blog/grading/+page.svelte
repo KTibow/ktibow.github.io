@@ -1,10 +1,14 @@
+<script module>
+  export const date = "2024-05-12";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import bg from "./bg.avif";
   import graph from "./desmos-graph.svg";
 </script>
 
-<BlogHeader {bg} title="Grade math" />
+<BlogHeader {date} {bg} title="Grade math" />
 <p>
   For a bit now I've been experimenting with grade math. That is, recalculating your grade,
   sometimes under different circumstances. Some of this got programmed into an internal app that

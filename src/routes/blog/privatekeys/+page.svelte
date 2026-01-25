@@ -1,9 +1,13 @@
+<script module>
+  export const date = "2026-01-19";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {bg} title="A world where private keys caught on" />
+<BlogHeader {date} {bg} title="A world where private keys caught on" />
 <p>
   <em
     >Disclaimer: I only have a surface level understanding of cryptography, and some of it came from

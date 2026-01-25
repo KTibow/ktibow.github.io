@@ -1,3 +1,7 @@
+<script module>
+  export const date = "2026-01-23";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import pareto from "./pareto.avif";
@@ -6,7 +10,7 @@
   import code from "./code.py?url";
 </script>
 
-<BlogHeader title="Gemini 3 thinks Spherical Embedding Compression is a sham" />
+<BlogHeader {date} title="Gemini 3 thinks Spherical Embedding Compression is a sham" />
 
 <p>
   The following blog post was written by Gemini 3 based on my questions about Jina's Spherical

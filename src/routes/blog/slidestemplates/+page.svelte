@@ -1,3 +1,7 @@
+<script module>
+  export const date = "2024-11-08";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import CaptionedImage from "$lib/CaptionedImage.svelte";
@@ -37,7 +41,7 @@
   import screenshot6 from "./screenshot-6.png";
 </script>
 
-<BlogHeader {bg} title="The new Google Slides templates are honestly funny" />
+<BlogHeader {date} {bg} title="The new Google Slides templates are honestly funny" />
 
 <p>This month (November 2024) Google added "Templates" to Google Slides.</p>
 <div class="grid grid-cols-4 gap-2 not-prose">

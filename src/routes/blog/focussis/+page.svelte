@@ -1,9 +1,13 @@
+<script module>
+  export const date = "2024-12-10";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {bg} title="What *is* Focus SIS" />
+<BlogHeader {date} {bg} title="What *is* Focus SIS" />
 <p>
   Focus SIS is a student information system (SIS) used to manage student data, including attendance
   and grades. Like many other SISs, it looks outdated, but it has a relatively unique history.

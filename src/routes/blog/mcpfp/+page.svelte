@@ -1,3 +1,7 @@
+<script module>
+  export const date = "2025-06-02";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import Snippet from "$lib/Snippet.svelte";
@@ -5,7 +9,7 @@
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {bg} title="MCP from first principles" />
+<BlogHeader {date} {bg} title="MCP from first principles" />
 <p>
   MCP (at its core) is a standard for providing tools to LLMs. If I were to ask you to write a spec
   for MCP, it would probably look something like this:

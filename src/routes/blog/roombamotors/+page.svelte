@@ -1,3 +1,7 @@
+<script module>
+  export const date = "2025-07-27";
+</script>
+
 <script lang="ts">
   import BlogHeader from "$lib/BlogHeader.svelte";
   import Series from "$lib/Series.svelte";
@@ -5,7 +9,7 @@
   const listFormatter = new Intl.ListFormat("en");
 </script>
 
-<BlogHeader {bg} title="Roombas, motors, and noise" />
+<BlogHeader {date} {bg} title="Roombas, motors, and noise" />
 <p>
   I have a Create 2. I can drive it in 3 ways, going from most direct to least. All of them have
   some limits; today we're looking into them.

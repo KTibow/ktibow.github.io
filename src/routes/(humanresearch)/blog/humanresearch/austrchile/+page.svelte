@@ -1,8 +1,12 @@
+<script module>
+  export const date = "2025-03-26";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
 </script>
 
-<BlogHeader title="Why do LLMs think Australians don't need visas to enter Chile?" />
+<BlogHeader {date} title="Why do LLMs think Australians don't need visas to enter Chile?" />
 <p>
   Before May 16 2020, Australia was in the list of visa exempt countries. Australians could enter
   without a visa for up to 90 days to encourage tourism.

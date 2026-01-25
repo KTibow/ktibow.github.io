@@ -1,9 +1,13 @@
+<script module>
+  export const date = "2024-01-24";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {bg} title="Why do we still use chroma subsampling" />
+<BlogHeader {date} {bg} title="Why do we still use chroma subsampling" />
 <p>
   Chroma subsampling is a simple idea. Our eyes are less sensitive to colors than they are to light,
   and most colors within a range are close to each other, so we can only send the chroma for every 4

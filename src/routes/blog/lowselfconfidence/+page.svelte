@@ -1,10 +1,14 @@
+<script module>
+  export const date = "2025-08-31";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import Series from "$lib/Series.svelte";
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {bg} title="I can't go faster than static platforms" />
+<BlogHeader {date} {bg} title="I can't go faster than static platforms" />
 <p>At least that's what I think. Do I have too low self confidence? Let's find out.</p>
 <p>
   "I" is 40-60ms here, the speed that GCP/Fly VMs/containers can serve the text "hi". So the

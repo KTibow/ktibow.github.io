@@ -1,3 +1,7 @@
+<script module>
+  export const date = "2025-12-14";
+</script>
+
 <script lang="ts">
   import BlogHeader from "$lib/BlogHeader.svelte";
   import fromsvelte from "./fromsvelte.png";
@@ -16,7 +20,7 @@
     {label}
   </span>
 {/snippet}
-<BlogHeader title="Why M3 Svelte has on on primary" />
+<BlogHeader {date} title="Why M3 Svelte has on on primary" />
 <p><em>The rest of this post speaks in terms of dark mode.</em></p>
 <p>
   Normally in Material 3, primary is light, on primary is the opposite, primary container is dark,

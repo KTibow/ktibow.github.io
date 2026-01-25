@@ -1,9 +1,13 @@
+<script module>
+  export const date = "2025-03-07";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {bg} title="Almost 32% of 2FA codes are interesting" />
+<BlogHeader {date} {bg} title="Almost 32% of 2FA codes are interesting" />
 <p>
   Today on HN, <a
     href="https://blog.jacobstechtavern.com/p/building-a-2fa-app-that-detects-patterns"

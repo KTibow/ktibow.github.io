@@ -1,9 +1,13 @@
+<script module>
+  export const date = "2025-12-25";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import bg from "./bg.svg";
 </script>
 
-<BlogHeader {bg} title={`Not understanding "skill issue" is a skill issue`} />
+<BlogHeader {date} {bg} title={`Not understanding "skill issue" is a skill issue`} />
 <p>
   When I was younger, the phrase "skill issue" was raw nonsensical bait to me. I think part of why
   was because I saw skill and knowledge as the same thing - I thought you could just learn about

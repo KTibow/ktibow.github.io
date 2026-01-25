@@ -1,8 +1,12 @@
+<script module>
+  export const date = "2025-06-09";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
 </script>
 
-<BlogHeader title="WWDC 2025 Freeform snapshot" />
+<BlogHeader {date} title="WWDC 2025 Freeform snapshot" />
 <p>This is just a transcription of 1:03:56 from WWDC 2025 for searchability / ease of reading.</p>
 <h2>34 days left</h2>
 <p>Week 5 To-Dos:</p>

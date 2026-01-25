@@ -1,10 +1,14 @@
+<script module>
+  export const date = "2025-05-01";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import bg from "./bg.avif";
   import regression from "./regression.png";
 </script>
 
-<BlogHeader {bg} title="Qwenflation" />
+<BlogHeader {date} {bg} title="Qwenflation" />
 <p>
   Qwen 3 is the latest and greatest LLM from Alibaba. It's amazing on benchmarks and has a wide
   variety of models, which is why it's very odd that it's so unoptimized. As of May 1st 2025, Qwen 3

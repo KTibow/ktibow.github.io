@@ -1,9 +1,13 @@
+<script module>
+  export const date = "2025-07-17";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {bg} title="CrofAI updated my worldview" />
+<BlogHeader {date} {bg} title="CrofAI updated my worldview" />
 <p>
   <a href="https://ai.nahcrof.com/home">CrofAI</a> is an AI inference provider I learned about a few
   days ago. I used to think inference was fast OR cheap - all providers were either mid, cheap but slow

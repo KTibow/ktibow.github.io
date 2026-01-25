@@ -1,9 +1,13 @@
+<script module>
+  export const date = "2024-11-08";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {bg} title="Selecting is easy, actually" />
+<BlogHeader {date} {bg} title="Selecting is easy, actually" />
 <p>You probably know about the simple ways to select text:</p>
 <ul>
   <li>Click and drag</li>

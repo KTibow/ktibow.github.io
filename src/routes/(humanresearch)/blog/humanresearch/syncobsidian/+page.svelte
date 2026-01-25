@@ -1,8 +1,12 @@
+<script module>
+  export const date = "2025-03-26";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
 </script>
 
-<BlogHeader title="Remotely Save - including the .obsidian folder" />
+<BlogHeader {date} title="Remotely Save - including the .obsidian folder" />
 <p>
   To include the <code>.obsidian</code> folder when syncing with Remotely Save, enable the option that
   looks like

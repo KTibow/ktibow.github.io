@@ -1,8 +1,12 @@
+<script module>
+  export const date = "2025-04-20";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
 </script>
 
-<BlogHeader title="Meat + Rice" />
+<BlogHeader {date} title="Meat + Rice" />
 <p>
   The Doordash restaurant Meat + Rice was recently mentioned in <a
     href="https://x.com/zaryaismywife/status/1913009821550248153"

@@ -1,3 +1,7 @@
+<script module>
+  export const date = "2025-12-17";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import Snippet from "$lib/Snippet.svelte";
@@ -5,7 +9,7 @@
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {bg} title="A sane IO format" />
+<BlogHeader {date} {bg} title="A sane IO format" />
 <p>
   These days everyone is making their own API format for AI IO. OpenAI Chat Completions, OpenAI
   Responses, Anthropic Messages, Google Generate Content, Google Interactions, etc. Everything has

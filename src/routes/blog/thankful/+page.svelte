@@ -1,9 +1,13 @@
+<script module>
+  export const date = "2025-11-08";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader title="Things I'm thankful for" {bg} />
+<BlogHeader {date} title="Things I'm thankful for" {bg} />
 <div class="list not-prose">
   <p>My dad</p>
   <p>My mom</p>

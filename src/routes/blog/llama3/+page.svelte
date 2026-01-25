@@ -1,3 +1,7 @@
+<script module>
+  export const date = "2024-02-11";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import bg from "./bg.avif";
@@ -515,7 +519,7 @@ It's worth noting that while this is the farthest a human has been from Earth, t
   ];
 </script>
 
-<BlogHeader {bg} title="Llama 3 fails some basic tests" />
+<BlogHeader {date} {bg} title="Llama 3 fails some basic tests" />
 <p>
   The much-hyped Llama 3 came out recently (as of writing). It ranks high on standardized
   benchmarks, and LMSYS (English) says the 70B is on the same tier as GPT-4! And it's pretty good at

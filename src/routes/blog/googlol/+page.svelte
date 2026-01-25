@@ -1,3 +1,7 @@
+<script module>
+  export const date = "2025-05-11";
+</script>
+
 <script lang="ts">
   import BlogHeader from "$lib/BlogHeader.svelte";
   import CaptionedImage from "$lib/CaptionedImage.svelte";
@@ -15,7 +19,7 @@
   import yesno from "./yesno.png";
 </script>
 
-<BlogHeader {bg} title="Googlol" />
+<BlogHeader {date} {bg} title="Googlol" />
 <p>
   Google is a 325 billion dollar company. So why are they so inattentive to detail that it made me
   go to the effort of setting this page up? Perhaps paying attention to the finer aspects isn't

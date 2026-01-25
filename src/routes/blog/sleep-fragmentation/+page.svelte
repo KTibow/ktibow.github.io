@@ -1,3 +1,7 @@
+<script module>
+  export const date = "2025-04-08";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import Series from "$lib/Series.svelte";
@@ -14,7 +18,7 @@
   import CaptionedImage from "$lib/CaptionedImage.svelte";
 </script>
 
-<BlogHeader title="Fragmentation and statistics in sleep" {bg} />
+<BlogHeader {date} title="Fragmentation and statistics in sleep" {bg} />
 <div class="grid">
   <img src={appleView} alt="Apple Watch hypnogram" />
   <img src={withingsView} alt="Withings hypnogram" class="invert hue-rotate-180 object-cover" />

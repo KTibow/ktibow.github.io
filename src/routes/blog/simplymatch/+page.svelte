@@ -1,3 +1,7 @@
+<script module>
+  export const date = "2025-02-07";
+</script>
+
 <script>
   import js from "svelte-highlight/languages/javascript";
   import Snippet from "$lib/Snippet.svelte";
@@ -5,7 +9,7 @@
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {bg} title="Simply match curly brackets" />
+<BlogHeader {date} {bg} title="Simply match curly brackets" />
 <p>
   Making LLMs output JSON is a common problem, and making them
   <em>only</em> output the JSON is a surprisingly large part of it. While some commercial LLMs were

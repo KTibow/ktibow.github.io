@@ -1,10 +1,14 @@
+<script module>
+  export const date = "2024-09-15";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import Series from "$lib/Series.svelte";
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {bg} title="What Do You Do When Cloudflare Pages Gets Blocked?" />
+<BlogHeader {date} {bg} title="What Do You Do When Cloudflare Pages Gets Blocked?" />
 <p>
   Cloudflare Pages is an absolutely awesome platform. Thanks to Cloudflare's customers, it's
   completely subsidized, and provides generous static and dynamic hosting. I host almost all my

@@ -1,3 +1,7 @@
+<script module>
+  export const date = "2025-05-11";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import bg from "./bg.jpg";
@@ -48,7 +52,7 @@
   };
 </script>
 
-<BlogHeader {bg} title="Time since major AI advancements" />
+<BlogHeader {date} {bg} title="Time since major AI advancements" />
 <p>
   This is a timeline of major AI advancements. It's made for myself to look back on the past and
   think about how fast AI moves, so it's rather simple and uses relative dates.

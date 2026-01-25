@@ -1,9 +1,13 @@
+<script module>
+  export const date = "2025-12-29";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader title="M3 Svelte 7" {bg} />
+<BlogHeader {date} title="M3 Svelte 7" {bg} />
 
 <p>
   M3 Svelte 7 isn't a complete reorganizing like M3 Svelte 6 was. We have incremental improvements

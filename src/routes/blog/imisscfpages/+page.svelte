@@ -1,3 +1,7 @@
+<script module>
+  export const date = "2025-08-31";
+</script>
+
 <script lang="ts">
   import BlogHeader from "$lib/BlogHeader.svelte";
   import Series from "$lib/Series.svelte";
@@ -26,7 +30,7 @@
   const maxLatency = Math.max(...barChart.map(([, latency]) => latency));
 </script>
 
-<BlogHeader {bg} title="A Cloudflare-Shaped Hole" />
+<BlogHeader {date} {bg} title="A Cloudflare-Shaped Hole" />
 <p>
   It's been almost a year since <a href="/blog/farewellcfpages"
     >Cloudflare Pages and Workers were blocked for me</a

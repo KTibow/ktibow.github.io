@@ -1,3 +1,7 @@
+<script module>
+  export const date = "2025-08-31";
+</script>
+
 <script lang="ts">
   import BlogHeader from "$lib/BlogHeader.svelte";
   import Series from "$lib/Series.svelte";
@@ -122,7 +126,7 @@
   }
 </script>
 
-<BlogHeader title="But you haven't matched the experience" />
+<BlogHeader {date} title="But you haven't matched the experience" />
 <p>The hierarchy of needs for a website might look like</p>
 <svg viewBox="0 0 1000 1000">
   <style>

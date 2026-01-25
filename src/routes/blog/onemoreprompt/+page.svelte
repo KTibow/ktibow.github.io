@@ -1,3 +1,7 @@
+<script module>
+  export const date = "2025-11-15";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import CaptionedImage from "$lib/CaptionedImage.svelte";
@@ -7,7 +11,7 @@
   import ref2 from "./ref2.mp4";
 </script>
 
-<BlogHeader title="just one more prompt bro" {bg} />
+<BlogHeader {date} title="just one more prompt bro" {bg} />
 <p>But what if you actually did that? What if you actually just kept prompting?</p>
 <p>
   Well you won't be able to write any web browsers or TLS implementations, but you can get much

@@ -1,9 +1,13 @@
+<script module>
+  export const date = "2025-05-01";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import warning from "./warning.jpeg";
 </script>
 
-<BlogHeader title="What was Apple's Project Michigan" />
+<BlogHeader {date} title="What was Apple's Project Michigan" />
 <p>
   It was Apple's internal codename for its compliance efforts relating to the Epic Games v. Apple
   court injunction. So this was about allowing purchase links in apps. The drama is that they put

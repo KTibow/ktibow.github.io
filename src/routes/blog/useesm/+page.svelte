@@ -1,9 +1,13 @@
+<script module>
+  export const date = "2024-11-08";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {bg} title="Rant: Why aren't you using ESM" />
+<BlogHeader {date} {bg} title="Rant: Why aren't you using ESM" />
 
 <p>
   I'll start this post by saying that I know there are alternatives, like Deno. They're great, and I

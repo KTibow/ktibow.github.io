@@ -1,9 +1,13 @@
+<script module>
+  export const date = "2025-06-19";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {bg} title="Tangent is dead; long live Tangent" />
+<BlogHeader {date} {bg} title="Tangent is dead; long live Tangent" />
 <p>
   Having to keep things under wraps has been annoying, so I'll just get this out of the way: I'm a
   student, and I'm the maintainer of Tangent. The rest of this is about what Tangent was and what it

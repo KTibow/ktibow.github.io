@@ -1,8 +1,12 @@
+<script module>
+  export const date = "2025-09-13";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
 </script>
 
-<BlogHeader title="Minimally trusting the server and client in OAuth 1" />
+<BlogHeader {date} title="Minimally trusting the server and client in OAuth 1" />
 <p>If you model who's trusted with what in OAuth 1:</p>
 <p><strong>Any environment</strong></p>
 <ul>

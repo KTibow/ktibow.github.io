@@ -1,8 +1,12 @@
+<script module>
+  export const date = "2025-06-19";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
 </script>
 
-<BlogHeader title="Why does Home Assistant run on port 8123" />
+<BlogHeader {date} title="Why does Home Assistant run on port 8123" />
 <p>To be "less common" than port 8080.</p>
 <p>As for the etymology... it's 8, then 123.</p>
 <p>

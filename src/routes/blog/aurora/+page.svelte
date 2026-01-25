@@ -1,9 +1,13 @@
+<script module>
+  export const date = "2024-07-13";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {bg} title="Unlinking Zigbee devices (Aurora)" />
+<BlogHeader {date} {bg} title="Unlinking Zigbee devices (Aurora)" />
 <p class="font-italic">
   This post is very specific, as to hopefully reach anyone with the exact same problem.
 </p>

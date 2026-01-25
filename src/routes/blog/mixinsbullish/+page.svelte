@@ -1,3 +1,7 @@
+<script module>
+  export const date = "2025-12-14";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import Snippet from "$lib/Snippet.svelte";
@@ -5,7 +9,7 @@
   import css from "svelte-highlight/languages/css";
 </script>
 
-<BlogHeader {bg} title="I'm bullish on CSS mixins" />
+<BlogHeader {date} {bg} title="I'm bullish on CSS mixins" />
 <p>
   As a <a href="https://ktibow.github.io/m3-svelte/">component library</a> developer,
   <code>@mixin</code>

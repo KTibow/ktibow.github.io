@@ -1,9 +1,13 @@
+<script module>
+  export const date = "2024-10-19";
+</script>
+
 <script>
   import BlogHeader from "$lib/BlogHeader.svelte";
   import bg from "./bg.avif";
 </script>
 
-<BlogHeader {bg} title="Gemini may be > Whisper" />
+<BlogHeader {date} {bg} title="Gemini may be > Whisper" />
 <p>
   Audio transcription has been getting a lot better recently. In 2022, OpenAI's Whisper shocked the
   space with actually accurate transcription. From there, it's been getting cheaper and cheaper,

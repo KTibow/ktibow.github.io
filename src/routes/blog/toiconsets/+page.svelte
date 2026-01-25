@@ -1,10 +1,14 @@
+<script module>
+  export const date = "2023-12-14";
+</script>
+
 <script>
   import xml from "svelte-highlight/languages/xml";
   import BlogHeader from "$lib/BlogHeader.svelte";
   import Snippet from "$lib/Snippet.svelte";
 </script>
 
-<BlogHeader title="How I published 165 icon sets to NPM" />
+<BlogHeader {date} title="How I published 165 icon sets to NPM" />
 <h2>Problem</h2>
 <ul>
   <li>
