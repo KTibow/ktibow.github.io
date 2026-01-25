@@ -4,19 +4,14 @@
   import bg from "./bg.svg?url";
   import cursor from "./cursor.svg?url";
 
-  let time = $state("");
+  let now: Date | undefined = $state();
   let isLoaded = true;
   const updateTime = () => {
     if (!isLoaded) {
       return;
     }
 
-    const now = new Date();
-    time = now.toLocaleTimeString(undefined, {
-      hour: "numeric",
-      minute: "2-digit",
-      timeZone: "America/Los_Angeles",
-    });
+    now = new Date();
 
     setTimeout(updateTime, 60000 - (Date.now() % 60000));
   };
@@ -54,7 +49,17 @@
 <main class="flex max-lg:flex-col self-center gap-6 mx-2 my-auto text-surface">
   <div class="flex flex-col">
     <h1 class="text-5xl font-wb mb-auto">Kendell</h1>
-    <p class="link">{time}</p>
+    {#if now}
+      <time datetime={now.toISOString()} class="link"
+        >{now.toLocaleTimeString(undefined, {
+          hour: "numeric",
+          minute: "2-digit",
+          timeZone: "America/Los_Angeles",
+        })}</time
+      >
+    {:else}
+      <div class="link"></div>
+    {/if}
     <a class="link layer" href="https://github.com/KTibow">GitHub {@render arrow()}</a>
     <a class="link layer" href="https://github.com/sponsors/KTibow"
       >GitHub Sponsors {@render arrow()}</a
@@ -62,10 +67,10 @@
     <a class="link layer" href="https://discord.gg/DSzZQxpzHR">Discord {@render arrow()}</a>
   </div>
   <div>
+    <p>EHLO! i like making things; these are some things i've made.</p>
     <p>
-      EHLO! i like making things; these are some things i've made. you might also know me for my
-      chatting (where i'm known as KTibow) or for my interest in minification (e18e, svgo, etc are
-      awesome).
+      you might also know me for my chatting (where i'm known as KTibow) or for my interest in
+      minification (e18e, svgo, etc are awesome).
     </p>
   </div>
 </main>
@@ -85,6 +90,12 @@
     }
   }
   p {
-    max-width: 25rem;
+    &:not(:first-child) {
+      margin-top: 1em;
+    }
+    @media (width >= 64rem) {
+      line-height: 1.3;
+      max-width: 13rem;
+    }
   }
 </style>
