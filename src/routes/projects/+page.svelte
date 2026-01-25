@@ -24,6 +24,10 @@
     <a href="https://github.com/KTibow/school-districts">school-districts</a>).
   </p>
   <p>
+    Sep 2025: <a href="https://github.com/KTibow/schoology-docs-md">schoology-docs-md</a>, the
+    Schoology docs converted to Markdown.
+  </p>
+  <p>
     June 2025-August 2025: A failed attempt to rewrite Tangent (I learned that it makes sense to
     keep apps separate)
   </p>
@@ -71,10 +75,6 @@
   <h2>Non-school arc</h2>
   <h3>2025</h3>
   <img src={year2025} alt="2025 projects timeline" class="rounded-lg" />
-  <p>
-    <a href="https://github.com/KTibow/schoology-docs-md">schoology-docs-md</a>, the Schoology docs
-    converted to Markdown.
-  </p>
   <p>
     <a href="https://github.com/KTibow/tinyentities">tinyentities</a>, a minimal HTML entity
     encoder/decoder.
