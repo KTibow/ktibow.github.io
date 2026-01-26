@@ -76,6 +76,12 @@
   <h3>2025</h3>
   <img src={year2025} alt="2025 projects timeline" class="rounded-lg" />
   <p>
+    <a href="https://github.com/KTibow/vite-plugin-functions-mixins">vite-plugin-functions-mixins</a
+    >
+    and
+    <a href="https://github.com/KTibow/vite-plugin-token-shaker">vite-plugin-token-shaker</a>.
+  </p>
+  <p>
     <a href="https://github.com/KTibow/tinyentities">tinyentities</a>, a minimal HTML entity
     encoder/decoder.
   </p>
