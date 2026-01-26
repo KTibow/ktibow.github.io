@@ -154,6 +154,9 @@
     <a href="https://github.com/KTibow/home-assistant-theme">home-assistant-theme</a>, a site that
     generates Material 3-style themes for HA.
   </p>
+  <p>
+    <a href="/billnye/">bill nye</a>
+  </p>
   <p>Some frontend work for IsThisARat.</p>
   <h3>2022</h3>
   <img src={year2022} alt="2022 projects timeline" class="rounded-lg" />
