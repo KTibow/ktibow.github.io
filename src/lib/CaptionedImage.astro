@@ -1,0 +1,26 @@
+---
+import CaptionedMedia from "./CaptionedMedia.astro";
+
+type Props = {
+  src: any;
+  alt: string;
+  view?: "light" | "makedark" | "dark";
+};
+
+const { src, alt, view = "light" } = Astro.props;
+---
+
+<CaptionedMedia {alt} dark={view !== "light"}>
+  <img src={src} {alt} class:list={[{ invert: view == "makedark" }]} />
+</CaptionedMedia>
+
+<style>
+  img {
+    display: block;
+    width: 100%;
+    margin: 0 !important;
+  }
+  .invert {
+    filter: invert(1) hue-rotate(180deg);
+  }
+</style>

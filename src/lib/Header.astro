@@ -1,0 +1,54 @@
+---
+const pages = [
+  { url: "/blog/", title: "blog", description: "big thoughts" },
+  { url: "/milliblog/", title: "milliblog", description: "human research" },
+  { url: "https://x.com/anametolast", title: "microblog", description: "X" },
+  { url: "/nanoblog/", title: "nanoblog", description: "small thoughts" },
+  { url: "/projects/", title: "projects", description: "past work" },
+  { url: "/", title: "home", description: "about me" },
+];
+---
+
+<header>
+  {
+    pages.map(({ url, title, description }) =>
+      Astro.url.pathname == url ? (
+        <span class="pill selected">{title} - you are here</span>
+      ) : (
+        <a class="pill layer" href={url}>
+          {title} - {description}
+        </a>
+      ),
+    )
+  }
+</header>
+
+<style>
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 24px 24px 0 24px;
+  }
+  .pill {
+    @apply --m3-label-large;
+    display: inline-flex;
+    height: 2rem;
+    align-items: center;
+    position: relative;
+    user-select: none;
+
+    border-radius: var(--m3-shape-full);
+    padding-inline: 0.75rem;
+    background-color: var(--m3c-surface-container-low);
+    &.selected {
+      background-color: var(--m3c-secondary-container);
+      color: var(--m3c-on-secondary-container);
+    }
+    &:last-child {
+      @media (width >= 64rem) {
+        margin-left: auto;
+      }
+    }
+  }
+</style>

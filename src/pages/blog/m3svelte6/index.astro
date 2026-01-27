@@ -1,0 +1,120 @@
+---
+import BlogPost from "$lib/layouts/BlogPost.astro";
+import bg from "./bg.avif?url";
+
+export const title = "M3 Svelte 6";
+export const date = "2025-12-06";
+---
+
+<BlogPost {date} {title} {bg}>
+  <h2>Variables changed</h2>
+  <p>
+    Instead of <code>rgb(var(--m3-scheme-[color]))</code>, use <code>var(--m3c-[color])</code>.
+    Instead of <code>rgb(var(--m3-scheme-[color]) / [transparency])</code>, use
+    <code>--translucent(var(--m3c-[color]), [transparency])</code>. The m3c namespace stores raw
+    colors now.
+  </p>
+  <p>
+    Instead of <code>--m3-util-&lbrace;bottom-offset, density, background&rbrace;</code>, use
+    <code>--m3v-[name]</code>. The m3v namespace is for scoped, varying configuration variables.
+  </p>
+  <p>Everything else is a token, and now lives under <code>--m3</code>; no <code>util</code>.</p>
+  <p>
+    <code>--m3-util-rounding-[size]</code> is now <code>--m3-shape-[size]</code>.
+    <code>--m3-util-&lbrace;curve, curve-accel, curve-decel&rbrace;</code> are now called
+    <code>--m3-timing-function-&lbrace;emphasized, emphasized-accel, emphasized-decel&rbrace;</code
+    >.
+    <code>--m3-&lbrace;textfield, datefield&rbrace;-shape</code>
+    are now called <code>--m3-field-shape</code>. And instead of
+    <code>calc(size + var(--m3-util-density-term))</code>, use
+    <code>--m3-density(size)</code>.
+  </p>
+  <p>
+    It's true: some of these features are powered by the Functions and Mixins module. For the 6.0.0
+    release of M3 Svelte, we've processed the library with
+    <a href="https://www.npmjs.com/package/vite-plugin-functions-mixins"
+      ><code>vite-plugin-functions-mixins</code></a
+    > for easy use. But for all releases after, you'll need to install this plugin yourself. You'll benefit
+    from the ability to use M3 Svelte's functions and mixins, to redefine its mixins, and to minify any
+    unused ones.
+  </p>
+  <p>Tip: Regex find+replace and LLMs help a lot with any tedious refactoring.</p>
+
+  <h2>Removed components</h2>
+  <ul>
+    <li>
+      CircularProgressIndeterminate and LinearProgressIndeterminate was removed because they looked
+      bad and worked bad. Switch to the modern and clean LoadingIndicator, or if you know how long
+      the operation is supposed to take, try CircularProgressEstimate, LinearProgressEstimate, or
+      WavyLinearProgressEstimate. <small>Your editor should've warned you of this.</small>
+    </li>
+    <li>
+      SliderTicks was removed in favor of setting <code>stops</code> in Slider.
+      <small>Your editor should've warned you of this.</small>
+    </li>
+    <li>NewSnackbar was renamed to Snackbar.</li>
+  </ul>
+
+  <h2>Changed components</h2>
+  <ul>
+    <li>
+      Dialog now asks you to make use of the native <code>closedby</code> to control closing, and detecting
+      changes to <code>open</code> to detect closing.
+      <small>Your editor should've warned you of this.</small>
+    </li>
+    <li>
+      Slider now asks you to use <code>stops</code>, not <code>ticks</code>.
+      <small>Typescript should've warned you of this.</small>
+    </li>
+    <li>Icon now displays overflow by default.</li>
+    <li>
+      Snackbar now works like NewSnackbar did, where you mount it once in a layout and import <code
+        >snackbar(message)</code
+      >
+      everywhere else. <small>Your editor should've warned you of this.</small>
+    </li>
+    <li>
+      NavCMLX and NavCMLXItem now call the largest view <code>extra-large</code> instead of
+      <code>expanded</code>, after the breakpoint.
+    </li>
+    <li>NavCMLXItem now requires using <code>onclick</code> for items with a click action.</li>
+    <li>
+      Switch now requires your theme to have <code>on-on-primary</code>, a color roughly equivalent
+      to
+      <code>on-primary-container</code>.
+    </li>
+  </ul>
+
+  <h2>Other breaking changes</h2>
+  <p>
+    You now must <code>@import "m3-svelte/misc/[path].css"</code> without wrapping the URL in
+    <code>url()</code>.
+  </p>
+  <p>
+    svelte is now a peerdependency, so you'll need it installed. You'll also need to use the latest
+    version to take advantage of new syntax.
+  </p>
+  <p>
+    Unless you use Tailwind, the <code>m3-font-[family]-[size]</code> HTML classes are dead. Switch to
+    <code>@apply --m3-[family]-[size]</code> in CSS. Editing attributes is simple: just redefine the mixins.
+  </p>
+
+  <h2>More info</h2>
+  <p>
+    Recently, tokens were moved to a <code>@layer tokens</code> block, allowing you to change their priority
+    and to use
+    <a href="https://www.npmjs.com/package/vite-plugin-token-shaker"
+      ><code>vite-plugin-token-shaker</code></a
+    > to drop, inline, and rename them. Colors weren't moved, because colors are dynamic (CSS/JS may change
+    them, and Svelte/JS may read them).
+  </p>
+  <p>
+    If you plan to override <code>--m3</code> tokens, it's best to do so at the top level to make behavior
+    more predictable. The font and background variable defaults were recently moved to the top level,
+    so it makes sense to put your overrides at the top level.
+  </p>
+  <p>
+    The bottom offset and density variables were converted to use <code>@property</code> instead of top
+    level fallbacks, as they are literally custom properties with simple default values.
+  </p>
+</BlogPost>

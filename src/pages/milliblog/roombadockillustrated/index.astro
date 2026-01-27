@@ -1,0 +1,17 @@
+---
+import BlogPost from "$lib/layouts/BlogPost.astro";
+import dock from "./dock.png?url";
+import roomba from "./roomba.png?url";
+import dockIr from "./dock ir.png?url";
+import buoy from "./1 buoy.png?url";
+
+export const title = "Roomba dock IR, illustrated";
+export const date = "2025-10-25";
+---
+
+<BlogPost {date} {title}>
+  <img src={dock} alt="Roomba dock" />
+  <img src={roomba} alt="Roomba" />
+  <img src={dockIr} alt="Roomba dock IR" />
+  <img src={buoy} alt="Roomba dock buoy" />
+</BlogPost>

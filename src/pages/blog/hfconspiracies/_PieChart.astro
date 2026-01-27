@@ -1,0 +1,132 @@
+---
+import * as d3 from "d3";
+
+interface Props {
+  data: [string, number][];
+  id?: string;
+  hidden?: boolean;
+}
+
+const { data, ...extra } = Astro.props;
+
+const width = 512;
+const height = 512;
+const outerRadius = Math.min(width, height) / 2 - 1;
+
+function normalizeColor(hex: string) {
+  const hsl = d3.hsl(hex);
+  return d3.hsl(hsl.h, 0.8, 0.3).toString();
+}
+
+const colorMap: Record<string, string> = {
+  "AI Singapore": normalizeColor("#ae2514"),
+  "AI Sweden": normalizeColor("#fecb00"),
+  "Exploration Lab": normalizeColor("#0000ff"),
+  "Hugging Face": normalizeColor("#FFD21E"),
+  "Kaggle (Google)": normalizeColor("#20beff"),
+  "LM Studio": normalizeColor("#4338ca"),
+  "NTT Data": normalizeColor("#070f26"),
+  "Red Hat": normalizeColor("#ee0000"),
+  "Sarvam AI": normalizeColor("#cb5534"),
+  "Scale AI": normalizeColor("#E151FF"),
+  "Together AI": normalizeColor("#0262f2"),
+  AMD: normalizeColor("#FF0000"),
+  AWS: normalizeColor("#ff9900"),
+  Cerebras: normalizeColor("#f45d2c"),
+  Cloudflare: normalizeColor("#f88101"),
+  Databricks: normalizeColor("#FF5F46"),
+  Dell: normalizeColor("#0672cb"),
+  Docker: normalizeColor("#1D63ED"),
+  Doubleword: normalizeColor("#ff6767"),
+  Fireworks: normalizeColor("#6720FF"),
+  Giskard: normalizeColor("#91f7c0"),
+  Google: normalizeColor("#4285f4"),
+  GDE: normalizeColor("#4285f4"),
+  Groq: normalizeColor("#F55036"),
+  IBM: normalizeColor("#0043ce"),
+  Independent: normalizeColor("#8800FF"),
+  Intel: normalizeColor("#0068B5"),
+  Meta: normalizeColor("#0082FB"),
+  Microsoft: normalizeColor("#00a3ee"),
+  Miko: normalizeColor("#0b3533"),
+  Nous: normalizeColor("#0071A9"),
+  NVIDIA: normalizeColor("#76b900"),
+  Ollama: "#222222",
+  OpenAI: "#000000",
+  Other: normalizeColor("#FF0088"),
+  SambaNova: normalizeColor("#4e226b"),
+  Snowflake: normalizeColor("#249edc"),
+  vLLM: normalizeColor("#30a2ff"),
+};
+
+function getColor(name: string) {
+  return colorMap[name] || "#000000";
+}
+
+const pie = d3
+  .pie<[string, number]>()
+  .sort(null)
+  .value((d) => d[1]);
+
+const arc = d3.arc<d3.PieArcDatum<[string, number]>>().innerRadius(0).outerRadius(outerRadius);
+
+const arcLabel = d3
+  .arc<d3.PieArcDatum<[string, number]>>()
+  .innerRadius(outerRadius * 0.9)
+  .outerRadius(outerRadius * 0.9);
+
+const arcs = pie(data);
+---
+
+<svg
+  width={width}
+  height={height}
+  viewBox={`${-width / 2} ${-height / 2} ${width} ${height}`}
+  {...extra}
+>
+  <g class="data">
+    {
+      arcs.map((slice) => {
+        const d = arc(slice) || "";
+        const labelPos = arcLabel.centroid(slice);
+        const [lx, ly] = labelPos;
+        const name = slice.data[0];
+        const value = slice.data[1];
+        const fill = getColor(name);
+        return (
+          <>
+            <path d={d} fill={fill} stroke="white" />
+            <text
+              x={lx}
+              y={ly}
+              text-anchor="middle"
+              style="fill:white;font-weight:700;font-size:11px;"
+            >
+              {name}
+            </text>
+            <text
+              x={lx}
+              y={ly + 12}
+              text-anchor="middle"
+              style="fill:white;font-weight:700;font-size:11px;"
+            >
+              {value.toLocaleString()}
+            </text>
+          </>
+        );
+      })
+    }
+  </g>
+</svg>
+
+<style>
+  svg {
+    max-width: 100%;
+    height: auto;
+    font-size: 0.75rem;
+  }
+  text {
+    pointer-events: none;
+    dominant-baseline: middle;
+  }
+</style>

@@ -1,0 +1,44 @@
+---
+import Base from "$lib/layouts/Base.astro";
+import Header from "$lib/Header.astro";
+import list from "./_list";
+---
+
+<Base title="Milliblog">
+  <Header />
+  <h2>
+    This is Human Research, a project to help the humans of the future index and train on findings
+    that aren't currently on the (clear and scrapable) internet.
+  </h2>
+  <main>
+    {
+      list.map(({ title, link }) => (
+        <a class="layer" href={link}>
+          {title}
+        </a>
+      ))
+    }
+  </main>
+</Base>
+
+<style>
+  h2 {
+    @apply --m3-headline-small;
+    margin-block-start: 1.5rem;
+    margin-inline: 1.5rem;
+  }
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1.5rem;
+    gap: 0.5rem;
+    flex-grow: 1;
+  }
+  a {
+    flex: 1 1 16rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    background-color: var(--m3c-surface-container-low);
+    position: relative;
+  }
+</style>

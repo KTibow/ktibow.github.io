@@ -1,16 +1,17 @@
 {
-  "extends": "./.svelte-kit/tsconfig.json",
+  "extends": "astro/tsconfigs/strict",
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": [
+    "dist",
+    "src/pages/blog/imisscfpages/_hifastlyjs",
+    "src/pages/blog/imisscfpages/_hivercel"
+  ],
   "compilerOptions": {
-    "allowJs": true,
-    "checkJs": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
-    "sourceMap": true,
-    "strict": true,
-    "moduleResolution": "bundler",
+    "strictNullChecks": true,
+    "baseUrl": ".",
+    "paths": {
+      "$lib/*": ["src/lib/*"]
+    },
     "moduleDetection": "force"
-  },
-  "exclude": ["src/routes/blog/**/*.js"]
+  }
 }

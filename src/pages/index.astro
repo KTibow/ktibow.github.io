@@ -1,0 +1,98 @@
+---
+import Base from "$lib/layouts/Base.astro";
+import Header from "$lib/Header.astro";
+import Arrow from "./_arrow.astro";
+
+import bg from "./_bg.svg?url";
+import cursor from "./_cursor.svg?url";
+---
+
+<Base title="Kendell">
+  <Header />
+  <style
+    set:html={"body {" +
+      [
+        `cursor: url("${cursor}"), auto`,
+        `background-image: url("${bg}")`,
+        `background-color: var(--m3c-primary)`,
+        `background-size: 100%`,
+        `background-repeat: no-repeat`,
+        `background-attachment: fixed`,
+        `background-position: top center`,
+      ].join(";") +
+      "}"}
+  ></style>
+  <main>
+    <div>
+      <h1>Kendell</h1>
+      <time class="link"></time>
+      <a class="link layer" href="https://github.com/KTibow">GitHub <Arrow /></a>
+      <a class="link layer" href="https://github.com/sponsors/KTibow">GitHub Sponsors <Arrow /></a>
+      <a class="link layer" href="https://discord.gg/DSzZQxpzHR">Discord <Arrow /></a>
+    </div>
+    <div>
+      <p>EHLO! i like making things; this site has some things i've made.</p>
+      <p>
+        you might also know me for my chatting (where i'm known as KTibow) or for my interest in
+        minification (e18e, svgo, etc are awesome).
+      </p>
+    </div>
+  </main>
+  <script>
+    const time = document.querySelector("time")!;
+    function updateTime() {
+      const now = new Date();
+      time.dateTime = now.toISOString();
+      time.textContent = now.toLocaleTimeString(undefined, {
+        hour: "numeric",
+        minute: "2-digit",
+        timeZone: "America/Los_Angeles",
+      });
+    }
+    updateTime();
+    setInterval(updateTime, 60000 - (Date.now() % 60000));
+  </script>
+</Base>
+
+<style>
+  main {
+    display: flex;
+    @media (width < 52.5rem) {
+      flex-direction: column;
+    }
+    gap: 1.5rem;
+    margin-inline: 0.5rem;
+    margin-block: auto;
+    align-self: center;
+    color: var(--m3c-surface);
+    > * {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  h1 {
+    font-family: Workbench, system-ui;
+    @apply --m3-display-medium;
+    margin-bottom: auto;
+  }
+  .link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    &:last-child {
+      margin-bottom: -0.5rem;
+    }
+  }
+  p {
+    &:not(:first-child) {
+      margin-top: 1em;
+    }
+    @media (width >= 52.5rem) {
+      line-height: 1.3;
+      max-width: 13rem;
+    }
+  }
+</style>

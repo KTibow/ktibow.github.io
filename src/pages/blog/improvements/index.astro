@@ -1,0 +1,107 @@
+---
+import BlogPost from "$lib/layouts/BlogPost.astro";
+
+export const title = "Life improvements I've done";
+export const date = "2023-08-11";
+---
+
+<BlogPost {date} {title}>
+  <p>Note: I wrote this on a plane because I got bored. I didn't have internet.</p>
+  <p>
+    This is somewhat inspired by me coming onto some guy's blog (while researching
+    adaptive-lighting) where he talks about how he did a project where he spent some time improving
+    his life.
+    <a href="https://socraticowl.com/post/kaizen-experiment/"> (link) </a>
+  </p>
+  <div class="grid not-prose">
+    <div class="cyan">
+      <p><strong>Home Assistant</strong></p>
+      <p>Manages lights and tracks data throughout the day.</p>
+    </div>
+    <div class="teal">
+      <p><strong>Automatic watch syncer</strong></p>
+      <p>Syncs the time, weather, and schedule to my Bangle.js daily at 6AM.</p>
+    </div>
+    <div class="red">
+      <p><strong>Better keyboards</strong></p>
+      <p>Colemak on personal/school computers, and Microsoft SwiftKey on phones.</p>
+    </div>
+    <div class="green">
+      <p><strong>Custom school websites</strong></p>
+      <p>
+        Utilities I coded to view recently posted assignments, connect to the web filters, use GPT,
+        chat (direct, unblockable), etc.
+      </p>
+    </div>
+    <div class="indigo">
+      <p><strong>More soon?</strong></p>
+      <p>
+        At the time of writing, I actually can't think of that many - but I have plans for other
+        stuff already.
+      </p>
+    </div>
+    <div class="orange">
+      <p><strong>Alert system (HA)</strong></p>
+      <p>This is a plan</p>
+    </div>
+    <div class="blue">
+      <p><strong>Sleep automations</strong></p>
+      <p>This is a plan</p>
+    </div>
+    <div class="yellow">
+      <p><strong>Apps</strong></p>
+      <p>email systems, google voice, books, etc. does this even count?</p>
+    </div>
+  </div>
+</BlogPost>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    margin-block: 1rem;
+  }
+  .grid > div {
+    padding: 1rem 1.5rem;
+    border-radius: 1.5rem;
+  }
+  .cyan {
+    background-color: rgba(103, 232, 249, 0.3);
+    color: #cffafe;
+  }
+  .teal {
+    background-color: rgba(94, 234, 212, 0.3);
+    color: #ccfbf1;
+  }
+  .red {
+    background-color: rgba(252, 165, 165, 0.3);
+    color: #fee2e2;
+  }
+  .green {
+    background-color: rgba(134, 239, 172, 0.3);
+    color: #dcfce7;
+  }
+  .indigo {
+    background-color: rgba(165, 180, 252, 0.3);
+    color: #e0e7ff;
+  }
+  .orange {
+    background-color: rgba(253, 186, 116, 0.3);
+    color: #ffedd5;
+  }
+  .blue {
+    background-color: rgba(147, 197, 253, 0.3);
+    color: #dbeafe;
+  }
+  .yellow {
+    background-color: rgba(253, 224, 71, 0.3);
+    color: #fef9c3;
+  }
+
+  @media (max-width: 640px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

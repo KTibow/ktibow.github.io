@@ -1,0 +1,50 @@
+---
+import BlogPost from "$lib/layouts/BlogPost.astro";
+import bg from "./bg.avif?url";
+
+export const title = "Using FlashAlert's API";
+export const date = "2025-04-18";
+
+const base = "https://www.flashalertnewswire.net/IIN/reportsX/flashnews_xml2.php";
+
+const regions = [
+  { id: 1, name: "Portland/Vancouver/Salem" },
+  { id: 2, name: "Eugene/Springfield/Roseburg/Albany/Corvalis" },
+  { id: 5, name: "Colorado Springs/Rocky Mountain Area" },
+  { id: 7, name: "Spokane/Eastern Washington/Northern Idaho" },
+  { id: 10, name: "Bend/Central Oregon/Eastern Oregon" },
+  { id: 12, name: "Seattle/Western Washington" },
+  { id: 13, name: "Columbia/Tri Cities/Pendleton/Yakima" },
+  { id: 15, name: "Boise/Southern Idaho" },
+  { id: 25, name: "Medford/Klamath Falls/Grants Pass" },
+];
+---
+
+<BlogPost {date} {title} {bg}>
+  <p>
+    The tricky thing with FlashAlert's API is that it doesn't document how to switch which area the
+    feed that provides newswire information is for. Turns out you can use the <code>RegionID</code> option
+    for this:
+  </p>
+
+  <ul>
+    {
+      regions.map((r) => (
+        <li>
+          {r.name}:{" "}
+          <a href={`${base}?RegionID=${r.id}`} target="_blank">
+            <code>{`${base}?RegionID=${r.id}`}</code>
+          </a>
+          {r.id == 1 && (
+            <>
+              {" or "}
+              <a href={base} target="_blank">
+                <code>{base}</code>
+              </a>
+            </>
+          )}
+        </li>
+      ))
+    }
+  </ul>
+</BlogPost>

@@ -42,7 +42,7 @@ export default {
 
 async function getExistingStatuses(): Promise<Status[]> {
   const response = await fetch(
-    "https://api.github.com/repos/KTibow/ktibow.github.io/contents/src/routes/nanoblog/statuses.json",
+    "https://api.github.com/repos/KTibow/ktibow.github.io/contents/src/pages/nanoblog/statuses.json",
     {
       headers: {
         Authorization: `token ${env.GITHUB_TOKEN}`,
@@ -68,7 +68,7 @@ async function getExistingStatuses(): Promise<Status[]> {
 
 async function updateStatusFile(statuses: Status[]): Promise<void> {
   const getResponse = await fetch(
-    "https://api.github.com/repos/KTibow/ktibow.github.io/contents/src/routes/nanoblog/statuses.json",
+    "https://api.github.com/repos/KTibow/ktibow.github.io/contents/src/pages/nanoblog/statuses.json",
     {
       headers: {
         Authorization: `token ${env.GITHUB_TOKEN}`,
@@ -88,7 +88,7 @@ async function updateStatusFile(statuses: Status[]): Promise<void> {
   const content = btoa(JSON.stringify(statuses, null, 2) + "\n");
 
   const updateResponse = await fetch(
-    "https://api.github.com/repos/KTibow/ktibow.github.io/contents/src/routes/nanoblog/statuses.json",
+    "https://api.github.com/repos/KTibow/ktibow.github.io/contents/src/pages/nanoblog/statuses.json",
     {
       method: "PUT",
       headers: {

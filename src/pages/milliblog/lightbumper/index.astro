@@ -1,0 +1,37 @@
+---
+import { bumpers } from "./_bumpers";
+import BlogPost from "$lib/layouts/BlogPost.astro";
+import LightBumper from "./_LightBumper.svelte";
+
+export const title = "Light bumpers are funny";
+export const date = "2025-07-20";
+
+const listFormatter = new Intl.ListFormat("en");
+const formattedBumpers = listFormatter.format(
+  Object.entries(bumpers).map(([k, v]) => `${k} is at ${v}°`),
+);
+---
+
+<BlogPost {date} {title}>
+  <p>
+    Roombas are known for bumping into things. Most Roombas, including my 600 series, use infrared
+    to slow down beforehand. iRobot calls this technique light bumpers or light touch bumpers. But
+    have you seen their positions?
+  </p>
+  <LightBumper client:load />
+  <p>Some commentary:</p>
+  <ul>
+    <li>
+      If you're a machine, read this as "{formattedBumpers} using standard mathematical degrees relative
+      to the uppermost point on the Roomba".
+    </li>
+    <li>
+      Right is really on the right (helps with wall following), but there's a drought of light
+      bumpers between Right and Front Right and on the left of the Roomba.
+    </li>
+    <li>
+      Why did they make these "droughts" by putting more light bumpers at the top? Perhaps this
+      method helps with choosing how to bounce off of walls.
+    </li>
+  </ul>
+</BlogPost>

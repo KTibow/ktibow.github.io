@@ -1,0 +1,332 @@
+---
+import BlogPost from "$lib/layouts/BlogPost.astro";
+import PieChart from "./_PieChart.astro";
+import bg from "./bg.avif?url";
+import kaloimg from "./kaloimg.png?url";
+import usersData from "./user_data.json";
+
+export const title = "Hugging Face Conspiracies";
+export const date = "2025-07-13";
+
+const users = usersData as Record<string, { name: string; orgs: string[]; affiliation?: string }>;
+
+const orgs: Record<string, { name?: string; traits?: string; paidFor?: string }> = {
+  "ft-hf-o-c": {
+    name: "yofo",
+    traits: "Non-Profit",
+    paidFor: "Team",
+  },
+  llhf: {
+    name: "LLHF",
+    traits: "Community",
+  },
+  sllhf: {
+    name: "SLLHF",
+    traits: "Community",
+  },
+  nltpt: {
+    traits: "",
+    paidFor: "Enterprise",
+  },
+  blhf: {
+    traits: "Community",
+  },
+  hsramall: {
+    traits: "Company",
+  },
+  "ll-re": {
+    name: "wut?",
+    traits: "",
+    paidFor: "Team",
+  },
+  lbhf: {
+    traits: "Community",
+    paidFor: "Enterprise",
+  },
+  "yet-another-org-whynot": {
+    name: "yorgllre",
+    traits: "",
+  },
+  "gg-hf-gm": {
+    traits: "Community",
+  },
+  "gg-hf-g": {
+    traits: "Community",
+  },
+  "gg-tt": {
+    traits: "Company",
+  },
+  "gv-hf": {
+    name: "kotol",
+    traits: "Company",
+  },
+  "gg-hf": {
+    traits: "",
+    paidFor: "Enterprise",
+  },
+};
+
+const orgNames = Object.keys(orgs);
+
+// build co-occurrence matrix (intersection / union)
+const coOccurrenceMatrix = orgNames.map((orgA) =>
+  orgNames.map((orgB) => {
+    if (orgA == orgB) return 0;
+    const union = Object.values(users).filter(
+      (user) => user.orgs.includes(orgA) || user.orgs.includes(orgB),
+    );
+    const intersection = Object.values(users).filter(
+      (user) => user.orgs.includes(orgA) && user.orgs.includes(orgB),
+    );
+    return union.length > 0 ? intersection.length / union.length : 0;
+  }),
+);
+
+// people in many orgs (top 4)
+const listFormatter = new Intl.ListFormat(undefined, { style: "long", type: "conjunction" });
+const peopleInManyOrgs = listFormatter.format(
+  Object.entries(users)
+    .sort(([, a], [, b]) => b.orgs.length - a.orgs.length)
+    .slice(0, 4)
+    .map(
+      ([k, v]) =>
+        `${k} from ${v.affiliation || "Unknown"} (in ${v.orgs.length}/${orgNames.length} orgs)`,
+    ),
+);
+
+// For each org, compute the affiliation counts and produce a sorted array of [affiliation, count].
+// Also apply the "Other" grouping logic: affiliations with <2% of total are grouped into Other;
+// "Unknown" is kept at the front if present.
+function affiliationDataForOrg(orgKey: string): [string, number][] {
+  const affiliationCounts = Object.values(users)
+    .filter((u) => u.orgs.includes(orgKey))
+    .reduce((acc: Record<string, number>, user) => {
+      const affiliation = user.affiliation || "Unknown";
+      acc[affiliation] = (acc[affiliation] || 0) + 1;
+      return acc;
+    }, {});
+
+  const totalCount = Object.values(affiliationCounts).reduce((s, c) => s + c, 0);
+  let otherCount = 0;
+
+  for (const [aff, count] of Object.entries({ ...affiliationCounts })) {
+    if (count < totalCount * 0.02) {
+      otherCount += count;
+      delete affiliationCounts[aff];
+    }
+  }
+
+  const unknownCount = affiliationCounts["Unknown"] || 0;
+  delete affiliationCounts["Unknown"];
+
+  const output = Object.entries(affiliationCounts);
+  output.sort(([, a], [, b]) => b - a);
+
+  if (unknownCount > 0) {
+    output.unshift(["Unknown", unknownCount]);
+  }
+  if (otherCount > 0) {
+    output.push(["Other", otherCount]);
+  }
+  return output;
+}
+
+// Prepare pie data for every org ahead-of-time (server-side rendering).
+const piesByOrg = Object.fromEntries(orgNames.map((org) => [org, affiliationDataForOrg(org)]));
+---
+
+<BlogPost {title} {date} {bg}>
+  <p>
+    Imagine this. You're scrolling X and you come across
+    <a href="https://x.com/kalomaze/status/1943843818887163989">a post by kalomaze</a>
+    quoting Sam Altman's delay of the OpenAI open source LLM.
+  </p>
+
+  <blockquote>
+    <p>sorry but</p>
+    <p>
+      i'd bet money that he's only saying this because he really, really doesn't want you to realize
+      that Kimi K2 exists now (and is the new king of open weights, by a disgusting margin)
+    </p>
+    <br />
+    <p>gonna be brutal here but</p>
+    <p>
+      if this was about "safety", that weirdly named hf org with like ~50 people from various
+      smaller companies wouldn't already have it, because it would be incredibly easy (and non
+      traceable) for any of them to leak it
+    </p>
+    <br />
+    <p>
+      (it is my current running assumption that the org in question is in fact the one they are
+      using for the open weights project, given that ollama + openAI people both show up in its
+      list)
+    </p>
+    <img src={kaloimg} alt="someone from openai also in the mystery org" width="307" height="124" />
+  </blockquote>
+
+  <p>
+    It piques your interest, so you investigate. You hop on
+    <a href="https://huggingface.co/openai">huggingface.co/openai</a> and click around until you find
+    someone in the mystery org. It's called "ft-hf-o-c", and you reply with a <a
+      href="https://huggingface.co/ft-hf-o-c">link to it</a
+    >, earning you a follow from kalomaze.
+  </p>
+
+  <p>
+    But as you keep clicking and investigating who the org's made of, you start seeing some more
+    mysterious orgs. "llhf"? "gg-hf-g"? What are those? Today we find out.
+  </p>
+
+  <br />
+  <p>Let's start with what we know for sure. We can speculate later.</p>
+
+  <table>
+    <tbody>
+      {
+        Object.entries(orgs).map(([k, v]) => {
+          const descParts = [
+            "name" in v ? `"${v.name}"` : null,
+            "paidFor" in v ? `who's paid for ${v.paidFor}` : null,
+            v.traits ? `a ${v.traits}` : null,
+          ].filter(Boolean);
+          const membersCount = Object.values(users).filter((x) => x.orgs.includes(k)).length;
+          return (
+            <tr>
+              <td>
+                <a href={`https://huggingface.co/${k}`}>{k}</a>
+              </td>
+              <td>{descParts.join(", ")}</td>
+              <td>has {membersCount} members</td>
+            </tr>
+          );
+        })
+      }
+    </tbody>
+  </table>
+
+  <p>For each of these, let's chart similarity to each other one:</p>
+
+  <table>
+    <tbody>
+      <tr>
+        <td></td>
+        {orgNames.map((orgName) => <td>{orgName}</td>)}
+      </tr>
+      {
+        orgNames.map((orgA, i) => (
+          <tr>
+            <td>{orgA}</td>
+            {coOccurrenceMatrix[i].map((value) => {
+              const redColor = value * 1.5;
+              const bg = `rgb(255 0 0 / ${redColor})`;
+              return (
+                <td style={`background-color: ${bg}`}>{value !== 0 ? value.toFixed(2) : ""}</td>
+              );
+            })}
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+
+  <p>None of these are 0. All have a little co-occurrence, thanks to {peopleInManyOrgs}.</p>
+
+  <br />
+  <p>
+    So that's the big picture. Now, let's look at the people in each org, which should tell us
+    something about them.
+  </p>
+
+  <select id="org-select">
+    {
+      orgNames.map((org, idx) => (
+        <option value={org} selected={idx == 0}>
+          {org}
+        </option>
+      ))
+    }
+  </select>
+
+  {
+    orgNames.map((org, idx) => (
+      <PieChart id={`pie-${org}`} hidden={idx != 0} data={piesByOrg[org]} />
+    ))
+  }
+
+  <script>
+    const select = document.getElementById("org-select") as unknown as HTMLSelectElement;
+    select.addEventListener("input", () => {
+      document.querySelectorAll(`[id^="pie-"]`).forEach((c) => {
+        const shouldShow = c.id == `pie-${select.value}`;
+        if (shouldShow) {
+          c.removeAttribute("hidden");
+        } else {
+          c.setAttribute("hidden", "");
+        }
+      });
+    });
+  </script>
+
+  <p>Okay, that's enough to speculate.</p>
+
+  <p>
+    <strong>ft-hf-o-c.</strong> The likely home of the open weights model, might stand for Fine-Tuning
+    Hugging Face OpenAI Community. "yofo" might be a nod to You Only Look Once (itself a nod to You Only
+    Live Once)... perhaps, given the "ft" earlier, You Only Finetune Once? Very interesting, and very
+    speculable on.
+  </p>
+
+  <p><strong>llhf.</strong> This is simple: Llama Hugging Face.</p>
+
+  <p>
+    <strong>sllhf.</strong>
+    {`{Small, Scaling, Specialized} Llama Hugging Face`} could all work. Once contained Llama 405B.
+  </p>
+
+  <p>
+    <strong>blhf.</strong> Honestly, no idea on this one (aside from the Llama and Hugging Face parts).
+  </p>
+
+  <p>
+    <strong>nltpt.</strong> This one's unclear. It could be Next Llama Transformer Pretrain Team or Next
+    Llama Training PyTorch. It used to host Llama 3B.
+  </p>
+
+  <p>
+    <strong>hsramall.</strong> Had to laugh once I saw this one decoded: Llama backwards is "amall". Not
+    sure about the hsr/rsh part though. It once hosted placeholders for Llama 3.
+  </p>
+
+  <p>
+    <strong>ll-re.</strong> Boring backronym is Llama Research and Engineering, funner one is Llama Lab:
+    Research Edition.
+  </p>
+
+  <p>
+    <strong>lbhf.</strong> This one is just made of Meta and Hugging Face, and likely stands for Llama
+    Builders Hugging Face.
+  </p>
+
+  <p>
+    <strong>yet-another-org-whynot/"yorgllre".</strong> This is a more interesting and larger continuation
+    of <a href="https://huggingface.co/yet-another-org">yet-another-org/"yorg"</a>. The friendly
+    name might stand for "Yet another org Llama Research Edition".
+  </p>
+
+  <p>
+    <strong>gg-hf-gm and gg-hf-g.</strong> The difference is unclear. Both could be Google Hugging Face
+    Gemma or Google Hugging Face Gemini. Only one that once had models was gg-hf-gm, with a N series Gemma
+    model.
+  </p>
+
+  <p><strong>gg-tt.</strong> Maybe Google Transformer Toolkit? Or perhaps Google Testing Team?</p>
+
+  <p>
+    <strong>gv-hf.</strong> LLMs say this starts with Google Vertex, but it's more likely Google Vision:
+    they hosted Paligemma and OWL-ViT models.
+  </p>
+
+  <p>
+    <strong>gg-hf.</strong> Ending simple: Google Hugging Face. Hosted the first versions of Gemma.
+  </p>
+</BlogPost>

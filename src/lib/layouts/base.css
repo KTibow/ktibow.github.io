@@ -1,0 +1,470 @@
+@import "@unocss/reset/tailwind-v4.css";
+@font-face {
+  font-family: Inter Variable;
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("https://rsms.me/inter/font-files/InterVariable.woff2?v=4.1") format("woff2");
+}
+@font-face {
+  font-family: Inter Variable;
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("https://rsms.me/inter/font-files/InterVariable-Italic.woff2?v=4.1") format("woff2");
+}
+:root {
+  accent-color: var(--m3c-primary);
+  font-family:
+    Inter Variable,
+    system-ui;
+  background-color: var(--m3c-surface);
+  color: var(--m3c-on-surface);
+  accent-color: var(--m3c-primary);
+  color-scheme: dark;
+  --m3c-primary: #bbc3ff;
+  --m3c-on-primary: #001c94;
+  --m3c-primary-container: #324ad5;
+  --m3c-on-primary-container: #cbd0ff;
+  --m3c-inverse-primary: #364ed9;
+  --m3c-secondary: #bbc3ff;
+  --m3c-on-secondary: #232c61;
+  --m3c-secondary-container: #3c457c;
+  --m3c-on-secondary-container: #acb4f3;
+  --m3c-tertiary: #f8acff;
+  --m3c-on-tertiary: #570067;
+  --m3c-tertiary-container: #902ba3;
+  --m3c-on-tertiary-container: #fbbeff;
+  --m3c-error: #ffb4ab;
+  --m3c-on-error: #690005;
+  --m3c-error-container: #93000a;
+  --m3c-on-error-container: #ffdad6;
+  --m3c-surface: #12131b;
+  &.midnight {
+    --m3c-surface: #000;
+  }
+  --m3c-on-surface: #e3e1ed;
+  --m3c-surface-variant: #444654;
+  --m3c-on-surface-variant: #c5c5d7;
+  --m3c-on-surface-dilute: color-mix(
+    in oklab,
+    var(--m3c-on-surface-variant) 66%,
+    var(--m3c-on-surface)
+  );
+  --m3c-inverse-surface: #e3e1ed;
+  --m3c-inverse-on-surface: #2f3039;
+  --m3c-outline: #8f8fa0;
+  --m3c-outline-variant: #444654;
+  --m3c-shadow: #000000;
+  --m3c-scrim: #000000;
+  --m3c-surface-dim: #12131b;
+  --m3c-surface-bright: #383842;
+  --m3c-surface-container-lowest: #0d0e15;
+  --m3c-surface-container-low: #1a1b23;
+  --m3c-surface-container: #1e1f27;
+  --m3c-surface-container-high: #292932;
+  --m3c-surface-container-highest: #33343d;
+  --m3c-surface-tint: #bbc3ff;
+  --m3c-primary-container-subtle: #001a88;
+  --m3c-on-primary-container-subtle: #97a5ff;
+  --m3c-tertiary-container-subtle: #57004a;
+  --m3c-on-tertiary-container-subtle: #f087d4;
+  --m3c-error-container-subtle: #5f001c;
+  --m3c-on-error-container-subtle: #ff8796;
+  --m3-shape-full: calc(infinity * 1px);
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+dialog {
+  margin: auto;
+}
+button,
+select,
+summary {
+  cursor: pointer;
+}
+
+/* As the largest text on the screen, display styles are reserved for short, important text or numerals. */
+@mixin --m3-display-large {
+  font-size: 3.563rem;
+  line-height: 1.05;
+  font-weight: 400;
+}
+@mixin --m3-display-medium {
+  font-size: 2.813rem;
+  line-height: 1.156;
+  font-weight: 400;
+}
+@mixin --m3-display-small {
+  font-size: 2.25rem;
+  line-height: 1.222;
+  font-weight: 400;
+}
+
+/* Headlines are best-suited for short, high-emphasis text on smaller screens. */
+@mixin --m3-headline-large {
+  font-size: 2rem;
+  line-height: 1.25;
+  font-weight: 400;
+}
+@mixin --m3-headline-medium {
+  font-size: 1.75rem;
+  line-height: 1.286;
+  font-weight: 400;
+}
+@mixin --m3-headline-small {
+  font-size: 1.5rem;
+  line-height: 1.333;
+  font-weight: 400;
+}
+
+/* Titles are smaller than headline styles, and should be used for medium-emphasis text that remains relatively short. */
+@mixin --m3-title-large {
+  font-size: 1.375rem;
+  line-height: 1.273;
+  font-weight: 400;
+}
+@mixin --m3-title-medium {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
+@mixin --m3-title-small {
+  font-size: 0.875rem;
+  line-height: 1.429;
+  font-weight: 500;
+}
+
+/* Label styles are smaller, utilitarian styles, used for things like the text inside components
+or for very small text in the content body, such as captions. */
+@mixin --m3-label-large {
+  font-size: 0.875rem;
+  line-height: 1.429;
+  font-weight: 500;
+}
+@mixin --m3-label-medium {
+  font-size: 0.75rem;
+  line-height: 1.333;
+  font-weight: 500;
+}
+@mixin --m3-label-small {
+  font-size: 0.688rem;
+  line-height: 1.455;
+  font-weight: 500;
+}
+
+/* Body styles are used for longer passages of text in your app. */
+@mixin --m3-body-large {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+@mixin --m3-body-medium {
+  font-size: 0.875rem;
+  line-height: 1.429;
+  font-weight: 400;
+}
+@mixin --m3-body-small {
+  font-size: 0.75rem;
+  line-height: 1.333;
+  font-weight: 400;
+}
+
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, "Monaspace Neon Var", monospace;
+}
+.prose {
+  @apply --m3-body-large;
+  line-height: 1.75;
+  color: var(--m3c-on-surface-dilute);
+  max-width: 65ch;
+  > :where(:not(.not-prose, .not-prose *)) {
+    margin-block-start: 1em;
+  }
+  :where(:not(.not-prose, .not-prose *)) {
+    :where(h1, h2, h3, h4) + &:where(h1, h2, h3, h4) {
+      margin-block-start: 0.25em;
+    }
+    &:where(h1, h2, h3, h4, dt, thead th) {
+      color: var(--m3c-on-surface);
+    }
+    &:where(h1) {
+      @apply --m3-display-large;
+      margin-block-start: 0;
+    }
+    &:where(h1 strong) {
+      font-weight: 900;
+      color: inherit;
+    }
+    &:where(h2) {
+      @apply --m3-headline-large;
+    }
+    &:where(h2 strong) {
+      font-weight: 800;
+      color: inherit;
+    }
+    &:where(h3) {
+      @apply --m3-headline-small;
+    }
+    &:where(h3 strong) {
+      font-weight: 700;
+      color: inherit;
+    }
+    &:where(h4) {
+      font-weight: 600;
+      line-height: 1.5;
+    }
+    &:where(h4 strong) {
+      font-weight: 700;
+      color: inherit;
+    }
+    &:where(.lead) {
+      color: var(--m3c-on-surface-variant);
+      @apply --m3-display-small;
+    }
+    &:where(a) {
+      color: var(--m3c-primary);
+      text-decoration: underline;
+      font-weight: 500;
+    }
+    &:where(strong) {
+      color: var(--m3c-on-surface);
+      font-weight: 600;
+    }
+    &:where(a strong) {
+      color: inherit;
+    }
+    &:where(blockquote strong) {
+      color: inherit;
+    }
+    &:where(thead th strong) {
+      color: inherit;
+    }
+    &:where(ol) {
+      list-style-type: decimal;
+      padding-left: 1.625em;
+    }
+    &:where(ol[type="A"]) {
+      list-style-type: upper-alpha;
+    }
+    &:where(ol[type="a"]) {
+      list-style-type: lower-alpha;
+    }
+    &:where(ol[type="A" s]) {
+      list-style-type: upper-alpha;
+    }
+    &:where(ol[type="a" s]) {
+      list-style-type: lower-alpha;
+    }
+    &:where(ol[type="I"]) {
+      list-style-type: upper-roman;
+    }
+    &:where(ol[type="i"]) {
+      list-style-type: lower-roman;
+    }
+    &:where(ol[type="I" s]) {
+      list-style-type: upper-roman;
+    }
+    &:where(ol[type="i" s]) {
+      list-style-type: lower-roman;
+    }
+    &:where(ol[type="1"]) {
+      list-style-type: decimal;
+    }
+    &:where(ul) {
+      list-style-type: disc;
+      padding-left: 1.625em;
+    }
+    &:where(ol > li)::marker {
+      font-weight: 400;
+      color: var(--m3c-on-surface-variant);
+    }
+    &:where(ul > li)::marker {
+      color: oklab(from var(--m3c-on-surface) l a b / 0.5);
+    }
+    &:where(dt) {
+      color: var(--m3c-on-surface);
+      font-weight: 600;
+    }
+    &:where(hr) {
+      border-color: var(--m3c-outline-variant);
+      border-top-width: 1;
+    }
+    &:where(blockquote) {
+      font-weight: 500;
+      font-style: italic;
+      color: var(--m3c-on-surface);
+      border-left-width: 0.25rem;
+      border-left-color: oklab(from var(--m3c-on-surface) l a b / 0.5);
+      quotes: "\201C" "\201D" "\2018" "\2019";
+      padding-left: 1em;
+    }
+    &:where(blockquote p:first-of-type)::before {
+      content: open-quote;
+    }
+    &:where(blockquote p:last-of-type)::after {
+      content: close-quote;
+    }
+    &:where(picture) {
+      display: block;
+    }
+    &:where(kbd) {
+      font-weight: 500;
+      font-family: inherit;
+      color: var(--m3c-on-surface);
+      box-shadow:
+        0 0 0 1px oklab(from var(--m3c-on-surface) l a b / 0.1),
+        0 3px 0 oklab(from var(--m3c-on-surface) l a b / 0.1);
+      @apply --m3-label-large;
+      border-radius: 0.3125rem;
+      padding-top: 0.1875em;
+      padding-right: 0.375em;
+      padding-bottom: 0.1875em;
+      padding-left: 0.375em;
+    }
+    &:where(code) {
+      color: var(--m3c-on-surface);
+      font-weight: 600;
+      @apply --m3-label-large;
+    }
+    &:where(code)::before {
+      content: "`";
+    }
+    &:where(code)::after {
+      content: "`";
+    }
+    &:where(a code) {
+      color: inherit;
+    }
+    &:where(h1 code) {
+      color: inherit;
+    }
+    &:where(h2 code) {
+      color: inherit;
+      @apply --m3-body-medium;
+    }
+    &:where(h3 code) {
+      color: inherit;
+      @apply --m3-label-large;
+    }
+    &:where(h4 code) {
+      color: inherit;
+    }
+    &:where(blockquote code) {
+      color: inherit;
+    }
+    &:where(thead th code) {
+      color: inherit;
+    }
+    &:where(pre) {
+      color: var(--m3c-on-surface);
+      background-color: oklab(from var(--m3c-surface-container-lowest) l a b / 0.5) !important;
+      overflow-x: auto;
+      font-weight: 400;
+      @apply --m3-body-medium;
+      border-radius: 0.5rem;
+      padding-block: 0.8571429em;
+      padding-inline: 1.1428571em;
+    }
+    &:where(pre code) {
+      background-color: transparent;
+      border-width: 0;
+      border-radius: 0;
+      padding: 0;
+      color: inherit;
+      font: inherit;
+      line-height: inherit;
+    }
+    &:where(pre code)::before {
+      content: none;
+    }
+    &:where(pre code)::after {
+      content: none;
+    }
+    &:where(table) {
+      width: 100%;
+      table-layout: auto;
+      text-align: left;
+      @apply --m3-body-medium;
+      line-height: 1.7142857;
+    }
+    &:where(thead) {
+      border-bottom-width: 1px;
+      border-bottom-color: var(--m3c-outline-variant);
+    }
+    &:where(thead th) {
+      font-weight: 600;
+      vertical-align: bottom;
+      padding-right: 0.5714286em;
+      padding-bottom: 0.5714286em;
+      padding-left: 0.5714286em;
+    }
+    &:where(tbody tr) {
+      border-bottom-width: 1px;
+      border-bottom-color: var(--m3c-outline-variant);
+    }
+    &:where(tbody tr:last-child) {
+      border-bottom-width: 0;
+    }
+    &:where(tbody td) {
+      vertical-align: baseline;
+    }
+    &:where(tfoot) {
+      border-top-width: 1px;
+      border-top-color: var(--m3c-outline-variant);
+    }
+    &:where(tfoot td) {
+      vertical-align: top;
+    }
+    &:where(figure > *) {
+      margin-block: 0;
+    }
+    &:where(figcaption) {
+      color: var(--m3c-on-surface-variant);
+      @apply --m3-body-medium;
+      line-height: 1.4285714;
+    }
+    &:where(picture > img) {
+      margin-block: 0;
+    }
+    &:where(ol > li) {
+      padding-left: 0.375em;
+    }
+    &:where(ul > li) {
+      padding-left: 0.375em;
+    }
+    &:where(dd) {
+      padding-left: 1.625em;
+    }
+    &:where(thead th:first-child) {
+      padding-left: 0;
+    }
+    &:where(thead th:last-child) {
+      padding-right: 0;
+    }
+    &:where(tbody td, tfoot td) {
+      padding-top: 0.5714286em;
+      padding-right: 0.5714286em;
+      padding-bottom: 0.5714286em;
+      padding-left: 0.5714286em;
+    }
+    &:where(tbody td:first-child, tfoot td:first-child) {
+      padding-left: 0;
+    }
+    &:where(tbody td:last-child, tfoot td:last-child) {
+      padding-right: 0;
+    }
+    &:where(.prose > :first-child) {
+      margin-block-start: 0;
+    }
+    &:where(.prose > :last-child) {
+      margin-block-end: 0;
+    }
+  }
+}

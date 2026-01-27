@@ -1,0 +1,299 @@
+---
+import BlogPost from "$lib/layouts/BlogPost.astro";
+import Snippet from "$lib/Snippet.astro";
+
+export const title = "Humanity's Last Exam baseline";
+export const date = "2025-05-01";
+
+const code = `# /// script
+# dependencies = [
+#     "pandas",
+#     "pyarrow",
+# ]
+# ///
+
+import pandas as pd
+import re
+import random
+import string
+from collections import Counter
+
+# Set random seed for reproducibility
+random.seed(42)
+
+# Number of simulation runs
+NUM_RUNS = 20
+
+# Load the parquet file
+df = pd.read_parquet('test-00000-of-00001.parquet')
+print(f"Total questions: {len(df)}")
+
+# Function to count choices in a multiple choice question
+def count_choices(question_text):
+    choice_patterns = [
+        r'[A-Z]\\.\\s', # A. Option
+        r'[A-Z]\\)\\s', # A) Option
+        r'\\([A-Z]\\)\\s', # (A) Option
+        r'[A-Z]:\\s', # A: Option
+        r'^\\s*[A-Z]\\s' # A Option (at the beginning of a line)
+    ]
+
+    if "Answer Choices:" in question_text:
+        lines = question_text.split('\\n')
+        choices = [line for line in lines if re.match(r'^\\s*[A-Z]\\.', line.strip())]
+        if choices:
+            return len(choices)
+
+    for pattern in choice_patterns:
+        choices = re.findall(pattern, question_text)
+        if choices:
+            choice_letters = set([c.strip()[0] for c in choices])
+            if len(choice_letters) >= 2:
+                return len(choice_letters)
+
+    # Default to 5 if pattern matching fails but it's a multiple choice question
+    return 5
+
+# Function to detect answer type
+def detect_answer_type(answer):
+    answer_str = str(answer).strip().lower()
+
+    # Single letter
+    if re.match(r'^[a-z]$', answer_str):
+        return 'single_letter'
+
+    # Yes/No
+    if answer_str in ['yes', 'no']:
+        return 'yes_no'
+
+    # True/False
+    if answer_str in ['true', 'false']:
+        return 'true_false'
+
+    # Simple number
+    if re.match(r'^-?\\d+(\\.\\d+)?$', answer_str):
+        return 'simple_number'
+
+    # Fraction
+    if re.match(r'^-?\\d+/\\d+$', answer_str):
+        return 'fraction'
+
+    # Scientific notation
+    if re.match(r'^-?\\d+(\\.\\d+)?e[+-]?\\d+$', answer_str, re.IGNORECASE):
+        return 'scientific'
+
+    # Default for complex free response
+    return 'complex_free_response'
+
+# Function to generate a random guess based on answer type
+def generate_random_guess(answer_type, num_choices=None):
+    if answer_type == 'multipleChoice':
+        # Randomly select a letter from A to whatever is the max choice
+        max_choice = min(num_choices, 26) if num_choices else 5  # Default to 5 if unsure
+        return random.choice(string.ascii_uppercase[:max_choice])
+
+    elif answer_type == 'single_letter':
+        return random.choice(string.ascii_lowercase)
+
+    elif answer_type == 'yes_no':
+        return random.choice(['yes', 'no'])
+
+    elif answer_type == 'true_false':
+        return random.choice(['true', 'false'])
+
+    elif answer_type == 'simple_number':
+        # Generate a random integer between -100 and 1000
+        return str(random.randint(-100, 1000))
+
+    elif answer_type == 'fraction':
+        # Generate a random fraction
+        numerator = random.randint(1, 100)
+        denominator = random.randint(1, 100)
+        return f"{numerator}/{denominator}"
+
+    elif answer_type == 'scientific':
+        # Generate a random number in scientific notation
+        mantissa = random.uniform(1, 10)
+        exponent = random.randint(-10, 10)
+        return f"{mantissa:.2f}e{exponent}"
+
+    else:  # complex_free_response
+        # Generate a random string (will almost certainly be wrong)
+        length = random.randint(3, 20)
+        return ''.join(random.choice(string.ascii_lowercase) for _ in range(length))
+
+# Function to check exact match with case variations
+def check_match(guess, actual):
+    guess_str = str(guess).strip()
+    actual_str = str(actual).strip()
+
+    # Try exact match
+    if guess_str == actual_str:
+        return True
+
+    # Try case-insensitive match
+    if guess_str.lower() == actual_str.lower():
+        return True
+
+    # For yes/no and true/false, try matching first letter only
+    if guess_str.lower() in ['yes', 'no', 'true', 'false'] and len(actual_str) >= 1:
+        if guess_str.lower()[0] == actual_str.lower()[0]:
+            return True
+
+    return False
+
+# Run simulation multiple times
+all_accuracies = []
+all_type_results = {}
+
+for run in range(NUM_RUNS):
+    print(f"\\nRun {run+1}/{NUM_RUNS}")
+    correct_count = 0
+    answer_type_guesses = Counter()
+    answer_type_correct = Counter()
+
+    for idx, row in df.iterrows():
+        answer_type = row['answer_type']
+        actual_answer = str(row['answer']).strip()
+
+        if answer_type == 'multipleChoice':
+            # Count the number of choices
+            num_choices = count_choices(row['question'])
+            guess = generate_random_guess(answer_type, num_choices)
+
+            # For multiple choice, normalize answers to just the letter
+            actual_letter = actual_answer[0].upper() if actual_answer and actual_answer[0].upper() in string.ascii_uppercase else actual_answer
+
+            answer_type_guesses['multipleChoice'] += 1
+            if guess == actual_letter:
+                correct_count += 1
+                answer_type_correct['multipleChoice'] += 1
+
+        else:  # exactMatch
+            # Detect the specific type of free response answer
+            specific_type = detect_answer_type(actual_answer)
+            guess = generate_random_guess(specific_type)
+
+            answer_type_guesses[specific_type] += 1
+            if check_match(guess, actual_answer):
+                correct_count += 1
+                answer_type_correct[specific_type] += 1
+
+    # Calculate accuracy for this run
+    accuracy = correct_count / len(df) * 100
+    all_accuracies.append(accuracy)
+
+    print(f"Correct guesses: {correct_count} out of {len(df)}")
+    print(f"Random guessing accuracy: {accuracy:.2f}%")
+
+    # Store type results for later analysis
+    for answer_type, count in answer_type_guesses.items():
+        if answer_type not in all_type_results:
+            all_type_results[answer_type] = {'total': 0, 'correct': 0}
+
+        all_type_results[answer_type]['total'] += count
+        all_type_results[answer_type]['correct'] += answer_type_correct.get(answer_type, 0)
+
+# Overall results
+avg_accuracy = sum(all_accuracies) / NUM_RUNS
+min_accuracy = min(all_accuracies)
+max_accuracy = max(all_accuracies)
+std_dev = (sum((x - avg_accuracy) ** 2 for x in all_accuracies) / NUM_RUNS) ** 0.5
+
+print(f"\\nOverall Results ({NUM_RUNS} runs):")
+print(f"Average random guessing accuracy: {avg_accuracy:.2f}% (standard deviation: {std_dev:.2f}%)")
+print(f"Min accuracy: {min_accuracy:.2f}%")
+print(f"Max accuracy: {max_accuracy:.2f}%")
+print(f"Range: {max_accuracy - min_accuracy:.2f}%")
+
+# Accuracy by question type across all runs
+print("\\nAccuracy by question type (averaged across all runs):")
+for qtype, results in sorted(all_type_results.items(), key=lambda x: x[1]['total'], reverse=True):
+    avg_count = results['total'] / NUM_RUNS
+    avg_correct = results['correct'] / NUM_RUNS
+    type_accuracy = (results['correct'] / results['total']) * 100 if results['total'] > 0 else 0
+    print(f"{qtype}: {avg_correct:.2f} correct out of {avg_count:.2f} ({type_accuracy:.2f}%)")
+
+# Recalculate theoretical probability
+print("\\nRecalculated theoretical random guessing probability:")
+mc_prob = all_type_results['multipleChoice']['correct'] / all_type_results['multipleChoice']['total'] if all_type_results['multipleChoice']['total'] > 0 else 0
+yes_no_prob = all_type_results['yes_no']['correct'] / all_type_results['yes_no']['total'] if 'yes_no' in all_type_results and all_type_results['yes_no']['total'] > 0 else 0
+true_false_prob = all_type_results['true_false']['correct'] / all_type_results['true_false']['total'] if 'true_false' in all_type_results and all_type_results['true_false']['total'] > 0 else 0
+single_letter_prob = all_type_results['single_letter']['correct'] / all_type_results['single_letter']['total'] if all_type_results['single_letter']['total'] > 0 else 0
+simple_number_prob = all_type_results['simple_number']['correct'] / all_type_results['simple_number']['total'] if all_type_results['simple_number']['total'] > 0 else 0
+
+mc_count = all_type_results['multipleChoice']['total'] / NUM_RUNS
+yes_no_count = all_type_results['yes_no']['total'] / NUM_RUNS if 'yes_no' in all_type_results else 0
+true_false_count = all_type_results['true_false']['total'] / NUM_RUNS if 'true_false' in all_type_results else 0
+single_letter_count = all_type_results['single_letter']['total'] / NUM_RUNS
+simple_number_count = all_type_results['simple_number']['total'] / NUM_RUNS
+fraction_count = all_type_results['fraction']['total'] / NUM_RUNS if 'fraction' in all_type_results else 0
+complex_count = all_type_results['complex_free_response']['total'] / NUM_RUNS
+
+theoretical_correct = (mc_count * mc_prob) + \\
+                     (yes_no_count * yes_no_prob) + \\
+                     (true_false_count * true_false_prob) + \\
+                     (single_letter_count * single_letter_prob) + \\
+                     (simple_number_count * simple_number_prob)
+
+theoretical_accuracy = theoretical_correct / len(df) * 100
+
+print(f"Updated equation:")
+print(f"({mc_count} * {mc_prob*100:.2f}% + {yes_no_count} * {yes_no_prob*100:.2f}% + {true_false_count} * {true_false_prob*100:.2f}% + {single_letter_count} * {single_letter_prob*100:.2f}% + {simple_number_count} * {simple_number_prob*100:.2f}%) / {len(df)}")
+print(f"= {theoretical_correct:.2f} / {len(df)} = {theoretical_accuracy:.2f}%")
+
+print(f"\\nCompared to previous theoretical calculation: 4.65%")
+print(f"Compared to simulation average: {avg_accuracy:.2f}%")
+`;
+---
+
+<BlogPost {date} {title}>
+  <p>
+    We should not freak out over a 1.7B model getting 4.8% on Humanity's Last Exam - the random
+    guessing baseline is around 4.65%.
+  </p>
+  <p>These numbers came from Claude. First, let's estimate with math:</p>
+  <math>
+    <mfrac>
+      <mrow>
+        <mn>590</mn>
+        <mo>⋅</mo>
+        <mn>0.1625</mn>
+        <mo>+</mo>
+        <mn>557</mn>
+        <mo>⋅</mo>
+        <mn>0.001</mn>
+        <mo>+</mo>
+        <mn>38</mn>
+        <mo>⋅</mo>
+        <mn>0.5</mn>
+        <mo>+</mo>
+        <mn>30</mn>
+        <mo>⋅</mo>
+        <mn>0.0001</mn>
+        <mo>+</mo>
+        <mn>19</mn>
+        <mo>⋅</mo>
+        <mn>0.0385</mn>
+        <mo>+</mo>
+        <mn>1264</mn>
+        <mo>⋅</mo>
+        <mn>0</mn>
+      </mrow>
+      <mn>2500</mn>
+    </mfrac>
+    <mo>≈</mo>
+    <mn>0.0465</mn>
+  </math>
+  <p>
+    That's a 16.25% chance on 590x multiple choice, 0.1% chance on 557x simple numbers, 50% chance
+    on 38x yes/no, 0.01% chance on 30x fractions, 3.85% chance on 19x single letters, and a 0%
+    chance on the other 1264 complex questions.
+  </p>
+  <p>You could also verify this number with a more complex simulation.</p>
+  <details>
+    <summary>Code</summary>
+    <Snippet language="python" {code} />
+  </details>
+  <p>This double check is just 0.02% off - 4.63%.</p>
+</BlogPost>

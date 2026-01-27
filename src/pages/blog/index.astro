@@ -1,0 +1,36 @@
+---
+import Base from "$lib/layouts/Base.astro";
+import Header from "$lib/Header.astro";
+import list from "./_list";
+---
+
+<Base title="Blog">
+  <Header />
+
+  <main>
+    {
+      list.map(({ title, link }) => (
+        <a class="layer" href={link}>
+          {title}
+        </a>
+      ))
+    }
+  </main>
+</Base>
+
+<style>
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1.5rem;
+    gap: 0.5rem;
+    flex-grow: 1;
+  }
+  a {
+    flex: 1 1 16rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    background-color: var(--m3c-surface-container-low);
+    position: relative;
+  }
+</style>

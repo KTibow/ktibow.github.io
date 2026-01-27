@@ -1,0 +1,57 @@
+---
+import "./base.css";
+import { blogRSSTitle } from "../../pages/blog/rss.xml";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="accent-color" content="#bbc3ff" />
+    <meta name="generator" content={Astro.generator} />
+
+    <link rel="icon" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://rsms.me" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Redacted+Script&family=Workbench&display=swap"
+    />
+    {
+      Astro.url.pathname.startsWith("/blog") ? (
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title={blogRSSTitle}
+          href={`${Astro.url.origin}/blog/rss.xml`}
+        />
+      ) : undefined
+    }
+
+    <slot name="head" />
+
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+    <script>
+      import "./layer";
+      const checkMidnight = () => {
+        document.documentElement.classList.toggle(
+          "midnight",
+          new Date().getHours() >= 22 || new Date().getHours() < 6,
+        );
+      };
+      checkMidnight();
+      setInterval(checkMidnight, 60 * 1000);
+    </script>
+  </body>
+</html>

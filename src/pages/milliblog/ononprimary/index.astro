@@ -1,0 +1,62 @@
+---
+import BlogPost from "$lib/layouts/BlogPost.astro";
+import CaptionedImage from "$lib/CaptionedImage.astro";
+import Snippet from "$lib/Snippet.astro";
+import Color from "./_Color.astro";
+
+import fromsvelte from "./fromsvelte.png?url";
+import fromandroid from "./fromandroid.png?url";
+
+export const title = "Why M3 Svelte has on on primary";
+export const date = "2025-12-14";
+
+const code = `const onOnPrimary = DynamicColor.fromPalette({
+  name: "on_on_primary",
+  palette: (s) => s.primaryPalette,
+  background: () => materialColors.onPrimary(),
+  contrastCurve: () => new ContrastCurve(6, 6, 7, 11),
+});`;
+---
+
+<BlogPost {date} {title}>
+  <p><em>The rest of this post speaks in terms of dark mode.</em></p>
+  <p>
+    Normally in Material 3, primary is light, on primary is the opposite, primary container is dark,
+    and on primary container is the opposite. So Material 3 decided to make the checkmark in its
+    checked switch have a background of <Color hex="#453a5f" label="on primary" /> and a color of
+    <Color hex="#eadeff" label="on primary container" />. What could possibly go wrong?
+  </p>
+  <p>
+    Well it turns out that in some themes, primary container is <em>not</em> dark. Instead of
+    <Color hex="#574c72" label="primary container" /> and
+    <Color hex="#eadeff" label="on primary container" /> (normal), you might have
+    <Color hex="#ae8dff" label="primary container" /> and
+    <Color hex="#2b006e" label="on primary container" /> (vibrant), or
+    <Color hex="#d4d4d4" label="primary container" /> and
+    <Color hex="#000000" label="on primary container" /> (monochrome), or even
+    <Color hex="#aa9dc8" label="primary container" /> and
+    <Color hex="#000000" label="on primary container" /> (high contrast). So when you use
+    <Color hex="#000000" label="on primary container" /> as the foreground against
+    <Color hex="#453a5f" label="on primary" />, this makes the icon literally invisible or at least
+    ugly.
+  </p>
+  <div class="images">
+    <CaptionedImage src={fromsvelte} alt="Invisible checkmark in M3 Svelte" view="dark" />
+    <CaptionedImage
+      src={fromandroid}
+      alt="Invisible checkmark in Android's implementation"
+      view="dark"
+    />
+  </div>
+  <p>M3 Svelte solves this with a custom color called on on primary, defined like this:</p>
+  <Snippet {code} language="javascript" />
+</BlogPost>
+
+<style>
+  .images {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+</style>

@@ -1,0 +1,57 @@
+---
+import Base from "$lib/layouts/Base.astro";
+import errorbg from "./_errorbg.svg?url";
+---
+
+<Base title="404">
+  <style
+    set:html={"body {" +
+      [
+        `background-image: url("${errorbg}")`,
+        `background-size: cover`,
+        `background-repeat: no-repeat`,
+        `background-attachment: fixed`,
+        `background-position: center`,
+      ].join(";") +
+      "}"}
+  ></style>
+  <main>
+    <img src="https://http.cat/404" width="750" height="600" alt="The 404 cat" />
+    <div>
+      <h1>Apologies</h1>
+      <p>I hope my spring cleaning didn't interrupt your workflow.</p>
+      <a class="layer" href="/">Go home</a>
+    </div>
+  </main>
+</Base>
+
+<style>
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    max-width: 65ch;
+    margin: auto;
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+  h1 {
+    @apply --m3-display-large;
+  }
+  p {
+    margin-top: 1em;
+  }
+  a {
+    @apply --m3-label-large;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    border-radius: var(--m3-shape-full);
+    background-color: var(--m3c-primary);
+    color: var(--m3c-on-primary);
+    margin-top: auto;
+  }
+</style>

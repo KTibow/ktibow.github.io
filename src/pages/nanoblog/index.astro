@@ -1,0 +1,46 @@
+---
+import Base from "$lib/layouts/Base.astro";
+import Header from "$lib/Header.astro";
+import statuses from "./statuses.json";
+import { formatDate } from "./_date";
+---
+
+<Base title="Nanoblog">
+  <Header />
+  <main>
+    {
+      statuses.map(({ content, timestamp }) => {
+        const date = new Date(timestamp);
+        return (
+          <p>
+            <span>{content}</span>
+            <time datetime={date.toISOString()}>{formatDate(date)}</time>
+          </p>
+        );
+      })
+    }
+  </main>
+  <script>
+    import { formatDate } from "./_date";
+    for (const time of document.querySelectorAll("time")) {
+      time.textContent = formatDate(new Date(time.getAttribute("datetime")!));
+    }
+  </script>
+</Base>
+
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+    margin: 1.5rem;
+    gap: 1.5rem;
+    color: var(--m3c-on-surface-dilute);
+    @media (width >= 52.5rem) {
+      max-width: 65ch;
+    }
+  }
+  p {
+    display: flex;
+    justify-content: space-between;
+  }
+</style>

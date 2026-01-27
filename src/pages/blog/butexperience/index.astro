@@ -1,0 +1,258 @@
+---
+import BlogPost from "$lib/layouts/BlogPost.astro";
+
+export const title = "But you haven't matched the experience";
+export const date = "2025-08-31";
+
+const workaroundDescriptions: Record<string, { title: string; description: string }> = {
+  monoliths: {
+    title: "Monoliths",
+    description:
+      "Combine services and apps into one, so you only need to deploy it once. If a free tier only lets you deploy one app or gives you terrible cold starts, a monolith would easily offset them. (Needs to be combined with another domain provider to reseparate.)",
+  },
+  useStaticHost: {
+    title: "Use another static host",
+    description:
+      "Then you can stop caring about how the compute provider charges for bandwidth or how they name their subdomains.",
+  },
+  useFreeDomain: {
+    title: "Use a free domain",
+    description: "This means playing a lot of feeble games, but it could work; not sure.",
+  },
+  usePaidDomain: {
+    title: "Use a paid domain",
+    description:
+      "If you can pay for it and get it unblocked, you now own a part of the internet where you don't need to worry about the free default subdomains. You can even get back to Cloudflare.",
+  },
+  getOffFreeTier: {
+    title: "Get off the free tier",
+    description:
+      "This one is really just for Fly, but you could start separating apps and disabling scale to 0 and tank the cost.",
+  },
+};
+
+const workaroundArchetypes = {
+  computeOnlyLimited: ["monoliths", "useStaticHost"],
+  computeOnly: ["useStaticHost"],
+  fly: ["monoliths", "useStaticHost", "useFreeDomain", "usePaidDomain", "getOffFreeTier"],
+  justUnblock: ["usePaidDomain"],
+};
+
+const providers = [
+  {
+    name: "GCP VM",
+    hostname: "⚠️",
+    speed: "✅",
+    freeTier: "❌",
+    workarounds: workaroundArchetypes.computeOnlyLimited,
+  },
+  {
+    name: "Fly container",
+    hostname: "✅",
+    speed: "✅",
+    freeTier: "⚠️",
+    workarounds: workaroundArchetypes.fly,
+  },
+  {
+    name: "GCP CR Serverless",
+    hostname: "⚠️",
+    speed: "⚠️",
+    freeTier: "✅",
+    workarounds: workaroundArchetypes.computeOnlyLimited,
+  },
+  {
+    name: "Fastly Serverless",
+    hostname: "⚠️",
+    speed: "✅",
+    freeTier: "✅",
+    workarounds: workaroundArchetypes.computeOnlyLimited,
+  },
+  {
+    name: "Cloudflare Workers",
+    hostname: "❌ (blocked)",
+    speed: "✅",
+    freeTier: "✅",
+    workarounds: workaroundArchetypes.justUnblock,
+  },
+  {
+    name: "Vercel Serverless",
+    hostname: "❌ (blocked)",
+    speed: "✅",
+    freeTier: "❌",
+    workarounds: workaroundArchetypes.justUnblock,
+  },
+  {
+    name: "Deno Serverless",
+    hostname: "✅",
+    speed: "❌",
+    freeTier: "✅",
+    workarounds: workaroundArchetypes.computeOnly,
+  },
+  {
+    name: "Azure Functions Containers",
+    hostname: "⚠️",
+    speed: "❌",
+    freeTier: "✅",
+    workarounds: workaroundArchetypes.computeOnly,
+  },
+  {
+    name: "Val (Serverless)",
+    hostname: "✅",
+    speed: "❌",
+    freeTier: "✅",
+    workarounds: workaroundArchetypes.computeOnly,
+  },
+];
+---
+
+<BlogPost {date} {title}>
+  <p>The hierarchy of needs for a website might look like</p>
+  <svg viewBox="0 0 1000 1000">
+    <g>
+      <polygon fill="var(--m3c-primary)" points="500,0 600,200 400,200"></polygon>
+      <text class="tier-text" fill="var(--m3c-on-primary)" x="500" y="120" font-size="20"
+        >Invisibility</text
+      >
+    </g>
+    <g>
+      <polygon fill="var(--m3c-primary-container)" points="400,200 600,200 700,400 300,400"
+      ></polygon>
+      <text class="tier-text" fill="var(--m3c-on-primary-container)" x="500" y="300" font-size="28"
+        >Scalability</text
+      >
+    </g>
+    <g>
+      <polygon
+        fill="color-mix(in srgb, var(--m3c-primary-container), transparent 20%)"
+        points="300,400 700,400 800,600 200,600"></polygon>
+      <text class="tier-text" fill="var(--m3c-on-primary-container)" x="500" y="500" font-size="28"
+        >Functionality</text
+      >
+    </g>
+    <g>
+      <polygon fill="var(--m3c-primary-container-subtle)" points="200,600 800,600 900,800 100,800"
+      ></polygon>
+      <text
+        class="tier-text"
+        fill="var(--m3c-on-primary-container-subtle)"
+        x="500"
+        y="700"
+        font-size="28">Usability</text
+      >
+    </g>
+    <g>
+      <polygon fill="var(--m3c-surface-container)" points="100,800 900,800 1000,1000 0,1000"
+      ></polygon>
+      <text class="tier-text" fill="var(--m3c-on-surface)" x="500" y="900" font-size="28"
+        >Accessibility</text
+      >
+    </g>
+    <polygon
+      fill="none"
+      stroke="var(--m3c-outline)"
+      stroke-width="3"
+      points="500,0 1000,1000 0,1000"></polygon>
+  </svg>
+  <p>
+    and we have accessibility (many unblocked platforms) and usability (decently fast), but we don't
+    have any of the others. We don't have functionality - nothing's easy to use and deploy to yet.
+    We don't have scalability - it's hard to support multiple apps. And we definitely don't have
+    invisiblity - we're a while from the platform disappearing into the background.
+  </p>
+  <p>The annoying thing is we're almost there</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Usable hostname</th>
+        <th>Speed</th>
+        <th>Good free tier</th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+        providers.map((provider) => (
+          <tr
+            class="provider-row"
+            data-name={provider.name}
+            data-workarounds={JSON.stringify(provider.workarounds)}
+          >
+            <td>{provider.name}</td>
+            <td>{provider.hostname}</td>
+            <td>{provider.speed}</td>
+            <td>{provider.freeTier}</td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+  <p>but we haven't matched the experience quite yet.</p>
+
+  <p id="workaround-heading">So at this point there are 5 workarounds we can deploy:</p>
+
+  <ul id="workaround-list">
+    {
+      Object.entries(workaroundDescriptions).map(([id, workaround]) => (
+        <li class="workaround-item" data-id={id}>
+          <strong>{workaround.title}.</strong> {workaround.description}
+        </li>
+      ))
+    }
+  </ul>
+
+  <p>At this point, I know what to do, and I think I'm ready to match the experience.</p>
+</BlogPost>
+
+<script>
+  const rows = document.querySelectorAll(".provider-row");
+  const items = document.querySelectorAll<HTMLElement>(".workaround-item");
+  const heading = document.querySelector("#workaround-heading");
+  let selectedName: string | undefined;
+
+  rows.forEach((row) => {
+    row.addEventListener("click", () => {
+      const name = row.getAttribute("data-name") as string;
+      const workarounds = JSON.parse(row.getAttribute("data-workarounds") as string);
+
+      if (selectedName == name) {
+        selectedName = undefined;
+        rows.forEach((r) => r.classList.remove("selected-row"));
+        items.forEach((i) => (i.style.display = "list-item"));
+        if (heading) heading.innerHTML = "So at this point there are 5 workarounds we can deploy:";
+      } else {
+        selectedName = name;
+        rows.forEach((r) => {
+          r.classList.toggle("selected-row", r.getAttribute("data-name") == name);
+        });
+        items.forEach((item) => {
+          const id = item.getAttribute("data-id");
+          item.style.display = workarounds.includes(id) ? "list-item" : "none";
+        });
+        if (heading)
+          heading.innerHTML = `For <strong>${name}</strong>, here are the applicable workarounds:`;
+      }
+    });
+  });
+</script>
+
+<style>
+  text {
+    font-weight: 600;
+    dominant-baseline: middle;
+    text-anchor: middle;
+    pointer-events: none;
+  }
+  .provider-row {
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  .provider-row:hover:not(.selected-row) {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  .selected-row {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  .selected-row td:first-child {
+    font-weight: bold;
+  }
+</style>

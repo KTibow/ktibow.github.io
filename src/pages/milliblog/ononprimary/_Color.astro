@@ -1,0 +1,26 @@
+---
+type Props = {
+  hex: string;
+  label: string;
+};
+
+const { hex, label } = Astro.props;
+---
+
+<span class="color" style={`color: color-mix(in oklab, currentColor, ${hex} 30%)`}>
+  <span class="disc" style={`background-color: ${hex}`}></span>
+  {label}
+</span>
+
+<style>
+  .color {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  .disc {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: var(--m3-shape-full);
+  }
+</style>
