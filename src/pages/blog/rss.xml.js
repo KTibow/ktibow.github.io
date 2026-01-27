@@ -1,7 +1,7 @@
 import rss from "@astrojs/rss";
+import { blogRSSTitle } from "$lib/layouts/Base.astro";
 import list from "./_list";
 
-export const blogRSSTitle = "Kendell's blog";
 export async function GET(context) {
   return rss({
     title: blogRSSTitle,
