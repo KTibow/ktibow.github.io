@@ -11,6 +11,7 @@ export default defineConfig({
     port: 5173,
   },
   trailingSlash: "always",
+  prefetch: true,
   integrations: [mdx(), sitemap(), svelte()],
   vite: {
     plugins: [functionsMixins()],
