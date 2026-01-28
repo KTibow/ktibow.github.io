@@ -47,7 +47,7 @@ const { title } = Astro.props;
       const checkMidnight = () => {
         document.documentElement.classList.toggle(
           "midnight",
-          new Date().getHours() >= 22 || new Date().getHours() < 6,
+          new Date().getHours() >= 21 || new Date().getHours() < 6,
         );
       };
       checkMidnight();
