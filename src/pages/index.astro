@@ -10,15 +10,22 @@ import cursor from "./_cursor.svg?url";
 <Base title="Kendell">
   <Header />
   <style
-    set:html={"body {" +
+    set:html={":root {" +
       [
         `cursor: url("${cursor}"), auto`,
         `background-image: url("${bg}")`,
         `background-color: var(--m3c-primary)`,
+        `color: var(--m3c-surface)`,
         `background-size: 100%`,
         `background-repeat: no-repeat`,
         `background-attachment: fixed`,
         `background-position: top center`,
+      ].join(";") +
+      "}" +
+      ":root.midnight {" +
+      [
+        `background-image: linear-gradient(rgb(0 0 0 / 0.8), rgba(0 0 0 / 0.8)), url("${bg}")`,
+        `color: var(--m3c-on-surface)`,
       ].join(";") +
       "}"}
   ></style>
@@ -64,7 +71,6 @@ import cursor from "./_cursor.svg?url";
     margin-inline: 0.5rem;
     margin-block: auto;
     align-self: center;
-    color: var(--m3c-surface);
     > * {
       display: flex;
       flex-direction: column;

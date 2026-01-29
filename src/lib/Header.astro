@@ -41,6 +41,11 @@ const pages = [
     border-radius: var(--m3-shape-full);
     padding-inline: 0.75rem;
     background-color: var(--m3c-surface-container-low);
+    color: var(--m3c-on-surface-variant);
+    transition: 150ms;
+    &:hover {
+      color: var(--m3c-on-surface);
+    }
     &.selected {
       background-color: var(--m3c-secondary-container);
       color: var(--m3c-on-secondary-container);
