@@ -12,7 +12,7 @@ export default defineConfig({
   },
   trailingSlash: "always",
   prefetch: true,
-  integrations: [mdx(), sitemap(), svelte()],
+  integrations: [mdx(), sitemap({ filter: (p) => !p.includes("noindex") }), svelte()],
   vite: {
     plugins: [functionsMixins()],
   },
