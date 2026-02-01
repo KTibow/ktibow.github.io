@@ -1,0 +1,53 @@
+---
+import BlogPost from "$lib/layouts/BlogPost.astro";
+import bg from "./bg.avif?url";
+
+export const date = "2026-02-01";
+export const title = "Trying various AIs every month";
+---
+
+<BlogPost {date} {title} {bg}>
+  <h2>January: Only free options</h2>
+  <p>
+    January begun with the end of last year's Claude subscription - I didn't renew it because I
+    wanted to explore my options better.
+  </p>
+  <p>
+    I ended up using Google's AI mode a lot, using it as my default search engine. It may appear to
+    be just another tab of Google Search, but it's really fast and powerful. Only downside is the
+    occasional glitches, like how it sometimes refuses or fails to generate a response, or how URLs
+    and code blocks are handled poorly.
+  </p>
+  <p>If you want to switch to AI Mode, here's how to configure your browser:</p>
+  <ul>
+    <li>
+      AI Mode (<code>@ai</code>): <a href="https://www.google.com/search?udm=50&q=%s"
+        >https://www.google.com/search?udm=50&q=%s</a
+      >
+    </li>
+    <li>
+      AI Mode Canvas (<code>@canvas</code>): <a
+        href="https://www.google.com/search?udm=50&rc=1&q=%s"
+        >https://www.google.com/search?udm=50&rc=1&q=%s</a
+      >
+    </li>
+    <li>
+      AI Mode Pro (<code>@pro</code>): <a href="https://www.google.com/search?aep=1&nem=143&q=%s"
+        >https://www.google.com/search?aep=1&nem=143&q=%s</a
+      >
+    </li>
+  </ul>
+  <p>
+    I also exhausted almost all 300 premium requests of my Copilot student subscription. This
+    doesn't usually happen, but it did this month, across general chat, refactoring, and agents.
+    It's important to pay attention to the premium request multiplier: I'm trying to switch to
+    Gemini Flash for most of my questions since it's 3x cheaper than most models and 9x cheaper than
+    Opus.
+  </p>
+  <h2>February: ChatGPT Business</h2>
+  <p>
+    When you own a domain, you get lots of free things. One of those things is a month of ChatGPT
+    Business.
+  </p>
+  <p>Stay tuned...</p>
+</BlogPost>
