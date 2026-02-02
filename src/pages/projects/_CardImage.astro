@@ -1,0 +1,13 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  priority?: boolean;
+}
+const { src, alt, priority } = Astro.props;
+const props = src.format == "svg" ? {} : { format: "avif", quality: 95, densities: [1, 2, 3] };
+---
+
+<Image {src} {alt} {priority} width={30 * 16} {...props} />

@@ -12,20 +12,21 @@
   "dependencies": {
     "@astrojs/check": "^0.9.6",
     "@astrojs/mdx": "^4.3.13",
-    "@astrojs/rss": "^4.0.15",
     "@astrojs/sitemap": "^3.7.0",
     "@astrojs/svelte": "^7.2.5",
-    "astro": "^5.17.1",
+    "astro": "6.0.0-beta.6",
     "svelte": "^5.49.1",
     "typescript": "^5.9.3"
   },
   "devDependencies": {
+    "@astrojs/rss": "4.0.15-beta.2",
     "@types/d3": "^7.4.3",
     "@unocss/reset": "^66.6.0",
     "d3": "^7.9.0",
     "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-svelte": "^3.4.1",
+    "sharp": "^0.34.5",
     "vite-plugin-functions-mixins": "^0.4.1"
   }
 }

@@ -1,0 +1,21 @@
+---
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+}
+const { src, alt } = Astro.props;
+---
+
+<img src={src.src} width={src.width} height={src.height} {alt} loading="lazy" decoding="async" />
+<style>
+  img {
+    border-radius: 0.5rem;
+    @media (width >= 85rem) {
+      position: absolute;
+      left: calc(1.5rem + 65ch + 1.5rem);
+      margin: 0;
+      translate: 0 -2rem;
+      width: 65ch;
+    }
+  }
+</style>

@@ -1,21 +1,24 @@
 ---
 import Base from "$lib/layouts/Base.astro";
 import Header from "$lib/Header.astro";
-import year2025 from "./projects/2025.png?url";
-import year2024 from "./projects/2024.png?url";
-import year2023 from "./projects/2023.png?url";
-import year2022 from "./projects/2022.png?url";
-import year2021 from "./projects/2021.png?url";
-import year2020 from "./projects/2020.png?url";
-import m3Svelte from "./projects/img-m3svelte.png?url";
-import functionsMixins from "./projects/img-functionsmixins.png?url";
-import tokenShaker from "./projects/img-tokenshaker.png?url";
-import monoserve from "./projects/img-monoserve.svg?url";
-import monoidentity from "./projects/img-monoidentity.png?url";
-import schoolDistricts from "./projects/img-schooldistricts.svg?url";
-import excalimath from "./projects/img-excalimath.svg?url";
-import cobblestone from "./projects/img-cobblestone.svg?url";
-import cosine from "./projects/img-cosine.svg?url";
+import CardImage from "./projects/_CardImage.astro";
+import HeatmapImage from "./projects/_HeatmapImage.astro";
+
+import m3Svelte from "./projects/img-m3svelte.png";
+import tokenShaker from "./projects/img-tokenshaker.png";
+import functionsMixins from "./projects/img-functionsmixins.png";
+import cosine from "./projects/img-cosine.svg";
+import cobblestone from "./projects/img-cobblestone.svg";
+import monoserve from "./projects/img-monoserve.svg";
+import monoidentity from "./projects/img-monoidentity.png";
+import schoolDistricts from "./projects/img-schooldistricts.svg";
+import excalimath from "./projects/img-excalimath.svg";
+import year2025 from "./projects/2025.png";
+import year2024 from "./projects/2024.png";
+import year2023 from "./projects/2023.png";
+import year2022 from "./projects/2022.png";
+import year2021 from "./projects/2021.png";
+import year2020 from "./projects/2020.png";
 ---
 
 <Base title="Find a project">
@@ -23,14 +26,14 @@ import cosine from "./projects/img-cosine.svg?url";
   <h2 class="project-header">Active projects</h2>
   <div class="projects">
     <a class="project layer" href="https://github.com/KTibow/m3-svelte">
-      <img src={m3Svelte} alt="M3 Svelte" />
+      <CardImage src={m3Svelte} alt="M3 Svelte" priority />
       <p>
         <strong>M3 Svelte</strong>, a Svelte library for Material 3/You.
       </p>
       <p class="date">Dec 2022</p>
     </a>
     <a class="project layer" href="https://github.com/KTibow/vite-plugin-token-shaker">
-      <img src={tokenShaker} alt="@layer tokens" />
+      <CardImage src={tokenShaker} alt="@layer tokens" priority />
       <p>
         <strong>vite-plugin-token-shaker</strong>, a utility to tree shake CSS variables placed in <code
           >@layer tokens</code
@@ -39,7 +42,7 @@ import cosine from "./projects/img-cosine.svg?url";
       <p class="date">Nov 2025</p>
     </a>
     <a class="project layer" href="https://github.com/KTibow/vite-plugin-functions-mixins">
-      <img src={functionsMixins} alt="@function/@mixin" />
+      <CardImage src={functionsMixins} alt="@function/@mixin" priority />
       <p>
         <strong>vite-plugin-functions-mixins</strong>, a utility to use functions and mixins in a
         post-Sass pre-wide-browser-support world.
@@ -50,14 +53,14 @@ import cosine from "./projects/img-cosine.svg?url";
   <h2 class="project-header">Active personal projects (only used by me/IRLs)</h2>
   <div class="projects">
     <a class="project layer" href="https://github.com/KTibow/cosine">
-      <img src={cosine} alt="Cosine" />
+      <CardImage src={cosine} alt="Cosine" />
       <p>
         <strong>Cosine</strong>, an app that lets you use many models from many providers.
       </p>
       <p class="date">Sep 2025</p>
     </a>
     <a class="project layer" href="https://github.com/KTibow/cobblestone">
-      <img src={cobblestone} alt="Cobblestone" />
+      <CardImage src={cobblestone} alt="Cobblestone" />
       <p>
         <strong>Cobblestone</strong>, a Obsidian-style Markdown editor that connects to Monoidentity
         and pulls in personally useful info.
@@ -65,7 +68,7 @@ import cosine from "./projects/img-cosine.svg?url";
       <p class="date">Oct 2025</p>
     </a>
     <a class="project layer" href="https://github.com/KTibow/monoserve">
-      <img src={monoserve} alt="Monoserve" />
+      <CardImage src={monoserve} alt="Monoserve" />
       <p>
         <strong>Monoserve</strong>, a library that lets you use Remote Functions-style syntax
         anywhere and use a shared server across projects.
@@ -73,7 +76,7 @@ import cosine from "./projects/img-cosine.svg?url";
       <p class="date">Aug 2025</p>
     </a>
     <a class="project layer" href="https://github.com/KTibow/monoidentity">
-      <img src={monoidentity} alt="Monoidentity" />
+      <CardImage src={monoidentity} alt="Monoidentity" />
       <p>
         <strong>Monoidentity</strong>, a library that makes sign in, verification, and data syncing
         easy and secure.
@@ -81,7 +84,7 @@ import cosine from "./projects/img-cosine.svg?url";
       <p class="date">Sep 2025</p>
     </a>
     <a class="project layer" href="https://github.com/KTibow/school-districts">
-      <img src={schoolDistricts} alt="school-districts" />
+      <CardImage src={schoolDistricts} alt="school-districts" />
       <p>
         <strong>school-districts</strong>, a library that makes district-specific information
         hotpluggable.
@@ -89,7 +92,7 @@ import cosine from "./projects/img-cosine.svg?url";
       <p class="date">Jun 2025</p>
     </a>
     <a class="project layer" href="/blog/texihi/">
-      <img src={excalimath} alt="Excalimath" />
+      <CardImage src={excalimath} alt="Excalimath" />
       <p>Separating my homework's questions and answers by using Excalifont for the answers.</p>
       <p class="date">Jan 2025</p>
     </a>
@@ -100,7 +103,7 @@ import cosine from "./projects/img-cosine.svg?url";
   <article class="prose">
     <h2>Main arc</h2>
     <h3>2025</h3>
-    <img src={year2025} alt="2025 projects timeline" />
+    <HeatmapImage src={year2025} alt="2025 projects timeline" />
     <p>See active projects.</p>
     <p>
       <a href="https://github.com/KTibow/tinyentities">tinyentities</a>, a minimal HTML entity
@@ -121,7 +124,7 @@ import cosine from "./projects/img-cosine.svg?url";
     <p>Contributions to Rolldown/OXC (you can search them on GitHub).</p>
     <p>Some frontend work for CrofAI (unreleased as of writing).</p>
     <h3>2024</h3>
-    <img src={year2024} alt="2024 projects timeline" />
+    <HeatmapImage src={year2024} alt="2024 projects timeline" />
     <p>
       <a href="https://github.com/KTibow/aoc2024">Advent of code 2024 solutions</a>, which are
       mediocre but exist (and I got on one of the leaderboards!)
@@ -156,7 +159,7 @@ import cosine from "./projects/img-cosine.svg?url";
     <p>Vigorous contributions to Lawnicons and SVGO (you can search them on GitHub).</p>
     <p>Some frontend work for ReVanced, although didn't get far due to politics.</p>
     <h3>2023</h3>
-    <img src={year2023} alt="2023 projects timeline" />
+    <HeatmapImage src={year2023} alt="2023 projects timeline" />
     <p>
       <a href="https://github.com/KTibow/home-gpt">HomeGPT</a>, an experiment in tool use (in Home
       Assistant) before tool use was a thing.
@@ -201,7 +204,7 @@ import cosine from "./projects/img-cosine.svg?url";
       I also started games and projects with friends in school and online.
     </p>
     <h3>2021</h3>
-    <img src={year2021} alt="2021 projects timeline" />
+    <HeatmapImage src={year2021} alt="2021 projects timeline" />
     <p>
       <a href="https://github.com/KTibow/SBQuery">SBQuery</a>, an experiment in bringing Skyblock
       data to GraphQL.
@@ -237,7 +240,7 @@ import cosine from "./projects/img-cosine.svg?url";
       Money / Skyblock Money) and I used Replit for it.
     </p>
     <h3>2020</h3>
-    <img src={year2020} alt="2020 projects timeline" />
+    <HeatmapImage src={year2020} alt="2020 projects timeline" />
     <p>
       <a href="https://github.com/KTibow/ha-zoom-forwarder">ha-zoom-forwarder</a>, an unfinished
       project I'm only including here because it's so funny that I bothered with a I'm not a robot
@@ -351,16 +354,6 @@ import cosine from "./projects/img-cosine.svg?url";
 <style>
   article {
     margin: 1.5rem;
-  }
-  article > img {
-    border-radius: 0.5rem;
-    @media (width >= 85rem) {
-      position: absolute;
-      left: calc(1.5rem + 65ch + 1.5rem);
-      margin: 0;
-      translate: 0 -2rem;
-      width: 65ch;
-    }
   }
   .project-header {
     @apply --m3-headline-large;
