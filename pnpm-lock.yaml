@@ -36,6 +36,9 @@ importers:
       '@fontsource-variable/inter':
         specifier: ^5.2.8
         version: 5.2.8
+      '@fontsource/redacted-script':
+        specifier: ^5.2.8
+        version: 5.2.8
       '@fontsource/workbench':
         specifier: ^5.2.8
         version: 5.2.8
@@ -493,6 +496,9 @@ packages:
 
   '@fontsource-variable/inter@5.2.8':
     resolution: {integrity: sha512-kOfP2D+ykbcX/P3IFnokOhVRNoTozo5/JxhAIVYLpea/UBmCQ/YWPBfWIDuBImXX/15KH+eKh4xpEUyS2sQQGQ==}
+
+  '@fontsource/redacted-script@5.2.8':
+    resolution: {integrity: sha512-NOEGJyurXvCx5egCha9yUQB+Tt0IxXriacykYiRlohUvhdbKvisHbucAHQaK8N5/LLB6rlX62SrX8C9+t41PYQ==}
 
   '@fontsource/workbench@5.2.8':
     resolution: {integrity: sha512-XNNauf1eU26G/IAoDyQlk9XwZ4jbySrdfcFUVOubkESVtKWF2QoCrQ/9rtwsPTIg+Q6hC6NaT93TP1M8Cb2rjQ==}
@@ -2941,6 +2947,8 @@ snapshots:
     optional: true
 
   '@fontsource-variable/inter@5.2.8': {}
+
+  '@fontsource/redacted-script@5.2.8': {}
 
   '@fontsource/workbench@5.2.8': {}
 
