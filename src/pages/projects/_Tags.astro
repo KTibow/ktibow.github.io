@@ -1,0 +1,44 @@
+---
+export interface Props {
+  ai?: boolean;
+  school?: boolean;
+  skyblock?: boolean;
+  ha?: boolean;
+}
+
+const { ai, school, skyblock, ha } = Astro.props as Props;
+---
+
+<span class="tags">
+  {ai && <span class="dot" style="background-color: var(--m3c-primary);" title="AI" />}
+  {
+    school && (
+      <span class="dot" style="background-color: var(--m3c-primary-container);" title="School" />
+    )
+  }
+  {skyblock && <span class="dot" style="background-color: #90ffb3;" title="Skyblock" />}
+  {
+    ha && (
+      <span
+        class="dot"
+        style="background-color: var(--m3c-tertiary-container);"
+        title="Home Assistant"
+      />
+    )
+  }
+</span>
+
+<style>
+  .tags {
+    display: flex;
+
+    position: absolute;
+    left: 0.25rem;
+    width: 1rem;
+    height: 1.75rem;
+  }
+  .dot {
+    flex: 1;
+    border-radius: var(--m3-shape-full);
+  }
+</style>
