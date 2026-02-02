@@ -55,9 +55,9 @@ import cursor from "./_cursor.svg?url";
         minute: "2-digit",
         timeZone: "America/Los_Angeles",
       });
+      setTimeout(updateTime, 60000 - (Date.now() % 60000));
     }
     updateTime();
-    setInterval(updateTime, 60000 - (Date.now() % 60000));
   </script>
 </Base>
 
