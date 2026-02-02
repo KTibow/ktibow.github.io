@@ -1,19 +1,6 @@
 @import "@unocss/reset/tailwind-v4.css";
-@font-face {
-  font-family: Inter Variable;
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  /* sync with preload in base.astro */
-  src: url("https://rsms.me/inter/font-files/InterVariable.woff2?v=4.1") format("woff2");
-}
-@font-face {
-  font-family: Inter Variable;
-  font-style: italic;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url("https://rsms.me/inter/font-files/InterVariable-Italic.woff2?v=4.1") format("woff2");
-}
+@import "@fontsource-variable/inter/opsz.css";
+@import "@fontsource-variable/inter/opsz-italic.css";
 :root {
   accent-color: var(--m3c-primary);
   font-family:
