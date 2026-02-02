@@ -33,6 +33,7 @@ const [y, m, d] = date.split("-").map((n) => +n);
 ---
 
 <Base title={title}>
+  <slot name="head" slot="head" />
   {noindex && <meta name="robots" content="noindex" slot="head" />}
   {bg && <img src={bg} alt="" />}
   <main class="prose">
