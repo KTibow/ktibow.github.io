@@ -5,15 +5,11 @@ import Arrow from "./_arrow.astro";
 
 import bg from "./_bg.svg?url";
 import cursor from "./_cursor.svg?url";
+
+import "@fontsource/workbench/latin"; // it actually inlines the whole font!
 ---
 
 <Base title="Kendell">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Workbench&display=swap"
-    slot="head"
-  />
   <Header />
   <style
     set:html={":root {" +

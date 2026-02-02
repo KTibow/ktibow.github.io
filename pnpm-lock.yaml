@@ -33,6 +33,9 @@ importers:
       '@astrojs/rss':
         specifier: 4.0.15-beta.2
         version: 4.0.15-beta.2
+      '@fontsource/workbench':
+        specifier: ^5.2.8
+        version: 5.2.8
       '@types/d3':
         specifier: ^7.4.3
         version: 7.4.3
@@ -484,6 +487,9 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@fontsource/workbench@5.2.8':
+    resolution: {integrity: sha512-XNNauf1eU26G/IAoDyQlk9XwZ4jbySrdfcFUVOubkESVtKWF2QoCrQ/9rtwsPTIg+Q6hC6NaT93TP1M8Cb2rjQ==}
 
   '@img/colour@1.0.0':
     resolution: {integrity: sha512-A5P/LfWGFSl6nsckYtjw9da+19jB8hkJ6ACTGcDfEJ0aE+l2n2El7dsVM7UVHZQ9s2lmYMWlrS21YLy2IR1LUw==}
@@ -2927,6 +2933,8 @@ snapshots:
 
   '@esbuild/win32-x64@0.27.2':
     optional: true
+
+  '@fontsource/workbench@5.2.8': {}
 
   '@img/colour@1.0.0': {}
 
