@@ -6,7 +6,7 @@ import Arrow from "./_arrow.astro";
 import bg from "./_bg.svg?url";
 import cursor from "./_cursor.svg?url";
 
-import "@fontsource/workbench/latin-400.css"; // it actually inlines the whole font!
+const wordmark = `<svg width="161.6" height="40" viewBox="0 0 1753 434" fill="currentColor"><title>Kendell</title><rect width="121" height="50" y="384" rx="25"/><rect width="89" height="50" x="160" y="384" rx="25"/><rect width="89" height="50" x="32" y="320" rx="25"/><rect width="89" height="50" x="160" y="320" rx="25"/><rect width="89" height="50" x="32" y="256" rx="25"/><rect width="89" height="50" x="128" y="256" rx="25"/><rect width="153" height="50" x="32" y="192" rx="25"/><rect width="89" height="50" x="32" y="128" rx="25"/><rect width="89" height="50" x="128" y="128" rx="25"/><rect width="89" height="50" x="32" y="64" rx="25"/><rect width="89" height="50" x="160" y="64" rx="25"/><rect width="121" height="50" rx="25"/><rect width="89" height="50" x="160" rx="25"/><rect width="153" height="50" x="320" y="384" rx="25"/><rect width="89" height="50" x="288" y="320" rx="25"/><rect width="217" height="50" x="288" y="256" rx="25"/><rect width="89" height="50" x="288" y="192" rx="25"/><rect width="89" height="50" x="416" y="192" rx="25"/><rect width="153" height="50" x="320" y="128" rx="25"/><rect width="89" height="50" x="544" y="384" rx="25"/><rect width="89" height="50" x="672" y="384" rx="25"/><rect width="89" height="50" x="544" y="320" rx="25"/><rect width="89" height="50" x="672" y="320" rx="25"/><rect width="89" height="50" x="544" y="256" rx="25"/><rect width="89" height="50" x="672" y="256" rx="25"/><rect width="89" height="50" x="544" y="192" rx="25"/><rect width="89" height="50" x="672" y="192" rx="25"/><rect width="185" height="50" x="544" y="128" rx="25"/><rect width="121" height="50" x="832" y="384" rx="25"/><rect width="89" height="50" x="960" y="384" rx="25"/><rect width="89" height="50" x="800" y="320" rx="25"/><rect width="89" height="50" x="928" y="320" rx="25"/><rect width="89" height="50" x="800" y="256" rx="25"/><rect width="89" height="50" x="928" y="256" rx="25"/><rect width="89" height="50" x="800" y="192" rx="25"/><rect width="121" height="50" x="896" y="192" rx="25"/><rect width="89" height="50" x="832" y="128" rx="25"/><rect width="89" height="50" x="928" y="128" rx="25"/><rect width="89" height="50" x="928" y="64" rx="25"/><rect width="121" height="50" x="896" rx="25"/><rect width="153" height="50" x="1088" y="384" rx="25"/><rect width="89" height="50" x="1056" y="320" rx="25"/><rect width="217" height="50" x="1056" y="256" rx="25"/><rect width="89" height="50" x="1056" y="192" rx="25"/><rect width="89" height="50" x="1184" y="192" rx="25"/><rect width="153" height="50" x="1088" y="128" rx="25"/><rect width="153" height="50" x="1344" y="384" rx="25"/><rect width="89" height="50" x="1376" y="320" rx="25"/><rect width="89" height="50" x="1376" y="256" rx="25"/><rect width="89" height="50" x="1376" y="192" rx="25"/><rect width="89" height="50" x="1376" y="128" rx="25"/><rect width="89" height="50" x="1376" y="64" rx="25"/><rect width="121" height="50" x="1344" rx="25"/><rect width="153" height="50" x="1600" y="384" rx="25"/><rect width="89" height="50" x="1632" y="320" rx="25"/><rect width="89" height="50" x="1632" y="256" rx="25"/><rect width="89" height="50" x="1632" y="192" rx="25"/><rect width="89" height="50" x="1632" y="128" rx="25"/><rect width="89" height="50" x="1632" y="64" rx="25"/><rect width="121" height="50" x="1600" rx="25"/></svg>`;
 ---
 
 <Base title="Kendell">
@@ -33,7 +33,7 @@ import "@fontsource/workbench/latin-400.css"; // it actually inlines the whole f
   ></style>
   <main>
     <div>
-      <h1>Kendell</h1>
+      <h1><Fragment set:html={wordmark} /></h1>
       <time class="link"></time>
       <a class="link layer" href="https://github.com/KTibow">GitHub <Arrow /></a>
       <a class="link layer" href="https://github.com/sponsors/KTibow">GitHub Sponsors <Arrow /></a>
@@ -79,8 +79,6 @@ import "@fontsource/workbench/latin-400.css"; // it actually inlines the whole f
     }
   }
   h1 {
-    font-family: Workbench, system-ui;
-    @apply --m3-display-medium;
     margin-bottom: auto;
   }
   .link {
