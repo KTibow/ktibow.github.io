@@ -1,6 +1,7 @@
 ---
 import "./base.css";
 import interVariable from "@fontsource-variable/inter/files/inter-latin-opsz-normal.woff2?url";
+import interVariableItalic from "@fontsource-variable/inter/files/inter-latin-opsz-italic.woff2?url";
 
 export const blogRSSTitle = "Kendell's blog";
 
@@ -21,6 +22,18 @@ const { title } = Astro.props;
     <link rel="icon" href="/favicon.svg" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="preload" href={interVariable} as="font" type="font/woff2" crossorigin />
+    {
+      (await Astro.slots.render("default")).includes("<em") && (
+        <link
+          rel="preload"
+          href={interVariableItalic}
+          as="font"
+          type="font/woff2"
+          crossorigin
+          fetchpriority="low"
+        />
+      )
+    }
     {
       Astro.url.pathname.startsWith("/blog") ? (
         <link
