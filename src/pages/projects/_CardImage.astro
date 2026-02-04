@@ -7,7 +7,9 @@ interface Props {
   priority?: boolean;
 }
 const { src, alt, priority } = Astro.props;
-const props = src.format == "svg" ? {} : { format: "avif", quality: 95, densities: [1, 2, 3] };
+if (src.format != "svg") {
+  throw new Error("must be svg");
+}
 ---
 
-<Image {src} {alt} {priority} width={30 * 16} {...props} />
+<Image {src} {alt} {priority} width={30 * 16} />
