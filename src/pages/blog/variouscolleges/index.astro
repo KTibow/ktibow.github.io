@@ -1,0 +1,16 @@
+---
+import BlogPost from "$lib/layouts/BlogPost.astro";
+import TableWrapper from "./_TableWrapper.svelte";
+import bg from "./bg.avif?url";
+
+export const date = "2026-02-06";
+export const title = "Information about various colleges";
+---
+
+<BlogPost {date} {title} {bg}>
+  <p>
+    In 2024, I made an internal app, and it included info about various colleges and their
+    requirements that I collected using a custom AI workflow. This info better lives here.
+  </p>
+  <TableWrapper client:load />
+</BlogPost>
