@@ -1,7 +1,7 @@
 ---
 import Base from "$lib/layouts/Base.astro";
 import Header from "$lib/Header.astro";
-import list from "./_list";
+import { milliblogPosts } from "virtual:post-lists";
 ---
 
 <Base title="Milliblog">
@@ -12,7 +12,7 @@ import list from "./_list";
   </h2>
   <main>
     {
-      list.map(({ title, link }) => (
+      milliblogPosts.map(({ title, link }) => (
         <a class="layer" href={link}>
           {title}
         </a>
