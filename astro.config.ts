@@ -12,7 +12,7 @@ export default defineConfig({
     port: 5173,
   },
   trailingSlash: "always",
-  prefetch: true,
+  prefetch: { prefetchAll: true },
   integrations: [mdx(), sitemap({ filter: (p) => !p.includes("noindex") }), svelte()],
   vite: {
     plugins: [functionsMixins(), allPostsPlugin()],
