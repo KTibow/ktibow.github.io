@@ -1,6 +1,7 @@
 ---
 import "./base.css";
 import "./layer.css";
+import favicon from "../favicon.svg?url";
 import interVariable from "@fontsource-variable/inter/files/inter-latin-opsz-normal.woff2?url";
 import interVariableItalic from "@fontsource-variable/inter/files/inter-latin-opsz-italic.woff2?url";
 
@@ -20,10 +21,9 @@ const html = await Astro.slots.render("default");
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="accent-color" content="#bbc3ff" />
-    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" href={favicon} />
+    <title>{title}</title>
 
-    <link rel="icon" href="/favicon.svg" />
-    <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="preload" href={interVariable} as="font" type="font/woff2" crossorigin />
     {
       html.includes("<em") && (
@@ -37,6 +37,9 @@ const html = await Astro.slots.render("default");
         />
       )
     }
+
+    <meta name="generator" content={Astro.generator} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
     {
       Astro.url.pathname.startsWith("/blog") ? (
         <link
@@ -47,10 +50,7 @@ const html = await Astro.slots.render("default");
         />
       ) : undefined
     }
-
     <slot name="head" />
-
-    <title>{title}</title>
   </head>
   <body>
     <Fragment set:html={html} />
