@@ -165,11 +165,11 @@ const [y, m, d] = date.split("-").map((n) => +n);
     padding-inline: 0.75rem;
     background-color: var(--m3c-surface-container-low);
     color: var(--m3c-primary);
-    main + & {
-      align-self: center;
-      border-start-start-radius: 1rem;
-      border-start-end-radius: 1rem;
-    }
+  }
+  :global(main) + .go {
+    align-self: center;
+    border-start-start-radius: 1rem;
+    border-start-end-radius: 1rem;
   }
   nav {
     display: grid;
