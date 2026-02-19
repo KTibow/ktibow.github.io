@@ -47,6 +47,11 @@ export default defineConfig({
     language="ts"
   />
   <p>
+    (And also, some hosting platforms need you to change your default cache control from "<code
+      >public, max-age=0, must-revalidate</code
+    >" to something more like "<code>public, max-age=60</code>")
+  </p>
+  <p>
     If you're skeptical of this reaching parity with client side navigation, remember that only the
     HTML has to be refetched, and that it may <a href="https://http.cat/304">304</a>. It's an extra
     request but barely noticeable, at least relative to the 12 JS chunks a basic and uninteractive
