@@ -1,0 +1,73 @@
+---
+import BlogPost from "$lib/layouts/BlogPost.astro";
+import Snippet from "$lib/Snippet.astro";
+export const date = "2026-02-19";
+export const title = "Your favorite framework caches better than Astro";
+---
+
+<BlogPost {date} {title}>
+  <p>
+    Astro is known for being the framework that, despite having the DX and UX of a JS framework,
+    builds to HTML instead of JS. While other frameworks always ship JS (including baseline
+    libraries and code even for non-dynamic elements) - Next 456kB, Nuxt 150kB, Qwik 66kB, Sveltekit
+    68kB - Astro ships none by default. This makes page loads insanely fast and unintensive.
+  </p>
+  <p>
+    Astro also doesn't abstract sites. It doesn't generate many chunks for a one-page site. Slots
+    aren't unreadable black boxes.
+  </p>
+  <p>But this makes Astro <em>slower</em> in one specific case: navigation.</p>
+  <p>
+    JS frameworks use client side navigation. They only ever send HTML on the initial page load.
+    Otherwise, they render the page via JS in your client. This JS can be cached, and the server is
+    completely bypassed when it is. It's "PWA-lite", close to "cache on navigation but not on load".
+  </p>
+  <p>
+    JS frameworks pull this off because their assets are <em>versioned</em> - Rollup infinitely caches
+    assets that don't change via hashes, which they got to handle dependencies (including circular ones)
+    correctly and update on every page load. It isn't actually just "cache on navigation but not load".
+    Astro, and HTML in general, have no equivalent.
+  </p>
+
+  <h2>The most effective workaround: prefetching and prerendering</h2>
+  <p>
+    Most people hover a link for 300ms before clicking it. In that time we can add the page to our
+    cache and, in Chromium-based browsers, start rendering it. In Astro, this looks like:
+  </p>
+  <Snippet
+    code={`// astro.config.ts
+import { defineConfig } from "astro/config";
+
+export default defineConfig({
+  prefetch: { prefetchAll: true },
+  // Uncomment if you want. Right now prerendering only works in Chromium and makes the favicon abruptly flash.
+  // experimental: { clientPrerender: true },
+});
+`}
+    language="ts"
+  />
+  <p>
+    If you're skeptical of this reaching parity with client side navigation, remember that only the
+    HTML has to be refetched, and that it may <a href="https://http.cat/304">304</a>. It's an extra
+    request but barely noticeable, at least relative to the 12 JS chunks a basic and uninteractive
+    SvelteKit site loads.
+  </p>
+
+  <h2>Less effective workarounds</h2>
+  <p>
+    Some LLMs suggest using a dynamic <code>Cache-Control</code> combined with <code>Vary</code>.
+    But this creates two caches instead of two strategies for caching and ends up serving too old
+    versions.
+  </p>
+  <p>
+    Others suggest making a service worker. This can get complicated quickly though, and again, this
+    will serve too old versions.
+  </p>
+  <p>
+    Ideally, your content itself would be versioned. But how do you do that? You would need to
+    version your content and instruct browsers to not refetch HTML at all if it has cached content
+    with the correct version - something like adding ugly <code>?v</code> params or finding a host that
+    lets you control etags and browser that lets you say "don't refetch if you already have this etag"
+    ahead of time. This isn't possible, at least right now.
+  </p>
+</BlogPost>
