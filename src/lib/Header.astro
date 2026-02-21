@@ -1,4 +1,8 @@
 ---
+interface Props {
+  span?: boolean;
+}
+const { span } = Astro.props;
 const pages = [
   { url: '/blog/', title: 'blog', description: 'big thoughts' },
   { url: '/milliblog/', title: 'milliblog', description: 'human research' },
@@ -13,7 +17,11 @@ const pages = [
   {
     pages.map(({ url, title, description }) =>
       Astro.url.pathname == url ? (
-        <span class="pill selected">{title} - you are here</span>
+        span ? (
+          <span class="pill selected">{title} - you are here</span>
+        ) : (
+          <h1 class="pill selected">{title} - you are here</h1>
+        )
       ) : (
         <a class="pill layer" href={url}>
           {title} - {description}
