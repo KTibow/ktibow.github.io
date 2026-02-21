@@ -1,7 +1,7 @@
 <script lang="ts">
-  import Table from "./_Table.svelte";
+  import Table from './_Table.svelte';
 
-  let field = $state("Engineering & Technology");
+  let field = $state('Engineering & Technology');
 </script>
 
 <label>

@@ -1,9 +1,9 @@
 ---
-import BlogPost from "$lib/layouts/BlogPost.astro";
-import bg from "./bg.avif?url";
+import BlogPost from '$lib/layouts/BlogPost.astro';
+import bg from './bg.avif?url';
 
-export const title = "My gripes with the HA frontend";
-export const date = "2024-02-07";
+export const title = 'My gripes with the HA frontend';
+export const date = '2024-02-07';
 ---
 
 <BlogPost {date} {title} {bg}>
@@ -77,7 +77,7 @@ export const date = "2024-02-07";
       Array.from({ length: 122 + 98 }).map((_, i) => (
         <div class="dep-box">
           {i}
-          {i >= 122 && " (dev)"}
+          {i >= 122 && ' (dev)'}
         </div>
       ))
     }

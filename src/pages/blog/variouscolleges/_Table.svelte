@@ -1,42 +1,42 @@
 <script lang="ts">
-  import reqs from "./tables.json";
+  import reqs from './tables.json';
 
   const { field }: { field: string } = $props();
 
   let columns = $derived((reqs as Record<string, { columns: string[] }>)[field].columns);
-  let selectivenessFilter = $state<"off" | "top" | "bottom">("off");
+  let selectivenessFilter = $state<'off' | 'top' | 'bottom'>('off');
   let rows = $derived(
     (reqs as Record<string, { rows: string[][] }>)[field].rows.filter((row) =>
-      selectivenessFilter == "top"
-        ? ["10/10", "9/10"].includes(row[1])
-        : selectivenessFilter == "bottom"
-          ? ["4/10", "5/10", "6/10"].includes(row[1])
+      selectivenessFilter == 'top'
+        ? ['10/10', '9/10'].includes(row[1])
+        : selectivenessFilter == 'bottom'
+          ? ['4/10', '5/10', '6/10'].includes(row[1])
           : true,
     ),
   );
   const isYearBox = (box: string) => /^[0-9.+-]+ [a-z]+[ ,:;]/i.test(processYearBox(box));
   const processYearBox = (box: string) => {
     return box
-      .replaceAll("At least ", "")
-      .replaceAll(" or more", "+")
-      .replaceAll(" full-year courses", " years")
-      .replaceAll(" full-year lab courses", " years of lab courses")
-      .replace(/^([0-9-]+) \(/, "$1 years (")
-      .replace(/Recommended: (\d+) sequential world language courses/, "$1 years recommended")
-      .replace(/(\d+) sequential units in a single world language/, "$1 years");
+      .replaceAll('At least ', '')
+      .replaceAll(' or more', '+')
+      .replaceAll(' full-year courses', ' years')
+      .replaceAll(' full-year lab courses', ' years of lab courses')
+      .replace(/^([0-9-]+) \(/, '$1 years (')
+      .replace(/Recommended: (\d+) sequential world language courses/, '$1 years recommended')
+      .replace(/(\d+) sequential units in a single world language/, '$1 years');
   };
   const isSplitBox = (box: string) =>
     /^[0-9a-z%. \/-]+; [\0-9a-z%. \/-]+; [\0-9a-z%. \/-]+$/.test(box);
   const processGPA = (part: string) => {
-    return part.replace(".00", ".0");
+    return part.replace('.00', '.0');
   };
   const processOtherBox = (box: string) => {
     return box
-      .replace("Public Research University", "Public research university")
-      .replace("Research University", "Research university")
-      .replace(" and to fulfill core competencies", "")
-      .replace(/^\?$/, "-")
-      .replace(/^N\/A$/, "-");
+      .replace('Public Research University', 'Public research university')
+      .replace('Research University', 'Research university')
+      .replace(' and to fulfill core competencies', '')
+      .replace(/^\?$/, '-')
+      .replace(/^N\/A$/, '-');
   };
 </script>
 
@@ -47,17 +47,17 @@
         {#each columns as column}
           <th
             onclick={() => {
-              if (column == "Selectiveness") {
-                if (selectivenessFilter == "off") {
-                  selectivenessFilter = "top";
-                } else if (selectivenessFilter == "top") {
-                  selectivenessFilter = "bottom";
+              if (column == 'Selectiveness') {
+                if (selectivenessFilter == 'off') {
+                  selectivenessFilter = 'top';
+                } else if (selectivenessFilter == 'top') {
+                  selectivenessFilter = 'bottom';
                 } else {
-                  selectivenessFilter = "off";
+                  selectivenessFilter = 'off';
                 }
               }
             }}
-            style:cursor={column == "Selectiveness" ? "pointer" : "auto"}>{column}</th
+            style:cursor={column == 'Selectiveness' ? 'pointer' : 'auto'}>{column}</th
           >
         {/each}
       </tr>
@@ -66,11 +66,11 @@
       {#each rows as row}
         <tr>
           {#each row as box, i}
-            <td class:name={i == 0} style:letter-spacing={i == 0 ? `-${box.length * 0.001}em` : ""}>
-              {#if box == "-"}
+            <td class:name={i == 0} style:letter-spacing={i == 0 ? `-${box.length * 0.001}em` : ''}>
+              {#if box == '-'}
                 -
               {:else if /^\d+\/\d+$/.test(box)}
-                {@const [filled, total] = box.split("/")}
+                {@const [filled, total] = box.split('/')}
                 <div class="bar">
                   <div class="filled" style:width="{((+filled - 3) / (+total - 3)) * 100}%"></div>
                 </div>
@@ -80,7 +80,7 @@
                 {@const [, first, rest] = processYearBox(box).match(/^([0-9.+-]+ [a-z]+)(.*)$/)!}
                 <span title={rest}>{first}</span>
               {:else if isSplitBox(box)}
-                {@const [first, second, third] = box.split("; ")}
+                {@const [first, second, third] = box.split('; ')}
                 <div class="split">
                   <span>{processGPA(first)}</span>
                   <span>{processGPA(second)}</span>
@@ -126,7 +126,7 @@
     padding-right: 1rem;
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
-    font-feature-settings: "tnum" 1;
+    font-feature-settings: 'tnum' 1;
   }
   :is(th, td):first-child {
     padding-left: 1rem;

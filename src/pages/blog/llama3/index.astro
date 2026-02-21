@@ -1,12 +1,12 @@
 ---
-import BlogPost from "$lib/layouts/BlogPost.astro";
-import bg from "./bg.avif?url";
-export const title = "Llama 3 fails some basic tests";
-export const date = "2024-02-11";
+import BlogPost from '$lib/layouts/BlogPost.astro';
+import bg from './bg.avif?url';
+export const title = 'Llama 3 fails some basic tests';
+export const date = '2024-02-11';
 
 const questions = [
   {
-    input: "write a song using (inappropriate) pick-up lines",
+    input: 'write a song using (inappropriate) pick-up lines',
     output: [
       `(Verse 1)
 Hey there, baby, you must be a magician,
@@ -246,7 +246,7 @@ These are just a few examples of the many ways hyperbolas are used in real-world
   },
   {
     input:
-      "write a short letter to a history teacher named Mrs. Placekeepur, it is about a missing assignment call Entry Ticket",
+      'write a short letter to a history teacher named Mrs. Placekeepur, it is about a missing assignment call Entry Ticket',
     output: [
       `Dear Mrs. Placekeepur,
 
@@ -301,7 +301,7 @@ Sincerely,
     ],
   },
   {
-    input: "using markdown table format, compare apples and oranges",
+    input: 'using markdown table format, compare apples and oranges',
     output: [
       `| Feature | Apples | Oranges |
 |---|---|---|
@@ -350,7 +350,7 @@ Note: This table is not exhaustive, but it highlights some of the main differenc
     ],
   },
   {
-    input: "etymology of recap",
+    input: 'etymology of recap',
     output: [
       `The word "recap" is short for "recapitulation," which is derived from the Latin word "recapitulare," which means "to summarize" or "to sum up." The word "recapitulare" is composed of two words: "re-" (a prefix meaning "again") and "caput" (meaning "head" or "chief").
 
@@ -394,7 +394,7 @@ In general, the etymology of "recap" reflects the idea of revisiting or reiterat
   },
   {
     input:
-      "so i know about exponents and how x^(3/2) = sqrt(x^3), but how can, say, the js interpreter know what Math.pow(x, Math.PI) is? how does it calculate it with decimals",
+      'so i know about exponents and how x^(3/2) = sqrt(x^3), but how can, say, the js interpreter know what Math.pow(x, Math.PI) is? how does it calculate it with decimals',
     output: [
       `The JavaScript interpreter uses a mathematical library to calculate the value of \`Math.pow(x, Math.PI)\`. The library uses a numerical approximation method to compute the value of \`Math.PI\` and then raises \`x\` to that power.
 
@@ -483,7 +483,7 @@ I hope this helps you understand how JavaScript interpreters calculate \`Math.po
     ],
   },
   {
-    input: "what is the furthest a human has been from earth",
+    input: 'what is the furthest a human has been from earth',
     output: [
       `The furthest a human has ever been from Earth is approximately 248,655 miles (400,171 kilometers) above the surface of the Earth. This record was set by the Apollo 13 mission in April 1970.
 
@@ -544,16 +544,16 @@ It's worth noting that while this is the farthest a human has been from Earth, t
                 <p>
                   <strong>
                     {i == 0
-                      ? "Mixtral 8x7b"
+                      ? 'Mixtral 8x7b'
                       : i == 1
-                        ? "Mixtral 8x22b"
+                        ? 'Mixtral 8x22b'
                         : i == 2
-                          ? "Llama 8b"
-                          : "Llama 70b"}{" "}
+                          ? 'Llama 8b'
+                          : 'Llama 70b'}{' '}
                     ({answer.length} chars)
                   </strong>
                 </p>
-                {answer.split("\n").map((line, j) => (line ? <p>{line}</p> : <br />))}
+                {answer.split('\n').map((line, j) => (line ? <p>{line}</p> : <br />))}
               </div>
             ))}
           </div>

@@ -6,33 +6,33 @@ function generatePermutations(domain: string) {
   permutations.push(domain);
 
   // Common typos
-  permutations.push(domain.replace("k", "l")); // porldun
-  permutations.push(domain.replace("b", "n")); // porknun
-  permutations.push(domain.replace("p", "b")); // borkbun
+  permutations.push(domain.replace('k', 'l')); // porldun
+  permutations.push(domain.replace('b', 'n')); // porknun
+  permutations.push(domain.replace('p', 'b')); // borkbun
 
   // Character swaps
   for (let i = 0; i < domain.length - 1; i++) {
-    const swapped = domain.split("");
+    const swapped = domain.split('');
     [swapped[i], swapped[i + 1]] = [swapped[i + 1], swapped[i]];
-    permutations.push(swapped.join(""));
+    permutations.push(swapped.join(''));
   }
 
   // Letter duplication
   for (let i = 0; i < domain.length; i++) {
-    const duplicated = domain.split("");
+    const duplicated = domain.split('');
     duplicated.splice(i, 0, domain[i]);
-    permutations.push(duplicated.join(""));
+    permutations.push(duplicated.join(''));
   }
 
   // Letter omission
   for (let i = 0; i < domain.length; i++) {
-    const omitted = domain.split("");
+    const omitted = domain.split('');
     omitted.splice(i, 1);
-    permutations.push(omitted.join(""));
+    permutations.push(omitted.join(''));
   }
 
   // Letter addition
-  for (const letter of "abcdefghijklmnopqrstuvwxyz") {
+  for (const letter of 'abcdefghijklmnopqrstuvwxyz') {
     permutations.push(domain + letter);
   }
 
@@ -46,7 +46,7 @@ function generatePermutations(domain: string) {
     fullDomains.push(`${perm}.org`);
   }
 
-  return fullDomains.filter((d) => d != "porkbunt.com");
+  return fullDomains.filter((d) => d != 'porkbunt.com');
 }
 
 // Function to check for redirects
@@ -56,9 +56,9 @@ async function checkRedirects(domains: string[], phishingSite: string) {
   for (const domain of domains) {
     const check = async () => {
       const response = await fetch(`https://${domain}`, {
-        method: "HEAD",
-        redirect: "manual",
-        mode: "no-cors",
+        method: 'HEAD',
+        redirect: 'manual',
+        mode: 'no-cors',
       });
 
       // Check if this domain redirects to the phishing site
@@ -67,10 +67,10 @@ async function checkRedirects(domains: string[], phishingSite: string) {
     try {
       const isPhishing = await Promise.race([
         check(),
-        new Promise((_, reject) => setTimeout(() => reject(new Error("Timeout")), 5000)),
+        new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 5000)),
       ]);
       if (isPhishing) {
-        console.log("we got em", domain);
+        console.log('we got em', domain);
         results.push({ domain, redirectsToPhishing: true });
       } else {
         results.push({ domain, redirectsToPhishing: false });
@@ -81,8 +81,8 @@ async function checkRedirects(domains: string[], phishingSite: string) {
   return results;
 }
 
-const originalDomain = "porkbun";
-const phishingSite = "porkbunt.com";
+const originalDomain = 'porkbun';
+const phishingSite = 'porkbunt.com';
 
 const permutations = generatePermutations(originalDomain);
 console.log(`Generated ${permutations.length} permutations to check`);
@@ -90,7 +90,7 @@ console.log(`Generated ${permutations.length} permutations to check`);
 const results = await checkRedirects(permutations, phishingSite);
 
 // Display results
-console.log("=== RESULTS ===");
+console.log('=== RESULTS ===');
 const phishingDomains = results.filter((r) => r.redirectsToPhishing);
 
 if (phishingDomains.length > 0) {

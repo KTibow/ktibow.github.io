@@ -4,14 +4,14 @@
 
   /* Hitbox for rounded elements */
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     inset: 0;
   }
 
   /* Tint */
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     inset: 0;
     border-radius: inherit;

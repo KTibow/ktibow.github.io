@@ -1,8 +1,8 @@
 ---
-import Base from "$lib/layouts/Base.astro";
-import Header from "$lib/Header.astro";
-import statuses from "./statuses.json";
-import { formatDate } from "./_date";
+import Base from '$lib/layouts/Base.astro';
+import Header from '$lib/Header.astro';
+import statuses from './statuses.json';
+import { formatDate } from './_date';
 ---
 
 <Base title="Nanoblog">
@@ -21,9 +21,9 @@ import { formatDate } from "./_date";
     }
   </main>
   <script>
-    import { formatDate } from "./_date";
-    for (const time of document.querySelectorAll("time")) {
-      time.textContent = formatDate(new Date(time.getAttribute("datetime")!));
+    import { formatDate } from './_date';
+    for (const time of document.querySelectorAll('time')) {
+      time.textContent = formatDate(new Date(time.getAttribute('datetime')!));
     }
   </script>
 </Base>

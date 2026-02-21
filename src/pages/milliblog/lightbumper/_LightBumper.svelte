@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { bumpers, type Bumper } from "./_bumpers";
+  import { bumpers, type Bumper } from './_bumpers';
 
   const angles = Object.values(bumpers);
 
@@ -47,7 +47,7 @@
   {/each}
 </svg>
 <div class="info not-prose">
-  <h2>{hoveredBumper ? hoveredBumper : "Hover over one"}</h2>
+  <h2>{hoveredBumper ? hoveredBumper : 'Hover over one'}</h2>
   <p>{angleToCenter}°</p>
   <p>{angleToLeft}° to left one, {angleToRight}° to right one</p>
 </div>

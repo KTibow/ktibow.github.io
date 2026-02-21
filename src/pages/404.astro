@@ -1,19 +1,19 @@
 ---
-import Base from "$lib/layouts/Base.astro";
-import errorbg from "./_404bg.svg?url";
+import Base from '$lib/layouts/Base.astro';
+import errorbg from './_404bg.svg?url';
 ---
 
 <Base title="404">
   <style
-    set:html={"body {" +
+    set:html={'body {' +
       [
         `background-image: url("${errorbg}")`,
         `background-size: cover`,
         `background-repeat: no-repeat`,
         `background-attachment: fixed`,
         `background-position: center`,
-      ].join(";") +
-      "}"}
+      ].join(';') +
+      '}'}
   ></style>
   <main>
     <img src="https://http.cat/404" width="750" height="600" alt="The 404 cat" />

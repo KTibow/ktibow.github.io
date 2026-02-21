@@ -1,15 +1,15 @@
 ---
-import BlogPost from "$lib/layouts/BlogPost.astro";
-import bg from "./bg.svg?url";
+import BlogPost from '$lib/layouts/BlogPost.astro';
+import bg from './bg.svg?url';
 
-export const title = "On belonging";
-export const date = "2025-12-10";
+export const title = 'On belonging';
+export const date = '2025-12-10';
 
 const barsData = [
-  { one: 43, two: 184, label: "Class options" },
-  { one: 3, two: 12, label: "Math teachers (est)" },
-  { one: 2, two: 10, label: "Sections for one English class" },
-  { one: 53, two: 50, label: "Length of a class" },
+  { one: 43, two: 184, label: 'Class options' },
+  { one: 3, two: 12, label: 'Math teachers (est)' },
+  { one: 2, two: 10, label: 'Sections for one English class' },
+  { one: 53, two: 50, label: 'Length of a class' },
 ];
 
 function renderBarHeights(one: number, two: number) {

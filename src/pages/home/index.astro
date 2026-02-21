@@ -1,10 +1,10 @@
 ---
-import Base from "$lib/layouts/Base.astro";
-import Header from "$lib/Header.astro";
-import Arrow from "./_arrow.astro";
+import Base from '$lib/layouts/Base.astro';
+import Header from '$lib/Header.astro';
+import Arrow from './_arrow.astro';
 
-import bg from "./_bg.svg?url";
-import cursor from "./_cursor.svg?url";
+import bg from './_bg.svg?url';
+import cursor from './_cursor.svg?url';
 
 const wordmark = `<svg width="161.6" height="40" viewBox="0 0 1753 434" fill="currentColor"><title>Kendell</title><rect width="121" height="50" y="384" rx="25"/><rect width="89" height="50" x="160" y="384" rx="25"/><rect width="89" height="50" x="32" y="320" rx="25"/><rect width="89" height="50" x="160" y="320" rx="25"/><rect width="89" height="50" x="32" y="256" rx="25"/><rect width="89" height="50" x="128" y="256" rx="25"/><rect width="153" height="50" x="32" y="192" rx="25"/><rect width="89" height="50" x="32" y="128" rx="25"/><rect width="89" height="50" x="128" y="128" rx="25"/><rect width="89" height="50" x="32" y="64" rx="25"/><rect width="89" height="50" x="160" y="64" rx="25"/><rect width="121" height="50" rx="25"/><rect width="89" height="50" x="160" rx="25"/><rect width="153" height="50" x="320" y="384" rx="25"/><rect width="89" height="50" x="288" y="320" rx="25"/><rect width="217" height="50" x="288" y="256" rx="25"/><rect width="89" height="50" x="288" y="192" rx="25"/><rect width="89" height="50" x="416" y="192" rx="25"/><rect width="153" height="50" x="320" y="128" rx="25"/><rect width="89" height="50" x="544" y="384" rx="25"/><rect width="89" height="50" x="672" y="384" rx="25"/><rect width="89" height="50" x="544" y="320" rx="25"/><rect width="89" height="50" x="672" y="320" rx="25"/><rect width="89" height="50" x="544" y="256" rx="25"/><rect width="89" height="50" x="672" y="256" rx="25"/><rect width="89" height="50" x="544" y="192" rx="25"/><rect width="89" height="50" x="672" y="192" rx="25"/><rect width="185" height="50" x="544" y="128" rx="25"/><rect width="121" height="50" x="832" y="384" rx="25"/><rect width="89" height="50" x="960" y="384" rx="25"/><rect width="89" height="50" x="800" y="320" rx="25"/><rect width="89" height="50" x="928" y="320" rx="25"/><rect width="89" height="50" x="800" y="256" rx="25"/><rect width="89" height="50" x="928" y="256" rx="25"/><rect width="89" height="50" x="800" y="192" rx="25"/><rect width="121" height="50" x="896" y="192" rx="25"/><rect width="89" height="50" x="832" y="128" rx="25"/><rect width="89" height="50" x="928" y="128" rx="25"/><rect width="89" height="50" x="928" y="64" rx="25"/><rect width="121" height="50" x="896" rx="25"/><rect width="153" height="50" x="1088" y="384" rx="25"/><rect width="89" height="50" x="1056" y="320" rx="25"/><rect width="217" height="50" x="1056" y="256" rx="25"/><rect width="89" height="50" x="1056" y="192" rx="25"/><rect width="89" height="50" x="1184" y="192" rx="25"/><rect width="153" height="50" x="1088" y="128" rx="25"/><rect width="153" height="50" x="1344" y="384" rx="25"/><rect width="89" height="50" x="1376" y="320" rx="25"/><rect width="89" height="50" x="1376" y="256" rx="25"/><rect width="89" height="50" x="1376" y="192" rx="25"/><rect width="89" height="50" x="1376" y="128" rx="25"/><rect width="89" height="50" x="1376" y="64" rx="25"/><rect width="121" height="50" x="1344" rx="25"/><rect width="153" height="50" x="1600" y="384" rx="25"/><rect width="89" height="50" x="1632" y="320" rx="25"/><rect width="89" height="50" x="1632" y="256" rx="25"/><rect width="89" height="50" x="1632" y="192" rx="25"/><rect width="89" height="50" x="1632" y="128" rx="25"/><rect width="89" height="50" x="1632" y="64" rx="25"/><rect width="121" height="50" x="1600" rx="25"/></svg>`;
 ---
@@ -12,7 +12,7 @@ const wordmark = `<svg width="161.6" height="40" viewBox="0 0 1753 434" fill="cu
 <Base title="Kendell">
   <Header />
   <style
-    set:html={":root {" +
+    set:html={':root {' +
       [
         `cursor: url("${cursor}"), auto`,
         `background-image: url("${bg}")`,
@@ -22,14 +22,14 @@ const wordmark = `<svg width="161.6" height="40" viewBox="0 0 1753 434" fill="cu
         `background-repeat: no-repeat`,
         `background-attachment: fixed`,
         `background-position: top center`,
-      ].join(";") +
-      "}" +
-      ":root.midnight {" +
+      ].join(';') +
+      '}' +
+      ':root.midnight {' +
       [
         `background-image: linear-gradient(rgb(0 0 0 / 0.8), rgba(0 0 0 / 0.8)), url("${bg}")`,
         `color: var(--m3c-on-surface)`,
-      ].join(";") +
-      "}"}
+      ].join(';') +
+      '}'}
   ></style>
   <main>
     <div>
@@ -48,14 +48,14 @@ const wordmark = `<svg width="161.6" height="40" viewBox="0 0 1753 434" fill="cu
     </div>
   </main>
   <script>
-    const time = document.querySelector("time")!;
+    const time = document.querySelector('time')!;
     function updateTime() {
       const now = new Date();
       time.dateTime = now.toISOString();
       time.textContent = now.toLocaleTimeString(undefined, {
-        hour: "numeric",
-        minute: "2-digit",
-        timeZone: "America/Los_Angeles",
+        hour: 'numeric',
+        minute: '2-digit',
+        timeZone: 'America/Los_Angeles',
       });
       setTimeout(updateTime, 60000 - (Date.now() % 60000));
     }

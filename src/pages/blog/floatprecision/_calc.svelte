@@ -1,6 +1,6 @@
 <script lang="ts">
-  let vbHeight = $state("");
-  let displayHeight = $state("");
+  let vbHeight = $state('');
+  let displayHeight = $state('');
   let density = $state(1);
   let result = $derived.by(() => {
     const vb = +vbHeight;
@@ -10,7 +10,7 @@
     const pxPortion = 1 / vb;
     const pxSize = pxPortion * disp * d;
 
-    if (!isFinite(pxSize) || !vb || !disp) return "";
+    if (!isFinite(pxSize) || !vb || !disp) return '';
     return `1 pixel svg = ${pxSize.toFixed(3)} pixels on screen
 0.1 pixel svg = ${(pxSize * 0.1).toFixed(3)} pixels on screen
 0.01 pixel svg = ${(pxSize * 0.01).toFixed(3)} pixels on screen

@@ -1,9 +1,9 @@
-import fs from "node:fs/promises";
-import path from "node:path";
-import ts from "typescript";
-import type { Plugin } from "vite";
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import ts from 'typescript';
+import type { Plugin } from 'vite';
 
-const VIRTUAL_MODULE_ID = "virtual:post-lists";
+const VIRTUAL_MODULE_ID = 'virtual:post-lists';
 const RESOLVED_VIRTUAL_MODULE_ID = `\0${VIRTUAL_MODULE_ID}`;
 const FRONTMATTER_PATTERN = /^---\r?\n([\s\S]*?)\r?\n---/;
 
@@ -67,11 +67,11 @@ async function getChildDirectories(parentPath: string) {
 }
 
 async function parseAstroPost(filePath: string, link: string) {
-  const source = await fs.readFile(filePath, "utf-8");
+  const source = await fs.readFile(filePath, 'utf-8');
   const frontmatter = parseFrontmatter(filePath, source);
   return {
-    title: getExportedString(frontmatter, filePath, "title"),
-    date: getExportedString(frontmatter, filePath, "date"),
+    title: getExportedString(frontmatter, filePath, 'title'),
+    date: getExportedString(frontmatter, filePath, 'date'),
     link,
   };
 }
@@ -81,7 +81,7 @@ async function readAstroPosts(parentPath: string, linkPrefix: string) {
   const dirs = await getChildDirectories(parentPath);
   await Promise.all(
     dirs.map(async (dir) => {
-      const filePath = path.join(parentPath, dir, "index.astro");
+      const filePath = path.join(parentPath, dir, 'index.astro');
       if (await fileExists(filePath))
         posts.push(await parseAstroPost(filePath, `/${linkPrefix}/${dir}/`));
     }),
@@ -94,18 +94,18 @@ async function readBlogJsonPosts(parentPath: string) {
   const dirs = await getChildDirectories(parentPath);
   await Promise.all(
     dirs.map(async (dir) => {
-      const filePath = path.join(parentPath, dir, "meta.json");
+      const filePath = path.join(parentPath, dir, 'meta.json');
       if (!(await fileExists(filePath))) return;
 
-      const parsed = JSON.parse(await fs.readFile(filePath, "utf-8")) as Partial<{
+      const parsed = JSON.parse(await fs.readFile(filePath, 'utf-8')) as Partial<{
         title: string;
         date: string;
         url: string;
       }>;
 
-      if (typeof parsed.title != "string") throw new Error(`Missing string "title" in ${filePath}`);
-      if (typeof parsed.date != "string") throw new Error(`Missing string "date" in ${filePath}`);
-      if (typeof parsed.url != "string") throw new Error(`Missing string "url" in ${filePath}`);
+      if (typeof parsed.title != 'string') throw new Error(`Missing string "title" in ${filePath}`);
+      if (typeof parsed.date != 'string') throw new Error(`Missing string "date" in ${filePath}`);
+      if (typeof parsed.url != 'string') throw new Error(`Missing string "url" in ${filePath}`);
 
       posts.push({ title: parsed.title, date: parsed.date, link: parsed.url });
     }),
@@ -114,22 +114,22 @@ async function readBlogJsonPosts(parentPath: string) {
 }
 
 function serializePostArray(posts: PostMetadata[]) {
-  if (posts.length == 0) return "[]";
+  if (posts.length == 0) return '[]';
   const lines = posts.map(
     ({ title, link, date }) =>
       `{ title: ${JSON.stringify(title)}, link: ${JSON.stringify(link)}, pubDate: new Date(${JSON.stringify(date)}) }`,
   );
-  return `[${lines.join(",")}]`;
+  return `[${lines.join(',')}]`;
 }
 
 async function buildVirtualModuleSource(root: string) {
-  const blogDirectory = path.join(root, "src/pages/blog");
-  const milliblogDirectory = path.join(root, "src/pages/milliblog");
+  const blogDirectory = path.join(root, 'src/pages/blog');
+  const milliblogDirectory = path.join(root, 'src/pages/milliblog');
 
   const [blogAstroPosts, blogJsonPosts, milliblogAstroPosts] = await Promise.all([
-    readAstroPosts(blogDirectory, "blog"),
+    readAstroPosts(blogDirectory, 'blog'),
     readBlogJsonPosts(blogDirectory),
-    readAstroPosts(milliblogDirectory, "milliblog"),
+    readAstroPosts(milliblogDirectory, 'milliblog'),
   ]);
 
   const byDate = (posts: PostMetadata[]) =>
@@ -144,10 +144,10 @@ export const milliblogPosts = ${serializePostArray(milliblogPosts)};`;
 
 export function allPostsPlugin(): Plugin {
   let rootDirectory = process.cwd();
-  let moduleSource = "";
+  let moduleSource = '';
 
   return {
-    name: "all-posts-plugin",
+    name: 'all-posts-plugin',
     configResolved(config) {
       rootDirectory = config.root;
     },

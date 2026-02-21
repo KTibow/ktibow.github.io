@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import { Image } from 'astro:assets';
 
 interface Props {
   src: ImageMetadata;
@@ -7,8 +7,8 @@ interface Props {
   priority?: boolean;
 }
 const { src, alt, priority } = Astro.props;
-if (src.format != "svg") {
-  throw new Error("must be svg");
+if (src.format != 'svg') {
+  throw new Error('must be svg');
 }
 ---
 

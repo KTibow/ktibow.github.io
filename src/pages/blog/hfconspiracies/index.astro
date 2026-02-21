@@ -1,68 +1,68 @@
 ---
-import BlogPost from "$lib/layouts/BlogPost.astro";
-import PieChart from "./_PieChart.astro";
-import bg from "./bg.avif?url";
-import kaloimg from "./kaloimg.png?url";
-import usersData from "./user_data.json";
+import BlogPost from '$lib/layouts/BlogPost.astro';
+import PieChart from './_PieChart.astro';
+import bg from './bg.avif?url';
+import kaloimg from './kaloimg.png?url';
+import usersData from './user_data.json';
 
-export const title = "Hugging Face Conspiracies";
-export const date = "2025-07-13";
+export const title = 'Hugging Face Conspiracies';
+export const date = '2025-07-13';
 
 const users = usersData as Record<string, { name: string; orgs: string[]; affiliation?: string }>;
 
 const orgs: Record<string, { name?: string; traits?: string; paidFor?: string }> = {
-  "ft-hf-o-c": {
-    name: "yofo",
-    traits: "Non-Profit",
-    paidFor: "Team",
+  'ft-hf-o-c': {
+    name: 'yofo',
+    traits: 'Non-Profit',
+    paidFor: 'Team',
   },
   llhf: {
-    name: "LLHF",
-    traits: "Community",
+    name: 'LLHF',
+    traits: 'Community',
   },
   sllhf: {
-    name: "SLLHF",
-    traits: "Community",
+    name: 'SLLHF',
+    traits: 'Community',
   },
   nltpt: {
-    traits: "",
-    paidFor: "Enterprise",
+    traits: '',
+    paidFor: 'Enterprise',
   },
   blhf: {
-    traits: "Community",
+    traits: 'Community',
   },
   hsramall: {
-    traits: "Company",
+    traits: 'Company',
   },
-  "ll-re": {
-    name: "wut?",
-    traits: "",
-    paidFor: "Team",
+  'll-re': {
+    name: 'wut?',
+    traits: '',
+    paidFor: 'Team',
   },
   lbhf: {
-    traits: "Community",
-    paidFor: "Enterprise",
+    traits: 'Community',
+    paidFor: 'Enterprise',
   },
-  "yet-another-org-whynot": {
-    name: "yorgllre",
-    traits: "",
+  'yet-another-org-whynot': {
+    name: 'yorgllre',
+    traits: '',
   },
-  "gg-hf-gm": {
-    traits: "Community",
+  'gg-hf-gm': {
+    traits: 'Community',
   },
-  "gg-hf-g": {
-    traits: "Community",
+  'gg-hf-g': {
+    traits: 'Community',
   },
-  "gg-tt": {
-    traits: "Company",
+  'gg-tt': {
+    traits: 'Company',
   },
-  "gv-hf": {
-    name: "kotol",
-    traits: "Company",
+  'gv-hf': {
+    name: 'kotol',
+    traits: 'Company',
   },
-  "gg-hf": {
-    traits: "",
-    paidFor: "Enterprise",
+  'gg-hf': {
+    traits: '',
+    paidFor: 'Enterprise',
   },
 };
 
@@ -83,14 +83,14 @@ const coOccurrenceMatrix = orgNames.map((orgA) =>
 );
 
 // people in many orgs (top 4)
-const listFormatter = new Intl.ListFormat(undefined, { style: "long", type: "conjunction" });
+const listFormatter = new Intl.ListFormat(undefined, { style: 'long', type: 'conjunction' });
 const peopleInManyOrgs = listFormatter.format(
   Object.entries(users)
     .sort(([, a], [, b]) => b.orgs.length - a.orgs.length)
     .slice(0, 4)
     .map(
       ([k, v]) =>
-        `${k} from ${v.affiliation || "Unknown"} (in ${v.orgs.length}/${orgNames.length} orgs)`,
+        `${k} from ${v.affiliation || 'Unknown'} (in ${v.orgs.length}/${orgNames.length} orgs)`,
     ),
 );
 
@@ -101,7 +101,7 @@ function affiliationDataForOrg(orgKey: string): [string, number][] {
   const affiliationCounts = Object.values(users)
     .filter((u) => u.orgs.includes(orgKey))
     .reduce((acc: Record<string, number>, user) => {
-      const affiliation = user.affiliation || "Unknown";
+      const affiliation = user.affiliation || 'Unknown';
       acc[affiliation] = (acc[affiliation] || 0) + 1;
       return acc;
     }, {});
@@ -116,17 +116,17 @@ function affiliationDataForOrg(orgKey: string): [string, number][] {
     }
   }
 
-  const unknownCount = affiliationCounts["Unknown"] || 0;
-  delete affiliationCounts["Unknown"];
+  const unknownCount = affiliationCounts['Unknown'] || 0;
+  delete affiliationCounts['Unknown'];
 
   const output = Object.entries(affiliationCounts);
   output.sort(([, a], [, b]) => b - a);
 
   if (unknownCount > 0) {
-    output.unshift(["Unknown", unknownCount]);
+    output.unshift(['Unknown', unknownCount]);
   }
   if (otherCount > 0) {
-    output.push(["Other", otherCount]);
+    output.push(['Other', otherCount]);
   }
   return output;
 }
@@ -185,8 +185,8 @@ const piesByOrg = Object.fromEntries(orgNames.map((org) => [org, affiliationData
       {
         Object.entries(orgs).map(([k, v]) => {
           const descParts = [
-            "name" in v ? `"${v.name}"` : null,
-            "paidFor" in v ? `who's paid for ${v.paidFor}` : null,
+            'name' in v ? `"${v.name}"` : null,
+            'paidFor' in v ? `who's paid for ${v.paidFor}` : null,
             v.traits ? `a ${v.traits}` : null,
           ].filter(Boolean);
           const membersCount = Object.values(users).filter((x) => x.orgs.includes(k)).length;
@@ -195,7 +195,7 @@ const piesByOrg = Object.fromEntries(orgNames.map((org) => [org, affiliationData
               <td>
                 <a href={`https://huggingface.co/${k}`}>{k}</a>
               </td>
-              <td>{descParts.join(", ")}</td>
+              <td>{descParts.join(', ')}</td>
               <td>has {membersCount} members</td>
             </tr>
           );
@@ -220,7 +220,7 @@ const piesByOrg = Object.fromEntries(orgNames.map((org) => [org, affiliationData
               const redColor = value * 1.5;
               const bg = `rgb(255 0 0 / ${redColor})`;
               return (
-                <td style={`background-color: ${bg}`}>{value !== 0 ? value.toFixed(2) : ""}</td>
+                <td style={`background-color: ${bg}`}>{value !== 0 ? value.toFixed(2) : ''}</td>
               );
             })}
           </tr>
@@ -254,14 +254,14 @@ const piesByOrg = Object.fromEntries(orgNames.map((org) => [org, affiliationData
   }
 
   <script>
-    const select = document.getElementById("org-select") as unknown as HTMLSelectElement;
-    select.addEventListener("input", () => {
+    const select = document.getElementById('org-select') as unknown as HTMLSelectElement;
+    select.addEventListener('input', () => {
       document.querySelectorAll(`[id^="pie-"]`).forEach((c) => {
         const shouldShow = c.id == `pie-${select.value}`;
         if (shouldShow) {
-          c.removeAttribute("hidden");
+          c.removeAttribute('hidden');
         } else {
-          c.setAttribute("hidden", "");
+          c.setAttribute('hidden', '');
         }
       });
     });

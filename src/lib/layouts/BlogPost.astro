@@ -1,23 +1,23 @@
 ---
-import Base from "./Base.astro";
+import Base from './Base.astro';
 
 type Props = { date: string; title: string; bg?: string; noindex?: boolean };
 
 const series = [
   [
-    "/milliblog/lightbumper/",
-    "/blog/slamffusion/",
-    "/blog/roombamotors/",
-    "/milliblog/roombadock/",
-    "/milliblog/roombadockillustrated/",
+    '/milliblog/lightbumper/',
+    '/blog/slamffusion/',
+    '/blog/roombamotors/',
+    '/milliblog/roombadock/',
+    '/milliblog/roombadockillustrated/',
   ],
   [
-    "/blog/farewellcfpages/",
-    "/blog/imisscfpages/",
-    "/blog/lowselfconfidence/",
-    "/blog/butexperience/",
+    '/blog/farewellcfpages/',
+    '/blog/imisscfpages/',
+    '/blog/lowselfconfidence/',
+    '/blog/butexperience/',
   ],
-  ["/blog/sleep/", "/blog/sleep-fragmentation/"],
+  ['/blog/sleep/', '/blog/sleep-fragmentation/'],
 ];
 const currentSeries = series.find((s) => s.includes(Astro.url.pathname));
 const currentIndex = currentSeries?.indexOf(Astro.url.pathname);
@@ -29,7 +29,7 @@ const nextIndex =
     : undefined;
 
 const { date, title, bg, noindex } = Astro.props;
-const [y, m, d] = date.split("-").map((n) => +n);
+const [y, m, d] = date.split('-').map((n) => +n);
 ---
 
 <Base title={title}>
@@ -41,10 +41,10 @@ const [y, m, d] = date.split("-").map((n) => +n);
     <p class="time">
       <time datetime={date}
         >{
-          new Date(y, m - 1, d).toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
+          new Date(y, m - 1, d).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
           })
         }</time
       >
@@ -73,7 +73,7 @@ const [y, m, d] = date.split("-").map((n) => +n);
                 stroke-width="2"
                 d="M15 19l-7-7 7-7"
               />
-            </svg>{" "}
+            </svg>{' '}
             Previous
           </a>
         )}
@@ -82,7 +82,7 @@ const [y, m, d] = date.split("-").map((n) => +n);
         </span>
         {nextIndex != undefined && (
           <a class="go layer" href={currentSeries[nextIndex]}>
-            Next{" "}
+            Next{' '}
             <svg width="16" height="16" viewBox="0 0 24 24">
               <path
                 fill="none"
@@ -107,7 +107,7 @@ const [y, m, d] = date.split("-").map((n) => +n);
             stroke-width="2"
             d="M21 18 11 18 11 5.5l-4.5 4.5m4.5-4.5 4.5 4.5"
           />
-        </svg>{" "}
+        </svg>{' '}
         More posts
       </a>
     )

@@ -1,22 +1,22 @@
 ---
-import BlogPost from "$lib/layouts/BlogPost.astro";
-import bg from "./bg.avif?url";
+import BlogPost from '$lib/layouts/BlogPost.astro';
+import bg from './bg.avif?url';
 
 export const title = "Using FlashAlert's API";
-export const date = "2025-04-18";
+export const date = '2025-04-18';
 
-const base = "https://www.flashalertnewswire.net/IIN/reportsX/flashnews_xml2.php";
+const base = 'https://www.flashalertnewswire.net/IIN/reportsX/flashnews_xml2.php';
 
 const regions = [
-  { id: 1, name: "Portland/Vancouver/Salem" },
-  { id: 2, name: "Eugene/Springfield/Roseburg/Albany/Corvalis" },
-  { id: 5, name: "Colorado Springs/Rocky Mountain Area" },
-  { id: 7, name: "Spokane/Eastern Washington/Northern Idaho" },
-  { id: 10, name: "Bend/Central Oregon/Eastern Oregon" },
-  { id: 12, name: "Seattle/Western Washington" },
-  { id: 13, name: "Columbia/Tri Cities/Pendleton/Yakima" },
-  { id: 15, name: "Boise/Southern Idaho" },
-  { id: 25, name: "Medford/Klamath Falls/Grants Pass" },
+  { id: 1, name: 'Portland/Vancouver/Salem' },
+  { id: 2, name: 'Eugene/Springfield/Roseburg/Albany/Corvalis' },
+  { id: 5, name: 'Colorado Springs/Rocky Mountain Area' },
+  { id: 7, name: 'Spokane/Eastern Washington/Northern Idaho' },
+  { id: 10, name: 'Bend/Central Oregon/Eastern Oregon' },
+  { id: 12, name: 'Seattle/Western Washington' },
+  { id: 13, name: 'Columbia/Tri Cities/Pendleton/Yakima' },
+  { id: 15, name: 'Boise/Southern Idaho' },
+  { id: 25, name: 'Medford/Klamath Falls/Grants Pass' },
 ];
 ---
 
@@ -31,13 +31,13 @@ const regions = [
     {
       regions.map((r) => (
         <li>
-          {r.name}:{" "}
+          {r.name}:{' '}
           <a href={`${base}?RegionID=${r.id}`} target="_blank">
             <code>{`${base}?RegionID=${r.id}`}</code>
           </a>
           {r.id == 1 && (
             <>
-              {" or "}
+              {' or '}
               <a href={base} target="_blank">
                 <code>{base}</code>
               </a>

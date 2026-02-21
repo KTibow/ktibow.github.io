@@ -1,9 +1,9 @@
 ---
-import "./base.css";
-import "./layer.css";
-import favicon from "../favicon.svg?url";
-import interVariable from "@fontsource-variable/inter/files/inter-latin-opsz-normal.woff2?url";
-import interVariableItalic from "@fontsource-variable/inter/files/inter-latin-opsz-italic.woff2?url";
+import './base.css';
+import './layer.css';
+import favicon from '../favicon.svg?url';
+import interVariable from '@fontsource-variable/inter/files/inter-latin-opsz-normal.woff2?url';
+import interVariableItalic from '@fontsource-variable/inter/files/inter-latin-opsz-italic.woff2?url';
 
 export const blogRSSTitle = "Kendell's blog";
 
@@ -12,7 +12,7 @@ interface Props {
 }
 const { title } = Astro.props;
 
-const html = await Astro.slots.render("default");
+const html = await Astro.slots.render('default');
 ---
 
 <!doctype html>
@@ -26,7 +26,7 @@ const html = await Astro.slots.render("default");
 
     <link rel="preload" href={interVariable} as="font" type="font/woff2" crossorigin />
     {
-      html.includes("<em") && (
+      html.includes('<em') && (
         <link
           rel="preload"
           href={interVariableItalic}
@@ -41,7 +41,7 @@ const html = await Astro.slots.render("default");
     <meta name="generator" content={Astro.generator} />
     <link rel="sitemap" href="/sitemap-index.xml" />
     {
-      Astro.url.pathname.startsWith("/blog") ? (
+      Astro.url.pathname.startsWith('/blog') ? (
         <link
           rel="alternate"
           type="application/rss+xml"
@@ -55,10 +55,10 @@ const html = await Astro.slots.render("default");
   <body>
     <Fragment set:html={html} />
     <script>
-      import "./layer";
+      import './layer';
       const checkMidnight = () => {
         document.documentElement.classList.toggle(
-          "midnight",
+          'midnight',
           new Date().getHours() >= 21 || new Date().getHours() < 6,
         );
       };

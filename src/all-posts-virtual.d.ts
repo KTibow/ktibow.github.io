@@ -1,4 +1,4 @@
-declare module "virtual:post-lists" {
+declare module 'virtual:post-lists' {
   export type ListedPost = {
     title: string;
     link: string;

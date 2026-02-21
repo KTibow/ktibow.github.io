@@ -1,17 +1,17 @@
 ---
-import CaptionedMedia from "./CaptionedMedia.astro";
+import CaptionedMedia from './CaptionedMedia.astro';
 
 type Props = {
   src: any;
   alt: string;
-  view?: "light" | "makedark" | "dark";
+  view?: 'light' | 'makedark' | 'dark';
 };
 
-const { src, alt, view = "light" } = Astro.props;
+const { src, alt, view = 'light' } = Astro.props;
 ---
 
-<CaptionedMedia {alt} dark={view !== "light"}>
-  <img src={src} {alt} class:list={[{ invert: view == "makedark" }]} />
+<CaptionedMedia {alt} dark={view !== 'light'}>
+  <img src={src} {alt} class:list={[{ invert: view == 'makedark' }]} />
 </CaptionedMedia>
 
 <style>

@@ -1,11 +1,11 @@
 ---
-import BlogPost from "$lib/layouts/BlogPost.astro";
-import bg from "./bg.avif?url";
+import BlogPost from '$lib/layouts/BlogPost.astro';
+import bg from './bg.avif?url';
 
-export const title = "Roombas, motors, and noise";
-export const date = "2025-07-27";
+export const title = 'Roombas, motors, and noise';
+export const date = '2025-07-27';
 
-const listFormatter = new Intl.ListFormat("en");
+const listFormatter = new Intl.ListFormat('en');
 const thresholds = listFormatter.format(
   Array.from({ length: 18 }, (_, i) => (11 + 28.5 * i).toFixed(0)),
 );

@@ -1,6 +1,6 @@
-import { env } from "cloudflare:workers";
+import { env } from 'cloudflare:workers';
 
-const DISCORD_USER_ID = "794377681331945524";
+const DISCORD_USER_ID = '794377681331945524';
 
 interface Status {
   content: string;
@@ -42,12 +42,12 @@ export default {
 
 async function getExistingStatuses(): Promise<Status[]> {
   const response = await fetch(
-    "https://api.github.com/repos/KTibow/ktibow.github.io/contents/src/pages/nanoblog/statuses.json",
+    'https://api.github.com/repos/KTibow/ktibow.github.io/contents/src/pages/nanoblog/statuses.json',
     {
       headers: {
         Authorization: `token ${env.GITHUB_TOKEN}`,
-        Accept: "application/vnd.github.v3+json",
-        "User-Agent": "nanoblog",
+        Accept: 'application/vnd.github.v3+json',
+        'User-Agent': 'nanoblog',
       },
     },
   );
@@ -62,18 +62,18 @@ async function getExistingStatuses(): Promise<Status[]> {
   }
 
   const file = (await response.json()) as any;
-  const content = atob(file.content.replace(/\s/g, ""));
+  const content = atob(file.content.replace(/\s/g, ''));
   return JSON.parse(content);
 }
 
 async function updateStatusFile(statuses: Status[]): Promise<void> {
   const getResponse = await fetch(
-    "https://api.github.com/repos/KTibow/ktibow.github.io/contents/src/pages/nanoblog/statuses.json",
+    'https://api.github.com/repos/KTibow/ktibow.github.io/contents/src/pages/nanoblog/statuses.json',
     {
       headers: {
         Authorization: `token ${env.GITHUB_TOKEN}`,
-        Accept: "application/vnd.github.v3+json",
-        "User-Agent": "nanoblog",
+        Accept: 'application/vnd.github.v3+json',
+        'User-Agent': 'nanoblog',
       },
     },
   );
@@ -85,17 +85,17 @@ async function updateStatusFile(statuses: Status[]): Promise<void> {
   }
 
   // Update file with new statuses
-  const content = btoa(JSON.stringify(statuses, null, 2) + "\n");
+  const content = btoa(JSON.stringify(statuses, null, 2) + '\n');
 
   const updateResponse = await fetch(
-    "https://api.github.com/repos/KTibow/ktibow.github.io/contents/src/pages/nanoblog/statuses.json",
+    'https://api.github.com/repos/KTibow/ktibow.github.io/contents/src/pages/nanoblog/statuses.json',
     {
-      method: "PUT",
+      method: 'PUT',
       headers: {
         Authorization: `token ${env.GITHUB_TOKEN}`,
-        Accept: "application/vnd.github.v3+json",
-        "Content-Type": "application/json",
-        "User-Agent": "ktibow-discord-status-bot",
+        Accept: 'application/vnd.github.v3+json',
+        'Content-Type': 'application/json',
+        'User-Agent': 'ktibow-discord-status-bot',
       },
       body: JSON.stringify({
         message: `Update Discord status`,

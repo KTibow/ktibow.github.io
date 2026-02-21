@@ -1,6 +1,6 @@
-@import "@unocss/reset/tailwind-v4.css";
-@import "@fontsource-variable/inter/opsz.css";
-@import "@fontsource-variable/inter/opsz-italic.css";
+@import '@unocss/reset/tailwind-v4.css';
+@import '@fontsource-variable/inter/opsz.css';
+@import '@fontsource-variable/inter/opsz-italic.css';
 :root {
   accent-color: var(--m3c-primary);
   font-family:
@@ -165,7 +165,7 @@ code,
 kbd,
 samp,
 pre {
-  font-family: ui-monospace, "Monaspace Neon Var", monospace;
+  font-family: ui-monospace, 'Monaspace Neon Var', monospace;
 }
 .prose {
   @apply --m3-body-large;
@@ -238,31 +238,31 @@ pre {
       list-style-type: decimal;
       padding-left: 1.625em;
     }
-    &:where(ol[type="A"]) {
+    &:where(ol[type='A']) {
       list-style-type: upper-alpha;
     }
-    &:where(ol[type="a"]) {
+    &:where(ol[type='a']) {
       list-style-type: lower-alpha;
     }
-    &:where(ol[type="A" s]) {
+    &:where(ol[type='A' s]) {
       list-style-type: upper-alpha;
     }
-    &:where(ol[type="a" s]) {
+    &:where(ol[type='a' s]) {
       list-style-type: lower-alpha;
     }
-    &:where(ol[type="I"]) {
+    &:where(ol[type='I']) {
       list-style-type: upper-roman;
     }
-    &:where(ol[type="i"]) {
+    &:where(ol[type='i']) {
       list-style-type: lower-roman;
     }
-    &:where(ol[type="I" s]) {
+    &:where(ol[type='I' s]) {
       list-style-type: upper-roman;
     }
-    &:where(ol[type="i" s]) {
+    &:where(ol[type='i' s]) {
       list-style-type: lower-roman;
     }
-    &:where(ol[type="1"]) {
+    &:where(ol[type='1']) {
       list-style-type: decimal;
     }
     &:where(ul) {
@@ -290,7 +290,7 @@ pre {
       color: var(--m3c-on-surface);
       border-left-width: 0.25rem;
       border-left-color: oklab(from var(--m3c-on-surface) l a b / 0.5);
-      quotes: "\201C" "\201D" "\2018" "\2019";
+      quotes: '\201C' '\201D' '\2018' '\2019';
       padding-left: 1em;
     }
     &:where(blockquote p:first-of-type)::before {
@@ -322,10 +322,10 @@ pre {
       @apply --m3-label-large;
     }
     &:where(code)::before {
-      content: "`";
+      content: '`';
     }
     &:where(code)::after {
-      content: "`";
+      content: '`';
     }
     &:where(a code) {
       color: inherit;

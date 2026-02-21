@@ -1,105 +1,105 @@
 ---
-import BlogPost from "$lib/layouts/BlogPost.astro";
+import BlogPost from '$lib/layouts/BlogPost.astro';
 
 export const title = "But you haven't matched the experience";
-export const date = "2025-08-31";
+export const date = '2025-08-31';
 
 const workaroundDescriptions: Record<string, { title: string; description: string }> = {
   monoliths: {
-    title: "Monoliths",
+    title: 'Monoliths',
     description:
-      "Combine services and apps into one, so you only need to deploy it once. If a free tier only lets you deploy one app or gives you terrible cold starts, a monolith would easily offset them. (Needs to be combined with another domain provider to reseparate.)",
+      'Combine services and apps into one, so you only need to deploy it once. If a free tier only lets you deploy one app or gives you terrible cold starts, a monolith would easily offset them. (Needs to be combined with another domain provider to reseparate.)',
   },
   useStaticHost: {
-    title: "Use another static host",
+    title: 'Use another static host',
     description:
-      "Then you can stop caring about how the compute provider charges for bandwidth or how they name their subdomains.",
+      'Then you can stop caring about how the compute provider charges for bandwidth or how they name their subdomains.',
   },
   useFreeDomain: {
-    title: "Use a free domain",
-    description: "This means playing a lot of feeble games, but it could work; not sure.",
+    title: 'Use a free domain',
+    description: 'This means playing a lot of feeble games, but it could work; not sure.',
   },
   usePaidDomain: {
-    title: "Use a paid domain",
+    title: 'Use a paid domain',
     description:
       "If you can pay for it and get it unblocked, you now own a part of the internet where you don't need to worry about the free default subdomains. You can even get back to Cloudflare.",
   },
   getOffFreeTier: {
-    title: "Get off the free tier",
+    title: 'Get off the free tier',
     description:
-      "This one is really just for Fly, but you could start separating apps and disabling scale to 0 and tank the cost.",
+      'This one is really just for Fly, but you could start separating apps and disabling scale to 0 and tank the cost.',
   },
 };
 
 const workaroundArchetypes = {
-  computeOnlyLimited: ["monoliths", "useStaticHost"],
-  computeOnly: ["useStaticHost"],
-  fly: ["monoliths", "useStaticHost", "useFreeDomain", "usePaidDomain", "getOffFreeTier"],
-  justUnblock: ["usePaidDomain"],
+  computeOnlyLimited: ['monoliths', 'useStaticHost'],
+  computeOnly: ['useStaticHost'],
+  fly: ['monoliths', 'useStaticHost', 'useFreeDomain', 'usePaidDomain', 'getOffFreeTier'],
+  justUnblock: ['usePaidDomain'],
 };
 
 const providers = [
   {
-    name: "GCP VM",
-    hostname: "⚠️",
-    speed: "✅",
-    freeTier: "❌",
+    name: 'GCP VM',
+    hostname: '⚠️',
+    speed: '✅',
+    freeTier: '❌',
     workarounds: workaroundArchetypes.computeOnlyLimited,
   },
   {
-    name: "Fly container",
-    hostname: "✅",
-    speed: "✅",
-    freeTier: "⚠️",
+    name: 'Fly container',
+    hostname: '✅',
+    speed: '✅',
+    freeTier: '⚠️',
     workarounds: workaroundArchetypes.fly,
   },
   {
-    name: "GCP CR Serverless",
-    hostname: "⚠️",
-    speed: "⚠️",
-    freeTier: "✅",
+    name: 'GCP CR Serverless',
+    hostname: '⚠️',
+    speed: '⚠️',
+    freeTier: '✅',
     workarounds: workaroundArchetypes.computeOnlyLimited,
   },
   {
-    name: "Fastly Serverless",
-    hostname: "⚠️",
-    speed: "✅",
-    freeTier: "✅",
+    name: 'Fastly Serverless',
+    hostname: '⚠️',
+    speed: '✅',
+    freeTier: '✅',
     workarounds: workaroundArchetypes.computeOnlyLimited,
   },
   {
-    name: "Cloudflare Workers",
-    hostname: "❌ (blocked)",
-    speed: "✅",
-    freeTier: "✅",
+    name: 'Cloudflare Workers',
+    hostname: '❌ (blocked)',
+    speed: '✅',
+    freeTier: '✅',
     workarounds: workaroundArchetypes.justUnblock,
   },
   {
-    name: "Vercel Serverless",
-    hostname: "❌ (blocked)",
-    speed: "✅",
-    freeTier: "❌",
+    name: 'Vercel Serverless',
+    hostname: '❌ (blocked)',
+    speed: '✅',
+    freeTier: '❌',
     workarounds: workaroundArchetypes.justUnblock,
   },
   {
-    name: "Deno Serverless",
-    hostname: "✅",
-    speed: "❌",
-    freeTier: "✅",
+    name: 'Deno Serverless',
+    hostname: '✅',
+    speed: '❌',
+    freeTier: '✅',
     workarounds: workaroundArchetypes.computeOnly,
   },
   {
-    name: "Azure Functions Containers",
-    hostname: "⚠️",
-    speed: "❌",
-    freeTier: "✅",
+    name: 'Azure Functions Containers',
+    hostname: '⚠️',
+    speed: '❌',
+    freeTier: '✅',
     workarounds: workaroundArchetypes.computeOnly,
   },
   {
-    name: "Val (Serverless)",
-    hostname: "✅",
-    speed: "❌",
-    freeTier: "✅",
+    name: 'Val (Serverless)',
+    hostname: '✅',
+    speed: '❌',
+    freeTier: '✅',
     workarounds: workaroundArchetypes.computeOnly,
   },
 ];
@@ -204,29 +204,29 @@ const providers = [
 </BlogPost>
 
 <script>
-  const rows = document.querySelectorAll(".provider-row");
-  const items = document.querySelectorAll<HTMLElement>(".workaround-item");
-  const heading = document.querySelector("#workaround-heading");
+  const rows = document.querySelectorAll('.provider-row');
+  const items = document.querySelectorAll<HTMLElement>('.workaround-item');
+  const heading = document.querySelector('#workaround-heading');
   let selectedName: string | undefined;
 
   rows.forEach((row) => {
-    row.addEventListener("click", () => {
-      const name = row.getAttribute("data-name") as string;
-      const workarounds = JSON.parse(row.getAttribute("data-workarounds") as string);
+    row.addEventListener('click', () => {
+      const name = row.getAttribute('data-name') as string;
+      const workarounds = JSON.parse(row.getAttribute('data-workarounds') as string);
 
       if (selectedName == name) {
         selectedName = undefined;
-        rows.forEach((r) => r.classList.remove("selected-row"));
-        items.forEach((i) => (i.style.display = "list-item"));
-        if (heading) heading.innerHTML = "So at this point there are 5 workarounds we can deploy:";
+        rows.forEach((r) => r.classList.remove('selected-row'));
+        items.forEach((i) => (i.style.display = 'list-item'));
+        if (heading) heading.innerHTML = 'So at this point there are 5 workarounds we can deploy:';
       } else {
         selectedName = name;
         rows.forEach((r) => {
-          r.classList.toggle("selected-row", r.getAttribute("data-name") == name);
+          r.classList.toggle('selected-row', r.getAttribute('data-name') == name);
         });
         items.forEach((item) => {
-          const id = item.getAttribute("data-id");
-          item.style.display = workarounds.includes(id) ? "list-item" : "none";
+          const id = item.getAttribute('data-id');
+          item.style.display = workarounds.includes(id) ? 'list-item' : 'none';
         });
         if (heading)
           heading.innerHTML = `For <strong>${name}</strong>, here are the applicable workarounds:`;
