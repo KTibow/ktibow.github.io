@@ -29,12 +29,12 @@ import img23 from './23.png';
 import img24 from './24.png';
 import img25 from './25.png';
 import img26 from './26.png';
-import screenshot1 from './screenshot-1.png?url';
-import screenshot2 from './screenshot-2.png?url';
-import screenshot3 from './screenshot-3.png?url';
-import screenshot4 from './screenshot-4.png?url';
-import screenshot5 from './screenshot-5.png?url';
-import screenshot6 from './screenshot-6.png?url';
+import screenshot1 from './screenshot-1.png';
+import screenshot2 from './screenshot-2.png';
+import screenshot3 from './screenshot-3.png';
+import screenshot4 from './screenshot-4.png';
+import screenshot5 from './screenshot-5.png';
+import screenshot6 from './screenshot-6.png';
 
 export const title = 'The new Google Slides templates are honestly funny';
 export const date = '2024-11-08';
@@ -81,16 +81,16 @@ const images = [
   </p>
   <div class="column-list">
     <CaptionedImage
-      src={screenshot1}
+      {...screenshot1}
       alt={'Honestly perplexing: Every time there\'s a contact slide, the email is "no reply". That doesn\'t really make sense for a *contact* email...'}
     />
     <CaptionedImage
-      src={screenshot3}
+      {...screenshot3}
       alt={'Buzzword overload: This slide from "Sales Pitch"'}
       view="dark"
     />
     <CaptionedImage
-      src={screenshot4}
+      {...screenshot4}
       alt={'Confusing: "Educational games" has a hardcoded winner'}
       view="dark"
     />
@@ -111,7 +111,7 @@ const images = [
         But then they explain that they're not just any water bottle company, they're solving a
         problem made up of 3 elements. As you can see, we know the exact proportion of each element:
       </p>
-      <img src={screenshot5} alt="" class="ss" />
+      <img {...screenshot5} alt="" class="ss" />
     </li>
     <li>
       So then it explains their offering and how it's been growing, shows what it looks like and how
@@ -134,11 +134,11 @@ const images = [
   <h2>On a positive note</h2>
   <div class="column-list">
     <CaptionedImage
-      src={screenshot2}
+      {...screenshot2}
       alt={'Interesting: "Class overview" uses vectors to represent a raster.'}
     />
     <CaptionedImage
-      src={screenshot6}
+      {...screenshot6}
       alt={'Clever: "Course overview" uses Noto Emoji for monochrome icons.'}
       view="dark"
     />

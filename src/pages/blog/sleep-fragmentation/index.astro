@@ -2,15 +2,15 @@
 import BlogPost from '$lib/layouts/BlogPost.astro';
 import CaptionedImage from '$lib/CaptionedImage.astro';
 import bg from './bg.avif?url';
-import hypnogramFigure from './claude-hypnogram-figure.svg?url';
-import n3Lengths from './n3-lengths.png?url';
-import appleView from './apple_view.avif?url';
-import withingsView from './withings_view.avif?url';
-import nothingView from './nothing_view.avif?url';
-import ouraView from './oura_view.avif?url';
-import changeCount from './change-count.png?url';
-import transitionProbabilities from './transition-probabilities.png?url';
-import hypnogram8000685 from './hypnogram-8000685.png?url';
+import hypnogramFigure from './claude-hypnogram-figure.svg';
+import n3Lengths from './n3-lengths.png';
+import appleView from './apple_view.avif';
+import withingsView from './withings_view.avif';
+import nothingView from './nothing_view.avif';
+import ouraView from './oura_view.avif';
+import changeCount from './change-count.png';
+import transitionProbabilities from './transition-probabilities.png';
+import hypnogram8000685 from './hypnogram-8000685.png';
 
 export const title = 'Fragmentation and statistics in sleep';
 export const date = '2025-04-08';
@@ -18,10 +18,10 @@ export const date = '2025-04-08';
 
 <BlogPost {date} {title} {bg}>
   <div class="hypnogram-grid">
-    <img src={appleView} alt="Apple Watch hypnogram" />
-    <img src={withingsView} alt="Withings hypnogram" class="inverted-image" />
-    <img src={nothingView} alt="CMF watch hypnogram" class="inverted-image" />
-    <img src={ouraView} alt="Oura hypnogram" />
+    <img {...appleView} alt="Apple Watch hypnogram" />
+    <img {...withingsView} alt="Withings hypnogram" class="inverted-image" />
+    <img {...nothingView} alt="CMF watch hypnogram" class="inverted-image" />
+    <img {...ouraView} alt="Oura hypnogram" />
   </div>
   <p>
     You almost certainly recognize these timelines. They're officially called hypnograms and
@@ -33,17 +33,17 @@ export const date = '2025-04-08';
   </p>
   <div class="images">
     <CaptionedImage
-      src={n3Lengths}
+      {...n3Lengths}
       alt="N3 lengths are only one or two epochs, much shorter than expected"
       view="makedark"
     />
     <CaptionedImage
-      src={hypnogramFigure}
+      {...hypnogramFigure}
       alt="An individual hypnogram fluctuates a lot"
       view="makedark"
     />
     <CaptionedImage
-      src={changeCount}
+      {...changeCount}
       alt="Reading the histogram: Most nights have >100 stage changes"
       view="makedark"
     />
@@ -61,7 +61,7 @@ export const date = '2025-04-08';
     of sleep. It's typically grouped into light sleep, but it's actually lighter than light sleep.
     You almost always start with N1 before going into any other sleep stage for the night.
   </p>
-  <img src={transitionProbabilities} alt="A transition probability matrix" class="inverted-image" />
+  <img {...transitionProbabilities} alt="A transition probability matrix" class="inverted-image" />
   <p>
     You can see from this matrix (Metzner) that you always start with N1, and most of the time start
     with N1 after being disturbed while sleeping. It also tells a different story though: one of N1
@@ -74,7 +74,7 @@ export const date = '2025-04-08';
     images as is.)
   </p>
   <p>Maybe looking at some more hypnograms will help you understand the place of N1.</p>
-  <img src={hypnogram8000685} alt="A hypnogram" class="inverted-image" />
+  <img {...hypnogram8000685} alt="A hypnogram" class="inverted-image" />
   <p>
     This hypnogram captures how humans sometimes randomly flip into N1. While sometimes it's related
     to falling back into sleep, other times it's just in the middle of light sleep.

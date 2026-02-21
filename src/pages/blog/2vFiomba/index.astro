@@ -1,13 +1,13 @@
 ---
 import BlogPost from '$lib/layouts/BlogPost.astro';
-import logo from './logo.svg?url';
+import logo from './logo.svg';
 
 export const title = '2vFiomba';
 export const date = '2022-02-20';
 ---
 
 <BlogPost {date} {title}>
-  <img src={logo} alt="2vFiomba" />
+  <img {...logo} alt="2vFiomba" />
   <h2>Background</h2>
   <p>
     When I was little, I saved up my money ($300-ish), and bought a iRobot Create. I found out about

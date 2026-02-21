@@ -3,7 +3,7 @@ import BlogPost from '$lib/layouts/BlogPost.astro';
 import CaptionedImage from '$lib/CaptionedImage.astro';
 import CaptionedMedia from '$lib/CaptionedMedia.astro';
 import bg from './bg.avif?url';
-import ref1 from './ref1.png?url';
+import ref1 from './ref1.png';
 import ref2 from './ref2.mp4?url';
 
 export const title = 'just one more prompt bro';
@@ -37,7 +37,7 @@ export const date = '2025-11-15';
     and combined with <code>&lt;feTurbulence&gt;</code>, you get this great ripple effect:
   </p>
   <div style="display: flex; flex-direction: column; align-items: flex-start;">
-    <CaptionedImage src={ref1} view="dark" alt="Really, used in M3 Svelte" />
+    <CaptionedImage {...ref1} view="dark" alt="Really, used in M3 Svelte" />
   </div>
 
   <h2>Making automatically transitioning paths</h2>

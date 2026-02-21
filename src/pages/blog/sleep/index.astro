@@ -1,9 +1,9 @@
 ---
 import BlogPost from '$lib/layouts/BlogPost.astro';
 import bg from './bg.avif?url';
-import basicView from './basic-view.png?url';
-import moreView from './more-view.png?url';
-import myView from './my-view.png?url';
+import basicView from './basic-view.png';
+import moreView from './more-view.png';
+import myView from './my-view.png';
 
 export const title = 'How one estimates sleep stages';
 export const date = '2025-03-30';
@@ -51,7 +51,7 @@ export const date = '2025-03-30';
     >. It was collected from Apple Watches and cross referenced with polysomnography, and the data's
     open to view. Let me show you some so you can get an intuition too.
   </p>
-  <img src={basicView} class="chart" alt="4 charts" />
+  <img {...basicView} class="chart" alt="4 charts" />
   <p>
     We start with a view of the sleep stages (called a hypnogram). We have sleep cycles every 90
     minutes or so, or 4-6 times a night. More info:
@@ -108,7 +108,7 @@ export const date = '2025-03-30';
     general knowledge, you wouldn't be very accurate. Let me look at some different data with
     different metrics.
   </p>
-  <img src={moreView} class="chart" alt="5 charts" />
+  <img {...moreView} class="chart" alt="5 charts" />
   <p>This is much more interesting! You can see:</p>
   <ul>
     <li>How you can predict wake from accelerometer and clock data</li>
@@ -129,7 +129,7 @@ export const date = '2025-03-30';
     deep, or REM sleep. This is my first time doing this - Sleep as Android was always inaccurate
     and I've never owned something with built in sleep tracking.
   </p>
-  <img src={myView} class="chart" alt="2 charts" />
+  <img {...myView} class="chart" alt="2 charts" />
   <p>We can see some distinct cycles. Cool! I specifically see the following ones:</p>
   <ul>
     <li>Still trying to sleep until 23:00</li>

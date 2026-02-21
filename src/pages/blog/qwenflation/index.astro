@@ -1,7 +1,7 @@
 ---
 import BlogPost from '$lib/layouts/BlogPost.astro';
 import bg from './bg.avif?url';
-import regression from './regression.png?url';
+import regression from './regression.png';
 
 export const title = 'Qwenflation';
 export const date = '2025-05-01';
@@ -40,7 +40,7 @@ export const date = '2025-05-01';
     The 235B A22B is much smaller than older behemoths like Llama 405B and Deepseek V3, and the
     current price, $0.2/0.6, reflects that. But should it be lower?
   </p>
-  <img src={regression} alt="desmos" />
+  <img {...regression} alt="desmos" />
   <p>
     Based on this regression, the current price is about 1.4x what it should be. If you want a model
     to directly compare to, see Llama 4 Maverick, a larger (400B A17B), cheaper ($0.17/0.6), and

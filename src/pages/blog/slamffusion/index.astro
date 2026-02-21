@@ -3,10 +3,10 @@ import BlogPost from '$lib/layouts/BlogPost.astro';
 import CaptionedImage from '$lib/CaptionedImage.astro';
 import CaptionedMedia from '$lib/CaptionedMedia.astro';
 import bg from './bg.avif?url';
-import attempt1 from './attempt_1.png?url';
-import attempt2 from './attempt_2.gif?url';
-import attempt3 from './attempt_3.gif?url';
-import attempt4 from './attempt_4.gif?url';
+import attempt1 from './attempt_1.png';
+import attempt2 from './attempt_2.gif';
+import attempt3 from './attempt_3.gif';
+import attempt4 from './attempt_4.gif';
 import attemptX from './attempt_x.mp4?url';
 import attemptY from './attempt_y.mp4?url';
 
@@ -78,22 +78,22 @@ export const date = '2025-07-25';
   </p>
   <div class="column-list">
     <CaptionedImage
-      src={attempt1}
+      {...attempt1}
       alt="First and best attempt that denoises wheel deltas, conditioned on dead reckoned pose"
       view="makedark"
     />
     <CaptionedImage
-      src={attempt2}
+      {...attempt2}
       alt="Refactored to demonstrate the noising and denoising process better"
       view="makedark"
     />
     <CaptionedImage
-      src={attempt3}
+      {...attempt3}
       alt="Updated to use more diffuser-y things; didn't help"
       view="makedark"
     />
     <CaptionedImage
-      src={attempt4}
+      {...attempt4}
       alt="A failure to recreate the first one's success"
       view="makedark"
     />

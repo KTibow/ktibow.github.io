@@ -2,7 +2,7 @@
 import BlogPost from '$lib/layouts/BlogPost.astro';
 import CaptionedImage from '$lib/CaptionedImage.astro';
 import bg from './bg.avif?url';
-import graph from './desmos-graph.svg?url';
+import graph from './desmos-graph.svg';
 
 export const title = 'Grade math';
 export const date = '2024-05-12';
@@ -90,7 +90,7 @@ export const date = '2024-05-12';
     possible points.
   </p>
   <h2>A point regained is an assignment earned</h2>
-  <CaptionedImage src={graph} alt="Graph showing the impact of points added on my grade" />
+  <CaptionedImage {...graph} alt="Graph showing the impact of points added on my grade" />
   <p>
     This is a graph showing the impact of points added on my grade. It's clear that red is linear
     and more efficient at increasing my grade, while blue shows a reciprocal relationship.

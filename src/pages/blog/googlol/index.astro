@@ -3,16 +3,16 @@ import BlogPost from '$lib/layouts/BlogPost.astro';
 import CaptionedImage from '$lib/CaptionedImage.astro';
 import CaptionedMedia from '$lib/CaptionedMedia.astro';
 import bg from './bg.avif?url';
-import more from './more.png?url';
-import logowhere from './logowhere.png?url';
-import sohot from './sohot.png?url';
-import pointerer from './pointerer.jpeg?url';
+import more from './more.png';
+import logowhere from './logowhere.png';
+import sohot from './sohot.png';
+import pointerer from './pointerer.jpeg';
 import geminimeter from './geminimeter.mp4?url';
-import arcgen from './arcgen.jpeg?url';
-import untrue from './untrue.png?url';
-import nocode from './nocode.png?url';
-import richharris from './richharris.png?url';
-import yesno from './yesno.png?url';
+import arcgen from './arcgen.jpeg';
+import untrue from './untrue.png';
+import nocode from './nocode.png';
+import richharris from './richharris.png';
+import yesno from './yesno.png';
 
 export const title = 'Googlol';
 export const date = '2025-05-11';
@@ -26,26 +26,26 @@ export const date = '2025-05-11';
   </p>
 
   <div class="images">
-    <CaptionedImage src={more} alt="Symmetry might have fallen out of fashion" view="dark" />
-    <CaptionedImage src={logowhere} alt="What's Wikipedia's logo? We will never know" view="dark" />
+    <CaptionedImage {...more} alt="Symmetry might have fallen out of fashion" view="dark" />
+    <CaptionedImage {...logowhere} alt="What's Wikipedia's logo? We will never know" view="dark" />
     <CaptionedImage
-      src={sohot}
+      {...sohot}
       alt="This badge was added to AI studio when Gemini image gen was cool and never removed"
       view="dark"
     />
     <CaptionedImage
-      src={pointerer}
+      {...pointerer}
       alt="Someone forgot to set pointer events none, so this element stops you from clicking"
       view="dark"
     />
-    <CaptionedImage src={untrue} alt="Nothing here is helpful (taken on Jun 11)" view="dark" />
-    <CaptionedImage src={nocode} alt="No code snippets for you" view="dark" />
+    <CaptionedImage {...untrue} alt="Nothing here is helpful (taken on Jun 11)" view="dark" />
+    <CaptionedImage {...nocode} alt="No code snippets for you" view="dark" />
     <CaptionedImage
-      src={richharris}
+      {...richharris}
       alt={'"There is no prominent comic character named Rich Harris"'}
       view="dark"
     />
-    <CaptionedImage src={yesno} alt="The no button here literally does nothing" view="dark" />
+    <CaptionedImage {...yesno} alt="The no button here literally does nothing" view="dark" />
   </div>
 
   <h2>Aside - Gemini's own silly mistakes</h2>
@@ -54,7 +54,7 @@ export const date = '2025-05-11';
       <video autoplay loop muted playsinline src={geminimeter}></video>
     </CaptionedMedia>
     <CaptionedImage
-      src={arcgen}
+      {...arcgen}
       alt="Gemini image generation corrupts an ARC AGI task when asked to complete it"
     />
   </div>

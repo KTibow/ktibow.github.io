@@ -2,7 +2,7 @@
 import BlogPost from '$lib/layouts/BlogPost.astro';
 import Snippet from '$lib/Snippet.astro';
 import bg from './bg.avif?url';
-import screenshot from './screenshot.png?url';
+import screenshot from './screenshot.png';
 
 export const title = 'TeXIHI';
 export const date = '2025-01-03';
@@ -17,7 +17,7 @@ export const date = '2025-01-03';
     Why so long? Why is this title "TeX I hate it"? Why didn't I just use a standard template and
     move on? Because I wanted to have clear question-answer separation in the dumbest way possible.
   </p>
-  <img src={screenshot} alt="you know, this kind of thing, the answer is in a different font" />
+  <img {...screenshot} alt="you know, this kind of thing, the answer is in a different font" />
   <p>Here's what I remember of the process.</p>
 
   <h2>Getting to a starting point</h2>

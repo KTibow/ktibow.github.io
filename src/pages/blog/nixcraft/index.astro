@@ -1,9 +1,9 @@
 ---
 import BlogPost from '$lib/layouts/BlogPost.astro';
 import bg from './bg.avif?url';
-import nixcraft1 from './nixcraft1.png?url';
-import nixcraft2 from './nixcraft2.png?url';
-import nixcraft3 from './nixcraft3.png?url';
+import nixcraft1 from './nixcraft1.png';
+import nixcraft2 from './nixcraft2.png';
+import nixcraft3 from './nixcraft3.png';
 
 export const title = "Why I don't like nixCraft";
 export const date = '2024-12-07';
@@ -67,7 +67,7 @@ export const date = '2024-12-07';
   <h2>The socials</h2>
   <p>nixCraft toots a lot with the goal of maximizing engagement. Let me show you what I mean.</p>
   <img
-    src={nixcraft1}
+    {...nixcraft1}
     alt="Alright, network wizards and packet-pushing sysadmins! Feeling brave this November? I dare you, double-dog dare you, to take the No NAT November challenge! Can you handle the raw, unadulterated terror of the public internet without your trusty NAT to hide behind? Will your Linux and Unix/Windows servers survive the exposure? Will your routers spontaneously combust? Only one way to find out! Ditch the NAT, embrace the chaos, and let's see if you make it to December in one piece!"
   />
   <p>
@@ -82,7 +82,7 @@ export const date = '2024-12-07';
   </p>
   <br />
   <img
-    src={nixcraft2}
+    {...nixcraft2}
     alt="Update: This is not a joke, Funko just called my mom x.com/itchio/status/1866239798... Let me guess , they filed a DMCA takedown request to hosting compnay. Then, scam and fraud report to the domain registrar using some shady AI company and now calling your mom. WTF?"
   />
   <p>
@@ -92,7 +92,7 @@ export const date = '2024-12-07';
   </p>
   <br />
   <img
-    src={nixcraft3}
+    {...nixcraft3}
     alt="Microsoft Connected Experiences means they collect your Word and Excel files for AI training. Why not call it AI training? Why use such words? This is an unethical practice followed by a trillion-dollar corporation. How is this even legal? I am so glad that I don't have Windows OS or MS office."
   />
   <p>
