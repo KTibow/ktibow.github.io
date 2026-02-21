@@ -1,5 +1,3 @@
-node_modules
-.astro
-dist
 public
 pnpm-lock.yaml
+worker-nanoblog/worker-configuration.d.ts

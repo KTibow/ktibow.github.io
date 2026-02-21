@@ -53,7 +53,7 @@ bofuhh (re: Karlitoyou)
 2/23/22, 7:48 AM
 holy shit it's real :trollcrazy:
 
-👻 vanilla_flavored (re: 👻 ⭐ techboy _Ravegod_)
+`👻 vanilla_flavored` (re: `👻 ⭐ techboy _Ravegod_`)
 2/23/22, 8:23 AM
 ok
 holy shit.
