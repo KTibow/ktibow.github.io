@@ -67,8 +67,16 @@ export default defineConfig({
   <p>
     Ideally, your content itself would be versioned. But how do you do that? You would need to
     version your content and instruct browsers to not refetch HTML at all if it has cached content
-    with the correct version - something like adding ugly <code>?v</code> params or finding a host that
-    lets you control etags and browser that lets you say "don't refetch if you already have this etag"
-    ahead of time. This isn't possible, at least right now.
+    with the correct version, basically reinventing and intercepting etags.
+  </p>
+
+  <h2>Addendum</h2>
+  <p>
+    I was linked <a
+      href="https://calendar.perfplanet.com/2025/the-curious-case-of-the-shallow-session-spas/"
+      >The Curious Case of the Shallow Session SPAs</a
+    > after publishing this post. The data there shows SPAs having a 1:1 hard navigation (initial load)
+    to soft navigation (client side) ratio, which if true makes worrying about optimal caching likely
+    unnecessary.
   </p>
 </BlogPost>
