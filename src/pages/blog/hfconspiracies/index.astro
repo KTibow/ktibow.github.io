@@ -2,7 +2,7 @@
 import BlogPost from '$lib/layouts/BlogPost.astro';
 import PieChart from './_PieChart.astro';
 import bg from './bg.avif?url';
-import kaloimg from './kaloimg.png?url';
+import kaloimg from './kaloimg.png';
 import usersData from './user_data.json';
 
 export const title = 'Hugging Face Conspiracies';
@@ -161,7 +161,7 @@ const piesByOrg = Object.fromEntries(orgNames.map((org) => [org, affiliationData
       using for the open weights project, given that ollama + openAI people both show up in its
       list)
     </p>
-    <img src={kaloimg} alt="someone from openai also in the mystery org" width="307" height="124" />
+    <img {...kaloimg} alt="someone from openai also in the mystery org" />
   </blockquote>
 
   <p>

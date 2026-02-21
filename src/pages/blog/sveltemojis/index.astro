@@ -1,9 +1,9 @@
 ---
 import BlogPost from '$lib/layouts/BlogPost.astro';
 import bg from './bg.avif?url';
-import buttonDemo from './button-demo.png?url';
-import sliderDemo from './slider-demo.png?url';
-import themeDemo from './theme-demo.png?url';
+import buttonDemo from './button-demo.png';
+import sliderDemo from './slider-demo.png';
+import themeDemo from './theme-demo.png';
 
 export const title = 'Replacing Svelte class names with emojis for fun and profit';
 export const date = '2025-12-27';
@@ -37,9 +37,9 @@ export const date = '2025-12-27';
     to identify which elements belonged to which components or tune them out, plus were smaller than
     the default <code>svelte-abc123</code>. The fun:
   </p>
-  <img src={buttonDemo} alt="Button demo HTML" />
-  <img src={sliderDemo} alt="Slider demo HTML" />
-  <img src={themeDemo} alt="Theme demo HTML" />
+  <img {...buttonDemo} alt="Button demo HTML" />
+  <img {...sliderDemo} alt="Slider demo HTML" />
+  <img {...themeDemo} alt="Theme demo HTML" />
   <p>
     They also happened to be poetically accurate. <code>💅</code> for the theme settings,
     <code>🛗</code>

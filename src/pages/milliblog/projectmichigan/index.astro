@@ -1,6 +1,6 @@
 ---
 import BlogPost from '$lib/layouts/BlogPost.astro';
-import warning from './warning.jpeg?url';
+import warning from './warning.jpeg';
 
 export const title = "What was Apple's Project Michigan";
 export const date = '2025-05-01';
@@ -13,7 +13,7 @@ export const date = '2025-05-01';
     this big warning screen up:
   </p>
   <img
-    src={warning}
+    {...warning}
     alt="You're about to leave the app and go to an external website. Apple is not responsible for the privacy or security of purchases made on the web."
   />
   <p>

@@ -1,8 +1,8 @@
 ---
 import BlogPost from '$lib/layouts/BlogPost.astro';
 import CaptionedImage from '$lib/CaptionedImage.astro';
-import oidock from './oidock.png?url';
-import oidockmeasured from './oidockmeasured.png?url';
+import oidock from './oidock.png';
+import oidockmeasured from './oidockmeasured.png';
 
 export const title = 'Roomba dock IR';
 export const date = '2025-08-19';
@@ -13,8 +13,8 @@ export const date = '2025-08-19';
     I have an iRobot Roomba dock model 17070. This is what the IR beams are supposed to look like.
   </p>
   <div class="images">
-    <CaptionedImage src={oidock} view="makedark" alt="Dock IR according to the Open Interface" />
-    <CaptionedImage src={oidockmeasured} view="makedark" alt="+ est measurements" />
+    <CaptionedImage {...oidock} view="makedark" alt="Dock IR according to the Open Interface" />
+    <CaptionedImage {...oidockmeasured} view="makedark" alt="+ est measurements" />
   </div>
   <p>But in fact:</p>
   <ul>

@@ -1,7 +1,7 @@
 ---
 import BlogPost from '$lib/layouts/BlogPost.astro';
 import CaptionedImage from '$lib/CaptionedImage.astro';
-import cube from './cube.avif?url';
+import cube from './cube.avif';
 
 export const title = 'Who is Claudius Sennett';
 export const date = '2025-06-27';
@@ -13,7 +13,7 @@ export const date = '2025-06-27';
     experiment. It had to do some stuff in the real world, so of course it needed a name.
   </p>
   <div class="images">
-    <CaptionedImage src={cube} alt="A tungsten cube issued by Claudius" />
+    <CaptionedImage {...cube} alt="A tungsten cube issued by Claudius" />
   </div>
   <p>
     Sources: <a href="https://x.com/inerati/status/1938636586062602369">@inerati photo</a>,

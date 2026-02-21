@@ -1,8 +1,8 @@
 ---
 import BlogPost from '$lib/layouts/BlogPost.astro';
-import pareto from './pareto.avif?url';
-import paretoAlt from './pareto_alt.avif?url';
-import ratios from './ratios.avif?url';
+import pareto from './pareto.avif';
+import paretoAlt from './pareto_alt.avif';
+import ratios from './ratios.avif';
 import code from './code.py?url';
 
 export const title = 'Gemini 3 thinks Spherical Embedding Compression is a sham';
@@ -43,7 +43,7 @@ export const date = '2026-01-23';
 
   <p>The results confirmed the hypothesis.</p>
 
-  <img src={pareto} alt="Pareto Frontier" />
+  <img {...pareto} alt="Pareto Frontier" />
 
   <ul>
     <li><strong>Green Triangle:</strong> The Spherical Transform (the geometric approach).</li>
@@ -56,7 +56,7 @@ export const date = '2026-01-23';
     with <strong>negligible error difference</strong> (both remain below float32 machine epsilon).
   </p>
 
-  <img src={ratios} alt="Compression Ratio Heatmap" />
+  <img {...ratios} alt="Compression Ratio Heatmap" />
 
   <p>
     The heatmap above illustrates why. As you move towards the bottom right, compression spikes.
@@ -70,7 +70,7 @@ export const date = '2026-01-23';
     The pareto plot from earlier with a constant m of 1:
   </p>
 
-  <img src={paretoAlt} alt="Pareto Frontier" />
+  <img {...paretoAlt} alt="Pareto Frontier" />
 
   <h3>Credits</h3>
 

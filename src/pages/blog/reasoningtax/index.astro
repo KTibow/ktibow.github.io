@@ -2,8 +2,8 @@
 import BlogPost from '$lib/layouts/BlogPost.astro';
 import bg from './bg.avif?url';
 
-import screenshot1 from './Screenshot From 2025-02-07 18-34-12.png?url';
-import screenshot2 from './Screenshot From 2025-02-07 18-34-51.png?url';
+import screenshot1 from './Screenshot From 2025-02-07 18-34-12.png';
+import screenshot2 from './Screenshot From 2025-02-07 18-34-51.png';
 
 export const title = 'I invented a new term';
 export const date = '2025-01-19';
@@ -126,17 +126,9 @@ export const date = '2025-01-19';
     Things might change. Things might not. But in the meantime, you can call it the reasoning tax.
   </p>
   <img
-    src={screenshot1}
+    {...screenshot1}
     alt="The first time I called it the reasoning tax"
     title="The first time I called it the reasoning tax"
-    width="414"
-    height="114"
   />
-  <img
-    src={screenshot2}
-    alt="Another user calling it that"
-    title="Another user calling it that"
-    width="414"
-    height="173"
-  />
+  <img {...screenshot2} alt="Another user calling it that" title="Another user calling it that" />
 </BlogPost>
