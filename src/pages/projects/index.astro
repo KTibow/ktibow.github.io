@@ -1,0 +1,528 @@
+---
+import Base from '$lib/layouts/Base.astro';
+import Header from '$lib/Header.astro';
+import Card from './_Card.astro';
+import HeatmapImage from './_HeatmapImage.astro';
+
+import Tags from './_Tags.astro';
+
+import m3Svelte from './img-m3svelte.svg';
+import tokenShaker from './img-tokenshaker.svg';
+import functionsMixins from './img-functionsmixins.svg';
+import cosine from './img-cosine.svg';
+import cobblestone from './img-cobblestone.svg';
+import monoserve from './img-monoserve.svg';
+import monoidentity from './img-monoidentity.svg';
+import schoolDistricts from './img-schooldistricts.svg';
+import claudeAPChem from './img-claudeapchem.svg';
+import excalimath from './img-excalimath.svg';
+import year2025 from './2025.png';
+import year2024 from './2024.png';
+import year2023 from './2023.png';
+import year2022 from './2022.png';
+import year2021 from './2021.png';
+import year2020 from './2020.png';
+---
+
+<Base title="Find a project">
+  <Header />
+  <h2 class="project-header">Launch</h2>
+  <div class="projects">
+    <a class="project layer" href="https://kendell.dev/m3-svelte/">
+      <Card src={m3Svelte} alt="M3 Svelte" datetime="2022-12" dateLabel="Dec 2022" priority>
+        a Svelte library for Material 3
+      </Card>
+    </a>
+    <a class="project layer" href="https://www.youtube.com/@claudeapchem">
+      <Card src={claudeAPChem} alt="Claude" datetime="2025-10" dateLabel="Oct 2025">
+        a project connecting Claude to Manim and YouTube
+      </Card>
+    </a>
+    <a class="project layer" href="https://cosinehq.web.app/">
+      <Card
+        src={cosine}
+        alt="Cosine"
+        title="Cosine"
+        datetime="2025-09"
+        dateLabel="Sep 2025"
+        priority
+      >
+        an app that lets you use many models from many providers
+      </Card>
+    </a>
+    <a class="project layer" href="https://cblstn.web.app/">
+      <Card
+        src={cobblestone}
+        alt="Cobblestone"
+        title="Cobblestone"
+        datetime="2025-10"
+        dateLabel="Oct 2025"
+        priority
+      >
+        an Obsidian-style Markdown editor that connects to Monoidentity and pulls in personally
+        useful info
+      </Card>
+    </a>
+  </div>
+  <h2 class="project-header">Active infrastructure</h2>
+  <div class="projects">
+    <a class="project layer" href="https://github.com/KTibow/vite-plugin-token-shaker">
+      <Card
+        src={tokenShaker}
+        alt="@layer tokens"
+        title="vite-plugin-token-shaker"
+        datetime="2025-11"
+        dateLabel="Nov 2025"
+      >
+        a utility to tree shake CSS variables placed in <code>@layer tokens</code>
+      </Card>
+    </a>
+    <a class="project layer" href="https://github.com/KTibow/vite-plugin-functions-mixins">
+      <Card
+        src={functionsMixins}
+        alt="@function/@mixin"
+        title="vite-plugin-functions-mixins"
+        datetime="2025-11"
+        dateLabel="Nov 2025"
+      >
+        a utility to use functions and mixins in a post-Sass pre-wide-browser-support world
+      </Card>
+    </a>
+    <a class="project layer" href="https://github.com/KTibow/monoserve">
+      <Card
+        src={monoserve}
+        alt="Monoserve"
+        title="Monoserve"
+        datetime="2025-08"
+        dateLabel="Aug 2025"
+      >
+        a library that lets you use Remote Functions-style syntax anywhere and use a shared server
+        across projects
+      </Card>
+    </a>
+    <a class="project layer" href="https://github.com/KTibow/monoidentity">
+      <Card
+        src={monoidentity}
+        alt="Monoidentity"
+        title="Monoidentity"
+        datetime="2025-09"
+        dateLabel="Sep 2025"
+      >
+        a library that makes sign in, verification, and data syncing easy and secure
+      </Card>
+    </a>
+    <a class="project layer" href="https://github.com/KTibow/school-districts">
+      <Card
+        src={schoolDistricts}
+        alt="school-districts"
+        title="school-districts"
+        datetime="2025-06"
+        dateLabel="Jun 2025"
+      >
+        a library that makes district-specific information hotpluggable
+      </Card>
+    </a>
+    <a class="project layer" href="/blog/texihi/">
+      <Card src={excalimath} alt="Excalimath" datetime="2025-01" dateLabel="Jan 2025">
+        using Excalifont for answers to separate them from homework questions
+      </Card>
+    </a>
+    <div class="project">
+      <p style="margin:auto">Other things I won't publicize here.</p>
+    </div>
+  </div>
+  <article class="prose">
+    <h2>2025</h2>
+    <HeatmapImage src={year2025} alt="2025 projects timeline" />
+    <p>See active projects.</p>
+    <p>
+      <Tags ai />
+      <strong>Worked with</strong> CrofAI to make a new frontend (unreleased as of writing). <time
+        datetime="2025-11">November</time
+      >
+    </p>
+    <p>
+      <Tags school />
+      <a href="https://github.com/KTibow/schoology-docs-md">schoology-docs-md</a>, the Schoology
+      docs converted to Markdown. <time datetime="2025-09">September</time>
+    </p>
+    <p>
+      <a href="https://github.com/KTibow/tinyentities">tinyentities</a>, a minimal HTML entity
+      encoder/decoder. <time datetime="2025-08">August</time>
+    </p>
+    <p>
+      <Tags ai />
+      <a href="https://github.com/KTibow/does-pi-have-the-best-price">does-pi-have-the-best-price</a
+      >, a small site for comparing Prime Intellect's GPU prices to others. <time datetime="2025-08"
+        >August</time
+      >
+    </p>
+    <p>
+      <strong>Contributed to</strong> Rolldown/OXC (you can search this on GitHub). <time
+        datetime="2025-08">August</time
+      >
+    </p>
+    <p>
+      <Tags school />
+      A failed attempt to rewrite Tangent (I learned that it makes sense to keep apps separate) <time
+        datetime="2025-06">June</time
+      >-<time datetime="2025-08">August</time>
+    </p>
+    <p>
+      <a href="https://github.com/KTibow/kreations">kreations</a>, some funky loaders I manually
+      wrote in SVG (and a component). <time datetime="2025-03">March</time>
+    </p>
+    <p>
+      <Tags ai />
+      <a href="https://github.com/KTibow/synthetitastic">synthetitastic</a>, an accelerationist set
+      of synthetic data. <time datetime="2025-03">March</time>
+    </p>
+    <p>
+      <Tags ai />
+      <strong>Worked with Originality</strong> on research. <time datetime="2025-01">January</time>
+    </p>
+
+    <h2>2024</h2>
+    <HeatmapImage src={year2024} alt="2024 projects timeline" />
+    <p>
+      <Tags school />
+      <a href="https://github.com/KTibow/aoc2024">Advent of code 2024 solutions</a>, which are mid
+      but exist (and I got on one of the leaderboards!)
+      <time datetime="2024-12">December</time>
+    </p>
+    <p>
+      <Tags ai />
+      <a href="https://github.com/KTibow/lmb">LMB</a>, Language Model Board, a better way to view
+      the LM Arena results.
+      <time datetime="2024-12">December</time>
+    </p>
+    <p>
+      <a href="https://github.com/KTibow/pres">Excalidraw slides</a>, a simple vibe-coded app.
+      <time datetime="2024-12">December</time>
+    </p>
+    <p>
+      <Tags ai />
+      <a href="https://github.com/KTibow/groq-bot">groq-bot</a>, a bot that uses Groq to answer
+      questions about Groq.
+      <time datetime="2024-10">October</time>
+    </p>
+    <p>
+      <Tags ai />
+      <a href="https://github.com/KTibow/bam">bam</a>, a site that lets you use Groq in the Firefox
+      AI sidebar.
+      <time datetime="2024-10">October</time>
+    </p>
+    <p>
+      <Tags ai />
+      <a href="https://github.com/KTibow/surprisingly-simple-embeddings"
+        >surprisingly-simple-embeddings</a
+      >, an artifact from a (closed) PR to add AI-ish search to ESPHome.
+      <time datetime="2024-10">October</time>
+    </p>
+    <p>
+      <Tags school />
+      Pln, a website for planning schedules with a modern UI.
+      <time datetime="2024-10">October</time>
+    </p>
+    <p>
+      <Tags school ai />
+      <a href="https://github.com/KTibow/practiceyeet">PracticeYeet</a>, a copy of PracticeIt but
+      the graders are inferred by AI that was going swimmingly until I accidentally
+      <code>DELETE</code>d too much.
+      <time datetime="2024-09">September</time>
+    </p>
+    <p>
+      <Tags school />
+      <a href="https://github.com/KTibow/message">A minimal connect-to-Google Messages demo</a>, an
+      artifact from developing the Google Messages integration in Tangent.
+      <time datetime="2024-06">June</time>
+    </p>
+    <p>
+      <Tags school />
+      <a href="https://github.com/KTibow/1984">1984</a>, a search engine that drops results blocked
+      for me.
+      <time datetime="2024-06">June</time>
+    </p>
+    <p>
+      <Tags school ai />
+      Stereotype, an experiment with text-image search.
+      <time datetime="2024-06">June</time>
+    </p>
+    <p>
+      <Tags ai />
+      <strong>Worked with Groq</strong> on helping community members. <time datetime="2024-05"
+        >May</time
+      > onward
+    </p>
+    <p>
+      <Tags school />
+      Tangent, a collection of utilities. Tangent was one of my most ambitious projects, and I had to
+      learn many different patterns across deployment, backend logic, and frontend logic. However, after
+      a number of bad days, I was so tired I had to shut it down.
+      <time datetime="2024-03">March</time>-<time datetime="2025-06">June 2025</time>
+    </p>
+    <p>
+      <Tags ai />
+      <a href="https://github.com/KTibow/magic">magic</a>, a (too early) Magic deck generator.
+      <time datetime="2024-02">February</time>
+    </p>
+    <p>
+      <Tags skyblock ai />
+      <a href="https://github.com/KTibow/skygpt">SkyGPT</a>, a RAG-based Hypixel Skyblock chatbot
+      described as "more helpful than a majority of forumers".
+      <time datetime="2024-01">January</time>
+    </p>
+    <p><strong>Contributed to</strong> Lawnicons and SVGO a lot (you can search this on GitHub).</p>
+    <p>
+      <strong>Worked with</strong> ReVanced. I updated the frontend some, although due to politics I didn't
+      update more.
+    </p>
+
+    <h2>2023</h2>
+    <HeatmapImage src={year2023} alt="2023 projects timeline" />
+    <p>
+      <Tags skyblock />
+      <a href="https://github.com/KTibow/flipsml">Flips v2</a>, a new take on an old chain (Bazaar
+      Money -&gt; Skyblock Money -&gt; Flips -&gt; Flips v2).
+      <time datetime="2023-12">December</time>
+    </p>
+    <p>
+      <a href="https://github.com/KTibow/to-icon-sets">to-icon-sets</a>, a project that fills a hole
+      Iconify left.
+      <time datetime="2023-12">December</time>
+    </p>
+    <p>
+      <Tags skyblock />
+      <a href="https://github.com/KTibow/RatRater2">RatRater2</a>, the second version of RatRater,
+      with better UI and a dedicated analysis tab.
+      <time datetime="2023-12">December</time>
+    </p>
+    <p>
+      <Tags ha />
+      <a href="https://github.com/KTibow/home-assistant-theme">home-assistant-theme</a>, a site that
+      generates Material 3-style themes for HA.
+      <time datetime="2023-09">September</time>
+    </p>
+    <p>
+      <a href="/billnye/">bill nye</a>
+      <time datetime="2023-08">August</time>
+    </p>
+    <p>
+      <Tags school />
+      SchoolHub (new), a collection of utilities. This was the first time I experimented with growth,
+      and it worked! Until it got shut down.
+      <time datetime="2023-05">May</time>-<time datetime="2024-02">February 2024</time>
+    </p>
+    <p>
+      <Tags school />
+      I made something where you could make GPT-3.5 instances self-rap battle or generate stupid "what
+      if"s. It was fun.
+      <time datetime="2023-05">May</time>
+    </p>
+    <p>
+      <Tags ha ai />
+      <a href="https://github.com/KTibow/home-gpt">HomeGPT</a>, an experiment in tool use (in Home
+      Assistant) before tool use was a thing.
+      <time datetime="2023-03">March</time>
+    </p>
+    <p>
+      <Tags school />
+      Sussable. The first chat app that experienced growth, based on web notifications.
+      <time datetime="2023-03">March</time>-<time datetime="2024-02">February 2024</time>
+    </p>
+    <p>
+      <Tags school />
+      I tried to make BeReal but for school. I lost motivation.
+      <time datetime="2023-01">January</time>
+    </p>
+    <p><Tags skyblock /> <strong>Worked with</strong> IsThisARat. Wrote a new frontend.</p>
+
+    <h2>2022</h2>
+    <HeatmapImage src={year2022} alt="2022 projects timeline" />
+    <p>See active projects.</p>
+    <p>
+      <Tags school />
+      SchoolHub (old), an experiment with connecting to school APIs. This was where today's connectors
+      that cope with yesterday's XML and OAuth were written.
+      <time datetime="2022-08">August</time>-<time datetime="2022-12">December</time>
+    </p>
+    <p>
+      <Tags skyblock />
+      <a href="https://github.com/KTibow/RatRater">RatRater</a>, an app that statically analyses a
+      Forge mod for malware.
+      <time datetime="2022-06">June</time>
+    </p>
+    <p>
+      <Tags ha />
+      <a href="https://github.com/KTibow/arcane_control">Arcane control</a>, a HA addon that uses
+      basic UI for basic control from basic devices.
+      <time datetime="2022-06">June</time>
+    </p>
+    <p>
+      <Tags skyblock />
+      <strong>Worked with</strong>
+      <a href="https://skyclient.co/">SkyClient</a>. Even if a little weird (I wish I found X
+      earlier to counterbalance), was a nice place to dump my thoughts and my time into. I built 2
+      bots, an installer (arguably 2 or 3), a website, and a number of edits. I acted with too high
+      agency and too low EQ/self consciousness a few times, but overall I'm glad for it.
+      <time datetime="2022-03">March</time>-<time datetime="2024-04">April 2024</time>
+    </p>
+    <p>
+      <Tags ha />
+      <a href="https://github.com/KTibow/2vFiomba">2vFiomba</a>, a server that connects a Roomba to
+      Home Assistant, the successor to 2020's <a href="https://github.com/KTibow/fiomba">Fiomba</a>.
+      <time datetime="2022-02">February</time>
+    </p>
+
+    <h2>2021</h2>
+    <HeatmapImage src={year2021} alt="2021 projects timeline" />
+    <p>
+      <Tags skyblock />
+      <a href="https://github.com/KTibow/SBQuery">SBQuery</a>, an experiment in bringing Skyblock
+      data to GraphQL.
+      <time datetime="2021-12">December</time>
+    </p>
+    <p>
+      <Tags skyblock ai />
+      <a href="https://github.com/KTibow/BetterChat">BetterChat</a>/<a
+        href="https://chattriggers.com/modules/v/Unspam">Unspam</a
+      >, a surprisingly effective naive Bayes-based spam filter for Skyblock. I'm still proud of
+      this one. Some functionality was ported to Chatting!
+      <time datetime="2021-11">November</time>
+    </p>
+    <p>
+      <Tags ha />
+      <a href="https://github.com/KTibow/lobe-home-assistant">Lobe HA</a>, an integration to add
+      Lobe's AI vision to Home Assistant.
+      <time datetime="2021-05">May</time>
+    </p>
+    <p>
+      <Tags school />
+      <a href="https://github.com/KTibow/thumbs-up">👍</a>, a (unfinished) Chrome extension to
+      streamline school from home.
+      <time datetime="2021-05">May</time>
+    </p>
+    <p>
+      <Tags ai />
+      <a href="https://github.com/KTibow/birdcam-ai">Birdcam AI</a>, which is how I made
+      <a href="https://www.youtube.com/watch?v=83BGlKipdC0">this video</a>
+      <time datetime="2021-05">May</time>
+    </p>
+    <p>
+      <strong>Worked with my extended family</strong> on <a href="https://github.com/KTibow/tunt"
+        >Tank Scorecard / Tunt</a
+      >, a site for a team game.
+      <time datetime="2021-03">March</time>
+    </p>
+    <p>
+      <a href="https://github.com/KTibow/fridge">Leftunder</a>, an experiment in both hardware
+      &lt;--&gt; Grocy and in making a serial console from JS.
+      <time datetime="2021-02">February</time>
+    </p>
+    <p>
+      <Tags school />
+      <a href="https://github.com/KTibow/simple-zoom-joiner">simple-zoom-joiner</a>, the simpler
+      version of Zoom Improved (and one of my earliest reverse engineering projects)
+      <time datetime="2021-01">January</time>
+    </p>
+    <p>
+      <em>Why was this year so quiet by contributions?</em> I was working on a lot of Skyblock stuff (Bazaar
+      Money / Skyblock Money) and I used Replit for it.
+    </p>
+
+    <h2>2020</h2>
+    <HeatmapImage src={year2020} alt="2020 projects timeline" />
+    <p>
+      <Tags ha />
+      <a href="https://github.com/KTibow/neotrellis-ha-controller">neotrellis-ha-controller</a>, a
+      controller for HA on a really funny board.
+      <time datetime="2020-12">December</time>
+    </p>
+    <p>
+      <Tags ha />
+      <a href="https://github.com/KTibow/ha-blueprint">ha-blueprint</a>, a GitHub Action with what I
+      thought were HA best practices that I infamously pushed for in any custom integration trying
+      to be added to HACS (I had nothing better to do).
+      <time datetime="2020-10">October</time>
+    </p>
+    <p>
+      <Tags ha />
+      <a href="https://github.com/KTibow/ha-zoom-forwarder">ha-zoom-forwarder</a>, an unfinished
+      project I'm only including here because it's so funny that I bothered with a I'm not a robot
+      box and a &gt;13 years old box instead of actually working on it.
+      <time datetime="2020-08">August</time>
+    </p>
+    <p>
+      <Tags ha />
+      <a href="https://github.com/KTibow/fullscreen-card">fullscreen-card</a>, a Home Assistant card
+      that allows toggling fullscreen mode.
+      <time datetime="2020-08">August</time>
+    </p>
+    <p>
+      <Tags ha />
+      <a href="https://github.com/KTibow/infinity-mirror">infinity-mirror</a>, a guide to an
+      infinity mirror setup that I wouldn't recommend today (use ESPHome instead).
+      <time datetime="2020-07">July</time>
+    </p>
+    <p>
+      <Tags ha />
+      Neumorphism bender: <strong>contributed to</strong>
+      <a href="https://github.com/qiz-li/lovelace-soft-ui">lovelace-soft-ui</a>,
+      <a href="https://github.com/KTibow/lovelace-light-soft-ui-theme"
+        >lovelace-light-soft-ui-theme</a
+      >,
+      <a href="https://github.com/KTibow/lovelace-dark-soft-ui-theme">lovelace-dark-soft-ui-theme</a
+      >,
+      <a href="https://github.com/KTibow/lovelace-soft-theme">lovelace-soft-theme</a>.
+      <time datetime="2020-05">May</time>
+    </p>
+    <p>
+      <a href="https://github.com/KTibow/pi-DriveUp">pi-DriveUp</a>, a primitive RPi backup
+      solution.
+      <time datetime="2020-03">March</time>
+    </p>
+    <p>GoCallMe stuff, which doesn't seem to be on the internet anymore.</p>
+    <p>
+      <Tags ha />
+      <strong>Contributed to</strong> Home Assistant (you can search this on GitHub).
+    </p>
+
+    <h2>2019</h2>
+    <p>
+      <a href="https://github.com/KTibow/requireit">requireit</a>, a program to install packages
+      when imported (now we just use <code>uv</code>).
+      <time datetime="2019-08">August</time>
+    </p>
+  </article>
+</Base>
+
+<style>
+  article {
+    margin: 1.5rem;
+  }
+  .project-header {
+    @apply --m3-headline-large;
+    margin: 1.5rem;
+  }
+  .projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-inline: 1.5rem;
+  }
+  .project {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    flex-basis: 15rem;
+    max-width: 30rem;
+    border-radius: 1rem;
+    background-color: var(--m3c-surface-container);
+    color: inherit;
+    text-decoration: none;
+    overflow: hidden;
+  }
+  time {
+    opacity: 0.8;
+  }
+</style>

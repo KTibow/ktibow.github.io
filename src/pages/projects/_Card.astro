@@ -1,0 +1,251 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  title?: string;
+  datetime: string;
+  dateLabel: string;
+  priority?: boolean;
+}
+const { src, alt, title, datetime, dateLabel, priority = false } = Astro.props;
+
+if (src.format != 'svg') {
+  throw new Error('must be svg');
+}
+
+const hasDescription = Astro.slots.has('default');
+const hasTitle = Boolean(title);
+---
+
+<div class:list={['card', { 'image-only': !hasTitle }]}>
+  <Image {src} {alt} {priority} width={30 * 16} />
+  <div class="overlay">
+    <div class="blurrer" aria-hidden="true">
+      <div class="blur-filter"></div>
+      <div class="blur-filter"></div>
+      <div class="blur-filter"></div>
+      <div class="blur-filter"></div>
+      <div class="blur-filter"></div>
+      <div class="blur-filter"></div>
+      <div class="blur-filter"></div>
+    </div>
+    <div class="meta">
+      {hasTitle && <p class="title">{title}</p>}
+      <div class="more">
+        {
+          hasDescription && (
+            <p class="description">
+              <slot />
+            </p>
+          )
+        }
+        <time datetime={datetime}>{dateLabel}</time>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .card {
+    position: relative;
+    display: flex;
+    border-radius: inherit;
+    overflow: hidden;
+    aspect-ratio: 2 / 1;
+    --transition: linear(
+        0,
+        0.01 3.2%,
+        0.03,
+        0.06,
+        0.11,
+        0.19 13.3%,
+        0.25,
+        0.32,
+        0.43,
+        0.53,
+        0.61 19.3%,
+        0.69,
+        0.74,
+        0.78,
+        0.81 27.2%,
+        0.88,
+        0.92 40.6%,
+        0.964 55%,
+        0.994,
+        1
+      )
+      300ms;
+  }
+
+  .card > :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    margin: 0 !important;
+  }
+
+  .overlay {
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 0.75rem;
+    pointer-events: none;
+    color: #fff;
+    text-shadow: 0 1px 3px rgb(0 0 0 / 0.8);
+  }
+
+  .blurrer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  :global(.project:not(:hover, :focus-visible)) .blurrer {
+    opacity: 0;
+  }
+
+  .blur-filter {
+    position: absolute;
+    inset: 0;
+  }
+
+  .blur-filter:nth-child(1) {
+    backdrop-filter: blur(1px);
+    mask: linear-gradient(
+      rgb(0 0 0 / 0) 0%,
+      rgb(0 0 0 / 1) 10%,
+      rgb(0 0 0 / 1) 30%,
+      rgb(0 0 0 / 0) 40%
+    );
+  }
+
+  .blur-filter:nth-child(2) {
+    backdrop-filter: blur(2.8px);
+    top: 10%;
+    mask: linear-gradient(
+      rgb(0 0 0 / 0) 0%,
+      rgb(0 0 0 / 1) 11.1%,
+      rgb(0 0 0 / 1) 33.3%,
+      rgb(0 0 0 / 0) 44.4%
+    );
+  }
+
+  .blur-filter:nth-child(3) {
+    backdrop-filter: blur(5.2px);
+    top: 20%;
+    mask: linear-gradient(
+      rgb(0 0 0 / 0) 0%,
+      rgb(0 0 0 / 1) 12.5%,
+      rgb(0 0 0 / 1) 37.5%,
+      rgb(0 0 0 / 0) 50%
+    );
+  }
+
+  .blur-filter:nth-child(4) {
+    backdrop-filter: blur(8px);
+    top: 30%;
+    mask: linear-gradient(
+      rgb(0 0 0 / 0) 0%,
+      rgb(0 0 0 / 1) 14.3%,
+      rgb(0 0 0 / 1) 42.8%,
+      rgb(0 0 0 / 0) 57.1%
+    );
+  }
+
+  .blur-filter:nth-child(5) {
+    backdrop-filter: blur(11.2px);
+    top: 40%;
+    mask: linear-gradient(
+      rgb(0 0 0 / 0) 0%,
+      rgb(0 0 0 / 1) 16.6%,
+      rgb(0 0 0 / 1) 50%,
+      rgb(0 0 0 / 0) 66.6%
+    );
+  }
+
+  .blur-filter:nth-child(6) {
+    backdrop-filter: blur(14.7px);
+    top: 50%;
+    mask: linear-gradient(
+      rgb(0 0 0 / 0) 0%,
+      rgb(0 0 0 / 1) 20%,
+      rgb(0 0 0 / 1) 60%,
+      rgb(0 0 0 / 0) 80%
+    );
+  }
+
+  .blur-filter:nth-child(7) {
+    backdrop-filter: blur(18.5px);
+    top: 60%;
+    mask: linear-gradient(rgb(0 0 0 / 0) 0%, rgb(0 0 0 / 1) 25%);
+  }
+
+  .meta {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title {
+    @apply --m3-title-medium;
+    margin: 0;
+  }
+
+  .more {
+    @apply --m3-body-small;
+    display: grid;
+    gap: 0.25rem;
+    margin-top: 0;
+    overflow: hidden;
+  }
+
+  .description {
+    margin: 0;
+  }
+
+  time {
+    opacity: 0.5;
+  }
+
+  .image-only .meta {
+    transition: opacity var(--transition);
+  }
+  :global(:not(:hover, :focus-visible)) > .image-only .meta {
+    opacity: 0;
+  }
+
+  :global(.project:is(:hover, :focus-visible) > .card:not(.image-only)) .more {
+    margin-top: 0.25rem;
+  }
+
+  @supports not (interpolate-size: allow-keywords) {
+    .more {
+      max-height: 0;
+      transition: max-height var(--transition);
+    }
+
+    :global(.project:is(:hover, :focus-visible) > .card) .more {
+      max-height: 10rem;
+    }
+  }
+
+  @supports (interpolate-size: allow-keywords) {
+    .card {
+      interpolate-size: allow-keywords;
+    }
+
+    .more {
+      max-height: none;
+      block-size: 0;
+      transition: block-size var(--transition);
+    }
+
+    :global(.project:is(:hover, :focus-visible) > .card) .more {
+      block-size: auto;
+    }
+  }
+</style>
