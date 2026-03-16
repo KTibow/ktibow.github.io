@@ -6,7 +6,7 @@ export async function GET(context) {
   return rss({
     title: blogRSSTitle,
     description: 'Thoughts, primarily about technology.',
-    site: context.url.origin,
+    site: new URL('.', context.url).href,
     items: blogPosts,
   });
 }
