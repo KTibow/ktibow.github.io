@@ -1,4 +1,3 @@
-import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import { defineConfig } from 'astro/config';
 import { functionsMixins } from 'vite-plugin-functions-mixins';
@@ -14,7 +13,7 @@ export default defineConfig({
   },
   trailingSlash: 'always',
   prefetch: { prefetchAll: true },
-  integrations: [mdx(), sitemap({ filter: (p) => !p.includes('noindex') }), svelte()],
+  integrations: [sitemap({ filter: (p) => !p.includes('noindex') }), svelte()],
   vite: {
     plugins: [functionsMixins(), allPostsPlugin(), flattenSitemapPlugin()],
   },
