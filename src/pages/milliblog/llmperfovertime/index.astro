@@ -1,0 +1,22 @@
+---
+import BlogPost from '$lib/layouts/BlogPost.astro';
+import from2023 from './from2023.avif';
+import from2025 from './from2025.avif';
+
+export const title = 'LLM performance+price graphed over time';
+export const date = '2026-03-23';
+---
+
+<BlogPost {date} {title}>
+  <img
+    {...from2023}
+    alt="LLM performance+price has varied since 2023"
+    style="filter:invert(1) hue-rotate(180deg)"
+  />
+  <p>And from just 2025 onward:</p>
+  <img
+    {...from2025}
+    alt="LLM performance+price has varied more since 2025"
+    style="filter:invert(1) hue-rotate(180deg)"
+  />
+</BlogPost>
