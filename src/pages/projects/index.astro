@@ -6,17 +6,15 @@ import HeatmapImage from './_HeatmapImage.astro';
 
 import Tags from './_Tags.astro';
 
-import m3Svelte from './img-m3svelte.svg';
-import tokenShaker from './img-tokenshaker.svg';
-import functionsMixins from './img-functionsmixins.svg';
-import cosine from './img-cosine.svg';
-import cobblestone from './img-cobblestone.svg';
-import monoserve from './img-monoserve.svg';
-import monoidentity from './img-monoidentity.svg';
-import schoolDistricts from './img-schooldistricts.svg';
 import claudeAPChem from './img-claudeapchem.svg';
 import dailyBugs from './img-dailybugs.svg';
 import excalimath from './img-excalimath.svg';
+import functionsMixins from './img-functionsmixins.svg';
+import m3Svelte from './img-m3svelte.svg';
+import monoserve from './img-monoserve.svg';
+import schoolDistricts from './img-schooldistricts.svg';
+import tokenShaker from './img-tokenshaker.svg';
+import zeroK from './img-0k.svg';
 import year2025 from './2025.png';
 import year2024 from './2024.png';
 import year2023 from './2023.png';
@@ -34,15 +32,9 @@ import year2020 from './2020.png';
         a Svelte library for Material 3
       </Card>
     </a>
-    <a class="project layer" href="https://www.youtube.com/@claudeapchem">
-      <Card
-        src={claudeAPChem}
-        alt="Claude Explains AP Chemistry"
-        datetime="2025-10"
-        dateLabel="Oct 2025"
-        priority
-      >
-        a project connecting Claude to Manim and YouTube
+    <a class="project layer" href="https://github.com/0k-web/0k/releases/tag/latest">
+      <Card src={zeroK} alt="0K" title="0K" datetime="2026-03" dateLabel="Mar 2026" priority>
+        a way to use the internet with your own tunnel
       </Card>
     </a>
     <a class="project layer" href="https://dailybugs.kendell.dev/">
@@ -57,31 +49,17 @@ import year2020 from './2020.png';
         the <em>personal</em> AI linter
       </Card>
     </a>
-    <a class="project layer" href="https://cosinehq.web.app/">
+    <a class="project layer" href="https://www.youtube.com/@claudeapchem">
       <Card
-        src={cosine}
-        alt="Cosine"
-        title="Cosine"
-        datetime="2025-09"
-        dateLabel="Sep 2025"
-        priority
-      >
-        an app that lets you use many models from many providers
-      </Card>
-    </a>
-    <!-- <a class="project layer" href="https://cblstn.web.app/">
-      <Card
-        src={cobblestone}
-        alt="Cobblestone"
-        title="Cobblestone"
+        src={claudeAPChem}
+        alt="Claude Explains AP Chemistry"
         datetime="2025-10"
         dateLabel="Oct 2025"
         priority
       >
-        an Obsidian-style Markdown editor that connects to Monoidentity and pulls in personally
-        useful info
+        a project connecting Claude to Manim and YouTube
       </Card>
-    </a> -->
+    </a>
   </div>
   <h2 class="project-header">Active infrastructure</h2>
   <div class="projects">
@@ -117,17 +95,6 @@ import year2020 from './2020.png';
       >
         a library that lets you use Remote Functions-style syntax anywhere and use a shared server
         across projects
-      </Card>
-    </a>
-    <a class="project layer" href="https://github.com/KTibow/monoidentity">
-      <Card
-        src={monoidentity}
-        alt="Monoidentity"
-        title="Monoidentity"
-        datetime="2025-09"
-        dateLabel="Sep 2025"
-      >
-        a library that makes sign in, verification, and data syncing easy and secure
       </Card>
     </a>
     <a class="project layer" href="https://github.com/KTibow/school-districts">
