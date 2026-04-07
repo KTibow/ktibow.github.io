@@ -3,25 +3,24 @@
 text {
   font-family: Monaspace Krypton Var, monospace;
   font-size: 1px;
-  dominant-baseline: hanging;
   white-space: pre-wrap;
 }
 </style>
 <defs>
 <path id="s" d="M21 9V7h-1V5h-1V4h-1V3h-2V2h-2V1H8v1H6v1H4v1H3v1H2v2H1v2H0v7h1v1h1v2h1v1h1v1h2v1h2v1h6v-1h2v-1h2v-1h1v-1h1v-2h1v-2h1V9zm-1 1v4h-3v-4zm-5-6h1v1h2v2h1v1h-3V5h-1zm-2 14v2h-1v1h-2v-1h-1v-2H8v-2h6v2zm2-8v4H7v-4zM8 6h1V4h1V3h2v1h1v2h1v2H8zM3 7h1V5h2V4h1v1H6v3H3zm-1 7v-4h3v4zm2 5v-2H3v-1h3v3h1v1H6v-1zm14-2v2h-2v1h-1v-1h1v-3h3v1z"/>
 <g id="t">
-<!--                                                               ############################################    -->
-<text x="0" y="00" textLength="22" lengthAdjust="spacingAndGlyphs">120v.ac;btsndrc.ac;cyberschool.ac;disco.ac;d</text>
-<text x="0" y="01" textLength="22" lengthAdjust="spacingAndGlyphs">rr.ac;feedback.ac;fly.ac;forms.ac;goe.ac;ipx</text>
-<text x="0" y="02" textLength="22" lengthAdjust="spacingAndGlyphs">.ac;kidsnote.ac;kwan.ac;lai.ac;rents.ac;smi.</text>
-<text x="0" y="03" textLength="22" lengthAdjust="spacingAndGlyphs">.ac;thai.ac;uoj.ac;alg.academy;official.acad</text>
-<text x="0" y="04" textLength="22" lengthAdjust="spacingAndGlyphs">emy;vape.academy;portal.accountants;uaeu.ac.</text>
-<text x="0" y="05" textLength="22" lengthAdjust="spacingAndGlyphs">ae;apkcafe.ae;apkdog.ae;apkgold.ae;blogspot.</text>
-<text x="0" y="06" textLength="22" lengthAdjust="spacingAndGlyphs">ae;goldpillars.ae;nl.ae;quizplease.ae;tribal</text>
-<text x="0" y="07" textLength="22" lengthAdjust="spacingAndGlyphs">wars.ae;ucoz.ae;whitewill.ae;atkins.aero;han</text>
-<text x="0" y="08" textLength="22" lengthAdjust="spacingAndGlyphs">gar123.aero;ivao.aero;coolify.africa;bookmar</text>
-<text x="0" y="09" textLength="22" lengthAdjust="spacingAndGlyphs">ks.ag;obj.ag;certifiedtranslations.agency;ai</text>
-<text x="0" y="10" textLength="22" lengthAdjust="spacingAndGlyphs">wyn.ai;autogo.ai;blip.ai;cds.ai;chipp.ai;cmp</text>
+<!--                                                                 ############################################    -->
+<text x="0" y="00.8" textLength="22" lengthAdjust="spacingAndGlyphs">120v.ac;btsndrc.ac;cyberschool.ac;disco.ac;d</text>
+<text x="0" y="01.8" textLength="22" lengthAdjust="spacingAndGlyphs">rr.ac;feedback.ac;fly.ac;forms.ac;goe.ac;ipx</text>
+<text x="0" y="02.8" textLength="22" lengthAdjust="spacingAndGlyphs">.ac;kidsnote.ac;kwan.ac;lai.ac;rents.ac;smi.</text>
+<text x="0" y="03.8" textLength="22" lengthAdjust="spacingAndGlyphs">.ac;thai.ac;uoj.ac;alg.academy;official.acad</text>
+<text x="0" y="04.8" textLength="22" lengthAdjust="spacingAndGlyphs">emy;vape.academy;portal.accountants;uaeu.ac.</text>
+<text x="0" y="05.8" textLength="22" lengthAdjust="spacingAndGlyphs">ae;apkcafe.ae;apkdog.ae;apkgold.ae;blogspot.</text>
+<text x="0" y="06.8" textLength="22" lengthAdjust="spacingAndGlyphs">ae;goldpillars.ae;nl.ae;quizplease.ae;tribal</text>
+<text x="0" y="07.8" textLength="22" lengthAdjust="spacingAndGlyphs">wars.ae;ucoz.ae;whitewill.ae;atkins.aero;han</text>
+<text x="0" y="08.8" textLength="22" lengthAdjust="spacingAndGlyphs">gar123.aero;ivao.aero;coolify.africa;bookmar</text>
+<text x="0" y="09.8" textLength="22" lengthAdjust="spacingAndGlyphs">ks.ag;obj.ag;certifiedtranslations.agency;ai</text>
+<text x="0" y="10.8" textLength="22" lengthAdjust="spacingAndGlyphs">wyn.ai;autogo.ai;blip.ai;cds.ai;chipp.ai;cmp</text>
 </g>
 <mask id="m"><rect width="22" height="11" fill="black"/><use href="#s" fill="white"/></mask>
 </defs>
