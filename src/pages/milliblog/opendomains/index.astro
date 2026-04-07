@@ -1,0 +1,19 @@
+---
+import BlogPost from '$lib/layouts/BlogPost.astro';
+import raw from './domains.txt?raw';
+
+export const title = 'Want to crawl Open Domains?';
+export const date = '2026-04-06';
+
+const domains = raw.trim().split('\n');
+---
+
+<BlogPost {date} {title}>
+  <p>
+    <a href="https://github.com/open-domains/register">open-domains/register</a> provides free subdomains.
+    Here's every registered domain as of writing:
+  </p>
+  <ul>
+    {domains.map((d) => <li><a href={`https://${d}`}>{d}</a></li>)}
+  </ul>
+</BlogPost>
