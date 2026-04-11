@@ -1,0 +1,44 @@
+---
+import BlogPost from '$lib/layouts/BlogPost.astro';
+
+export const title = 'Mini World of Bits AI agent results';
+export const date = '2025-07-27';
+---
+
+<BlogPost {date} {title}>
+  <p>
+    I <a href="/miniwob-hosted/">hosted</a> Mini World of Bits (an OpenAI-created benchmark) and tested
+    several AI agents on it. Results:
+  </p>
+
+  <h2>Copilot: always refused</h2>
+  <p>Copilot refused every task with excuses like:</p>
+  <ul>
+    <li>"These tasks are similar to CAPTCHAs, and I am not able to complete such tasks"</li>
+    <li>
+      "[This] requires entering information into a web form, and I'm not able to complete tasks of
+      this nature"
+    </li>
+    <li>"[This] requires entering a date into a field, which I'm unable to do"</li>
+  </ul>
+
+  <h2>Manus: 2/4</h2>
+  <p>
+    Manus succeeded at click-button and enter-text, timed out with choose-list, and failed at
+    drag-box (tried to eval code and failed).
+  </p>
+
+  <h2>Scout: 1/7</h2>
+  <p>
+    Scout was very persistent in its investigation, but it just has too short of a reaction time to
+    complete the tasks within 10 or 20 seconds.
+  </p>
+
+  <p>
+    <em
+      >This post is an archive of <a href="https://x.com/anametolast/status/1949498609566928958"
+        >this Twitter thread</a
+      >.</em
+    >
+  </p>
+</BlogPost>

@@ -1,0 +1,145 @@
+---
+import BlogPost from '$lib/layouts/BlogPost.astro';
+import Snippet from '$lib/Snippet.astro';
+
+export const title = 'ChatGPT does way too much on load';
+export const date = '2025-09-20';
+---
+
+<BlogPost {date} {title}>
+  <p>
+    The root cause of "ChatGPT asks for persistent storage every time I reload in Firefox" is deeper
+    than Firefox not auto-allowing/permanently blocking or ChatGPT not looking at the return type of
+    <code>navigator.persist()</code>. It's that ChatGPT does way too much on load.
+  </p>
+
+  <p>
+    It's asking for persistent storage to generate ECDSA certs for voice mode. I don't even have a
+    microphone! This code should be delayed, or better, not loaded in the first place.
+  </p>
+
+  <p>The current philosophy is leading to, for a fresh load, 20MB of JavaScript and a 400ms GC.</p>
+
+  <p>
+    Part of the problem is this giant object. It's like a barrel file, but instead of just incurring
+    penalties during dev, it also incurs them during prod!
+  </p>
+  <Snippet
+    code={`const nB = {
+  audioPlayer: { error: Hu("audio-player") },
+  readAloud: { click: je("read-aloud", "click"), error: Hu("read-aloud") },
+  voiceMode: { click: je("voice-mode", "click") },
+  toggleVideoButton: { click: je("toggle-video-button", "click") },
+  toggleHuteButton: { click: je("toggle-mute-button", "click") },
+  toggleScreenShareButton: { click: je("toggle-screenshare-button", "click") },
+  voiceSession: { hover: je("voice-session-improper-speech-button", "hover") },
+  voiceSessionEndedByUser: { click: je("voice-session-ended-by-user", "click") },
+  voiceSessionStarted: { click: je("voice-session-started", "click") },
+  voiceSessionDuration: { duration: je("voice-session-duration", "duration") },
+  voiceSessionIsListening: { stateChange: je("voice-session-listening", "stateChange") },
+  voiceSessionIsListeningIntently: { stateChange: je("voice-session-listening-intently", "stateChange") },
+  voiceSessionThinking: { stateChange: je("voice-session-thinking", "stateChange") },
+  voiceSessionSpeaking: { stateChange: je("voice-session-speaking", "stateChange") },
+  voiceSessionUnhalted: { stateChange: je("voice-session-halted", "stateChange") },
+  voiceSessionDisconnected: { stateChange: je("voice-session-disconnected", "stateChange") },
+  voiceModePreview: { connect: je("voice-mode", "connect"), error: je("voice-mode", "error") },
+  previews: { click: je("previews", "click"), error: Hu("previews") },
+  getToken: {
+    request: je("get-token", "request"),
+    success: je("get-token", "success"),
+    failure: je("get-token", "failure")
+  },
+  getVoiceStatus: {
+    request: je("get-voice-status", "request"),
+    success: je("get-voice-status", "success"),
+    failure: je("get-voice-status", "failure")
+  },
+  livekit: {
+    connectCalled: je("livekit", "connectCalled"),
+    success: je("livekit", "success"),
+    failure: Hu("livekit")
+  },
+  bloop: { performance: je("bloop", "performance") },
+  voiceSelectionShown: { click: je("voice-selection-shown", "click", "voice_selection_shown") },
+  voiceSelected: { click: je("voice-selected", "click") },
+  voiceAdvancedDisclosureShown: { click: je("voice-advanced-disclosure-shown", "success") },
+  voiceAdvancedDisclosureAccepted: { click: je("voice-advanced-disclosure-accepted", "click") },
+  rateLimitReached: {
+    success: je("rate-limit-reached", "success"),
+    modalShown: je("rate-limit-reached", "modalShown")
+  },
+  upsell: {
+    upgradeToPlus: je("upsell", "upgradeToPlus"),
+    upgradeToPro: je("upsell", "upgradeToPro"),
+    upgradeToApp: je("upsell", "upgradeToApp"),
+    appUpsellShown: je("upsell", "appUpsellShown"),
+    appUpsellDismissed: je("upsell", "appUpsellDismissed")
+  },
+  feedbackShown: { success: je("feedback-shown", "success") },
+  feedbackThumbsUp: { success: je("feedback-thumbs-up", "success") },
+  feedbackThumbsDown: { success: je("feedback-thumbs-down", "success") },
+  feedbackDetails: {
+    audio_issues: je("feedback-details", "audio_issues"),
+    response_quality: je("feedback-details", "response_quality"),
+    interruptions: je("feedback-details", "interruptions"),
+    transcription_issues: je("feedback-details", "transcription_issues"),
+    inaudible_issues: je("feedback-details", "inaudible_issues"),
+    other: je("feedback-details", "other"),
+    inputText: je("feedback-details", "inputText")
+  },
+  connectionLatency: {
+    success: je("connection-latency", "success"),
+    failure: Hu("connection-latency")
+  },
+  firstListeningLatency: { success: je("first-listening-latency", "success") },
+  permissions: { denied: je("permissions-denied") },
+  voiceSessionFirstListening: { stateChange: je("voice-session-first-listening", "stateChange") },
+  voiceSessionFirstSpeaking: { stateChange: je("voice-session-first-speaking", "stateChange") },
+  defaultMediaDeviceChanged: {
+    success: je("default-media-device-changed", "success"),
+    failure: Hu("default-media-device-changed")
+  },
+  voiceStatusCache: {
+    hit: je("voice-status-cache", "hit"),
+    failed: je("voice-status-cache", "failed"),
+    ineligible: je("voice-status-cache", "ineligible"),
+    skipped: je("voice-status-cache", "skipped")
+  },
+  certificateCache: {
+    hit: je("certificate-cache", "hit"),
+    miss: je("certificate-cache", "miss"),
+    expired: je("certificate-cache", "expired"),
+    disabled: je("certificate-cache", "disabled"),
+    unsupported: G0("certificate-cache", "unsupported")
+  },
+  peerConnectionCache: {
+    hit: je("peer-connection-cache", "hit"),
+    miss: je("peer-connection-cache", "miss"),
+    unsupported: G0("peer-connection-cache", "unsupported")
+  },
+  certificateLocalDb: {
+    hit: je("certificate-local-db", "hit"),
+    generated: je("certificate-local-db", "generated"),
+    saveFailed: G0("certificate-local-db", "saveFailed"),
+    loadFailed: G0("certificate-local-db", "loadFailed")
+  }
+};`}
+    language="javascript"
+  />
+
+  <p>
+    What they could do instead: use a more functional code style (<a
+      href="https://yoyo-code.com/javascript-style-for-optimal-size/"
+      >see JavaScript style for optimal size</a
+    >), import those functions directly, and only load larger features when needed. (They can still
+    be prefetched.)
+  </p>
+
+  <p>
+    <em
+      >This post is an archive of <a href="https://x.com/anametolast/status/1969420156490432547"
+        >this Twitter thread</a
+      >.</em
+    >
+  </p>
+</BlogPost>
