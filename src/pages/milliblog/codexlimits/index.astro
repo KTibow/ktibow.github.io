@@ -1,0 +1,68 @@
+---
+import BlogPost from '$lib/layouts/BlogPost.astro';
+
+export const title = 'Reverse-engineering Codex credit limits';
+export const date = '2026-04-27';
+---
+
+<BlogPost {date} {title}>
+  <p>
+    Starting from the <a href="https://developers.openai.com/codex/pricing">Codex pricing page</a> and
+    <a href="https://help.openai.com/en/articles/20001106-codex-rate-card">rate card</a>: GPT-5.4
+    costs 62.5 credits per 1M input tokens vs $2.50 on the API. 2.50/62.5 = $0.04 per credit. This
+    holds for cached (0.25/6.25), output (15/375), and other models.
+  </p>
+
+  <p>
+    The usage tables show Plus has 100 max GPT-5.4 messages per 5h, 350 max GPT-5.4-mini, 150 max
+    GPT-5.3-Codex. The legacy rate card gives approximate credit costs: ~7, ~2, ~5 respectively.
+    100×7 = 350×2 ≅ 150×5 = 700-750 credits. Using 750 as the baseline: $30/5h.
+  </p>
+
+  <p>
+    Pro 5× upper limits are exactly 5× Plus (500 vs 100, 1750 vs 350, 750 vs 150), so 3,750
+    credits/5h. Pro 20× is 15,000. The current promos make $100 effectively 10× (7,500) and $200
+    effectively 25× (18,750) until May 31 2026.
+  </p>
+
+  <p>
+    Weekly limits aren't published ("additional weekly limits may apply"). Assuming 6 maxed sessions
+    hit the weekly cap, and 4.33 weeks/month:
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>Plan</th>
+        <th>Credits/5h</th>
+        <th>Credits/month</th>
+        <th>API equiv/month</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Plus ($20)</td>
+        <td>750</td>
+        <td>19,485</td>
+        <td>$779.40</td>
+      </tr>
+      <tr>
+        <td>Pro $100 (5×)</td>
+        <td>3,750</td>
+        <td>97,425</td>
+        <td>$3,897</td>
+      </tr>
+      <tr>
+        <td>Pro $200 (20×)</td>
+        <td>15,000</td>
+        <td>389,700</td>
+        <td>$15,588</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    Plus at $20/month gives $779.40 in API value — a 38.97× return. Pro $200 at $15,588 is 77.94×.
+    The catch: the rate card separately prices cached input (1/10th), input, and output (6× input),
+    so a real Codex task with 30k+ input tokens from repo context burns through it fast. At 1k in /
+    500 out you'd get 77,940 messages/month; at realistic sizes, more like 8,660.
+  </p>
+</BlogPost>
