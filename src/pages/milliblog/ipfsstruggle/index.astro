@@ -20,11 +20,19 @@ export const date = '2026-05-03';
     As for the rest, they don't work well either, at least for free. I've explained the specifics
     below.
   </p>
-  <p>
-    But you could just publish IPNS yourself from GitHub Actions: pin your build to any plain IPFS
-    service, then run <code>ipfs name publish</code> in a scheduled workflow (every 12 hours or so) to
-    re-broadcast the record before it expires from the DHT.
-  </p>
+  <p>Your other options are:</p>
+  <ul>
+    <li>
+      Publish IPNS from GitHub Actions: pin your build to any plain IPFS service, then run <code
+        >ipfs name publish</code
+      > in a scheduled workflow (every 12 hours or so) to re-broadcast the record before it expires from
+      the DHT.
+    </li>
+    <li>
+      Use <a href="https://dnslink.dev">DNSLink</a> (which is a type of IPNS, so all gateways accept it)
+    </li>
+    <li>Skip IPNS, make your own CID pointer</li>
+  </ul>
 
   <h2>Storacha</h2>
   <p>
