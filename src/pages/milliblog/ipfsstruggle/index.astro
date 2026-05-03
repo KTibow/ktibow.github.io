@@ -1,0 +1,190 @@
+---
+import BlogPost from '$lib/layouts/BlogPost.astro';
+import foureverland from './4everland.png';
+export const title = 'Everybody wants to give you storage, nobody wants to give you IPFS/IPNS';
+export const date = '2026-05-03';
+---
+
+<BlogPost {date} {title}>
+  <h2>A note on IPNS</h2>
+  <p>
+    ipns.dev is dead. The domain has lapsed and is now available for $10.81/year, and the other two
+    links from the announcement are broken in other ways (<code
+      >SSL_ERROR_UNRECOGNIZED_NAME_ALERT</code
+    > for
+    <code>pin.namesys.xyz</code>, "We're having trouble accessing your IPFS content right now." for <code
+      >ipns.eth.limo</code
+    >).
+  </p>
+  <p>
+    As for the rest, they don't work well either, at least for free. I've explained the specifics
+    below.
+  </p>
+  <p>
+    But you could just publish IPNS yourself from GitHub Actions: pin your build to any plain IPFS
+    service, then run <code>ipfs name publish</code> in a scheduled workflow (every 12 hours or so) to
+    re-broadcast the record before it expires from the DHT.
+  </p>
+
+  <h2>Storacha</h2>
+  <p>
+    ☠️ dead. Their Discord and Reddits aren't just ghost towns, more like spam dumpsters. Their code
+    has an environment variable <code>DISABLE_CUSTOMER_REGISTRATION</code> which seems to be active, given
+    that no matter what email you put in, you'll get a
+  </p>
+  <pre>Account identified by did:mailto:whateverdomain:whateverusername is blocked</pre>
+  <p>In case they reply to my email and prove they're still alive, I'll amend this section.</p>
+
+  <h2>Eternum</h2>
+  <p>☠️ dead. Used to be a neat service where you could pay to pin files!</p>
+  <blockquote>
+    <p>Hello,<br />Yes, Eternum is defunct, sadly.</p>
+    <p>Thanks,<br />Stavros</p>
+  </blockquote>
+  <p>(from Stavros Korokithakis at Stochastic Technologies)</p>
+
+  <h2>Pinata</h2>
+  <div class="pricing">
+    <div>
+      <h3>Free</h3>
+    </div>
+    <div>
+      <h3>$20/mo</h3>
+    </div>
+    <div>
+      <h3>$100/mo</h3>
+    </div>
+  </div>
+  <p>
+    ⚠️ No IPNS, in favor of blockchain-powered <a href="https://pinata.cloud/blog/ipcm-vs-ipns/"
+      >IPCM</a
+    >
+  </p>
+  <p>✅ Gives you folder CIDs</p>
+  <p>Useful!</p>
+
+  <h2>Filebase</h2>
+  <div class="pricing">
+    <div>
+      <h3>Free</h3>
+      <p>✅ 1 IPNS name but it doesn't matter since you ⚠️ can't get CIDs for buckets yet</p>
+      <p>1 gateway</p>
+    </div>
+    <div>
+      <h3>$20/mo</h3>
+      <p>100 IPNS names</p>
+      <p>1 gateway</p>
+    </div>
+    <div>
+      <h3>$100/mo</h3>
+      <p>1000 IPNS names</p>
+      <p>5 gateways</p>
+    </div>
+    <div>
+      <h3>$500/mo</h3>
+      <p>Unlimited IPNS names</p>
+      <p>10 gateways</p>
+    </div>
+  </div>
+  <p>Free tier is near useless.</p>
+
+  <h2>ipfs.ninja</h2>
+  <div class="pricing">
+    <div>
+      <h3>Free</h3>
+      <p>No IPNS</p>
+    </div>
+    <div>
+      <h3>$5/mo</h3>
+      <p>✅ 3 IPNS names, 50 publishes/mo</p>
+    </div>
+    <div>
+      <h3>$29/mo</h3>
+      <p>10 IPNS names, 1000 publishes/mo</p>
+    </div>
+  </div>
+  <p>⚠️ Vibe coded</p>
+  <p>
+    ⚠️ GitHub sign up is <abbr
+      title="Unsupported configuration for OIDC Identity Provider. Please review the documentation for specification."
+      >broken</abbr
+    >
+  </p>
+  <p>⚠️ Can't get CIDs for folders</p>
+  <p>
+    You can contact them with their ticket system or <code>info@ipfs.ninja</code>, even though the
+    pricing page says otherwise. Be warned: support doesn't know their job is to delete accounts.
+  </p>
+  <p>Near useless since you can't get CIDs for folders.</p>
+
+  <h2>Lighthouse</h2>
+  <div class="pricing">
+    <div>
+      <h3>Free</h3>
+      <p>No IPNS</p>
+    </div>
+    <div>
+      <h3>$12/mo</h3>
+      <p>No IPNS</p>
+    </div>
+    <div>
+      <h3>$49/mo</h3>
+      <p>✅ IPNS</p>
+    </div>
+    <div>
+      <h3>Lifetime</h3>
+      <p>No IPFS, no IPNS (just Filecoin)</p>
+    </div>
+  </div>
+  <p>In case it turns out IPNS is accessible in other ways, I'll update this section.</p>
+  <p>⚠️ Vibe coded</p>
+  <p>
+    ✅ Gives you folder CIDs but it doesn't matter since it ⚠️ gets stuck on "CID push to miners in
+    progress" and fails to publish to IPFS
+  </p>
+  <p>Near useless since it doesn't publish to IPFS.</p>
+
+  <h2>4EVERLAND</h2>
+  <div class="pricing">
+    <div>
+      <h3>Free (7 days)</h3>
+      <p>1GB IPFS available</p>
+      <p>✅ IPNS available, no API</p>
+    </div>
+    <div>
+      <h3>Free (activated)</h3>
+      <p>⚠️ Requires "on-chain identity registration and account activation"</p>
+      <img {...foureverland} alt="Options include Polygon, zkSync, and BNB" />
+      <p>5GB IPFS available</p>
+      <p>IPNS and API available</p>
+    </div>
+  </div>
+  <p>❓ Not sure if folder CIDs are available</p>
+  <p>Without becoming a Web3 bro, near useless.</p>
+</BlogPost>
+
+<style>
+  blockquote {
+    quotes: none;
+    > * {
+      margin-top: 1em;
+    }
+  }
+  .pricing {
+    display: flex;
+    gap: 0.5rem;
+    > * {
+      display: flex;
+      flex-direction: column;
+      background-color: var(--m3c-surface-container-low);
+      padding: 0.5rem;
+      border-radius: 1rem;
+      flex: 1;
+      line-height: 1.5;
+      gap: 0.5rem;
+      > h3 {
+        margin-bottom: auto;
+      }
+    }
+  }
+</style>
