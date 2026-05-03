@@ -1,0 +1,134 @@
+---
+import BlogPost from '$lib/layouts/BlogPost.astro';
+import Snippet from '$lib/Snippet.astro';
+import bg from './bg.avif?url';
+
+export const title = 'Hosting on IPFS without running a server';
+export const date = '2026-05-03';
+---
+
+<BlogPost {date} {title} {bg}>
+  <h2>Pin your site to IPFS</h2>
+  <p>
+    I <a href="/milliblog/ipfsstruggle/">looked at the available options</a>, and only one makes it
+    easy to pin a whole folder/site: <a href="https://pinata.cloud/">Pinata</a>.
+  </p>
+  <p>
+    Make a free key and save it to <code>PINATA_JWT</code>. Then start writing a GitHub workflow
+    like this:
+  </p>
+  <Snippet
+    code={`name: Deploy
+  on:
+    push:
+      branches: [main]
+    workflow_dispatch:
+  jobs:
+    deploy:
+      runs-on: ubuntu-latest
+      # You'll add environment here later
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+        - name: Set up Node
+          uses: actions/setup-node@v4
+          with: { node-version: latest }
+        # Fill this in with your build setup
+        # - uses: pnpm/action-setup@v4
+        #   with: { version: latest }
+        # - run: pnpm install
+        # - run: pnpm build
+        - name: Upload to IPFS
+          env:
+            PINATA_JWT: \${{ secrets.PINATA_JWT }}
+          run: |
+            node --input-type=module -e "
+              import { readFileSync, readdirSync, writeFileSync } from 'fs';
+              import { join, relative } from 'path';
+              const files = [];
+              function walk(dir) {
+                for (const e of readdirSync(dir, { withFileTypes: true })) {
+                  const p = join(dir, e.name);
+                  if (e.isDirectory()) walk(p); else files.push(p);
+                }
+              }
+              walk('dist');
+              const form = new FormData();
+              const folder = 'deploy-' + Date.now() + '/';
+              for (const f of files) {
+                form.append('file', new Blob([readFileSync(f)]), folder + relative('dist', f));
+              }
+              form.append('pinataMetadata', JSON.stringify({ name: 'deploy-' + Date.now() }));
+              const res = await fetch('https://api.pinata.cloud/pinning/pinFileToIPFS', {
+                method: 'POST',
+                headers: { Authorization: 'Bearer ' + process.env.PINATA_JWT },
+                body: form,
+              });
+              const json = await res.json();
+              if (!json.IpfsHash) { console.error(JSON.stringify(json)); process.exit(1); }
+              writeFileSync('/tmp/cid', json.IpfsHash);
+            "
+        # You'll add IPNS here later`}
+    language="yaml"
+  />
+
+  <h2>Give it a stable URL</h2>
+  <p>
+    Changing content changes its content ID (CID), but you probably don't want its URL to also
+    change. The simplest fix is to use IPNS. Set <code>IPNS_KEY</code> to 32 random hex bytes <button
+      >(copy)</button
+    > and add this step:
+  </p>
+  <Snippet
+    code={`
+- name: Point IPNS
+  id: point
+  env:
+    IPNS_KEY: \${{ secrets.IPNS_KEY }}
+  run: |
+    echo "url=$(npx point-ipns $(cat /tmp/cid))" >> $GITHUB_OUTPUT
+`.slice(1, -1)}
+    language="yaml"
+  />
+  <p>And to show where it was deployed, add this right before <code>steps</code>:</p>
+  <Snippet
+    code={`
+  environment:
+    name: ipfs
+    url: $\{{ steps.point.outputs.url }}
+`.slice(1, -1)}
+    language="yaml"
+  />
+  <p>
+    Other options involve changing your README to always include the latest CID, or using <a
+      href="https://dnslink.dev/">DNSLink</a
+    > (changing your DNS to always point to the latest CID).
+  </p>
+
+  <h2>Access it</h2>
+  <p>
+    If you didn't notice, your content is available at <code
+      >https://ipfs.io/ipns/[key hash or domain]</code
+    > if you used IPNS or DNSLink, or <code>https://ipfs.io/ipfs/[CID]</code> if you didn't.
+  </p>
+  <p>
+    But there are more gateways than ipfs.io. <a
+      href="https://ipfs.github.io/public-gateway-checker/">This page lists 20</a
+    >, and at least one likely works for you.
+  </p>
+
+  <script>
+    const btn = document.querySelector('button');
+    btn.addEventListener('click', () => {
+      const bytes = new Uint8Array(32);
+      crypto.getRandomValues(bytes);
+      const hex = Array.from(bytes).map(b => b.toString(16).padStart(2, '0')).join('');
+      navigator.clipboard.writeText(hex);
+    });
+  </script>
+</BlogPost>
+<style>
+  button {
+    color: var(--m3c-primary);
+  }
+</style>
