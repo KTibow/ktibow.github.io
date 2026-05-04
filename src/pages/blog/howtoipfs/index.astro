@@ -22,8 +22,8 @@ export const date = '2026-05-03';
   on:
     push:
       branches: [main]
-      schedule:
-        - cron: '0 0,12 * * *'
+    schedule:
+      - cron: '0 0,12 * * *'
     workflow_dispatch:
   jobs:
     deploy:
