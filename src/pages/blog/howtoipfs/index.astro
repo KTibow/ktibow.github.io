@@ -22,6 +22,8 @@ export const date = '2026-05-03';
   on:
     push:
       branches: [main]
+      schedule:
+        - cron: '0 0,12 * * *'
     workflow_dispatch:
   jobs:
     deploy:
@@ -122,7 +124,9 @@ export const date = '2026-05-03';
     btn.addEventListener('click', () => {
       const bytes = new Uint8Array(32);
       crypto.getRandomValues(bytes);
-      const hex = Array.from(bytes).map(b => b.toString(16).padStart(2, '0')).join('');
+      const hex = Array.from(bytes)
+        .map((b) => b.toString(16).padStart(2, '0'))
+        .join('');
       navigator.clipboard.writeText(hex);
     });
   </script>
