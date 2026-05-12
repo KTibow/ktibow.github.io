@@ -2,6 +2,7 @@
 import BlogPost from '$lib/layouts/BlogPost.astro';
 import Snippet from '$lib/Snippet.astro';
 import bg from './bg.avif?url';
+import foureverland from './4everland.png';
 
 export const title = 'Hosting on IPFS without running a server';
 export const date = '2026-05-03';
@@ -9,9 +10,186 @@ export const date = '2026-05-03';
 
 <BlogPost {date} {title} {bg}>
   <h2>Pin your site to IPFS</h2>
+  <details id="options">
+    <summary>I looked at the available options.</summary>
+
+    <h3>A note on IPNS</h3>
+    <p>
+      ipns.dev is dead. The domain has lapsed and is now available for $10.81/year, and the other
+      two links from the announcement are broken in other ways (<code
+        >SSL_ERROR_UNRECOGNIZED_NAME_ALERT</code
+      > for
+      <code>pin.namesys.xyz</code>, "We're having trouble accessing your IPFS content right now."
+      for <code>ipns.eth.limo</code>).
+    </p>
+    <p>
+      As for the rest - it's a long story and I'll explain it later, but they don't work well
+      either, at least for free.
+    </p>
+    <p>Your other options are:</p>
+    <ul>
+      <li>
+        Publish IPNS from GitHub Actions: pin your build to any plain IPFS service, then run <code
+          >ipfs name publish</code
+        > in a scheduled workflow (every 12 hours or so) to re-broadcast the record before it expires
+        from the DHT.
+      </li>
+      <li>
+        Use <a href="https://dnslink.dev">DNSLink</a> (which is still accessed through <code
+          >your-gateway.com/ipns/[site]</code
+        >)
+      </li>
+      <li>Skip IPNS, make your own CID pointer</li>
+    </ul>
+
+    <h3>Storacha</h3>
+    <p>
+      ☠️ dead, <a
+        href="https://medium.com/@storacha/an-update-on-storacha-and-important-news-for-you-and-your-data-15a5d10b7da0"
+        >merged into Filecoin</a
+      >. If you try anyway, you'll find communities filled with spam and a <code
+        >Account identified by did:mailto:whateverdomain:whateverusername is blocked</code
+      > message seemingly triggered by <code>DISABLE_CUSTOMER_REGISTRATION</code>.
+    </p>
+
+    <h3>Eternum</h3>
+    <p>☠️ dead. Used to be a neat service where you could pay to pin files!</p>
+    <blockquote>
+      <p>Hello,<br />Yes, Eternum is defunct, sadly.</p>
+      <p>Thanks,<br />Stavros</p>
+    </blockquote>
+    <p>(from Stavros Korokithakis at Stochastic Technologies)</p>
+
+    <h3>Pinata</h3>
+    <div class="pricing">
+      <div>
+        <h4>Free</h4>
+        <p>No .car uploads</p>
+        <p>1GB storage, 0.5k files</p>
+        <p>10GB bandwidth, 10k requests</p>
+      </div>
+      <div>
+        <h4>$20/mo</h4>
+        <p>1TB storage, 5M files</p>
+        <p>0.5TB bandwidth, 1M requests</p>
+      </div>
+      <div>
+        <h4>$100/mo</h4>
+        <p>5TB storage, 10M files</p>
+        <p>2.5TB bandwidth, 5M requests</p>
+      </div>
+    </div>
+    <p>
+      ⚠️ No IPNS, in favor of blockchain-powered <a href="https://pinata.cloud/blog/ipcm-vs-ipns/"
+        >IPCM</a
+      >
+    </p>
+    <p>✅ Gives you folder CIDs</p>
+    <p>Useful!</p>
+
+    <h3>Filebase</h3>
+    <div class="pricing">
+      <div>
+        <h4>Free</h4>
+        <p>✅ 1 IPNS name but it doesn't matter since you ⚠️ can't get CIDs for buckets yet</p>
+        <p>1 gateway</p>
+      </div>
+      <div>
+        <h4>$20/mo</h4>
+        <p>100 IPNS names</p>
+        <p>1 gateway</p>
+      </div>
+      <div>
+        <h4>$100/mo</h4>
+        <p>1000 IPNS names</p>
+        <p>5 gateways</p>
+      </div>
+      <div>
+        <h4>$500/mo</h4>
+        <p>Unlimited IPNS names</p>
+        <p>10 gateways</p>
+      </div>
+    </div>
+    <p>Free tier is near useless.</p>
+
+    <h3>ipfs.ninja</h3>
+    <div class="pricing">
+      <div>
+        <h4>Free</h4>
+        <p>No IPNS</p>
+        <p>1GB storage, 5GB monthly bandwidth, 100 files</p>
+      </div>
+      <div>
+        <h4>$5/mo</h4>
+        <p>✅ 3 IPNS names, 50 publishes/mo</p>
+        <p>100GB storage, 200GB monthly bandwidth, 1k files</p>
+      </div>
+      <div>
+        <h4>$29/mo</h4>
+        <p>10 IPNS names, 1000 publishes/mo</p>
+        <p>1TB storage, 1TB monthly bandwidth, unlimited files</p>
+      </div>
+    </div>
+    <p>⚠️ Vibe coded</p>
+    <p>
+      ⚠️ GitHub sign up is <abbr
+        title="Unsupported configuration for OIDC Identity Provider. Please review the documentation for specification."
+        >broken</abbr
+      >
+    </p>
+    <p>✅ As of May 5 2026, allows "snapshotting" folders into content IDs</p>
+    <p>
+      You can contact them with their ticket system or <code>info@ipfs.ninja</code>, even though the
+      pricing page says otherwise.
+    </p>
+
+    <h3>Lighthouse</h3>
+    <div class="pricing">
+      <div>
+        <h4>Free</h4>
+        <p>No IPNS</p>
+      </div>
+      <div>
+        <h4>$12/mo</h4>
+        <p>No IPNS</p>
+      </div>
+      <div>
+        <h4>$49/mo</h4>
+        <p>✅ IPNS</p>
+      </div>
+      <div>
+        <h4>Lifetime</h4>
+        <p>No IPFS, no IPNS (just Filecoin)</p>
+      </div>
+    </div>
+    <p>In case it turns out IPNS is accessible in other ways, I'll update this section.</p>
+    <p>⚠️ Vibe coded</p>
+    <p>
+      ✅ Gives you folder CIDs but it doesn't matter since it ⚠️ takes forever to do "CID push to
+      miners in progress" since it relies on Filecoin
+    </p>
+    <p>Near useless since it doesn't publish to IPFS.</p>
+
+    <h3>4EVERLAND</h3>
+    <div class="pricing">
+      <div>
+        <h4>Free (7 days)</h4>
+        <p>1GB IPFS available</p>
+        <p>✅ IPNS available, no API</p>
+      </div>
+      <div>
+        <h4>Free (activated)</h4>
+        <p>⚠️ Requires "on-chain identity registration and account activation"</p>
+        <img {...foureverland} alt="Options include Polygon, zkSync, and BNB" />
+        <p>5GB IPFS available</p>
+        <p>IPNS and API available</p>
+      </div>
+    </div>
+    <p>❓ Not sure if folder CIDs are available</p>
+    <p>Without becoming a Web3 bro, near useless.</p>
+  </details>
   <p>
-    I <a href="/milliblog/ipfsstruggle/">looked at the available options</a>, and only one makes it
-    easy to pin a whole folder/site: <a href="https://pinata.cloud/">Pinata</a>.
+    Only one makes it easy to pin a whole folder/site: <a href="https://pinata.cloud/">Pinata</a>.
   </p>
   <p>
     Make a free key and save it to <code>PINATA_JWT</code>. Then start writing a GitHub workflow
@@ -134,5 +312,28 @@ export const date = '2026-05-03';
 <style>
   button {
     color: var(--m3c-primary);
+  }
+  details blockquote {
+    quotes: none;
+    > * {
+      margin-top: 1em;
+    }
+  }
+  details .pricing {
+    display: flex;
+    gap: 0.5rem;
+    > * {
+      display: flex;
+      flex-direction: column;
+      background-color: var(--m3c-surface-container-low);
+      padding: 0.5rem;
+      border-radius: 1rem;
+      flex: 1;
+      line-height: 1.5;
+      gap: 0.5rem;
+      > h4 {
+        margin-bottom: auto;
+      }
+    }
   }
 </style>
