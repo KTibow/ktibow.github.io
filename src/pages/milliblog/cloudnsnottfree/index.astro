@@ -1,0 +1,24 @@
+---
+import BlogPost from '$lib/layouts/BlogPost.astro';
+
+export const title = 'Almost all ClouDNS domains are not free DNS';
+export const date = '2026-05-13';
+---
+
+<BlogPost {date} {title}>
+  <p>
+    <a href="https://www.cloudns.net/">ClouDNS</a> owns a ton of domains - cloudns.info, cloudns.org,
+    cloudns.eu, cloudns.cc, and many more. Each says something like "cloudns.info - provides Free subdomains
+    to customers that use Dynamic DNS". You'd think at least some of these would be available as free
+    subdomains.
+  </p>
+  <p>
+    They're not. Everything except for ip-ddns.com and ddns-ip.net isn't included on the free plan.
+  </p>
+  <p>
+    I spent 9 emails over 3 days with support over this - they diligently defended that it's
+    technically correct, because everything is free if you're already paying and if not there are <em
+      >some</em
+    > options.
+  </p>
+</BlogPost>
