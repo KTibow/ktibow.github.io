@@ -35,7 +35,7 @@
   --m3c-surface-variant: #444654;
   --m3c-on-surface-variant: #c5c5d7;
   --m3c-on-surface-dilute: color-mix(
-    in oklab,
+    in oklch,
     var(--m3c-on-surface-variant) 66%,
     var(--m3c-on-surface)
   );
@@ -274,14 +274,14 @@ pre {
       color: var(--m3c-on-surface-variant);
     }
     &:where(ul > li)::marker {
-      color: oklab(from var(--m3c-on-surface) l a b / 0.5);
+      color: oklch(from var(--m3c-on-surface) l c h / 0.5);
     }
     &:where(dt) {
       color: var(--m3c-on-surface);
       font-weight: 600;
     }
     &:where(hr) {
-      border-color: var(--m3c-outline-variant);
+      border-color: oklch(from var(--m3c-on-surface) l c h / 0.2);
       border-top-width: 1;
     }
     &:where(blockquote) {
@@ -289,7 +289,7 @@ pre {
       font-style: italic;
       color: var(--m3c-on-surface);
       border-left-width: 0.25rem;
-      border-left-color: oklab(from var(--m3c-on-surface) l a b / 0.5);
+      border-left-color: oklch(from var(--m3c-on-surface) l c h / 0.5);
       quotes: '\201C' '\201D' '\2018' '\2019';
       padding-left: 1em;
     }
@@ -307,8 +307,8 @@ pre {
       font-family: inherit;
       color: var(--m3c-on-surface);
       box-shadow:
-        0 0 0 1px oklab(from var(--m3c-on-surface) l a b / 0.1),
-        0 3px 0 oklab(from var(--m3c-on-surface) l a b / 0.1);
+        0 0 0 1px oklch(from var(--m3c-on-surface) l c h / 0.1),
+        0 3px 0 oklch(from var(--m3c-on-surface) l c h / 0.1);
       @apply --m3-label-large;
       border-radius: 0.3125rem;
       padding-top: 0.1875em;
@@ -352,7 +352,7 @@ pre {
     }
     &:where(pre) {
       color: var(--m3c-on-surface);
-      background-color: oklab(from var(--m3c-surface-container-lowest) l a b / 0.5) !important;
+      background-color: oklch(from var(--m3c-surface-container-lowest) l c h / 0.5) !important;
       overflow-x: auto;
       font-weight: 400;
       @apply --m3-body-medium;
