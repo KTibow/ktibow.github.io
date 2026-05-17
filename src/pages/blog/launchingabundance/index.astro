@@ -1,0 +1,63 @@
+---
+import BlogPost from '$lib/layouts/BlogPost.astro';
+import bg from './bg.svg?url';
+
+export const title = 'Launching Abundance';
+export const date = '2026-05-17';
+---
+
+<BlogPost {date} {title} {bg}>
+  <p>
+    I launched <a href="https://github.com/abndnce/0k">0K</a> in March 2026, and since then, I've been
+    thinking even more about ways to tunnel traffic in censorship-resistant ways. Don't get me wrong -
+    I've been in the scene for much longer. But recently I've been lurking the anti-censorship and decentralization
+    parts of the Internet and finding a lot of interesting technology.
+  </p>
+  <p>
+    So I've moved 0K into an new organization with the mission of eliminating website scarcity
+    called <a href="https://github.com/abndnce">Abundance</a>, and I've created an improved version
+    of 0K's transport called <a href="https://github.com/abndnce/pulsar">Pulsar</a>.
+  </p>
+  <hr />
+  <p>
+    Compared to 0K's previous transport, Pulsar's main innovation is connecting directly (inspired
+    by <a href="https://github.com/libp2p/specs/blob/master/webrtc/webrtc-direct.md"
+      >WebRTC Direct</a
+    >). This makes it easy to run dedicated Pulsar tunnels and hard to block Pulsar (what is there
+    to block, WebRTC?). If your tunnel can't get a hold on port 4393, Pulsar will signal over a
+    reliable Nostr relay instead.
+  </p>
+  <p>
+    It's worth <a href="https://github.com/abndnce/pulsar">reading more about Pulsar on GitHub</a> - anyone
+    can run a Pulsar tunnel or make a Pulsar client.
+  </p>
+  <hr />
+  <p>As to other forms of eliminating website scarcity, some classic tips:</p>
+  <ul>
+    <li>cdn.jsdelivr.net, esm.sh, and dweb.link are good CDNs and current hosts to 0K</li>
+    <li>
+      You can self host 0K. Download the <a
+        href="https://github.com/abndnce/0k/releases/download/latest/selfhost-0k.zip"
+        >recommended jsDelivr</a
+      > (or <a
+        href="https://github.com/abndnce/0k/releases/download/latest/selfhost-0k-assets-esmsh.zip"
+        >esm.sh</a
+      >, or <a
+        href="https://github.com/abndnce/0k/releases/download/latest/selfhost-0k-assets-statically.zip"
+        >Statically</a
+      >, or <a
+        href="https://github.com/abndnce/0k/releases/download/latest/selfhost-0k-assets-colocated.zip"
+        >assets-included</a
+      >) version of 0K, and pick a domain: codehs.me, techsmart.cc, storage.googleapis.com, web.app,
+      firebaseapp.com, pages.gay, or another from <a
+        href="https://pub-a50359bc057145a29fec81fc5062b2b4.r2.dev/index.html"
+        >Welcome to the Internet</a
+      >
+    </li>
+    <li>
+      Two censorship-resistant ways to send data are through Nostr (see relay tracker in <a href="/"
+        >Kendell's Discord</a
+      >) and <a href="/milliblog/gamp/">through Google AMP</a>
+    </li>
+  </ul>
+</BlogPost>
