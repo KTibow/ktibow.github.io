@@ -1,0 +1,48 @@
+---
+import BlogPost from '$lib/layouts/BlogPost.astro';
+import hypnogram from './annotated_sleep_simple.svg';
+import bg from './bg.avif?url';
+
+export const title = 'Sleep microstructure';
+export const date = '2026-05-23';
+---
+
+<BlogPost {date} {title} {bg}>
+  <p>
+    <em>Disclosure: This is human writing based on LLM breakdowns and data analyses.</em>
+  </p>
+  <p>
+    This is a hypnogram of one sleep with both the <abbr title="N1 vs light vs deep vs REM"
+      >macrostructure</abbr
+    > and
+    <abbr title="the Cyclic Alternating Pattern between Phase B (background) and Phase A (pulses)"
+      >microstructure</abbr
+    > included. Zoom in.
+  </p>
+  <img
+    {...hypnogram}
+    style="filter: invert(1) hue-rotate(180deg) brightness(1.5)"
+    alt="Imagine two bars stacked on top of each other with mysterious correlations"
+  />
+  <p>
+    Microstructure is dense and random. An average night has <abbr title="251 A1s, 84 A2s, 76 A3"
+      >411 Phase A pulses</abbr
+    >, so many I had to switch to vector graphics to show them. It also influences macrostructure -
+    an <abbr title="slow waves, delta, ~6s long">A1 pulse</abbr> helps soothe you into deep sleep, and
+    a strong <abbr title="fast waves, alpha/theta, ~14s long, also called a microarousal"
+      >A3 pulse</abbr
+    > might spike you to N1 sleep - but hypnograms miss these &lt;30 second long fluctuations.
+  </p>
+  <p>
+    Why does the average sleep have so many and so successful A3 pulses? Or in other terms, why does
+    the average sleep have so much N1? Turns out the brainstem is to blame - whenever it has <em
+      >any</em
+    > reason for an arousal (eg awkward posture), it sends <a
+      href="https://en.wikipedia.org/wiki/Norepinephrine">norepinephrine</a
+    > up to the brain and down to the body, spiking heart rate and resolving the problem.
+  </p>
+  <p>
+    Also turns out you have a literal sleep drive, in terms of the ratio between A1 and A3 pulses.
+    It starts out strong every night (6.6 A1:A3) and weakens by the end (0.86 A1:A3).
+  </p>
+</BlogPost>
