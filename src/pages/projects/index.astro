@@ -1,20 +1,10 @@
 ---
 import Base from '$lib/layouts/Base.astro';
 import Header from '$lib/Header.astro';
-import Card from './_Card.astro';
 import HeatmapImage from './_HeatmapImage.astro';
 
 import Tags from './_Tags.astro';
 
-import abundance from './img-abundance.svg';
-import claudeAPChem from './img-claudeapchem.svg';
-import dailyBugs from './img-dailybugs.svg';
-import excalimath from './img-excalimath.svg';
-import functionsMixins from './img-functionsmixins.svg';
-import m3Svelte from './img-m3svelte.svg';
-import monoserve from './img-monoserve.svg';
-import schoolDistricts from './img-schooldistricts.svg';
-import tokenShaker from './img-tokenshaker.svg';
 import year2025 from './2025.png';
 import year2024 from './2024.png';
 import year2023 from './2023.png';
@@ -25,128 +15,39 @@ import year2020 from './2020.png';
 
 <Base title="Find a project">
   <Header />
-  <h2 class="project-header">Launch</h2>
-  <div class="projects">
-    <a class="project layer" href="https://kendell.dev/m3-svelte/">
-      <Card src={m3Svelte} alt="M3 Svelte" datetime="2022-12" dateLabel="Dec 2022" priority>
-        a Svelte library for Material 3
-      </Card>
-    </a>
-    <a class="project layer" href="https://dailybugs.kendell.dev/">
-      <Card
-        src={dailyBugs}
-        alt="Daily Bugs"
-        title="Daily Bugs"
-        datetime="2026-01"
-        dateLabel="Jan 2026"
-        priority
+  <article class="prose">
+    <h2>Many of my active projects are for school</h2>
+    <p>
+      <a href="https://github.com/abndnce">Abundance</a> projects, <a
+        href="https://github.com/trigonometry-app">Trigonometry</a
+      > apps, and the <a href="https://github.com/KTibow/monoserve">Monoserve</a> lib are for my school's
+      censored and otherwise clunky tech environment
+    </p>
+    <p><a href="/blog/texihi/">Excalimath</a> is for my math class</p>
+    <p>
+      <a href="https://www.youtube.com/@claudeapchem">Claude Explains AP Chem</a> is for my chemistry
+      class
+    </p>
+    <p><em>And others I can't say here</em></p>
+  </article>
+
+  <article class="prose">
+    <h2>But not all active projects</h2>
+    <p>
+      <a href="https://kendell.dev/m3-svelte/">M3 Svelte</a> implements Material 3 with Svelte, accompanied
+      by <a href="https://github.com/KTibow/vite-plugin-functions-mixins"
+        >vite-plugin-functions-mixins</a
+      > and <a href="https://github.com/KTibow/vite-plugin-token-shaker">vite-plugin-token-shaker</a
       >
-        the <em>personal</em> AI linter
-      </Card>
-    </a>
-  </div>
-  <h2 class="project-header">Active infrastructure</h2>
-  <div class="projects">
-    <a class="project layer" href="https://github.com/abndnce">
-      <Card
-        src={abundance}
-        alt="Abundance"
-        title="Abundance"
-        datetime="2026-05"
-        dateLabel="May 2026"
-      >
-        an org working to eliminate website scarcity
-      </Card>
-    </a>
-    <a class="project layer" href="https://github.com/KTibow/vite-plugin-token-shaker">
-      <Card
-        src={tokenShaker}
-        alt="@layer tokens"
-        title="vite-plugin-token-shaker"
-        datetime="2025-11"
-        dateLabel="Nov 2025"
-      >
-        a utility to tree shake CSS variables placed in <code>@layer tokens</code>
-      </Card>
-    </a>
-    <a class="project layer" href="https://github.com/KTibow/vite-plugin-functions-mixins">
-      <Card
-        src={functionsMixins}
-        alt="@function/@mixin"
-        title="vite-plugin-functions-mixins"
-        datetime="2025-11"
-        dateLabel="Nov 2025"
-      >
-        a utility to use functions and mixins in a post-Sass pre-wide-browser-support world
-      </Card>
-    </a>
-    <a class="project layer" href="https://github.com/KTibow/monoserve">
-      <Card
-        src={monoserve}
-        alt="Monoserve"
-        title="Monoserve"
-        datetime="2025-08"
-        dateLabel="Aug 2025"
-      >
-        a library that lets you use Remote Functions-style syntax anywhere and use a shared server
-        across projects
-      </Card>
-    </a>
-    <a class="project layer" href="https://github.com/trigonometry-app/school-districts">
-      <Card
-        src={schoolDistricts}
-        alt="school-districts"
-        title="school-districts"
-        datetime="2025-06"
-        dateLabel="Jun 2025"
-      >
-        a library that makes district-specific information hotpluggable
-      </Card>
-    </a>
-    <a class="project layer" href="/blog/texihi/">
-      <Card src={excalimath} alt="Excalimath" datetime="2025-01" dateLabel="Jan 2025">
-        using Excalifont for answers to separate them from homework questions
-      </Card>
-    </a>
-    <a class="project layer" href="https://www.youtube.com/@claudeapchem">
-      <Card
-        src={claudeAPChem}
-        alt="Claude Explains AP Chemistry"
-        datetime="2025-10"
-        dateLabel="Oct 2025"
-      >
-        a project connecting Claude to Manim and YouTube
-      </Card>
-    </a>
-    <div class="project">
-      <p style="margin:auto">Other things I won't publicize here.</p>
-    </div>
-  </div>
+    </p>
+    <p>
+      <a href="https://dailybugs.kendell.dev/">Daily Bugs</a> detects bugs in <em>personal</em> projects
+    </p>
+  </article>
   <article class="prose">
     <h2>2025</h2>
     <HeatmapImage src={year2025} alt="2025 projects timeline" />
     <p>See active projects.</p>
-    <p>
-      <Tags ai />
-      <strong>Worked with</strong> CrofAI to make a new frontend (unreleased as of writing). <time
-        datetime="2025-11">November</time
-      >
-    </p>
-    <p>
-      <Tags school ai />
-      <a href="https://github.com/trigonometry-app/secant">Secant</a> (class dashboard), <a
-        href="https://github.com/trigonometry-app/cosine">Cosine</a
-      > (AI), Sine (tunnel),
-      <a href="https://github.com/trigonometry-app/cobblestone">Cobblestone</a> (notes), and <a
-        href="https://github.com/trigonometry-app/monoidentity">Monoidentity</a
-      > (library), successors with most of Tangent's functionality as separate apps.
-      <time datetime="2025-09">September</time>
-    </p>
-    <p>
-      <Tags school />
-      <a href="https://github.com/trigonometry-app/schoology-docs-md">schoology-docs-md</a>, the
-      Schoology docs converted to Markdown. <time datetime="2025-09">September</time>
-    </p>
     <p>
       <a href="https://github.com/KTibow/tinyentities">tinyentities</a>, a minimal HTML entity
       encoder/decoder. <time datetime="2025-08">August</time>
