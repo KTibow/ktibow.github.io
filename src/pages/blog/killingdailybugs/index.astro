@@ -150,7 +150,8 @@ jobs:
 on:
   workflow_dispatch:
   schedule:
-    - cron: "13 10 * * *"
+    - cron: "0 18 * * *"
+      timezone: "America/Los_Angeles"
 
 permissions:
   actions: write
