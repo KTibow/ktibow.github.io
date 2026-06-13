@@ -1,0 +1,300 @@
+---
+import BlogPost from '$lib/layouts/BlogPost.astro';
+import Snippet from '$lib/Snippet.astro';
+import bg from './bg.svg?url';
+
+export const title = 'Killing Daily Bugs';
+export const date = '2026-06-13';
+---
+
+<BlogPost {date} {title} {bg}>
+  <p>
+    This January, I made an app called <a href="https://github.com/KTibow/dailybugs">Daily Bugs</a>.
+    Simple idea: run code review on all changes pushed after the fact (at 6PM daily), so you're
+    never waiting for AI to finish reviewing your code. It's great for projects you're coding by
+    hand where typos are easy to make. And it replaced <a href="https://detail.dev/">Detail</a> (an app
+    with a short free tier and no support for Svelte) for me.
+  </p>
+  <p>
+    But I built Daily Bugs to work with Hack Club AI, a service that caps your daily usage, bans
+    coding agents, and at the time, had Gemini 3 Flash as its best model. And I only fed Gemini
+    plain diffs (with lockfile diffs hidden) without any way to request more context. So signal
+    (real bugs) to noise ("you didn't import this"; I actually did, just before the last 24 hours)
+    was about 1:1.
+  </p>
+  <p>
+    I wondered if I could salvage Daily Bugs somehow for a while. But it would be hard and possibly
+    expensive to use Fly machines or Cloudflare containers, in comparison to a completely free
+    primitive: GitHub Actions. Let me walk you through my new personal setup at <a
+      href="https://github.com/KTibow/KTibow">KTibow/KTibow</a
+    >.
+  </p>
+  <p><code>.pi/models.json</code></p>
+  <Snippet
+    code={`{
+  "providers": {
+    "palantir": {
+      "baseUrl": "https://kendell.usw-18.palantirfoundry.com/api/v2/llm/proxy/openai/v1",
+      "api": "openai-responses",
+      "apiKey": "$PALANTIR_API_KEY",
+      "models": [
+        {
+          "id": "ri.language-model-service..language-model.gpt-5-5",
+          "name": "Palantir GPT-5.5",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "contextWindow": 200000,
+          "maxTokens": 128000,
+          "compat": {
+            "supportsDeveloperRole": false,
+            "supportsLongCacheRetention": false
+          }
+        }
+      ]
+    }
+  }
+}`}
+    language="json"
+  />
+  <p><code>.pi/settings.json</code></p>
+  <Snippet
+    code={`{
+  "defaultProvider": "palantir",
+  "defaultModel": "ri.language-model-service..language-model.gpt-5-5",
+  "retry": {
+    "enabled": true,
+    "maxRetries": 10,
+    "baseDelayMs": 65000,
+    "provider": {
+      "maxRetries": 10,
+      "maxRetryDelayMs": 0
+    }
+  }
+}`}
+    language="json"
+  />
+  <p>
+    This configuration is for Pi, an agent that's a good base for anything (it's even the base of
+    OpenClaw). The benefit of using a whole agent is that it can get more context and test random
+    things. As for inference I'm using Palantir AIP, but anything else - Google's free tier, some
+    cheap pay per token OpenRouter or CrofAI models, your ChatGPT subscription - works too.
+  </p>
+  <p><code>.github/workflows/run-agent.yaml</code></p>
+  <Snippet
+    code={`name: Run Agent
+
+on:
+  workflow_dispatch:
+    inputs:
+      prompt:
+        description: Prompt to run with Pi
+        required: true
+        type: string
+      target_owner:
+        description: Owner to mint the GitHub App token for
+        required: false
+        type: string
+      target_repository:
+        description: Repository to mint the GitHub App token for
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  run-agent:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: Install Pi
+        run: npm install -g @earendil-works/pi-coding-agent
+
+      - name: Generate GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: 4042273
+          private-key: \${{ secrets.APP_PRIVATE_KEY }}
+          owner: \${{ inputs.target_owner || github.repository_owner }}
+          repositories: \${{ inputs.target_repository || github.event.repository.name }}
+
+      - name: Run Pi
+        env:
+          GH_TOKEN: \${{ steps.app-token.outputs.token }}
+          PALANTIR_API_KEY: \${{ secrets.PALANTIR_API_KEY }}
+          PI_CODING_AGENT_DIR: \${{ github.workspace }}/.pi
+          PI_SKIP_VERSION_CHECK: 1
+          PI_TELEMETRY: 0
+          PROMPT: \${{ inputs.prompt }}
+        run: pi --no-session -p "$PROMPT"`}
+    language="yaml"
+  />
+  <p>
+    This is the general purpose agent runner. I'm running Pi with a GitHub App <a
+      href="https://github.com/settings/apps">(make one here)</a
+    > so it can make comments or issues that notify me, but any prompt is technically also accepted.
+  </p>
+  <p><code>.github/workflows/qa.yaml</code></p>
+  <Snippet
+    code={`name: QA
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "13 10 * * *"
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  dispatch-repository-scans:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch recent repository scans
+        env:
+          DISCOVERY_TOKEN: \${{ github.token }}
+          USERNAME: \${{ github.repository_owner }}
+        run: |
+          set -euo pipefail
+
+          cutoff=$(date -u -d '24 hours ago' +%s)
+          events=$(mktemp)
+          dispatches=$(mktemp)
+
+          GH_TOKEN="$DISCOVERY_TOKEN" gh api --paginate --slurp "/users/\${USERNAME}/events/public" > "$events"
+
+          jq -r --argjson cutoff "$cutoff" '
+            flatten
+            | map(select(.type == "PushEvent"))
+            | map(select(.payload.ref | startswith("refs/heads/")))
+            | map(select((.created_at | fromdateiso8601) > $cutoff))
+            | group_by(.repo.name + "\u0000" + .payload.ref)
+            | map(
+                sort_by(.created_at)
+                | {
+                    repo: .[0].repo.name,
+                    ref: .[0].payload.ref,
+                    old: (.[0].payload.before),
+                    new: (last.payload.head),
+                    pushes: map({
+                      created_at,
+                      before: .payload.before,
+                      head: .payload.head
+                    })
+                  }
+              )
+            | map(select(.old | test("^0+$") | not))
+            | .[]
+            | @json
+          ' "$events" > "$dispatches"
+
+          if ! [ -s "$dispatches" ]; then
+            echo "No recent push events to scan."
+            exit 0
+          fi
+
+          while IFS= read -r dispatch; do
+            repo=$(jq -r '.repo' <<< "$dispatch")
+            ref=$(jq -r '.ref' <<< "$dispatch")
+            base=$(jq -r '.old' <<< "$dispatch")
+            head=$(jq -r '.new' <<< "$dispatch")
+            target_owner=\${repo%%/*}
+            target_repository=\${repo#*/}
+            push_events=$(jq -r '
+              .pushes as $pushes
+              | ($pushes | length) as $count
+              | ($pushes[:20] | map("- " + .created_at + ": " + (.before[:12]) + "..." + (.head[:12])) | join("\\n"))
+                + if $count > 20 then "\\n- ... " + (($count - 20) | tostring) + " more push events omitted" else "" end
+            ' <<< "$dispatch")
+
+            prompt=$(cat <<PROMPT
+          Autonomously review \${repo} for high-confidence bugs introduced by \${USERNAME}'s public pushed changes in \${base}...\${head} on \${ref}.
+
+          Push events in this aggregated range:
+          \${push_events}
+
+          This run starts outside the target repository. Clone \${repo}, inspect the compare range and relevant surrounding code, install dependencies or run targeted checks when useful, and use subagents if they help. Use GH_TOKEN with the gh CLI for GitHub operations.
+
+          Goal: leave GitHub commit comments on the specific commit and changed location that introduced each real bug. If there are no high-confidence bugs, leave no comments and finish successfully.
+
+          Only report provable mechanical or logical breakage or leakage in normal execution flow. Do not comment on style, maintainability, hypothetical risks, missing validation/error handling, generated or lockfile noise, or anything below about 90% confidence. Do not open issues, pull requests, or code changes.
+          PROMPT
+          )
+
+            echo "Dispatching scan for \${repo} \${base}...\${head}"
+            if ! GH_TOKEN="$DISCOVERY_TOKEN" gh workflow run run-agent.yaml --repo "$GITHUB_REPOSITORY" --ref "$GITHUB_REF_NAME" --field prompt="$prompt" --field target_owner="$target_owner" --field target_repository="$target_repository"; then
+              echo "::warning::Failed to dispatch hub run-agent.yaml for \${repo}"
+            fi
+          done < "$dispatches"`}
+    language="yaml"
+  />
+  <p>
+    This is the workflow that replaces Daily Bugs. It's very bitter lesson pilled - each repo spawns
+    a new agent that's entirely responsible for cloning the repo, viewing the diff, and leaving the
+    comments.
+  </p>
+  <p><code>.github/workflows/qa-repo.yaml</code></p>
+  <Snippet
+    code={`name: QA Repo
+
+on:
+  workflow_dispatch:
+    inputs:
+      repo:
+        description: Repository to QA, as owner/repo
+        required: true
+        type: string
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  dispatch-repo-qa:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch repository QA
+        env:
+          GH_TOKEN: \${{ github.token }}
+          REPO: \${{ inputs.repo }}
+        run: |
+          set -euo pipefail
+
+          if [[ "$REPO" != */* ]]; then
+            echo "::error::repo must be formatted as owner/repo"
+            exit 1
+          fi
+
+          target_owner=\${REPO%%/*}
+          target_repository=\${REPO#*/}
+
+          prompt=$(cat <<PROMPT
+          Autonomously QA the existing code in \${REPO} for high-confidence bugs.
+
+          This run starts outside the target repository. Clone \${REPO}, inspect the current default branch and relevant repository context, install dependencies or run targeted checks when useful, and use subagents if they help. Use GH_TOKEN with the gh CLI for GitHub operations.
+
+          Goal: if you find high-confidence bugs, create exactly one GitHub issue in \${REPO} containing all findings. Include enough detail for a maintainer to act: affected files/locations, why each bug is real, expected vs actual behavior, verification steps attempted, and any relevant command output. If you find no high-confidence bugs, create no issue and finish successfully.
+
+          Only report provable mechanical or logical breakage or leakage in normal execution flow. Do not report style, maintainability, hypothetical risks, missing validation/error handling, generated or lockfile noise, or anything below about 90% confidence. Do not open pull requests, make code changes, or leave commit comments.
+          PROMPT
+          )
+
+          gh workflow run run-agent.yaml --repo "$GITHUB_REPOSITORY" --ref "$GITHUB_REF_NAME" --field prompt="$prompt" --field target_owner="$target_owner" --field target_repository="$target_repository"`}
+    language="yaml"
+  />
+  <p>
+    And this one lets you run a manual Detail-type scan. To be honest, I made this one as a joke. I
+    find scanning changes daily superior to doing what Detail does. But I ran this on a few of my
+    repos and it found some confusing behavior and a few bugs.
+  </p>
+</BlogPost>
