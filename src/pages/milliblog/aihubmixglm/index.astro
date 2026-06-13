@@ -1,0 +1,28 @@
+---
+import BlogPost from '$lib/layouts/BlogPost.astro';
+
+export const title = 'Why AIHubMix has GLM 5.1 at prices like $0.22/mtok out';
+export const date = '2026-06-12';
+---
+
+<BlogPost {date} {title}>
+  <p>
+    AIHubMix's prices for <a href="https://aihubmix.com/model/coding-glm-5.1"
+      ><code>coding-glm-5.1</code></a
+    >, as of writing, are $0.06/mtok in and $0.22/mtok out. For context, the <a
+      href="https://openrouter.ai/z-ai/glm-5.1?sort=price">best provider on OpenRouter</a
+    > is $0.98/0.182/3.08, and <a href="https://crof.ai/pricing">CrofAI</a> is $0.45/0.08/2.15. I asked
+    their founder, Ken Le, why. His words:
+  </p>
+  <blockquote>
+    <p>
+      Sorry, I just saw the message; glm-5.1 is the official version of the API for access, which
+      can ensure stable use under high concurrency. The version with the coding suffix is what we
+      previously collaborated on with Z.ai, converting glm5.1 from their package into an API. At
+      that time, they provided us with a lot of resources for computing power, so we offered free
+      trials and very low prices. However, in the last two months, their computing power has become
+      tight, and the resources they provide us have significantly decreased, so the experience with
+      the version that has the coding suffix may not be good and may result in errors.
+    </p>
+  </blockquote>
+</BlogPost>
