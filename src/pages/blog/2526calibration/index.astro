@@ -1,0 +1,93 @@
+---
+import BlogPost from '$lib/layouts/BlogPost.astro';
+export const title = '2025-26 was a (school) year of calibration';
+export const date = '2026-06-19';
+---
+
+<BlogPost {title} {date}>
+  <p>
+    As I chronicle what 2025-26 was like for me and my apps, keep these details (that I only learned
+    later) about my peers in mind.
+  </p>
+  <ul>
+    <li>Most don't care much for their academics</li>
+    <li>Most don't use Discord or are moving off of it</li>
+    <li>Most don't have a personal computer</li>
+    <li>Most don't like using multiple apps</li>
+    <li>Most use an iPhone</li>
+  </ul>
+  <hr />
+  <p>
+    Last summer, I got bored with my app Tangent and annoyed with its users, and decided to <a
+      href="/blog/tangentcomputer/">redesign it as a "computer"</a
+    >. But I wanted to abandon it halfway through because I realized that putting everything in one
+    tab makes tabbing into a <em>specific</em> part of Tangent really hard. I technically finished it
+    for Summer of Making's sake while I was much more interested in a different route: making each app
+    separate.
+  </p>
+  <p>
+    Of course, there would be insane duplication if each app was truly separate. So I made a library
+    called Monoidentity to handle auth and storage. <strong>Auth</strong> was, as usual with my apps,
+    with StudentVue, although I wish I knew these things earlier:
+  </p>
+  <ul>
+    <li>
+      Since StudentVue works over CORS, you can call <code>GenerateAuthToken</code> on the client, then
+      send the token instead of the password to the server. More private.
+    </li>
+    <li>
+      Since Chrome supports the <a href="https://devdocs.io/dom/credential_management_api"
+        >Credential Management API</a
+      >, you can load passwords with no user interaction, even if cookies are cleared.
+    </li>
+  </ul>
+  <p>
+    <strong>Storage</strong> is a very powerful primitive if done right. The way Monoidentity did it,
+    apps got local storage + global reactivity + optional syncing with an R2 bucket. My note taking app
+    could literally do <code>{'bind:value={fs[path]}'}</code>. Syncing and debouncing got very
+    complicated very quickly though.
+  </p>
+  <p>
+    Some software is goal-shaped with very clear requirements, like "get these tests to pass" or
+    "match this contract" or "make a disposable visualization of this data". In contrast,
+    Monoidentity was foundational and personal to me (and also a rather weird library), so AI was
+    rather unhelpful when developing it.
+  </p>
+  <hr />
+  <p>
+    So I started building with Monoidentity, porting everything important out of Tangent. The class
+    dashboard was called <a href="https://github.com/trigonometry-app/secant">Secant</a>. The AI was
+    called <a href="https://github.com/trigonometry-app/cosine">Cosine</a>. And the Obsidian
+    emulator was called <a href="https://github.com/trigonometry-app/cobblestone">Cobblestone</a>.
+  </p>
+  <p>
+    Things were mostly fine but felt off. A little was <a href="/blog/belonging/"
+      >the isolating effects of high school</a
+    > and <a href="/blog/theproblemwithlosing/">my (antisocial) adaptions</a>. Another part was the
+    awkward dance of configuring and logging in each app - I tried to break Monoidentity down into
+    its individual pieces to solve this, so apps like Cosine could just use the filesystem primitive
+    and Secant could just use the identity verification, and I later tried unifying all apps into
+    one called <a href="https://github.com/trigonometry-app/trigonometry">Trigonometry</a>. But most
+    of it was the sheer silence, at least compared to the baseline care I was used to.
+  </p>
+  <hr />
+  <p>
+    A few months ago I switched to my personal laptop. I've been reconsidering what things I should
+    be making since. But there's only one person I can defend making things for: myself.
+  </p>
+  <p>
+    This has humbled me. What once was thousands of lines of code for a next generation live syncing
+    Obsidian client is replaced by just using Obsidian. What once was planned to be your hub for the
+    day, tracking from the bus there to breakfast to classes to lunch to classes to the bus back, is
+    now just something I open when I don't want to wait for Schoology. And what once was planned to
+    turn into an agent platform, testing cost-efficient ways to run arbitrary code, stays as a
+    simple convenient AI wrapper.
+  </p>
+  <p>
+    But I can't say I didn't learn anything, and there's some threads around passive intelligence I
+    still want to explore. Only problem is that I already have personal tools (like my watch face
+    and janky Obsidian automations) that do "passive intelligence" well enough already, so the
+    reward's much smaller than the risk of possible burnout. It'd be like handling all your email
+    through Poke when you already have Fastmail (one of the best mail clients) working fine.
+  </p>
+</BlogPost>
