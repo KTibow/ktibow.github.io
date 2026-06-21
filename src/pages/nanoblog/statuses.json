@@ -1,5 +1,9 @@
 [
   {
+    "content": "safety: on means unsafe, off means safe",
+    "timestamp": "2026-06-21T22:00:20.271Z"
+  },
+  {
     "content": "rspack project that wants to be vite so bad it uses port 5173",
     "timestamp": "2026-06-21T17:00:21.206Z"
   },
