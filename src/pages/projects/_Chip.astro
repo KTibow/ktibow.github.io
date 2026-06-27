@@ -1,0 +1,42 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  href?: string;
+  src?: ImageMetadata;
+  info?: string;
+  bg?: string;
+  fg?: string;
+}
+const { href, src, info, bg, fg } = Astro.props;
+const Element = href ? 'a' : 'span';
+---
+
+<Element
+  class={href ? 'chip layer' : 'chip'}
+  {href}
+  style={{
+    backgroundColor: bg || 'var(--m3c-surface-container-highest)',
+    color: fg || (href ? 'var(--m3c-primary)' : 'var(--m3c-on-surface-variant)'),
+  }}
+>
+  {src && <Image {src} alt="" height={16} />}
+  <slot />
+  {info && <abbr title={info}>ℹ</abbr>}
+</Element>
+
+<style>
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    padding-inline: 0.5rem;
+    gap: 0.25rem;
+    border-radius: 0.5rem;
+    &:is(span) {
+      text-decoration: none;
+    }
+    > img {
+      border-radius: 0.25rem;
+    }
+  }
+</style>

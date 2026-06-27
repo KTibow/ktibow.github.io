@@ -4,6 +4,28 @@ import Header from '$lib/Header.astro';
 import HeatmapImage from './_HeatmapImage.astro';
 
 import Tags from './_Tags.astro';
+import Chip from './_Chip.astro';
+
+import icon0K from './icon-0k.svg';
+import icon1984 from './icon-1984.svg';
+import iconAOC from './icon-aoc.png';
+import iconClaude from './icon-claude.png';
+import iconCobblestone from './icon-cobblestone.svg';
+import iconCod from './icon-cod.png';
+import iconCosine from './icon-cosine.svg';
+import iconM3Svelte from './icon-m3-svelte.svg';
+import iconMonoidentity from './icon-monoidentity.svg';
+import iconPln from './icon-pln.svg';
+import iconPracticeYeet from './icon-practiceyeet.avif';
+import iconSchoolHubNew from './icon-schoolhub-new.svg';
+import iconSchoolHubOld from './icon-schoolhub-old.svg';
+import iconSecant from './icon-secant.svg';
+import iconSussable from './icon-sussable.svg';
+import iconTangentComputer from './icon-tangent-computer.svg';
+import iconTangentOld from './icon-tangent-old.svg';
+import iconThumbsUp from './icon-thumbs-up.svg';
+import iconTrigonometry from './icon-trigonometry.png';
+import iconWTTI from './icon-wtti.svg';
 
 import year2025 from './2025.png';
 import year2024 from './2024.png';
@@ -16,39 +38,130 @@ import year2020 from './2020.png';
 <Base title="Find a project">
   <Header />
   <article class="prose">
-    <h2>Many of my active projects are for school</h2>
+    <h2>Usually I list active projects up top</h2>
     <p>
-      <a href="https://github.com/abndnce">Abundance</a> projects, <a
-        href="https://github.com/trigonometry-app">Trigonometry</a
-      > apps, and the <a href="https://github.com/KTibow/monoserve">Monoserve</a> lib are for my school's
-      censored and otherwise clunky tech environment
+      But I'm not <em>maintaining</em> anything this summer. I'm taking a break from school and the projects
+      that come with it to tune my Home Assistant setup, improve OpenStreetMap, track the token market,
+      and explore my local area. Don't worry, I'll return to maintaining hits like <Chip
+        href="https://kendell.dev/m3-svelte/"
+        src={iconM3Svelte}
+        bg="#302649"
+        fg="#b2a4cf">M3 Svelte <time>2022</time></Chip
+      > eventually.
     </p>
-    <p><a href="/blog/texihi/">Excalimath</a> is for my math class</p>
-    <p>
-      <a href="https://www.youtube.com/@claudeapchem">Claude Explains AP Chem</a> is for my chemistry
-      class
-    </p>
-    <p>
-      My <a href="https://github.com/KTibow/BangleApps/blob/patch-4/apps/flicc/app.js">watch face</a
-      > tracks the bell schedule
-    </p>
-    <p><em>And others I can't say here</em></p>
   </article>
 
   <article class="prose">
-    <h2>But not all active projects</h2>
+    <h2>School-related projects</h2>
     <p>
-      <a href="https://kendell.dev/m3-svelte/">M3 Svelte</a> implements Material 3 with Svelte, accompanied
-      by <a href="https://github.com/KTibow/vite-plugin-functions-mixins"
-        >vite-plugin-functions-mixins</a
-      > and <a href="https://github.com/KTibow/vite-plugin-token-shaker">vite-plugin-token-shaker</a
+      My relation with school has changed a lot over time, from remote school <Chip
+        href="https://github.com/KTibow/thumbs-up"
+        src={iconThumbsUp}
+        bg="#392a00"
+        fg="#c1a96e">Thumbs Up <time>2021</time></Chip
       >
+      <Chip href="https://github.com/KTibow/simple-zoom-joiner"
+        >simple-zoom-joiner <time>2021</time></Chip
+      > to small experiments <Chip src={iconSchoolHubOld} bg="#282426" fg="#ffffff"
+        >School API integrations <time>2022</time></Chip
+      >
+      <Chip>AI rap battles <time>2023</time></Chip>
+      <Chip info="Ranking photos of people using CLIP" bg="#3b4252" fg="#88c0d0"
+        >Stereotype <time>2024</time></Chip
+      >
+      <Chip src={iconPln} info="Clean course browser" bg="#004321" fg="#3ad67e"
+        >Pln <time>2024</time>-<time>2026</time></Chip
+      >
+      <Chip href="https://github.com/KTibow/message">Google Message demos <time>2024</time></Chip>
+      <Chip href="https://github.com/abndnce/1984" src={icon1984} bg="#2e3440" fg="#88c0d0"
+        >1984 <time>2024</time></Chip
+      >
+      <Chip
+        href="https://github.com/KTibow/practiceyeet"
+        src={iconPracticeYeet}
+        bg="#414741"
+        fg="#bdfbc8">PracticeYeet <time>2024</time></Chip
+      >
+      <Chip href="https://github.com/KTibow/aoc2024" src={iconAOC} bg="#0f0f23" fg="#00cc00"
+        >Advent of Code <time>2024</time></Chip
+      >
+      to correct ambition
+      <Chip
+        src={iconSchoolHubNew}
+        info="A school platform with class dashboards, people search, AI, etc"
+        bg="#261d1f"
+        fg="#ff3388">SchoolHub <time>2023</time>-<time>2024</time></Chip
+      >
+      <Chip
+        src={iconSussable}
+        info="A chat/games platform packed within web notifications"
+        bg="#292524">Sussable <time>2023</time>-<time>2024</time></Chip
+      >
+      <Chip
+        src={iconTangentOld}
+        info="A school platform with class dashboards, AI, a proxy, etc"
+        bg="#3a4379"
+        fg="#dee0ff">Tangent <time>2024</time>-<time>2025</time></Chip
+      > and incorrect ambition
+      <Chip
+        href="https://github.com/trigonometry-app/tangent-computer"
+        src={iconTangentComputer}
+        bg="#5a0040"
+        fg="#ff7fca">Tangent-as-a-computer <time>2025</time></Chip
+      >
+      <Chip
+        href="https://github.com/trigonometry-app/trigonometry"
+        src={iconTrigonometry}
+        bg="#3a0082"
+        fg="#bb99ff">rebrand to Trigonometry <time>2026</time></Chip
+      > to fragmentation <Chip
+        href="https://github.com/trigonometry-archive/monoidentity"
+        src={iconMonoidentity}
+        bg="#5a0040"
+        fg="#ff7fca">Monoidentity <time>2025</time></Chip
+      >
+      <Chip href="https://github.com/KTibow/monoserve" bg="#121212" fg="#56a2e8"
+        >Monoserve <time>2025</time></Chip
+      >
+      <Chip
+        href="https://github.com/trigonometry-archive/cobblestone"
+        src={iconCobblestone}
+        bg="#5a0040"
+        fg="#ff7fca">Cobblestone <time>2025</time></Chip
+      >
+      <Chip href="https://github.com/KTibow/cosine" src={iconCosine} bg="#5a0040" fg="#ff7fca"
+        >Cosine <time>2025</time></Chip
+      >
+      <Chip href="https://github.com/KTibow/secant" src={iconSecant} bg="#5a0040" fg="#ff7fca"
+        >Secant <time>2025</time></Chip
+      > to eventually encouraging BYOD, building tools for my BYOD setup <Chip
+        href="https://github.com/KTibow/BangleApps/blob/patch-4/apps/flicc/app.js"
+        >Bangle.js clock <time>2022</time></Chip
+      >
+      <Chip href="/blog/texihi" bg="#1b2029" fg="#9598a4">Excalimath <time>2025</time></Chip>
+      <Chip href="https://www.youtube.com/@claudeapchem" src={iconClaude} bg="#181818" fg="#cc785c"
+        >Claude Explains AP Chemistry <time>2025</time></Chip
+      >, and leaving those who can't switch to BYOD with <Chip
+        href="https://pub-a50359bc057145a29fec81fc5062b2b4.r2.dev/index.html"
+        src={iconWTTI}
+        bg="#002c59"
+        fg="#75acff">Welcome to the Internet <time>2026</time></Chip
+      >
+      <Chip href="https://github.com/abndnce/pulsar" bg="#00341d" fg="#00c37b"
+        >Pulsar <time>2026</time></Chip
+      >
+      <Chip href="https://github.com/abndnce/0k" src={icon0K} bg="#00341d" fg="#00c37b"
+        >0K <time>2026</time></Chip
+      >
+      <Chip href="https://github.com/abndnce/cod" src={iconCod} bg="#00341d" fg="#00c37b"
+        >Cod <time>2026</time></Chip
+      >. These have taken up a lot of my time but also given me a lot of practice and feel for how
+      hard product/distribution can be.
     </p>
   </article>
 
   <article class="prose">
     <h2>2026</h2>
-    <p>See active projects.</p>
     <p>
       <Tags ai />
       <a href="https://dailybugs.kendell.dev/">Daily Bugs</a> detects bugs in <em>personal</em> projects.
@@ -57,7 +170,6 @@ import year2020 from './2020.png';
 
     <h2>2025</h2>
     <HeatmapImage src={year2025} alt="2025 projects timeline" />
-    <p>See active projects.</p>
     <p>
       <a href="https://github.com/KTibow/tinyentities">tinyentities</a>, a minimal HTML entity
       encoder/decoder. <time datetime="2025-08">August</time>
@@ -70,16 +182,7 @@ import year2020 from './2020.png';
       >
     </p>
     <p>
-      <strong>Contributed to</strong> Rolldown/OXC (you can search this on GitHub). <time
-        datetime="2025-08">August</time
-      >
-    </p>
-    <p>
-      <Tags school />
-      <a href="https://github.com/trigonometry-app/tangent-computer"
-        >A failed attempt to rewrite Tangent</a
-      > (I learned that it makes sense to keep apps separate) <time datetime="2025-06">June</time
-      >-<time datetime="2025-08">August</time>
+      <strong>Contributed to</strong> Rolldown/OXC. <time datetime="2025-08">August</time>
     </p>
     <p>
       <a href="https://github.com/KTibow/kreations">kreations</a>, some funky loaders I manually
@@ -98,19 +201,14 @@ import year2020 from './2020.png';
     <h2>2024</h2>
     <HeatmapImage src={year2024} alt="2024 projects timeline" />
     <p>
-      <Tags school />
-      <a href="https://github.com/KTibow/aoc2024">Advent of code 2024 solutions</a>, which are mid
-      but exist (and I got on one of the leaderboards!)
-      <time datetime="2024-12">December</time>
-    </p>
-    <p>
       <Tags ai />
       <a href="https://github.com/KTibow/lmb">LMB</a>, Language Model Board, a better way to view
       the LM Arena results.
       <time datetime="2024-12">December</time>
     </p>
     <p>
-      <a href="https://github.com/KTibow/pres">Excalidraw slides</a>, a simple vibe-coded app.
+      <a href="https://github.com/KTibow/pres">Excalidraw slides</a>, a simple but useful vibe-coded
+      app.
       <time datetime="2024-12">December</time>
     </p>
     <p>
@@ -133,46 +231,10 @@ import year2020 from './2020.png';
       <time datetime="2024-10">October</time>
     </p>
     <p>
-      <Tags school />
-      Pln, a website for planning schedules with a modern UI.
-      <time datetime="2024-10">October</time>
-    </p>
-    <p>
-      <Tags school ai />
-      <a href="https://github.com/KTibow/practiceyeet">PracticeYeet</a>, a copy of PracticeIt but
-      the graders are inferred by AI that was going swimmingly until I accidentally
-      <code>DELETE</code>d too much.
-      <time datetime="2024-09">September</time>
-    </p>
-    <p>
-      <Tags school />
-      <a href="https://github.com/KTibow/message">A minimal connect-to-Google Messages demo</a>, an
-      artifact from developing the Google Messages integration in Tangent.
-      <time datetime="2024-06">June</time>
-    </p>
-    <p>
-      <Tags school />
-      <a href="https://github.com/abndnce/1984">1984</a>, a search engine that drops results blocked
-      for me.
-      <time datetime="2024-06">June</time>
-    </p>
-    <p>
-      <Tags school ai />
-      Stereotype, an experiment with text-image search.
-      <time datetime="2024-06">June</time>
-    </p>
-    <p>
       <Tags ai />
       <strong>Worked with Groq</strong> on helping community members. <time datetime="2024-05"
         >May</time
       >-<time datetime="2026-05">May 2026</time>
-    </p>
-    <p>
-      <Tags school />
-      Tangent, a collection of utilities. Tangent was one of my most ambitious projects, and I had to
-      learn many different patterns across deployment, backend logic, and frontend logic to keep it running
-      smoothly, cheaply, and privately. However, after a number of bad days, I had to shut it down.
-      <time datetime="2024-03">March</time>-<time datetime="2025-06">June 2025</time>
     </p>
     <p>
       <Tags ai />
@@ -185,7 +247,7 @@ import year2020 from './2020.png';
       described as "more helpful than a majority of forumers".
       <time datetime="2024-01">January</time>
     </p>
-    <p><strong>Contributed to</strong> Lawnicons and SVGO a lot (you can search this on GitHub).</p>
+    <p><strong>Contributed to</strong> Lawnicons and SVGO a lot.</p>
     <p>
       <strong>Worked with</strong> ReVanced. I updated the frontend some, although due to politics I didn't
       update more.
@@ -221,44 +283,16 @@ import year2020 from './2020.png';
       <time datetime="2023-08">August</time>
     </p>
     <p>
-      <Tags school />
-      SchoolHub (new), a collection of utilities (class dashboard, AI, search). This was the first time
-      I experimented with growth, and it worked! Until it got shut down.
-      <time datetime="2023-05">May</time>-<time datetime="2024-02">February 2024</time>
-    </p>
-    <p>
-      <Tags school />
-      I made something where you could make GPT-3.5 instances self-rap battle or generate stupid "what
-      if"s. It was fun.
-      <time datetime="2023-05">May</time>
-    </p>
-    <p>
       <Tags ha ai />
       <a href="https://github.com/KTibow/home-gpt">HomeGPT</a>, an experiment in tool use (in Home
       Assistant) before tool use was a thing.
       <time datetime="2023-03">March</time>
-    </p>
-    <p>
-      <Tags school />
-      Sussable. The first chat app that experienced growth, based on web notifications.
-      <time datetime="2023-03">March</time>-<time datetime="2024-02">February 2024</time>
-    </p>
-    <p>
-      <Tags school />
-      I tried to make BeReal but for school. I lost motivation.
-      <time datetime="2023-01">January</time>
     </p>
     <p><Tags skyblock /> <strong>Worked with</strong> IsThisARat. Wrote a new frontend.</p>
 
     <h2>2022</h2>
     <HeatmapImage src={year2022} alt="2022 projects timeline" />
     <p>See active projects.</p>
-    <p>
-      <Tags school />
-      SchoolHub (old), an experiment with connecting to school APIs. This was where today's connectors
-      that cope with yesterday's XML and OAuth were written.
-      <time datetime="2022-08">August</time>-<time datetime="2022-12">December</time>
-    </p>
     <p>
       <Tags skyblock />
       <a href="https://github.com/KTibow/RatRater">RatRater</a>, an app that statically analyses a
@@ -310,12 +344,6 @@ import year2020 from './2020.png';
       <time datetime="2021-05">May</time>
     </p>
     <p>
-      <Tags school />
-      <a href="https://github.com/KTibow/thumbs-up">👍</a>, a (unfinished) Chrome extension to
-      streamline school from home.
-      <time datetime="2021-05">May</time>
-    </p>
-    <p>
       <Tags ai />
       <a href="https://github.com/KTibow/birdcam-ai">Birdcam AI</a>, which is how I made
       <a href="https://www.youtube.com/watch?v=83BGlKipdC0">this video</a>
@@ -331,12 +359,6 @@ import year2020 from './2020.png';
       <a href="https://github.com/KTibow/fridge">Leftunder</a>, an experiment in both hardware
       &lt;--&gt; Grocy and in making a serial console from JS.
       <time datetime="2021-02">February</time>
-    </p>
-    <p>
-      <Tags school />
-      <a href="https://github.com/KTibow/simple-zoom-joiner">simple-zoom-joiner</a>, the simpler
-      version of Zoom Improved (and one of my earliest reverse engineering projects)
-      <time datetime="2021-01">January</time>
     </p>
     <p>
       <em>Why was this year so quiet by contributions?</em> I was working on a lot of Skyblock stuff (Bazaar
@@ -397,7 +419,7 @@ import year2020 from './2020.png';
     <p>GoCallMe stuff, which doesn't seem to be on the internet anymore.</p>
     <p>
       <Tags ha />
-      <strong>Contributed to</strong> Home Assistant (you can search this on GitHub).
+      <strong>Contributed to</strong> Home Assistant.
     </p>
 
     <h2>2019</h2>
@@ -436,6 +458,6 @@ import year2020 from './2020.png';
     overflow: hidden;
   }
   time {
-    opacity: 0.8;
+    opacity: 0.6;
   }
 </style>
