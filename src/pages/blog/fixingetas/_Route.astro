@@ -1,0 +1,23 @@
+---
+import stopData from './1_10912.json';
+
+interface Props {
+  id: string;
+}
+const { id } = Astro.props;
+const route = stopData.data.references.routes.find((r) => r.id == id);
+---
+
+<abbr
+  title={route.longName || route.description}
+  style={{ backgroundColor: `#${route.color}`, color: `#${route.textColor}` }}
+  >{route.nullSafeShortName}</abbr
+>
+
+<style>
+  abbr {
+    display: inline-flex;
+    padding-inline: 0.25rem;
+    border-radius: 0.5rem;
+  }
+</style>
