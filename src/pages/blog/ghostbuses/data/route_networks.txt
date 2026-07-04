@@ -1,0 +1,7 @@
+network_id,route_id
+free_shuttle,102759
+free_shuttle,102763
+streetcar,100340
+streetcar,102638
+west_seattle_water_taxi,100336
+vashon_water_taxi,100337
