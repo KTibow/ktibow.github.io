@@ -1,0 +1,665 @@
+---
+import gtfsrt from 'gtfs-realtime-bindings';
+import { readFile } from 'node:fs/promises';
+import BlogPost from '$lib/layouts/BlogPost.astro';
+
+import jsonOBA from './data/oba.json';
+import jsonTransit from './data/transit.json';
+import logoTransit from './logo-transit.svg';
+import logoST from './logo-soundtransit.svg';
+import logoKing from './logo-king.svg';
+import logoCT from './logo-communitytransit.png';
+import logoPT from './logo-piercetransit.svg';
+import logoOBAYellow from './logo-oba-yellow.svg';
+import logoOBA from './logo-oba.svg';
+import Percent from './_Percent.astro';
+import Pulser from './_Pulser.astro';
+import Route from './_Route.astro';
+import RouteBadge from './_RouteBadge.astro';
+
+export const title = 'Sound Transit has a ton of indirection';
+export const date = '2026-07-03';
+
+const {
+  transit_realtime: { FeedMessage },
+} = gtfsrt;
+
+// pi --session 019f2ade-29bc-755b-bbbd-ab2c326a63e5
+const routesKingCSV = (await readFile('src/pages/blog/indirection/data/metro/routes.txt', 'utf-8'))
+  .replaceAll('\r', '')
+  .split('\n');
+const routesKingCols = routesKingCSV[0].split(',');
+const routesKing = routesKingCSV.slice(1).map((line) => {
+  const data: Record<string, any> = {};
+  const cells = line.split(',');
+  for (let i = 0; i < cells.length; i++) {
+    let cell = cells[i];
+    if (cell.startsWith('"') && cell.endsWith('"')) cell = cell.slice(1, -1);
+    const col = routesKingCols[i];
+    data[col] = cell;
+  }
+  return data;
+});
+const tripsKingCSV = (await readFile('src/pages/blog/indirection/data/metro/trips.txt', 'utf-8'))
+  .replaceAll('\r', '')
+  .split('\n');
+const tripsKingCols = tripsKingCSV[0].split(',');
+const tripsKing = tripsKingCSV.slice(1).map((line) => {
+  const data: Record<string, any> = {};
+  const cells = line.split(',');
+  for (let i = 0; i < cells.length; i++) {
+    let cell = cells[i];
+    if (cell.startsWith('"') && cell.endsWith('"')) cell = cell.slice(1, -1);
+    const col = tripsKingCols[i];
+    data[col] = cell;
+  }
+  return data;
+});
+const rtKing = FeedMessage.decode(
+  new Uint8Array(await readFile('src/pages/blog/indirection/data/king.tripupdates.pb')),
+);
+const rtOBA = FeedMessage.decode(
+  new Uint8Array(await readFile('src/pages/blog/indirection/data/oba.tripupdates.pb')),
+);
+const rtKingVP = FeedMessage.decode(
+  new Uint8Array(await readFile('src/pages/blog/indirection/data/king.vehiclepositions.pb')),
+);
+const rtOBAVP = FeedMessage.decode(
+  new Uint8Array(await readFile('src/pages/blog/indirection/data/oba.vehiclepositions.pb')),
+);
+
+// --- Load operator/route data from the 4 GTFS feeds ---
+function parseCSV(raw: string) {
+  const lines = raw.replaceAll('\r', '').split('\n');
+  const cols = lines[0].split(',');
+  return lines
+    .slice(1)
+    .filter(Boolean)
+    .map((line) => {
+      const data: Record<string, any> = {};
+      const cells = line.split(',');
+      for (let i = 0; i < cells.length; i++) {
+        let cell = cells[i];
+        if (cell.startsWith('"') && cell.endsWith('"')) cell = cell.slice(1, -1);
+        data[cols[i]] = cell;
+      }
+      return data;
+    });
+}
+
+function parseAgencies(raw: string) {
+  const rows = parseCSV(raw);
+  const map: Record<string, string> = {};
+  for (const r of rows) map[r.agency_id] = r.agency_name;
+  return map;
+}
+
+const feeds = [
+  {
+    dir: 'metro',
+    logo: logoKing,
+    operator: 'Metro Transit',
+  },
+  {
+    dir: 'community-transit',
+    logo: logoCT,
+    operator: 'Community Transit',
+  },
+  {
+    dir: 'pierce-transit',
+    logo: logoPT,
+    operator: 'Pierce Transit',
+  },
+  {
+    dir: 'sound-transit',
+    logo: logoST,
+    operator: 'Sound Transit',
+  },
+];
+
+const operatorGroups: {
+  operator: string;
+  logo: any;
+  routes: { short: string; bg: string; fg: string }[];
+}[] = [];
+
+for (const feed of feeds) {
+  const agencies = parseAgencies(
+    await readFile(`src/pages/blog/indirection/data/${feed.dir}/agency.txt`, 'utf-8'),
+  );
+  const rawRoutes = parseCSV(
+    await readFile(`src/pages/blog/indirection/data/${feed.dir}/routes.txt`, 'utf-8'),
+  );
+  // Find Sound Transit (agency_id=40) routes in this feed
+  const stRoutes = rawRoutes
+    .filter((r) => r.agency_id === '40')
+    .map((r) => ({
+      short: r.route_short_name === 'Shuttle' ? r.route_long_name : r.route_short_name,
+      bg: '#' + r.route_color,
+      fg: '#' + r.route_text_color,
+    }))
+    .sort((a, b) => a.short.localeCompare(b.short, undefined, { numeric: true }));
+  if (stRoutes.length > 0) {
+    operatorGroups.push({
+      operator: feed.operator,
+      logo: feed.logo,
+      routes: stRoutes,
+    });
+  }
+}
+
+const anchorTime = new Date('Sat Jul  4 10:08:08 AM PDT 2026');
+const relativeTime = (date: Date) => {
+  const seconds = (date.getTime() - anchorTime.getTime()) / 1000;
+  const magnitude = Math.abs(seconds);
+  const magnitudeRound = Math.round(magnitude);
+  const str = magnitudeRound >= 100 ? `${Math.round(magnitude / 60)}m` : `${magnitudeRound}s`;
+  return seconds >= 0 ? `in ${str}` : `${str} ago`;
+};
+
+// --- Lookups ---
+
+function tripFromGtfs(tripId: string) {
+  return tripsKing.find((t) => t.trip_id === tripId) ?? null;
+}
+
+// --- GTFS stop_times: scheduled departure for stop 10914 (used by king source) ---
+const anchorLocal = anchorTime.toLocaleTimeString('en-US', {
+  timeZone: 'America/Los_Angeles',
+  hour12: false,
+});
+const anchorHMS = anchorLocal
+  .split(':')
+  .map(Number)
+  .reduce((a, b) => a * 60 + b);
+const anchorMidnight = Math.round(anchorTime.getTime() / 1000) - anchorHMS;
+const schedAt10914: Record<string, number> = {};
+for (const line of (await readFile('src/pages/blog/indirection/data/metro/stop_times.txt', 'utf-8'))
+  .replaceAll('\r', '')
+  .split('\n')
+  .slice(1)) {
+  if (!line) continue;
+  const c = line.split(',');
+  if (c[3] !== '10914') continue;
+  const [h, m, s] = c[2].split(':').map(Number);
+  schedAt10914[c[0]] = (anchorMidnight + h * 3600 + m * 60 + (s || 0)) * 1000;
+}
+
+// --- King vehicle positions: vehicleId → vehicle ---
+const kingVpByVeh: Record<string, any> = {};
+for (const e of rtKingVP.entity) {
+  const v = e.vehicle;
+  if (!v) throw new Error('king VP: entity without vehicle');
+  const vid = v.vehicle?.id;
+  if (vid) kingVpByVeh[vid] = v;
+}
+
+// --- OBA vehicle positions: vehicleId → vehicle ---
+const obaVpByVeh: Record<string, any> = {};
+for (const e of rtOBAVP.entity) {
+  const v = e.vehicle;
+  if (!v) throw new Error('oba VP: entity without vehicle');
+  const vid = v.vehicle?.id;
+  if (vid) obaVpByVeh[vid] = v;
+}
+
+type MegaEntry = {
+  time: number;
+  source: 'king' | 'oba-rt' | 'oba-json' | 'transit';
+  route: { id: string; short: string; headsign: string; bg: string; fg: string };
+  vid: string | null;
+  hasLive: boolean | null;
+  currentTripId: string | null;
+  lastUpdated: number | null;
+  scheduledTime: number | null;
+};
+
+const megaMap: Record<string, MegaEntry[]> = {};
+
+function hasLivePos(v: any): boolean {
+  return !!(v?.position && (v.position.latitude !== 0 || v.position.longitude !== 0));
+}
+
+function routeFromGtfs(routeId: string): MegaEntry['route'] | null {
+  const r = routesKing.find((x) => x.route_id == routeId);
+  if (!r) return null;
+  return {
+    id: routeId,
+    short: r.route_short_name,
+    bg: '#' + r.route_color,
+    fg: '#' + r.route_text_color,
+    headsign: '',
+  };
+}
+
+// --- OBA JSON references: build route lookup from its own data ---
+const obaRouteRef: Record<string, { id: string; short: string; bg: string; fg: string }> = {};
+for (const r of jsonOBA.data.references.routes) {
+  obaRouteRef[r.id.replace(/^\d+_/, '')] = {
+    id: r.id.replace(/^\d+_/, ''),
+    short: r.shortName,
+    bg: '#' + r.color,
+    fg: '#' + r.textColor,
+  };
+}
+
+// --- 1. Source: king (King County GTFS-RT trip updates + vehicle positions) ---
+for (const e of rtKing.entity) {
+  const tu = e.tripUpdate;
+  if (!tu) throw new Error('king: entity without tripUpdate');
+  const stop = tu.stopTimeUpdate?.find((s: any) => s.stopId === '10914');
+  if (!stop) continue;
+  const time = Number(stop.departure?.time ?? stop.arrival?.time ?? 0) * 1000;
+  if (!time) throw new Error('king: missing departure time');
+  const tripId = tu.trip.tripId;
+  if (!tripId) throw new Error('king: missing tripId');
+  const routeId = tu.trip.routeId;
+  if (!routeId) throw new Error('king: missing routeId');
+  if (routesKing.find((r) => r.route_id === routeId)?.agency_id !== '1') continue;
+  const base = routeFromGtfs(routeId);
+  if (!base) throw new Error('king: route not found: ' + routeId);
+  base.headsign = tripFromGtfs(tripId)?.trip_headsign ?? '';
+  const vid = tu.vehicle?.id || null;
+  const vp = vid ? kingVpByVeh[vid] : null;
+  const hasLive = !!(vp && hasLivePos(vp));
+  const currentTripId = hasLive ? (vp.trip?.tripId ?? null) : null;
+  if (!megaMap[tripId]) megaMap[tripId] = [];
+  megaMap[tripId].push({
+    time,
+    source: 'king',
+    route: base,
+    vid,
+    hasLive,
+    currentTripId,
+    lastUpdated: (Number(tu.timestamp) || null) && Number(tu.timestamp) * 1000,
+    scheduledTime: schedAt10914[tripId] ?? null,
+  });
+}
+
+// --- 2. Source: oba-rt (OneBusAway GTFS-RT trip updates + vehicle positions) ---
+for (const e of rtOBA.entity) {
+  const tu = e.tripUpdate;
+  if (!tu) throw new Error('oba-rt: entity without tripUpdate');
+  const stop = tu.stopTimeUpdate?.find((s: any) => s.stopId === '10914');
+  if (!stop) continue;
+  const time = Number(stop.departure?.time ?? stop.arrival?.time ?? 0) * 1000;
+  if (!time) throw new Error('oba-rt: missing departure time');
+  const tripId = tu.trip.tripId;
+  if (!tripId) throw new Error('oba-rt: missing tripId');
+  let routeId = tu.trip.routeId;
+  if (!routeId) {
+    const t = tripFromGtfs(tripId);
+    if (t) routeId = t.route_id;
+  }
+  if (!routeId) throw new Error('oba-rt: missing routeId for trip ' + tripId);
+  const base = routeFromGtfs(routeId);
+  if (!base) throw new Error('oba-rt: route not found: ' + routeId);
+  base.headsign = tripFromGtfs(tripId)?.trip_headsign ?? '';
+  const vehId = tu.vehicle?.id ?? null;
+  const vp = vehId ? obaVpByVeh[vehId] : null;
+  const hasLive = !!(vp && hasLivePos(vp));
+  const currentTripId = vp?.trip?.tripId ?? null;
+  if (!megaMap[tripId]) megaMap[tripId] = [];
+  megaMap[tripId].push({
+    time,
+    source: 'oba-rt',
+    route: base,
+    vid: vehId,
+    hasLive,
+    currentTripId,
+    lastUpdated: (Number(tu.timestamp) || null) && Number(tu.timestamp) * 1000,
+    scheduledTime: null,
+  });
+}
+
+function agency1(id: string): string {
+  if (!id.startsWith('1_')) throw new Error('oba-json: expected agency 1, got: ' + id);
+  return id.slice(2);
+}
+
+// --- 3. Source: oba-json (OneBusAway REST API, uses its own tripStatus) ---
+for (const a of jsonOBA.data.entry.arrivalsAndDepartures) {
+  if (!a.predicted) continue;
+  if (!a.routeId.startsWith('1_')) continue;
+  const timeMs = a.predictedDepartureTime;
+  if (!timeMs) throw new Error('oba-json: missing predictedDepartureTime for trip ' + a.tripId);
+  const time = timeMs;
+  const tripId = agency1(a.tripId);
+  const headsign = a.tripHeadsign;
+
+  const rawRouteId = agency1(a.routeId);
+  const ref = obaRouteRef[rawRouteId];
+  if (!ref) throw new Error('oba-json: route not found in references: ' + rawRouteId);
+  const route: MegaEntry['route'] = { ...ref, headsign };
+
+  const vid = a.vehicleId ? agency1(a.vehicleId) : null;
+  const ts = a.tripStatus;
+  const hasLive = (ts?.lastLocationUpdateTime ?? 0) > 0;
+  const currentTripId = ts?.activeTripId ? agency1(ts.activeTripId) : null;
+  if (!megaMap[tripId]) megaMap[tripId] = [];
+  megaMap[tripId].push({
+    time,
+    source: 'oba-json',
+    route,
+    vid,
+    hasLive,
+    currentTripId,
+    lastUpdated: a.lastUpdateTime || null,
+    scheduledTime: a.scheduledDepartureTime ?? null,
+  });
+}
+
+// --- 4. Source: transit (Transit app, no vehicle data) ---
+for (const rd of jsonTransit.route_departures) {
+  for (const mi of rd.merged_itineraries) {
+    const route: MegaEntry['route'] = {
+      id: rd.real_time_route_id,
+      short: rd.route_short_name,
+      bg: '#' + rd.route_color,
+      fg: '#' + rd.route_text_color,
+      headsign: mi.itineraries[0]?.headsign ?? '',
+    };
+    for (const si of mi.schedule_items) {
+      if (!si.is_real_time) continue;
+      const time = si.departure_time * 1000;
+      if (!time) throw new Error('transit: missing departure_time');
+      const tripId = si.rt_trip_id;
+      if (!megaMap[tripId]) megaMap[tripId] = [];
+      megaMap[tripId].push({
+        time,
+        source: 'transit',
+        route,
+        vid: null,
+        hasLive: null,
+        currentTripId: null,
+        lastUpdated: null,
+        scheduledTime: (si.scheduled_departure_time ?? 0) * 1000 || null,
+      });
+    }
+  }
+}
+const megaMapFlat = Object.entries(megaMap).sort(
+  ([, a], [, b]) => Math.min(...a.map((e) => e.time)) - Math.min(...b.map((e) => e.time)),
+);
+const n = megaMapFlat.length;
+const nWithJustOBAJSON = megaMapFlat.filter(
+  ([, entries]) => entries.length == 1 && entries.some((e) => e.source == 'oba-json'),
+).length;
+const nKCWithVID = megaMapFlat.filter(([, entries]) =>
+  entries.some((e) => e.source == 'king' && e.vid),
+).length;
+const nKCInferrableVID = megaMapFlat.filter(
+  ([, entries]) =>
+    entries.some((e) => e.source == 'king' && !e.vid) &&
+    entries.some((e) => e.source == 'oba-rt' && e.vid?.length == 4),
+).length;
+const nKCNoVID = megaMapFlat.filter(
+  ([, entries]) =>
+    entries.some((e) => e.source == 'king' && !e.vid) &&
+    entries.some((e) => e.source == 'oba-rt' && e.vid?.length != 4),
+).length;
+const nKCAdjusted = megaMapFlat.filter(([, entries]) => {
+  const kc = entries.find((e) => e.source == 'king');
+  if (!kc) return;
+  return kc.scheduledTime != kc.time;
+}).length;
+const nKCAdjustedWithVID = megaMapFlat.filter(([, entries]) => {
+  const kc = entries.find((e) => e.source == 'king');
+  if (!kc) return;
+  if (!kc.vid) return;
+  return kc.scheduledTime != kc.time;
+}).length;
+---
+
+<BlogPost {title} {date}>
+  <p>
+    <strong
+      ><img
+        {...logoST}
+        style={{ display: 'inline-block', width: '1.5em', height: '1em', verticalAlign: 'middle' }}
+      /> Sound Transit buses aren't ran by <img
+        {...logoST}
+        style={{ display: 'inline-block', width: '1.5em', height: '1em', verticalAlign: 'middle' }}
+      /> Sound Transit.</strong
+    >
+  </p>
+  {
+    operatorGroups.map((g) => (
+      <div class="operator-group">
+        <p>
+          <strong>
+            <img
+              {...g.logo}
+              style={{
+                display: 'inline-block',
+                width: '1em',
+                height: '1em',
+                verticalAlign: 'middle',
+              }}
+            />{' '}
+            {g.operator}
+          </strong>{' '}
+          operates these Sound Transit routes:
+        </p>
+        <div class="route-list">
+          {g.routes.map((r) => (
+            <RouteBadge short={r.short} bg={r.bg} fg={r.fg} />
+          ))}
+        </div>
+      </div>
+    ))
+  }
+  <p>
+    <strong
+      ><img
+        {...logoST}
+        style={{ display: 'inline-block', width: '1.5em', height: '1em', verticalAlign: 'middle' }}
+      /> Sound Transit's website doesn't use <img
+        {...logoST}
+        style={{ display: 'inline-block', width: '1.5em', height: '1em', verticalAlign: 'middle' }}
+      /> Sound Transit servers.</strong
+    > Their website makes CORS calls to <a
+      href="https://opentransitsoftwarefoundation.org/onebusaway/"
+      ><img
+        {...logoOBA}
+        style={{ display: 'inline-block', width: '1em', height: '1em', verticalAlign: 'middle' }}
+      /> OneBusAway</a
+    >. Their <a
+      href="https://www.soundtransit.org/help-contacts/business-information/open-transit-data-otd/otd-downloads"
+      >open data section</a
+    > also points developers to <img
+      {...logoOBA}
+      style={{ display: 'inline-block', width: '1em', height: '1em', verticalAlign: 'middle' }}
+    /> OneBusAway instead of the specific agencies operating the routes, at least as of writing.
+  </p>
+  <br />
+  <p>
+    I stumbled upon all this while debugging transit ETAs. Let me show you one artifact of my
+    research, what happens when you list
+    <a
+      href="https://kingcounty.gov/en/dept/metro/rider-tools/mobile-and-web-apps#toc-developer-resources"
+      ><img
+        {...logoKing}
+        style={{ display: 'inline-block', width: '1em', height: '1em', verticalAlign: 'middle' }}
+      /> Metro Transit's official GTFS + GTFS-RT</a
+    >,
+    <a href="https://developer.onebusaway.org/api/gtfs-realtime"
+      ><img
+        {...logoOBAYellow}
+        style={{ display: 'inline-block', width: '1em', height: '1em', verticalAlign: 'middle' }}
+      /> OneBusAway's GTFS-RT</a
+    >,
+    <a href="https://developer.onebusaway.org/api/where/methods/arrivals-and-departures-for-stop"
+      ><img
+        {...logoOBA}
+        style={{ display: 'inline-block', width: '1em', height: '1em', verticalAlign: 'middle' }}
+      /> OneBusAway's ETAs</a
+    >, and
+    <a href="https://transitapp.com/"
+      ><img
+        {...logoTransit}
+        style={{ display: 'inline-block', width: '1em', height: '1em', verticalAlign: 'middle' }}
+      /> Transit's stop ETAs</a
+    > filtered to realtime ETAs for <img
+      {...logoKing}
+      style={{ display: 'inline-block', width: '1em', height: '1em', verticalAlign: 'middle' }}
+    /> Metro Transit at the stop <abbr title="ID 10914, or KCM:89363 on Transit"
+      >15th Ave NE & NE 43rd St</abbr
+    > all at once.
+  </p>
+  <div class="etas">
+    {
+      megaMapFlat.map(([tripId, entries]) => (
+        <>
+          <p style={{ marginTop: '0.5em' }}>
+            <Route {...entries[0].route} />
+            <span class="small">
+              route #{entries[0].route.id}
+              trip #{tripId}
+            </span>
+          </p>
+          {entries.map((e) => (
+            <p>
+              {e.source == 'king' ? (
+                <img
+                  {...logoKing}
+                  alt="Metro Transit"
+                  title="Metro Transit"
+                  style={{
+                    display: 'inline-block',
+                    width: '1em',
+                    height: '1em',
+                    verticalAlign: 'middle',
+                  }}
+                />
+              ) : e.source == 'oba-rt' ? (
+                <img
+                  {...logoOBAYellow}
+                  alt="OneBusAway GTFS-RT"
+                  title="OneBusAway GTFS-RT"
+                  style={{
+                    display: 'inline-block',
+                    width: '1em',
+                    height: '1em',
+                    verticalAlign: 'middle',
+                  }}
+                />
+              ) : e.source == 'oba-json' ? (
+                <img
+                  {...logoOBA}
+                  alt="OneBusAway JSON"
+                  title="OneBusAway JSON"
+                  style={{
+                    display: 'inline-block',
+                    width: '1em',
+                    height: '1em',
+                    verticalAlign: 'middle',
+                  }}
+                />
+              ) : (
+                <img
+                  {...logoTransit}
+                  alt="Transit"
+                  title="Transit"
+                  style={{
+                    display: 'inline-block',
+                    width: '1em',
+                    height: '1em',
+                    verticalAlign: 'middle',
+                  }}
+                />
+              )}
+              <span
+                style={{
+                  display: 'contents',
+                  color:
+                    e.scheduledTime && e.time > e.scheduledTime
+                      ? '#fd7e94'
+                      : e.scheduledTime && e.time < e.scheduledTime
+                        ? '#90ffb3'
+                        : undefined,
+                }}
+                title={
+                  e.scheduledTime
+                    ? `adjusted ${Math.round((e.time - e.scheduledTime) / 1000)}s`
+                    : undefined
+                }
+              >
+                {relativeTime(new Date(e.time))}
+              </span>
+              {e.lastUpdated && (
+                <span class="small"> as of {relativeTime(new Date(e.lastUpdated))}</span>
+              )}
+              {e.source != 'transit' && !e.vid && ' • ❌ no vehicle'}
+              {e.vid &&
+                !e.hasLive &&
+                e.vid.length != 4 &&
+                ` • 👻 ghost vehicle ${e.vid}${e.currentTripId ? ` on trip ${e.currentTripId}` : ''}`}
+              {e.vid && e.hasLive && e.currentTripId == tripId && ` • ✅ vehicle ${e.vid} running`}
+              {e.vid &&
+                e.hasLive &&
+                e.currentTripId != tripId &&
+                ` • ⏰ vehicle ${e.vid} on other trip ${e.currentTripId}`}
+              {/*<em>{JSON.stringify(e)}</em>*/}
+            </p>
+          ))}
+        </>
+      ))
+    }
+  </div>
+  <p>
+    It turns out only
+    <Percent v={nKCWithVID / n} />
+    {nKCWithVID} ETAs are linked to a vehicle, including {nKCAdjustedWithVID} of the {nKCAdjusted}
+    ETAs that are <em>definitely</em> realtime<Pulser />. Then there's <Percent
+      v={nKCInferrableVID / n}
+    />
+    {nKCInferrableVID} ETAs where the vehicle can be inferred, and <Percent v={nKCNoVID / n} />
+    {nKCNoVID} unlinked to a vehicle (so <img
+      {...logoOBA}
+      style={{
+        display: 'inline-block',
+        width: '1em',
+        height: '1em',
+        verticalAlign: 'middle',
+      }}
+    /> OBA makes up a 👻 ghost vehicle), where I suspect the ETA isn't actually based on realtime data
+    and should be tagged as <code>NO_DATA</code> instead. Meanwhile
+    <Percent v={nWithJustOBAJSON / n} />
+    {nWithJustOBAJSON} are a figment of <img
+      {...logoOBA}
+      style={{
+        display: 'inline-block',
+        width: '1em',
+        height: '1em',
+        verticalAlign: 'middle',
+      }}
+    /> OBA JSON's imagination, <a
+      href="https://github.com/OneBusAway/onebusaway-application-modules/pull/465">fixed here</a
+    >.
+  </p>
+</BlogPost>
+
+<style>
+  .small {
+    font-size: 0.75em;
+    opacity: 0.75;
+  }
+  .operator-group {
+    margin-block: 0.75em;
+  }
+  .route-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+  .etas {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px var(--m3c-outline);
+    padding: 0.5rem;
+    border-radius: 1rem;
+    height: 30rem;
+    overflow: auto;
+  }
+</style>

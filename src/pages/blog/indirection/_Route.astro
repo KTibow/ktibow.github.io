@@ -1,0 +1,26 @@
+---
+import '@fontsource/workbench/400.css';
+import RouteBadge from './_RouteBadge.astro';
+
+interface Props {
+  short: string;
+  bg: string;
+  fg: string;
+  headsign: string;
+}
+const { short, bg, fg, headsign } = Astro.props;
+---
+
+<span class="capsule"
+  ><RouteBadge {short} {bg} {fg} /> {headsign}</span
+>
+
+<style>
+  .capsule {
+    display: inline-flex;
+    gap: 0.5rem;
+    padding-inline-end: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: var(--m3c-surface-container);
+  }
+</style>

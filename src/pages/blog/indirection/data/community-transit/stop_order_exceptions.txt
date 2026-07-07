@@ -1,0 +1,22 @@
+route_id,route_name,direction_id,direction_name,stop_id,stop_name,stop_do
+512,"512",1,to Everett Station,3306,SODO Busway & S Royal Brougham Way,1
+512,"512",1,to Everett Station,640,4th Ave S & S Jackson St,2
+512,"512",1,to Everett Station,635,4th Ave S & S Washington St,3
+512,"512",1,to Everett Station,2638,4th Ave & Cherry St,4
+512,"512",1,to Everett Station,641,4th Ave & Seneca St,5
+512,"512",1,to Everett Station,2976,4th Ave & Pine St,6
+512,"512",1,to Everett Station,473,Olive Way & 6th Ave,7
+512,"512",1,to Everett Station,476,Olive Way & Terry Ave,8
+512,"512",1,to Everett Station,759,I-5 & NE 45th St Fwy Station,9
+512,"512",1,to Everett Station,2192,Northgate Station Bay 2,10
+512,"512",1,to Everett Station,2766,Mountlake Terrace Fwy Station Bay 7,11
+512,"512",1,to Everett Station,2543,Lynnwood City Center Station Bay D4,12
+512,"512",1,to Everett Station,2163,Ash Way Park & Ride Bay 4,13
+512,"512",1,to Everett Station,2869,South Everett Fwy Station Bay 6,14
+512,"512",1,to Everett Station,3219,Broadway & 33rd St,15
+512,"512",1,to Everett Station,2861,Everett Station,16
+512,"512",1,to Everett Station,2345,Everett Station Bay C1,17
+512,"512",1,to Everett Station,2356,Pacific Ave & Rockefeller Ave,18
+512,"512",1,to Everett Station,2466,Wetmore Ave & Wall St,19
+512,"512",1,to Everett Station,426,Hewitt Ave & Lombard Ave,20
+512,"512",1,to Everett Station,427,Hewitt Ave & Virginia Ave,21

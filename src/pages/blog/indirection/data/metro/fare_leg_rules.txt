@@ -1,0 +1,6 @@
+leg_group_id,network_id,from_area_id,to_area_id,from_timeframe_group_id,to_timeframe_group_id,fare_product_id,rule_priority
+default_bus,,,,,,Bus,0
+default_streetcar,streetcar,,,,,Streetcar,7
+default_free_shuttle,free_shuttle,,,,,Free Shuttle,8
+ws_water_taxi,west_seattle_water_taxi,,,,,West Seattle Water Taxi,9
+va_water_taxi,vashon_water_taxi,,,,,Vashon Water Taxi,10

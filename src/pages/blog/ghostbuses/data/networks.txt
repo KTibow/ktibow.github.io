@@ -1,5 +1,0 @@
-network_id,network_name
-free_shuttle,Free Shuttle
-streetcar,Street Car
-west_seattle_water_taxi,West Seattle Water Taxi
-vashon_water_taxi,Vashon Water Taxi

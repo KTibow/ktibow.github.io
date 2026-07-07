@@ -1,0 +1,1920 @@
+table_name,field_name,language,translation,record_id,field_value
+routes,route_long_name,es,1 Line - Bus Lanzadera,1-SHUTTLE,
+routes,route_long_name,zh-Hans,1 Line 接驳巴士,1-SHUTTLE,
+routes,route_long_name,ar,1 Line - حافلة مكوكية,1-SHUTTLE,
+routes,route_long_name,bs,1 Line - Shuttle autobus,1-SHUTTLE,
+routes,route_long_name,hr,1 Line - Shuttle autobus,1-SHUTTLE,
+routes,route_long_name,nl,1 Line - Pendelbus,1-SHUTTLE,
+routes,route_long_name,fr,1 Line - Bus navette,1-SHUTTLE,
+routes,route_long_name,de,1 Line - Pendelbus,1-SHUTTLE,
+routes,route_long_name,it,1 Line - Bus navetta,1-SHUTTLE,
+routes,route_long_name,ko,1 Line - 셔틀버스,1-SHUTTLE,
+routes,route_long_name,fa,1 Line - اتوبوس شاتل,1-SHUTTLE,
+routes,route_long_name,ru,1 Line - Автобус-шаттл,1-SHUTTLE,
+routes,route_long_name,sr,1 Line - Аутобус-шатл,1-SHUTTLE,
+routes,route_long_name,tl,1 Line - Shuttle Bus,1-SHUTTLE,
+routes,route_long_name,vi,1 Line - Xe trung chuyển,1-SHUTTLE,
+routes,route_long_name,cy,1 Line - Bws Gwennol,1-SHUTTLE,
+routes,route_long_name,sw,Basi la Mbadala Ruti wa 1,1-SHUTTLE,
+routes,route_long_name,pt-PT,1 Line - Autocarro Naveta,1-SHUTTLE,
+routes,route_long_name,af,1 Line - Pendelbus,1-SHUTTLE,
+routes,route_long_name,es,2 Line - Bus Lanzadera,2-SHUTTLE,
+routes,route_long_name,zh-Hans,2 Line 接驳巴士,2-SHUTTLE,
+routes,route_long_name,ar,2 Line - حافلة مكوكية,2-SHUTTLE,
+routes,route_long_name,bs,2 Line - Shuttle autobus,2-SHUTTLE,
+routes,route_long_name,hr,2 Line - Shuttle autobus,2-SHUTTLE,
+routes,route_long_name,nl,2 Line - Pendelbus,2-SHUTTLE,
+routes,route_long_name,fr,2 Line - Bus navette,2-SHUTTLE,
+routes,route_long_name,de,2 Line - Pendelbus,2-SHUTTLE,
+routes,route_long_name,it,2 Line - Bus navetta,2-SHUTTLE,
+routes,route_long_name,ko,2 Line - 셔틀버스,2-SHUTTLE,
+routes,route_long_name,fa,2 Line - اتوبوس شاتل,2-SHUTTLE,
+routes,route_long_name,ru,2 Line - Автобус-шаттл,2-SHUTTLE,
+routes,route_long_name,sr,2 Line - Аутобус-шатл,2-SHUTTLE,
+routes,route_long_name,tl,2 Line - Shuttle Bus,2-SHUTTLE,
+routes,route_long_name,vi,2 Line - Xe trung chuyển,2-SHUTTLE,
+routes,route_long_name,cy,2 Line - Bws Gwennol,2-SHUTTLE,
+routes,route_long_name,sw,Basi la Mbadala Ruti wa 2,2-SHUTTLE,
+routes,route_long_name,pt-PT,2 Line - Autocarro Naveta,2-SHUTTLE,
+routes,route_long_name,af,2 Line - Pendelbus,2-SHUTTLE,
+routes,route_long_name,es,T Line - Bus de Reemplazo,TLINE_S,
+routes,route_long_name,zh-Hans,T Line 替代巴士,TLINE_S,
+routes,route_long_name,ar,T Line - حافلة بديلة,TLINE_S,
+routes,route_long_name,bs,T Line - Zamjenski autobus,TLINE_S,
+routes,route_long_name,hr,T Line - Zamjenski autobus,TLINE_S,
+routes,route_long_name,nl,T Line - Vervangende pendelbus,TLINE_S,
+routes,route_long_name,fr,T Line - Bus de remplacement,TLINE_S,
+routes,route_long_name,de,T Line - Ersatz-Pendelbus,TLINE_S,
+routes,route_long_name,it,T Line - Bus sostitutivo,TLINE_S,
+routes,route_long_name,ko,T Line - 대체 셔틀버스,TLINE_S,
+routes,route_long_name,fa,T Line - اتوبوس جایگزین,TLINE_S,
+routes,route_long_name,ru,T Line - Автобус-замена,TLINE_S,
+routes,route_long_name,sr,T Line - Аутобус замена,TLINE_S,
+routes,route_long_name,tl,T Line - Kapalit na Shuttle Bus,TLINE_S,
+routes,route_long_name,vi,T Line - Xe trung chuyển thay thế,TLINE_S,
+routes,route_long_name,cy,T Line - Bws Gwennol Amnewid,TLINE_S,
+routes,route_long_name,sw,Basi la Mbadala Ruti wa T,TLINE_S,
+routes,route_long_name,pt-PT,T Line - Autocarro de Substituição,TLINE_S,
+routes,route_long_name,af,T Line - Vervangings-pendelbus,TLINE_S,
+routes,route_desc,es,1 Line circula entre Lynnwood City Center Station y Federal Way Downtown Station los siete días de la semana,100479,
+routes,route_desc,zh-Hans,1 Line 在 Lynnwood City Center Station 和 Federal Way Downtown Station 之间每天运行,100479,
+routes,route_desc,ar,خط 1 Line يسير بين Lynnwood City Center Station و Federal Way Downtown Station سبعة أيام في الأسبوع,100479,
+routes,route_desc,bs,1 Line saobraća između Lynnwood City Center Station i Federal Way Downtown Station sedam dana u tjednu,100479,
+routes,route_desc,hr,1 Line prometuje između Lynnwood City Center Station i Federal Way Downtown Station sedam dana u tjednu,100479,
+routes,route_desc,nl,1 Line rijdt tussen Lynnwood City Center Station en Federal Way Downtown Station zeven dagen per week,100479,
+routes,route_desc,fr,1 Line circule entre Lynnwood City Center Station et Federal Way Downtown Station sept jours sur sept,100479,
+routes,route_desc,de,1 Line verkehrt zwischen Lynnwood City Center Station und Federal Way Downtown Station sieben Tage die Woche,100479,
+routes,route_desc,it,1 Line circola tra Lynnwood City Center Station e Federal Way Downtown Station sette giorni su sette,100479,
+routes,route_desc,ko,1 Line은 Lynnwood City Center Station과 Federal Way Downtown Station 사이를 주 7일 운행합니다,100479,
+routes,route_desc,fa,خط 1 Line بین Lynnwood City Center Station و Federal Way Downtown Station هفت روز در هفته تردد می‌کند,100479,
+routes,route_desc,ru,1 Line курсирует между Lynnwood City Center Station и Federal Way Downtown Station семь дней в неделю,100479,
+routes,route_desc,sr,1 Line саобраћа између Lynnwood City Center Station и Federal Way Downtown Station седам дана у недељи,100479,
+routes,route_desc,tl,1 Line nagpapatakbo sa pagitan ng Lynnwood City Center Station at Federal Way Downtown Station pitong araw sa isang linggo,100479,
+routes,route_desc,vi,1 Line hoạt động giữa Lynnwood City Center Station và Federal Way Downtown Station bảy ngày một tuần,100479,
+routes,route_desc,cy,1 Line yn rhedeg rhwng Lynnwood City Center Station a Federal Way Downtown Station saith diwrnod yr wythnos,100479,
+routes,route_desc,sw,1 Line inafanya kazi kati ya Lynnwood City Center Station na Federal Way Downtown Station siku saba kwa wiki,100479,
+routes,route_desc,pt-PT,1 Line circula entre Lynnwood City Center Station e Federal Way Downtown Station sete dias por semana,100479,
+routes,route_desc,af,1 Line ry tussen Lynnwood City Center Station en Federal Way Downtown Station sewe dae per week,100479,
+routes,route_desc,es,2 Line circula entre Lynnwood City Center Station y Downtown Redmond Station los siete días de la semana,2LINE,
+routes,route_desc,zh-Hans,2 Line 在 Lynnwood City Center Station 和 Downtown Redmond Station 之间每天运行,2LINE,
+routes,route_desc,ar,خط 2 Line يسير بين Lynnwood City Center Station و Downtown Redmond Station سبعة أيام في الأسبوع,2LINE,
+routes,route_desc,bs,2 Line saobraća između Lynnwood City Center Station i Downtown Redmond Station sedam dana u tjednu,2LINE,
+routes,route_desc,hr,2 Line prometuje između Lynnwood City Center Station i Downtown Redmond Station sedam dana u tjednu,2LINE,
+routes,route_desc,nl,2 Line rijdt tussen Lynnwood City Center Station en Downtown Redmond Station zeven dagen per week,2LINE,
+routes,route_desc,fr,2 Line circule entre Lynnwood City Center Station et Downtown Redmond Station sept jours sur sept,2LINE,
+routes,route_desc,de,2 Line verkehrt zwischen Lynnwood City Center Station und Downtown Redmond Station sieben Tage die Woche,2LINE,
+routes,route_desc,it,2 Line circola tra Lynnwood City Center Station e Downtown Redmond Station sette giorni su sette,2LINE,
+routes,route_desc,ko,2 Line은 Lynnwood City Center Station과 Downtown Redmond Station 사이를 주 7일 운행합니다,2LINE,
+routes,route_desc,fa,خط 2 Line بین Lynnwood City Center Station و Downtown Redmond Station هفت روز در هفته تردد می‌کند,2LINE,
+routes,route_desc,ru,2 Line курсирует между Lynnwood City Center Station и Downtown Redmond Station семь дней в неделю,2LINE,
+routes,route_desc,sr,2 Line саобраћа између Lynnwood City Center Station и Downtown Redmond Station седам дана у недељи,2LINE,
+routes,route_desc,tl,2 Line nagpapatakbo sa pagitan ng Lynnwood City Center Station at Downtown Redmond Station pitong araw sa isang linggo,2LINE,
+routes,route_desc,vi,2 Line hoạt động giữa Lynnwood City Center Station và Downtown Redmond Station bảy ngày một tuần,2LINE,
+routes,route_desc,cy,2 Line yn rhedeg rhwng Lynnwood City Center Station a Downtown Redmond Station saith diwrnod yr wythnos,2LINE,
+routes,route_desc,sw,2 Line inafanya kazi kati ya Lynnwood City Center Station na Downtown Redmond Station siku saba kwa wiki,2LINE,
+routes,route_desc,pt-PT,2 Line circula entre Lynnwood City Center Station e Downtown Redmond Station sete dias por semana,2LINE,
+routes,route_desc,af,2 Line ry tussen Lynnwood City Center Station en Downtown Redmond Station sewe dae per week,2LINE,
+routes,route_desc,es,N Line circula entre Everett Station y King Street Station los días laborables,SNDR_EV,
+routes,route_desc,zh-Hans,N Line 在 Everett Station 和 King Street Station 之间工作日运行,SNDR_EV,
+routes,route_desc,ar,خط N Line يسير بين Everett Station و King Street Station أيام الأسبوع,SNDR_EV,
+routes,route_desc,bs,N Line saobraća između Everett Station i King Street Station radnim danima,SNDR_EV,
+routes,route_desc,hr,N Line prometuje između Everett Station i King Street Station radnim danima,SNDR_EV,
+routes,route_desc,nl,N Line rijdt tussen Everett Station en King Street Station op werkdagen,SNDR_EV,
+routes,route_desc,fr,N Line circule entre Everett Station et King Street Station les jours ouvrables,SNDR_EV,
+routes,route_desc,de,N Line verkehrt zwischen Everett Station und King Street Station an Werktagen,SNDR_EV,
+routes,route_desc,it,N Line circola tra Everett Station e King Street Station nei giorni feriali,SNDR_EV,
+routes,route_desc,ko,N Line은 Everett Station과 King Street Station 사이를 평일 운행합니다,SNDR_EV,
+routes,route_desc,fa,خط N Line بین Everett Station و King Street Station روزهای کاری تردد می‌کند,SNDR_EV,
+routes,route_desc,ru,N Line курсирует между Everett Station и King Street Station по будням,SNDR_EV,
+routes,route_desc,sr,N Line саобраћа између Everett Station и King Street Station радним данима,SNDR_EV,
+routes,route_desc,tl,N Line nagpapatakbo sa pagitan ng Everett Station at King Street Station sa mga araw ng trabaho,SNDR_EV,
+routes,route_desc,vi,N Line hoạt động giữa Everett Station và King Street Station các ngày trong tuần,SNDR_EV,
+routes,route_desc,cy,N Line yn rhedeg rhwng Everett Station a King Street Station ar ddyddiau gwaith,SNDR_EV,
+routes,route_desc,sw,N Line inafanya kazi kati ya Everett Station na King Street Station siku za kazi,SNDR_EV,
+routes,route_desc,pt-PT,N Line circula entre Everett Station e King Street Station nos dias úteis,SNDR_EV,
+routes,route_desc,af,N Line ry tussen Everett Station en King Street Station op weeksdae,SNDR_EV,
+routes,route_desc,es,S Line circula entre King Street Station y Tacoma Dome o Lakewood Stations los días laborables,SNDR_TL,
+routes,route_desc,zh-Hans,S Line 在 King Street Station 和 Tacoma Dome 或 Lakewood Stations 之间工作日运行,SNDR_TL,
+routes,route_desc,ar,خط S Line يسير بين King Street Station و Tacoma Dome أو Lakewood Stations أيام الأسبوع,SNDR_TL,
+routes,route_desc,bs,S Line saobraća između King Street Station i Tacoma Dome ili Lakewood Stations radnim danima,SNDR_TL,
+routes,route_desc,hr,S Line prometuje između King Street Station i Tacoma Dome ili Lakewood Stations radnim danima,SNDR_TL,
+routes,route_desc,nl,S Line rijdt tussen King Street Station en Tacoma Dome of Lakewood Stations op werkdagen,SNDR_TL,
+routes,route_desc,fr,S Line circule entre King Street Station et Tacoma Dome ou Lakewood Stations les jours ouvrables,SNDR_TL,
+routes,route_desc,de,S Line verkehrt zwischen King Street Station und Tacoma Dome oder Lakewood Stations an Werktagen,SNDR_TL,
+routes,route_desc,it,S Line circola tra King Street Station e Tacoma Dome o Lakewood Stations nei giorni feriali,SNDR_TL,
+routes,route_desc,ko,S Line은 King Street Station과 Tacoma Dome 또는 Lakewood Stations 사이를 평일 운행합니다,SNDR_TL,
+routes,route_desc,fa,خط S Line بین King Street Station و Tacoma Dome یا Lakewood Stations روزهای کاری تردد می‌کند,SNDR_TL,
+routes,route_desc,ru,S Line курсирует между King Street Station и Tacoma Dome или Lakewood Stations по будням,SNDR_TL,
+routes,route_desc,sr,S Line саобраћа између King Street Station и Tacoma Dome или Lakewood Stations радним данима,SNDR_TL,
+routes,route_desc,tl,S Line nagpapatakbo sa pagitan ng King Street Station at Tacoma Dome o Lakewood Stations sa mga araw ng trabaho,SNDR_TL,
+routes,route_desc,vi,S Line hoạt động giữa King Street Station và Tacoma Dome hoặc Lakewood Stations các ngày trong tuần,SNDR_TL,
+routes,route_desc,cy,S Line yn rhedeg rhwng King Street Station a Tacoma Dome neu Lakewood Stations ar ddyddiau gwaith,SNDR_TL,
+routes,route_desc,sw,S Line inafanya kazi kati ya King Street Station na Tacoma Dome au Lakewood Stations siku za kazi,SNDR_TL,
+routes,route_desc,pt-PT,S Line circula entre King Street Station e Tacoma Dome ou Lakewood Stations nos dias úteis,SNDR_TL,
+routes,route_desc,af,S Line ry tussen King Street Station en Tacoma Dome of Lakewood Stations op weeksdae,SNDR_TL,
+routes,route_desc,es,T Line circula entre Tacoma Dome Station y St Joseph Station los siete días de la semana,TLINE,
+routes,route_desc,zh-Hans,T Line 在 Tacoma Dome Station 和 St Joseph Station 之间每天运行,TLINE,
+routes,route_desc,ar,خط T Line يسير بين Tacoma Dome Station و St Joseph Station سبعة أيام في الأسبوع,TLINE,
+routes,route_desc,bs,T Line saobraća između Tacoma Dome Station i St Joseph Station sedam dana u tjednu,TLINE,
+routes,route_desc,hr,T Line prometuje između Tacoma Dome Station i St Joseph Station sedam dana u tjednu,TLINE,
+routes,route_desc,nl,T Line rijdt tussen Tacoma Dome Station en St Joseph Station zeven dagen per week,TLINE,
+routes,route_desc,fr,T Line circule entre Tacoma Dome Station et St Joseph Station sept jours sur sept,TLINE,
+routes,route_desc,de,T Line verkehrt zwischen Tacoma Dome Station und St Joseph Station sieben Tage die Woche,TLINE,
+routes,route_desc,it,T Line circola tra Tacoma Dome Station e St Joseph Station sette giorni su sette,TLINE,
+routes,route_desc,ko,T Line은 Tacoma Dome Station과 St Joseph Station 사이를 주 7일 운행합니다,TLINE,
+routes,route_desc,fa,خط T Line بین Tacoma Dome Station و St Joseph Station هفت روز در هفته تردد می‌کند,TLINE,
+routes,route_desc,ru,T Line курсирует между Tacoma Dome Station и St Joseph Station семь дней в неделю,TLINE,
+routes,route_desc,sr,T Line саобраћа између Tacoma Dome Station и St Joseph Station седам дана у недељи,TLINE,
+routes,route_desc,tl,T Line nagpapatakbo sa pagitan ng Tacoma Dome Station at St Joseph Station pitong araw sa isang linggo,TLINE,
+routes,route_desc,vi,T Line hoạt động giữa Tacoma Dome Station và St Joseph Station bảy ngày một tuần,TLINE,
+routes,route_desc,cy,T Line yn rhedeg rhwng Tacoma Dome Station a St Joseph Station saith diwrnod yr wythnos,TLINE,
+routes,route_desc,sw,T Line inafanya kazi kati ya Tacoma Dome Station na St Joseph Station siku saba kwa wiki,TLINE,
+routes,route_desc,pt-PT,T Line circula entre Tacoma Dome Station e St Joseph Station sete dias por semana,TLINE,
+routes,route_desc,af,T Line ry tussen Tacoma Dome Station en St Joseph Station sewe dae per week,TLINE,
+stops,stop_desc,es,6th Ave a St Joseph,,6th Ave to St Joseph
+stops,stop_desc,zh-Hans,6th Ave 到 St Joseph,,6th Ave to St Joseph
+stops,stop_desc,ar,6th Ave إلى St Joseph,,6th Ave to St Joseph
+stops,stop_desc,bs,6th Ave do St Joseph,,6th Ave to St Joseph
+stops,stop_desc,hr,6th Ave do St Joseph,,6th Ave to St Joseph
+stops,stop_desc,nl,6th Ave naar St Joseph,,6th Ave to St Joseph
+stops,stop_desc,fr,6th Ave vers St Joseph,,6th Ave to St Joseph
+stops,stop_desc,de,6th Ave nach St Joseph,,6th Ave to St Joseph
+stops,stop_desc,it,6th Ave a St Joseph,,6th Ave to St Joseph
+stops,stop_desc,ko,6th Ave에서 St Joseph 방향,,6th Ave to St Joseph
+stops,stop_desc,fa,6th Ave به St Joseph,,6th Ave to St Joseph
+stops,stop_desc,ru,6th Ave до St Joseph,,6th Ave to St Joseph
+stops,stop_desc,sr,6th Ave до St Joseph,,6th Ave to St Joseph
+stops,stop_desc,tl,6th Ave papunta St Joseph,,6th Ave to St Joseph
+stops,stop_desc,vi,6th Ave đến St Joseph,,6th Ave to St Joseph
+stops,stop_desc,cy,6th Ave i St Joseph,,6th Ave to St Joseph
+stops,stop_desc,sw,6th Ave kwenda St Joseph,,6th Ave to St Joseph
+stops,stop_desc,pt-PT,6th Ave para St Joseph,,6th Ave to St Joseph
+stops,stop_desc,af,6th Ave na St Joseph,,6th Ave to St Joseph
+stops,stop_desc,es,6th Ave a Tacoma Dome,,6th Ave to Tacoma Dome
+stops,stop_desc,zh-Hans,6th Ave 到 Tacoma Dome,,6th Ave to Tacoma Dome
+stops,stop_desc,ar,6th Ave إلى Tacoma Dome,,6th Ave to Tacoma Dome
+stops,stop_desc,bs,6th Ave do Tacoma Dome,,6th Ave to Tacoma Dome
+stops,stop_desc,hr,6th Ave do Tacoma Dome,,6th Ave to Tacoma Dome
+stops,stop_desc,nl,6th Ave naar Tacoma Dome,,6th Ave to Tacoma Dome
+stops,stop_desc,fr,6th Ave vers Tacoma Dome,,6th Ave to Tacoma Dome
+stops,stop_desc,de,6th Ave nach Tacoma Dome,,6th Ave to Tacoma Dome
+stops,stop_desc,it,6th Ave a Tacoma Dome,,6th Ave to Tacoma Dome
+stops,stop_desc,ko,6th Ave에서 Tacoma Dome 방향,,6th Ave to Tacoma Dome
+stops,stop_desc,fa,6th Ave به Tacoma Dome,,6th Ave to Tacoma Dome
+stops,stop_desc,ru,6th Ave до Tacoma Dome,,6th Ave to Tacoma Dome
+stops,stop_desc,sr,6th Ave до Tacoma Dome,,6th Ave to Tacoma Dome
+stops,stop_desc,tl,6th Ave papunta Tacoma Dome,,6th Ave to Tacoma Dome
+stops,stop_desc,vi,6th Ave đến Tacoma Dome,,6th Ave to Tacoma Dome
+stops,stop_desc,cy,6th Ave i Tacoma Dome,,6th Ave to Tacoma Dome
+stops,stop_desc,sw,6th Ave kwenda Tacoma Dome,,6th Ave to Tacoma Dome
+stops,stop_desc,pt-PT,6th Ave para Tacoma Dome,,6th Ave to Tacoma Dome
+stops,stop_desc,af,6th Ave na Tacoma Dome,,6th Ave to Tacoma Dome
+stops,stop_desc,es,Angle Lake a Federal Way,,Angle Lake to Federal Way
+stops,stop_desc,zh-Hans,Angle Lake 到 Federal Way,,Angle Lake to Federal Way
+stops,stop_desc,ar,Angle Lake إلى Federal Way,,Angle Lake to Federal Way
+stops,stop_desc,bs,Angle Lake do Federal Way,,Angle Lake to Federal Way
+stops,stop_desc,hr,Angle Lake do Federal Way,,Angle Lake to Federal Way
+stops,stop_desc,nl,Angle Lake naar Federal Way,,Angle Lake to Federal Way
+stops,stop_desc,fr,Angle Lake vers Federal Way,,Angle Lake to Federal Way
+stops,stop_desc,de,Angle Lake nach Federal Way,,Angle Lake to Federal Way
+stops,stop_desc,it,Angle Lake a Federal Way,,Angle Lake to Federal Way
+stops,stop_desc,ko,Angle Lake에서 Federal Way 방향,,Angle Lake to Federal Way
+stops,stop_desc,fa,Angle Lake به Federal Way,,Angle Lake to Federal Way
+stops,stop_desc,ru,Angle Lake до Federal Way,,Angle Lake to Federal Way
+stops,stop_desc,sr,Angle Lake до Federal Way,,Angle Lake to Federal Way
+stops,stop_desc,tl,Angle Lake papunta Federal Way,,Angle Lake to Federal Way
+stops,stop_desc,vi,Angle Lake đến Federal Way,,Angle Lake to Federal Way
+stops,stop_desc,cy,Angle Lake i Federal Way,,Angle Lake to Federal Way
+stops,stop_desc,sw,Angle Lake kwenda Federal Way,,Angle Lake to Federal Way
+stops,stop_desc,pt-PT,Angle Lake para Federal Way,,Angle Lake to Federal Way
+stops,stop_desc,af,Angle Lake na Federal Way,,Angle Lake to Federal Way
+stops,stop_desc,es,Angle Lake a Lynnwood,,Angle Lake to Lynnwood
+stops,stop_desc,zh-Hans,Angle Lake 到 Lynnwood,,Angle Lake to Lynnwood
+stops,stop_desc,ar,Angle Lake إلى Lynnwood,,Angle Lake to Lynnwood
+stops,stop_desc,bs,Angle Lake do Lynnwood,,Angle Lake to Lynnwood
+stops,stop_desc,hr,Angle Lake do Lynnwood,,Angle Lake to Lynnwood
+stops,stop_desc,nl,Angle Lake naar Lynnwood,,Angle Lake to Lynnwood
+stops,stop_desc,fr,Angle Lake vers Lynnwood,,Angle Lake to Lynnwood
+stops,stop_desc,de,Angle Lake nach Lynnwood,,Angle Lake to Lynnwood
+stops,stop_desc,it,Angle Lake a Lynnwood,,Angle Lake to Lynnwood
+stops,stop_desc,ko,Angle Lake에서 Lynnwood 방향,,Angle Lake to Lynnwood
+stops,stop_desc,fa,Angle Lake به Lynnwood,,Angle Lake to Lynnwood
+stops,stop_desc,ru,Angle Lake до Lynnwood,,Angle Lake to Lynnwood
+stops,stop_desc,sr,Angle Lake до Lynnwood,,Angle Lake to Lynnwood
+stops,stop_desc,tl,Angle Lake papunta Lynnwood,,Angle Lake to Lynnwood
+stops,stop_desc,vi,Angle Lake đến Lynnwood,,Angle Lake to Lynnwood
+stops,stop_desc,cy,Angle Lake i Lynnwood,,Angle Lake to Lynnwood
+stops,stop_desc,sw,Angle Lake kwenda Lynnwood,,Angle Lake to Lynnwood
+stops,stop_desc,pt-PT,Angle Lake para Lynnwood,,Angle Lake to Lynnwood
+stops,stop_desc,af,Angle Lake na Lynnwood,,Angle Lake to Lynnwood
+stops,stop_desc,es,Beacon Hill a Federal Way,,Beacon Hill to Federal Way
+stops,stop_desc,zh-Hans,Beacon Hill 到 Federal Way,,Beacon Hill to Federal Way
+stops,stop_desc,ar,Beacon Hill إلى Federal Way,,Beacon Hill to Federal Way
+stops,stop_desc,bs,Beacon Hill do Federal Way,,Beacon Hill to Federal Way
+stops,stop_desc,hr,Beacon Hill do Federal Way,,Beacon Hill to Federal Way
+stops,stop_desc,nl,Beacon Hill naar Federal Way,,Beacon Hill to Federal Way
+stops,stop_desc,fr,Beacon Hill vers Federal Way,,Beacon Hill to Federal Way
+stops,stop_desc,de,Beacon Hill nach Federal Way,,Beacon Hill to Federal Way
+stops,stop_desc,it,Beacon Hill a Federal Way,,Beacon Hill to Federal Way
+stops,stop_desc,ko,Beacon Hill에서 Federal Way 방향,,Beacon Hill to Federal Way
+stops,stop_desc,fa,Beacon Hill به Federal Way,,Beacon Hill to Federal Way
+stops,stop_desc,ru,Beacon Hill до Federal Way,,Beacon Hill to Federal Way
+stops,stop_desc,sr,Beacon Hill до Federal Way,,Beacon Hill to Federal Way
+stops,stop_desc,tl,Beacon Hill papunta Federal Way,,Beacon Hill to Federal Way
+stops,stop_desc,vi,Beacon Hill đến Federal Way,,Beacon Hill to Federal Way
+stops,stop_desc,cy,Beacon Hill i Federal Way,,Beacon Hill to Federal Way
+stops,stop_desc,sw,Beacon Hill kwenda Federal Way,,Beacon Hill to Federal Way
+stops,stop_desc,pt-PT,Beacon Hill para Federal Way,,Beacon Hill to Federal Way
+stops,stop_desc,af,Beacon Hill na Federal Way,,Beacon Hill to Federal Way
+stops,stop_desc,es,Beacon Hill a Lynnwood,,Beacon Hill to Lynnwood
+stops,stop_desc,zh-Hans,Beacon Hill 到 Lynnwood,,Beacon Hill to Lynnwood
+stops,stop_desc,ar,Beacon Hill إلى Lynnwood,,Beacon Hill to Lynnwood
+stops,stop_desc,bs,Beacon Hill do Lynnwood,,Beacon Hill to Lynnwood
+stops,stop_desc,hr,Beacon Hill do Lynnwood,,Beacon Hill to Lynnwood
+stops,stop_desc,nl,Beacon Hill naar Lynnwood,,Beacon Hill to Lynnwood
+stops,stop_desc,fr,Beacon Hill vers Lynnwood,,Beacon Hill to Lynnwood
+stops,stop_desc,de,Beacon Hill nach Lynnwood,,Beacon Hill to Lynnwood
+stops,stop_desc,it,Beacon Hill a Lynnwood,,Beacon Hill to Lynnwood
+stops,stop_desc,ko,Beacon Hill에서 Lynnwood 방향,,Beacon Hill to Lynnwood
+stops,stop_desc,fa,Beacon Hill به Lynnwood,,Beacon Hill to Lynnwood
+stops,stop_desc,ru,Beacon Hill до Lynnwood,,Beacon Hill to Lynnwood
+stops,stop_desc,sr,Beacon Hill до Lynnwood,,Beacon Hill to Lynnwood
+stops,stop_desc,tl,Beacon Hill papunta Lynnwood,,Beacon Hill to Lynnwood
+stops,stop_desc,vi,Beacon Hill đến Lynnwood,,Beacon Hill to Lynnwood
+stops,stop_desc,cy,Beacon Hill i Lynnwood,,Beacon Hill to Lynnwood
+stops,stop_desc,sw,Beacon Hill kwenda Lynnwood,,Beacon Hill to Lynnwood
+stops,stop_desc,pt-PT,Beacon Hill para Lynnwood,,Beacon Hill to Lynnwood
+stops,stop_desc,af,Beacon Hill na Lynnwood,,Beacon Hill to Lynnwood
+stops,stop_desc,es,BelRed a Downtown Redmond,,BelRed to Downtown Redmond
+stops,stop_desc,zh-Hans,BelRed 到 Downtown Redmond,,BelRed to Downtown Redmond
+stops,stop_desc,ar,BelRed إلى Downtown Redmond,,BelRed to Downtown Redmond
+stops,stop_desc,bs,BelRed do Downtown Redmond,,BelRed to Downtown Redmond
+stops,stop_desc,hr,BelRed do Downtown Redmond,,BelRed to Downtown Redmond
+stops,stop_desc,nl,BelRed naar Downtown Redmond,,BelRed to Downtown Redmond
+stops,stop_desc,fr,BelRed vers Downtown Redmond,,BelRed to Downtown Redmond
+stops,stop_desc,de,BelRed nach Downtown Redmond,,BelRed to Downtown Redmond
+stops,stop_desc,it,BelRed a Downtown Redmond,,BelRed to Downtown Redmond
+stops,stop_desc,ko,BelRed에서 Downtown Redmond 방향,,BelRed to Downtown Redmond
+stops,stop_desc,fa,BelRed به Downtown Redmond,,BelRed to Downtown Redmond
+stops,stop_desc,ru,BelRed до Downtown Redmond,,BelRed to Downtown Redmond
+stops,stop_desc,sr,BelRed до Downtown Redmond,,BelRed to Downtown Redmond
+stops,stop_desc,tl,BelRed papunta Downtown Redmond,,BelRed to Downtown Redmond
+stops,stop_desc,vi,BelRed đến Downtown Redmond,,BelRed to Downtown Redmond
+stops,stop_desc,cy,BelRed i Downtown Redmond,,BelRed to Downtown Redmond
+stops,stop_desc,sw,BelRed kwenda Downtown Redmond,,BelRed to Downtown Redmond
+stops,stop_desc,pt-PT,BelRed para Downtown Redmond,,BelRed to Downtown Redmond
+stops,stop_desc,af,BelRed na Downtown Redmond,,BelRed to Downtown Redmond
+stops,stop_desc,es,BelRed a South Bellevue,,BelRed to South Bellevue
+stops,stop_desc,zh-Hans,BelRed 到 South Bellevue,,BelRed to South Bellevue
+stops,stop_desc,ar,BelRed إلى South Bellevue,,BelRed to South Bellevue
+stops,stop_desc,bs,BelRed do South Bellevue,,BelRed to South Bellevue
+stops,stop_desc,hr,BelRed do South Bellevue,,BelRed to South Bellevue
+stops,stop_desc,nl,BelRed naar South Bellevue,,BelRed to South Bellevue
+stops,stop_desc,fr,BelRed vers South Bellevue,,BelRed to South Bellevue
+stops,stop_desc,de,BelRed nach South Bellevue,,BelRed to South Bellevue
+stops,stop_desc,it,BelRed a South Bellevue,,BelRed to South Bellevue
+stops,stop_desc,ko,BelRed에서 South Bellevue 방향,,BelRed to South Bellevue
+stops,stop_desc,fa,BelRed به South Bellevue,,BelRed to South Bellevue
+stops,stop_desc,ru,BelRed до South Bellevue,,BelRed to South Bellevue
+stops,stop_desc,sr,BelRed до South Bellevue,,BelRed to South Bellevue
+stops,stop_desc,tl,BelRed papunta South Bellevue,,BelRed to South Bellevue
+stops,stop_desc,vi,BelRed đến South Bellevue,,BelRed to South Bellevue
+stops,stop_desc,cy,BelRed i South Bellevue,,BelRed to South Bellevue
+stops,stop_desc,sw,BelRed kwenda South Bellevue,,BelRed to South Bellevue
+stops,stop_desc,pt-PT,BelRed para South Bellevue,,BelRed to South Bellevue
+stops,stop_desc,af,BelRed na South Bellevue,,BelRed to South Bellevue
+stops,stop_desc,es,Bellevue Downtown a Downtown Redmond,,Bellevue Downtown to Downtown Redmond
+stops,stop_desc,zh-Hans,Bellevue Downtown 到 Downtown Redmond,,Bellevue Downtown to Downtown Redmond
+stops,stop_desc,ar,Bellevue Downtown إلى Downtown Redmond,,Bellevue Downtown to Downtown Redmond
+stops,stop_desc,bs,Bellevue Downtown do Downtown Redmond,,Bellevue Downtown to Downtown Redmond
+stops,stop_desc,hr,Bellevue Downtown do Downtown Redmond,,Bellevue Downtown to Downtown Redmond
+stops,stop_desc,nl,Bellevue Downtown naar Downtown Redmond,,Bellevue Downtown to Downtown Redmond
+stops,stop_desc,fr,Bellevue Downtown vers Downtown Redmond,,Bellevue Downtown to Downtown Redmond
+stops,stop_desc,de,Bellevue Downtown nach Downtown Redmond,,Bellevue Downtown to Downtown Redmond
+stops,stop_desc,it,Bellevue Downtown a Downtown Redmond,,Bellevue Downtown to Downtown Redmond
+stops,stop_desc,ko,Bellevue Downtown에서 Downtown Redmond 방향,,Bellevue Downtown to Downtown Redmond
+stops,stop_desc,fa,Bellevue Downtown به Downtown Redmond,,Bellevue Downtown to Downtown Redmond
+stops,stop_desc,ru,Bellevue Downtown до Downtown Redmond,,Bellevue Downtown to Downtown Redmond
+stops,stop_desc,sr,Bellevue Downtown до Downtown Redmond,,Bellevue Downtown to Downtown Redmond
+stops,stop_desc,tl,Bellevue Downtown papunta Downtown Redmond,,Bellevue Downtown to Downtown Redmond
+stops,stop_desc,vi,Bellevue Downtown đến Downtown Redmond,,Bellevue Downtown to Downtown Redmond
+stops,stop_desc,cy,Bellevue Downtown i Downtown Redmond,,Bellevue Downtown to Downtown Redmond
+stops,stop_desc,sw,Bellevue Downtown kwenda Downtown Redmond,,Bellevue Downtown to Downtown Redmond
+stops,stop_desc,pt-PT,Bellevue Downtown para Downtown Redmond,,Bellevue Downtown to Downtown Redmond
+stops,stop_desc,af,Bellevue Downtown na Downtown Redmond,,Bellevue Downtown to Downtown Redmond
+stops,stop_desc,es,Bellevue Downtown a South Bellevue,,Bellevue Downtown to South Bellevue
+stops,stop_desc,zh-Hans,Bellevue Downtown 到 South Bellevue,,Bellevue Downtown to South Bellevue
+stops,stop_desc,ar,Bellevue Downtown إلى South Bellevue,,Bellevue Downtown to South Bellevue
+stops,stop_desc,bs,Bellevue Downtown do South Bellevue,,Bellevue Downtown to South Bellevue
+stops,stop_desc,hr,Bellevue Downtown do South Bellevue,,Bellevue Downtown to South Bellevue
+stops,stop_desc,nl,Bellevue Downtown naar South Bellevue,,Bellevue Downtown to South Bellevue
+stops,stop_desc,fr,Bellevue Downtown vers South Bellevue,,Bellevue Downtown to South Bellevue
+stops,stop_desc,de,Bellevue Downtown nach South Bellevue,,Bellevue Downtown to South Bellevue
+stops,stop_desc,it,Bellevue Downtown a South Bellevue,,Bellevue Downtown to South Bellevue
+stops,stop_desc,ko,Bellevue Downtown에서 South Bellevue 방향,,Bellevue Downtown to South Bellevue
+stops,stop_desc,fa,Bellevue Downtown به South Bellevue,,Bellevue Downtown to South Bellevue
+stops,stop_desc,ru,Bellevue Downtown до South Bellevue,,Bellevue Downtown to South Bellevue
+stops,stop_desc,sr,Bellevue Downtown до South Bellevue,,Bellevue Downtown to South Bellevue
+stops,stop_desc,tl,Bellevue Downtown papunta South Bellevue,,Bellevue Downtown to South Bellevue
+stops,stop_desc,vi,Bellevue Downtown đến South Bellevue,,Bellevue Downtown to South Bellevue
+stops,stop_desc,cy,Bellevue Downtown i South Bellevue,,Bellevue Downtown to South Bellevue
+stops,stop_desc,sw,Bellevue Downtown kwenda South Bellevue,,Bellevue Downtown to South Bellevue
+stops,stop_desc,pt-PT,Bellevue Downtown para South Bellevue,,Bellevue Downtown to South Bellevue
+stops,stop_desc,af,Bellevue Downtown na South Bellevue,,Bellevue Downtown to South Bellevue
+stops,stop_desc,es,Capitol Hill a Federal Way,,Capitol Hill to Federal Way
+stops,stop_desc,zh-Hans,Capitol Hill 到 Federal Way,,Capitol Hill to Federal Way
+stops,stop_desc,ar,Capitol Hill إلى Federal Way,,Capitol Hill to Federal Way
+stops,stop_desc,bs,Capitol Hill do Federal Way,,Capitol Hill to Federal Way
+stops,stop_desc,hr,Capitol Hill do Federal Way,,Capitol Hill to Federal Way
+stops,stop_desc,nl,Capitol Hill naar Federal Way,,Capitol Hill to Federal Way
+stops,stop_desc,fr,Capitol Hill vers Federal Way,,Capitol Hill to Federal Way
+stops,stop_desc,de,Capitol Hill nach Federal Way,,Capitol Hill to Federal Way
+stops,stop_desc,it,Capitol Hill a Federal Way,,Capitol Hill to Federal Way
+stops,stop_desc,ko,Capitol Hill에서 Federal Way 방향,,Capitol Hill to Federal Way
+stops,stop_desc,fa,Capitol Hill به Federal Way,,Capitol Hill to Federal Way
+stops,stop_desc,ru,Capitol Hill до Federal Way,,Capitol Hill to Federal Way
+stops,stop_desc,sr,Capitol Hill до Federal Way,,Capitol Hill to Federal Way
+stops,stop_desc,tl,Capitol Hill papunta Federal Way,,Capitol Hill to Federal Way
+stops,stop_desc,vi,Capitol Hill đến Federal Way,,Capitol Hill to Federal Way
+stops,stop_desc,cy,Capitol Hill i Federal Way,,Capitol Hill to Federal Way
+stops,stop_desc,sw,Capitol Hill kwenda Federal Way,,Capitol Hill to Federal Way
+stops,stop_desc,pt-PT,Capitol Hill para Federal Way,,Capitol Hill to Federal Way
+stops,stop_desc,af,Capitol Hill na Federal Way,,Capitol Hill to Federal Way
+stops,stop_desc,es,Capitol Hill a Lynnwood,,Capitol Hill to Lynnwood
+stops,stop_desc,zh-Hans,Capitol Hill 到 Lynnwood,,Capitol Hill to Lynnwood
+stops,stop_desc,ar,Capitol Hill إلى Lynnwood,,Capitol Hill to Lynnwood
+stops,stop_desc,bs,Capitol Hill do Lynnwood,,Capitol Hill to Lynnwood
+stops,stop_desc,hr,Capitol Hill do Lynnwood,,Capitol Hill to Lynnwood
+stops,stop_desc,nl,Capitol Hill naar Lynnwood,,Capitol Hill to Lynnwood
+stops,stop_desc,fr,Capitol Hill vers Lynnwood,,Capitol Hill to Lynnwood
+stops,stop_desc,de,Capitol Hill nach Lynnwood,,Capitol Hill to Lynnwood
+stops,stop_desc,it,Capitol Hill a Lynnwood,,Capitol Hill to Lynnwood
+stops,stop_desc,ko,Capitol Hill에서 Lynnwood 방향,,Capitol Hill to Lynnwood
+stops,stop_desc,fa,Capitol Hill به Lynnwood,,Capitol Hill to Lynnwood
+stops,stop_desc,ru,Capitol Hill до Lynnwood,,Capitol Hill to Lynnwood
+stops,stop_desc,sr,Capitol Hill до Lynnwood,,Capitol Hill to Lynnwood
+stops,stop_desc,tl,Capitol Hill papunta Lynnwood,,Capitol Hill to Lynnwood
+stops,stop_desc,vi,Capitol Hill đến Lynnwood,,Capitol Hill to Lynnwood
+stops,stop_desc,cy,Capitol Hill i Lynnwood,,Capitol Hill to Lynnwood
+stops,stop_desc,sw,Capitol Hill kwenda Lynnwood,,Capitol Hill to Lynnwood
+stops,stop_desc,pt-PT,Capitol Hill para Lynnwood,,Capitol Hill to Lynnwood
+stops,stop_desc,af,Capitol Hill na Lynnwood,,Capitol Hill to Lynnwood
+stops,stop_desc,es,Columbia City a Federal Way,,Columbia City to Federal Way
+stops,stop_desc,zh-Hans,Columbia City 到 Federal Way,,Columbia City to Federal Way
+stops,stop_desc,ar,Columbia City إلى Federal Way,,Columbia City to Federal Way
+stops,stop_desc,bs,Columbia City do Federal Way,,Columbia City to Federal Way
+stops,stop_desc,hr,Columbia City do Federal Way,,Columbia City to Federal Way
+stops,stop_desc,nl,Columbia City naar Federal Way,,Columbia City to Federal Way
+stops,stop_desc,fr,Columbia City vers Federal Way,,Columbia City to Federal Way
+stops,stop_desc,de,Columbia City nach Federal Way,,Columbia City to Federal Way
+stops,stop_desc,it,Columbia City a Federal Way,,Columbia City to Federal Way
+stops,stop_desc,ko,Columbia City에서 Federal Way 방향,,Columbia City to Federal Way
+stops,stop_desc,fa,Columbia City به Federal Way,,Columbia City to Federal Way
+stops,stop_desc,ru,Columbia City до Federal Way,,Columbia City to Federal Way
+stops,stop_desc,sr,Columbia City до Federal Way,,Columbia City to Federal Way
+stops,stop_desc,tl,Columbia City papunta Federal Way,,Columbia City to Federal Way
+stops,stop_desc,vi,Columbia City đến Federal Way,,Columbia City to Federal Way
+stops,stop_desc,cy,Columbia City i Federal Way,,Columbia City to Federal Way
+stops,stop_desc,sw,Columbia City kwenda Federal Way,,Columbia City to Federal Way
+stops,stop_desc,pt-PT,Columbia City para Federal Way,,Columbia City to Federal Way
+stops,stop_desc,af,Columbia City na Federal Way,,Columbia City to Federal Way
+stops,stop_desc,es,Columbia City a Lynnwood,,Columbia City to Lynnwood
+stops,stop_desc,zh-Hans,Columbia City 到 Lynnwood,,Columbia City to Lynnwood
+stops,stop_desc,ar,Columbia City إلى Lynnwood,,Columbia City to Lynnwood
+stops,stop_desc,bs,Columbia City do Lynnwood,,Columbia City to Lynnwood
+stops,stop_desc,hr,Columbia City do Lynnwood,,Columbia City to Lynnwood
+stops,stop_desc,nl,Columbia City naar Lynnwood,,Columbia City to Lynnwood
+stops,stop_desc,fr,Columbia City vers Lynnwood,,Columbia City to Lynnwood
+stops,stop_desc,de,Columbia City nach Lynnwood,,Columbia City to Lynnwood
+stops,stop_desc,it,Columbia City a Lynnwood,,Columbia City to Lynnwood
+stops,stop_desc,ko,Columbia City에서 Lynnwood 방향,,Columbia City to Lynnwood
+stops,stop_desc,fa,Columbia City به Lynnwood,,Columbia City to Lynnwood
+stops,stop_desc,ru,Columbia City до Lynnwood,,Columbia City to Lynnwood
+stops,stop_desc,sr,Columbia City до Lynnwood,,Columbia City to Lynnwood
+stops,stop_desc,tl,Columbia City papunta Lynnwood,,Columbia City to Lynnwood
+stops,stop_desc,vi,Columbia City đến Lynnwood,,Columbia City to Lynnwood
+stops,stop_desc,cy,Columbia City i Lynnwood,,Columbia City to Lynnwood
+stops,stop_desc,sw,Columbia City kwenda Lynnwood,,Columbia City to Lynnwood
+stops,stop_desc,pt-PT,Columbia City para Lynnwood,,Columbia City to Lynnwood
+stops,stop_desc,af,Columbia City na Lynnwood,,Columbia City to Lynnwood
+stops,stop_desc,es,Convention Center a St Joseph,,Convention Center to St Joseph
+stops,stop_desc,zh-Hans,Convention Center 到 St Joseph,,Convention Center to St Joseph
+stops,stop_desc,ar,Convention Center إلى St Joseph,,Convention Center to St Joseph
+stops,stop_desc,bs,Convention Center do St Joseph,,Convention Center to St Joseph
+stops,stop_desc,hr,Convention Center do St Joseph,,Convention Center to St Joseph
+stops,stop_desc,nl,Convention Center naar St Joseph,,Convention Center to St Joseph
+stops,stop_desc,fr,Convention Center vers St Joseph,,Convention Center to St Joseph
+stops,stop_desc,de,Convention Center nach St Joseph,,Convention Center to St Joseph
+stops,stop_desc,it,Convention Center a St Joseph,,Convention Center to St Joseph
+stops,stop_desc,ko,Convention Center에서 St Joseph 방향,,Convention Center to St Joseph
+stops,stop_desc,fa,Convention Center به St Joseph,,Convention Center to St Joseph
+stops,stop_desc,ru,Convention Center до St Joseph,,Convention Center to St Joseph
+stops,stop_desc,sr,Convention Center до St Joseph,,Convention Center to St Joseph
+stops,stop_desc,tl,Convention Center papunta St Joseph,,Convention Center to St Joseph
+stops,stop_desc,vi,Convention Center đến St Joseph,,Convention Center to St Joseph
+stops,stop_desc,cy,Convention Center i St Joseph,,Convention Center to St Joseph
+stops,stop_desc,sw,Convention Center kwenda St Joseph,,Convention Center to St Joseph
+stops,stop_desc,pt-PT,Convention Center para St Joseph,,Convention Center to St Joseph
+stops,stop_desc,af,Convention Center na St Joseph,,Convention Center to St Joseph
+stops,stop_desc,es,Convention Center a Tacoma Dome,,Convention Center to Tacoma Dome
+stops,stop_desc,zh-Hans,Convention Center 到 Tacoma Dome,,Convention Center to Tacoma Dome
+stops,stop_desc,ar,Convention Center إلى Tacoma Dome,,Convention Center to Tacoma Dome
+stops,stop_desc,bs,Convention Center do Tacoma Dome,,Convention Center to Tacoma Dome
+stops,stop_desc,hr,Convention Center do Tacoma Dome,,Convention Center to Tacoma Dome
+stops,stop_desc,nl,Convention Center naar Tacoma Dome,,Convention Center to Tacoma Dome
+stops,stop_desc,fr,Convention Center vers Tacoma Dome,,Convention Center to Tacoma Dome
+stops,stop_desc,de,Convention Center nach Tacoma Dome,,Convention Center to Tacoma Dome
+stops,stop_desc,it,Convention Center a Tacoma Dome,,Convention Center to Tacoma Dome
+stops,stop_desc,ko,Convention Center에서 Tacoma Dome 방향,,Convention Center to Tacoma Dome
+stops,stop_desc,fa,Convention Center به Tacoma Dome,,Convention Center to Tacoma Dome
+stops,stop_desc,ru,Convention Center до Tacoma Dome,,Convention Center to Tacoma Dome
+stops,stop_desc,sr,Convention Center до Tacoma Dome,,Convention Center to Tacoma Dome
+stops,stop_desc,tl,Convention Center papunta Tacoma Dome,,Convention Center to Tacoma Dome
+stops,stop_desc,vi,Convention Center đến Tacoma Dome,,Convention Center to Tacoma Dome
+stops,stop_desc,cy,Convention Center i Tacoma Dome,,Convention Center to Tacoma Dome
+stops,stop_desc,sw,Convention Center kwenda Tacoma Dome,,Convention Center to Tacoma Dome
+stops,stop_desc,pt-PT,Convention Center para Tacoma Dome,,Convention Center to Tacoma Dome
+stops,stop_desc,af,Convention Center na Tacoma Dome,,Convention Center to Tacoma Dome
+stops,stop_desc,es,Downtown Redmond a/desde South Bellevue,,Downtown Redmond to/from South Bellevue
+stops,stop_desc,zh-Hans,Downtown Redmond 往返 South Bellevue,,Downtown Redmond to/from South Bellevue
+stops,stop_desc,ar,Downtown Redmond إلى/من South Bellevue,,Downtown Redmond to/from South Bellevue
+stops,stop_desc,bs,Downtown Redmond do/od South Bellevue,,Downtown Redmond to/from South Bellevue
+stops,stop_desc,hr,Downtown Redmond do/od South Bellevue,,Downtown Redmond to/from South Bellevue
+stops,stop_desc,nl,Downtown Redmond van/naar South Bellevue,,Downtown Redmond to/from South Bellevue
+stops,stop_desc,fr,Downtown Redmond depuis/vers South Bellevue,,Downtown Redmond to/from South Bellevue
+stops,stop_desc,de,Downtown Redmond von/nach South Bellevue,,Downtown Redmond to/from South Bellevue
+stops,stop_desc,it,Downtown Redmond a/da South Bellevue,,Downtown Redmond to/from South Bellevue
+stops,stop_desc,ko,Downtown Redmond - South Bellevue 왕복,,Downtown Redmond to/from South Bellevue
+stops,stop_desc,fa,Downtown Redmond به/از South Bellevue,,Downtown Redmond to/from South Bellevue
+stops,stop_desc,ru,Downtown Redmond до/от South Bellevue,,Downtown Redmond to/from South Bellevue
+stops,stop_desc,sr,Downtown Redmond до/од South Bellevue,,Downtown Redmond to/from South Bellevue
+stops,stop_desc,tl,Downtown Redmond papunta/mula sa South Bellevue,,Downtown Redmond to/from South Bellevue
+stops,stop_desc,vi,Downtown Redmond đến/từ South Bellevue,,Downtown Redmond to/from South Bellevue
+stops,stop_desc,cy,Downtown Redmond i/o South Bellevue,,Downtown Redmond to/from South Bellevue
+stops,stop_desc,sw,Downtown Redmond kwenda/kutoka South Bellevue,,Downtown Redmond to/from South Bellevue
+stops,stop_desc,pt-PT,Downtown Redmond para/de South Bellevue,,Downtown Redmond to/from South Bellevue
+stops,stop_desc,af,Downtown Redmond na/van South Bellevue,,Downtown Redmond to/from South Bellevue
+stops,stop_desc,es,East Main a Downtown Redmond,,East Main to Downtown Redmond
+stops,stop_desc,zh-Hans,East Main 到 Downtown Redmond,,East Main to Downtown Redmond
+stops,stop_desc,ar,East Main إلى Downtown Redmond,,East Main to Downtown Redmond
+stops,stop_desc,bs,East Main do Downtown Redmond,,East Main to Downtown Redmond
+stops,stop_desc,hr,East Main do Downtown Redmond,,East Main to Downtown Redmond
+stops,stop_desc,nl,East Main naar Downtown Redmond,,East Main to Downtown Redmond
+stops,stop_desc,fr,East Main vers Downtown Redmond,,East Main to Downtown Redmond
+stops,stop_desc,de,East Main nach Downtown Redmond,,East Main to Downtown Redmond
+stops,stop_desc,it,East Main a Downtown Redmond,,East Main to Downtown Redmond
+stops,stop_desc,ko,East Main에서 Downtown Redmond 방향,,East Main to Downtown Redmond
+stops,stop_desc,fa,East Main به Downtown Redmond,,East Main to Downtown Redmond
+stops,stop_desc,ru,East Main до Downtown Redmond,,East Main to Downtown Redmond
+stops,stop_desc,sr,East Main до Downtown Redmond,,East Main to Downtown Redmond
+stops,stop_desc,tl,East Main papunta Downtown Redmond,,East Main to Downtown Redmond
+stops,stop_desc,vi,East Main đến Downtown Redmond,,East Main to Downtown Redmond
+stops,stop_desc,cy,East Main i Downtown Redmond,,East Main to Downtown Redmond
+stops,stop_desc,sw,East Main kwenda Downtown Redmond,,East Main to Downtown Redmond
+stops,stop_desc,pt-PT,East Main para Downtown Redmond,,East Main to Downtown Redmond
+stops,stop_desc,af,East Main na Downtown Redmond,,East Main to Downtown Redmond
+stops,stop_desc,es,East Main a South Bellevue,,East Main to South Bellevue
+stops,stop_desc,zh-Hans,East Main 到 South Bellevue,,East Main to South Bellevue
+stops,stop_desc,ar,East Main إلى South Bellevue,,East Main to South Bellevue
+stops,stop_desc,bs,East Main do South Bellevue,,East Main to South Bellevue
+stops,stop_desc,hr,East Main do South Bellevue,,East Main to South Bellevue
+stops,stop_desc,nl,East Main naar South Bellevue,,East Main to South Bellevue
+stops,stop_desc,fr,East Main vers South Bellevue,,East Main to South Bellevue
+stops,stop_desc,de,East Main nach South Bellevue,,East Main to South Bellevue
+stops,stop_desc,it,East Main a South Bellevue,,East Main to South Bellevue
+stops,stop_desc,ko,East Main에서 South Bellevue 방향,,East Main to South Bellevue
+stops,stop_desc,fa,East Main به South Bellevue,,East Main to South Bellevue
+stops,stop_desc,ru,East Main до South Bellevue,,East Main to South Bellevue
+stops,stop_desc,sr,East Main до South Bellevue,,East Main to South Bellevue
+stops,stop_desc,tl,East Main papunta South Bellevue,,East Main to South Bellevue
+stops,stop_desc,vi,East Main đến South Bellevue,,East Main to South Bellevue
+stops,stop_desc,cy,East Main i South Bellevue,,East Main to South Bellevue
+stops,stop_desc,sw,East Main kwenda South Bellevue,,East Main to South Bellevue
+stops,stop_desc,pt-PT,East Main para South Bellevue,,East Main to South Bellevue
+stops,stop_desc,af,East Main na South Bellevue,,East Main to South Bellevue
+stops,stop_desc,es,Federal Way Downtown a/desde Lynnwood,,Federal Way Downtown to/from Lynnwood
+stops,stop_desc,zh-Hans,Federal Way Downtown 往返 Lynnwood,,Federal Way Downtown to/from Lynnwood
+stops,stop_desc,ar,Federal Way Downtown إلى/من Lynnwood,,Federal Way Downtown to/from Lynnwood
+stops,stop_desc,bs,Federal Way Downtown do/od Lynnwood,,Federal Way Downtown to/from Lynnwood
+stops,stop_desc,hr,Federal Way Downtown do/od Lynnwood,,Federal Way Downtown to/from Lynnwood
+stops,stop_desc,nl,Federal Way Downtown van/naar Lynnwood,,Federal Way Downtown to/from Lynnwood
+stops,stop_desc,fr,Federal Way Downtown depuis/vers Lynnwood,,Federal Way Downtown to/from Lynnwood
+stops,stop_desc,de,Federal Way Downtown von/nach Lynnwood,,Federal Way Downtown to/from Lynnwood
+stops,stop_desc,it,Federal Way Downtown a/da Lynnwood,,Federal Way Downtown to/from Lynnwood
+stops,stop_desc,ko,Federal Way Downtown - Lynnwood 왕복,,Federal Way Downtown to/from Lynnwood
+stops,stop_desc,fa,Federal Way Downtown به/از Lynnwood,,Federal Way Downtown to/from Lynnwood
+stops,stop_desc,ru,Federal Way Downtown до/от Lynnwood,,Federal Way Downtown to/from Lynnwood
+stops,stop_desc,sr,Federal Way Downtown до/од Lynnwood,,Federal Way Downtown to/from Lynnwood
+stops,stop_desc,tl,Federal Way Downtown papunta/mula sa Lynnwood,,Federal Way Downtown to/from Lynnwood
+stops,stop_desc,vi,Federal Way Downtown đến/từ Lynnwood,,Federal Way Downtown to/from Lynnwood
+stops,stop_desc,cy,Federal Way Downtown i/o Lynnwood,,Federal Way Downtown to/from Lynnwood
+stops,stop_desc,sw,Federal Way Downtown kwenda/kutoka Lynnwood,,Federal Way Downtown to/from Lynnwood
+stops,stop_desc,pt-PT,Federal Way Downtown para/de Lynnwood,,Federal Way Downtown to/from Lynnwood
+stops,stop_desc,af,Federal Way Downtown na/van Lynnwood,,Federal Way Downtown to/from Lynnwood
+stops,stop_desc,es,Hilltop District a St Joseph,,Hilltop District to St Joseph
+stops,stop_desc,zh-Hans,Hilltop District 到 St Joseph,,Hilltop District to St Joseph
+stops,stop_desc,ar,Hilltop District إلى St Joseph,,Hilltop District to St Joseph
+stops,stop_desc,bs,Hilltop District do St Joseph,,Hilltop District to St Joseph
+stops,stop_desc,hr,Hilltop District do St Joseph,,Hilltop District to St Joseph
+stops,stop_desc,nl,Hilltop District naar St Joseph,,Hilltop District to St Joseph
+stops,stop_desc,fr,Hilltop District vers St Joseph,,Hilltop District to St Joseph
+stops,stop_desc,de,Hilltop District nach St Joseph,,Hilltop District to St Joseph
+stops,stop_desc,it,Hilltop District a St Joseph,,Hilltop District to St Joseph
+stops,stop_desc,ko,Hilltop District에서 St Joseph 방향,,Hilltop District to St Joseph
+stops,stop_desc,fa,Hilltop District به St Joseph,,Hilltop District to St Joseph
+stops,stop_desc,ru,Hilltop District до St Joseph,,Hilltop District to St Joseph
+stops,stop_desc,sr,Hilltop District до St Joseph,,Hilltop District to St Joseph
+stops,stop_desc,tl,Hilltop District papunta St Joseph,,Hilltop District to St Joseph
+stops,stop_desc,vi,Hilltop District đến St Joseph,,Hilltop District to St Joseph
+stops,stop_desc,cy,Hilltop District i St Joseph,,Hilltop District to St Joseph
+stops,stop_desc,sw,Hilltop District kwenda St Joseph,,Hilltop District to St Joseph
+stops,stop_desc,pt-PT,Hilltop District para St Joseph,,Hilltop District to St Joseph
+stops,stop_desc,af,Hilltop District na St Joseph,,Hilltop District to St Joseph
+stops,stop_desc,es,Hilltop District a Tacoma Dome,,Hilltop District to Tacoma Dome
+stops,stop_desc,zh-Hans,Hilltop District 到 Tacoma Dome,,Hilltop District to Tacoma Dome
+stops,stop_desc,ar,Hilltop District إلى Tacoma Dome,,Hilltop District to Tacoma Dome
+stops,stop_desc,bs,Hilltop District do Tacoma Dome,,Hilltop District to Tacoma Dome
+stops,stop_desc,hr,Hilltop District do Tacoma Dome,,Hilltop District to Tacoma Dome
+stops,stop_desc,nl,Hilltop District naar Tacoma Dome,,Hilltop District to Tacoma Dome
+stops,stop_desc,fr,Hilltop District vers Tacoma Dome,,Hilltop District to Tacoma Dome
+stops,stop_desc,de,Hilltop District nach Tacoma Dome,,Hilltop District to Tacoma Dome
+stops,stop_desc,it,Hilltop District a Tacoma Dome,,Hilltop District to Tacoma Dome
+stops,stop_desc,ko,Hilltop District에서 Tacoma Dome 방향,,Hilltop District to Tacoma Dome
+stops,stop_desc,fa,Hilltop District به Tacoma Dome,,Hilltop District to Tacoma Dome
+stops,stop_desc,ru,Hilltop District до Tacoma Dome,,Hilltop District to Tacoma Dome
+stops,stop_desc,sr,Hilltop District до Tacoma Dome,,Hilltop District to Tacoma Dome
+stops,stop_desc,tl,Hilltop District papunta Tacoma Dome,,Hilltop District to Tacoma Dome
+stops,stop_desc,vi,Hilltop District đến Tacoma Dome,,Hilltop District to Tacoma Dome
+stops,stop_desc,cy,Hilltop District i Tacoma Dome,,Hilltop District to Tacoma Dome
+stops,stop_desc,sw,Hilltop District kwenda Tacoma Dome,,Hilltop District to Tacoma Dome
+stops,stop_desc,pt-PT,Hilltop District para Tacoma Dome,,Hilltop District to Tacoma Dome
+stops,stop_desc,af,Hilltop District na Tacoma Dome,,Hilltop District to Tacoma Dome
+stops,stop_desc,es,Int'l Dist/Chinatown a Federal Way,,Int'l Dist/Chinatown to Federal Way
+stops,stop_desc,zh-Hans,Int'l Dist/Chinatown 到 Federal Way,,Int'l Dist/Chinatown to Federal Way
+stops,stop_desc,ar,Int'l Dist/Chinatown إلى Federal Way,,Int'l Dist/Chinatown to Federal Way
+stops,stop_desc,bs,Int'l Dist/Chinatown do Federal Way,,Int'l Dist/Chinatown to Federal Way
+stops,stop_desc,hr,Int'l Dist/Chinatown do Federal Way,,Int'l Dist/Chinatown to Federal Way
+stops,stop_desc,nl,Int'l Dist/Chinatown naar Federal Way,,Int'l Dist/Chinatown to Federal Way
+stops,stop_desc,fr,Int'l Dist/Chinatown vers Federal Way,,Int'l Dist/Chinatown to Federal Way
+stops,stop_desc,de,Int'l Dist/Chinatown nach Federal Way,,Int'l Dist/Chinatown to Federal Way
+stops,stop_desc,it,Int'l Dist/Chinatown a Federal Way,,Int'l Dist/Chinatown to Federal Way
+stops,stop_desc,ko,Int'l Dist/Chinatown에서 Federal Way 방향,,Int'l Dist/Chinatown to Federal Way
+stops,stop_desc,fa,Int'l Dist/Chinatown به Federal Way,,Int'l Dist/Chinatown to Federal Way
+stops,stop_desc,ru,Int'l Dist/Chinatown до Federal Way,,Int'l Dist/Chinatown to Federal Way
+stops,stop_desc,sr,Int'l Dist/Chinatown до Federal Way,,Int'l Dist/Chinatown to Federal Way
+stops,stop_desc,tl,Int'l Dist/Chinatown papunta Federal Way,,Int'l Dist/Chinatown to Federal Way
+stops,stop_desc,vi,Int'l Dist/Chinatown đến Federal Way,,Int'l Dist/Chinatown to Federal Way
+stops,stop_desc,cy,Int'l Dist/Chinatown i Federal Way,,Int'l Dist/Chinatown to Federal Way
+stops,stop_desc,sw,Int'l Dist/Chinatown kwenda Federal Way,,Int'l Dist/Chinatown to Federal Way
+stops,stop_desc,pt-PT,Int'l Dist/Chinatown para Federal Way,,Int'l Dist/Chinatown to Federal Way
+stops,stop_desc,af,Int'l Dist/Chinatown na Federal Way,,Int'l Dist/Chinatown to Federal Way
+stops,stop_desc,es,Int'l Dist/Chinatown a Lynnwood,,Int'l Dist/Chinatown to Lynnwood
+stops,stop_desc,zh-Hans,Int'l Dist/Chinatown 到 Lynnwood,,Int'l Dist/Chinatown to Lynnwood
+stops,stop_desc,ar,Int'l Dist/Chinatown إلى Lynnwood,,Int'l Dist/Chinatown to Lynnwood
+stops,stop_desc,bs,Int'l Dist/Chinatown do Lynnwood,,Int'l Dist/Chinatown to Lynnwood
+stops,stop_desc,hr,Int'l Dist/Chinatown do Lynnwood,,Int'l Dist/Chinatown to Lynnwood
+stops,stop_desc,nl,Int'l Dist/Chinatown naar Lynnwood,,Int'l Dist/Chinatown to Lynnwood
+stops,stop_desc,fr,Int'l Dist/Chinatown vers Lynnwood,,Int'l Dist/Chinatown to Lynnwood
+stops,stop_desc,de,Int'l Dist/Chinatown nach Lynnwood,,Int'l Dist/Chinatown to Lynnwood
+stops,stop_desc,it,Int'l Dist/Chinatown a Lynnwood,,Int'l Dist/Chinatown to Lynnwood
+stops,stop_desc,ko,Int'l Dist/Chinatown에서 Lynnwood 방향,,Int'l Dist/Chinatown to Lynnwood
+stops,stop_desc,fa,Int'l Dist/Chinatown به Lynnwood,,Int'l Dist/Chinatown to Lynnwood
+stops,stop_desc,ru,Int'l Dist/Chinatown до Lynnwood,,Int'l Dist/Chinatown to Lynnwood
+stops,stop_desc,sr,Int'l Dist/Chinatown до Lynnwood,,Int'l Dist/Chinatown to Lynnwood
+stops,stop_desc,tl,Int'l Dist/Chinatown papunta Lynnwood,,Int'l Dist/Chinatown to Lynnwood
+stops,stop_desc,vi,Int'l Dist/Chinatown đến Lynnwood,,Int'l Dist/Chinatown to Lynnwood
+stops,stop_desc,cy,Int'l Dist/Chinatown i Lynnwood,,Int'l Dist/Chinatown to Lynnwood
+stops,stop_desc,sw,Int'l Dist/Chinatown kwenda Lynnwood,,Int'l Dist/Chinatown to Lynnwood
+stops,stop_desc,pt-PT,Int'l Dist/Chinatown para Lynnwood,,Int'l Dist/Chinatown to Lynnwood
+stops,stop_desc,af,Int'l Dist/Chinatown na Lynnwood,,Int'l Dist/Chinatown to Lynnwood
+stops,stop_desc,es,Judkins Park a Downtown Redmond,,Judkins Park to Downtown Redmond
+stops,stop_desc,zh-Hans,Judkins Park 到 Downtown Redmond,,Judkins Park to Downtown Redmond
+stops,stop_desc,ar,Judkins Park إلى Downtown Redmond,,Judkins Park to Downtown Redmond
+stops,stop_desc,bs,Judkins Park do Downtown Redmond,,Judkins Park to Downtown Redmond
+stops,stop_desc,hr,Judkins Park do Downtown Redmond,,Judkins Park to Downtown Redmond
+stops,stop_desc,nl,Judkins Park naar Downtown Redmond,,Judkins Park to Downtown Redmond
+stops,stop_desc,fr,Judkins Park vers Downtown Redmond,,Judkins Park to Downtown Redmond
+stops,stop_desc,de,Judkins Park nach Downtown Redmond,,Judkins Park to Downtown Redmond
+stops,stop_desc,it,Judkins Park a Downtown Redmond,,Judkins Park to Downtown Redmond
+stops,stop_desc,ko,Judkins Park에서 Downtown Redmond 방향,,Judkins Park to Downtown Redmond
+stops,stop_desc,fa,Judkins Park به Downtown Redmond,,Judkins Park to Downtown Redmond
+stops,stop_desc,ru,Judkins Park до Downtown Redmond,,Judkins Park to Downtown Redmond
+stops,stop_desc,sr,Judkins Park до Downtown Redmond,,Judkins Park to Downtown Redmond
+stops,stop_desc,tl,Judkins Park papunta Downtown Redmond,,Judkins Park to Downtown Redmond
+stops,stop_desc,vi,Judkins Park đến Downtown Redmond,,Judkins Park to Downtown Redmond
+stops,stop_desc,cy,Judkins Park i Downtown Redmond,,Judkins Park to Downtown Redmond
+stops,stop_desc,sw,Judkins Park kwenda Downtown Redmond,,Judkins Park to Downtown Redmond
+stops,stop_desc,pt-PT,Judkins Park para Downtown Redmond,,Judkins Park to Downtown Redmond
+stops,stop_desc,af,Judkins Park na Downtown Redmond,,Judkins Park to Downtown Redmond
+stops,stop_desc,es,Judkins Park a Lynnwood,,Judkins Park to Lynnwood
+stops,stop_desc,zh-Hans,Judkins Park 到 Lynnwood,,Judkins Park to Lynnwood
+stops,stop_desc,ar,Judkins Park إلى Lynnwood,,Judkins Park to Lynnwood
+stops,stop_desc,bs,Judkins Park do Lynnwood,,Judkins Park to Lynnwood
+stops,stop_desc,hr,Judkins Park do Lynnwood,,Judkins Park to Lynnwood
+stops,stop_desc,nl,Judkins Park naar Lynnwood,,Judkins Park to Lynnwood
+stops,stop_desc,fr,Judkins Park vers Lynnwood,,Judkins Park to Lynnwood
+stops,stop_desc,de,Judkins Park nach Lynnwood,,Judkins Park to Lynnwood
+stops,stop_desc,it,Judkins Park a Lynnwood,,Judkins Park to Lynnwood
+stops,stop_desc,ko,Judkins Park에서 Lynnwood 방향,,Judkins Park to Lynnwood
+stops,stop_desc,fa,Judkins Park به Lynnwood,,Judkins Park to Lynnwood
+stops,stop_desc,ru,Judkins Park до Lynnwood,,Judkins Park to Lynnwood
+stops,stop_desc,sr,Judkins Park до Lynnwood,,Judkins Park to Lynnwood
+stops,stop_desc,tl,Judkins Park papunta Lynnwood,,Judkins Park to Lynnwood
+stops,stop_desc,vi,Judkins Park đến Lynnwood,,Judkins Park to Lynnwood
+stops,stop_desc,cy,Judkins Park i Lynnwood,,Judkins Park to Lynnwood
+stops,stop_desc,sw,Judkins Park kwenda Lynnwood,,Judkins Park to Lynnwood
+stops,stop_desc,pt-PT,Judkins Park para Lynnwood,,Judkins Park to Lynnwood
+stops,stop_desc,af,Judkins Park na Lynnwood,,Judkins Park to Lynnwood
+stops,stop_desc,es,Kent Des Moines a Federal Way,,Kent Des Moines to Federal Way
+stops,stop_desc,zh-Hans,Kent Des Moines 到 Federal Way,,Kent Des Moines to Federal Way
+stops,stop_desc,ar,Kent Des Moines إلى Federal Way,,Kent Des Moines to Federal Way
+stops,stop_desc,bs,Kent Des Moines do Federal Way,,Kent Des Moines to Federal Way
+stops,stop_desc,hr,Kent Des Moines do Federal Way,,Kent Des Moines to Federal Way
+stops,stop_desc,nl,Kent Des Moines naar Federal Way,,Kent Des Moines to Federal Way
+stops,stop_desc,fr,Kent Des Moines vers Federal Way,,Kent Des Moines to Federal Way
+stops,stop_desc,de,Kent Des Moines nach Federal Way,,Kent Des Moines to Federal Way
+stops,stop_desc,it,Kent Des Moines a Federal Way,,Kent Des Moines to Federal Way
+stops,stop_desc,ko,Kent Des Moines에서 Federal Way 방향,,Kent Des Moines to Federal Way
+stops,stop_desc,fa,Kent Des Moines به Federal Way,,Kent Des Moines to Federal Way
+stops,stop_desc,ru,Kent Des Moines до Federal Way,,Kent Des Moines to Federal Way
+stops,stop_desc,sr,Kent Des Moines до Federal Way,,Kent Des Moines to Federal Way
+stops,stop_desc,tl,Kent Des Moines papunta Federal Way,,Kent Des Moines to Federal Way
+stops,stop_desc,vi,Kent Des Moines đến Federal Way,,Kent Des Moines to Federal Way
+stops,stop_desc,cy,Kent Des Moines i Federal Way,,Kent Des Moines to Federal Way
+stops,stop_desc,sw,Kent Des Moines kwenda Federal Way,,Kent Des Moines to Federal Way
+stops,stop_desc,pt-PT,Kent Des Moines para Federal Way,,Kent Des Moines to Federal Way
+stops,stop_desc,af,Kent Des Moines na Federal Way,,Kent Des Moines to Federal Way
+stops,stop_desc,es,Kent Des Moines a Lynnwood,,Kent Des Moines to Lynnwood
+stops,stop_desc,zh-Hans,Kent Des Moines 到 Lynnwood,,Kent Des Moines to Lynnwood
+stops,stop_desc,ar,Kent Des Moines إلى Lynnwood,,Kent Des Moines to Lynnwood
+stops,stop_desc,bs,Kent Des Moines do Lynnwood,,Kent Des Moines to Lynnwood
+stops,stop_desc,hr,Kent Des Moines do Lynnwood,,Kent Des Moines to Lynnwood
+stops,stop_desc,nl,Kent Des Moines naar Lynnwood,,Kent Des Moines to Lynnwood
+stops,stop_desc,fr,Kent Des Moines vers Lynnwood,,Kent Des Moines to Lynnwood
+stops,stop_desc,de,Kent Des Moines nach Lynnwood,,Kent Des Moines to Lynnwood
+stops,stop_desc,it,Kent Des Moines a Lynnwood,,Kent Des Moines to Lynnwood
+stops,stop_desc,ko,Kent Des Moines에서 Lynnwood 방향,,Kent Des Moines to Lynnwood
+stops,stop_desc,fa,Kent Des Moines به Lynnwood,,Kent Des Moines to Lynnwood
+stops,stop_desc,ru,Kent Des Moines до Lynnwood,,Kent Des Moines to Lynnwood
+stops,stop_desc,sr,Kent Des Moines до Lynnwood,,Kent Des Moines to Lynnwood
+stops,stop_desc,tl,Kent Des Moines papunta Lynnwood,,Kent Des Moines to Lynnwood
+stops,stop_desc,vi,Kent Des Moines đến Lynnwood,,Kent Des Moines to Lynnwood
+stops,stop_desc,cy,Kent Des Moines i Lynnwood,,Kent Des Moines to Lynnwood
+stops,stop_desc,sw,Kent Des Moines kwenda Lynnwood,,Kent Des Moines to Lynnwood
+stops,stop_desc,pt-PT,Kent Des Moines para Lynnwood,,Kent Des Moines to Lynnwood
+stops,stop_desc,af,Kent Des Moines na Lynnwood,,Kent Des Moines to Lynnwood
+stops,stop_desc,es,Lynnwood desde Federal Way,,Lynnwood from Federal Way
+stops,stop_desc,zh-Hans,Lynnwood 从 Federal Way,,Lynnwood from Federal Way
+stops,stop_desc,ar,Lynnwood من Federal Way,,Lynnwood from Federal Way
+stops,stop_desc,bs,Lynnwood od Federal Way,,Lynnwood from Federal Way
+stops,stop_desc,hr,Lynnwood od Federal Way,,Lynnwood from Federal Way
+stops,stop_desc,nl,Lynnwood van Federal Way,,Lynnwood from Federal Way
+stops,stop_desc,fr,Lynnwood depuis Federal Way,,Lynnwood from Federal Way
+stops,stop_desc,de,Lynnwood von Federal Way,,Lynnwood from Federal Way
+stops,stop_desc,it,Lynnwood da Federal Way,,Lynnwood from Federal Way
+stops,stop_desc,ko,Federal Way에서 Lynnwood 방향,,Lynnwood from Federal Way
+stops,stop_desc,fa,Lynnwood از Federal Way,,Lynnwood from Federal Way
+stops,stop_desc,ru,Lynnwood от Federal Way,,Lynnwood from Federal Way
+stops,stop_desc,sr,Lynnwood од Federal Way,,Lynnwood from Federal Way
+stops,stop_desc,tl,Lynnwood mula sa Federal Way,,Lynnwood from Federal Way
+stops,stop_desc,vi,Lynnwood từ Federal Way,,Lynnwood from Federal Way
+stops,stop_desc,cy,Lynnwood o Federal Way,,Lynnwood from Federal Way
+stops,stop_desc,sw,Lynnwood kutoka Federal Way,,Lynnwood from Federal Way
+stops,stop_desc,pt-PT,Lynnwood de Federal Way,,Lynnwood from Federal Way
+stops,stop_desc,af,Lynnwood van Federal Way,,Lynnwood from Federal Way
+stops,stop_desc,es,Lynnwood a Federal Way,,Lynnwood to Federal Way
+stops,stop_desc,zh-Hans,Lynnwood 到 Federal Way,,Lynnwood to Federal Way
+stops,stop_desc,ar,Lynnwood إلى Federal Way,,Lynnwood to Federal Way
+stops,stop_desc,bs,Lynnwood do Federal Way,,Lynnwood to Federal Way
+stops,stop_desc,hr,Lynnwood do Federal Way,,Lynnwood to Federal Way
+stops,stop_desc,nl,Lynnwood naar Federal Way,,Lynnwood to Federal Way
+stops,stop_desc,fr,Lynnwood vers Federal Way,,Lynnwood to Federal Way
+stops,stop_desc,de,Lynnwood nach Federal Way,,Lynnwood to Federal Way
+stops,stop_desc,it,Lynnwood a Federal Way,,Lynnwood to Federal Way
+stops,stop_desc,ko,Lynnwood에서 Federal Way 방향,,Lynnwood to Federal Way
+stops,stop_desc,fa,Lynnwood به Federal Way,,Lynnwood to Federal Way
+stops,stop_desc,ru,Lynnwood до Federal Way,,Lynnwood to Federal Way
+stops,stop_desc,sr,Lynnwood до Federal Way,,Lynnwood to Federal Way
+stops,stop_desc,tl,Lynnwood papunta Federal Way,,Lynnwood to Federal Way
+stops,stop_desc,vi,Lynnwood đến Federal Way,,Lynnwood to Federal Way
+stops,stop_desc,cy,Lynnwood i Federal Way,,Lynnwood to Federal Way
+stops,stop_desc,sw,Lynnwood kwenda Federal Way,,Lynnwood to Federal Way
+stops,stop_desc,pt-PT,Lynnwood para Federal Way,,Lynnwood to Federal Way
+stops,stop_desc,af,Lynnwood na Federal Way,,Lynnwood to Federal Way
+stops,stop_desc,es,Marymoor Village a Downtown Redmond,,Marymoor Village to Downtown Redmond
+stops,stop_desc,zh-Hans,Marymoor Village 到 Downtown Redmond,,Marymoor Village to Downtown Redmond
+stops,stop_desc,ar,Marymoor Village إلى Downtown Redmond,,Marymoor Village to Downtown Redmond
+stops,stop_desc,bs,Marymoor Village do Downtown Redmond,,Marymoor Village to Downtown Redmond
+stops,stop_desc,hr,Marymoor Village do Downtown Redmond,,Marymoor Village to Downtown Redmond
+stops,stop_desc,nl,Marymoor Village naar Downtown Redmond,,Marymoor Village to Downtown Redmond
+stops,stop_desc,fr,Marymoor Village vers Downtown Redmond,,Marymoor Village to Downtown Redmond
+stops,stop_desc,de,Marymoor Village nach Downtown Redmond,,Marymoor Village to Downtown Redmond
+stops,stop_desc,it,Marymoor Village a Downtown Redmond,,Marymoor Village to Downtown Redmond
+stops,stop_desc,ko,Marymoor Village에서 Downtown Redmond 방향,,Marymoor Village to Downtown Redmond
+stops,stop_desc,fa,Marymoor Village به Downtown Redmond,,Marymoor Village to Downtown Redmond
+stops,stop_desc,ru,Marymoor Village до Downtown Redmond,,Marymoor Village to Downtown Redmond
+stops,stop_desc,sr,Marymoor Village до Downtown Redmond,,Marymoor Village to Downtown Redmond
+stops,stop_desc,tl,Marymoor Village papunta Downtown Redmond,,Marymoor Village to Downtown Redmond
+stops,stop_desc,vi,Marymoor Village đến Downtown Redmond,,Marymoor Village to Downtown Redmond
+stops,stop_desc,cy,Marymoor Village i Downtown Redmond,,Marymoor Village to Downtown Redmond
+stops,stop_desc,sw,Marymoor Village kwenda Downtown Redmond,,Marymoor Village to Downtown Redmond
+stops,stop_desc,pt-PT,Marymoor Village para Downtown Redmond,,Marymoor Village to Downtown Redmond
+stops,stop_desc,af,Marymoor Village na Downtown Redmond,,Marymoor Village to Downtown Redmond
+stops,stop_desc,es,Marymoor Village a South Bellevue,,Marymoor Village to South Bellevue
+stops,stop_desc,zh-Hans,Marymoor Village 到 South Bellevue,,Marymoor Village to South Bellevue
+stops,stop_desc,ar,Marymoor Village إلى South Bellevue,,Marymoor Village to South Bellevue
+stops,stop_desc,bs,Marymoor Village do South Bellevue,,Marymoor Village to South Bellevue
+stops,stop_desc,hr,Marymoor Village do South Bellevue,,Marymoor Village to South Bellevue
+stops,stop_desc,nl,Marymoor Village naar South Bellevue,,Marymoor Village to South Bellevue
+stops,stop_desc,fr,Marymoor Village vers South Bellevue,,Marymoor Village to South Bellevue
+stops,stop_desc,de,Marymoor Village nach South Bellevue,,Marymoor Village to South Bellevue
+stops,stop_desc,it,Marymoor Village a South Bellevue,,Marymoor Village to South Bellevue
+stops,stop_desc,ko,Marymoor Village에서 South Bellevue 방향,,Marymoor Village to South Bellevue
+stops,stop_desc,fa,Marymoor Village به South Bellevue,,Marymoor Village to South Bellevue
+stops,stop_desc,ru,Marymoor Village до South Bellevue,,Marymoor Village to South Bellevue
+stops,stop_desc,sr,Marymoor Village до South Bellevue,,Marymoor Village to South Bellevue
+stops,stop_desc,tl,Marymoor Village papunta South Bellevue,,Marymoor Village to South Bellevue
+stops,stop_desc,vi,Marymoor Village đến South Bellevue,,Marymoor Village to South Bellevue
+stops,stop_desc,cy,Marymoor Village i South Bellevue,,Marymoor Village to South Bellevue
+stops,stop_desc,sw,Marymoor Village kwenda South Bellevue,,Marymoor Village to South Bellevue
+stops,stop_desc,pt-PT,Marymoor Village para South Bellevue,,Marymoor Village to South Bellevue
+stops,stop_desc,af,Marymoor Village na South Bellevue,,Marymoor Village to South Bellevue
+stops,stop_desc,es,Mercer Island a Downtown Redmond,,Mercer Island to Downtown Redmond
+stops,stop_desc,zh-Hans,Mercer Island 到 Downtown Redmond,,Mercer Island to Downtown Redmond
+stops,stop_desc,ar,Mercer Island إلى Downtown Redmond,,Mercer Island to Downtown Redmond
+stops,stop_desc,bs,Mercer Island do Downtown Redmond,,Mercer Island to Downtown Redmond
+stops,stop_desc,hr,Mercer Island do Downtown Redmond,,Mercer Island to Downtown Redmond
+stops,stop_desc,nl,Mercer Island naar Downtown Redmond,,Mercer Island to Downtown Redmond
+stops,stop_desc,fr,Mercer Island vers Downtown Redmond,,Mercer Island to Downtown Redmond
+stops,stop_desc,de,Mercer Island nach Downtown Redmond,,Mercer Island to Downtown Redmond
+stops,stop_desc,it,Mercer Island a Downtown Redmond,,Mercer Island to Downtown Redmond
+stops,stop_desc,ko,Mercer Island에서 Downtown Redmond 방향,,Mercer Island to Downtown Redmond
+stops,stop_desc,fa,Mercer Island به Downtown Redmond,,Mercer Island to Downtown Redmond
+stops,stop_desc,ru,Mercer Island до Downtown Redmond,,Mercer Island to Downtown Redmond
+stops,stop_desc,sr,Mercer Island до Downtown Redmond,,Mercer Island to Downtown Redmond
+stops,stop_desc,tl,Mercer Island papunta Downtown Redmond,,Mercer Island to Downtown Redmond
+stops,stop_desc,vi,Mercer Island đến Downtown Redmond,,Mercer Island to Downtown Redmond
+stops,stop_desc,cy,Mercer Island i Downtown Redmond,,Mercer Island to Downtown Redmond
+stops,stop_desc,sw,Mercer Island kwenda Downtown Redmond,,Mercer Island to Downtown Redmond
+stops,stop_desc,pt-PT,Mercer Island para Downtown Redmond,,Mercer Island to Downtown Redmond
+stops,stop_desc,af,Mercer Island na Downtown Redmond,,Mercer Island to Downtown Redmond
+stops,stop_desc,es,Mercer Island a Lynnwood,,Mercer Island to Lynnwood
+stops,stop_desc,zh-Hans,Mercer Island 到 Lynnwood,,Mercer Island to Lynnwood
+stops,stop_desc,ar,Mercer Island إلى Lynnwood,,Mercer Island to Lynnwood
+stops,stop_desc,bs,Mercer Island do Lynnwood,,Mercer Island to Lynnwood
+stops,stop_desc,hr,Mercer Island do Lynnwood,,Mercer Island to Lynnwood
+stops,stop_desc,nl,Mercer Island naar Lynnwood,,Mercer Island to Lynnwood
+stops,stop_desc,fr,Mercer Island vers Lynnwood,,Mercer Island to Lynnwood
+stops,stop_desc,de,Mercer Island nach Lynnwood,,Mercer Island to Lynnwood
+stops,stop_desc,it,Mercer Island a Lynnwood,,Mercer Island to Lynnwood
+stops,stop_desc,ko,Mercer Island에서 Lynnwood 방향,,Mercer Island to Lynnwood
+stops,stop_desc,fa,Mercer Island به Lynnwood,,Mercer Island to Lynnwood
+stops,stop_desc,ru,Mercer Island до Lynnwood,,Mercer Island to Lynnwood
+stops,stop_desc,sr,Mercer Island до Lynnwood,,Mercer Island to Lynnwood
+stops,stop_desc,tl,Mercer Island papunta Lynnwood,,Mercer Island to Lynnwood
+stops,stop_desc,vi,Mercer Island đến Lynnwood,,Mercer Island to Lynnwood
+stops,stop_desc,cy,Mercer Island i Lynnwood,,Mercer Island to Lynnwood
+stops,stop_desc,sw,Mercer Island kwenda Lynnwood,,Mercer Island to Lynnwood
+stops,stop_desc,pt-PT,Mercer Island para Lynnwood,,Mercer Island to Lynnwood
+stops,stop_desc,af,Mercer Island na Lynnwood,,Mercer Island to Lynnwood
+stops,stop_desc,es,Mount Baker a Federal Way,,Mount Baker to Federal Way
+stops,stop_desc,zh-Hans,Mount Baker 到 Federal Way,,Mount Baker to Federal Way
+stops,stop_desc,ar,Mount Baker إلى Federal Way,,Mount Baker to Federal Way
+stops,stop_desc,bs,Mount Baker do Federal Way,,Mount Baker to Federal Way
+stops,stop_desc,hr,Mount Baker do Federal Way,,Mount Baker to Federal Way
+stops,stop_desc,nl,Mount Baker naar Federal Way,,Mount Baker to Federal Way
+stops,stop_desc,fr,Mount Baker vers Federal Way,,Mount Baker to Federal Way
+stops,stop_desc,de,Mount Baker nach Federal Way,,Mount Baker to Federal Way
+stops,stop_desc,it,Mount Baker a Federal Way,,Mount Baker to Federal Way
+stops,stop_desc,ko,Mount Baker에서 Federal Way 방향,,Mount Baker to Federal Way
+stops,stop_desc,fa,Mount Baker به Federal Way,,Mount Baker to Federal Way
+stops,stop_desc,ru,Mount Baker до Federal Way,,Mount Baker to Federal Way
+stops,stop_desc,sr,Mount Baker до Federal Way,,Mount Baker to Federal Way
+stops,stop_desc,tl,Mount Baker papunta Federal Way,,Mount Baker to Federal Way
+stops,stop_desc,vi,Mount Baker đến Federal Way,,Mount Baker to Federal Way
+stops,stop_desc,cy,Mount Baker i Federal Way,,Mount Baker to Federal Way
+stops,stop_desc,sw,Mount Baker kwenda Federal Way,,Mount Baker to Federal Way
+stops,stop_desc,pt-PT,Mount Baker para Federal Way,,Mount Baker to Federal Way
+stops,stop_desc,af,Mount Baker na Federal Way,,Mount Baker to Federal Way
+stops,stop_desc,es,Mount Baker a Lynnwood,,Mount Baker to Lynnwood
+stops,stop_desc,zh-Hans,Mount Baker 到 Lynnwood,,Mount Baker to Lynnwood
+stops,stop_desc,ar,Mount Baker إلى Lynnwood,,Mount Baker to Lynnwood
+stops,stop_desc,bs,Mount Baker do Lynnwood,,Mount Baker to Lynnwood
+stops,stop_desc,hr,Mount Baker do Lynnwood,,Mount Baker to Lynnwood
+stops,stop_desc,nl,Mount Baker naar Lynnwood,,Mount Baker to Lynnwood
+stops,stop_desc,fr,Mount Baker vers Lynnwood,,Mount Baker to Lynnwood
+stops,stop_desc,de,Mount Baker nach Lynnwood,,Mount Baker to Lynnwood
+stops,stop_desc,it,Mount Baker a Lynnwood,,Mount Baker to Lynnwood
+stops,stop_desc,ko,Mount Baker에서 Lynnwood 방향,,Mount Baker to Lynnwood
+stops,stop_desc,fa,Mount Baker به Lynnwood,,Mount Baker to Lynnwood
+stops,stop_desc,ru,Mount Baker до Lynnwood,,Mount Baker to Lynnwood
+stops,stop_desc,sr,Mount Baker до Lynnwood,,Mount Baker to Lynnwood
+stops,stop_desc,tl,Mount Baker papunta Lynnwood,,Mount Baker to Lynnwood
+stops,stop_desc,vi,Mount Baker đến Lynnwood,,Mount Baker to Lynnwood
+stops,stop_desc,cy,Mount Baker i Lynnwood,,Mount Baker to Lynnwood
+stops,stop_desc,sw,Mount Baker kwenda Lynnwood,,Mount Baker to Lynnwood
+stops,stop_desc,pt-PT,Mount Baker para Lynnwood,,Mount Baker to Lynnwood
+stops,stop_desc,af,Mount Baker na Lynnwood,,Mount Baker to Lynnwood
+stops,stop_desc,es,Mountlake Terrace a Federal Way,,Mountlake Terrace to Federal Way
+stops,stop_desc,zh-Hans,Mountlake Terrace 到 Federal Way,,Mountlake Terrace to Federal Way
+stops,stop_desc,ar,Mountlake Terrace إلى Federal Way,,Mountlake Terrace to Federal Way
+stops,stop_desc,bs,Mountlake Terrace do Federal Way,,Mountlake Terrace to Federal Way
+stops,stop_desc,hr,Mountlake Terrace do Federal Way,,Mountlake Terrace to Federal Way
+stops,stop_desc,nl,Mountlake Terrace naar Federal Way,,Mountlake Terrace to Federal Way
+stops,stop_desc,fr,Mountlake Terrace vers Federal Way,,Mountlake Terrace to Federal Way
+stops,stop_desc,de,Mountlake Terrace nach Federal Way,,Mountlake Terrace to Federal Way
+stops,stop_desc,it,Mountlake Terrace a Federal Way,,Mountlake Terrace to Federal Way
+stops,stop_desc,ko,Mountlake Terrace에서 Federal Way 방향,,Mountlake Terrace to Federal Way
+stops,stop_desc,fa,Mountlake Terrace به Federal Way,,Mountlake Terrace to Federal Way
+stops,stop_desc,ru,Mountlake Terrace до Federal Way,,Mountlake Terrace to Federal Way
+stops,stop_desc,sr,Mountlake Terrace до Federal Way,,Mountlake Terrace to Federal Way
+stops,stop_desc,tl,Mountlake Terrace papunta Federal Way,,Mountlake Terrace to Federal Way
+stops,stop_desc,vi,Mountlake Terrace đến Federal Way,,Mountlake Terrace to Federal Way
+stops,stop_desc,cy,Mountlake Terrace i Federal Way,,Mountlake Terrace to Federal Way
+stops,stop_desc,sw,Mountlake Terrace kwenda Federal Way,,Mountlake Terrace to Federal Way
+stops,stop_desc,pt-PT,Mountlake Terrace para Federal Way,,Mountlake Terrace to Federal Way
+stops,stop_desc,af,Mountlake Terrace na Federal Way,,Mountlake Terrace to Federal Way
+stops,stop_desc,es,Mountlake Terrace a Lynnwood,,Mountlake Terrace to Lynnwood
+stops,stop_desc,zh-Hans,Mountlake Terrace 到 Lynnwood,,Mountlake Terrace to Lynnwood
+stops,stop_desc,ar,Mountlake Terrace إلى Lynnwood,,Mountlake Terrace to Lynnwood
+stops,stop_desc,bs,Mountlake Terrace do Lynnwood,,Mountlake Terrace to Lynnwood
+stops,stop_desc,hr,Mountlake Terrace do Lynnwood,,Mountlake Terrace to Lynnwood
+stops,stop_desc,nl,Mountlake Terrace naar Lynnwood,,Mountlake Terrace to Lynnwood
+stops,stop_desc,fr,Mountlake Terrace vers Lynnwood,,Mountlake Terrace to Lynnwood
+stops,stop_desc,de,Mountlake Terrace nach Lynnwood,,Mountlake Terrace to Lynnwood
+stops,stop_desc,it,Mountlake Terrace a Lynnwood,,Mountlake Terrace to Lynnwood
+stops,stop_desc,ko,Mountlake Terrace에서 Lynnwood 방향,,Mountlake Terrace to Lynnwood
+stops,stop_desc,fa,Mountlake Terrace به Lynnwood,,Mountlake Terrace to Lynnwood
+stops,stop_desc,ru,Mountlake Terrace до Lynnwood,,Mountlake Terrace to Lynnwood
+stops,stop_desc,sr,Mountlake Terrace до Lynnwood,,Mountlake Terrace to Lynnwood
+stops,stop_desc,tl,Mountlake Terrace papunta Lynnwood,,Mountlake Terrace to Lynnwood
+stops,stop_desc,vi,Mountlake Terrace đến Lynnwood,,Mountlake Terrace to Lynnwood
+stops,stop_desc,cy,Mountlake Terrace i Lynnwood,,Mountlake Terrace to Lynnwood
+stops,stop_desc,sw,Mountlake Terrace kwenda Lynnwood,,Mountlake Terrace to Lynnwood
+stops,stop_desc,pt-PT,Mountlake Terrace para Lynnwood,,Mountlake Terrace to Lynnwood
+stops,stop_desc,af,Mountlake Terrace na Lynnwood,,Mountlake Terrace to Lynnwood
+stops,stop_desc,es,Northgate a Federal Way,,Northgate to Federal Way
+stops,stop_desc,zh-Hans,Northgate 到 Federal Way,,Northgate to Federal Way
+stops,stop_desc,ar,Northgate إلى Federal Way,,Northgate to Federal Way
+stops,stop_desc,bs,Northgate do Federal Way,,Northgate to Federal Way
+stops,stop_desc,hr,Northgate do Federal Way,,Northgate to Federal Way
+stops,stop_desc,nl,Northgate naar Federal Way,,Northgate to Federal Way
+stops,stop_desc,fr,Northgate vers Federal Way,,Northgate to Federal Way
+stops,stop_desc,de,Northgate nach Federal Way,,Northgate to Federal Way
+stops,stop_desc,it,Northgate a Federal Way,,Northgate to Federal Way
+stops,stop_desc,ko,Northgate에서 Federal Way 방향,,Northgate to Federal Way
+stops,stop_desc,fa,Northgate به Federal Way,,Northgate to Federal Way
+stops,stop_desc,ru,Northgate до Federal Way,,Northgate to Federal Way
+stops,stop_desc,sr,Northgate до Federal Way,,Northgate to Federal Way
+stops,stop_desc,tl,Northgate papunta Federal Way,,Northgate to Federal Way
+stops,stop_desc,vi,Northgate đến Federal Way,,Northgate to Federal Way
+stops,stop_desc,cy,Northgate i Federal Way,,Northgate to Federal Way
+stops,stop_desc,sw,Northgate kwenda Federal Way,,Northgate to Federal Way
+stops,stop_desc,pt-PT,Northgate para Federal Way,,Northgate to Federal Way
+stops,stop_desc,af,Northgate na Federal Way,,Northgate to Federal Way
+stops,stop_desc,es,Northgate a Lynnwood,,Northgate to Lynnwood
+stops,stop_desc,zh-Hans,Northgate 到 Lynnwood,,Northgate to Lynnwood
+stops,stop_desc,ar,Northgate إلى Lynnwood,,Northgate to Lynnwood
+stops,stop_desc,bs,Northgate do Lynnwood,,Northgate to Lynnwood
+stops,stop_desc,hr,Northgate do Lynnwood,,Northgate to Lynnwood
+stops,stop_desc,nl,Northgate naar Lynnwood,,Northgate to Lynnwood
+stops,stop_desc,fr,Northgate vers Lynnwood,,Northgate to Lynnwood
+stops,stop_desc,de,Northgate nach Lynnwood,,Northgate to Lynnwood
+stops,stop_desc,it,Northgate a Lynnwood,,Northgate to Lynnwood
+stops,stop_desc,ko,Northgate에서 Lynnwood 방향,,Northgate to Lynnwood
+stops,stop_desc,fa,Northgate به Lynnwood,,Northgate to Lynnwood
+stops,stop_desc,ru,Northgate до Lynnwood,,Northgate to Lynnwood
+stops,stop_desc,sr,Northgate до Lynnwood,,Northgate to Lynnwood
+stops,stop_desc,tl,Northgate papunta Lynnwood,,Northgate to Lynnwood
+stops,stop_desc,vi,Northgate đến Lynnwood,,Northgate to Lynnwood
+stops,stop_desc,cy,Northgate i Lynnwood,,Northgate to Lynnwood
+stops,stop_desc,sw,Northgate kwenda Lynnwood,,Northgate to Lynnwood
+stops,stop_desc,pt-PT,Northgate para Lynnwood,,Northgate to Lynnwood
+stops,stop_desc,af,Northgate na Lynnwood,,Northgate to Lynnwood
+stops,stop_desc,es,Old City Hall a St Joseph,,Old City Hall to St Joseph
+stops,stop_desc,zh-Hans,Old City Hall 到 St Joseph,,Old City Hall to St Joseph
+stops,stop_desc,ar,Old City Hall إلى St Joseph,,Old City Hall to St Joseph
+stops,stop_desc,bs,Old City Hall do St Joseph,,Old City Hall to St Joseph
+stops,stop_desc,hr,Old City Hall do St Joseph,,Old City Hall to St Joseph
+stops,stop_desc,nl,Old City Hall naar St Joseph,,Old City Hall to St Joseph
+stops,stop_desc,fr,Old City Hall vers St Joseph,,Old City Hall to St Joseph
+stops,stop_desc,de,Old City Hall nach St Joseph,,Old City Hall to St Joseph
+stops,stop_desc,it,Old City Hall a St Joseph,,Old City Hall to St Joseph
+stops,stop_desc,ko,Old City Hall에서 St Joseph 방향,,Old City Hall to St Joseph
+stops,stop_desc,fa,Old City Hall به St Joseph,,Old City Hall to St Joseph
+stops,stop_desc,ru,Old City Hall до St Joseph,,Old City Hall to St Joseph
+stops,stop_desc,sr,Old City Hall до St Joseph,,Old City Hall to St Joseph
+stops,stop_desc,tl,Old City Hall papunta St Joseph,,Old City Hall to St Joseph
+stops,stop_desc,vi,Old City Hall đến St Joseph,,Old City Hall to St Joseph
+stops,stop_desc,cy,Old City Hall i St Joseph,,Old City Hall to St Joseph
+stops,stop_desc,sw,Old City Hall kwenda St Joseph,,Old City Hall to St Joseph
+stops,stop_desc,pt-PT,Old City Hall para St Joseph,,Old City Hall to St Joseph
+stops,stop_desc,af,Old City Hall na St Joseph,,Old City Hall to St Joseph
+stops,stop_desc,es,Old City Hall a Tacoma Dome,,Old City Hall to Tacoma Dome
+stops,stop_desc,zh-Hans,Old City Hall 到 Tacoma Dome,,Old City Hall to Tacoma Dome
+stops,stop_desc,ar,Old City Hall إلى Tacoma Dome,,Old City Hall to Tacoma Dome
+stops,stop_desc,bs,Old City Hall do Tacoma Dome,,Old City Hall to Tacoma Dome
+stops,stop_desc,hr,Old City Hall do Tacoma Dome,,Old City Hall to Tacoma Dome
+stops,stop_desc,nl,Old City Hall naar Tacoma Dome,,Old City Hall to Tacoma Dome
+stops,stop_desc,fr,Old City Hall vers Tacoma Dome,,Old City Hall to Tacoma Dome
+stops,stop_desc,de,Old City Hall nach Tacoma Dome,,Old City Hall to Tacoma Dome
+stops,stop_desc,it,Old City Hall a Tacoma Dome,,Old City Hall to Tacoma Dome
+stops,stop_desc,ko,Old City Hall에서 Tacoma Dome 방향,,Old City Hall to Tacoma Dome
+stops,stop_desc,fa,Old City Hall به Tacoma Dome,,Old City Hall to Tacoma Dome
+stops,stop_desc,ru,Old City Hall до Tacoma Dome,,Old City Hall to Tacoma Dome
+stops,stop_desc,sr,Old City Hall до Tacoma Dome,,Old City Hall to Tacoma Dome
+stops,stop_desc,tl,Old City Hall papunta Tacoma Dome,,Old City Hall to Tacoma Dome
+stops,stop_desc,vi,Old City Hall đến Tacoma Dome,,Old City Hall to Tacoma Dome
+stops,stop_desc,cy,Old City Hall i Tacoma Dome,,Old City Hall to Tacoma Dome
+stops,stop_desc,sw,Old City Hall kwenda Tacoma Dome,,Old City Hall to Tacoma Dome
+stops,stop_desc,pt-PT,Old City Hall para Tacoma Dome,,Old City Hall to Tacoma Dome
+stops,stop_desc,af,Old City Hall na Tacoma Dome,,Old City Hall to Tacoma Dome
+stops,stop_desc,es,Othello a Federal Way,,Othello to Federal Way
+stops,stop_desc,zh-Hans,Othello 到 Federal Way,,Othello to Federal Way
+stops,stop_desc,ar,Othello إلى Federal Way,,Othello to Federal Way
+stops,stop_desc,bs,Othello do Federal Way,,Othello to Federal Way
+stops,stop_desc,hr,Othello do Federal Way,,Othello to Federal Way
+stops,stop_desc,nl,Othello naar Federal Way,,Othello to Federal Way
+stops,stop_desc,fr,Othello vers Federal Way,,Othello to Federal Way
+stops,stop_desc,de,Othello nach Federal Way,,Othello to Federal Way
+stops,stop_desc,it,Othello a Federal Way,,Othello to Federal Way
+stops,stop_desc,ko,Othello에서 Federal Way 방향,,Othello to Federal Way
+stops,stop_desc,fa,Othello به Federal Way,,Othello to Federal Way
+stops,stop_desc,ru,Othello до Federal Way,,Othello to Federal Way
+stops,stop_desc,sr,Othello до Federal Way,,Othello to Federal Way
+stops,stop_desc,tl,Othello papunta Federal Way,,Othello to Federal Way
+stops,stop_desc,vi,Othello đến Federal Way,,Othello to Federal Way
+stops,stop_desc,cy,Othello i Federal Way,,Othello to Federal Way
+stops,stop_desc,sw,Othello kwenda Federal Way,,Othello to Federal Way
+stops,stop_desc,pt-PT,Othello para Federal Way,,Othello to Federal Way
+stops,stop_desc,af,Othello na Federal Way,,Othello to Federal Way
+stops,stop_desc,es,Othello a Lynnwood,,Othello to Lynnwood
+stops,stop_desc,zh-Hans,Othello 到 Lynnwood,,Othello to Lynnwood
+stops,stop_desc,ar,Othello إلى Lynnwood,,Othello to Lynnwood
+stops,stop_desc,bs,Othello do Lynnwood,,Othello to Lynnwood
+stops,stop_desc,hr,Othello do Lynnwood,,Othello to Lynnwood
+stops,stop_desc,nl,Othello naar Lynnwood,,Othello to Lynnwood
+stops,stop_desc,fr,Othello vers Lynnwood,,Othello to Lynnwood
+stops,stop_desc,de,Othello nach Lynnwood,,Othello to Lynnwood
+stops,stop_desc,it,Othello a Lynnwood,,Othello to Lynnwood
+stops,stop_desc,ko,Othello에서 Lynnwood 방향,,Othello to Lynnwood
+stops,stop_desc,fa,Othello به Lynnwood,,Othello to Lynnwood
+stops,stop_desc,ru,Othello до Lynnwood,,Othello to Lynnwood
+stops,stop_desc,sr,Othello до Lynnwood,,Othello to Lynnwood
+stops,stop_desc,tl,Othello papunta Lynnwood,,Othello to Lynnwood
+stops,stop_desc,vi,Othello đến Lynnwood,,Othello to Lynnwood
+stops,stop_desc,cy,Othello i Lynnwood,,Othello to Lynnwood
+stops,stop_desc,sw,Othello kwenda Lynnwood,,Othello to Lynnwood
+stops,stop_desc,pt-PT,Othello para Lynnwood,,Othello to Lynnwood
+stops,stop_desc,af,Othello na Lynnwood,,Othello to Lynnwood
+stops,stop_desc,es,Overlake Village a Downtown Redmond,,Overlake Village to Downtown Redmond
+stops,stop_desc,zh-Hans,Overlake Village 到 Downtown Redmond,,Overlake Village to Downtown Redmond
+stops,stop_desc,ar,Overlake Village إلى Downtown Redmond,,Overlake Village to Downtown Redmond
+stops,stop_desc,bs,Overlake Village do Downtown Redmond,,Overlake Village to Downtown Redmond
+stops,stop_desc,hr,Overlake Village do Downtown Redmond,,Overlake Village to Downtown Redmond
+stops,stop_desc,nl,Overlake Village naar Downtown Redmond,,Overlake Village to Downtown Redmond
+stops,stop_desc,fr,Overlake Village vers Downtown Redmond,,Overlake Village to Downtown Redmond
+stops,stop_desc,de,Overlake Village nach Downtown Redmond,,Overlake Village to Downtown Redmond
+stops,stop_desc,it,Overlake Village a Downtown Redmond,,Overlake Village to Downtown Redmond
+stops,stop_desc,ko,Overlake Village에서 Downtown Redmond 방향,,Overlake Village to Downtown Redmond
+stops,stop_desc,fa,Overlake Village به Downtown Redmond,,Overlake Village to Downtown Redmond
+stops,stop_desc,ru,Overlake Village до Downtown Redmond,,Overlake Village to Downtown Redmond
+stops,stop_desc,sr,Overlake Village до Downtown Redmond,,Overlake Village to Downtown Redmond
+stops,stop_desc,tl,Overlake Village papunta Downtown Redmond,,Overlake Village to Downtown Redmond
+stops,stop_desc,vi,Overlake Village đến Downtown Redmond,,Overlake Village to Downtown Redmond
+stops,stop_desc,cy,Overlake Village i Downtown Redmond,,Overlake Village to Downtown Redmond
+stops,stop_desc,sw,Overlake Village kwenda Downtown Redmond,,Overlake Village to Downtown Redmond
+stops,stop_desc,pt-PT,Overlake Village para Downtown Redmond,,Overlake Village to Downtown Redmond
+stops,stop_desc,af,Overlake Village na Downtown Redmond,,Overlake Village to Downtown Redmond
+stops,stop_desc,es,Overlake Village a South Bellevue,,Overlake Village to South Bellevue
+stops,stop_desc,zh-Hans,Overlake Village 到 South Bellevue,,Overlake Village to South Bellevue
+stops,stop_desc,ar,Overlake Village إلى South Bellevue,,Overlake Village to South Bellevue
+stops,stop_desc,bs,Overlake Village do South Bellevue,,Overlake Village to South Bellevue
+stops,stop_desc,hr,Overlake Village do South Bellevue,,Overlake Village to South Bellevue
+stops,stop_desc,nl,Overlake Village naar South Bellevue,,Overlake Village to South Bellevue
+stops,stop_desc,fr,Overlake Village vers South Bellevue,,Overlake Village to South Bellevue
+stops,stop_desc,de,Overlake Village nach South Bellevue,,Overlake Village to South Bellevue
+stops,stop_desc,it,Overlake Village a South Bellevue,,Overlake Village to South Bellevue
+stops,stop_desc,ko,Overlake Village에서 South Bellevue 방향,,Overlake Village to South Bellevue
+stops,stop_desc,fa,Overlake Village به South Bellevue,,Overlake Village to South Bellevue
+stops,stop_desc,ru,Overlake Village до South Bellevue,,Overlake Village to South Bellevue
+stops,stop_desc,sr,Overlake Village до South Bellevue,,Overlake Village to South Bellevue
+stops,stop_desc,tl,Overlake Village papunta South Bellevue,,Overlake Village to South Bellevue
+stops,stop_desc,vi,Overlake Village đến South Bellevue,,Overlake Village to South Bellevue
+stops,stop_desc,cy,Overlake Village i South Bellevue,,Overlake Village to South Bellevue
+stops,stop_desc,sw,Overlake Village kwenda South Bellevue,,Overlake Village to South Bellevue
+stops,stop_desc,pt-PT,Overlake Village para South Bellevue,,Overlake Village to South Bellevue
+stops,stop_desc,af,Overlake Village na South Bellevue,,Overlake Village to South Bellevue
+stops,stop_desc,es,Pioneer Square a Federal Way,,Pioneer Square to Federal Way
+stops,stop_desc,zh-Hans,Pioneer Square 到 Federal Way,,Pioneer Square to Federal Way
+stops,stop_desc,ar,Pioneer Square إلى Federal Way,,Pioneer Square to Federal Way
+stops,stop_desc,bs,Pioneer Square do Federal Way,,Pioneer Square to Federal Way
+stops,stop_desc,hr,Pioneer Square do Federal Way,,Pioneer Square to Federal Way
+stops,stop_desc,nl,Pioneer Square naar Federal Way,,Pioneer Square to Federal Way
+stops,stop_desc,fr,Pioneer Square vers Federal Way,,Pioneer Square to Federal Way
+stops,stop_desc,de,Pioneer Square nach Federal Way,,Pioneer Square to Federal Way
+stops,stop_desc,it,Pioneer Square a Federal Way,,Pioneer Square to Federal Way
+stops,stop_desc,ko,Pioneer Square에서 Federal Way 방향,,Pioneer Square to Federal Way
+stops,stop_desc,fa,Pioneer Square به Federal Way,,Pioneer Square to Federal Way
+stops,stop_desc,ru,Pioneer Square до Federal Way,,Pioneer Square to Federal Way
+stops,stop_desc,sr,Pioneer Square до Federal Way,,Pioneer Square to Federal Way
+stops,stop_desc,tl,Pioneer Square papunta Federal Way,,Pioneer Square to Federal Way
+stops,stop_desc,vi,Pioneer Square đến Federal Way,,Pioneer Square to Federal Way
+stops,stop_desc,cy,Pioneer Square i Federal Way,,Pioneer Square to Federal Way
+stops,stop_desc,sw,Pioneer Square kwenda Federal Way,,Pioneer Square to Federal Way
+stops,stop_desc,pt-PT,Pioneer Square para Federal Way,,Pioneer Square to Federal Way
+stops,stop_desc,af,Pioneer Square na Federal Way,,Pioneer Square to Federal Way
+stops,stop_desc,es,Pioneer Square a Lynnwood,,Pioneer Square to Lynnwood
+stops,stop_desc,zh-Hans,Pioneer Square 到 Lynnwood,,Pioneer Square to Lynnwood
+stops,stop_desc,ar,Pioneer Square إلى Lynnwood,,Pioneer Square to Lynnwood
+stops,stop_desc,bs,Pioneer Square do Lynnwood,,Pioneer Square to Lynnwood
+stops,stop_desc,hr,Pioneer Square do Lynnwood,,Pioneer Square to Lynnwood
+stops,stop_desc,nl,Pioneer Square naar Lynnwood,,Pioneer Square to Lynnwood
+stops,stop_desc,fr,Pioneer Square vers Lynnwood,,Pioneer Square to Lynnwood
+stops,stop_desc,de,Pioneer Square nach Lynnwood,,Pioneer Square to Lynnwood
+stops,stop_desc,it,Pioneer Square a Lynnwood,,Pioneer Square to Lynnwood
+stops,stop_desc,ko,Pioneer Square에서 Lynnwood 방향,,Pioneer Square to Lynnwood
+stops,stop_desc,fa,Pioneer Square به Lynnwood,,Pioneer Square to Lynnwood
+stops,stop_desc,ru,Pioneer Square до Lynnwood,,Pioneer Square to Lynnwood
+stops,stop_desc,sr,Pioneer Square до Lynnwood,,Pioneer Square to Lynnwood
+stops,stop_desc,tl,Pioneer Square papunta Lynnwood,,Pioneer Square to Lynnwood
+stops,stop_desc,vi,Pioneer Square đến Lynnwood,,Pioneer Square to Lynnwood
+stops,stop_desc,cy,Pioneer Square i Lynnwood,,Pioneer Square to Lynnwood
+stops,stop_desc,sw,Pioneer Square kwenda Lynnwood,,Pioneer Square to Lynnwood
+stops,stop_desc,pt-PT,Pioneer Square para Lynnwood,,Pioneer Square to Lynnwood
+stops,stop_desc,af,Pioneer Square na Lynnwood,,Pioneer Square to Lynnwood
+stops,stop_desc,es,Rainier Beach a Federal Way,,Rainier Beach to Federal Way
+stops,stop_desc,zh-Hans,Rainier Beach 到 Federal Way,,Rainier Beach to Federal Way
+stops,stop_desc,ar,Rainier Beach إلى Federal Way,,Rainier Beach to Federal Way
+stops,stop_desc,bs,Rainier Beach do Federal Way,,Rainier Beach to Federal Way
+stops,stop_desc,hr,Rainier Beach do Federal Way,,Rainier Beach to Federal Way
+stops,stop_desc,nl,Rainier Beach naar Federal Way,,Rainier Beach to Federal Way
+stops,stop_desc,fr,Rainier Beach vers Federal Way,,Rainier Beach to Federal Way
+stops,stop_desc,de,Rainier Beach nach Federal Way,,Rainier Beach to Federal Way
+stops,stop_desc,it,Rainier Beach a Federal Way,,Rainier Beach to Federal Way
+stops,stop_desc,ko,Rainier Beach에서 Federal Way 방향,,Rainier Beach to Federal Way
+stops,stop_desc,fa,Rainier Beach به Federal Way,,Rainier Beach to Federal Way
+stops,stop_desc,ru,Rainier Beach до Federal Way,,Rainier Beach to Federal Way
+stops,stop_desc,sr,Rainier Beach до Federal Way,,Rainier Beach to Federal Way
+stops,stop_desc,tl,Rainier Beach papunta Federal Way,,Rainier Beach to Federal Way
+stops,stop_desc,vi,Rainier Beach đến Federal Way,,Rainier Beach to Federal Way
+stops,stop_desc,cy,Rainier Beach i Federal Way,,Rainier Beach to Federal Way
+stops,stop_desc,sw,Rainier Beach kwenda Federal Way,,Rainier Beach to Federal Way
+stops,stop_desc,pt-PT,Rainier Beach para Federal Way,,Rainier Beach to Federal Way
+stops,stop_desc,af,Rainier Beach na Federal Way,,Rainier Beach to Federal Way
+stops,stop_desc,es,Rainier Beach a Lynnwood,,Rainier Beach to Lynnwood
+stops,stop_desc,zh-Hans,Rainier Beach 到 Lynnwood,,Rainier Beach to Lynnwood
+stops,stop_desc,ar,Rainier Beach إلى Lynnwood,,Rainier Beach to Lynnwood
+stops,stop_desc,bs,Rainier Beach do Lynnwood,,Rainier Beach to Lynnwood
+stops,stop_desc,hr,Rainier Beach do Lynnwood,,Rainier Beach to Lynnwood
+stops,stop_desc,nl,Rainier Beach naar Lynnwood,,Rainier Beach to Lynnwood
+stops,stop_desc,fr,Rainier Beach vers Lynnwood,,Rainier Beach to Lynnwood
+stops,stop_desc,de,Rainier Beach nach Lynnwood,,Rainier Beach to Lynnwood
+stops,stop_desc,it,Rainier Beach a Lynnwood,,Rainier Beach to Lynnwood
+stops,stop_desc,ko,Rainier Beach에서 Lynnwood 방향,,Rainier Beach to Lynnwood
+stops,stop_desc,fa,Rainier Beach به Lynnwood,,Rainier Beach to Lynnwood
+stops,stop_desc,ru,Rainier Beach до Lynnwood,,Rainier Beach to Lynnwood
+stops,stop_desc,sr,Rainier Beach до Lynnwood,,Rainier Beach to Lynnwood
+stops,stop_desc,tl,Rainier Beach papunta Lynnwood,,Rainier Beach to Lynnwood
+stops,stop_desc,vi,Rainier Beach đến Lynnwood,,Rainier Beach to Lynnwood
+stops,stop_desc,cy,Rainier Beach i Lynnwood,,Rainier Beach to Lynnwood
+stops,stop_desc,sw,Rainier Beach kwenda Lynnwood,,Rainier Beach to Lynnwood
+stops,stop_desc,pt-PT,Rainier Beach para Lynnwood,,Rainier Beach to Lynnwood
+stops,stop_desc,af,Rainier Beach na Lynnwood,,Rainier Beach to Lynnwood
+stops,stop_desc,es,Redmond Technology a/desde South Bellevue,,Redmond Technology to/from South Bellevue
+stops,stop_desc,zh-Hans,Redmond Technology 往返 South Bellevue,,Redmond Technology to/from South Bellevue
+stops,stop_desc,ar,Redmond Technology إلى/من South Bellevue,,Redmond Technology to/from South Bellevue
+stops,stop_desc,bs,Redmond Technology do/od South Bellevue,,Redmond Technology to/from South Bellevue
+stops,stop_desc,hr,Redmond Technology do/od South Bellevue,,Redmond Technology to/from South Bellevue
+stops,stop_desc,nl,Redmond Technology van/naar South Bellevue,,Redmond Technology to/from South Bellevue
+stops,stop_desc,fr,Redmond Technology depuis/vers South Bellevue,,Redmond Technology to/from South Bellevue
+stops,stop_desc,de,Redmond Technology von/nach South Bellevue,,Redmond Technology to/from South Bellevue
+stops,stop_desc,it,Redmond Technology a/da South Bellevue,,Redmond Technology to/from South Bellevue
+stops,stop_desc,ko,Redmond Technology - South Bellevue 왕복,,Redmond Technology to/from South Bellevue
+stops,stop_desc,fa,Redmond Technology به/از South Bellevue,,Redmond Technology to/from South Bellevue
+stops,stop_desc,ru,Redmond Technology до/от South Bellevue,,Redmond Technology to/from South Bellevue
+stops,stop_desc,sr,Redmond Technology до/од South Bellevue,,Redmond Technology to/from South Bellevue
+stops,stop_desc,tl,Redmond Technology papunta/mula sa South Bellevue,,Redmond Technology to/from South Bellevue
+stops,stop_desc,vi,Redmond Technology đến/từ South Bellevue,,Redmond Technology to/from South Bellevue
+stops,stop_desc,cy,Redmond Technology i/o South Bellevue,,Redmond Technology to/from South Bellevue
+stops,stop_desc,sw,Redmond Technology kwenda/kutoka South Bellevue,,Redmond Technology to/from South Bellevue
+stops,stop_desc,pt-PT,Redmond Technology para/de South Bellevue,,Redmond Technology to/from South Bellevue
+stops,stop_desc,af,Redmond Technology na/van South Bellevue,,Redmond Technology to/from South Bellevue
+stops,stop_desc,es,Roosevelt a Federal Way,,Roosevelt to Federal Way
+stops,stop_desc,zh-Hans,Roosevelt 到 Federal Way,,Roosevelt to Federal Way
+stops,stop_desc,ar,Roosevelt إلى Federal Way,,Roosevelt to Federal Way
+stops,stop_desc,bs,Roosevelt do Federal Way,,Roosevelt to Federal Way
+stops,stop_desc,hr,Roosevelt do Federal Way,,Roosevelt to Federal Way
+stops,stop_desc,nl,Roosevelt naar Federal Way,,Roosevelt to Federal Way
+stops,stop_desc,fr,Roosevelt vers Federal Way,,Roosevelt to Federal Way
+stops,stop_desc,de,Roosevelt nach Federal Way,,Roosevelt to Federal Way
+stops,stop_desc,it,Roosevelt a Federal Way,,Roosevelt to Federal Way
+stops,stop_desc,ko,Roosevelt에서 Federal Way 방향,,Roosevelt to Federal Way
+stops,stop_desc,fa,Roosevelt به Federal Way,,Roosevelt to Federal Way
+stops,stop_desc,ru,Roosevelt до Federal Way,,Roosevelt to Federal Way
+stops,stop_desc,sr,Roosevelt до Federal Way,,Roosevelt to Federal Way
+stops,stop_desc,tl,Roosevelt papunta Federal Way,,Roosevelt to Federal Way
+stops,stop_desc,vi,Roosevelt đến Federal Way,,Roosevelt to Federal Way
+stops,stop_desc,cy,Roosevelt i Federal Way,,Roosevelt to Federal Way
+stops,stop_desc,sw,Roosevelt kwenda Federal Way,,Roosevelt to Federal Way
+stops,stop_desc,pt-PT,Roosevelt para Federal Way,,Roosevelt to Federal Way
+stops,stop_desc,af,Roosevelt na Federal Way,,Roosevelt to Federal Way
+stops,stop_desc,es,Roosevelt a Lynnwood,,Roosevelt to Lynnwood
+stops,stop_desc,zh-Hans,Roosevelt 到 Lynnwood,,Roosevelt to Lynnwood
+stops,stop_desc,ar,Roosevelt إلى Lynnwood,,Roosevelt to Lynnwood
+stops,stop_desc,bs,Roosevelt do Lynnwood,,Roosevelt to Lynnwood
+stops,stop_desc,hr,Roosevelt do Lynnwood,,Roosevelt to Lynnwood
+stops,stop_desc,nl,Roosevelt naar Lynnwood,,Roosevelt to Lynnwood
+stops,stop_desc,fr,Roosevelt vers Lynnwood,,Roosevelt to Lynnwood
+stops,stop_desc,de,Roosevelt nach Lynnwood,,Roosevelt to Lynnwood
+stops,stop_desc,it,Roosevelt a Lynnwood,,Roosevelt to Lynnwood
+stops,stop_desc,ko,Roosevelt에서 Lynnwood 방향,,Roosevelt to Lynnwood
+stops,stop_desc,fa,Roosevelt به Lynnwood,,Roosevelt to Lynnwood
+stops,stop_desc,ru,Roosevelt до Lynnwood,,Roosevelt to Lynnwood
+stops,stop_desc,sr,Roosevelt до Lynnwood,,Roosevelt to Lynnwood
+stops,stop_desc,tl,Roosevelt papunta Lynnwood,,Roosevelt to Lynnwood
+stops,stop_desc,vi,Roosevelt đến Lynnwood,,Roosevelt to Lynnwood
+stops,stop_desc,cy,Roosevelt i Lynnwood,,Roosevelt to Lynnwood
+stops,stop_desc,sw,Roosevelt kwenda Lynnwood,,Roosevelt to Lynnwood
+stops,stop_desc,pt-PT,Roosevelt para Lynnwood,,Roosevelt to Lynnwood
+stops,stop_desc,af,Roosevelt na Lynnwood,,Roosevelt to Lynnwood
+stops,stop_desc,es,S 25th a Tacoma Dome/St Joseph,,S 25th to Tacoma Dome/St Joseph
+stops,stop_desc,zh-Hans,S 25th 到 Tacoma Dome/St Joseph,,S 25th to Tacoma Dome/St Joseph
+stops,stop_desc,ar,S 25th إلى Tacoma Dome/St Joseph,,S 25th to Tacoma Dome/St Joseph
+stops,stop_desc,bs,S 25th do Tacoma Dome/St Joseph,,S 25th to Tacoma Dome/St Joseph
+stops,stop_desc,hr,S 25th do Tacoma Dome/St Joseph,,S 25th to Tacoma Dome/St Joseph
+stops,stop_desc,nl,S 25th naar Tacoma Dome/St Joseph,,S 25th to Tacoma Dome/St Joseph
+stops,stop_desc,fr,S 25th vers Tacoma Dome/St Joseph,,S 25th to Tacoma Dome/St Joseph
+stops,stop_desc,de,S 25th nach Tacoma Dome/St Joseph,,S 25th to Tacoma Dome/St Joseph
+stops,stop_desc,it,S 25th a Tacoma Dome/St Joseph,,S 25th to Tacoma Dome/St Joseph
+stops,stop_desc,ko,S 25th에서 Tacoma Dome/St Joseph 방향,,S 25th to Tacoma Dome/St Joseph
+stops,stop_desc,fa,S 25th به Tacoma Dome/St Joseph,,S 25th to Tacoma Dome/St Joseph
+stops,stop_desc,ru,S 25th до Tacoma Dome/St Joseph,,S 25th to Tacoma Dome/St Joseph
+stops,stop_desc,sr,S 25th до Tacoma Dome/St Joseph,,S 25th to Tacoma Dome/St Joseph
+stops,stop_desc,tl,S 25th papunta Tacoma Dome/St Joseph,,S 25th to Tacoma Dome/St Joseph
+stops,stop_desc,vi,S 25th đến Tacoma Dome/St Joseph,,S 25th to Tacoma Dome/St Joseph
+stops,stop_desc,cy,S 25th i Tacoma Dome/St Joseph,,S 25th to Tacoma Dome/St Joseph
+stops,stop_desc,sw,S 25th kwenda Tacoma Dome/St Joseph,,S 25th to Tacoma Dome/St Joseph
+stops,stop_desc,pt-PT,S 25th para Tacoma Dome/St Joseph,,S 25th to Tacoma Dome/St Joseph
+stops,stop_desc,af,S 25th na Tacoma Dome/St Joseph,,S 25th to Tacoma Dome/St Joseph
+stops,stop_desc,es,S 4th a St Joseph,,S 4th to St Joseph
+stops,stop_desc,zh-Hans,S 4th 到 St Joseph,,S 4th to St Joseph
+stops,stop_desc,ar,S 4th إلى St Joseph,,S 4th to St Joseph
+stops,stop_desc,bs,S 4th do St Joseph,,S 4th to St Joseph
+stops,stop_desc,hr,S 4th do St Joseph,,S 4th to St Joseph
+stops,stop_desc,nl,S 4th naar St Joseph,,S 4th to St Joseph
+stops,stop_desc,fr,S 4th vers St Joseph,,S 4th to St Joseph
+stops,stop_desc,de,S 4th nach St Joseph,,S 4th to St Joseph
+stops,stop_desc,it,S 4th a St Joseph,,S 4th to St Joseph
+stops,stop_desc,ko,S 4th에서 St Joseph 방향,,S 4th to St Joseph
+stops,stop_desc,fa,S 4th به St Joseph,,S 4th to St Joseph
+stops,stop_desc,ru,S 4th до St Joseph,,S 4th to St Joseph
+stops,stop_desc,sr,S 4th до St Joseph,,S 4th to St Joseph
+stops,stop_desc,tl,S 4th papunta St Joseph,,S 4th to St Joseph
+stops,stop_desc,vi,S 4th đến St Joseph,,S 4th to St Joseph
+stops,stop_desc,cy,S 4th i St Joseph,,S 4th to St Joseph
+stops,stop_desc,sw,S 4th kwenda St Joseph,,S 4th to St Joseph
+stops,stop_desc,pt-PT,S 4th para St Joseph,,S 4th to St Joseph
+stops,stop_desc,af,S 4th na St Joseph,,S 4th to St Joseph
+stops,stop_desc,es,S 4th a Tacoma Dome,,S 4th to Tacoma Dome
+stops,stop_desc,zh-Hans,S 4th 到 Tacoma Dome,,S 4th to Tacoma Dome
+stops,stop_desc,ar,S 4th إلى Tacoma Dome,,S 4th to Tacoma Dome
+stops,stop_desc,bs,S 4th do Tacoma Dome,,S 4th to Tacoma Dome
+stops,stop_desc,hr,S 4th do Tacoma Dome,,S 4th to Tacoma Dome
+stops,stop_desc,nl,S 4th naar Tacoma Dome,,S 4th to Tacoma Dome
+stops,stop_desc,fr,S 4th vers Tacoma Dome,,S 4th to Tacoma Dome
+stops,stop_desc,de,S 4th nach Tacoma Dome,,S 4th to Tacoma Dome
+stops,stop_desc,it,S 4th a Tacoma Dome,,S 4th to Tacoma Dome
+stops,stop_desc,ko,S 4th에서 Tacoma Dome 방향,,S 4th to Tacoma Dome
+stops,stop_desc,fa,S 4th به Tacoma Dome,,S 4th to Tacoma Dome
+stops,stop_desc,ru,S 4th до Tacoma Dome,,S 4th to Tacoma Dome
+stops,stop_desc,sr,S 4th до Tacoma Dome,,S 4th to Tacoma Dome
+stops,stop_desc,tl,S 4th papunta Tacoma Dome,,S 4th to Tacoma Dome
+stops,stop_desc,vi,S 4th đến Tacoma Dome,,S 4th to Tacoma Dome
+stops,stop_desc,cy,S 4th i Tacoma Dome,,S 4th to Tacoma Dome
+stops,stop_desc,sw,S 4th kwenda Tacoma Dome,,S 4th to Tacoma Dome
+stops,stop_desc,pt-PT,S 4th para Tacoma Dome,,S 4th to Tacoma Dome
+stops,stop_desc,af,S 4th na Tacoma Dome,,S 4th to Tacoma Dome
+stops,stop_desc,es,SODO a Federal Way,,SODO to Federal Way
+stops,stop_desc,zh-Hans,SODO 到 Federal Way,,SODO to Federal Way
+stops,stop_desc,ar,SODO إلى Federal Way,,SODO to Federal Way
+stops,stop_desc,bs,SODO do Federal Way,,SODO to Federal Way
+stops,stop_desc,hr,SODO do Federal Way,,SODO to Federal Way
+stops,stop_desc,nl,SODO naar Federal Way,,SODO to Federal Way
+stops,stop_desc,fr,SODO vers Federal Way,,SODO to Federal Way
+stops,stop_desc,de,SODO nach Federal Way,,SODO to Federal Way
+stops,stop_desc,it,SODO a Federal Way,,SODO to Federal Way
+stops,stop_desc,ko,SODO에서 Federal Way 방향,,SODO to Federal Way
+stops,stop_desc,fa,SODO به Federal Way,,SODO to Federal Way
+stops,stop_desc,ru,SODO до Federal Way,,SODO to Federal Way
+stops,stop_desc,sr,SODO до Federal Way,,SODO to Federal Way
+stops,stop_desc,tl,SODO papunta Federal Way,,SODO to Federal Way
+stops,stop_desc,vi,SODO đến Federal Way,,SODO to Federal Way
+stops,stop_desc,cy,SODO i Federal Way,,SODO to Federal Way
+stops,stop_desc,sw,SODO kwenda Federal Way,,SODO to Federal Way
+stops,stop_desc,pt-PT,SODO para Federal Way,,SODO to Federal Way
+stops,stop_desc,af,SODO na Federal Way,,SODO to Federal Way
+stops,stop_desc,es,SODO a Lynnwood,,SODO to Lynnwood
+stops,stop_desc,zh-Hans,SODO 到 Lynnwood,,SODO to Lynnwood
+stops,stop_desc,ar,SODO إلى Lynnwood,,SODO to Lynnwood
+stops,stop_desc,bs,SODO do Lynnwood,,SODO to Lynnwood
+stops,stop_desc,hr,SODO do Lynnwood,,SODO to Lynnwood
+stops,stop_desc,nl,SODO naar Lynnwood,,SODO to Lynnwood
+stops,stop_desc,fr,SODO vers Lynnwood,,SODO to Lynnwood
+stops,stop_desc,de,SODO nach Lynnwood,,SODO to Lynnwood
+stops,stop_desc,it,SODO a Lynnwood,,SODO to Lynnwood
+stops,stop_desc,ko,SODO에서 Lynnwood 방향,,SODO to Lynnwood
+stops,stop_desc,fa,SODO به Lynnwood,,SODO to Lynnwood
+stops,stop_desc,ru,SODO до Lynnwood,,SODO to Lynnwood
+stops,stop_desc,sr,SODO до Lynnwood,,SODO to Lynnwood
+stops,stop_desc,tl,SODO papunta Lynnwood,,SODO to Lynnwood
+stops,stop_desc,vi,SODO đến Lynnwood,,SODO to Lynnwood
+stops,stop_desc,cy,SODO i Lynnwood,,SODO to Lynnwood
+stops,stop_desc,sw,SODO kwenda Lynnwood,,SODO to Lynnwood
+stops,stop_desc,pt-PT,SODO para Lynnwood,,SODO to Lynnwood
+stops,stop_desc,af,SODO na Lynnwood,,SODO to Lynnwood
+stops,stop_desc,es,SeaTac/Airport a Federal Way,,SeaTac/Airport to Federal Way
+stops,stop_desc,zh-Hans,SeaTac/Airport 到 Federal Way,,SeaTac/Airport to Federal Way
+stops,stop_desc,ar,SeaTac/Airport إلى Federal Way,,SeaTac/Airport to Federal Way
+stops,stop_desc,bs,SeaTac/Airport do Federal Way,,SeaTac/Airport to Federal Way
+stops,stop_desc,hr,SeaTac/Airport do Federal Way,,SeaTac/Airport to Federal Way
+stops,stop_desc,nl,SeaTac/Airport naar Federal Way,,SeaTac/Airport to Federal Way
+stops,stop_desc,fr,SeaTac/Airport vers Federal Way,,SeaTac/Airport to Federal Way
+stops,stop_desc,de,SeaTac/Airport nach Federal Way,,SeaTac/Airport to Federal Way
+stops,stop_desc,it,SeaTac/Airport a Federal Way,,SeaTac/Airport to Federal Way
+stops,stop_desc,ko,SeaTac/Airport에서 Federal Way 방향,,SeaTac/Airport to Federal Way
+stops,stop_desc,fa,SeaTac/Airport به Federal Way,,SeaTac/Airport to Federal Way
+stops,stop_desc,ru,SeaTac/Airport до Federal Way,,SeaTac/Airport to Federal Way
+stops,stop_desc,sr,SeaTac/Airport до Federal Way,,SeaTac/Airport to Federal Way
+stops,stop_desc,tl,SeaTac/Airport papunta Federal Way,,SeaTac/Airport to Federal Way
+stops,stop_desc,vi,SeaTac/Airport đến Federal Way,,SeaTac/Airport to Federal Way
+stops,stop_desc,cy,SeaTac/Airport i Federal Way,,SeaTac/Airport to Federal Way
+stops,stop_desc,sw,SeaTac/Airport kwenda Federal Way,,SeaTac/Airport to Federal Way
+stops,stop_desc,pt-PT,SeaTac/Airport para Federal Way,,SeaTac/Airport to Federal Way
+stops,stop_desc,af,SeaTac/Airport na Federal Way,,SeaTac/Airport to Federal Way
+stops,stop_desc,es,SeaTac/Airport a Lynnwood,,SeaTac/Airport to Lynnwood
+stops,stop_desc,zh-Hans,SeaTac/Airport 到 Lynnwood,,SeaTac/Airport to Lynnwood
+stops,stop_desc,ar,SeaTac/Airport إلى Lynnwood,,SeaTac/Airport to Lynnwood
+stops,stop_desc,bs,SeaTac/Airport do Lynnwood,,SeaTac/Airport to Lynnwood
+stops,stop_desc,hr,SeaTac/Airport do Lynnwood,,SeaTac/Airport to Lynnwood
+stops,stop_desc,nl,SeaTac/Airport naar Lynnwood,,SeaTac/Airport to Lynnwood
+stops,stop_desc,fr,SeaTac/Airport vers Lynnwood,,SeaTac/Airport to Lynnwood
+stops,stop_desc,de,SeaTac/Airport nach Lynnwood,,SeaTac/Airport to Lynnwood
+stops,stop_desc,it,SeaTac/Airport a Lynnwood,,SeaTac/Airport to Lynnwood
+stops,stop_desc,ko,SeaTac/Airport에서 Lynnwood 방향,,SeaTac/Airport to Lynnwood
+stops,stop_desc,fa,SeaTac/Airport به Lynnwood,,SeaTac/Airport to Lynnwood
+stops,stop_desc,ru,SeaTac/Airport до Lynnwood,,SeaTac/Airport to Lynnwood
+stops,stop_desc,sr,SeaTac/Airport до Lynnwood,,SeaTac/Airport to Lynnwood
+stops,stop_desc,tl,SeaTac/Airport papunta Lynnwood,,SeaTac/Airport to Lynnwood
+stops,stop_desc,vi,SeaTac/Airport đến Lynnwood,,SeaTac/Airport to Lynnwood
+stops,stop_desc,cy,SeaTac/Airport i Lynnwood,,SeaTac/Airport to Lynnwood
+stops,stop_desc,sw,SeaTac/Airport kwenda Lynnwood,,SeaTac/Airport to Lynnwood
+stops,stop_desc,pt-PT,SeaTac/Airport para Lynnwood,,SeaTac/Airport to Lynnwood
+stops,stop_desc,af,SeaTac/Airport na Lynnwood,,SeaTac/Airport to Lynnwood
+stops,stop_desc,es,Shoreline North a Federal Way,,Shoreline North to Federal Way
+stops,stop_desc,zh-Hans,Shoreline North 到 Federal Way,,Shoreline North to Federal Way
+stops,stop_desc,ar,Shoreline North إلى Federal Way,,Shoreline North to Federal Way
+stops,stop_desc,bs,Shoreline North do Federal Way,,Shoreline North to Federal Way
+stops,stop_desc,hr,Shoreline North do Federal Way,,Shoreline North to Federal Way
+stops,stop_desc,nl,Shoreline North naar Federal Way,,Shoreline North to Federal Way
+stops,stop_desc,fr,Shoreline North vers Federal Way,,Shoreline North to Federal Way
+stops,stop_desc,de,Shoreline North nach Federal Way,,Shoreline North to Federal Way
+stops,stop_desc,it,Shoreline North a Federal Way,,Shoreline North to Federal Way
+stops,stop_desc,ko,Shoreline North에서 Federal Way 방향,,Shoreline North to Federal Way
+stops,stop_desc,fa,Shoreline North به Federal Way,,Shoreline North to Federal Way
+stops,stop_desc,ru,Shoreline North до Federal Way,,Shoreline North to Federal Way
+stops,stop_desc,sr,Shoreline North до Federal Way,,Shoreline North to Federal Way
+stops,stop_desc,tl,Shoreline North papunta Federal Way,,Shoreline North to Federal Way
+stops,stop_desc,vi,Shoreline North đến Federal Way,,Shoreline North to Federal Way
+stops,stop_desc,cy,Shoreline North i Federal Way,,Shoreline North to Federal Way
+stops,stop_desc,sw,Shoreline North kwenda Federal Way,,Shoreline North to Federal Way
+stops,stop_desc,pt-PT,Shoreline North para Federal Way,,Shoreline North to Federal Way
+stops,stop_desc,af,Shoreline North na Federal Way,,Shoreline North to Federal Way
+stops,stop_desc,es,Shoreline North a Lynnwood,,Shoreline North to Lynnwood
+stops,stop_desc,zh-Hans,Shoreline North 到 Lynnwood,,Shoreline North to Lynnwood
+stops,stop_desc,ar,Shoreline North إلى Lynnwood,,Shoreline North to Lynnwood
+stops,stop_desc,bs,Shoreline North do Lynnwood,,Shoreline North to Lynnwood
+stops,stop_desc,hr,Shoreline North do Lynnwood,,Shoreline North to Lynnwood
+stops,stop_desc,nl,Shoreline North naar Lynnwood,,Shoreline North to Lynnwood
+stops,stop_desc,fr,Shoreline North vers Lynnwood,,Shoreline North to Lynnwood
+stops,stop_desc,de,Shoreline North nach Lynnwood,,Shoreline North to Lynnwood
+stops,stop_desc,it,Shoreline North a Lynnwood,,Shoreline North to Lynnwood
+stops,stop_desc,ko,Shoreline North에서 Lynnwood 방향,,Shoreline North to Lynnwood
+stops,stop_desc,fa,Shoreline North به Lynnwood,,Shoreline North to Lynnwood
+stops,stop_desc,ru,Shoreline North до Lynnwood,,Shoreline North to Lynnwood
+stops,stop_desc,sr,Shoreline North до Lynnwood,,Shoreline North to Lynnwood
+stops,stop_desc,tl,Shoreline North papunta Lynnwood,,Shoreline North to Lynnwood
+stops,stop_desc,vi,Shoreline North đến Lynnwood,,Shoreline North to Lynnwood
+stops,stop_desc,cy,Shoreline North i Lynnwood,,Shoreline North to Lynnwood
+stops,stop_desc,sw,Shoreline North kwenda Lynnwood,,Shoreline North to Lynnwood
+stops,stop_desc,pt-PT,Shoreline North para Lynnwood,,Shoreline North to Lynnwood
+stops,stop_desc,af,Shoreline North na Lynnwood,,Shoreline North to Lynnwood
+stops,stop_desc,es,Shoreline South a Federal Way,,Shoreline South to Federal Way
+stops,stop_desc,zh-Hans,Shoreline South 到 Federal Way,,Shoreline South to Federal Way
+stops,stop_desc,ar,Shoreline South إلى Federal Way,,Shoreline South to Federal Way
+stops,stop_desc,bs,Shoreline South do Federal Way,,Shoreline South to Federal Way
+stops,stop_desc,hr,Shoreline South do Federal Way,,Shoreline South to Federal Way
+stops,stop_desc,nl,Shoreline South naar Federal Way,,Shoreline South to Federal Way
+stops,stop_desc,fr,Shoreline South vers Federal Way,,Shoreline South to Federal Way
+stops,stop_desc,de,Shoreline South nach Federal Way,,Shoreline South to Federal Way
+stops,stop_desc,it,Shoreline South a Federal Way,,Shoreline South to Federal Way
+stops,stop_desc,ko,Shoreline South에서 Federal Way 방향,,Shoreline South to Federal Way
+stops,stop_desc,fa,Shoreline South به Federal Way,,Shoreline South to Federal Way
+stops,stop_desc,ru,Shoreline South до Federal Way,,Shoreline South to Federal Way
+stops,stop_desc,sr,Shoreline South до Federal Way,,Shoreline South to Federal Way
+stops,stop_desc,tl,Shoreline South papunta Federal Way,,Shoreline South to Federal Way
+stops,stop_desc,vi,Shoreline South đến Federal Way,,Shoreline South to Federal Way
+stops,stop_desc,cy,Shoreline South i Federal Way,,Shoreline South to Federal Way
+stops,stop_desc,sw,Shoreline South kwenda Federal Way,,Shoreline South to Federal Way
+stops,stop_desc,pt-PT,Shoreline South para Federal Way,,Shoreline South to Federal Way
+stops,stop_desc,af,Shoreline South na Federal Way,,Shoreline South to Federal Way
+stops,stop_desc,es,Shoreline South a Lynnwood,,Shoreline South to Lynnwood
+stops,stop_desc,zh-Hans,Shoreline South 到 Lynnwood,,Shoreline South to Lynnwood
+stops,stop_desc,ar,Shoreline South إلى Lynnwood,,Shoreline South to Lynnwood
+stops,stop_desc,bs,Shoreline South do Lynnwood,,Shoreline South to Lynnwood
+stops,stop_desc,hr,Shoreline South do Lynnwood,,Shoreline South to Lynnwood
+stops,stop_desc,nl,Shoreline South naar Lynnwood,,Shoreline South to Lynnwood
+stops,stop_desc,fr,Shoreline South vers Lynnwood,,Shoreline South to Lynnwood
+stops,stop_desc,de,Shoreline South nach Lynnwood,,Shoreline South to Lynnwood
+stops,stop_desc,it,Shoreline South a Lynnwood,,Shoreline South to Lynnwood
+stops,stop_desc,ko,Shoreline South에서 Lynnwood 방향,,Shoreline South to Lynnwood
+stops,stop_desc,fa,Shoreline South به Lynnwood,,Shoreline South to Lynnwood
+stops,stop_desc,ru,Shoreline South до Lynnwood,,Shoreline South to Lynnwood
+stops,stop_desc,sr,Shoreline South до Lynnwood,,Shoreline South to Lynnwood
+stops,stop_desc,tl,Shoreline South papunta Lynnwood,,Shoreline South to Lynnwood
+stops,stop_desc,vi,Shoreline South đến Lynnwood,,Shoreline South to Lynnwood
+stops,stop_desc,cy,Shoreline South i Lynnwood,,Shoreline South to Lynnwood
+stops,stop_desc,sw,Shoreline South kwenda Lynnwood,,Shoreline South to Lynnwood
+stops,stop_desc,pt-PT,Shoreline South para Lynnwood,,Shoreline South to Lynnwood
+stops,stop_desc,af,Shoreline South na Lynnwood,,Shoreline South to Lynnwood
+stops,stop_desc,es,South Bellevue a/desde Downtown Redmond,,South Bellevue to/from Downtown Redmond
+stops,stop_desc,zh-Hans,South Bellevue 往返 Downtown Redmond,,South Bellevue to/from Downtown Redmond
+stops,stop_desc,ar,South Bellevue إلى/من Downtown Redmond,,South Bellevue to/from Downtown Redmond
+stops,stop_desc,bs,South Bellevue do/od Downtown Redmond,,South Bellevue to/from Downtown Redmond
+stops,stop_desc,hr,South Bellevue do/od Downtown Redmond,,South Bellevue to/from Downtown Redmond
+stops,stop_desc,nl,South Bellevue van/naar Downtown Redmond,,South Bellevue to/from Downtown Redmond
+stops,stop_desc,fr,South Bellevue depuis/vers Downtown Redmond,,South Bellevue to/from Downtown Redmond
+stops,stop_desc,de,South Bellevue von/nach Downtown Redmond,,South Bellevue to/from Downtown Redmond
+stops,stop_desc,it,South Bellevue a/da Downtown Redmond,,South Bellevue to/from Downtown Redmond
+stops,stop_desc,ko,South Bellevue - Downtown Redmond 왕복,,South Bellevue to/from Downtown Redmond
+stops,stop_desc,fa,South Bellevue به/از Downtown Redmond,,South Bellevue to/from Downtown Redmond
+stops,stop_desc,ru,South Bellevue до/от Downtown Redmond,,South Bellevue to/from Downtown Redmond
+stops,stop_desc,sr,South Bellevue до/од Downtown Redmond,,South Bellevue to/from Downtown Redmond
+stops,stop_desc,tl,South Bellevue papunta/mula sa Downtown Redmond,,South Bellevue to/from Downtown Redmond
+stops,stop_desc,vi,South Bellevue đến/từ Downtown Redmond,,South Bellevue to/from Downtown Redmond
+stops,stop_desc,cy,South Bellevue i/o Downtown Redmond,,South Bellevue to/from Downtown Redmond
+stops,stop_desc,sw,South Bellevue kwenda/kutoka Downtown Redmond,,South Bellevue to/from Downtown Redmond
+stops,stop_desc,pt-PT,South Bellevue para/de Downtown Redmond,,South Bellevue to/from Downtown Redmond
+stops,stop_desc,af,South Bellevue na/van Downtown Redmond,,South Bellevue to/from Downtown Redmond
+stops,stop_desc,es,Spring District a Downtown Redmond,,Spring District to Downtown Redmond
+stops,stop_desc,zh-Hans,Spring District 到 Downtown Redmond,,Spring District to Downtown Redmond
+stops,stop_desc,ar,Spring District إلى Downtown Redmond,,Spring District to Downtown Redmond
+stops,stop_desc,bs,Spring District do Downtown Redmond,,Spring District to Downtown Redmond
+stops,stop_desc,hr,Spring District do Downtown Redmond,,Spring District to Downtown Redmond
+stops,stop_desc,nl,Spring District naar Downtown Redmond,,Spring District to Downtown Redmond
+stops,stop_desc,fr,Spring District vers Downtown Redmond,,Spring District to Downtown Redmond
+stops,stop_desc,de,Spring District nach Downtown Redmond,,Spring District to Downtown Redmond
+stops,stop_desc,it,Spring District a Downtown Redmond,,Spring District to Downtown Redmond
+stops,stop_desc,ko,Spring District에서 Downtown Redmond 방향,,Spring District to Downtown Redmond
+stops,stop_desc,fa,Spring District به Downtown Redmond,,Spring District to Downtown Redmond
+stops,stop_desc,ru,Spring District до Downtown Redmond,,Spring District to Downtown Redmond
+stops,stop_desc,sr,Spring District до Downtown Redmond,,Spring District to Downtown Redmond
+stops,stop_desc,tl,Spring District papunta Downtown Redmond,,Spring District to Downtown Redmond
+stops,stop_desc,vi,Spring District đến Downtown Redmond,,Spring District to Downtown Redmond
+stops,stop_desc,cy,Spring District i Downtown Redmond,,Spring District to Downtown Redmond
+stops,stop_desc,sw,Spring District kwenda Downtown Redmond,,Spring District to Downtown Redmond
+stops,stop_desc,pt-PT,Spring District para Downtown Redmond,,Spring District to Downtown Redmond
+stops,stop_desc,af,Spring District na Downtown Redmond,,Spring District to Downtown Redmond
+stops,stop_desc,es,Spring District a South Bellevue,,Spring District to South Bellevue
+stops,stop_desc,zh-Hans,Spring District 到 South Bellevue,,Spring District to South Bellevue
+stops,stop_desc,ar,Spring District إلى South Bellevue,,Spring District to South Bellevue
+stops,stop_desc,bs,Spring District do South Bellevue,,Spring District to South Bellevue
+stops,stop_desc,hr,Spring District do South Bellevue,,Spring District to South Bellevue
+stops,stop_desc,nl,Spring District naar South Bellevue,,Spring District to South Bellevue
+stops,stop_desc,fr,Spring District vers South Bellevue,,Spring District to South Bellevue
+stops,stop_desc,de,Spring District nach South Bellevue,,Spring District to South Bellevue
+stops,stop_desc,it,Spring District a South Bellevue,,Spring District to South Bellevue
+stops,stop_desc,ko,Spring District에서 South Bellevue 방향,,Spring District to South Bellevue
+stops,stop_desc,fa,Spring District به South Bellevue,,Spring District to South Bellevue
+stops,stop_desc,ru,Spring District до South Bellevue,,Spring District to South Bellevue
+stops,stop_desc,sr,Spring District до South Bellevue,,Spring District to South Bellevue
+stops,stop_desc,tl,Spring District papunta South Bellevue,,Spring District to South Bellevue
+stops,stop_desc,vi,Spring District đến South Bellevue,,Spring District to South Bellevue
+stops,stop_desc,cy,Spring District i South Bellevue,,Spring District to South Bellevue
+stops,stop_desc,sw,Spring District kwenda South Bellevue,,Spring District to South Bellevue
+stops,stop_desc,pt-PT,Spring District para South Bellevue,,Spring District to South Bellevue
+stops,stop_desc,af,Spring District na South Bellevue,,Spring District to South Bellevue
+stops,stop_desc,es,St Joseph a/desde Tacoma Dome,,St Joseph to/from Tacoma Dome
+stops,stop_desc,zh-Hans,St Joseph 往返 Tacoma Dome,,St Joseph to/from Tacoma Dome
+stops,stop_desc,ar,St Joseph إلى/من Tacoma Dome,,St Joseph to/from Tacoma Dome
+stops,stop_desc,bs,St Joseph do/od Tacoma Dome,,St Joseph to/from Tacoma Dome
+stops,stop_desc,hr,St Joseph do/od Tacoma Dome,,St Joseph to/from Tacoma Dome
+stops,stop_desc,nl,St Joseph van/naar Tacoma Dome,,St Joseph to/from Tacoma Dome
+stops,stop_desc,fr,St Joseph depuis/vers Tacoma Dome,,St Joseph to/from Tacoma Dome
+stops,stop_desc,de,St Joseph von/nach Tacoma Dome,,St Joseph to/from Tacoma Dome
+stops,stop_desc,it,St Joseph a/da Tacoma Dome,,St Joseph to/from Tacoma Dome
+stops,stop_desc,ko,St Joseph - Tacoma Dome 왕복,,St Joseph to/from Tacoma Dome
+stops,stop_desc,fa,St Joseph به/از Tacoma Dome,,St Joseph to/from Tacoma Dome
+stops,stop_desc,ru,St Joseph до/от Tacoma Dome,,St Joseph to/from Tacoma Dome
+stops,stop_desc,sr,St Joseph до/од Tacoma Dome,,St Joseph to/from Tacoma Dome
+stops,stop_desc,tl,St Joseph papunta/mula sa Tacoma Dome,,St Joseph to/from Tacoma Dome
+stops,stop_desc,vi,St Joseph đến/từ Tacoma Dome,,St Joseph to/from Tacoma Dome
+stops,stop_desc,cy,St Joseph i/o Tacoma Dome,,St Joseph to/from Tacoma Dome
+stops,stop_desc,sw,St Joseph kwenda/kutoka Tacoma Dome,,St Joseph to/from Tacoma Dome
+stops,stop_desc,pt-PT,St Joseph para/de Tacoma Dome,,St Joseph to/from Tacoma Dome
+stops,stop_desc,af,St Joseph na/van Tacoma Dome,,St Joseph to/from Tacoma Dome
+stops,stop_desc,es,Stadium District a St Joseph,,Stadium District to St Joseph
+stops,stop_desc,zh-Hans,Stadium District 到 St Joseph,,Stadium District to St Joseph
+stops,stop_desc,ar,Stadium District إلى St Joseph,,Stadium District to St Joseph
+stops,stop_desc,bs,Stadium District do St Joseph,,Stadium District to St Joseph
+stops,stop_desc,hr,Stadium District do St Joseph,,Stadium District to St Joseph
+stops,stop_desc,nl,Stadium District naar St Joseph,,Stadium District to St Joseph
+stops,stop_desc,fr,Stadium District vers St Joseph,,Stadium District to St Joseph
+stops,stop_desc,de,Stadium District nach St Joseph,,Stadium District to St Joseph
+stops,stop_desc,it,Stadium District a St Joseph,,Stadium District to St Joseph
+stops,stop_desc,ko,Stadium District에서 St Joseph 방향,,Stadium District to St Joseph
+stops,stop_desc,fa,Stadium District به St Joseph,,Stadium District to St Joseph
+stops,stop_desc,ru,Stadium District до St Joseph,,Stadium District to St Joseph
+stops,stop_desc,sr,Stadium District до St Joseph,,Stadium District to St Joseph
+stops,stop_desc,tl,Stadium District papunta St Joseph,,Stadium District to St Joseph
+stops,stop_desc,vi,Stadium District đến St Joseph,,Stadium District to St Joseph
+stops,stop_desc,cy,Stadium District i St Joseph,,Stadium District to St Joseph
+stops,stop_desc,sw,Stadium District kwenda St Joseph,,Stadium District to St Joseph
+stops,stop_desc,pt-PT,Stadium District para St Joseph,,Stadium District to St Joseph
+stops,stop_desc,af,Stadium District na St Joseph,,Stadium District to St Joseph
+stops,stop_desc,es,Stadium District a Tacoma Dome,,Stadium District to Tacoma Dome
+stops,stop_desc,zh-Hans,Stadium District 到 Tacoma Dome,,Stadium District to Tacoma Dome
+stops,stop_desc,ar,Stadium District إلى Tacoma Dome,,Stadium District to Tacoma Dome
+stops,stop_desc,bs,Stadium District do Tacoma Dome,,Stadium District to Tacoma Dome
+stops,stop_desc,hr,Stadium District do Tacoma Dome,,Stadium District to Tacoma Dome
+stops,stop_desc,nl,Stadium District naar Tacoma Dome,,Stadium District to Tacoma Dome
+stops,stop_desc,fr,Stadium District vers Tacoma Dome,,Stadium District to Tacoma Dome
+stops,stop_desc,de,Stadium District nach Tacoma Dome,,Stadium District to Tacoma Dome
+stops,stop_desc,it,Stadium District a Tacoma Dome,,Stadium District to Tacoma Dome
+stops,stop_desc,ko,Stadium District에서 Tacoma Dome 방향,,Stadium District to Tacoma Dome
+stops,stop_desc,fa,Stadium District به Tacoma Dome,,Stadium District to Tacoma Dome
+stops,stop_desc,ru,Stadium District до Tacoma Dome,,Stadium District to Tacoma Dome
+stops,stop_desc,sr,Stadium District до Tacoma Dome,,Stadium District to Tacoma Dome
+stops,stop_desc,tl,Stadium District papunta Tacoma Dome,,Stadium District to Tacoma Dome
+stops,stop_desc,vi,Stadium District đến Tacoma Dome,,Stadium District to Tacoma Dome
+stops,stop_desc,cy,Stadium District i Tacoma Dome,,Stadium District to Tacoma Dome
+stops,stop_desc,sw,Stadium District kwenda Tacoma Dome,,Stadium District to Tacoma Dome
+stops,stop_desc,pt-PT,Stadium District para Tacoma Dome,,Stadium District to Tacoma Dome
+stops,stop_desc,af,Stadium District na Tacoma Dome,,Stadium District to Tacoma Dome
+stops,stop_desc,es,Stadium a Federal Way,,Stadium to Federal Way
+stops,stop_desc,zh-Hans,Stadium 到 Federal Way,,Stadium to Federal Way
+stops,stop_desc,ar,Stadium إلى Federal Way,,Stadium to Federal Way
+stops,stop_desc,bs,Stadium do Federal Way,,Stadium to Federal Way
+stops,stop_desc,hr,Stadium do Federal Way,,Stadium to Federal Way
+stops,stop_desc,nl,Stadium naar Federal Way,,Stadium to Federal Way
+stops,stop_desc,fr,Stadium vers Federal Way,,Stadium to Federal Way
+stops,stop_desc,de,Stadium nach Federal Way,,Stadium to Federal Way
+stops,stop_desc,it,Stadium a Federal Way,,Stadium to Federal Way
+stops,stop_desc,ko,Stadium에서 Federal Way 방향,,Stadium to Federal Way
+stops,stop_desc,fa,Stadium به Federal Way,,Stadium to Federal Way
+stops,stop_desc,ru,Stadium до Federal Way,,Stadium to Federal Way
+stops,stop_desc,sr,Stadium до Federal Way,,Stadium to Federal Way
+stops,stop_desc,tl,Stadium papunta Federal Way,,Stadium to Federal Way
+stops,stop_desc,vi,Stadium đến Federal Way,,Stadium to Federal Way
+stops,stop_desc,cy,Stadium i Federal Way,,Stadium to Federal Way
+stops,stop_desc,sw,Stadium kwenda Federal Way,,Stadium to Federal Way
+stops,stop_desc,pt-PT,Stadium para Federal Way,,Stadium to Federal Way
+stops,stop_desc,af,Stadium na Federal Way,,Stadium to Federal Way
+stops,stop_desc,es,Stadium a Lynnwood,,Stadium to Lynnwood
+stops,stop_desc,zh-Hans,Stadium 到 Lynnwood,,Stadium to Lynnwood
+stops,stop_desc,ar,Stadium إلى Lynnwood,,Stadium to Lynnwood
+stops,stop_desc,bs,Stadium do Lynnwood,,Stadium to Lynnwood
+stops,stop_desc,hr,Stadium do Lynnwood,,Stadium to Lynnwood
+stops,stop_desc,nl,Stadium naar Lynnwood,,Stadium to Lynnwood
+stops,stop_desc,fr,Stadium vers Lynnwood,,Stadium to Lynnwood
+stops,stop_desc,de,Stadium nach Lynnwood,,Stadium to Lynnwood
+stops,stop_desc,it,Stadium a Lynnwood,,Stadium to Lynnwood
+stops,stop_desc,ko,Stadium에서 Lynnwood 방향,,Stadium to Lynnwood
+stops,stop_desc,fa,Stadium به Lynnwood,,Stadium to Lynnwood
+stops,stop_desc,ru,Stadium до Lynnwood,,Stadium to Lynnwood
+stops,stop_desc,sr,Stadium до Lynnwood,,Stadium to Lynnwood
+stops,stop_desc,tl,Stadium papunta Lynnwood,,Stadium to Lynnwood
+stops,stop_desc,vi,Stadium đến Lynnwood,,Stadium to Lynnwood
+stops,stop_desc,cy,Stadium i Lynnwood,,Stadium to Lynnwood
+stops,stop_desc,sw,Stadium kwenda Lynnwood,,Stadium to Lynnwood
+stops,stop_desc,pt-PT,Stadium para Lynnwood,,Stadium to Lynnwood
+stops,stop_desc,af,Stadium na Lynnwood,,Stadium to Lynnwood
+stops,stop_desc,es,Star Lake a Federal Way,,Star Lake to Federal Way
+stops,stop_desc,zh-Hans,Star Lake 到 Federal Way,,Star Lake to Federal Way
+stops,stop_desc,ar,Star Lake إلى Federal Way,,Star Lake to Federal Way
+stops,stop_desc,bs,Star Lake do Federal Way,,Star Lake to Federal Way
+stops,stop_desc,hr,Star Lake do Federal Way,,Star Lake to Federal Way
+stops,stop_desc,nl,Star Lake naar Federal Way,,Star Lake to Federal Way
+stops,stop_desc,fr,Star Lake vers Federal Way,,Star Lake to Federal Way
+stops,stop_desc,de,Star Lake nach Federal Way,,Star Lake to Federal Way
+stops,stop_desc,it,Star Lake a Federal Way,,Star Lake to Federal Way
+stops,stop_desc,ko,Star Lake에서 Federal Way 방향,,Star Lake to Federal Way
+stops,stop_desc,fa,Star Lake به Federal Way,,Star Lake to Federal Way
+stops,stop_desc,ru,Star Lake до Federal Way,,Star Lake to Federal Way
+stops,stop_desc,sr,Star Lake до Federal Way,,Star Lake to Federal Way
+stops,stop_desc,tl,Star Lake papunta Federal Way,,Star Lake to Federal Way
+stops,stop_desc,vi,Star Lake đến Federal Way,,Star Lake to Federal Way
+stops,stop_desc,cy,Star Lake i Federal Way,,Star Lake to Federal Way
+stops,stop_desc,sw,Star Lake kwenda Federal Way,,Star Lake to Federal Way
+stops,stop_desc,pt-PT,Star Lake para Federal Way,,Star Lake to Federal Way
+stops,stop_desc,af,Star Lake na Federal Way,,Star Lake to Federal Way
+stops,stop_desc,es,Star Lake a Lynnwood,,Star Lake to Lynnwood
+stops,stop_desc,zh-Hans,Star Lake 到 Lynnwood,,Star Lake to Lynnwood
+stops,stop_desc,ar,Star Lake إلى Lynnwood,,Star Lake to Lynnwood
+stops,stop_desc,bs,Star Lake do Lynnwood,,Star Lake to Lynnwood
+stops,stop_desc,hr,Star Lake do Lynnwood,,Star Lake to Lynnwood
+stops,stop_desc,nl,Star Lake naar Lynnwood,,Star Lake to Lynnwood
+stops,stop_desc,fr,Star Lake vers Lynnwood,,Star Lake to Lynnwood
+stops,stop_desc,de,Star Lake nach Lynnwood,,Star Lake to Lynnwood
+stops,stop_desc,it,Star Lake a Lynnwood,,Star Lake to Lynnwood
+stops,stop_desc,ko,Star Lake에서 Lynnwood 방향,,Star Lake to Lynnwood
+stops,stop_desc,fa,Star Lake به Lynnwood,,Star Lake to Lynnwood
+stops,stop_desc,ru,Star Lake до Lynnwood,,Star Lake to Lynnwood
+stops,stop_desc,sr,Star Lake до Lynnwood,,Star Lake to Lynnwood
+stops,stop_desc,tl,Star Lake papunta Lynnwood,,Star Lake to Lynnwood
+stops,stop_desc,vi,Star Lake đến Lynnwood,,Star Lake to Lynnwood
+stops,stop_desc,cy,Star Lake i Lynnwood,,Star Lake to Lynnwood
+stops,stop_desc,sw,Star Lake kwenda Lynnwood,,Star Lake to Lynnwood
+stops,stop_desc,pt-PT,Star Lake para Lynnwood,,Star Lake to Lynnwood
+stops,stop_desc,af,Star Lake na Lynnwood,,Star Lake to Lynnwood
+stops,stop_desc,es,Symphony a Federal Way,,Symphony to Federal Way
+stops,stop_desc,zh-Hans,Symphony 到 Federal Way,,Symphony to Federal Way
+stops,stop_desc,ar,Symphony إلى Federal Way,,Symphony to Federal Way
+stops,stop_desc,bs,Symphony do Federal Way,,Symphony to Federal Way
+stops,stop_desc,hr,Symphony do Federal Way,,Symphony to Federal Way
+stops,stop_desc,nl,Symphony naar Federal Way,,Symphony to Federal Way
+stops,stop_desc,fr,Symphony vers Federal Way,,Symphony to Federal Way
+stops,stop_desc,de,Symphony nach Federal Way,,Symphony to Federal Way
+stops,stop_desc,it,Symphony a Federal Way,,Symphony to Federal Way
+stops,stop_desc,ko,Symphony에서 Federal Way 방향,,Symphony to Federal Way
+stops,stop_desc,fa,Symphony به Federal Way,,Symphony to Federal Way
+stops,stop_desc,ru,Symphony до Federal Way,,Symphony to Federal Way
+stops,stop_desc,sr,Symphony до Federal Way,,Symphony to Federal Way
+stops,stop_desc,tl,Symphony papunta Federal Way,,Symphony to Federal Way
+stops,stop_desc,vi,Symphony đến Federal Way,,Symphony to Federal Way
+stops,stop_desc,cy,Symphony i Federal Way,,Symphony to Federal Way
+stops,stop_desc,sw,Symphony kwenda Federal Way,,Symphony to Federal Way
+stops,stop_desc,pt-PT,Symphony para Federal Way,,Symphony to Federal Way
+stops,stop_desc,af,Symphony na Federal Way,,Symphony to Federal Way
+stops,stop_desc,es,Symphony a Lynnwood,,Symphony to Lynnwood
+stops,stop_desc,zh-Hans,Symphony 到 Lynnwood,,Symphony to Lynnwood
+stops,stop_desc,ar,Symphony إلى Lynnwood,,Symphony to Lynnwood
+stops,stop_desc,bs,Symphony do Lynnwood,,Symphony to Lynnwood
+stops,stop_desc,hr,Symphony do Lynnwood,,Symphony to Lynnwood
+stops,stop_desc,nl,Symphony naar Lynnwood,,Symphony to Lynnwood
+stops,stop_desc,fr,Symphony vers Lynnwood,,Symphony to Lynnwood
+stops,stop_desc,de,Symphony nach Lynnwood,,Symphony to Lynnwood
+stops,stop_desc,it,Symphony a Lynnwood,,Symphony to Lynnwood
+stops,stop_desc,ko,Symphony에서 Lynnwood 방향,,Symphony to Lynnwood
+stops,stop_desc,fa,Symphony به Lynnwood,,Symphony to Lynnwood
+stops,stop_desc,ru,Symphony до Lynnwood,,Symphony to Lynnwood
+stops,stop_desc,sr,Symphony до Lynnwood,,Symphony to Lynnwood
+stops,stop_desc,tl,Symphony papunta Lynnwood,,Symphony to Lynnwood
+stops,stop_desc,vi,Symphony đến Lynnwood,,Symphony to Lynnwood
+stops,stop_desc,cy,Symphony i Lynnwood,,Symphony to Lynnwood
+stops,stop_desc,sw,Symphony kwenda Lynnwood,,Symphony to Lynnwood
+stops,stop_desc,pt-PT,Symphony para Lynnwood,,Symphony to Lynnwood
+stops,stop_desc,af,Symphony na Lynnwood,,Symphony to Lynnwood
+stops,stop_desc,es,Tacoma Dome a/desde St Joseph,,Tacoma Dome to/from St Joseph
+stops,stop_desc,zh-Hans,Tacoma Dome 往返 St Joseph,,Tacoma Dome to/from St Joseph
+stops,stop_desc,ar,Tacoma Dome إلى/من St Joseph,,Tacoma Dome to/from St Joseph
+stops,stop_desc,bs,Tacoma Dome do/od St Joseph,,Tacoma Dome to/from St Joseph
+stops,stop_desc,hr,Tacoma Dome do/od St Joseph,,Tacoma Dome to/from St Joseph
+stops,stop_desc,nl,Tacoma Dome van/naar St Joseph,,Tacoma Dome to/from St Joseph
+stops,stop_desc,fr,Tacoma Dome depuis/vers St Joseph,,Tacoma Dome to/from St Joseph
+stops,stop_desc,de,Tacoma Dome von/nach St Joseph,,Tacoma Dome to/from St Joseph
+stops,stop_desc,it,Tacoma Dome a/da St Joseph,,Tacoma Dome to/from St Joseph
+stops,stop_desc,ko,Tacoma Dome - St Joseph 왕복,,Tacoma Dome to/from St Joseph
+stops,stop_desc,fa,Tacoma Dome به/از St Joseph,,Tacoma Dome to/from St Joseph
+stops,stop_desc,ru,Tacoma Dome до/от St Joseph,,Tacoma Dome to/from St Joseph
+stops,stop_desc,sr,Tacoma Dome до/од St Joseph,,Tacoma Dome to/from St Joseph
+stops,stop_desc,tl,Tacoma Dome papunta/mula sa St Joseph,,Tacoma Dome to/from St Joseph
+stops,stop_desc,vi,Tacoma Dome đến/từ St Joseph,,Tacoma Dome to/from St Joseph
+stops,stop_desc,cy,Tacoma Dome i/o St Joseph,,Tacoma Dome to/from St Joseph
+stops,stop_desc,sw,Tacoma Dome kwenda/kutoka St Joseph,,Tacoma Dome to/from St Joseph
+stops,stop_desc,pt-PT,Tacoma Dome para/de St Joseph,,Tacoma Dome to/from St Joseph
+stops,stop_desc,af,Tacoma Dome na/van St Joseph,,Tacoma Dome to/from St Joseph
+stops,stop_desc,es,Tacoma General a St Joseph,,Tacoma General to St Joseph
+stops,stop_desc,zh-Hans,Tacoma General 到 St Joseph,,Tacoma General to St Joseph
+stops,stop_desc,ar,Tacoma General إلى St Joseph,,Tacoma General to St Joseph
+stops,stop_desc,bs,Tacoma General do St Joseph,,Tacoma General to St Joseph
+stops,stop_desc,hr,Tacoma General do St Joseph,,Tacoma General to St Joseph
+stops,stop_desc,nl,Tacoma General naar St Joseph,,Tacoma General to St Joseph
+stops,stop_desc,fr,Tacoma General vers St Joseph,,Tacoma General to St Joseph
+stops,stop_desc,de,Tacoma General nach St Joseph,,Tacoma General to St Joseph
+stops,stop_desc,it,Tacoma General a St Joseph,,Tacoma General to St Joseph
+stops,stop_desc,ko,Tacoma General에서 St Joseph 방향,,Tacoma General to St Joseph
+stops,stop_desc,fa,Tacoma General به St Joseph,,Tacoma General to St Joseph
+stops,stop_desc,ru,Tacoma General до St Joseph,,Tacoma General to St Joseph
+stops,stop_desc,sr,Tacoma General до St Joseph,,Tacoma General to St Joseph
+stops,stop_desc,tl,Tacoma General papunta St Joseph,,Tacoma General to St Joseph
+stops,stop_desc,vi,Tacoma General đến St Joseph,,Tacoma General to St Joseph
+stops,stop_desc,cy,Tacoma General i St Joseph,,Tacoma General to St Joseph
+stops,stop_desc,sw,Tacoma General kwenda St Joseph,,Tacoma General to St Joseph
+stops,stop_desc,pt-PT,Tacoma General para St Joseph,,Tacoma General to St Joseph
+stops,stop_desc,af,Tacoma General na St Joseph,,Tacoma General to St Joseph
+stops,stop_desc,es,Tacoma General a Tacoma Dome,,Tacoma General to Tacoma Dome
+stops,stop_desc,zh-Hans,Tacoma General 到 Tacoma Dome,,Tacoma General to Tacoma Dome
+stops,stop_desc,ar,Tacoma General إلى Tacoma Dome,,Tacoma General to Tacoma Dome
+stops,stop_desc,bs,Tacoma General do Tacoma Dome,,Tacoma General to Tacoma Dome
+stops,stop_desc,hr,Tacoma General do Tacoma Dome,,Tacoma General to Tacoma Dome
+stops,stop_desc,nl,Tacoma General naar Tacoma Dome,,Tacoma General to Tacoma Dome
+stops,stop_desc,fr,Tacoma General vers Tacoma Dome,,Tacoma General to Tacoma Dome
+stops,stop_desc,de,Tacoma General nach Tacoma Dome,,Tacoma General to Tacoma Dome
+stops,stop_desc,it,Tacoma General a Tacoma Dome,,Tacoma General to Tacoma Dome
+stops,stop_desc,ko,Tacoma General에서 Tacoma Dome 방향,,Tacoma General to Tacoma Dome
+stops,stop_desc,fa,Tacoma General به Tacoma Dome,,Tacoma General to Tacoma Dome
+stops,stop_desc,ru,Tacoma General до Tacoma Dome,,Tacoma General to Tacoma Dome
+stops,stop_desc,sr,Tacoma General до Tacoma Dome,,Tacoma General to Tacoma Dome
+stops,stop_desc,tl,Tacoma General papunta Tacoma Dome,,Tacoma General to Tacoma Dome
+stops,stop_desc,vi,Tacoma General đến Tacoma Dome,,Tacoma General to Tacoma Dome
+stops,stop_desc,cy,Tacoma General i Tacoma Dome,,Tacoma General to Tacoma Dome
+stops,stop_desc,sw,Tacoma General kwenda Tacoma Dome,,Tacoma General to Tacoma Dome
+stops,stop_desc,pt-PT,Tacoma General para Tacoma Dome,,Tacoma General to Tacoma Dome
+stops,stop_desc,af,Tacoma General na Tacoma Dome,,Tacoma General to Tacoma Dome
+stops,stop_desc,es,Theater District a St Joseph,,Theater District to St Joseph
+stops,stop_desc,zh-Hans,Theater District 到 St Joseph,,Theater District to St Joseph
+stops,stop_desc,ar,Theater District إلى St Joseph,,Theater District to St Joseph
+stops,stop_desc,bs,Theater District do St Joseph,,Theater District to St Joseph
+stops,stop_desc,hr,Theater District do St Joseph,,Theater District to St Joseph
+stops,stop_desc,nl,Theater District naar St Joseph,,Theater District to St Joseph
+stops,stop_desc,fr,Theater District vers St Joseph,,Theater District to St Joseph
+stops,stop_desc,de,Theater District nach St Joseph,,Theater District to St Joseph
+stops,stop_desc,it,Theater District a St Joseph,,Theater District to St Joseph
+stops,stop_desc,ko,Theater District에서 St Joseph 방향,,Theater District to St Joseph
+stops,stop_desc,fa,Theater District به St Joseph,,Theater District to St Joseph
+stops,stop_desc,ru,Theater District до St Joseph,,Theater District to St Joseph
+stops,stop_desc,sr,Theater District до St Joseph,,Theater District to St Joseph
+stops,stop_desc,tl,Theater District papunta St Joseph,,Theater District to St Joseph
+stops,stop_desc,vi,Theater District đến St Joseph,,Theater District to St Joseph
+stops,stop_desc,cy,Theater District i St Joseph,,Theater District to St Joseph
+stops,stop_desc,sw,Theater District kwenda St Joseph,,Theater District to St Joseph
+stops,stop_desc,pt-PT,Theater District para St Joseph,,Theater District to St Joseph
+stops,stop_desc,af,Theater District na St Joseph,,Theater District to St Joseph
+stops,stop_desc,es,Theater District a Tacoma Dome,,Theater District to Tacoma Dome
+stops,stop_desc,zh-Hans,Theater District 到 Tacoma Dome,,Theater District to Tacoma Dome
+stops,stop_desc,ar,Theater District إلى Tacoma Dome,,Theater District to Tacoma Dome
+stops,stop_desc,bs,Theater District do Tacoma Dome,,Theater District to Tacoma Dome
+stops,stop_desc,hr,Theater District do Tacoma Dome,,Theater District to Tacoma Dome
+stops,stop_desc,nl,Theater District naar Tacoma Dome,,Theater District to Tacoma Dome
+stops,stop_desc,fr,Theater District vers Tacoma Dome,,Theater District to Tacoma Dome
+stops,stop_desc,de,Theater District nach Tacoma Dome,,Theater District to Tacoma Dome
+stops,stop_desc,it,Theater District a Tacoma Dome,,Theater District to Tacoma Dome
+stops,stop_desc,ko,Theater District에서 Tacoma Dome 방향,,Theater District to Tacoma Dome
+stops,stop_desc,fa,Theater District به Tacoma Dome,,Theater District to Tacoma Dome
+stops,stop_desc,ru,Theater District до Tacoma Dome,,Theater District to Tacoma Dome
+stops,stop_desc,sr,Theater District до Tacoma Dome,,Theater District to Tacoma Dome
+stops,stop_desc,tl,Theater District papunta Tacoma Dome,,Theater District to Tacoma Dome
+stops,stop_desc,vi,Theater District đến Tacoma Dome,,Theater District to Tacoma Dome
+stops,stop_desc,cy,Theater District i Tacoma Dome,,Theater District to Tacoma Dome
+stops,stop_desc,sw,Theater District kwenda Tacoma Dome,,Theater District to Tacoma Dome
+stops,stop_desc,pt-PT,Theater District para Tacoma Dome,,Theater District to Tacoma Dome
+stops,stop_desc,af,Theater District na Tacoma Dome,,Theater District to Tacoma Dome
+stops,stop_desc,es,Tukwila Int'l Blvd a Federal Way,,Tukwila Int'l Blvd to Federal Way
+stops,stop_desc,zh-Hans,Tukwila Int'l Blvd 到 Federal Way,,Tukwila Int'l Blvd to Federal Way
+stops,stop_desc,ar,Tukwila Int'l Blvd إلى Federal Way,,Tukwila Int'l Blvd to Federal Way
+stops,stop_desc,bs,Tukwila Int'l Blvd do Federal Way,,Tukwila Int'l Blvd to Federal Way
+stops,stop_desc,hr,Tukwila Int'l Blvd do Federal Way,,Tukwila Int'l Blvd to Federal Way
+stops,stop_desc,nl,Tukwila Int'l Blvd naar Federal Way,,Tukwila Int'l Blvd to Federal Way
+stops,stop_desc,fr,Tukwila Int'l Blvd vers Federal Way,,Tukwila Int'l Blvd to Federal Way
+stops,stop_desc,de,Tukwila Int'l Blvd nach Federal Way,,Tukwila Int'l Blvd to Federal Way
+stops,stop_desc,it,Tukwila Int'l Blvd a Federal Way,,Tukwila Int'l Blvd to Federal Way
+stops,stop_desc,ko,Tukwila Int'l Blvd에서 Federal Way 방향,,Tukwila Int'l Blvd to Federal Way
+stops,stop_desc,fa,Tukwila Int'l Blvd به Federal Way,,Tukwila Int'l Blvd to Federal Way
+stops,stop_desc,ru,Tukwila Int'l Blvd до Federal Way,,Tukwila Int'l Blvd to Federal Way
+stops,stop_desc,sr,Tukwila Int'l Blvd до Federal Way,,Tukwila Int'l Blvd to Federal Way
+stops,stop_desc,tl,Tukwila Int'l Blvd papunta Federal Way,,Tukwila Int'l Blvd to Federal Way
+stops,stop_desc,vi,Tukwila Int'l Blvd đến Federal Way,,Tukwila Int'l Blvd to Federal Way
+stops,stop_desc,cy,Tukwila Int'l Blvd i Federal Way,,Tukwila Int'l Blvd to Federal Way
+stops,stop_desc,sw,Tukwila Int'l Blvd kwenda Federal Way,,Tukwila Int'l Blvd to Federal Way
+stops,stop_desc,pt-PT,Tukwila Int'l Blvd para Federal Way,,Tukwila Int'l Blvd to Federal Way
+stops,stop_desc,af,Tukwila Int'l Blvd na Federal Way,,Tukwila Int'l Blvd to Federal Way
+stops,stop_desc,es,Tukwila Int'l Blvd a Lynnwood,,Tukwila Int'l Blvd to Lynnwood
+stops,stop_desc,zh-Hans,Tukwila Int'l Blvd 到 Lynnwood,,Tukwila Int'l Blvd to Lynnwood
+stops,stop_desc,ar,Tukwila Int'l Blvd إلى Lynnwood,,Tukwila Int'l Blvd to Lynnwood
+stops,stop_desc,bs,Tukwila Int'l Blvd do Lynnwood,,Tukwila Int'l Blvd to Lynnwood
+stops,stop_desc,hr,Tukwila Int'l Blvd do Lynnwood,,Tukwila Int'l Blvd to Lynnwood
+stops,stop_desc,nl,Tukwila Int'l Blvd naar Lynnwood,,Tukwila Int'l Blvd to Lynnwood
+stops,stop_desc,fr,Tukwila Int'l Blvd vers Lynnwood,,Tukwila Int'l Blvd to Lynnwood
+stops,stop_desc,de,Tukwila Int'l Blvd nach Lynnwood,,Tukwila Int'l Blvd to Lynnwood
+stops,stop_desc,it,Tukwila Int'l Blvd a Lynnwood,,Tukwila Int'l Blvd to Lynnwood
+stops,stop_desc,ko,Tukwila Int'l Blvd에서 Lynnwood 방향,,Tukwila Int'l Blvd to Lynnwood
+stops,stop_desc,fa,Tukwila Int'l Blvd به Lynnwood,,Tukwila Int'l Blvd to Lynnwood
+stops,stop_desc,ru,Tukwila Int'l Blvd до Lynnwood,,Tukwila Int'l Blvd to Lynnwood
+stops,stop_desc,sr,Tukwila Int'l Blvd до Lynnwood,,Tukwila Int'l Blvd to Lynnwood
+stops,stop_desc,tl,Tukwila Int'l Blvd papunta Lynnwood,,Tukwila Int'l Blvd to Lynnwood
+stops,stop_desc,vi,Tukwila Int'l Blvd đến Lynnwood,,Tukwila Int'l Blvd to Lynnwood
+stops,stop_desc,cy,Tukwila Int'l Blvd i Lynnwood,,Tukwila Int'l Blvd to Lynnwood
+stops,stop_desc,sw,Tukwila Int'l Blvd kwenda Lynnwood,,Tukwila Int'l Blvd to Lynnwood
+stops,stop_desc,pt-PT,Tukwila Int'l Blvd para Lynnwood,,Tukwila Int'l Blvd to Lynnwood
+stops,stop_desc,af,Tukwila Int'l Blvd na Lynnwood,,Tukwila Int'l Blvd to Lynnwood
+stops,stop_desc,es,U District a Federal Way,,U District to Federal Way
+stops,stop_desc,zh-Hans,U District 到 Federal Way,,U District to Federal Way
+stops,stop_desc,ar,U District إلى Federal Way,,U District to Federal Way
+stops,stop_desc,bs,U District do Federal Way,,U District to Federal Way
+stops,stop_desc,hr,U District do Federal Way,,U District to Federal Way
+stops,stop_desc,nl,U District naar Federal Way,,U District to Federal Way
+stops,stop_desc,fr,U District vers Federal Way,,U District to Federal Way
+stops,stop_desc,de,U District nach Federal Way,,U District to Federal Way
+stops,stop_desc,it,U District a Federal Way,,U District to Federal Way
+stops,stop_desc,ko,U District에서 Federal Way 방향,,U District to Federal Way
+stops,stop_desc,fa,U District به Federal Way,,U District to Federal Way
+stops,stop_desc,ru,U District до Federal Way,,U District to Federal Way
+stops,stop_desc,sr,U District до Federal Way,,U District to Federal Way
+stops,stop_desc,tl,U District papunta Federal Way,,U District to Federal Way
+stops,stop_desc,vi,U District đến Federal Way,,U District to Federal Way
+stops,stop_desc,cy,U District i Federal Way,,U District to Federal Way
+stops,stop_desc,sw,U District kwenda Federal Way,,U District to Federal Way
+stops,stop_desc,pt-PT,U District para Federal Way,,U District to Federal Way
+stops,stop_desc,af,U District na Federal Way,,U District to Federal Way
+stops,stop_desc,es,U District a Lynnwood,,U District to Lynnwood
+stops,stop_desc,zh-Hans,U District 到 Lynnwood,,U District to Lynnwood
+stops,stop_desc,ar,U District إلى Lynnwood,,U District to Lynnwood
+stops,stop_desc,bs,U District do Lynnwood,,U District to Lynnwood
+stops,stop_desc,hr,U District do Lynnwood,,U District to Lynnwood
+stops,stop_desc,nl,U District naar Lynnwood,,U District to Lynnwood
+stops,stop_desc,fr,U District vers Lynnwood,,U District to Lynnwood
+stops,stop_desc,de,U District nach Lynnwood,,U District to Lynnwood
+stops,stop_desc,it,U District a Lynnwood,,U District to Lynnwood
+stops,stop_desc,ko,U District에서 Lynnwood 방향,,U District to Lynnwood
+stops,stop_desc,fa,U District به Lynnwood,,U District to Lynnwood
+stops,stop_desc,ru,U District до Lynnwood,,U District to Lynnwood
+stops,stop_desc,sr,U District до Lynnwood,,U District to Lynnwood
+stops,stop_desc,tl,U District papunta Lynnwood,,U District to Lynnwood
+stops,stop_desc,vi,U District đến Lynnwood,,U District to Lynnwood
+stops,stop_desc,cy,U District i Lynnwood,,U District to Lynnwood
+stops,stop_desc,sw,U District kwenda Lynnwood,,U District to Lynnwood
+stops,stop_desc,pt-PT,U District para Lynnwood,,U District to Lynnwood
+stops,stop_desc,af,U District na Lynnwood,,U District to Lynnwood
+stops,stop_desc,es,Union Station a St Joseph,,Union Station to St Joseph
+stops,stop_desc,zh-Hans,Union Station 到 St Joseph,,Union Station to St Joseph
+stops,stop_desc,ar,Union Station إلى St Joseph,,Union Station to St Joseph
+stops,stop_desc,bs,Union Station do St Joseph,,Union Station to St Joseph
+stops,stop_desc,hr,Union Station do St Joseph,,Union Station to St Joseph
+stops,stop_desc,nl,Union Station naar St Joseph,,Union Station to St Joseph
+stops,stop_desc,fr,Union Station vers St Joseph,,Union Station to St Joseph
+stops,stop_desc,de,Union Station nach St Joseph,,Union Station to St Joseph
+stops,stop_desc,it,Union Station a St Joseph,,Union Station to St Joseph
+stops,stop_desc,ko,Union Station에서 St Joseph 방향,,Union Station to St Joseph
+stops,stop_desc,fa,Union Station به St Joseph,,Union Station to St Joseph
+stops,stop_desc,ru,Union Station до St Joseph,,Union Station to St Joseph
+stops,stop_desc,sr,Union Station до St Joseph,,Union Station to St Joseph
+stops,stop_desc,tl,Union Station papunta St Joseph,,Union Station to St Joseph
+stops,stop_desc,vi,Union Station đến St Joseph,,Union Station to St Joseph
+stops,stop_desc,cy,Union Station i St Joseph,,Union Station to St Joseph
+stops,stop_desc,sw,Union Station kwenda St Joseph,,Union Station to St Joseph
+stops,stop_desc,pt-PT,Union Station para St Joseph,,Union Station to St Joseph
+stops,stop_desc,af,Union Station na St Joseph,,Union Station to St Joseph
+stops,stop_desc,es,Union Station a Tacoma Dome,,Union Station to Tacoma Dome
+stops,stop_desc,zh-Hans,Union Station 到 Tacoma Dome,,Union Station to Tacoma Dome
+stops,stop_desc,ar,Union Station إلى Tacoma Dome,,Union Station to Tacoma Dome
+stops,stop_desc,bs,Union Station do Tacoma Dome,,Union Station to Tacoma Dome
+stops,stop_desc,hr,Union Station do Tacoma Dome,,Union Station to Tacoma Dome
+stops,stop_desc,nl,Union Station naar Tacoma Dome,,Union Station to Tacoma Dome
+stops,stop_desc,fr,Union Station vers Tacoma Dome,,Union Station to Tacoma Dome
+stops,stop_desc,de,Union Station nach Tacoma Dome,,Union Station to Tacoma Dome
+stops,stop_desc,it,Union Station a Tacoma Dome,,Union Station to Tacoma Dome
+stops,stop_desc,ko,Union Station에서 Tacoma Dome 방향,,Union Station to Tacoma Dome
+stops,stop_desc,fa,Union Station به Tacoma Dome,,Union Station to Tacoma Dome
+stops,stop_desc,ru,Union Station до Tacoma Dome,,Union Station to Tacoma Dome
+stops,stop_desc,sr,Union Station до Tacoma Dome,,Union Station to Tacoma Dome
+stops,stop_desc,tl,Union Station papunta Tacoma Dome,,Union Station to Tacoma Dome
+stops,stop_desc,vi,Union Station đến Tacoma Dome,,Union Station to Tacoma Dome
+stops,stop_desc,cy,Union Station i Tacoma Dome,,Union Station to Tacoma Dome
+stops,stop_desc,sw,Union Station kwenda Tacoma Dome,,Union Station to Tacoma Dome
+stops,stop_desc,pt-PT,Union Station para Tacoma Dome,,Union Station to Tacoma Dome
+stops,stop_desc,af,Union Station na Tacoma Dome,,Union Station to Tacoma Dome
+stops,stop_desc,es,Univ of Washington a Federal Way,,Univ of Washington to Federal Way
+stops,stop_desc,zh-Hans,Univ of Washington 到 Federal Way,,Univ of Washington to Federal Way
+stops,stop_desc,ar,Univ of Washington إلى Federal Way,,Univ of Washington to Federal Way
+stops,stop_desc,bs,Univ of Washington do Federal Way,,Univ of Washington to Federal Way
+stops,stop_desc,hr,Univ of Washington do Federal Way,,Univ of Washington to Federal Way
+stops,stop_desc,nl,Univ of Washington naar Federal Way,,Univ of Washington to Federal Way
+stops,stop_desc,fr,Univ of Washington vers Federal Way,,Univ of Washington to Federal Way
+stops,stop_desc,de,Univ of Washington nach Federal Way,,Univ of Washington to Federal Way
+stops,stop_desc,it,Univ of Washington a Federal Way,,Univ of Washington to Federal Way
+stops,stop_desc,ko,Univ of Washington에서 Federal Way 방향,,Univ of Washington to Federal Way
+stops,stop_desc,fa,Univ of Washington به Federal Way,,Univ of Washington to Federal Way
+stops,stop_desc,ru,Univ of Washington до Federal Way,,Univ of Washington to Federal Way
+stops,stop_desc,sr,Univ of Washington до Federal Way,,Univ of Washington to Federal Way
+stops,stop_desc,tl,Univ of Washington papunta Federal Way,,Univ of Washington to Federal Way
+stops,stop_desc,vi,Univ of Washington đến Federal Way,,Univ of Washington to Federal Way
+stops,stop_desc,cy,Univ of Washington i Federal Way,,Univ of Washington to Federal Way
+stops,stop_desc,sw,Univ of Washington kwenda Federal Way,,Univ of Washington to Federal Way
+stops,stop_desc,pt-PT,Univ of Washington para Federal Way,,Univ of Washington to Federal Way
+stops,stop_desc,af,Univ of Washington na Federal Way,,Univ of Washington to Federal Way
+stops,stop_desc,es,Univ of Washington a Lynnwood,,Univ of Washington to Lynnwood
+stops,stop_desc,zh-Hans,Univ of Washington 到 Lynnwood,,Univ of Washington to Lynnwood
+stops,stop_desc,ar,Univ of Washington إلى Lynnwood,,Univ of Washington to Lynnwood
+stops,stop_desc,bs,Univ of Washington do Lynnwood,,Univ of Washington to Lynnwood
+stops,stop_desc,hr,Univ of Washington do Lynnwood,,Univ of Washington to Lynnwood
+stops,stop_desc,nl,Univ of Washington naar Lynnwood,,Univ of Washington to Lynnwood
+stops,stop_desc,fr,Univ of Washington vers Lynnwood,,Univ of Washington to Lynnwood
+stops,stop_desc,de,Univ of Washington nach Lynnwood,,Univ of Washington to Lynnwood
+stops,stop_desc,it,Univ of Washington a Lynnwood,,Univ of Washington to Lynnwood
+stops,stop_desc,ko,Univ of Washington에서 Lynnwood 방향,,Univ of Washington to Lynnwood
+stops,stop_desc,fa,Univ of Washington به Lynnwood,,Univ of Washington to Lynnwood
+stops,stop_desc,ru,Univ of Washington до Lynnwood,,Univ of Washington to Lynnwood
+stops,stop_desc,sr,Univ of Washington до Lynnwood,,Univ of Washington to Lynnwood
+stops,stop_desc,tl,Univ of Washington papunta Lynnwood,,Univ of Washington to Lynnwood
+stops,stop_desc,vi,Univ of Washington đến Lynnwood,,Univ of Washington to Lynnwood
+stops,stop_desc,cy,Univ of Washington i Lynnwood,,Univ of Washington to Lynnwood
+stops,stop_desc,sw,Univ of Washington kwenda Lynnwood,,Univ of Washington to Lynnwood
+stops,stop_desc,pt-PT,Univ of Washington para Lynnwood,,Univ of Washington to Lynnwood
+stops,stop_desc,af,Univ of Washington na Lynnwood,,Univ of Washington to Lynnwood
+stops,stop_desc,es,Westlake a Federal Way,,Westlake to Federal Way
+stops,stop_desc,zh-Hans,Westlake 到 Federal Way,,Westlake to Federal Way
+stops,stop_desc,ar,Westlake إلى Federal Way,,Westlake to Federal Way
+stops,stop_desc,bs,Westlake do Federal Way,,Westlake to Federal Way
+stops,stop_desc,hr,Westlake do Federal Way,,Westlake to Federal Way
+stops,stop_desc,nl,Westlake naar Federal Way,,Westlake to Federal Way
+stops,stop_desc,fr,Westlake vers Federal Way,,Westlake to Federal Way
+stops,stop_desc,de,Westlake nach Federal Way,,Westlake to Federal Way
+stops,stop_desc,it,Westlake a Federal Way,,Westlake to Federal Way
+stops,stop_desc,ko,Westlake에서 Federal Way 방향,,Westlake to Federal Way
+stops,stop_desc,fa,Westlake به Federal Way,,Westlake to Federal Way
+stops,stop_desc,ru,Westlake до Federal Way,,Westlake to Federal Way
+stops,stop_desc,sr,Westlake до Federal Way,,Westlake to Federal Way
+stops,stop_desc,tl,Westlake papunta Federal Way,,Westlake to Federal Way
+stops,stop_desc,vi,Westlake đến Federal Way,,Westlake to Federal Way
+stops,stop_desc,cy,Westlake i Federal Way,,Westlake to Federal Way
+stops,stop_desc,sw,Westlake kwenda Federal Way,,Westlake to Federal Way
+stops,stop_desc,pt-PT,Westlake para Federal Way,,Westlake to Federal Way
+stops,stop_desc,af,Westlake na Federal Way,,Westlake to Federal Way
+stops,stop_desc,es,Westlake a Lynnwood,,Westlake to Lynnwood
+stops,stop_desc,zh-Hans,Westlake 到 Lynnwood,,Westlake to Lynnwood
+stops,stop_desc,ar,Westlake إلى Lynnwood,,Westlake to Lynnwood
+stops,stop_desc,bs,Westlake do Lynnwood,,Westlake to Lynnwood
+stops,stop_desc,hr,Westlake do Lynnwood,,Westlake to Lynnwood
+stops,stop_desc,nl,Westlake naar Lynnwood,,Westlake to Lynnwood
+stops,stop_desc,fr,Westlake vers Lynnwood,,Westlake to Lynnwood
+stops,stop_desc,de,Westlake nach Lynnwood,,Westlake to Lynnwood
+stops,stop_desc,it,Westlake a Lynnwood,,Westlake to Lynnwood
+stops,stop_desc,ko,Westlake에서 Lynnwood 방향,,Westlake to Lynnwood
+stops,stop_desc,fa,Westlake به Lynnwood,,Westlake to Lynnwood
+stops,stop_desc,ru,Westlake до Lynnwood,,Westlake to Lynnwood
+stops,stop_desc,sr,Westlake до Lynnwood,,Westlake to Lynnwood
+stops,stop_desc,tl,Westlake papunta Lynnwood,,Westlake to Lynnwood
+stops,stop_desc,vi,Westlake đến Lynnwood,,Westlake to Lynnwood
+stops,stop_desc,cy,Westlake i Lynnwood,,Westlake to Lynnwood
+stops,stop_desc,sw,Westlake kwenda Lynnwood,,Westlake to Lynnwood
+stops,stop_desc,pt-PT,Westlake para Lynnwood,,Westlake to Lynnwood
+stops,stop_desc,af,Westlake na Lynnwood,,Westlake to Lynnwood
+stops,stop_desc,es,Wilburton a Downtown Redmond,,Wilburton to Downtown Redmond
+stops,stop_desc,zh-Hans,Wilburton 到 Downtown Redmond,,Wilburton to Downtown Redmond
+stops,stop_desc,ar,Wilburton إلى Downtown Redmond,,Wilburton to Downtown Redmond
+stops,stop_desc,bs,Wilburton do Downtown Redmond,,Wilburton to Downtown Redmond
+stops,stop_desc,hr,Wilburton do Downtown Redmond,,Wilburton to Downtown Redmond
+stops,stop_desc,nl,Wilburton naar Downtown Redmond,,Wilburton to Downtown Redmond
+stops,stop_desc,fr,Wilburton vers Downtown Redmond,,Wilburton to Downtown Redmond
+stops,stop_desc,de,Wilburton nach Downtown Redmond,,Wilburton to Downtown Redmond
+stops,stop_desc,it,Wilburton a Downtown Redmond,,Wilburton to Downtown Redmond
+stops,stop_desc,ko,Wilburton에서 Downtown Redmond 방향,,Wilburton to Downtown Redmond
+stops,stop_desc,fa,Wilburton به Downtown Redmond,,Wilburton to Downtown Redmond
+stops,stop_desc,ru,Wilburton до Downtown Redmond,,Wilburton to Downtown Redmond
+stops,stop_desc,sr,Wilburton до Downtown Redmond,,Wilburton to Downtown Redmond
+stops,stop_desc,tl,Wilburton papunta Downtown Redmond,,Wilburton to Downtown Redmond
+stops,stop_desc,vi,Wilburton đến Downtown Redmond,,Wilburton to Downtown Redmond
+stops,stop_desc,cy,Wilburton i Downtown Redmond,,Wilburton to Downtown Redmond
+stops,stop_desc,sw,Wilburton kwenda Downtown Redmond,,Wilburton to Downtown Redmond
+stops,stop_desc,pt-PT,Wilburton para Downtown Redmond,,Wilburton to Downtown Redmond
+stops,stop_desc,af,Wilburton na Downtown Redmond,,Wilburton to Downtown Redmond
+stops,stop_desc,es,Wilburton a South Bellevue,,Wilburton to South Bellevue
+stops,stop_desc,zh-Hans,Wilburton 到 South Bellevue,,Wilburton to South Bellevue
+stops,stop_desc,ar,Wilburton إلى South Bellevue,,Wilburton to South Bellevue
+stops,stop_desc,bs,Wilburton do South Bellevue,,Wilburton to South Bellevue
+stops,stop_desc,hr,Wilburton do South Bellevue,,Wilburton to South Bellevue
+stops,stop_desc,nl,Wilburton naar South Bellevue,,Wilburton to South Bellevue
+stops,stop_desc,fr,Wilburton vers South Bellevue,,Wilburton to South Bellevue
+stops,stop_desc,de,Wilburton nach South Bellevue,,Wilburton to South Bellevue
+stops,stop_desc,it,Wilburton a South Bellevue,,Wilburton to South Bellevue
+stops,stop_desc,ko,Wilburton에서 South Bellevue 방향,,Wilburton to South Bellevue
+stops,stop_desc,fa,Wilburton به South Bellevue,,Wilburton to South Bellevue
+stops,stop_desc,ru,Wilburton до South Bellevue,,Wilburton to South Bellevue
+stops,stop_desc,sr,Wilburton до South Bellevue,,Wilburton to South Bellevue
+stops,stop_desc,tl,Wilburton papunta South Bellevue,,Wilburton to South Bellevue
+stops,stop_desc,vi,Wilburton đến South Bellevue,,Wilburton to South Bellevue
+stops,stop_desc,cy,Wilburton i South Bellevue,,Wilburton to South Bellevue
+stops,stop_desc,sw,Wilburton kwenda South Bellevue,,Wilburton to South Bellevue
+stops,stop_desc,pt-PT,Wilburton para South Bellevue,,Wilburton to South Bellevue
+stops,stop_desc,af,Wilburton na South Bellevue,,Wilburton to South Bellevue

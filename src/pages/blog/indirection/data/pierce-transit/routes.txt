@@ -1,0 +1,43 @@
+route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_url,route_color,route_text_color
+1,3,1,6th Ave / Pacific Ave,,3,https://piercetransit.org/routes/route-1-6th-ave-pacific/,6cb33f,000000
+10,3,10,Pearl St,,3,https://piercetransit.org/routes/route-10-pearl-st/,6cb33f,000000
+100,3,100,Gig Harbor,,3,https://piercetransit.org/routes/route-100-gig-harbor/,6cb33f,000000
+101,3,101,Gig Harbor Waterfront Connector,,3,https://piercetransit.org/connector/,ffffff,000000
+11,3,11,Point Defiance,,3,https://piercetransit.org/routes/route-11-point-defiance/,6cb33f,000000
+16,3,16,North End,,3,https://piercetransit.org/routes/route-16-downtown-tacoma-tcc/,6cb33f,000000
+2,3,2,S 19th St / Bridgeport,,3,https://piercetransit.org/routes/route-2-s-19th-st/,6cb33f,000000
+202,3,202,S 72nd St,,3,https://piercetransit.org/routes/route-202-72nd-street/,6cb33f,000000
+206,3,206,Pacific Hwy / Tillcum / Madigan,,3,https://piercetransit.org/routes/route-206-pacific-hwy-madigan/,6cb33f,000000
+212,3,212,Steilacoom,,3,https://piercetransit.org/routes/route-212-steilacoom/,6cb33f,000000
+214,3,214,Washington,,3,https://piercetransit.org/routes/route-214-washington/,6cb33f,000000
+28,3,28,S 12th St,,3,https://piercetransit.org/routes/route-28-s-12th-st/,6cb33f,000000
+3,3,3,Lakewood / Tacoma,,3,https://piercetransit.org/routes/route-3-lakewood-tacoma/,6cb33f,000000
+333,3,333,Fan Zone Express,,3,https://piercetransit.org/sea26/,6cb33f,000000
+4,3,4,Lakewood / South Hill,,3,https://piercetransit.org/routes/route4-lakewood-south-hill-mall/,6cb33f,000000
+400,3,400,Puyallup / Downtown Tacoma,,3,https://piercetransit.org/routes/route-400-puyallup-downtown-tacoma/,6cb33f,000000
+402,3,402,Meridian,,3,https://piercetransit.org/routes/route-402-meridian/,6cb33f,000000
+409,3,409,Puyallup / S 72nd St,,3,https://piercetransit.org/routes/route-409-puyallup-72nd-tc/,6cb33f,000000
+41,3,41,S 56th St / Salishan,,3,https://piercetransit.org/routes/route-41-portland-ave/,6cb33f,000000
+42,3,42,McKinley Ave,,3,https://piercetransit.org/routes/route-42-mckinley-ave/,6cb33f,000000
+45,3,45,Yakima,,3,https://piercetransit.org/routes/route-45-yakima-ave/,6cb33f,000000
+48,3,48,Sheridan / M St,,3,https://piercetransit.org/routes/route-48-sheridan-m-st/,6cb33f,000000
+497,3,497,Lakeland Hills Express,,3,https://piercetransit.org/routes/route-497-lakeland-hills/,6cb33f,000000
+500,3,500,Federal Way,,3,https://piercetransit.org/routes/route-500-federal-way/,6cb33f,000000
+501,3,501,Milton / Federal Way,,3,https://piercetransit.org/routes/route-501-milton-tacoma/,6cb33f,000000
+52,3,52,Fircrest / TCC,,3,https://piercetransit.org/routes/route-52-tcc-tacoma-mall/,6cb33f,000000
+53,3,53,University Place,,3,https://piercetransit.org/routes/route-53-university-place/,6cb33f,000000
+54,3,54,S 38th St / Portland Ave,,3,https://piercetransit.org/routes/route-54-38th-st/,6cb33f,000000
+55,3,55,Tacoma Mall,,3,https://piercetransit.org/routes/route-55-tacoma-mall-parkland/,6cb33f,000000
+560,40,560,Bellevue / West Seattle,,3,https://www.soundtransit.org/560,2b376e,ffffff
+57,3,57,Union / S 19th St / Hilltop,,3,https://piercetransit.org/routes/route-57-tacoma-mall/,6cb33f,000000
+574,40,574,Lakewood / Sea-Tac Airport,,3,https://www.soundtransit.org/574,2b376e,ffffff
+577,40,577,Federal Way / Seattle,,3,https://www.soundtransit.org/577,2b376e,ffffff
+578,40,578,Puyallup / Seattle,,3,https://www.soundtransit.org/578,2b376e,ffffff
+580,40,580,Puyallup / Lakewood,,3,https://www.soundtransit.org/580,2b376e,ffffff
+586,40,586,Tacoma / University District,,3,https://www.soundtransit.org/586,2b376e,ffffff
+590,40,590,Tacoma / Seattle,,3,https://www.soundtransit.org/590,2b376e,ffffff
+592,40,592,DuPont / Seattle,,3,https://www.soundtransit.org/592,2b376e,ffffff
+594,40,594,Lakewood / Seattle,,3,https://www.soundtransit.org/594,2b376e,ffffff
+595,40,595,Gig Harbor / Seattle,,3,https://www.soundtransit.org/595,2b376e,ffffff
+596,40,596,Sumner / Bonney Lake,,3,https://www.soundtransit.org/596,2b376e,ffffff
+STCL,3,STCL,Stream TDS / Spanaway TC,Stream Community Line,3,https://www.piercetransit.org/stream-community-line,6cb33f,000000

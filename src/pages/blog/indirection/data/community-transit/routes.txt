@@ -1,0 +1,41 @@
+agency_id,route_id,route_short_name,route_long_name,route_sort_order,route_type,route_color,route_text_color,route_url
+29,701,"Swift Blue","Everett Station - Shoreline North/185th Station",1,3,006CFF,FFFFFF,https://www.communitytransit.org/route/701
+29,702,"Swift Green","Seaway TC - Canyon Park P&R",2,3,00AA00,FFFFFF,https://www.communitytransit.org/route/702
+29,703,"Swift Orange","Edmonds College - McCollum Park P&R",3,3,F24C21,FFFFFF,https://www.communitytransit.org/route/703
+29,101,"101","Mariner P&R - Aurora Village TC",101,3,0070C0,FFFFFF,https://www.communitytransit.org/route/101
+29,102,"102","Edmonds Station - Lynnwood City Center Station",102,3,0070C0,FFFFFF,https://www.communitytransit.org/route/102
+29,103,"103","Hardeson Road - Lynnwood City Center Station",103,3,0070C0,FFFFFF,https://www.communitytransit.org/route/103
+29,106,"106","Mariner P&R - UW Bothell/Cascadia College",106,3,0070C0,FFFFFF,https://www.communitytransit.org/route/106
+29,109,"109","Ash Way P&R - Lake Stevens TC",109,3,0070C0,FFFFFF,https://www.communitytransit.org/route/109
+29,111,"111","Brier - Mountlake Terrace Station",111,3,0070C0,FFFFFF,https://www.communitytransit.org/route/111
+29,112,"112","Mountlake Terrace Station - Ash Way P&R",112,3,0070C0,FFFFFF,https://www.communitytransit.org/route/112
+29,114,"114","Aurora Village TC - Lynnwood City Center Station",114,3,0070C0,FFFFFF,https://www.communitytransit.org/route/114
+29,117,"117","Mukilteo Ferry - Lynnwood City Center Station",117,3,0070C0,FFFFFF,https://www.communitytransit.org/route/117
+29,119,"119","Ash Way P&R - Mountlake Terrace Station",119,3,0070C0,FFFFFF,https://www.communitytransit.org/route/119
+29,120,"120","UW Bothell/Cascadia - Lynnwood City Center Station",120,3,0070C0,FFFFFF,https://www.communitytransit.org/route/120
+29,121,"121","Ash Way P&R - UW Bothell/Cascadia College",121,3,0070C0,FFFFFF,https://www.communitytransit.org/route/121
+29,130,"130","Edmonds Station - Lynnwood City Center Station",130,3,0070C0,FFFFFF,https://www.communitytransit.org/route/130
+29,166,"166","Edmonds Station - Silver Firs",166,3,0070C0,FFFFFF,https://www.communitytransit.org/route/166
+29,201,"201","Smokey Point TC - Lynnwood City Center Station",201,3,0070C0,FFFFFF,https://www.communitytransit.org/route/201
+29,202,"202","Smokey Point TC - Lynnwood City Center Station",202,3,0070C0,FFFFFF,https://www.communitytransit.org/route/202
+29,209,"209","Smokey Point TC - Lake Stevens TC",209,3,0070C0,FFFFFF,https://www.communitytransit.org/route/209
+29,220,"220","Arlington - Smokey Point TC",220,3,0070C0,FFFFFF,https://www.communitytransit.org/route/220
+29,222,"222","Marysville - Tulalip",222,3,0070C0,FFFFFF,https://www.communitytransit.org/route/222
+29,230,"230","Darrington - Smokey Point TC",230,3,0070C0,FFFFFF,https://www.communitytransit.org/route/230
+29,240,"240","Stanwood Downtown - Smokey Point TC",240,3,0070C0,FFFFFF,https://www.communitytransit.org/route/240
+29,270,"270","Gold Bar - Everett Station",270,3,0070C0,FFFFFF,https://www.communitytransit.org/route/270
+29,271,"271","Gold Bar - Everett Station",271,3,0070C0,FFFFFF,https://www.communitytransit.org/route/271
+29,280,"280","Granite Falls P&R - Everett Station",280,3,0070C0,FFFFFF,https://www.communitytransit.org/route/280
+29,901,"901","Silver Firs - Lynnwood City Center Station",901,3,0070C0,FFFFFF,https://www.communitytransit.org/route/901
+29,903,"903","Lake Stevens TC - Lynnwood City Center Station",903,3,0070C0,FFFFFF,https://www.communitytransit.org/route/903
+29,904,"904","Marysville - Lynnwood City Center Station",904,3,0070C0,FFFFFF,https://www.communitytransit.org/route/904
+29,905,"905","Stanwood Downtown - Lynnwood City Center Station",905,3,0070C0,FFFFFF,https://www.communitytransit.org/route/905
+29,907,"907","Stanwood I-5 P&R - Paine Field Airport",907,3,0070C0,FFFFFF,https://www.communitytransit.org/route/907
+29,908,"908","Bellevue - Snohomish P&R",908,3,0070C0,FFFFFF,https://www.communitytransit.org/route/908
+29,909,"909","Edmonds Station - Mountlake Terrace Station",909,3,0070C0,FFFFFF,https://www.communitytransit.org/route/909
+40,510,"510","Everett Station - Seattle",5510,3,2B376E,FFFFFF,https://www.soundtransit.org/ride-with-us/routes-schedules/510
+40,512,"512","Everett Station - Lynnwood City Center Station",5512,3,2B376E,FFFFFF,https://www.soundtransit.org/ride-with-us/routes-schedules/512
+40,513,"513","Lynnwood City Center Station - Seaway TC",5513,3,2B376E,FFFFFF,https://www.soundtransit.org/ride-with-us/routes-schedules/513
+40,515,"515","Lynnwood City Center Station - Seattle",5515,3,2B376E,FFFFFF,https://www.soundtransit.org/ride-with-us/routes-schedules/515
+40,532,"532","Everett Station - Bellevue",5532,3,2B376E,FFFFFF,https://www.soundtransit.org/ride-with-us/routes-schedules/532
+40,535,"535","Lynnwood City Center Station - Bellevue",5535,3,2B376E,FFFFFF,https://www.soundtransit.org/ride-with-us/routes-schedules/535

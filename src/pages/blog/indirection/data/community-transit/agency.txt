@@ -1,0 +1,3 @@
+agency_id,agency_name,agency_url,agency_timezone,agency_lang,agency_phone,agency_fare_url,agency_email,cemv_support
+29,Community Transit,https://www.communitytransit.org/,America/Los_Angeles,en,(800) 562-1375,https://www.communitytransit.org/fares-and-passes,riders@commtrans.org,1
+40,Sound Transit,https://www.soundtransit.org/,America/Los_Angeles,en,(888) 889-6368,https://www.soundtransit.org/ride-with-us/how-to-pay/fares,main@soundtransit.org,1

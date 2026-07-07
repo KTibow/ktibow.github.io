@@ -1,0 +1,17 @@
+Below is a list of the changes included in the SC-Spring-2026.9 release of Sound Transit GTFS data.
+
+Schedule Changes
+* 1 and 2 Lines
+  * Extended service on July 3rd and 4th for Independence Day
+* Sounder
+  * Updated N Line service on FIFA match days
+
+Route Changes
+* none
+
+Stop Changes
+* Corrected SODO platform locations
+* More accurate station entrance locations for 7 stations
+
+Other Changes
+* none

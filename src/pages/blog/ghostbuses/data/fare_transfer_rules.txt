@@ -1,2 +1,0 @@
-from_leg_group_id,to_leg_group_id,fare_product_id,transfer_count,duration_limit,duration_limit_type,fare_transfer_type
-default_bus,default_bus,,-1,7200,1,0

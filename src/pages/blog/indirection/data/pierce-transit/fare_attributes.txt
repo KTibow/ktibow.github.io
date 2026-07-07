@@ -1,0 +1,3 @@
+fare_id,agency_id,price,currency_type,payment_method,transfers,transfer_duration
+full,3,2.00,USD,0,,7200
+stexpress_full,40,3.00,USD,0,,7200

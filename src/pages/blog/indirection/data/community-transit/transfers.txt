@@ -1,0 +1,6 @@
+from_route_id,to_route_id,from_stop_id,to_stop_id,transfer_type,min_transfer_time
+,,lccst,lccst,2,180
+109,209,lkstc,lkstc,2,180
+209,109,lkstc,lkstc,2,180
+905,907,swi5pr,swi5pr,0,
+907,905,swi5pr,swi5pr,0,

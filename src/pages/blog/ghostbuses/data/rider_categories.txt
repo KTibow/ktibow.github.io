@@ -1,4 +1,0 @@
-rider_category_id,rider_category_name,is_default_fare_category,eligibility_url
-Adult,Adult,1,https://info.myorca.com/using-orca/ways-to-save/adult/
-Youth,Youth,0,https://info.myorca.com/using-orca/ways-to-save/youth/
-Senior,Senior,0,https://info.myorca.com/using-orca/ways-to-save/seniors/

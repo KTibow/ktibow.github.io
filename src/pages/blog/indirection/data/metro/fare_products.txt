@@ -1,0 +1,33 @@
+fare_product_id,fare_product_name,rider_category_id,fare_media_id,amount,currency
+Bus,Single Ride,Adult,Cash,3.00,USD
+Bus,Single Ride,Adult,Tap to Pay,3.00,USD
+Bus,Single Ride,Adult,ORCA,3.00,USD
+Bus,Single Ride,Adult,Transit Go Ticket,3.00,USD
+Bus,Single Ride,Youth,ORCA,0.00,USD
+Bus,Single Ride,Senior,ORCA,1.00,USD
+Bus,Single Ride,Senior,Transit Go Ticket,1.00,USD
+Streetcar,Single Ride,Adult,Tap to Pay,3.00,USD
+Streetcar,Single Ride,Adult,ORCA,3.00,USD
+Streetcar,Single Ride,Adult,Transit Go Ticket,3.00,USD
+Streetcar,Single Ride,Senior,Tap to Pay,1.00,USD
+Streetcar,Single Ride,Senior,ORCA,1.00,USD
+Streetcar,Single Ride,Senior,Transit Go Ticket,1.00,USD
+Streetcar,Single Ride,Youth,ORCA,0.00,USD
+West Seattle Water Taxi,Single Ride,Adult,Cash,6.25,USD
+West Seattle Water Taxi,Single Ride,Adult,ORCA,5.25,USD
+West Seattle Water Taxi,Single Ride,Senior,Cash,2.50,USD
+West Seattle Water Taxi,Single Ride,Senior,ORCA,2.50,USD
+West Seattle Water Taxi,Single Ride,Youth,Cash,0.00,USD
+West Seattle Water Taxi,Single Ride,Youth,ORCA,0.00,USD
+Vashon Water Taxi,Single Ride,Adult,Cash,7.00,USD
+Vashon Water Taxi,Single Ride,Adult,ORCA,6.00,USD
+Vashon Water Taxi,Single Ride,Senior,Cash,3.00,USD
+Vashon Water Taxi,Single Ride,Senior,ORCA,3.00,USD
+Vashon Water Taxi,Single Ride,Youth,Cash,0.00,USD
+Vashon Water Taxi,Single Ride,Youth,ORCA,0.00,USD
+Free Shuttle,Single Ride,Adult,Cash,0.00,USD
+Free Shuttle,Single Ride,Adult,ORCA,0.00,USD
+Free Shuttle,Single Ride,Senior,Cash,0.00,USD
+Free Shuttle,Single Ride,Senior,ORCA,0.00,USD
+Free Shuttle,Single Ride,Youth,Cash,0.00,USD
+Free Shuttle,Single Ride,Youth,ORCA,0.00,USD
