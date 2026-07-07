@@ -10,6 +10,9 @@ import logoST from './logo-soundtransit.svg';
 import logoKing from './logo-king.svg';
 import logoOBAYellow from './logo-oba-yellow.svg';
 import logoOBA from './logo-oba.svg';
+import logo1Line from './logo-1-line.svg';
+import logo2Line from './logo-2-line.svg';
+import logoTLine from './logo-t-line.svg';
 import Percent from './_Percent.astro';
 import Pulser from './_Pulser.astro';
 import Route from './_Route.astro';
@@ -507,15 +510,38 @@ const nKCAdjustedWithVID = megaMapFlat.filter(([, entries]) => {
     /> OBA JSON cases already. And I've asked <img
       {...logoKing}
       style={{ display: 'inline-block', width: '1em', height: '1em', verticalAlign: 'middle' }}
-    /> King County Metro + <img
-      {...logoST}
-      style={{ display: 'inline-block', width: '1.5em', height: '1em', verticalAlign: 'middle' }}
-    /> Sound Transit and <a
+    /> King County Metro and <a
       href="https://github.com/OneBusAway/onebusaway-application-modules/pull/467"
       >PRd to OneBusAway</a
     > so that the {nKCNoVID}-{nKCNoVID + nKCInferrableVID} "ETAs" can use <code>NO_DATA</code> instead
-    of claiming to be realtime<Pulser /> via <code>SCHEDULED</code>. But from here, since this is an
-    upstream data problem, the only thing to do is wait.
+    of claiming to be realtime<Pulser /> via <code>SCHEDULED</code>.
+  </p>
+  <p>
+    This is a true upstream data problem. And it goes a bit further than you'd expect: <img
+      {...logoST}
+      style={{ display: 'inline-block', width: '1.5em', height: '1em', verticalAlign: 'middle' }}
+    /> Sound Transit lines don't use their own data. For example, the 542 has this problem because it's
+    powered by <img
+      {...logoKing}
+      style={{ display: 'inline-block', width: '1em', height: '1em', verticalAlign: 'middle' }}
+    /> King County Metro. In fact, every line except for <img
+      {...logo1Line}
+      alt="1 line"
+      title="1 line"
+      style={{ display: 'inline-block', width: '1em', height: '1em', verticalAlign: 'middle' }}
+    />
+    <img
+      {...logo2Line}
+      alt="2 line"
+      title="2 line"
+      style={{ display: 'inline-block', width: '1em', height: '1em', verticalAlign: 'middle' }}
+    />
+    <img
+      {...logoTLine}
+      alt="T line"
+      title="T line"
+      style={{ display: 'inline-block', width: '1em', height: '1em', verticalAlign: 'middle' }}
+    /> use outsourced data.
   </p>
 </BlogPost>
 
