@@ -1,0 +1,186 @@
+---
+import BlogPost from '$lib/layouts/BlogPost.astro';
+export const title = "GLM 5.2 can't believe it thought of xnopyt";
+export const date = '2026-07-08';
+---
+
+<BlogPost {title} {date}>
+  <p>
+    I was recently having my agent test whether different GLM 5.2 providers listed on OpenRouter
+    supported interleaved thinking properly by running a reasoning recall test (hiding a certain
+    word in the conversation in a reasoning block and seeing if it can recall the word). All passed,
+    but it felt like it could just be chance, since my agent was also GLM 5.2 and it chose "mango",
+    a rather generic word.
+  </p>
+  <p>
+    So I got my agent to test 9 different words across 6 providers, and the results reveal a very
+    strange quality of GLM 5.2.
+  </p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Secret Word</th>
+          <th>z-ai/fp8</th>
+          <th>novita/fp8</th>
+          <th>deepinfra/fp4</th>
+          <th>together</th>
+          <th>parasail/fp4</th>
+          <th>streamlake/fp8</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="pass">
+          <td class="word">mango</td>
+          <td class="pass-cell">✓</td>
+          <td class="pass-cell">✓</td>
+          <td class="pass-cell">✓</td>
+          <td class="pass-cell">✓</td>
+          <td class="pass-cell">✓</td>
+          <td class="pass-cell">✓</td>
+        </tr>
+        <tr class="pass">
+          <td class="word">banana</td>
+          <td class="pass-cell">✓</td>
+          <td class="pass-cell">✓</td>
+          <td class="pass-cell">✓</td>
+          <td class="pass-cell">✓</td>
+          <td class="pass-cell">✓</td>
+          <td class="pass-cell">✓</td>
+        </tr>
+        <tr class="pass">
+          <td class="word">purple</td>
+          <td class="pass-cell">✓</td>
+          <td class="pass-cell">✓</td>
+          <td class="pass-cell">✓</td>
+          <td class="pass-cell">✓</td>
+          <td class="pass-cell">✓</td>
+          <td class="pass-cell">✓</td>
+        </tr>
+        <tr class="pass">
+          <td class="word">mangosteen</td>
+          <td class="pass-cell">✓</td>
+          <td class="pass-cell">✓</td>
+          <td class="pass-cell">✓</td>
+          <td class="pass-cell">✓</td>
+          <td class="pass-cell">✓</td>
+          <td class="pass-cell">✓</td>
+        </tr>
+        <tr class="mixed">
+          <td class="word">supercalifragilisticexpialidocious</td>
+          <td class="pass-cell">✓</td>
+          <td class="pass-cell">✓</td>
+          <td class="pass-cell">✓</td>
+          <td class="fail-cell">✗<span class="said">pineapple</span></td>
+          <td class="fail-cell">✗<span class="said">pineapple</span></td>
+          <td class="fail-cell">✗<span class="said">pineapple</span></td>
+        </tr>
+        <tr class="mixed">
+          <td class="word">xyz</td>
+          <td class="pass-cell">✓</td>
+          <td class="fail-cell">✗<span class="said">ok</span></td>
+          <td class="fail-cell">✗<span class="said">ok</span></td>
+          <td class="pass-cell">✓</td>
+          <td class="fail-cell">✗<span class="said">pineapple</span></td>
+          <td class="pass-cell">✓</td>
+        </tr>
+        <tr class="mixed">
+          <td class="word">zxcvbnm</td>
+          <td class="pass-cell">✓</td>
+          <td class="pass-cell">✓</td>
+          <td class="fail-cell">✗<span class="said">ok</span></td>
+          <td class="pass-cell">✓</td>
+          <td class="pass-cell">✓</td>
+          <td class="pass-cell">✓</td>
+        </tr>
+        <tr class="fail">
+          <td class="word">qwertyuiop</td>
+          <td class="fail-cell">✗<span class="said">sunshine</span></td>
+          <td class="fail-cell">✗<span class="said">ok</span></td>
+          <td class="fail-cell">✗<span class="said">pineapple</span></td>
+          <td class="fail-cell">✗<span class="said">pineapple</span></td>
+          <td class="fail-cell">✗<span class="said">pineapple</span></td>
+          <td class="fail-cell">✗<span class="said">pineapple</span></td>
+        </tr>
+        <tr class="fail">
+          <td class="word">xnopyt</td>
+          <td class="fail-cell">✗<span class="said">ok</span></td>
+          <td class="fail-cell">✗<span class="said">sunshine</span></td>
+          <td class="fail-cell">✗<span class="said">ok</span></td>
+          <td class="fail-cell">✗<span class="said">sunflower</span></td>
+          <td class="fail-cell">✗<span class="said">ok</span></td>
+          <td class="fail-cell">✗<span class="said">ok</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    It seems the OpenRouter providers <em>do</em> support interleaved thinking. It's just that GLM 5.2
+    has a strong prior: if it doesn't recognize the word in its vocabulary, it makes something up.
+  </p>
+</BlogPost>
+
+<style>
+  .table-wrap {
+    overflow-x: auto;
+    margin-block: 1.5rem;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 600px;
+    font-variant-numeric: tabular-nums;
+  }
+  thead th {
+    background-color: var(--m3c-surface-container-high);
+    color: var(--m3c-on-surface);
+    font-weight: 600;
+    padding: 0.5rem 0.75rem;
+    text-align: center;
+    white-space: nowrap;
+  }
+  thead th:first-child {
+    text-align: left;
+  }
+  tbody td {
+    padding: 0.5rem 0.75rem;
+    text-align: center;
+    border-bottom: 1px solid var(--m3c-outline-variant);
+    vertical-align: middle;
+  }
+  tbody td.word {
+    text-align: left;
+    font-weight: 500;
+    color: var(--m3c-on-surface);
+    white-space: nowrap;
+  }
+  .pass-cell {
+    color: oklch(from var(--m3c-primary) 0.8 c h);
+    font-weight: 700;
+  }
+  .fail-cell {
+    color: var(--m3c-error);
+    font-weight: 700;
+  }
+  .said {
+    display: block;
+    font-weight: 400;
+    font-size: 0.75rem;
+    color: var(--m3c-on-surface-variant);
+    margin-top: 0.125rem;
+  }
+  tr.pass td {
+    background-color: oklch(from var(--m3c-primary) 0.15 0.05 h);
+  }
+  tr.fail td {
+    background-color: oklch(from var(--m3c-error) 0.15 0.05 h);
+  }
+  .mixed tbody td.pass-cell {
+    background-color: oklch(from var(--m3c-primary) 0.15 0.05 h);
+  }
+  .mixed tbody td.fail-cell {
+    background-color: oklch(from var(--m3c-error) 0.15 0.05 h);
+  }
+</style>
