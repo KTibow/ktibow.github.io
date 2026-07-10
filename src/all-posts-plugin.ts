@@ -11,6 +11,7 @@ type PostMetadata = {
   title: string;
   link: string;
   date: string;
+  length: number;
 };
 
 function getExportedString(frontmatter: string, filePath: string, exportName: string) {
@@ -73,6 +74,7 @@ async function parseAstroPost(filePath: string, link: string) {
     title: getExportedString(frontmatter, filePath, 'title'),
     date: getExportedString(frontmatter, filePath, 'date'),
     link,
+    length: source.length,
   };
 }
 
@@ -97,7 +99,8 @@ async function readBlogJsonPosts(parentPath: string) {
       const filePath = path.join(parentPath, dir, 'meta.json');
       if (!(await fileExists(filePath))) return;
 
-      const parsed = JSON.parse(await fs.readFile(filePath, 'utf-8')) as Partial<{
+      const raw = await fs.readFile(filePath, 'utf-8');
+      const parsed = JSON.parse(raw) as Partial<{
         title: string;
         date: string;
         url: string;
@@ -107,7 +110,7 @@ async function readBlogJsonPosts(parentPath: string) {
       if (typeof parsed.date != 'string') throw new Error(`Missing string "date" in ${filePath}`);
       if (typeof parsed.url != 'string') throw new Error(`Missing string "url" in ${filePath}`);
 
-      posts.push({ title: parsed.title, date: parsed.date, link: parsed.url });
+      posts.push({ title: parsed.title, date: parsed.date, link: parsed.url, length: raw.length });
     }),
   );
   return posts;
@@ -116,8 +119,8 @@ async function readBlogJsonPosts(parentPath: string) {
 function serializePostArray(posts: PostMetadata[]) {
   if (posts.length == 0) return '[]';
   const lines = posts.map(
-    ({ title, link, date }) =>
-      `{ title: ${JSON.stringify(title)}, link: ${JSON.stringify(link)}, pubDate: new Date(${JSON.stringify(date)}) }`,
+    ({ title, link, date, length }) =>
+      `{ title: ${JSON.stringify(title)}, link: ${JSON.stringify(link)}, pubDate: new Date(${JSON.stringify(date)}), length: ${length} }`,
   );
   return `[${lines.join(',')}]`;
 }

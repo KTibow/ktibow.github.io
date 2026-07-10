@@ -12,8 +12,8 @@ import { milliblogPosts } from 'virtual:post-lists';
   </h2>
   <main>
     {
-      milliblogPosts.map(({ title, link }) => (
-        <a class="layer" href={link}>
+      milliblogPosts.map(({ title, link, length }) => (
+        <a class="layer" href={link} style={`--length:${length}`}>
           {title}
         </a>
       ))
@@ -35,10 +35,13 @@ import { milliblogPosts } from 'virtual:post-lists';
     flex-grow: 1;
   }
   a {
-    flex: 1 1 16rem;
+    flex: 1 1 8rem;
     border-radius: 1rem;
     padding: 1rem;
     background-color: var(--m3c-surface-container-low);
     position: relative;
+    @media (width >= 40rem) {
+      min-width: min(32rem, calc(var(--length) * 0.1px));
+    }
   }
 </style>

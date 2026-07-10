@@ -3,6 +3,7 @@ declare module 'virtual:post-lists' {
     title: string;
     link: string;
     pubDate: Date;
+    length: number;
   };
 
   export const blogPosts: ListedPost[];
