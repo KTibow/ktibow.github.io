@@ -1,0 +1,164 @@
+---
+import BlogPost from '$lib/layouts/BlogPost.astro';
+import Percent from './_Percent.astro';
+
+export const title = 'DIEM and MOR are easily worth it if you like risk';
+export const date = '2026-07-13';
+
+const morTreasury = 35638;
+const morOperator = 57754;
+const morStaked = 80371 + 61784 + 17995;
+const morTotal = morTreasury + morOperator + morStaked;
+const morPrice = 2.2;
+const dollars = (n: number) => n.toLocaleString(undefined, { maximumFractionDigits: 0 });
+---
+
+<BlogPost {title} {date}>
+  <p><em>Not financial advice.</em></p>
+
+  <h2>
+    Baseline: <a href="/milliblog/codexlimits/">ChatGPT plans</a>
+  </h2>
+  <ul>
+    <li>Plus: $0.66/day → ~$26/day usage: ~39x multiplier</li>
+    <li>Pro 5x: $3.33/day → ~$130/day usage: ~39x multiplier</li>
+    <li>Pro 20x: $6.66/day → ~$520/day usage: ~78x multiplier</li>
+  </ul>
+
+  <h2>
+    Reward without risk: <a href="https://www.surplusintelligence.ai/">Surplus Intelligence</a>
+  </h2>
+  <p>
+    Just pay for tokens at a 2x-100x discounted rate versus official pricing. Multiplier varies
+    based on suppliers, which vary based on model and time of day.
+  </p>
+  <p>
+    As of writing, Surplus Intelligence didn't reply to a request for comment as to whether caching
+    discounts are supported.
+  </p>
+
+  <h2>What about open weights?</h2>
+  <p>
+    When using raw APIs, you usually get 10x more usage with open weight than closed weight models.
+    By either using subscriptions directly (Ollama Cloud, Z.ai) or someone else's subscriptions via
+    Surplus Intelligence, you can get another 10x on top of that.
+  </p>
+  <p>
+    100x isn't as good as it sounds - you can also find <em>GPT 5.5</em> with a clean 100x multiplier
+    on Surplus Intelligence. Open weight models are only cheaper when using official APIs.
+  </p>
+
+  <h2>Introducing staking: <a href="https://venice.ai/token">DIEM</a></h2>
+  <p>
+    Normally currency is exchanged for goods and services. In crypto, currency can simply be <em
+      >staked</em
+    >, letting you get it back at will. And if you stake a DIEM, you net $1 of AI daily at <a
+      href="https://api.venice.ai/api/v1/models">Venice rates</a
+    >, or ~$0.7 daily from reselling on Surplus Intelligence, or 365 days * $0.7/day / $1300 = ~20%
+    yield, or doubling its value (remember you can unstake it when done!) 5 years out.
+  </p>
+  <p>
+    The <a href="https://en.wikipedia.org/wiki/Efficient-market_hypothesis"
+      >efficient market hypothesis</a
+    > teaches us that if something is too good to be true, it likely is. There's a big risk here stopping
+    DIEM from doubling its price* and bringing its yield down to normal levels. And I think I know what
+    it is: if Venice shuts down, your token is worth absolutely nothing. It won't give you any more inference,
+    and for that same reason, nobody will want it.
+  </p>
+  <p>
+    <em
+      >*price would also increase if people unminted DIEM, bringing DIEM supply down and netting
+      them a personal profit</em
+    >
+  </p>
+
+  <h2>It's <a href="https://mordiem.com/">MORbin Time</a></h2>
+  <p>
+    There's this guy Ryan Condron. He co-founded Titan, built Lumerin (general purpose
+    blockchain-powered matchmaking) and Morpheus Network (MOR) there, then stepped down sometime
+    after that. He's now running MORDIEM, an inference market powered by MOR, Venice (DIEM), and
+    Lumerin. MORDIEM has a lot of MOR in custody:
+  </p>
+  <ul>
+    <li>
+      <Percent v={morTreasury / morTotal} /> ${dollars(morTreasury * morPrice)} is in <a
+        href="https://base.blockscout.com/address/0xd01c1B0eeDBE341c409369177478f2Eabbeee848"
+        >0xd01c1B0eeDBE341c409369177478f2Eabbeee848</a
+      >. MORDIEM uses it for user transactions.
+    </li>
+    <li>
+      <Percent v={morOperator / morTotal} /> ${dollars(morOperator * morPrice)} is in <a
+        href="https://base.blockscout.com/address/0xC599884ACB421BD548D6fAe444CD075DFB012FBF"
+        >0xC599884ACB421BD548D6fAe444CD075DFB012FBF</a
+      >. MORDIEM uses it for Lumerin transactions.
+    </li>
+    <li>
+      <Percent v={morStaked / morTotal} /> ${dollars(morStaked * morPrice)} is staked in <a
+        href="https://base.blockscout.com/address/0x42BB446eAE6dca7723a9eBdb81EA88aFe77eF4B9"
+        >0x42BB446eAE6dca7723a9eBdb81EA88aFe77eF4B9</a
+      >. This contract is called <a href="https://dashboard.mor.org/builders">the builders pool</a>.
+    </li>
+  </ul>
+  <p>
+    But that doesn't actually decide how much daily inference you get. Instead, your share of "Total
+    MOR Supply" (all MOR minted ever except for the purpose of funding compute providers) staked is
+    set equal to your daily share of 1% of the "Compute Balance" (all MOR minted for the purpose of
+    funding compute providers ever).
+  </p>
+  <p>
+    As of writing, the math comes out so if you stake 190 MOR to MORDIEM, you net $1 of AI daily at
+    Venice rates = ~$0.7 daily from reselling on Surplus Intelligence AND 20% APY. This makes 365
+    days * $0.7/day / ${dollars(190 * morPrice)} + 0.2 = ~80% yield, or doubling its value in 15 months.
+  </p>
+  <p>I think here the market is pricing in that betting on MORDIEM is betting on these risks:</p>
+  <ul>
+    <li>
+      MORDIEM will keep providing MOR suppliers with inference and interest (including the continued
+      existence of the builders pool)
+    </li>
+    <li>
+      MORDIEM will keep providing MOR suppliers with the option to take back their MOR (their TOS
+      calls staking "gifting") and MOR holds price
+    </li>
+    <li>
+      DIEM holders will keep providing inference to MORDIEM (including Venice holding up inference +
+      MOR holding up MOR payments)
+    </li>
+  </ul>
+  <p>
+    The only way this wouldn't end badly is if MORDIEM gracefully shuts down and lets you take your
+    MOR - since MOR would still be worth something you would've lost nothing.
+  </p>
+
+  <h2>Conclusion</h2>
+  <p>If you pay as you go:</p>
+  <ul>
+    <li>$20/mo or $100/mo GPT → ~39x multiplier</li>
+    <li>$200/mo GPT → ~78x multiplier</li>
+    <li>Surplus Intelligence → up to 100x multiplier</li>
+  </ul>
+  <p>If you invest in crypto, and 1 year later things go well:</p>
+  <ul>
+    <li>
+      $1300 DIEM, AI use → got $ from DIEM appreciating AND got $365 in AI (would cost $255-$3.65 on
+      Surplus Intelligence)
+    </li>
+    <li>$1300 DIEM, reselling → got $ from DIEM appreciating AND got $255</li>
+    <li>
+      ${dollars(190 * morPrice)} MOR, AI use → got $ from MOR appreciating AND got $85 from MOR interest
+      AND got $365 in AI (would cost $255-$3.65 on Surplus Intelligence)
+    </li>
+    <li>
+      ${dollars(190 * morPrice)} MOR, reselling → got $ from MOR appreciating AND got $85 from MOR interest
+      AND got $255
+    </li>
+  </ul>
+  <p>If you invest in crypto, and 1 year later things go awry:</p>
+  <ul>
+    <li>$1300 DIEM → Venice shuts down, you only ever made $255, you lost $1045 (80%)</li>
+    <li>
+      ${dollars(190 * morPrice)} MOR → MORDIEM shuts down hard, you only ever made $255, you lost $170.6
+      (40%)
+    </li>
+  </ul>
+</BlogPost>
