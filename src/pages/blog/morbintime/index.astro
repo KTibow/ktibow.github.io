@@ -157,7 +157,9 @@ const dollars = (n: number) => n.toLocaleString(undefined, { maximumFractionDigi
   <ul>
     <li>$1300 DIEM → Venice shuts down, you only ever made $255, you lost $1045 (80%)</li>
     <li>
-      ${dollars(190 * morPrice)} MOR → MORDIEM shuts down hard, you only ever made $255, you lost $170.6
+      ${dollars(190 * morPrice)} MOR → MORDIEM shuts down hard, you only ever made $255, you lost ${
+        dollars(190 * morPrice - 255)
+      }
       (40%)
     </li>
   </ul>
