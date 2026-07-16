@@ -2,7 +2,7 @@
 import BlogPost from '$lib/layouts/BlogPost.astro';
 import Percent from './_Percent.astro';
 
-export const title = 'DIEM and MOR are easily worth it if you like risk';
+export const title = 'DIEM, MOR, and JTVO are only worth it if you like risk';
 export const date = '2026-07-13';
 
 const morTreasury = 35638;
@@ -130,6 +130,22 @@ const dollars = (n: number) => n.toLocaleString(undefined, { maximumFractionDigi
     MOR - since MOR would still be worth something you would've lost nothing.
   </p>
 
+  <h2>Jul 15 2026 addendum: <a href="https://jatevo.ai/">JaTeVO</a></h2>
+  <p>
+    Jatevo is similar to the other providers in that it's crypto, but it's different in that it
+    gives you a daily <em>requests</em> allocation (1 GPT request per $1 in JTVO held).
+  </p>
+  <p>
+    On yield - the upper limit is (14.98 * 365) * 100 = 546770% (using Sol with full context
+    window), or more conservatively (4.56 * 365) * 100 = 166440%, or actually realistically (0.1025
+    * 0.01 * 365) * 100 = 37%.
+  </p>
+  <p>
+    Remember GitHub Copilot's premium requests? Or CrofAI's plans? Per request billing isn't
+    sustainable. And Jatevo is a vibe coded website leaking too many implementation details, with no
+    $65 mil series A or rich founder to bear the load. I'm bearish.
+  </p>
+
   <h2>Conclusion</h2>
   <p>If you pay as you go:</p>
   <ul>
@@ -152,6 +168,11 @@ const dollars = (n: number) => n.toLocaleString(undefined, { maximumFractionDigi
       ${dollars(190 * morPrice)} MOR, reselling → got $ from MOR appreciating AND got $85 from MOR interest
       AND got $255
     </li>
+    <li>
+      $100 JTVO, AI use → got $ from JTVO appreciating AND got 36.5k GPT requests (could cost
+      anything on Surplus Intelligence, realistically between $6 and $37)
+    </li>
+    <li>$100 JTVO, reselling → got $ from MOR appreciating AND got $37</li>
   </ul>
   <p>If you invest in crypto, and 1 year later things go awry:</p>
   <ul>
@@ -162,5 +183,6 @@ const dollars = (n: number) => n.toLocaleString(undefined, { maximumFractionDigi
       }
       (40%)
     </li>
+    <li>$100 JTVO → Jatevo shuts down, you ever made $37, you lost $63 (63%)</li>
   </ul>
 </BlogPost>
