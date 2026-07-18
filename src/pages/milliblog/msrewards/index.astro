@@ -189,9 +189,6 @@ const uniqueSellers = new Set(entries.map((e) => e.seller));
       text-decoration: none;
       color: inherit;
     }
-    .row:hover {
-      background: var(--m3c-surface-container-high);
-    }
     .left {
       flex: 0 0 220px;
       display: flex;
@@ -301,7 +298,7 @@ const uniqueSellers = new Set(entries.map((e) => e.seller));
     entries.slice(0, 200).map((g) => {
       const bio = g.bio.toLowerCase();
       return (
-        <a class="row" href={g.tradeUrl} target="_blank" rel="noopener">
+        <a class="row m3-layer" href={g.tradeUrl} target="_blank" rel="noopener">
           <div class="left">
             <div class="dpk">
               ${g.dpk.toFixed(3)}
