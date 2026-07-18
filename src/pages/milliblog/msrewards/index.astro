@@ -129,6 +129,7 @@ interface Group {
   bio: string;
   tz: string;
   tradeUrl: string;
+  profileImage: string;
 }
 
 const groups = new Map<string, Group>();
@@ -168,6 +169,7 @@ for (const o of allOffers) {
       bio: p?.bio || '',
       tz: p?.timezone || '',
       tradeUrl: `https://localcoinswap.com/trade/${o.slug}/${o.uuid}`,
+      profileImage: p?.profile_image || '',
     });
   }
 }
@@ -238,6 +240,11 @@ const uniqueSellers = new Set(entries.map((e) => e.seller));
       gap: 10px;
       align-items: center;
       flex-wrap: wrap;
+    }
+    .seller-pic {
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
     }
     .seller-name {
       @apply --m3-title-small;
@@ -320,6 +327,9 @@ const uniqueSellers = new Set(entries.map((e) => e.seller));
           <div class="right">
             {g.headline && <div class="headline">“{g.headline}”</div>}
             <div class="seller-line">
+              {g.profileImage && !g.profileImage.includes('default_user') && (
+                <img class="seller-pic" src={g.profileImage} alt="" width={28} height={28} />
+              )}
               <span class="seller-name">{g.seller}</span>
               <span class:list={{ 'seller-stat': true, 'seller-stat-new': g.trades < 50 }}>
                 {g.trades.toLocaleString()} {g.trades === 1 ? 'trade' : 'trades'} ({g.trades30d}{' '}
