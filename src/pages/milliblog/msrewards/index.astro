@@ -1,0 +1,355 @@
+---
+import BlogPost from '$lib/layouts/BlogPost.astro';
+export const title = 'Optimally converting American Microsoft Rewards to crypto';
+export const date = '2026-07-18';
+
+const marketResp = await fetch(
+  'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,litecoin,tether&vs_currencies=usd',
+).then((r) => r.json());
+const MARKET: Record<string, number> = {
+  BTC: marketResp.bitcoin.usd,
+  LTC: marketResp.litecoin.usd,
+  'USDT-TRC20': marketResp.tether.usd,
+  ETH: marketResp.ethereum.usd,
+};
+const COINS = ['BTC', 'LTC', 'USDT-TRC20', 'ETH'] as const;
+
+const giftCards = [
+  { slug: 'amazon-gift-card', in: 5250, out: 5 },
+  { slug: 'amazon-gift-card', in: 10500, out: 10 },
+  { slug: 'amazon-gift-card', in: 26250, out: 25 },
+  { slug: 'amazon-gift-card', in: 31500, out: 30 },
+  { slug: 'amazon-gift-card', in: 52500, out: 50 },
+  { slug: 'amazon-gift-card', in: 105000, out: 100 },
+  { slug: 'ulta-gift-card', in: 7000, out: 5 },
+  { slug: 'ulta-gift-card', in: 14000, out: 10 },
+  { slug: 'ulta-gift-card', in: 35000, out: 25 },
+  { slug: 'ulta-gift-card', in: 42000, out: 30 },
+  { slug: 'ulta-gift-card', in: 70000, out: 50 },
+  { slug: 'ulta-gift-card', in: 140000, out: 100 },
+  { slug: 'target-gift-card', in: 7000, out: 5 },
+  { slug: 'target-gift-card', in: 14000, out: 10 },
+  { slug: 'target-gift-card', in: 35000, out: 25 },
+  { slug: 'walmart-gift-card', in: 7000, out: 5 },
+  { slug: 'walmart-gift-card', in: 14000, out: 10 },
+  { slug: 'walmart-gift-card', in: 35000, out: 25 },
+  { slug: 'home-depot-gift-card', in: 7000, out: 5 },
+  { slug: 'best-buy-gift-card', in: 7000, out: 5 },
+  { slug: 'sephora-gift-card', in: 7000, out: 5 },
+  { slug: 'sephora-gift-card', in: 14000, out: 10 },
+  { slug: 'sephora-gift-card', in: 35000, out: 25 },
+  { slug: 'starbucks-card', in: 7000, out: 5 },
+  { slug: 'starbucks-card', in: 14000, out: 10 },
+  { slug: 'starbucks-card', in: 35000, out: 25 },
+  { slug: 'delta-airlines-gift-card', in: 70000, out: 50 },
+  { slug: 'southwest-airlines-gift-card', in: 21000, out: 15 },
+  { slug: 'hotelscom-gift-card', in: 14000, out: 10 },
+];
+
+const seen = new Set<string>();
+const fetchList: { slug: string; coin: string }[] = [];
+for (const c of giftCards) {
+  for (const coin of COINS) {
+    const key = `${c.slug}:${coin}`;
+    if (!seen.has(key)) {
+      seen.add(key);
+      fetchList.push({ slug: c.slug, coin });
+    }
+  }
+}
+
+async function batchFetch<T>(
+  items: { slug: string; coin: string }[],
+  fn: (item: { slug: string; coin: string }) => Promise<T>,
+  concurrency = 4,
+) {
+  const results: T[] = [];
+  for (let i = 0; i < items.length; i += concurrency) {
+    results.push(...(await Promise.all(items.slice(i, i + concurrency).map(fn))));
+  }
+  return results;
+}
+
+const rawOfferArrays = await batchFetch(fetchList, async ({ slug, coin }) => {
+  const url = `https://iapi.localcoinswap.com/api/v2/offers/search/?trading_type=sell&payment_method=${slug}&coin_currency=${coin}&country_code=US&ordering=country_first,current_price_usd&offset=0&limit=30`;
+  const resp = await fetch(url);
+  const data: any = await resp.json();
+  return (data.results || []).map((o: any) => ({ ...o, _slug: slug, _coin: coin }));
+});
+
+const allOffers = rawOfferArrays.flat();
+const usernames = [...new Set(allOffers.map((o: any) => o.created_by.username))];
+
+const html = await fetch(
+  'https://localcoinswap.com/en/buy/bitcoin/worldwide/amazon-gift-card',
+).then((r) => r.text());
+const buildId = JSON.parse(html.match(/__NEXT_DATA__.*?>(.*?)<\/script>/s)![1]).buildId;
+
+const profiles = new Map<string, any>();
+for (let i = 0; i < usernames.length; i += 6) {
+  const batch = usernames.slice(i, i + 6);
+  const results = await Promise.all(
+    batch.map(async (u) => {
+      try {
+        const resp = await fetch(
+          `https://localcoinswap.com/_next/data/${buildId}/en/profile/${u}.json`,
+        );
+        if (!resp.ok) return [u, null] as const;
+        const data: any = await resp.json();
+        return [u, data.pageProps?.profileData?.user || null] as const;
+      } catch {
+        return [u, null] as const;
+      }
+    }),
+  );
+  for (const [u, p] of results) profiles.set(u, p);
+}
+
+const tiersBySlug = new Map<string, { in: number; out: number }[]>();
+for (const gc of giftCards) {
+  if (!tiersBySlug.has(gc.slug)) tiersBySlug.set(gc.slug, []);
+  tiersBySlug.get(gc.slug)!.push(gc);
+}
+
+interface Group {
+  cardName: string;
+  slug: string;
+  coin: string;
+  price: number;
+  dpk: number;
+  tiers: { dollars: number; points: number }[];
+  seller: string;
+  trades: number;
+  rating: string;
+  trades30d: number;
+  followers: number;
+  phoneVerified: boolean;
+  lang: string;
+  headline: string;
+  bio: string;
+  tz: string;
+  tradeUrl: string;
+}
+
+const groups = new Map<string, Group>();
+
+for (const o of allOffers) {
+  const tiers = tiersBySlug.get(o._slug);
+  if (!tiers) continue;
+
+  const price = Number(o.price_formula_value);
+  const mkt = MARKET[o._coin as keyof typeof MARKET];
+  const sellerMin = Number(o.min_trade_size);
+  const sellerMax = Number(o.max_trade_size);
+
+  const fitting = tiers.filter((t) => t.out >= sellerMin && t.out <= sellerMax);
+  if (!fitting.length) continue;
+
+  const dpk = (fitting[0].out / (fitting[0].in / 1000)) * (mkt / price);
+  const p = profiles.get(o.created_by.username);
+
+  const key = `${o._slug}:${o._coin}:${o.created_by.username}`;
+  if (!groups.has(key)) {
+    groups.set(key, {
+      cardName: o.payment_method.name,
+      slug: o._slug,
+      coin: o._coin,
+      price,
+      dpk,
+      tiers: fitting.map((t) => ({ dollars: t.out, points: t.in })),
+      seller: o.created_by.username,
+      trades: o.created_by.completed_trades,
+      rating: o.created_by.feedback_score,
+      trades30d: p?.trades_30d ?? 0,
+      followers: p?.times_followed ?? 0,
+      phoneVerified: p?.is_phone_verified ?? false,
+      lang: p?.primary_language || '',
+      headline: o.headline || '',
+      bio: p?.bio || '',
+      tz: p?.timezone || '',
+      tradeUrl: `https://localcoinswap.com/trade/${o.slug}/${o.uuid}`,
+    });
+  }
+}
+
+const entries = [...groups.values()].sort((a, b) => b.dpk - a.dpk);
+const uniqueSellers = new Set(entries.map((e) => e.seller));
+---
+
+<BlogPost {title} {date}>
+  <style>
+    .row {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 10px;
+      border-radius: 12px;
+      background: var(--m3c-surface-container);
+      padding: 16px 20px;
+      align-items: flex-start;
+      text-decoration: none;
+      color: inherit;
+    }
+    .row:hover {
+      background: var(--m3c-surface-container-high);
+    }
+    .left {
+      flex: 0 0 220px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .dpk {
+      @apply --m3-display-small;
+      font-weight: 800;
+      color: var(--m3c-on-surface);
+    }
+    .dpk .per {
+      @apply --m3-title-medium;
+      font-weight: 400;
+      color: var(--m3c-on-surface-dilute);
+    }
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .chip {
+      @apply --m3-label-small;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: var(--m3c-secondary-container);
+      color: var(--m3c-on-secondary-container);
+    }
+    .chip-coin {
+      background: var(--m3c-tertiary-container-subtle);
+      color: var(--m3c-on-tertiary-container-subtle);
+    }
+    .right {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .headline {
+      @apply --m3-body-small;
+      color: var(--m3c-on-surface-dilute);
+      font-style: italic;
+    }
+    .seller-line {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .seller-name {
+      @apply --m3-title-small;
+      color: var(--m3c-on-surface);
+    }
+    .seller-stat {
+      @apply --m3-body-small;
+      color: var(--m3c-on-surface-dilute);
+    }
+    .seller-stat-new {
+      color: var(--m3c-error);
+      font-weight: 600;
+    }
+    .bio {
+      @apply --m3-body-small;
+      color: var(--m3c-on-surface-dilute);
+      line-height: 1.4;
+    }
+    .tags {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+    }
+    .tag {
+      @apply --m3-label-small;
+      padding: 1px 6px;
+      border-radius: 4px;
+      background: var(--m3c-surface-variant);
+      color: var(--m3c-on-surface-variant);
+    }
+    .tag-impers {
+      background: var(--m3c-error-container);
+      color: var(--m3c-on-error-container);
+    }
+    .tag-tg {
+      background: var(--m3c-primary-container-subtle);
+      color: var(--m3c-on-primary-container-subtle);
+    }
+    .tag-nobio {
+      background: var(--m3c-surface-variant);
+      color: var(--m3c-on-surface-variant);
+    }
+
+    .stats {
+      @apply --m3-body-small;
+      color: var(--m3c-on-surface-dilute);
+      margin-bottom: 12px;
+    }
+  </style>
+
+  <p class="stats">
+    {entries.length} listings · {uniqueSellers.size} sellers · {
+      new Date().toISOString().slice(0, 10)
+    }
+  </p>
+
+  {
+    entries.slice(0, 200).map((g) => {
+      const bio = g.bio.toLowerCase();
+      return (
+        <a class="row" href={g.tradeUrl} target="_blank" rel="noopener">
+          <div class="left">
+            <div class="dpk">
+              ${g.dpk.toFixed(3)}
+              <span class="per">/kPts</span>
+            </div>
+            <div class="chips">
+              {g.tiers.map((t) => (
+                <span class="chip">
+                  {g.cardName
+                    .replace(' Gift Card', '')
+                    .replace(' eGift', '')
+                    .replace(' Card eGift', '')}{' '}
+                  ${t.dollars}
+                </span>
+              ))}
+              <span class="chip chip-coin">{g.coin}</span>
+            </div>
+          </div>
+          <div class="right">
+            {g.headline && <div class="headline">“{g.headline}”</div>}
+            <div class="seller-line">
+              <span class="seller-name">{g.seller}</span>
+              <span class:list={{ 'seller-stat': true, 'seller-stat-new': g.trades < 50 }}>
+                {g.trades.toLocaleString()} {g.trades === 1 ? 'trade' : 'trades'} ({g.trades30d}{' '}
+                last mo.)
+              </span>
+              <span class="seller-stat">{g.rating?.slice(0, 3)}⭐</span>
+              {g.followers > 0 && <span class="seller-stat">{g.followers} followers</span>}
+            </div>
+            {g.bio && <div class="bio">{g.bio}</div>}
+            <div class="tags">
+              <span class="tag">{g.tz || '?'}</span>
+              {g.lang && <span class="tag">{g.lang}</span>}
+              {!g.phoneVerified && <span class="tag tag-nobio">no phone</span>}
+
+              {(bio.includes('impersonat') || bio.includes('scammer')) && (
+                <span class="tag tag-impers">impersonators</span>
+              )}
+              {bio.includes('t.me') || bio.includes('telegram') ? (
+                <span class="tag tag-tg">Telegram</span>
+              ) : (
+                ''
+              )}
+              {!g.bio.trim() && <span class="tag tag-nobio">no bio</span>}
+            </div>
+          </div>
+        </a>
+      );
+    })
+  }
+</BlogPost>
