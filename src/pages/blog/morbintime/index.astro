@@ -29,9 +29,9 @@ const dollars = (n: number) => n.toLocaleString(undefined, { maximumFractionDigi
     Reward without risk: <a href="https://www.surplusintelligence.ai/">Surplus Intelligence</a>
   </h2>
   <p>
-    Just pay for tokens at a 1.4x-200x discounted rate (as high as 70% or as low as 0.5%) versus
-    official pricing. Multiplier varies based on suppliers, which vary based on model and time of
-    day.
+    Just pay for tokens at a 1.4x-200x discounted rate (when calculating yield we'll assume 2x)
+    versus official pricing. Multiplier varies based on suppliers, which vary based on model and
+    time of day.
   </p>
   <p>
     As of writing, Surplus Intelligence didn't reply to a request for comment as to whether caching
@@ -55,8 +55,8 @@ const dollars = (n: number) => n.toLocaleString(undefined, { maximumFractionDigi
       >staked</em
     >, letting you get it back at will. And if you stake a DIEM, you net $1 of AI daily at <a
       href="https://api.venice.ai/api/v1/models">Venice rates</a
-    >, or ~$0.7 daily from reselling on Surplus Intelligence, or 365 days * $0.7/day / $1300 = ~20%
-    yield, or doubling its value (remember you can unstake it when done!) 5 years out.
+    >, or ~$0.5 daily from reselling on Surplus Intelligence, or 365 days * $0.5/day / $1300 = ~14%
+    yield, or doubling its value (remember you can unstake it when done!) 7 years out.
   </p>
   <p>
     The <a href="https://en.wikipedia.org/wiki/Efficient-market_hypothesis"
@@ -108,8 +108,8 @@ const dollars = (n: number) => n.toLocaleString(undefined, { maximumFractionDigi
   </p>
   <p>
     As of writing, the math comes out so if you stake 190 MOR to MORDIEM, you net $1 of AI daily at
-    Venice rates = ~$0.7 daily from reselling on Surplus Intelligence AND 20% APY. This makes 365
-    days * $0.7/day / ${dollars(190 * morPrice)} + 0.2 = ~80% yield, or doubling its value in 15 months.
+    Venice rates = ~$0.5 daily from reselling on Surplus Intelligence AND 20% APY. This makes 365
+    days * $0.5/day / ${dollars(190 * morPrice)} + 0.2 = ~63% yield, or doubling its value in 19 months.
   </p>
   <p>I think here the market is pricing in that betting on MORDIEM is betting on these risks:</p>
   <ul>
@@ -134,17 +134,87 @@ const dollars = (n: number) => n.toLocaleString(undefined, { maximumFractionDigi
   <h2>Jul 15 2026 addendum: <a href="https://jatevo.ai/">JaTeVO</a></h2>
   <p>
     Jatevo is similar to the other providers in that it's crypto, but it's different in that it
-    gives you a daily <em>requests</em> allocation (1 GPT request per $1 in JTVO held).
+    gives you a daily <em>requests</em> allocation (1 GPT request per $1 in JTVO held). Single requests
+    to Sol can cost $14.98 or $4.56, so let's look at historical Surplus Intelligence charges per request
+    instead.
   </p>
+  <table>
+    <thead>
+      <tr>
+        <th>Model</th>
+        <th>Upstream/req</th>
+        <th>Discounted/req</th>
+        <th>In/req</th>
+        <th>Out/req</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        ><td>gpt-5.5-pro</td><td><strong>$8.85</strong></td><td><strong>$3.10</strong></td><td
+          >231,834</td
+        ><td>706</td></tr
+      >
+      <tr
+        ><td>gpt-5.6-sol</td><td><strong>$0.274</strong></td><td><strong>$0.012</strong></td><td
+          >114,948</td
+        ><td>744</td></tr
+      >
+      <tr
+        ><td>gpt-5.5</td><td><strong>$0.137</strong></td><td><strong>$0.003</strong></td><td
+          >72,580</td
+        ><td>570</td></tr
+      >
+      <tr
+        ><td>gpt-5.6-sol-pro</td><td><strong>$0.099</strong></td><td><strong>$0.025</strong></td><td
+          >14,545</td
+        ><td>1,531</td></tr
+      >
+      <tr
+        ><td>gpt-5.6-terra</td><td><strong>$0.060</strong></td><td><strong>$0.005</strong></td><td
+          >103,601</td
+        ><td>678</td></tr
+      >
+      <tr
+        ><td>gpt-5.4</td><td><strong>$0.026</strong></td><td><strong>$0.004</strong></td><td
+          >18,841</td
+        ><td>672</td></tr
+      >
+      <tr
+        ><td>gpt-5.6-luna</td><td><strong>$0.015</strong></td><td><strong>$0.004</strong></td><td
+          >56,977</td
+        ><td>680</td></tr
+      >
+      <tr
+        ><td>gpt-5.4-mini</td><td><strong>$0.009</strong></td><td><strong>$0.002</strong></td><td
+          >20,330</td
+        ><td>651</td></tr
+      >
+      <tr
+        ><td>gpt-5-nano</td><td><strong>$0.001</strong></td><td><strong>$0.001</strong></td><td
+          >16,920</td
+        ><td>1,243</td></tr
+      >
+      <tr
+        ><td>gpt-4o</td><td><strong>$0.001</strong></td><td><strong>$0.0002</strong></td><td>160</td
+        ><td>31</td></tr
+      >
+      <tr
+        ><td>gpt-4o-mini</td><td><strong>$0.0003</strong></td><td><strong>$0.0001</strong></td><td
+          >1,953</td
+        ><td>109</td></tr
+      >
+      <tr
+        ><td>gpt-5.4-nano</td><td><strong>$0.0003</strong></td><td><strong>$0.0002</strong></td><td
+          >1,080</td
+        ><td>40</td></tr
+      >
+    </tbody>
+  </table>
+  <p>So yield is ($0.004/day * 365 days) / $1 = 146%.</p>
   <p>
-    On yield - the upper limit is (14.98 * 365) * 100 = 546770% (using Sol with full context
-    window), or more conservatively (4.56 * 365) * 100 = 166440%, or actually realistically (0.1025
-    * 0.01 * 365) * 100 = 37%.
-  </p>
-  <p>
-    Remember GitHub Copilot's premium requests? Or CrofAI's plans? Per request billing isn't
-    sustainable. And Jatevo is a vibe coded website leaking too many implementation details, with no
-    $65 mil series A or rich founder to bear the load. I'm bearish.
+    Remember GitHub Copilot's monthly premium requests? Or CrofAI's daily request plans? Per request
+    billing isn't sustainable. And Jatevo is a vibe coded website leaking too many implementation
+    details, with no $65 mil series A or rich founder to bear the load. I'm bearish.
   </p>
 
   <h2>Conclusion</h2>
@@ -157,33 +227,33 @@ const dollars = (n: number) => n.toLocaleString(undefined, { maximumFractionDigi
   <p>If you invest in crypto, and 1 year later things go well:</p>
   <ul>
     <li>
-      $1300 DIEM, AI use → got $ from DIEM appreciating AND got $365 in AI (would cost $255-$1.83 on
+      $1300 DIEM, AI use → got $ from DIEM appreciating AND got $365 in AI (would cost $260-$1.83 on
       Surplus Intelligence)
     </li>
-    <li>$1300 DIEM, reselling → got $ from DIEM appreciating AND got $255</li>
+    <li>$1300 DIEM, reselling → got $ from DIEM appreciating AND got $182.5</li>
     <li>
       ${dollars(190 * morPrice)} MOR, AI use → got $ from MOR appreciating AND got $85 from MOR interest
-      AND got $365 in AI (would cost $255-$1.83 on Surplus Intelligence)
+      AND got $365 in AI (would cost $260-$1.83 on Surplus Intelligence)
     </li>
     <li>
       ${dollars(190 * morPrice)} MOR, reselling → got $ from MOR appreciating AND got $85 from MOR interest
-      AND got $255
+      AND got $182.5
     </li>
     <li>
       $100 JTVO, AI use → got $ from JTVO appreciating AND got 36.5k GPT requests (could cost
-      anything on Surplus Intelligence, realistically between $6 and $37)
+      anything on Surplus Intelligence, realistically between $3.65 and $365)
     </li>
-    <li>$100 JTVO, reselling → got $ from JTVO appreciating AND got $37</li>
+    <li>$100 JTVO, reselling → got $ from JTVO appreciating AND got $146</li>
   </ul>
   <p>If you invest in crypto, and 1 year later things go awry:</p>
   <ul>
-    <li>$1300 DIEM → Venice shuts down, you only ever made $255, you lost $1045 (80%)</li>
+    <li>$1300 DIEM → Venice shuts down, you only ever made $182.5, you lost $1117.5 (86%)</li>
     <li>
-      ${dollars(190 * morPrice)} MOR → MORDIEM shuts down hard, you only ever made $255, you lost ${
-        dollars(190 * morPrice - 255)
+      ${dollars(190 * morPrice)} MOR → MORDIEM shuts down hard, you only ever made $182.5, you lost ${
+        dollars(190 * morPrice - 182.5)
       }
-      (40%)
+      ({Math.round(((190 * morPrice - 182.5) / (190 * morPrice)) * 100)}%)
     </li>
-    <li>$100 JTVO → Jatevo shuts down, you ever made $37, you lost $63 (63%)</li>
+    <li>$100 JTVO → Jatevo shuts down, you made $146</li>
   </ul>
 </BlogPost>
