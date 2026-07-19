@@ -324,7 +324,13 @@ const uniqueSellers = new Set(entries.map((e) => e.seller));
     entries.slice(0, 200).map((g) => {
       const bio = g.bio.toLowerCase();
       return (
-        <a class="row m3-layer" href={g.tradeUrl} target="_blank" rel="noopener" style={badSellers.has(g.seller) ? 'opacity: 0.5' : ''}>
+        <a
+          class="row layer"
+          href={g.tradeUrl}
+          target="_blank"
+          rel="noopener"
+          style={badSellers.has(g.seller) ? 'opacity: 0.5' : ''}
+        >
           <div class="left">
             <div class="dpk">
               ${g.dpk.toFixed(3)}
