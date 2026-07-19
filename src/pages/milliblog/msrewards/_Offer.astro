@@ -1,0 +1,277 @@
+---
+import {
+  getCachedOfferDetail,
+  setCachedOfferDetail,
+  getCachedProfile,
+  setCachedProfile,
+} from './cache';
+import { isPhysicalOrCashOnly } from './filter';
+
+export interface Props {
+  uuid: string;
+  buildId: string;
+  cardName: string;
+  coin: string;
+  dpk: number;
+  tiers: { dollars: number; points: number }[];
+  seller: string;
+  trades: number;
+  rating: string;
+  headline: string;
+  tradeUrl: string;
+}
+
+const {
+  uuid,
+  buildId,
+  cardName,
+  coin: _coin,
+  dpk,
+  tiers,
+  seller,
+  trades,
+  rating,
+  headline,
+  tradeUrl,
+} = Astro.props;
+
+// ── Fetch offer detail (trading_conditions) ──────────────────────────────
+let offerDetail = getCachedOfferDetail(uuid);
+if (!offerDetail) {
+  const resp = await fetch(`https://iapi.localcoinswap.com/api/v2/offers/${uuid}/`);
+  if (resp.ok) {
+    offerDetail = await resp.json();
+    setCachedOfferDetail(uuid, offerDetail);
+  } else {
+    offerDetail = null;
+  }
+}
+
+const tradingConditions: string = offerDetail?.trading_conditions ?? '';
+const isPhysicalOnly = isPhysicalOrCashOnly(tradingConditions);
+
+// ── Fetch seller profile ─────────────────────────────────────────────────
+let profile: any = getCachedProfile(seller);
+if (!profile) {
+  try {
+    const resp = await fetch(
+      `https://localcoinswap.com/_next/data/${buildId}/en/profile/${seller}.json`,
+    );
+    if (resp.ok) {
+      const data: any = await resp.json();
+      profile = data.pageProps?.profileData?.user ?? null;
+      setCachedProfile(seller, profile);
+    }
+  } catch {
+    profile = null;
+  }
+}
+
+const trades30d: number = profile?.trades_30d ?? 0;
+const followers: number = profile?.times_followed ?? 0;
+const phoneVerified: boolean = profile?.is_phone_verified ?? false;
+const lang: string = profile?.primary_language ?? '';
+const bio: string = (profile?.bio ?? '').trim();
+const tz: string = profile?.timezone ?? '';
+const profileImage: string = profile?.profile_image ?? '';
+
+const isOnline = profile?.activity_status === 'active';
+
+// Pre-compute bio tag checks
+const bioLower = bio.toLowerCase();
+const hasImpersonator = bioLower.includes('impersonat') || bioLower.includes('scammer');
+const hasTelegram = bioLower.includes('t.me') || bioLower.includes('telegram');
+const hasNoBio = !bio;
+
+// ── Bad-seller / emoji overrides ──────────────────────────────────────────
+const badSellers = new Set([
+  // genuinely quit LocalCoinSwap
+  'YYDS518',
+  'BengTeng666',
+  // "Amazon is not loading"
+  'ETH88888',
+  // "Amazon's risk control measures are quite strict"
+  'FeiXiang999',
+]);
+const sellerEmoji: Record<string, string> = {
+  Instant_886: '🆗',
+  QuanTian36524: '🆗',
+};
+const dimmed = isPhysicalOnly || badSellers.has(seller);
+---
+
+<a
+  class:list={{ row: true, layer: true, online: isOnline }}
+  href={tradeUrl}
+  target="_blank"
+  rel="noopener"
+  style={dimmed ? 'opacity: 0.5' : ''}
+>
+  <div class="left">
+    <div class="dpk">
+      ${dpk.toFixed(3)}
+      <span class="per">/kPts</span>
+    </div>
+    <div class="chips">
+      {
+        tiers.map((t) => (
+          <span class="chip">
+            {cardName.replace(' Gift Card', '').replace(' eGift', '').replace(' Card eGift', '')} $
+            {t.dollars}
+          </span>
+        ))
+      }
+      <span class="chip chip-coin">{_coin}</span>
+    </div>
+  </div>
+
+  <div class="right">
+    {headline && <div class="headline">“{headline}”</div>}
+
+    <div class="seller-line">
+      {
+        profileImage && !profileImage.includes('default_user') && (
+          <img class="seller-pic" src={profileImage} alt="" width={28} height={28} />
+        )
+      }
+      <span class="seller-name">
+        {seller}
+        {sellerEmoji[seller] ? ` ${sellerEmoji[seller]}` : ''}
+        {badSellers.has(seller) ? ' [bad]' : ''}
+        {isPhysicalOnly ? ' [physical]' : ''}
+        {!isOnline ? ' [offline]' : ''}
+      </span>
+      <span class:list={{ 'seller-stat': true, 'seller-stat-new': trades < 50 }}>
+        {trades.toLocaleString()}
+        {trades === 1 ? 'trade' : 'trades'} ({trades30d} last mo.)
+      </span>
+      <span class="seller-stat">{rating?.slice(0, 3)}⭐</span>
+      {followers > 0 && <span class="seller-stat">{followers} followers</span>}
+    </div>
+
+    {bio && <div class="bio">{bio}</div>}
+
+    <div class="tags">
+      <span class="tag">{tz || '?'}</span>
+      {lang && <span class="tag">{lang}</span>}
+      {!phoneVerified && <span class="tag tag-nobio">no phone</span>}
+
+      {hasImpersonator && <span class="tag tag-impers">impersonators</span>}
+      {hasTelegram && <span class="tag tag-tg">Telegram</span>}
+      {hasNoBio && <span class="tag tag-nobio">no bio</span>}
+    </div>
+  </div>
+</a>
+
+<style>
+  a.row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    background: var(--m3c-surface-container);
+    padding: 16px 20px;
+    align-items: flex-start;
+    text-decoration: none;
+    color: inherit;
+  }
+  a.row.online {
+    background: var(--m3c-primary-container-subtle);
+  }
+  .left {
+    flex: 0 0 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .dpk {
+    @apply --m3-display-small;
+    font-weight: 800;
+    color: var(--m3c-on-surface);
+  }
+  .dpk .per {
+    @apply --m3-title-medium;
+    font-weight: 400;
+    color: var(--m3c-on-surface-dilute);
+  }
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .chip {
+    @apply --m3-label-small;
+    padding: 3px 8px;
+    border-radius: 6px;
+    background: var(--m3c-secondary-container);
+    color: var(--m3c-on-secondary-container);
+  }
+  .chip-coin {
+    background: var(--m3c-tertiary-container-subtle);
+    color: var(--m3c-on-tertiary-container-subtle);
+  }
+  .right {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .headline {
+    @apply --m3-body-small;
+    color: var(--m3c-on-surface-dilute);
+    font-style: italic;
+  }
+  .seller-line {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .seller-pic {
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+  .seller-name {
+    @apply --m3-title-small;
+    color: var(--m3c-on-surface);
+  }
+  .seller-stat {
+    @apply --m3-body-small;
+    color: var(--m3c-on-surface-dilute);
+  }
+  .seller-stat-new {
+    color: var(--m3c-error);
+    font-weight: 600;
+  }
+  .bio {
+    @apply --m3-body-small;
+    color: var(--m3c-on-surface-dilute);
+    line-height: 1.4;
+  }
+  .tags {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+  .tag {
+    @apply --m3-label-small;
+    padding: 1px 6px;
+    border-radius: 4px;
+    background: var(--m3c-surface-variant);
+    color: var(--m3c-on-surface-variant);
+  }
+  .tag-impers {
+    background: var(--m3c-error-container);
+    color: var(--m3c-on-error-container);
+  }
+  .tag-tg {
+    background: var(--m3c-primary-container-subtle);
+    color: var(--m3c-on-primary-container-subtle);
+  }
+  .tag-nobio {
+    background: var(--m3c-surface-variant);
+    color: var(--m3c-on-surface-variant);
+  }
+</style>

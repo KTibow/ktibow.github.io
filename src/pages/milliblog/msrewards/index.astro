@@ -1,5 +1,6 @@
 ---
 import BlogPost from '$lib/layouts/BlogPost.astro';
+import Offer from './_Offer.astro';
 export const title = 'Optimally converting American Microsoft Rewards to crypto';
 export const date = '2026-07-18';
 
@@ -75,7 +76,6 @@ const rawOfferArrays = await batchFetch(fetchList, async ({ slug, coin }) => {
 });
 
 const allOffers = rawOfferArrays.flat();
-const usernames = [...new Set(allOffers.map((o: any) => o.created_by.username))];
 
 const fiatCurrencies = [
   ...new Set(allOffers.map((o: any) => (o.fiat_currency.symbol as string).toLowerCase())),
@@ -83,37 +83,16 @@ const fiatCurrencies = [
 const marketResp: any = await fetch(
   `https://api.coingecko.com/api/v3/simple/price?ids=${Object.values(COINGECKO_IDS).join(',')}&vs_currencies=${fiatCurrencies.join(',')}`,
 ).then((r) => r.json());
-// MARKET[coin][fiat] = market price of one coin in that fiat currency, or undefined if
-// CoinGecko doesn't support that currency
 const MARKET: Record<string, Record<string, number | undefined>> = {};
 for (const coin of COINS) {
   MARKET[coin] = marketResp[COINGECKO_IDS[coin]] || {};
 }
 
+// Fetch buildId once (needed by _Offer for profile URLs)
 const html = await fetch(
   'https://localcoinswap.com/en/buy/bitcoin/worldwide/amazon-gift-card',
 ).then((r) => r.text());
 const buildId = JSON.parse(html.match(/__NEXT_DATA__.*?>(.*?)<\/script>/s)![1]).buildId;
-
-const profiles = new Map<string, any>();
-for (let i = 0; i < usernames.length; i += 6) {
-  const batch = usernames.slice(i, i + 6);
-  const results = await Promise.all(
-    batch.map(async (u) => {
-      try {
-        const resp = await fetch(
-          `https://localcoinswap.com/_next/data/${buildId}/en/profile/${u}.json`,
-        );
-        if (!resp.ok) return [u, null] as const;
-        const data: any = await resp.json();
-        return [u, data.pageProps?.profileData?.user || null] as const;
-      } catch {
-        return [u, null] as const;
-      }
-    }),
-  );
-  for (const [u, p] of results) profiles.set(u, p);
-}
 
 const tiersBySlug = new Map<string, { in: number; out: number }[]>();
 for (const gc of giftCards) {
@@ -122,6 +101,7 @@ for (const gc of giftCards) {
 }
 
 interface Group {
+  uuid: string;
   cardName: string;
   slug: string;
   coin: string;
@@ -131,15 +111,8 @@ interface Group {
   seller: string;
   trades: number;
   rating: string;
-  trades30d: number;
-  followers: number;
-  phoneVerified: boolean;
-  lang: string;
   headline: string;
-  bio: string;
-  tz: string;
   tradeUrl: string;
-  profileImage: string;
 }
 
 const groups = new Map<string, Group>();
@@ -159,11 +132,11 @@ for (const o of allOffers) {
   if (!fitting.length) continue;
 
   const dpk = (fitting[0].out / (fitting[0].in / 1000)) * (mkt / price);
-  const p = profiles.get(o.created_by.username);
 
   const key = `${o._slug}:${o._coin}:${o.created_by.username}`;
   if (!groups.has(key)) {
     groups.set(key, {
+      uuid: o.uuid,
       cardName: o.payment_method.name,
       slug: o._slug,
       coin: o._coin,
@@ -173,147 +146,17 @@ for (const o of allOffers) {
       seller: o.created_by.username,
       trades: o.created_by.completed_trades,
       rating: o.created_by.feedback_score,
-      trades30d: p?.trades_30d ?? 0,
-      followers: p?.times_followed ?? 0,
-      phoneVerified: p?.is_phone_verified ?? false,
-      lang: p?.primary_language || '',
       headline: o.headline || '',
-      bio: p?.bio || '',
-      tz: p?.timezone || '',
       tradeUrl: `https://localcoinswap.com/trade/${o.slug}/${o.uuid}`,
-      profileImage: p?.profile_image || '',
     });
   }
 }
-
-const badSellers = new Set(['YYDS518', 'BengTeng666']);
-
-const sellerEmoji: Record<string, string> = {
-  Instant_886: '🆗',
-  QuanTian36524: '🆗',
-};
 
 const entries = [...groups.values()].sort((a, b) => b.dpk - a.dpk);
 const uniqueSellers = new Set(entries.map((e) => e.seller));
 ---
 
 <BlogPost {title} {date}>
-  <style>
-    .row {
-      display: flex;
-      gap: 20px;
-      margin-bottom: 10px;
-      border-radius: 12px;
-      background: var(--m3c-surface-container);
-      padding: 16px 20px;
-      align-items: flex-start;
-      text-decoration: none;
-      color: inherit;
-    }
-    .left {
-      flex: 0 0 220px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .dpk {
-      @apply --m3-display-small;
-      font-weight: 800;
-      color: var(--m3c-on-surface);
-    }
-    .dpk .per {
-      @apply --m3-title-medium;
-      font-weight: 400;
-      color: var(--m3c-on-surface-dilute);
-    }
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 4px;
-    }
-    .chip {
-      @apply --m3-label-small;
-      padding: 3px 8px;
-      border-radius: 6px;
-      background: var(--m3c-secondary-container);
-      color: var(--m3c-on-secondary-container);
-    }
-    .chip-coin {
-      background: var(--m3c-tertiary-container-subtle);
-      color: var(--m3c-on-tertiary-container-subtle);
-    }
-    .right {
-      flex: 1;
-      min-width: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    .headline {
-      @apply --m3-body-small;
-      color: var(--m3c-on-surface-dilute);
-      font-style: italic;
-    }
-    .seller-line {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .seller-pic {
-      border-radius: 50%;
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-    .seller-name {
-      @apply --m3-title-small;
-      color: var(--m3c-on-surface);
-    }
-    .seller-stat {
-      @apply --m3-body-small;
-      color: var(--m3c-on-surface-dilute);
-    }
-    .seller-stat-new {
-      color: var(--m3c-error);
-      font-weight: 600;
-    }
-    .bio {
-      @apply --m3-body-small;
-      color: var(--m3c-on-surface-dilute);
-      line-height: 1.4;
-    }
-    .tags {
-      display: flex;
-      gap: 4px;
-      flex-wrap: wrap;
-    }
-    .tag {
-      @apply --m3-label-small;
-      padding: 1px 6px;
-      border-radius: 4px;
-      background: var(--m3c-surface-variant);
-      color: var(--m3c-on-surface-variant);
-    }
-    .tag-impers {
-      background: var(--m3c-error-container);
-      color: var(--m3c-on-error-container);
-    }
-    .tag-tg {
-      background: var(--m3c-primary-container-subtle);
-      color: var(--m3c-on-primary-container-subtle);
-    }
-    .tag-nobio {
-      background: var(--m3c-surface-variant);
-      color: var(--m3c-on-surface-variant);
-    }
-
-    .stats {
-      @apply --m3-body-small;
-      color: var(--m3c-on-surface-dilute);
-      margin-bottom: 12px;
-    }
-  </style>
-
   <p class="stats">
     {entries.length} listings · {uniqueSellers.size} sellers · {
       new Date().toISOString().slice(0, 10)
@@ -321,71 +164,28 @@ const uniqueSellers = new Set(entries.map((e) => e.seller));
   </p>
 
   {
-    entries.slice(0, 200).map((g) => {
-      const bio = g.bio.toLowerCase();
-      return (
-        <a
-          class="row layer"
-          href={g.tradeUrl}
-          target="_blank"
-          rel="noopener"
-          style={badSellers.has(g.seller) ? 'opacity: 0.5' : ''}
-        >
-          <div class="left">
-            <div class="dpk">
-              ${g.dpk.toFixed(3)}
-              <span class="per">/kPts</span>
-            </div>
-            <div class="chips">
-              {g.tiers.map((t) => (
-                <span class="chip">
-                  {g.cardName
-                    .replace(' Gift Card', '')
-                    .replace(' eGift', '')
-                    .replace(' Card eGift', '')}{' '}
-                  ${t.dollars}
-                </span>
-              ))}
-              <span class="chip chip-coin">{g.coin}</span>
-            </div>
-          </div>
-          <div class="right">
-            {g.headline && <div class="headline">“{g.headline}”</div>}
-            <div class="seller-line">
-              {g.profileImage && !g.profileImage.includes('default_user') && (
-                <img class="seller-pic" src={g.profileImage} alt="" width={28} height={28} />
-              )}
-              <span class="seller-name">
-                {g.seller}
-                {sellerEmoji[g.seller] ? ` ${sellerEmoji[g.seller]}` : ''}
-                {badSellers.has(g.seller) ? ' [bad]' : ''}
-              </span>
-              <span class:list={{ 'seller-stat': true, 'seller-stat-new': g.trades < 50 }}>
-                {g.trades.toLocaleString()} {g.trades === 1 ? 'trade' : 'trades'} ({g.trades30d}{' '}
-                last mo.)
-              </span>
-              <span class="seller-stat">{g.rating?.slice(0, 3)}⭐</span>
-              {g.followers > 0 && <span class="seller-stat">{g.followers} followers</span>}
-            </div>
-            {g.bio && <div class="bio">{g.bio}</div>}
-            <div class="tags">
-              <span class="tag">{g.tz || '?'}</span>
-              {g.lang && <span class="tag">{g.lang}</span>}
-              {!g.phoneVerified && <span class="tag tag-nobio">no phone</span>}
-
-              {(bio.includes('impersonat') || bio.includes('scammer')) && (
-                <span class="tag tag-impers">impersonators</span>
-              )}
-              {bio.includes('t.me') || bio.includes('telegram') ? (
-                <span class="tag tag-tg">Telegram</span>
-              ) : (
-                ''
-              )}
-              {!g.bio.trim() && <span class="tag tag-nobio">no bio</span>}
-            </div>
-          </div>
-        </a>
-      );
-    })
+    entries.slice(0, 200).map((g) => (
+      <Offer
+        uuid={g.uuid}
+        buildId={buildId}
+        cardName={g.cardName}
+        coin={g.coin}
+        dpk={g.dpk}
+        tiers={g.tiers}
+        seller={g.seller}
+        trades={g.trades}
+        rating={g.rating}
+        headline={g.headline}
+        tradeUrl={g.tradeUrl}
+      />
+    ))
   }
 </BlogPost>
+
+<style>
+  .stats {
+    @apply --m3-body-small;
+    color: var(--m3c-on-surface-dilute);
+    margin-bottom: 12px;
+  }
+</style>
