@@ -174,9 +174,9 @@ for (const o of allOffers) {
   }
 }
 
+const badSellers = new Set(['YYDS518', 'BengTeng666']);
+
 const sellerEmoji: Record<string, string> = {
-  YYDS518: '👎',
-  BengTeng666: '👎',
   Instant_886: '🆗',
   QuanTian36524: '🆗',
 };
@@ -312,7 +312,7 @@ const uniqueSellers = new Set(entries.map((e) => e.seller));
     entries.slice(0, 200).map((g) => {
       const bio = g.bio.toLowerCase();
       return (
-        <a class="row m3-layer" href={g.tradeUrl} target="_blank" rel="noopener">
+        <a class="row m3-layer" href={g.tradeUrl} target="_blank" rel="noopener" style={badSellers.has(g.seller) ? 'opacity: 0.5' : ''}>
           <div class="left">
             <div class="dpk">
               ${g.dpk.toFixed(3)}
