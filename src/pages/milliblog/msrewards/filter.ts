@@ -17,6 +17,7 @@ const EXCLUDE_PATTERNS = [
 
   // "Physical card only" / "Physical only"
   /\bphysical\s+(?:card\s+)?only\b/i,
+  /\bphysical with cash and activation receipts only\b/i,
 
   // "Cash only"
   /\bcash\s+only\b/i,
