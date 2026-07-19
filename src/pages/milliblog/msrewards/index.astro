@@ -340,6 +340,7 @@ const uniqueSellers = new Set(entries.map((e) => e.seller));
               <span class="seller-name">
                 {g.seller}
                 {sellerEmoji[g.seller] ? ` ${sellerEmoji[g.seller]}` : ''}
+                {badSellers.has(g.seller) ? ' [bad]' : ''}
               </span>
               <span class:list={{ 'seller-stat': true, 'seller-stat-new': g.trades < 50 }}>
                 {g.trades.toLocaleString()} {g.trades === 1 ? 'trade' : 'trades'} ({g.trades30d}{' '}
