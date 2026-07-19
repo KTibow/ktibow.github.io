@@ -3,16 +3,13 @@ import BlogPost from '$lib/layouts/BlogPost.astro';
 export const title = 'Optimally converting American Microsoft Rewards to crypto';
 export const date = '2026-07-18';
 
-const marketResp = await fetch(
-  'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,litecoin,tether&vs_currencies=usd',
-).then((r) => r.json());
-const MARKET: Record<string, number> = {
-  BTC: marketResp.bitcoin.usd,
-  LTC: marketResp.litecoin.usd,
-  'USDT-TRC20': marketResp.tether.usd,
-  ETH: marketResp.ethereum.usd,
-};
 const COINS = ['BTC', 'LTC', 'USDT-TRC20', 'ETH'] as const;
+const COINGECKO_IDS: Record<(typeof COINS)[number], string> = {
+  BTC: 'bitcoin',
+  LTC: 'litecoin',
+  'USDT-TRC20': 'tether',
+  ETH: 'ethereum',
+};
 
 const giftCards = [
   { slug: 'amazon-gift-card', in: 5250, out: 5 },
@@ -80,6 +77,19 @@ const rawOfferArrays = await batchFetch(fetchList, async ({ slug, coin }) => {
 const allOffers = rawOfferArrays.flat();
 const usernames = [...new Set(allOffers.map((o: any) => o.created_by.username))];
 
+const fiatCurrencies = [
+  ...new Set(allOffers.map((o: any) => (o.fiat_currency.symbol as string).toLowerCase())),
+];
+const marketResp: any = await fetch(
+  `https://api.coingecko.com/api/v3/simple/price?ids=${Object.values(COINGECKO_IDS).join(',')}&vs_currencies=${fiatCurrencies.join(',')}`,
+).then((r) => r.json());
+// MARKET[coin][fiat] = market price of one coin in that fiat currency, or undefined if
+// CoinGecko doesn't support that currency
+const MARKET: Record<string, Record<string, number | undefined>> = {};
+for (const coin of COINS) {
+  MARKET[coin] = marketResp[COINGECKO_IDS[coin]] || {};
+}
+
 const html = await fetch(
   'https://localcoinswap.com/en/buy/bitcoin/worldwide/amazon-gift-card',
 ).then((r) => r.text());
@@ -139,7 +149,9 @@ for (const o of allOffers) {
   if (!tiers) continue;
 
   const price = Number(o.price_formula_value);
-  const mkt = MARKET[o._coin as keyof typeof MARKET];
+  const fiat = (o.fiat_currency.symbol as string).toLowerCase();
+  const mkt = MARKET[o._coin as keyof typeof MARKET][fiat];
+  if (mkt === undefined) continue;
   const sellerMin = Number(o.min_trade_size);
   const sellerMax = Number(o.max_trade_size);
 
