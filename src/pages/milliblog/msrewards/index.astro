@@ -15,14 +15,14 @@ const COINGECKO_IDS: Record<(typeof COINS)[number], string> = {
 const giftCards = [
   { slug: 'amazon-gift-card', in: 5250, out: 5 },
   { slug: 'amazon-gift-card', in: 10500, out: 10 },
+  // we discretize the "custom" option to these 3
   { slug: 'amazon-gift-card', in: 26250, out: 25 },
-  { slug: 'amazon-gift-card', in: 31500, out: 30 },
   { slug: 'amazon-gift-card', in: 52500, out: 50 },
   { slug: 'amazon-gift-card', in: 105000, out: 100 },
   { slug: 'ulta-gift-card', in: 7000, out: 5 },
   { slug: 'ulta-gift-card', in: 14000, out: 10 },
   { slug: 'ulta-gift-card', in: 35000, out: 25 },
-  { slug: 'ulta-gift-card', in: 42000, out: 30 },
+  // we discretize the "custom" option to these 2
   { slug: 'ulta-gift-card', in: 70000, out: 50 },
   { slug: 'ulta-gift-card', in: 140000, out: 100 },
   { slug: 'target-gift-card', in: 7000, out: 5 },
@@ -164,21 +164,23 @@ const uniqueSellers = new Set(entries.map((e) => e.seller));
   </p>
 
   {
-    entries.slice(0, 200).map((g) => (
-      <Offer
-        uuid={g.uuid}
-        buildId={buildId}
-        cardName={g.cardName}
-        coin={g.coin}
-        dpk={g.dpk}
-        tiers={g.tiers}
-        seller={g.seller}
-        trades={g.trades}
-        rating={g.rating}
-        headline={g.headline}
-        tradeUrl={g.tradeUrl}
-      />
-    ))
+    entries
+      .slice(0, 200)
+      .map((g) => (
+        <Offer
+          uuid={g.uuid}
+          buildId={buildId}
+          cardName={g.cardName}
+          coin={g.coin}
+          dpk={g.dpk}
+          tiers={g.tiers}
+          seller={g.seller}
+          trades={g.trades}
+          rating={g.rating}
+          headline={g.headline}
+          tradeUrl={g.tradeUrl}
+        />
+      ))
   }
 </BlogPost>
 
