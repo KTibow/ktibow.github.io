@@ -4,11 +4,11 @@ import Offer from './_Offer.astro';
 export const title = 'Optimally converting American Microsoft Rewards to crypto';
 export const date = '2026-07-18';
 
-const COINS = ['BTC', 'LTC', 'USDT-TRC20', 'ETH'] as const;
+// excluding USDT-TRC20 bc it requires TRX
+const COINS = ['BTC', 'LTC', 'ETH'] as const;
 const COINGECKO_IDS: Record<(typeof COINS)[number], string> = {
   BTC: 'bitcoin',
   LTC: 'litecoin',
-  'USDT-TRC20': 'tether',
   ETH: 'ethereum',
 };
 
