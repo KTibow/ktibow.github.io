@@ -1,0 +1,93 @@
+---
+import BlogPost from '$lib/layouts/BlogPost.astro';
+
+export const title = "That software won't build itself";
+export const date = '2026-07-17';
+---
+
+<BlogPost {title} {date}>
+  <p>
+    How does a world where LLMs are superhuman at well defined problems and used more than any
+    single programming language* not end in slop and unemployment? It turns out that someone needs
+    to define the problems.
+  </p>
+  <p>
+    If I tell GLM 5.2 to "make something you'd like to make", then gave it 1 minute to build
+    whatever it decided on, then repeated this until it implemented Material 3 in Svelte, it would
+    take ~90,539 years for it to do so. That's because GLM 5.2 has a 0.0000000021% probability of
+    randomly deciding to build Material 3 in Svelte.
+  </p>
+  <blockquote>
+    <span>Sure! I'll implement</span><span class="token">
+      Material <span class="prob">0.000088%</span></span
+    ><span class="token"> 3 <span class="prob">4.3%</span></span> in<span class="token">
+      Svelte <span class="prob">0.055%</span></span
+    >.
+  </blockquote>
+  <p>Then imagine what happens if I had added qualifiers like:</p>
+  <ul>
+    <li>"in the way that uses the least storage and memory"</li>
+    <li>"using the latest language and toolchain features"</li>
+    <li>"according to this conversation in this other app"</li>
+    <li>"using my preferred tools"</li>
+    <li>"using my preferred style"</li>
+    <li>"while learning how to implement this" / "while remembering how this was implemented"</li>
+    <li>"in a way that creates a sense of place"</li>
+    <li>"while having fun"</li>
+  </ul>
+  <p>
+    Defining problems well is managerial but is also a lot like programming - as <a
+      href="https://x.com/karpathy/status/1617979122625712128">Karpathy says</a
+    >, the hottest new programming language is English. A lazily defined problem, even if
+    verifiable, will lead to paperclipping - if you ask Opus 4.8 with a multiagent team to port as
+    many browsers as possible to the web it'll make a <a
+      href="https://github.com/KTibow/browser-port-experiments">v86 wrapper</a
+    >. On the other hand, defining tedious ports well nets you high quality results - see Patchzy's
+    Wiicompiled and Puter's <a href="https://developer.puter.com/labs/firefox-wasm/">firefox-wasm</a
+    >.
+  </p>
+  <p>
+    But more generally, if you can put what makes you satisfied into words, LLMs will satisfy you.
+    Of course, if your requirements for satisfaction are nuanced, this isn't worth it... yet.
+  </p>
+  <p>
+    <em
+      >* The bar is low at <a
+        href="https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/#core-stacks-for-new-projects-built-in-the-last-12-months"
+        >24.4% use</a
+      >, so I'm rather confident that English isn't just the hottest programming language but the
+      most popular.</em
+    >
+  </p>
+</BlogPost>
+
+<style>
+  .content-outer {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--m3c-surface-container);
+    padding: 0.5rem;
+    gap: 0.5rem;
+    text-align: center;
+    border-radius: 1rem;
+  }
+  .content-inner {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+  }
+  .content-outer > :global(pre) {
+    max-height: 20rem;
+    overflow: auto;
+  }
+  .content-inner,
+  .content-outer > :global(pre) {
+    background-color: var(--m3c-surface) !important;
+    text-align: start;
+  }
+  .prob {
+    color: var(--m3c-primary);
+    font-size: 0.75rem;
+  }
+</style>
