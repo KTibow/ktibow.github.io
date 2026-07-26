@@ -1,0 +1,112 @@
+---
+import BlogPost from '$lib/layouts/BlogPost.astro';
+export const title = 'Tales from RatRater2: detecting Quantiy';
+export const date = '2026-07-25';
+---
+
+<BlogPost {title} {date}>
+  <p>
+    RatRater is a tool that uses static analysis to detect Minecraft infostealers I originally made
+    in 2022. In 2023, a new maker of infostealers entered the scene: Quantiy. He seemed like an
+    average infostealer developer that I could detect with searching for <code>com/quantiy</code> and
+    <code>EncryptionMethod1337</code> and 3 9-character filenames and 10+ 15-character functions and call
+    it a day. On June 10 2023, I quickly realized I was wrong: he was smarter than most, actively removing
+    my keywords from his infostealers, even breaking my crazy regex <code
+      >{
+        String.raw`/\w{43}==\w{43}[_\/\\\-!|I]{13,15}F\w\-\w{7}-\w{7}-\/\/D\w{13}-\w{4}\/\/I\w{3}\-\w{7}\-\w{5}V\/\/E[a-z]\-\w{5}\-\w{5}\-\w{1}C\w{1}R\/\/E.{15}/`
+      }</code
+    >. And so I added one closed source heuristic to RatRater2, which I can finally share today.
+  </p>
+  <h2>Main heuristic</h2>
+  <p>
+    This is a 7 pronged heuristic, tripping with high confidence at 12+ points and with medium
+    confidence at 11+ points. Factors:
+  </p>
+  <ul>
+    <li>
+      <p><strong>(factor A, 3 points) just one class</strong></p>
+    </li><li>
+      <p>
+        <strong>(factor B, 3 points) just one class nested 3 directories deep</strong> - detected with
+        <code>{String.raw`/^\w{2,12}\/\w{2,12}\/\w{2,12}\.class$/`}</code>
+      </p>
+    </li><li>
+      <p><strong>(factor C, 1 point) just one non-class</strong></p>
+    </li><li>
+      <p>
+        <strong
+          >(factor D, 1 point) just one non-class that is <code>META-INF/MANIFEST.MF</code></strong
+        >
+      </p>
+    </li><li>
+      <p>
+        <strong
+          >(factor E, 1 point) the full <code>META-INF/MANIFEST.MF</code> is just <code
+            >Manifest-Version: 1.0</code
+          > with two newlines after</strong
+        >
+      </p>
+    </li><li>
+      <p>
+        <strong>(factor F, 2 points) the first class has more than 20 <code>TY</code></strong> - explained
+        in the next section
+      </p>
+    </li><li>
+      <p>
+        <strong
+          >(factor G, 2 points) the first class has <code>reverse</code> and <code>base32</code
+          ></strong
+        > - explained in the next section
+      </p>
+    </li>
+  </ul>
+  <h2>Injection heuristic</h2>
+  <p>
+    What's worse than closed source, heuristics, and closed source heuristics? 2 closed source
+    heuristics. When Quantiy made a second type of infostealer, one that injects itself into
+    existing mods, I had to make this heuristic that trips with high confidence at 8+ points and
+    with medium confidence at 7+ points. Factors:
+  </p>
+  <ul>
+    <li>
+      <p><strong>(factor a, 2 points) 2+ classes and has manifest</strong></p>
+      <p>This factor is basically "does it look based on a real mod".</p>
+    </li>
+    <li>
+      <p><strong>(factor b, 6 points) class ends with UtilsUtils.class</strong></p>
+      <p>
+        Quantiy's injected classes often copied existing classes and added "Utils" to blend in. This
+        backfires when the existing class already has "Utils".
+      </p>
+    </li>
+    <li>
+      <p>
+        <strong
+          >(factor c, 2 points) more than 20 <code>TY</code> in any class ending with <code
+            >Utils.class</code
+          ></strong
+        >
+      </p>
+      <p>
+        Quantiy's injections are obfuscated, which creates what looks like a lot of <code>TY</code>s
+        in their bytecode in the process.
+      </p>
+    </li>
+    <li>
+      <p>
+        <strong
+          >(factor d, 2 points) <code>reverse</code> and <code>base32</code> in any class ending with
+          <code>Utils.class</code></strong
+        >
+      </p>
+      <p>Detects how Quantiy reverses and encodes strings like webhooks.</p>
+    </li>
+  </ul>
+  <h2>How did they work?</h2>
+  <p>
+    They did their job of detecting Quantiy and preventing him from avoiding detection well. But the
+    heuristic system itself, at least with the current thresholds (I believe they weren't always at
+    these levels), does a better job at preventing false positives than preventing Quantiy from
+    bypassing detection - it literally says "anything under 80% of flags shouldn't be detected".
+  </p>
+</BlogPost>
