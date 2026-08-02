@@ -1,52 +1,336 @@
 ---
 import Base from '$lib/layouts/Base.astro';
-import Header from '$lib/Header.astro';
-import Arrow from './_arrow.astro';
-
-import bg from './_bg.svg?url';
-import cursor from './_cursor.svg?url';
-
-const wordmark = `<svg width="161.6" height="40" viewBox="0 0 1753 434" fill="currentColor"><title>Kendell</title><rect width="121" height="50" y="384" rx="25"/><rect width="89" height="50" x="160" y="384" rx="25"/><rect width="89" height="50" x="32" y="320" rx="25"/><rect width="89" height="50" x="160" y="320" rx="25"/><rect width="89" height="50" x="32" y="256" rx="25"/><rect width="89" height="50" x="128" y="256" rx="25"/><rect width="153" height="50" x="32" y="192" rx="25"/><rect width="89" height="50" x="32" y="128" rx="25"/><rect width="89" height="50" x="128" y="128" rx="25"/><rect width="89" height="50" x="32" y="64" rx="25"/><rect width="89" height="50" x="160" y="64" rx="25"/><rect width="121" height="50" rx="25"/><rect width="89" height="50" x="160" rx="25"/><rect width="153" height="50" x="320" y="384" rx="25"/><rect width="89" height="50" x="288" y="320" rx="25"/><rect width="217" height="50" x="288" y="256" rx="25"/><rect width="89" height="50" x="288" y="192" rx="25"/><rect width="89" height="50" x="416" y="192" rx="25"/><rect width="153" height="50" x="320" y="128" rx="25"/><rect width="89" height="50" x="544" y="384" rx="25"/><rect width="89" height="50" x="672" y="384" rx="25"/><rect width="89" height="50" x="544" y="320" rx="25"/><rect width="89" height="50" x="672" y="320" rx="25"/><rect width="89" height="50" x="544" y="256" rx="25"/><rect width="89" height="50" x="672" y="256" rx="25"/><rect width="89" height="50" x="544" y="192" rx="25"/><rect width="89" height="50" x="672" y="192" rx="25"/><rect width="185" height="50" x="544" y="128" rx="25"/><rect width="121" height="50" x="832" y="384" rx="25"/><rect width="89" height="50" x="960" y="384" rx="25"/><rect width="89" height="50" x="800" y="320" rx="25"/><rect width="89" height="50" x="928" y="320" rx="25"/><rect width="89" height="50" x="800" y="256" rx="25"/><rect width="89" height="50" x="928" y="256" rx="25"/><rect width="89" height="50" x="800" y="192" rx="25"/><rect width="121" height="50" x="896" y="192" rx="25"/><rect width="89" height="50" x="832" y="128" rx="25"/><rect width="89" height="50" x="928" y="128" rx="25"/><rect width="89" height="50" x="928" y="64" rx="25"/><rect width="121" height="50" x="896" rx="25"/><rect width="153" height="50" x="1088" y="384" rx="25"/><rect width="89" height="50" x="1056" y="320" rx="25"/><rect width="217" height="50" x="1056" y="256" rx="25"/><rect width="89" height="50" x="1056" y="192" rx="25"/><rect width="89" height="50" x="1184" y="192" rx="25"/><rect width="153" height="50" x="1088" y="128" rx="25"/><rect width="153" height="50" x="1344" y="384" rx="25"/><rect width="89" height="50" x="1376" y="320" rx="25"/><rect width="89" height="50" x="1376" y="256" rx="25"/><rect width="89" height="50" x="1376" y="192" rx="25"/><rect width="89" height="50" x="1376" y="128" rx="25"/><rect width="89" height="50" x="1376" y="64" rx="25"/><rect width="121" height="50" x="1344" rx="25"/><rect width="153" height="50" x="1600" y="384" rx="25"/><rect width="89" height="50" x="1632" y="320" rx="25"/><rect width="89" height="50" x="1632" y="256" rx="25"/><rect width="89" height="50" x="1632" y="192" rx="25"/><rect width="89" height="50" x="1632" y="128" rx="25"/><rect width="89" height="50" x="1632" y="64" rx="25"/><rect width="121" height="50" x="1600" rx="25"/></svg>`;
+import Motive from './_motive.astro';
 ---
 
 <Base title="Kendell">
-  <Header span />
-  <style
-    set:html={':root {' +
-      [
-        `cursor: url("${cursor}"), auto`,
-        `background-image: url("${bg}")`,
-        `background-color: var(--m3c-primary)`,
-        `color: var(--m3c-surface)`,
-        `background-size: 100%`,
-        `background-repeat: no-repeat`,
-        `background-attachment: fixed`,
-        `background-position: top center`,
-      ].join(';') +
-      '}' +
-      ':root.midnight {' +
-      [
-        `background-image: linear-gradient(rgb(0 0 0 / 0.8), rgba(0 0 0 / 0.8)), url("${bg}")`,
-        `color: var(--m3c-on-surface)`,
-      ].join(';') +
-      '}'}
-  ></style>
-  <main>
-    <div>
-      <h1><Fragment set:html={wordmark} /></h1>
-      <time class="link"></time>
-      <a class="link layer" href="https://github.com/KTibow">GitHub <Arrow /></a>
-      <a class="link layer" href="https://github.com/sponsors/KTibow">GitHub Sponsors <Arrow /></a>
-      <a class="link layer" href="https://discord.gg/DSzZQxpzHR">Discord <Arrow /></a>
+  <Motive>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 296 296" slot="graphic">
+      <rect width="296" height="296" x="0" y="0" fill="#3a4379" ry="2"></rect>
+      <path
+        fill="#6169a1"
+        d="M21.4 6.3q-2.3 1.1-4.5 2.5a26 26 0 00-6.6 6c-1 1.6-2.3 3-3 4.7a31 31 0 00-2 4.6Q4 27.5 3.1 31q-.8 3.7-1.3 7.4l-.9 8.5-.5 11-.3 20.2v150l.6 16.8.8 10q.5 4.4 1.3 8.7a46 46 0 001.9 7 31 31 0 002.1 5.2 29 29 0 008 10q2.2 1.6 4.6 3 3 1.5 6.1 2.5 3.8 1.2 7.5 2 5 .8 9.9 1.3l11.8.8 15.5.4h148.9q12.7 0 25.6-.6 5-.2 10.1-.8 4.4-.5 8.7-1.3a46 46 0 007-1.9 31 31 0 005.2-2.1 29 29 0 009.8-7.8q1.8-2.2 3.2-4.8 1.1-2.2 2-4.6 1.1-3.4 2-6.9.8-3.7 1.2-7.4.6-4.2 1-8.5l.5-11 .3-20.2v-150l-.6-16.8-.8-10q-.5-4.4-1.3-8.7a46 46 0 00-1.9-7 31 31 0 00-2.1-5.2 29 29 0 00-8-10q-2.1-1.6-4.6-3-3-1.5-6.1-2.5a46 46 0 00-7.5-2q-5-.8-9.9-1.3-6-.6-11.8-.8l-15.5-.4H76.8q-12.7 0-25.6.6l-10.1.8q-4.4.5-8.7 1.3a46 46 0 00-11 3.4"
+      ></path>
+      <path
+        fill="#949dd7"
+        d="M21.4 26a57 57 0 00-5.5 7.2l-2.9 5a48 48 0 00-3.3 7.2q-1.7 3.8-2.9 8l-1.8 6.8-1.4 7q-1 5.4-1.6 10.8l-1 12.8-.6 15-.2 15.6V168l.2 22.8a370 370 0 002.2 32q.7 5 1.7 10a94 94 0 002.4 9.5q1 3.7 2.5 7.2a60 60 0 003.7 8.2q1.4 2.6 3 5a57 57 0 005.8 7.5 59 59 0 008.8 8l5.2 3.5c3 1.5 5.8 3.2 8.8 4.3q4.4 1.8 8.8 3.2l6.9 1.8q3.5.9 7 1.4 5.4 1 10.8 1.6l12.8 1q7.6.4 15.4.6 11.2.3 22.3.2H170q9.8 0 19.5-.2l12.6-.4q6-.3 12.3-.9 5.6-.5 11.2-1.3 6-1 12-2.4 4.5-1.2 8.8-2.7 3.3-1.1 6.4-2.5c2.7-1 5.3-2.6 7.8-4q3.3-2 6.2-4.3a58 58 0 0013.3-14.6q2.1-3.3 4-6.7 2-4.4 3.6-8.9 1.4-3.8 2.4-7.7 1.3-5 2.1-10 .9-4 1.3-8.3.7-5.6 1.1-11 .8-9.5.9-18.8l.2-15.3v-58.3q0-11.8-.6-23.6a326 326 0 00-2-21.5q-.6-4.5-1.5-9.2a94 94 0 00-2.4-9.5q-1-3.7-2.5-7.2a60 60 0 00-3.7-8.2q-1.4-2.6-3-5a56 56 0 00-5.8-7.5 59 59 0 00-8.8-8l-5.2-3.5q-4.4-2.5-8.8-4.3t-8.8-3.2l-6.9-1.8-7-1.4q-5.4-1-10.8-1.6l-12.8-1-15.3-.6-22.4-.2H126l-19.5.2q-6.3.1-12.5.5-6.3.3-12.4.8-5.5.5-11.2 1.3-6 1-12 2.4-4.5 1.2-8.8 2.7-3.3 1.1-6.4 2.5-4 1.7-7.8 4-3.2 2-6.2 4.3a60 60 0 00-7.6 7z"
+      ></path>
+      <circle cx="148" cy="148" r="148" fill="#bbc3ff"></circle>
+    </svg>
+    <h2>
+      <strong>I'm Kendell</strong>
+    </h2>
+    <p>
+      It's <time></time> for me. This is my <a href="https://github.com/KTibow">GitHub</a> (and <a
+        href="https://github.com/sponsors/KTibow">Sponsors</a
+      >), and this is my <a href="https://discord.gg/DSzZQxpzHR">Discord server</a>. I have a <a
+        href="/blog/">blog</a
+      >, <a href="/milliblog/">milliblog</a>, <a href="https://x.com/KTibow">microblog (X)</a>, and <a
+        href="/nanoblog/">nanoblog</a
+      >.
+    </p>
+    <div class="stats">
+      <div class="stat">121+ GitHub followers</div>
+      <div class="stat">6+ all time sponsors</div>
+      <div class="stat">124+ X followers</div>
     </div>
-    <div>
-      <p>EHLO! i like making things; this site has some things i've made.</p>
-      <p>
-        you might also know me for my chatting (where i'm known as KTibow) or for my interest in
-        minification (e18e, svgo, etc are awesome).
-      </p>
+  </Motive>
+  <Motive>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" slot="graphic">
+      <rect width="100" height="100" x="0" y="0" fill="var(--m3c-primary-container)"></rect>
+      <path
+        fill="none"
+        stroke="var(--m3c-on-primary-container)"
+        stroke-width="10"
+        stroke-linecap="round"
+        d="M10 10 h 0"></path>
+      <path
+        fill="none"
+        stroke="var(--m3c-on-primary-container)"
+        stroke-width="10"
+        stroke-linecap="round"
+        d="M25 10 h 60"></path>
+      <path
+        fill="none"
+        stroke="var(--m3c-on-primary-container)"
+        stroke-width="10"
+        stroke-linecap="round"
+        d="M10 30 h 0"></path>
+      <path
+        fill="none"
+        stroke="var(--m3c-on-primary-container)"
+        stroke-width="10"
+        stroke-linecap="round"
+        d="M25 30 h 30"></path>
+      <path
+        fill="none"
+        stroke="var(--m3c-on-primary-container)"
+        stroke-width="10"
+        stroke-linecap="round"
+        d="M10 50 h 0"></path>
+      <path
+        fill="none"
+        stroke="var(--m3c-on-primary-container)"
+        stroke-width="10"
+        stroke-linecap="round"
+        d="M25 50 h 40"></path>
+      <path
+        fill="none"
+        stroke="var(--m3c-on-primary-container)"
+        stroke-width="10"
+        stroke-linecap="round"
+        d="M10 70 h 0"></path>
+      <path
+        fill="none"
+        stroke="var(--m3c-on-primary-container)"
+        stroke-width="10"
+        stroke-linecap="round"
+        d="M25 70 h 10"></path>
+      <path
+        fill="none"
+        stroke="var(--m3c-on-primary-container)"
+        stroke-width="10"
+        stroke-linecap="round"
+        d="M10 90 h 0"></path>
+      <path
+        fill="none"
+        stroke="var(--m3c-on-primary-container)"
+        stroke-width="10"
+        stroke-linecap="round"
+        d="M25 90 h 50"></path>
+    </svg>
+    <h2>
+      <strong
+        >One of my motives is to be legible, so I replaced my home page with a list of my motives,
+        goals, values, <button id="stats-toggle">and stats?</button></strong
+      >
+    </h2>
+    <p>
+      If your motives are similar, good chance that <a
+        href="https://en.wikipedia.org/wiki/Homophily">homophily</a
+      > kicks in and we end up friends.
+    </p>
+  </Motive>
+  <Motive>
+    <svg viewBox="0 0 246 255" fill="none" xmlns="http://www.w3.org/2000/svg" slot="graphic">
+      <rect width="245.377" height="254.769" fill="var(--m3c-tertiary-container)"></rect>
+      <g clip-path="url(#a)">
+        <rect
+          x="34.6345"
+          y="39.3308"
+          width="176.108"
+          height="176.108"
+          fill="var(--m3c-on-tertiary-container)"></rect>
+        <path
+          d="M207.22 39.3307C207.22 127.051 187.556 169.531 157.159 190.527C141.857 201.097 123.494 206.482 102.727 209.194C81.9282 211.911 59.0054 211.916 34.634 211.916C-60.6825 211.916 -137.952 134.647 -137.952 39.3307C-137.952 -55.9858 -60.6825 -133.255 34.634 -133.255C129.95 -133.255 207.22 -55.9858 207.22 39.3307Z"
+          fill="var(--m3c-tertiary-container)"></path>
+        <rect
+          x="37.5692"
+          y="42.2659"
+          width="170.238"
+          height="170.238"
+          stroke="var(--m3c-on-tertiary-container)"
+          stroke-width="5.87027"></rect>
+      </g>
+      <defs>
+        <clipPath id="a">
+          <rect
+            x="34.6345"
+            y="39.3308"
+            width="176.108"
+            height="176.108"
+            fill="var(--m3c-on-tertiary-container)"></rect>
+        </clipPath>
+      </defs>
+    </svg>
+    <h2>
+      <strong>AI prices need to go down as fast as possible</strong> - I support
+    </h2>
+    <ul>
+      <li>Groq's free tier</li>
+      <li>OpenRouter's market dynamics</li>
+      <li><a href="/blog/crofai/">CrofAI's prices</a></li>
+      <li>
+        <a href="/blog/morbintime/">Surplus Intelligence's discounts</a>
+      </li>
+      <li>
+        <a href="https://github.com/KTibow/brokierouter"
+          >Aggregating providers you won't find on OpenRouter</a
+        >
+      </li>
+    </ul>
+    <div class="stats">
+      <div class="stat">Official GroqChamp</div>
+      <div class="stat">OpenRouter "helper"</div>
+      <div class="stat">Official CrofAI "team" member</div>
+      <div class="stat">2B+ tokens sold on Surplus Intelligence</div>
     </div>
-  </main>
+  </Motive>
+  <Motive>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" slot="graphic">
+      <rect width="24" height="24" fill="var(--m3c-surface)"></rect>
+      <path
+        stroke="var(--m3c-on-surface-variant)"
+        fill="none"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M 12 21 L 12 14 L 8.5 17.5 M 12 14 l 3.5 3.5 M 12 3 L 12 10 L 8.5 6.5 M 12 10 l 3.5 -3.5"
+      ></path>
+    </svg>
+    <h2>
+      <strong>Bundle sizes also need to go down as fast as possible</strong>
+    </h2>
+    <p>
+      I care a lot about bundle sizes. I use Astro for static content, even when it results in <a
+        href="/blog/astrovsframework/">minor perf hits</a
+      >. I use Svelte for dynamic content and contribute popular libraries like <a
+        href="https://kendell.dev/m3-svelte/">M3 Svelte</a
+      >. I raise issues at OXC and PR to <a href="https://github.com/svg/svgo">SVGO</a>.
+    </p>
+    <div class="stats">
+      <div class="stat">M3 Svelte has 450+ stars</div>
+      <div class="stat">Other implementations use M3 Svelte as a reference</div>
+      <div class="stat">SVGO team member</div>
+    </div>
+  </Motive>
+  <Motive>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" slot="graphic">
+      <rect width="24" height="24" fill="#00663e"></rect>
+      <path
+        stroke="#b1ffcd"
+        fill="none"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M12 9 12 2 8.5 5.5M12 2l3.5 3.5M15 12 22 12 18.5 8.5M22 12l-3.5 3.5M9 12 2 12 5.5 8.5M2 12l3.5 3.5M12 15 12 22 15.5 18.5M12 22l-3.5-3.5"
+      ></path>
+    </svg>
+    <h2>
+      <strong>Digital mobility is important</strong>
+    </h2>
+    <p>
+      I don't want to live in a world where the average Joe has only ever used Chromebooks and
+      neutered versions of the internet. I want an abundance of computers and internet, and I've
+      been spending time at <a href="https://github.com/abndnce">Abundance</a> creating tools for that.
+    </p>
+    <div class="stats">
+      <div class="stat">Abundance has 15+ stars</div>
+    </div>
+  </Motive>
+  <Motive>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" slot="graphic">
+      <rect width="24" height="24" fill="var(--m3c-secondary-container)"></rect>
+      <path
+        stroke="var(--m3c-on-secondary-container)"
+        fill="none"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M 2 12 h 4 m 2 0 h 4 m 2 0 H 22 l -6 -6 l 6 6 l -6 6"></path>
+    </svg>
+    <h2>
+      <strong>Physical mobility is important too</strong>
+    </h2>
+    <p>
+      Cars are flawed in theory. Transit and biking are only flawed in reality. I care about small
+      things like GTFS-RT and <a href="/osm-initiatives/">OSM data</a> because they're fixable obstacles
+      to a world with less traffic and more autonomy.
+    </p>
+  </Motive>
+  <Motive>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" slot="graphic">
+      <rect width="24" height="24" fill="var(--m3c-primary)"></rect>
+      <path
+        fill="var(--m3c-on-primary)"
+        d="M12 16.088q.95-.013 1.4-.688l4.225-6.325q.225-.35-.062-.637t-.638-.063L10.6 12.6q-.675.45-.712 1.375t.562 1.525t1.55.588M12 4q.9 0 1.775.15t1.7.475q.4.15.85.563t.25.787t-.9.5t-1.125-.025q-.625-.225-1.262-.337T12 6Q8.675 6 6.337 8.338T4 14q0 1.05.288 2.075T5.1 18h13.8q.575-.95.838-1.975T20 13.9q0-.65-.113-1.275T19.55 11.4q-.15-.425-.05-.825t.45-.675q.325-.25.713-.15t.537.45q.375.875.575 1.788T22 13.85q.025 1.425-.325 2.725T20.65 19.05q-.275.45-.75.7t-1 .25H5.1q-.525 0-1-.25t-.75-.7q-.65-1.125-1-2.387T2 14q0-2.075.788-3.887t2.15-3.175t3.187-2.15T12 4m.175 7.825"
+      ></path>
+    </svg>
+    <h2>
+      <strong>Or more broadly, convenience is important</strong>
+    </h2>
+    <p>
+      Convenience is many things to me - <a href="https://github.com/KTibow/lovelace-soft-theme"
+        >a</a
+      >
+      <a href="https://github.com/KTibow/infinity-mirror">lot</a>
+      <a href="https://github.com/KTibow/fullscreen-card">of</a>
+      <a href="https://github.com/KTibow/ha-blueprint">Home</a>
+      <a href="https://github.com/KTibow/neotrellis-ha-controller">Assistant</a>-<a
+        href="https://github.com/KTibow/lobe-home-assistant">adjacent</a
+      >
+      <a href="https://github.com/KTibow/2vFiomba">work</a> (<a
+        href="https://github.com/KTibow/arcane_control">like,</a
+      >
+      <a href="https://github.com/KTibow/home-gpt">a</a>
+      <a href="https://github.com/KTibow/home-assistant-theme">lot</a>), building sites and apps and
+      bots for a <a href="https://skyclient.co/">Hypixel Skyblock client</a>, <a
+        href="https://github.com/KTibow/thumbs-up">a</a
+      >
+      <a href="https://github.com/abndnce/1984">lot</a>
+      <a href="https://github.com/KTibow/practiceyeet">more</a>
+      <a href="https://github.com/trigonometry-app/tangent-computer">work</a>
+      <a href="https://github.com/trigonometry-app/trigonometry">on</a>
+      <a href="https://github.com/KTibow/secant">convenience</a>
+      <a href="https://github.com/KTibow/BangleApps/blob/patch-4/apps/flicc/app.js">at</a>
+      <a href="https://www.youtube.com/@claudeapchem">school</a>, and the <a
+        href="https://devdocs.io/dom/navigator/credentials">credentials API</a
+      >.
+    </p>
+    <div class="stats">
+      <div class="stat">lovelace-soft-theme reached 50+ stars</div>
+      <div class="stat">SkyClient reached 1.49M+ downloads</div>
+      <div class="stat">Private "convenience at school" apps reached 200 users</div>
+    </div>
+  </Motive>
+  <Motive>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" slot="graphic">
+      <rect width="24" height="24" fill="var(--m3c-surface)"></rect>
+      <path
+        fill="var(--m3c-primary)"
+        d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18s-.41-.06-.57-.18l-7.9-4.44A.99.99 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.12.36-.18.57-.18s.41.06.57.18l7.9 4.44c.32.17.53.5.53.88zM12 4.15L6.04 7.5L12 10.85l5.96-3.35zM5 15.91l6 3.38v-6.71L5 9.21zm14 0v-6.7l-6 3.37v6.71z"
+      ></path>
+    </svg>
+    <h2>
+      <strong>Fight bad actors</strong>
+    </h2>
+    <p>
+      I like going on the defensive, making things like <a
+        href="https://github.com/KTibow/RatRater2"
+        >detectors for malicious Minecraft (specifically Hypixel Skyblock) mods</a
+      >. I've lost count of the pieces of malware I've neutralized.
+    </p>
+    <div class="stats">
+      <div class="stat">
+        I didn't do this alone - I worked with The Fight Against Malware, Vanta, and Is This A Rat
+      </div>
+    </div>
+  </Motive>
+  <Motive>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" slot="graphic">
+      <rect width="24" height="24" fill="var(--m3c-surface)"></rect>
+      <path
+        fill="var(--m3c-primary)"
+        d="M4.2 20.975q-.525.125-.913-.262t-.262-.913l.875-4.25l4.55 4.55zm5.875-2.1l-4.95-4.95L15.45 3.6q.575-.575 1.425-.575T18.3 3.6l2.1 2.1q.575.575.575 1.425T20.4 8.55z"
+      ></path>
+    </svg>
+    <h2>
+      <strong>And fight slop</strong>
+    </h2>
+    <p>
+      This used to look like Naive Bayes <a href="https://github.com/KTibow/BetterChat">spam</a>
+      <a href="https://chattriggers.com/modules/v/Unspam">filters</a>. Today it looks like cheering
+      on Pangram and Originality, caring about design, and challenging your brain.
+    </p>
+    <div class="stats">
+      <div class="stat">I'm a big fan of Pangram, I'm moots with Max Spero</div>
+      <div class="stat">
+        Before Pangram got big I contracted with Originality to explain why and how base models
+        bypass detection
+      </div>
+      <div class="stat">2026 SAT: 1510 total, 760 verbal, 750 math</div>
+    </div>
+  </Motive>
   <script>
     const time = document.querySelector('time')!;
     function updateTime() {
@@ -60,45 +344,43 @@ const wordmark = `<svg width="161.6" height="40" viewBox="0 0 1753 434" fill="cu
       setTimeout(updateTime, 60000 - (Date.now() % 60000));
     }
     updateTime();
+
+    const statsToggle = document.querySelector('#stats-toggle')!;
+    statsToggle.addEventListener('click', () => {
+      const on = document.documentElement.classList.toggle('show-stats');
+      statsToggle.textContent = on ? 'and stats.' : 'and stats?';
+    });
   </script>
 </Base>
 
 <style>
-  main {
-    display: flex;
-    @media (width < 52.5rem) {
-      flex-direction: column;
-    }
-    gap: 1.5rem;
-    margin-inline: 0.5rem;
-    margin-block: auto;
-    align-self: center;
-    > * {
-      display: flex;
-      flex-direction: column;
-    }
-  }
-  h1 {
-    margin-bottom: auto;
-  }
-  .link {
-    display: flex;
+  body {
     align-items: center;
-    justify-content: space-between;
-    height: 2.5rem;
-    border-radius: 0.5rem;
-    font-weight: 500;
-    &:last-child {
-      margin-bottom: -0.5rem;
-    }
+    gap: 0.5rem;
   }
-  p {
-    &:not(:first-child) {
-      margin-top: 1em;
-    }
-    @media (width >= 52.5rem) {
-      line-height: 1.3;
-      max-width: 13rem;
-    }
+  :global(.stats) {
+    display: none;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  :global(html.show-stats .stats) {
+    display: flex;
+  }
+  :global(.stat) {
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    background-color: var(--m3c-secondary-container);
+    color: var(--m3c-on-secondary-container);
+    font-size: 0.875rem;
+  }
+  #stats-toggle {
+    color: var(--m3c-primary);
+    text-decoration: underline;
+    font: inherit;
+    font-weight: 500;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
   }
 </style>

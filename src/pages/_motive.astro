@@ -1,0 +1,30 @@
+<article class="motive">
+  <slot name="graphic" />
+  <div class="body prose">
+    <slot />
+  </div>
+</article>
+<style>
+  .motive {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    width: 100%;
+    max-width: 40rem;
+    background-color: var(--m3c-surface-container);
+    border-radius: 1.5rem;
+    > svg {
+      min-width: 10rem;
+      min-height: 10rem;
+      border-radius: 1.5rem;
+    }
+  }
+  .body {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0.5rem;
+    > h2 {
+      font-size: inherit;
+      line-height: inherit;
+    }
+  }
+</style>
