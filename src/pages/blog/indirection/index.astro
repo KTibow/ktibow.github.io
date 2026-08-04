@@ -624,7 +624,7 @@ const nKCAdjustedWithVID = megaMapFlat.filter(([, entries]) => {
         verticalAlign: 'middle',
       }}
     /> OBA makes up a 👻 ghost vehicle), where I suspect the ETA isn't actually based on realtime data
-    and should be tagged as <code>NO_DATA</code> instead. Meanwhile
+    (more on those next paragraph). Meanwhile
     <Percent v={nWithJustOBAJSON / n} />
     {nWithJustOBAJSON} are a figment of <img
       {...logoOBA}
@@ -637,6 +637,26 @@ const nKCAdjustedWithVID = megaMapFlat.filter(([, entries]) => {
     /> OBA JSON's imagination, <a
       href="https://github.com/OneBusAway/onebusaway-application-modules/pull/465">fixed here</a
     >.
+  </p>
+  <p>
+    On the <Percent v={(nKCNoVID + nKCInferrableVID) / n} />
+    {nKCNoVID + nKCInferrableVID}: I've been trying to contact <img
+      {...logoKing}
+      style={{ display: 'inline-block', width: '1em', height: '1em', verticalAlign: 'middle' }}
+    /> Metro to get them to tag these as <code>NO_DATA</code> for a while.
+    <img
+      {...logoST}
+      style={{ display: 'inline-block', width: '1.5em', height: '1em', verticalAlign: 'middle' }}
+    /> Sound Transit forwarded my requests to use <code>NO_DATA</code> on July 7 2026 (5 day turnaround),
+    and <img
+      {...logoKing}
+      style={{ display: 'inline-block', width: '1em', height: '1em', verticalAlign: 'middle' }}
+    />
+    Metro acknowledged them via the Metro-specific contact form on August 4 2026 (2 day turnaround); the
+    email they reference in the GTFS and the general <img
+      {...logoKing}
+      style={{ display: 'inline-block', width: '1em', height: '1em', verticalAlign: 'middle' }}
+    /> King County contact form seem unmonitored.
   </p>
 </BlogPost>
 
