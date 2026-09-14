@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="https://files.nahcrof.com/file/crofai-black.png" />
+        <meta name="description" content="The cheapest inference provider for large models" />
+        <title>CrofAI - Pricing</title>
+        <link rel="stylesheet" href="/ui/crofui.css" />
+
+        <style>
+            :root {
+                --p-bg: #0a0a0a;
+                --p-surface: #111111;
+                --p-surface-2: #1a1a1a;
+                --p-border: #1f1f1f;
+                --p-text: #e5e5e5;
+                --p-muted: #888888;
+                --p-bright: #fafafa;
+                --p-accent: #8b7cff;
+                --p-accent-dim: rgba(139, 124, 255, 0.12);
+                --p-glow: rgba(139, 124, 255, 0.16);
+                --p-radius: 14px;
+            }
+
+            [data-theme="light"] {
+                --p-bg: #fafafa;
+                --p-surface: #ffffff;
+                --p-surface-2: #f4f4f5;
+                --p-border: #e5e5e5;
+                --p-text: #111111;
+                --p-muted: #737373;
+                --p-bright: #0a0a0a;
+                --p-accent: #6d5dfc;
+                --p-accent-dim: rgba(109, 93, 252, 0.1);
+                --p-glow: rgba(109, 93, 252, 0.1);
+            }
+
+            *, *::before, *::after { box-sizing: border-box; }
+
+            body {
+                background: var(--p-bg);
+                color: var(--p-text);
+                position: relative;
+                min-height: 100vh;
+            }
+            body::before {
+                content: "";
+                position: fixed;
+                top: -220px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 1100px;
+                height: 620px;
+                background: radial-gradient(ellipse at center, var(--p-glow), transparent 62%);
+                pointer-events: none;
+                z-index: 0;
+            }
+
+            /* ── Nav ──────────────────────────────────────────────────── */
+            .logo { height: 46px; width: auto; }
+            #nav-header { display: flex; justify-content: flex-end; width: 70vw; }
+            header { margin-top: 28px; width: 100%; display: flex; justify-content: center; flex: 0 0 auto; margin-bottom: 44px; position: relative; z-index: 1; }
+            header nav { margin-left: auto; margin-top: 8px; display: flex; align-items: center; }
+            header .link { margin-left: 20px; color: var(--p-muted); border: 1px solid transparent; padding: 6px 12px; border-radius: 8px; text-decoration: none; transition: 0.2s ease; font-size: 0.9rem; }
+            header .link:hover { color: var(--p-bright); background: var(--p-surface-2); border-color: var(--p-border); }
+            header .btn { margin-left: 14px; margin-top: -2px; }
+
+            /* ── Page sections ────────────────────────────────────────── */
+            .page-wrap { max-width: 1300px; margin: 0 auto; padding: 0 20px 80px; position: relative; z-index: 1; }
+
+            .section-title {
+                font-size: 1.1rem;
+                font-weight: 600;
+                color: var(--p-muted);
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+                margin-bottom: 28px;
+            }
+
+            /* ── Intro ───────────────────────────────────────────────── */
+            .price-intro { margin-bottom: 34px; }
+            .price-intro h1 {
+                font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+                font-weight: 600;
+                letter-spacing: -0.02em;
+                line-height: 1.1;
+                color: var(--p-bright);
+                margin: 0 0 10px;
+            }
+            .price-intro p {
+                font-size: 0.98rem;
+                color: var(--p-muted);
+                line-height: 1.55;
+                margin: 0;
+                max-width: 560px;
+            }
+
+            /* ── Plan cards ───────────────────────────────────────────── */
+            .plans { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin-bottom: 64px; }
+            .plans:empty { margin-bottom: 0; }
+
+            .plan-box {
+                flex: 1 1 220px;
+                max-width: 380px;
+                border: 1px solid var(--p-border);
+                border-radius: var(--p-radius);
+                background: var(--p-surface);
+                padding: 22px 20px 20px;
+                transition: border-color 0.2s, background 0.2s;
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+            }
+            .plan-box:hover { border-color: #3a3a3a; background: var(--p-surface-2); }
+
+            .plan-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; }
+            .plan-name { font-weight: 600; font-size: 0.95rem; color: var(--p-bright); }
+            .pretty { font-size: 1.4rem; font-weight: 700; color: var(--p-bright); line-height: 1; }
+            .pretty span { font-size: 0.78rem; font-weight: 400; color: var(--p-muted); }
+
+            .plan-divider { height: 1px; background: var(--p-border); margin: 14px 0; }
+
+            .plan-features { flex-grow: 1; display: flex; flex-direction: column; gap: 9px; margin-bottom: 18px; }
+            .plan-feature { display: flex; align-items: flex-start; gap: 8px; font-size: 0.85rem; color: var(--p-muted); line-height: 1.4; }
+            .plan-feature .check { color: var(--p-accent); flex-shrink: 0; margin-top: 1px; }
+
+            .plan-box .bubble {
+                margin-top: auto;
+                width: fit-content;
+                align-self: center;
+                font-size: 0.78rem;
+                padding: 5px 12px;
+                border-radius: 6px;
+                border: 1px solid var(--p-accent);
+                color: var(--p-accent);
+                background: var(--p-accent-dim);
+                font-weight: 500;
+            }
+
+            .btn-white {
+                margin-top: auto;
+                width: 100%;
+                display: inline-block;
+                text-decoration: none;
+                text-align: center;
+                box-sizing: border-box;
+                padding: 8px 16px;
+                border-radius: 8px;
+                border: 1px solid var(--p-border);
+                background: var(--p-surface-2);
+                color: var(--p-text);
+                font-size: 0.85rem;
+                font-weight: 500;
+                cursor: pointer;
+                transition: 0.2s ease;
+                font-family: inherit;
+            }
+            .btn-white:hover { border-color: #3a3a3a; background: var(--palette-bg-5); color: var(--p-bright); }
+            .flex-input-row {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                margin-bottom: 8px;
+                border: 1px solid var(--p-border);
+                border-radius: 8px;
+                padding: 6px 10px;
+                background: var(--p-surface-2);
+            }
+            .flex-dollar, .flex-permo { color: var(--p-muted); font-size: 0.9rem; }
+            .flex-amount-input {
+                flex: 1;
+                min-width: 0;
+                background: transparent;
+                border: none;
+                outline: none;
+                color: var(--p-bright);
+                font-size: 1rem;
+                font-weight: 600;
+                font-family: inherit;
+            }
+            .flex-preview { font-size: 0.8rem; color: var(--p-accent); margin-bottom: 10px; min-height: 1em; }
+
+            /* ── Model table ──────────────────────────────────────────── */
+            .pricing-header { display: none; } /* replaced by section-title */
+            .price-list { width: 100%; margin: 0 0 60px; }
+
+            .price-box-wrapper { display: flex; justify-content: center; margin-bottom: 6px; }
+
+            .price-box {
+                width: 100%;
+                padding: 14px 18px;
+                border: 1px solid var(--p-border);
+                background: rgba(17, 17, 17, 0.82);
+                backdrop-filter: blur(24px);
+                -webkit-backdrop-filter: blur(24px);
+                border-radius: var(--p-radius);
+                transition: background 0.15s, border-color 0.15s;
+                display: grid;
+                grid-template-columns: 1fr clamp(90px, 12vw, 140px) clamp(90px, 12vw, 140px) clamp(90px, 12vw, 140px) clamp(80px, 10vw, 120px);
+                align-items: center;
+                gap: 16px;
+            }
+            .price-box:hover { background: rgba(26, 26, 26, 0.86); border-color: #2e2e2e; }
+            [data-theme="light"] .price-box { background: rgba(255, 255, 255, 0.78); }
+            [data-theme="light"] .price-box:hover { background: rgba(244, 244, 245, 0.84); }
+            .price-header.price-box { background: transparent; border-color: transparent; padding-bottom: 8px; backdrop-filter: none; -webkit-backdrop-filter: none; }
+            .price-header.price-box:hover { background: transparent; border-color: transparent; }
+
+            price { color: var(--p-accent); font-weight: 500; }
+            .row-left { display: flex; flex-direction: column; min-width: 0; }
+            .row-left .model_name { display: flex; align-items: center; gap: 8px; font-weight: 500; font-size: 0.9rem; color: var(--p-bright); }
+            .bubbles { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 7px; }
+            .bubble {
+                padding: 3px 9px;
+                border: 1px solid var(--p-border);
+                background: transparent;
+                border-radius: 6px;
+                font-size: 0.75rem;
+                color: var(--p-muted);
+                white-space: nowrap;
+            }
+
+            .col { text-align: center; font-size: 0.88rem; }
+            .colhead { color: var(--p-muted); font-weight: 500; font-size: 0.82rem; letter-spacing: 0.01em; text-align: center; cursor: pointer; user-select: none; transition: color 0.15s; }
+            .colhead:hover { color: var(--p-text); }
+            .colhead.sort-active { color: var(--p-accent); }
+            .sort-arrow { display: inline-block; margin-left: 4px; font-size: 0.72rem; opacity: 0.5; }
+            .colhead.sort-active .sort-arrow { opacity: 1; }
+
+            .speed-fast { color: #4ade80; }
+            .speed-medium { color: #fbbf24; }
+            .speed-slow { color: #f87171; }
+
+            /* ── Tooltips ─────────────────────────────────────────────── */
+            .beta-tag {
+                background: transparent;
+                color: var(--p-muted);
+                border: 1px solid var(--p-border);
+                font-size: 0.58rem;
+                padding: 1px 5px;
+                border-radius: 4px;
+                text-transform: uppercase;
+                cursor: help;
+                position: relative;
+                font-weight: 600;
+                letter-spacing: 0.5px;
+                transition: 0.2s ease;
+            }
+            .beta-tag:hover { color: var(--p-text); border-color: var(--p-accent); }
+            .beta-tag::after {
+                content: "This model is very new and might have difficulty scaling...";
+                position: absolute; bottom: 140%; left: 50%;
+                transform: translateX(-50%) translateY(10px);
+                background: var(--palette-bg-3); color: var(--p-text);
+                padding: 10px 14px; border-radius: 8px; width: 200px;
+                text-align: center; font-size: 0.8rem;
+                visibility: hidden; opacity: 0; transition: 0.2s ease;
+                z-index: 100; pointer-events: none;
+                border: 1px solid var(--p-border);
+                text-transform: none; letter-spacing: 0; font-weight: 400;
+            }
+            .beta-tag:hover::after { visibility: visible; opacity: 1; transform: translateX(-50%) translateY(0); }
+
+
+            /* ── Modal ────────────────────────────────────────────────── */
+            .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center; backdrop-filter: blur(6px); }
+            .modal-overlay.active { display: flex; }
+            .modal { background: var(--p-surface); border: 1px solid var(--p-border); border-radius: 16px; padding: 32px; max-width: 420px; width: 90%; text-align: center; }
+            .modal h2 { font-size: 1.1rem; font-weight: 600; color: var(--p-bright); margin-bottom: 12px; }
+            .modal p { font-size: 0.9rem; color: var(--p-muted); line-height: 1.6; }
+            .modal-buttons { display: flex; gap: 12px; justify-content: center; margin-top: 24px; }
+
+            /* ── Global .btn width fix ────────────────────────────────── */
+            .btn { width: auto; }
+
+            /* ── Desktop: larger, more readable ──────────────────────── */
+            @media (min-width: 800px) {
+                body { font-size: 16px; }
+                .page-wrap { padding: 0 40px 100px; }
+                .section-title { font-size: 0.8rem; margin-bottom: 32px; letter-spacing: 0.12em; }
+                .plan-box { padding: 28px 24px 24px; }
+                .plan-name { font-size: 1rem; }
+                .pretty { font-size: 2rem; }
+                .plan-divider { margin: 18px 0; }
+                .plan-features { gap: 12px; margin-bottom: 22px; }
+                .plan-feature { font-size: 0.9rem; gap: 10px; }
+                .btn-white { padding: 10px 18px; font-size: 0.9rem; }
+                .price-box { padding: 18px 22px; gap: 20px; }
+                .row-left .model_name { font-size: 0.95rem; }
+                .bubble { font-size: 0.8rem; padding: 4px 10px; }
+                .col { font-size: 0.93rem; }
+                .colhead { font-size: 0.82rem; }
+            }
+
+            @media (min-width: 1100px) {
+                .pretty { font-size: 2.2rem; }
+            }
+
+            /* ── Mobile ───────────────────────────────────────────────── */
+            @media (max-width: 640px) {
+                .price-header { display: none; }
+                .price-box { grid-template-columns: 1fr; gap: 10px; }
+                .col { text-align: left; display: flex; align-items: baseline; gap: 8px; }
+                .col::before { content: attr(data-label); color: var(--p-muted); font-weight: 600; min-width: 7.5rem; font-size: 0.8rem; }
+                .plan-box { flex: 1 1 100%; max-width: 100%; }
+            }
+        </style>
+    </head>
+    <body>
+        
+        <header>
+            <div id="nav-header">
+                <a href="/"><img class="logo" src="https://files.nahcrof.com/file/crofai-black.png" /></a>
+                <nav>
+                    <a class="link" href="/pricing">Pricing</a>
+                    <a class="link" href="/docs">Documentation</a>
+                    <a class="btn" href="/signin">Sign In</a>
+                </nav>
+            </div>
+        </header>
+        
+
+        <div class="modal-overlay" id="confirmModal">
+            <div class="modal">
+                <h2 id="modalTitle">Confirm Plan Change</h2>
+                <p id="modalMessage"></p>
+                <div class="modal-buttons">
+                    <button class="btn" style="width: auto;" onclick="closeModal()">Cancel</button>
+                    <button id="purchase-plan" class="btn-white" onclick="confirmPlanChange()" style="width: auto; padding: 9px 22px;">Yes, please</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-wrap">
+            <div class="section-title" id="plans-section-title" style="display:none;">Your Subscription</div>
+            <div class="plans" id="plans-container"></div>
+
+            <div class="price-intro">
+                <h1>Pay for what you use.</h1>
+                <p>Per-token pricing across every model we serve. No subscriptions, no minimums — only the tokens you actually burn.</p>
+            </div>
+
+            <div class="price-list">
+                <div class="price-box-wrapper">
+                    <div class="price-box price-header">
+                        <div class="row-left">
+                            <div class="model_name" style="color: var(--p-muted); font-size: 0.82rem; font-weight: 500;">Model</div>
+                            <div class="bubbles">
+                                <span class="bubble">Quantization</span>
+                                <span class="bubble">Context / Max output</span>
+                            </div>
+                        </div>
+                        <div class="colhead" id="sort-in" onclick="setSort('in')" title="Sort by input price">$ / M in <span class="sort-arrow">↕</span></div>
+                        <div class="colhead" id="sort-cache" onclick="setSort('cache')" title="Sort by cache price">$ / M cache <span class="sort-arrow">↕</span></div>
+                        <div class="colhead" id="sort-out" onclick="setSort('out')" title="Sort by output price">$ / M out <span class="sort-arrow">↕</span></div>
+                        <div class="colhead" id="sort-speed" onclick="setSort('speed')" title="Sort by speed">Speed <span class="sort-arrow">↕</span></div>
+                    </div>
+                </div>
+
+                <div id="model-list"></div>
+            </div>
+        </div>
+
+        <script src="/ui/crofui.js"></script>
+        <script>
+            const isLoggedIn = false;
+            const allModels = [{"context_length": "1,000,000", "created": 1777097940, "custom_reasoning": true, "id": "deepseek-v4-pro", "max_completion_tokens": "131,072", "name": "DeepSeek: DeepSeek V4 Pro", "pricing": {"cache_prompt": "0.003", "completion": "0.80", "prompt": "0.35"}, "quantization": "Q8_0", "reasoning_effort": true, "speed": 68, "sub_req_cost": 2}, {"context_length": "1,000,000", "created": 1777097940, "custom_reasoning": true, "id": "deepseek-v4-pro-lightning", "max_completion_tokens": "131,072", "name": "DeepSeek: DeepSeek V4 Pro (Lightning)", "pricing": {"cache_prompt": "0.02", "completion": "1.60", "prompt": "0.80"}, "quantization": "Q8_0", "reasoning_effort": true, "speed": 39, "sub_req_cost": 5}, {"context_length": "1,000,000", "created": 1777097940, "custom_reasoning": true, "id": "deepseek-v4-flash", "max_completion_tokens": "131,072", "name": "DeepSeek: DeepSeek V4 Flash", "pricing": {"cache_prompt": "0.003", "completion": "0.21", "prompt": "0.12"}, "quantization": "Q4_0", "reasoning_effort": true, "speed": 63, "sub_req_cost": 0.75}, {"context_length": "163,840", "created": 1755799640, "custom_reasoning": false, "id": "deepseek-v3.2", "max_completion_tokens": "163,840", "name": "DeepSeek: DeepSeek V3.2", "pricing": {"cache_prompt": "0.04", "completion": "0.35", "prompt": "0.18"}, "quantization": "Q6_K", "speed": 50}, {"context_length": "229,376", "created": 1781408469, "custom_reasoning": false, "id": "greg-2-ultra", "max_completion_tokens": "229,376", "name": "Crof: Greg 2 Ultra", "pricing": {"cache_prompt": "0.50", "completion": "10.00", "prompt": "3.00"}, "quantization": "int4", "speed": 249, "sub_req_cost": 40}, {"context_length": "229,376", "created": 1781408469, "custom_reasoning": false, "id": "greg-2-super", "max_completion_tokens": "229,376", "name": "Crof: Greg 2 Super", "pricing": {"cache_prompt": "0.25", "completion": "5.00", "prompt": "1.50"}, "quantization": "int4", "speed": 89, "sub_req_cost": 20}, {"context_length": "229,376", "created": 1769539850, "custom_reasoning": false, "id": "greg-1-mini", "max_completion_tokens": "229,376", "name": "Crof: Greg 1 Mini", "pricing": {"cache_prompt": "0.01", "completion": "0.15", "prompt": "0.07"}, "quantization": "Q4_0", "speed": 191, "sub_req_cost": 0.5}, {"context_length": "229,376", "created": 1779927667, "custom_reasoning": false, "id": "greg-rp", "max_completion_tokens": "229,376", "name": "Crof: Greg (Roleplay)", "pricing": {"cache_prompt": "0.02", "completion": "0.30", "prompt": "0.10"}, "quantization": "Q4_0", "speed": 26}, {"context_length": "1,000,000", "created": 1778551283, "custom_reasoning": true, "id": "mimo-v2.5-pro", "max_completion_tokens": "131,072", "name": "Xiaomi: MiMo-V2.5-Pro", "pricing": {"cache_prompt": "0.003", "completion": "0.80", "prompt": "0.40"}, "quantization": "Q8_0", "reasoning_effort": true, "speed": 54, "sub_req_cost": 2}, {"context_length": "1,000,000", "created": 1781650191, "custom_reasoning": true, "id": "glm-5.2", "max_completion_tokens": "131,072", "name": "Z.ai: GLM 5.2", "pricing": {"cache_prompt": "0.08", "completion": "2.20", "prompt": "0.50"}, "quantization": "Q8_0", "reasoning_effort": true, "speed": 75, "sub_req_cost": 2}, {"context_length": "202,752", "created": 1775593889, "custom_reasoning": true, "id": "glm-5.1", "max_completion_tokens": "202,752", "name": "Z.ai: GLM 5.1", "pricing": {"cache_prompt": "0.08", "completion": "2.15", "prompt": "0.45"}, "quantization": "Q8_0", "reasoning_effort": true, "speed": 54, "sub_req_cost": 2}, {"context_length": "202,752", "created": 1770833442, "custom_reasoning": false, "id": "glm-5", "max_completion_tokens": "202,752", "name": "Z.ai: GLM 5", "pricing": {"cache_prompt": "0.10", "completion": "1.90", "prompt": "0.48"}, "quantization": "Q4_0", "speed": 50}, {"context_length": "202,752", "created": 1769031670, "custom_reasoning": false, "id": "glm-4.7", "max_completion_tokens": "202,752", "name": "Z.AI: GLM 4.7", "pricing": {"cache_prompt": "0.05", "completion": "1.10", "prompt": "0.25"}, "quantization": "Q8_0", "speed": 82}, {"context_length": "202,752", "created": 1769031670, "custom_reasoning": false, "id": "glm-4.7-flash", "max_completion_tokens": "131,072", "name": "Z.AI: GLM 4.7 Flash", "pricing": {"cache_prompt": "0.008", "completion": "0.30", "prompt": "0.04"}, "quantization": "fp8", "speed": 49, "sub_req_cost": 0.5}, {"context_length": "262,144", "created": 1776737314, "custom_reasoning": true, "id": "kimi-k2.7-code", "max_completion_tokens": "262,144", "name": "MoonshotAI: Kimi K2.7 Code", "pricing": {"cache_prompt": "0.05", "completion": "2.25", "prompt": "0.55"}, "quantization": "int4", "reasoning_effort": true, "speed": 77, "sub_req_cost": 2}, {"context_length": "262,144", "created": 1776737314, "custom_reasoning": true, "id": "kimi-k2.6", "max_completion_tokens": "262,144", "name": "MoonshotAI: Kimi K2.6", "pricing": {"cache_prompt": "0.05", "completion": "1.99", "prompt": "0.50"}, "quantization": "int4", "reasoning_effort": true, "speed": 60, "sub_req_cost": 2}, {"context_length": "262,144", "created": 1769539850, "custom_reasoning": false, "id": "kimi-k2.5", "max_completion_tokens": "262,144", "name": "MoonshotAI: Kimi K2.5", "pricing": {"cache_prompt": "0.07", "completion": "1.70", "prompt": "0.35"}, "quantization": "Q4_K_M", "reasoning_effort": true, "speed": 68}, {"context_length": "131,072", "created": 1770168675, "custom_reasoning": true, "id": "kimi-k2.5-lightning", "max_completion_tokens": "32,768", "name": "MoonshotAI: Kimi K2.5 (Lightning)", "pricing": {"cache_prompt": "0.20", "completion": "3.00", "prompt": "1.00"}, "quantization": "530b-int4", "reasoning_effort": true, "speed": 1690}, {"context_length": "262,144", "created": 1775177766, "custom_reasoning": false, "id": "gemma-4-31b-it", "max_completion_tokens": "262,144", "name": "Google: Gemma 4 31B", "pricing": {"cache_prompt": "0.02", "completion": "0.30", "prompt": "0.10"}, "quantization": "Q4_0", "reasoning_effort": true, "speed": 139}, {"context_length": "204,800", "created": 1766794658, "custom_reasoning": false, "id": "minimax-m2.5", "max_completion_tokens": "131,072", "name": "MiniMax: MiniMax M2.5", "pricing": {"cache_prompt": "0.02", "completion": "0.95", "prompt": "0.11"}, "quantization": "awq", "speed": 64, "sub_req_cost": 0.75}, {"context_length": "262,144", "created": 1777097940, "custom_reasoning": true, "id": "qwen3.6-27b", "max_completion_tokens": "262,144", "name": "Qwen: Qwen3.6 27B", "pricing": {"cache_prompt": "0.04", "completion": "1.50", "prompt": "0.20"}, "quantization": "Q4_0", "reasoning_effort": true, "speed": 141}, {"context_length": "262,144", "created": 1771526845, "custom_reasoning": true, "id": "qwen3.5-397b-a17b", "max_completion_tokens": "262,144", "name": "Qwen: Qwen3.5 397B A17B", "pricing": {"cache_prompt": "0.07", "completion": "1.75", "prompt": "0.35"}, "quantization": "Q4_0", "reasoning_effort": true, "speed": 139}, {"context_length": "262,144", "created": 1775621724, "custom_reasoning": true, "id": "qwen3.5-9b", "max_completion_tokens": "262,144", "name": "Qwen: Qwen3.5 9B", "pricing": {"cache_prompt": "0.008", "completion": "0.15", "prompt": "0.04"}, "quantization": "fp8", "reasoning_effort": true, "speed": 25, "sub_req_cost": 0.5}];
+            const enterprisePrices = {};
+            const betaModels = ["kimi-k2.5-lightning", "glm-5.1-precision"];
+            const visionModels = ["kimi-k2.6", "kimi-k2.6-precision", "kimi-k2.5", "kimi-k2.5-lightning", "qwen3.6-27b", "qwen3.5-397b-a17b", "gemma-4-31b-it", "qwen3.5-9b", "greg-1-mini", "greg-1", "greg-1-super"];
+
+            let sortKey = null;
+            let sortDir = 1; // 1 = asc, -1 = desc
+            let userSubStatus = null; // stores /subscription-status-api response
+
+            function setSort(key) {
+                if (sortKey === key) {
+                    sortDir *= -1;
+                } else {
+                    sortKey = key;
+                    sortDir = 1;
+                }
+                updateSortHeaders();
+                renderModels();
+            }
+
+            function updateSortHeaders() {
+                ['in', 'cache', 'out', 'speed'].forEach(k => {
+                    const el = document.getElementById('sort-' + k);
+                    const arrow = el.querySelector('.sort-arrow');
+                    if (sortKey === k) {
+                        el.classList.add('sort-active');
+                        arrow.textContent = sortDir === 1 ? '↑' : '↓';
+                    } else {
+                        el.classList.remove('sort-active');
+                        arrow.textContent = '↕';
+                    }
+                });
+            }
+
+            function getCachePrice(model) {
+                if (model.pricing.cache_prompt !== undefined) return parseFloat(model.pricing.cache_prompt);
+                return Math.round(parseFloat(model.pricing.prompt) * 0.2 * 100) / 100;
+            }
+
+            function formatCachePrice(model) {
+                if (model.pricing.cache_prompt !== undefined) return `$${model.pricing.cache_prompt}`;
+                return `$${(Math.round(parseFloat(model.pricing.prompt) * 0.2 * 100) / 100).toFixed(2)}`;
+            }
+
+            function renderModels() {
+                const container = document.getElementById('model-list');
+                let sorted = [...allModels];
+                if (sortKey) {
+                    sorted.sort((a, b) => {
+                        let av, bv;
+                        if (sortKey === 'in') { av = parseFloat(a.pricing.prompt); bv = parseFloat(b.pricing.prompt); }
+                        else if (sortKey === 'cache') { av = getCachePrice(a); bv = getCachePrice(b); }
+                        else if (sortKey === 'out') { av = parseFloat(a.pricing.completion); bv = parseFloat(b.pricing.completion); }
+                        else if (sortKey === 'speed') { av = a.speed; bv = b.speed; }
+                        return (av - bv) * sortDir;
+                    });
+                }
+
+                container.innerHTML = sorted.map(model => {
+                    const speedClass = model.speed > 49 ? 'speed-fast' : model.speed > 24 ? 'speed-medium' : 'speed-slow';
+                    const betaTag = betaModels.includes(model.id) ? '<span class="beta-tag">beta</span>' : '';
+                    const visionTag = visionModels.includes(model.id) ? '<span class="bubble">vision</span>' : '';
+                    const isPrecision = model.id.endsWith('-precision');
+                    const precisionTag = isPrecision ? '<span class="bubble" style="border-color: #ff6b6b; color: #ff6b6b;">3x requests</span>' : '';
+                    // Per-model request-cost multiplier (sub_req_cost). Anything other
+                    // than 1 changes how many daily plan requests a call costs —
+                    // green when it's cheaper (<1), red when it's pricier (>1).
+                    let subReqTag = '';
+                    const hasActiveSub = userSubStatus && userSubStatus.has_active_sub && !userSubStatus.is_dedicated;
+                    if (hasActiveSub && model.sub_req_cost !== undefined && model.sub_req_cost !== null && Number(model.sub_req_cost) !== 1) {
+                        const subReqCost = Number(model.sub_req_cost);
+                        if (!isNaN(subReqCost) && subReqCost >= 0) {
+                            const subReqColor = subReqCost < 1 ? '#4ade80' : '#ff6b6b';
+                            const subReqLabel = Number.isInteger(subReqCost) ? subReqCost : parseFloat(subReqCost.toFixed(2));
+                            subReqTag = `<span class="bubble" style="border-color: ${subReqColor}; color: ${subReqColor};">${subReqLabel}x requests</span>`;
+                        }
+                    }
+                    const copyIcon = `<svg onclick="copy_text('${model.id}')" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16" style="cursor: pointer;"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg>`;
+                    // Enterprise discount: if this account has a custom rate for
+                    // this model, strike the catalogue price and show the discount.
+                    const ent = enterprisePrices[model.id];
+                    const cell = (catalogue, discount) =>
+                        (ent && discount != null)
+                            ? `<s style="opacity:.45">${catalogue}</s> <price style="color:#4ade80">$${discount}</price>`
+                            : `<price>${catalogue}</price>`;
+                    const inCell = cell(`$${model.pricing.prompt}`, ent && ent.input);
+                    const cacheCell = cell(formatCachePrice(model), ent && ent.cache);
+                    const outCell = cell(`$${model.pricing.completion}`, ent && ent.output);
+                    return `
+                        <div class="price-box-wrapper">
+                            <div class="price-box">
+                                <div class="row-left">
+                                    <div class="model_name">${model.id} ${betaTag} ${copyIcon}</div>
+                                    <div class="bubbles">
+                                        <span class="bubble">${model.quantization}</span>
+                                        <span class="bubble">${model.context_length} / ${model.max_completion_tokens}</span>
+                                        ${visionTag}
+                                        ${precisionTag}
+                                        ${subReqTag}
+                                        ${ent ? '<span class="bubble" style="border-color:#4ade80; color:#4ade80;">your enterprise rate</span>' : ''}
+                                    </div>
+                                </div>
+                                <div class="col col--in" data-label="$ / M in">${inCell}</div>
+                                <div class="col col--cache" data-label="$ / M cache">${cacheCell}</div>
+                                <div class="col col--out" data-label="$ / M out">${outCell}</div>
+                                <div class="col col--speed ${speedClass}" data-label="Speed">~${model.speed} t/s</div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+            let selectedPlan = null;
+
+            async function loadPricing() {
+                try {
+                    const [pricingResp, subResp] = await Promise.all([
+                        fetch('/pricing_api'),
+                        isLoggedIn ? fetch('/subscription-status-api') : Promise.resolve(null),
+                    ]);
+                    if (!pricingResp.ok) {
+                        console.error("Failed to load pricing:", pricingResp.status);
+                        renderPlans({ name: "free", cost: 0 }, null);
+                        return;
+                    }
+                    const data = await pricingResp.json();
+                    const subData = subResp ? await subResp.json() : null;
+                    userSubStatus = subData;
+                    renderPlans(data, subData);
+                } catch (e) {
+                    console.error("Error loading pricing:", e);
+                    renderPlans({ name: "free", cost: 0 }, null);
+                }
+            }
+
+            const planDisplayNames = { 'ent1': 'Scale', 'int': 'Intermediate', 'max': 'Max', 'flex': 'Flexible' };
+
+            function getPlanName(id) {
+                return planDisplayNames[id] || (id.charAt(0).toUpperCase() + id.slice(1));
+            }
+
+            function renderPlans(userPlan, subStatus) {
+                const container = document.getElementById('plans-container');
+                const title = document.getElementById('plans-section-title');
+
+                // Subscriptions are retired — crof is now pay-as-you-go, so we no
+                // longer show a purchasable plan catalogue. If the logged-in user
+                // still has an active subscription, show a single awareness card
+                // so they can see it and manage/cancel it. Otherwise show nothing.
+                const hasSub = isLoggedIn && userPlan && userPlan.name && userPlan.name !== 'free';
+                if (!hasSub) {
+                    container.innerHTML = '';
+                    if (title) title.style.display = 'none';
+                    return;
+                }
+                if (title) title.style.display = '';
+
+                const checkSvg = `<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" class="check"><path d="M2 6l3 3 5-5" stroke="#8b7cff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+                const name = getPlanName(userPlan.name);
+                const reqs = (userPlan.requests || 0).toLocaleString();
+                const priceLabel = userPlan.cost ? `$${userPlan.cost}` : 'Active';
+                container.innerHTML = `
+                    <div class="plan-box">
+                        <div class="plan-header">
+                            <span class="plan-name">${name}</span>
+                            <span class="bubble">Current plan</span>
+                        </div>
+                        <div class="pretty">${priceLabel}<span>/mo</span></div>
+                        <div class="plan-divider"></div>
+                        <div class="plan-features">
+                            <div class="plan-feature">${checkSvg}<span>${reqs} daily requests</span></div>
+                            <div class="plan-feature">${checkSvg}<span>You keep this plan until the end of your billing period</span></div>
+                        </div>
+                        <div style="font-size:0.8rem; color:var(--p-muted); margin-bottom:12px; line-height:1.5;">Subscriptions are being retired as crof moves to pay-as-you-go. New plans and upgrades are no longer available.</div>
+                        <button class="btn-white" onclick="window.location.href='/u_v2/billing-setup'">Manage subscription</button>
+                    </div>
+                `;
+            }
+
+const planPriceById = { free: 0, hobby: 5, pro: 10, int: 20, ent1: 50, max: 100 };
+
+            async function showPlanModal(plan, price) {
+                selectedPlan = plan;
+                const modal = document.getElementById('confirmModal');
+                const message = document.getElementById('modalMessage');
+                const name = getPlanName(plan);
+                let titleText = `Get the ${name} Plan`;
+
+                if (plan === 'free') {
+                    message.innerHTML = `To cancel your subscription, you'll need to do so through the billing portal. Click below to open it.<br><br><small style='color:var(--link-text)'>Your plan benefits will be removed immediately once you cancel there.</small>`;
+                    document.getElementById('purchase-plan').textContent = 'Open Billing Portal';
+                    document.getElementById('purchase-plan').onclick = () => { window.location.href = '/u_v2/billing-setup'; };
+                    titleText = 'Cancel Subscription';
+                } else {
+                    const subStatus = await getSubStatus();
+                    const hasActiveSub = subStatus && subStatus.has_active_sub && !subStatus.is_dedicated;
+                    const currentTier = hasActiveSub ? subStatus.current_tier : null;
+                    const willCancel = hasActiveSub && subStatus.will_cancel;
+                    const currentPrice = currentTier != null ? (planPriceById[currentTier] ?? 0) : 0;
+                    const isUpgrade = hasActiveSub && !willCancel && price > currentPrice;
+                    const isSameTier = hasActiveSub && currentTier === plan && !willCancel;
+
+                    if (isSameTier) {
+                        message.innerHTML = `You're already subscribed to this plan.`;
+                        document.getElementById('purchase-plan').textContent = 'Close';
+                        document.getElementById('purchase-plan').onclick = closeModal;
+                    } else if (isUpgrade) {
+                        const currentName = getPlanName(currentTier);
+                        message.innerHTML = `Upgrading from <b>${currentName}</b> to <b>${name}</b> ($${price}/month). Loading approximate price...`;
+                        document.getElementById('purchase-plan').textContent = 'Yes, upgrade now';
+                        document.getElementById('purchase-plan').onclick = confirmPlanChange;
+                        titleText = `Upgrade to ${name}`;
+                        try {
+                            const r = await fetch(`/proration-preview/${plan}`);
+                            if (r.ok) {
+                                const d = await r.json();
+                                if (d.prorated_amount > 0) {
+                                    message.innerHTML = `Upgrading from <b>${currentName}</b> to <b>${name}</b> ($${price}/month). The upgrade will cost approximately <b>$${d.prorated_amount}</b>.`;
+                                }
+                            }
+                        } catch (e) {}
+                    } else if (hasActiveSub && !willCancel) {
+                        message.innerHTML = `This plan is <b>$${price}/month</b>. Clicking yes will cancel your current subscription (benefits remain until end of billing period) and take you to checkout for the new plan.`;
+                        document.getElementById('purchase-plan').textContent = 'Yes, cancel and checkout';
+                        document.getElementById('purchase-plan').onclick = confirmPlanChange;
+                    } else {
+                        message.innerHTML = `This plan is <b>$${price}/month</b>. You'll be taken to checkout to subscribe.`;
+                        document.getElementById('purchase-plan').textContent = 'Yes, please';
+                        document.getElementById('purchase-plan').onclick = confirmPlanChange;
+                    }
+                }
+                document.getElementById('modalTitle').textContent = titleText;
+                modal.classList.add('active');
+            }
+
+            const FLEX_REQS_PER_DOLLAR = 125;
+            const FLEX_MIN = 20;
+
+            function updateFlexPreview() {
+                const input = document.getElementById('flex-amount');
+                const preview = document.getElementById('flex-preview');
+                if (!input || !preview) return;
+                const amt = parseFloat(input.value);
+                if (isNaN(amt) || amt < FLEX_MIN) {
+                    preview.textContent = `Minimum is $${FLEX_MIN}/mo`;
+                    return;
+                }
+                const reqs = Math.round(amt * FLEX_REQS_PER_DOLLAR);
+                preview.textContent = `${reqs.toLocaleString()} daily requests`;
+            }
+
+            async function buyFlexible() {
+                const input = document.getElementById('flex-amount');
+                const btn = document.getElementById('flex-buy-btn');
+                if (!input) return;
+                const amt = parseFloat(input.value);
+                if (isNaN(amt) || amt < FLEX_MIN) {
+                    if (typeof createToast === 'function') createToast(`The Flexible plan starts at $${FLEX_MIN}/month.`);
+                    return;
+                }
+                if (btn) { btn.disabled = true; btn.textContent = 'Loading…'; }
+                try {
+                    const resp = await fetch(`/u_v2/buy-flexible/${amt}`);
+                    const data = await resp.json();
+                    if (data.checkout_url) {
+                        window.location.href = data.checkout_url;
+                        return;
+                    }
+                    if (typeof createToast === 'function') createToast(data.message || 'Failed to start checkout.');
+                } catch (e) {
+                    if (typeof createToast === 'function') createToast('Failed to start checkout. Please try again.');
+                }
+                if (btn) { btn.disabled = false; btn.textContent = 'Get Flexible'; }
+            }
+
+            async function getSubStatus() {
+                try {
+                    const response = await fetch('/subscription-status-api');
+                    if (!response.ok) return null;
+                    return await response.json();
+                } catch (e) {
+                    console.error("Error checking subscription status:", e);
+                    return null;
+                }
+            }
+
+            async function checkNeedsBillingCancel() {
+                try {
+                    const response = await fetch('/subscription-status-api');
+                    if (!response.ok) {
+                        console.error("Failed to check subscription status:", response.status);
+                        return false;
+                    }
+                    const data = await response.json();
+                    // Only need to cancel if we have an active subscription that's not already set to cancel
+                    // and it's not a dedicated instance
+                    const isRegularSubscription = data.current_tier && !data.is_dedicated;
+                    return isRegularSubscription && data.has_active_sub && !data.will_cancel;
+                } catch (e) {
+                    console.error("Error checking subscription status:", e);
+                    return false;
+                }
+            }
+
+            function closeModal() {
+                document.getElementById('confirmModal').classList.remove('active');
+                selectedPlan = null;
+            }
+
+            function confirmPlanChange() {
+                if (!selectedPlan) return;
+
+                // If we need to cancel first, verify the cancellation succeeded
+                if (selectedPlan !== 'free') {
+                    checkNeedsBillingCancel().then(needsCancel => {
+                        if (needsCancel) {
+                            // We need to cancel first, the backend will handle this
+                            window.location.href = `/plan-api/${selectedPlan}`;
+                        } else {
+                            // No cancellation needed, proceed directly to checkout
+                            window.location.href = `/plan-api/${selectedPlan}`;
+                        }
+                    });
+                } else {
+                    // Free plan - just open billing portal
+                    window.location.href = `/u_v2/billing-setup`;
+                }
+            }
+
+            function copy_text(text) {
+                navigator.clipboard.writeText(text);
+                if (typeof createToast === 'function') createToast("Copied!");
+            }
+
+            window.onclick = (e) => { if (e.target == document.getElementById('confirmModal')) closeModal(); }
+
+            document.addEventListener("DOMContentLoaded", () => {
+                renderModels();
+                loadPricing();
+                const params = new URLSearchParams(window.location.search);
+                const successParam = params.get("cancelled");
+                if (successParam === "1" && typeof createToast === "function") {
+                    createToast("Your previous subscription has been canceled. You can now proceed to checkout.");
+                    window.history.replaceState({}, "", window.location.pathname);
+                }
+
+                const upgradedParam = params.get("upgraded");
+                if (upgradedParam === "1" && typeof createToast === "function") {
+                    createToast("Plan upgraded! Your card was charged the prorated difference and your new plan is active.");
+                    window.history.replaceState({}, "", window.location.pathname);
+                }
+
+                // Handle error messages from backend
+                const errorParam = params.get("error");
+                if (errorParam && typeof createToast === "function") {
+                    const errorMessages = {
+                        "cancel_failed": "Failed to cancel your existing subscription. Please try again.",
+                        "checkout_failed": "Checkout failed. Please try again or contact support.",
+                        "no_credits": "You need to have credits to purchase this plan.",
+                        "no_email": "Please add your email address in settings first.",
+                        "upgrade_failed": "Upgrade failed. Your card may have been declined — try again or update your payment method in the billing portal.",
+                        "already_on_plan": "You're already subscribed to this plan.",
+                        "subs_unavailable": "Subscriptions are no longer available — crof is now pay-as-you-go."
+                    };
+                    const errorMessage = errorMessages[errorParam] || "An error occurred. Please try again.";
+                    console.error("Checkout error:", errorMessage);
+                    createToast(errorMessage);
+                    window.history.replaceState({}, "", window.location.pathname);
+                }
+
+                const hamburger = document.querySelector(".hamburger");
+                const sidebar = document.querySelector(".sidebar");
+                const overlay = document.querySelector(".overlay");
+                if (hamburger) {
+                    hamburger.onclick = () => {
+                        [hamburger, sidebar, overlay].forEach(el => el.classList.toggle("active"));
+                    };
+                }
+                if (overlay) overlay.onclick = () => {
+                    [hamburger, sidebar, overlay].forEach(el => el.classList.remove("active"));
+                };
+            });
+        </script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"78fe6123b2fa44eb8a0eb0dcc5315127","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

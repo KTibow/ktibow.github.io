@@ -1,0 +1,556 @@
+---
+import BlogPost from '$lib/layouts/BlogPost.astro';
+
+export const title = 'CrofAI is an OpenRouter wrapper';
+export const date = '2026-09-13';
+---
+
+<BlogPost {title} {date}>
+  <p>
+    <strong
+      ><a href="https://crof.ai">CrofAI</a> accepts the <code>openrouter:advisor</code> tool</strong
+    >, completely unexpected for an independent inference provider. Recording the results of using
+    this tool across every model shows <strong
+      >CrofAI is an OpenRouter wrapper that silently routes to cheaper or weaker models than what
+      you request</strong
+    >, explaining its low prices. Proof that this was true at the time of writing follows later.
+  </p>
+
+  <p>
+    <strong
+      >These models are routed to <a href="https://openrouter.ai/deepseek/deepseek-v4-flash-0731"
+        >DeepSeek V4 Flash 0731</a
+      >:</strong
+    >
+  </p>
+  <ul>
+    <li><code>deepseek-v4-pro-0813</code></li>
+    <li><code>glm-5.3-flash</code></li>
+    <li><code>glm-5.2</code></li>
+    <li><code>qwen3.8-27b</code></li>
+    <li><code>qwen3.5-397b-a17b</code></li>
+    <li><code>deepseek-v3.2</code></li>
+    <li><code>deepseek-v4-pro</code></li>
+    <li><code>kimi-k2.7-code</code></li>
+    <li><code>kimi-k2.6</code></li>
+    <li><code>kimi-k2.6-precision</code></li>
+    <li><code>mimo-v2.5-pro</code></li>
+    <li><code>qwen3.6-27b</code></li>
+  </ul>
+  <p>
+    <strong
+      >These models are routed to <a href="https://openrouter.ai/z-ai/glm-5.3-flash"
+        >GLM 5.3 Flash</a
+      >:</strong
+    >
+  </p>
+  <ul>
+    <li><code>kimi-k3</code></li>
+    <li><code>kimi-k3-eco</code></li>
+    <li><code>glm-5.3</code></li>
+    <li><code>glm-5.1</code></li>
+  </ul>
+  <p>
+    <strong
+      >These models are routed to <a href="https://openrouter.ai/moonshotai/kimi-k2.7-code"
+        >Kimi K2.7 Code</a
+      >:</strong
+    >
+  </p>
+  <ul>
+    <li><code>greg-2-super</code></li>
+    <li><code>greg-1</code></li>
+    <li><code>greg-1-super</code></li>
+  </ul>
+  <p>
+    <strong
+      >These models are routed to <a href="https://openrouter.ai/qwen/qwen3.7-flash"
+        >Qwen3.7 Flash</a
+      >:</strong
+    >
+  </p>
+  <ul>
+    <li><code>deepseek-v4-flash-vision-exp</code></li>
+  </ul>
+  <p>
+    <strong
+      >These models are routed to <a href="https://openrouter.ai/z-ai/glm-5.2">GLM 5.2</a>:</strong
+    >
+  </p>
+  <ul>
+    <li><code>greg-2-ultra</code></li>
+  </ul>
+  <p>
+    <strong
+      >These models are routed to <a href="https://openrouter.ai/z-ai/glm-4.7-flash"
+        >GLM 4.7 Flash</a
+      >:</strong
+    >
+  </p>
+  <ul>
+    <li><code>gemma-4-31b-it</code></li>
+  </ul>
+  <p>
+    <strong
+      >These models are routed to <a href="https://openrouter.ai/qwen/qwen3.5-9b">Qwen3.5 9B</a
+      >:</strong
+    >
+  </p>
+  <ul>
+    <li><code>greg-1-mini</code></li>
+  </ul>
+  <p><strong>These models aren't swapped out, but aren't self hosted either:</strong></p>
+  <ul>
+    <li>
+      <a href="https://openrouter.ai/deepseek/deepseek-v4.1-flash"
+        ><code>deepseek-v4.1-flash</code></a
+      >
+    </li>
+    <li>
+      <a href="https://openrouter.ai/deepseek/deepseek-v4-flash-0731"
+        ><code>deepseek-v4-flash-0731</code></a
+      >
+    </li>
+    <li><a href="https://openrouter.ai/qwen/qwen3.5-9b"><code>qwen3.5-9b</code></a></li>
+  </ul>
+
+  <p>
+    Since CrofAI is working on patching the fingerprints mentioned here, our claims come with <strong
+      >independently verifiable attestations</strong
+    > published on GitHub: <a
+      href="https://github.com/KTibow/crof-is-an-openrouter-wrapper/releases/tag/probe-34768920690"
+      >one from the morning of September 13</a
+    > (run <a
+      href="https://github.com/KTibow/crof-is-an-openrouter-wrapper/actions/runs/34768920690"
+      >34768920690</a
+    >) and <a
+      href="https://github.com/KTibow/crof-is-an-openrouter-wrapper/releases/tag/probe-34804687001"
+      >one from that night</a
+    >, after CrofAI's fixes (run <a
+      href="https://github.com/KTibow/crof-is-an-openrouter-wrapper/actions/runs/34804687001"
+      >34804687001</a
+    >), both on <a
+      href="https://github.com/KTibow/crof-is-an-openrouter-wrapper/commit/1ec3ef09f007d6c9d38a6d845520aad1e68f96ab"
+      >1ec3ef0</a
+    >. The most common result for every model above is the same in both. You're encouraged to ask
+    your agent to use <code>gh</code> to verify it. If that's not enough, we have more reasons to be suspicious:
+  </p>
+
+  <h2>I gave CrofAI 4 shots to fix it, it still routed to OpenRouter</h2>
+  <div class="discord">
+    <h3>ktibow <time datetime="2026-09-13T02:48:51.482Z">9/12/26, 7:48 PM</time></h3>
+    <p>
+      i'm seeing crof falling back to openrouter on many models. i tried to debug this by using <code
+        >:consistent</code
+      >, like the playground does, but it's 404ing, is <code>:consistent</code> deprecated or smth? (to
+      be fair it was <a
+        href="https://discord.com/channels/1175276136083755008/1439989062189453323/1440072736478072913"
+        >one of the first ever features announced</a
+      > lol)
+    </p>
+    <h3>CROF_OWNER <time datetime="2026-09-13T02:56:02.630Z">9/12/26, 7:56 PM</time></h3>
+    <p>What do you mean falling back to openrouter?</p>
+    <h3>ktibow <time datetime="2026-09-13T02:56:49.462Z">9/12/26, 7:56 PM</time></h3>
+    <p>
+      it seems to not be going through crof's own inference - various things that only work on
+      openrouter are working on crof
+    </p>
+    <h3>CROF_OWNER <time datetime="2026-09-13T03:25:57.476Z">9/12/26, 8:25 PM</time></h3>
+    <p>interesting, I'll take a look at it</p>
+    <p>what are some of the things that typically only work on openrouter?</p>
+    <p>
+      (it's possible some of it is from kimi or claude since I can't remember when I did this but a
+      while back I was annoyed with some things people were saying were off about the API so I told
+      whichever one I was using at the time to do it's best implementing a perfect OpenAI chat
+      completions API and I said it should look to openrouter for examples but I'm not sure)
+    </p>
+    <h3>ktibow <time datetime="2026-09-13T03:34:14.690Z">9/12/26, 8:34 PM</time></h3>
+    <p>i think the big one i noticed was that server tools were implemented</p>
+    <p>
+      eg if i passed in type datetime instead of type function it could find the current date and
+      time
+    </p>
+    <p>but there's a lot more that just looks like a full fallback</p>
+    <p>
+      hence me trying to use <code>:consistent</code> to see what happens when fallbacks are disabled
+    </p>
+    <h3>CROF_OWNER <time datetime="2026-09-13T03:45:53.747Z">9/12/26, 8:45 PM</time></h3>
+    <p>
+      huh, I mean I have some openrouter usage for comparison but it doesn't seem like GPUs are off
+      necessarily so maybe it's just really frequent but honestly I'm not sure, I'll make some
+      updates for better monitoring and ensure openrouter isn't anywhere it shouldn't be, I have
+      tested our API with openrouter and I've set them as an all hell breaks loose fallback so I'll
+      go through it myself and have a couple agents check me
+    </p>
+    <p>thank you</p>
+    <h3>CROF_OWNER <time datetime="2026-09-13T07:19:00.000Z">9/13/26, 12:19 AM</time></h3>
+    <p>
+      everyone should be invited to deepseek-v4.1-flash-lightning, and there's a new version that
+      should properly apply the max output length as well as hopefully fixing some weird behavior
+      that @KTibow noticed (sorry for the ping)
+    </p>
+    <p>let me know if you have any issues with anything</p>
+    <p>
+      (new version is here <a href="https://67.nahcrof.com/">https://67.nahcrof.com/</a>, I didn't
+      pick the name because I'm brainrotted though I still am, I picked it because the local ip is
+      .67)
+    </p>
+  </div>
+  <p>
+    Shot 1. I reported that CrofAI seemed to be "falling back" to OpenRouter, and that <code
+      >:consistent</code
+    > 404s. CrofAI said OpenRouter was only an "all hell breaks loose" fallback, and suggested the similarities
+    could come from an AI told to look to OpenRouter when implementing the API (copying an API's shape
+    doesn't make OpenRouter's server tools actually run, though). A few hours later, CrofAI shared a beta
+    deploy with me.
+  </p>
+  <div class="discord">
+    <h3>ktibow <time datetime="2026-09-13T16:56:04.290Z">9/13/26, 9:56 AM</time></h3>
+    <p>concerningly, 67.nahcrof.com is still falling back to openrouter</p>
+    <h3>CROF_OWNER <time datetime="2026-09-13T16:56:23.809Z">9/13/26, 9:56 AM</time></h3>
+    <p>What in the world</p>
+    <p>What all is happening?</p>
+    <h3>ktibow <time datetime="2026-09-13T16:56:55.269Z">9/13/26, 9:56 AM</time></h3>
+    <p>
+      i can't say much - you'll need to check your code and run a debug request and see where it
+      goes yourself
+    </p>
+    <h3>CROF_OWNER <time datetime="2026-09-13T16:57:42.757Z">9/13/26, 9:57 AM</time></h3>
+    <p>I’ll set up some logging and a new version when I get home</p>
+    <p>Thank you for helping</p>
+    <p>
+      Holy shit you’re right, I thought you weren’t because I signed into openrouter with the wrong
+      email but there’s a not insignificant amount of traffic going to openrouter and from what I
+      can tell on my phone it’s because I configured my gpu router to avoid high priced pro 6000s
+      and vast isn’t playing nicely, I’m assuming I forgot to plug in my runpod fallback and instead
+      it’s going to openrouter, I’ll push an update to the .67 server when I get home from work in a
+      few hours and let you know, thank you so much
+    </p>
+    <h3>CROF_OWNER <time datetime="2026-09-13T23:22:28.009Z">9/13/26, 4:22 PM</time></h3>
+    <p>alright, update is there, same url</p>
+  </div>
+  <p>
+    Shot 2. The next morning, the new version was still routing to OpenRouter (as <a
+      href="https://github.com/KTibow/crof-is-an-openrouter-wrapper/releases/tag/probe-34768920690"
+      >attested</a
+    >), just blocking non-<code>function</code> tools. CrofAI confirmed "a not insignificant amount of
+    traffic" was going to OpenRouter, blamed a GPU router avoiding expensive RTX PRO 6000s (to be fair,
+    their price went up recently as of writing), and pushed an update to the beta deploy.
+  </p>
+  <div class="discord">
+    <h3>ktibow <time datetime="2026-09-13T23:38:57.523Z">9/13/26, 4:38 PM</time></h3>
+    <p>you definitely deployed the update but fallbacks are still being used</p>
+    <h3>CROF_OWNER <time datetime="2026-09-13T23:51:42.956Z">9/13/26, 4:51 PM</time></h3>
+    <p>Why do you say that?</p>
+    <p>If it’s consistent being broken I think one of the clankers broke it</p>
+    <p>I can fix that too and let you know so you can retest</p>
+    <h3>ktibow <time datetime="2026-09-13T23:53:36.476Z">9/13/26, 4:53 PM</time></h3>
+    <p>i can't say much - it's pretty consistent tho</p>
+    <p>you'll need to trace where each request is going and ensure your gpu fleets are running</p>
+    <p>since crof's codebase is private i can't do that on my own</p>
+    <h3>CROF_OWNER <time datetime="2026-09-14T01:05:03.259Z">9/13/26, 6:05 PM</time></h3>
+    <p>They are, I have the requests being tracked and none of them hit the fallback</p>
+    <p>
+      I have openrouter set as a shit hit the fan fallback and none of them went there, how come you
+      can’t say much?
+    </p>
+    <h3>ktibow <time datetime="2026-09-14T01:07:01.917Z">9/13/26, 6:07 PM</time></h3>
+    <p>
+      i would like to say more, but i can't since there's a chance you're acting in bad faith. if
+      you were acting in bad faith, then i would just be giving you hints about how to fake not
+      being openrouter.
+    </p>
+    <p>what models say and how they say it looks like openrouter in multiple ways tho</p>
+    <h3>CROF_OWNER <time datetime="2026-09-14T01:11:35.848Z">9/13/26, 6:11 PM</time></h3>
+    <p>
+      That’s sort of what I figured but I can assure you no requests are going to openrouter, the
+      old api is but I’m tracking all requests actively
+    </p>
+    <p>Is the concern that it’s not hitting GPUs or that the models are incorrect</p>
+    <h3>ktibow <time datetime="2026-09-14T01:11:58.150Z">9/13/26, 6:11 PM</time></h3>
+    <p>
+      and <code>:consistent</code> ("Allow fallback servers" toggle in playground) is still broken, might
+      be worth removing from the playground if it's no longer implemented
+    </p>
+    <h3>CROF_OWNER <time datetime="2026-09-14T01:12:35.936Z">9/13/26, 6:12 PM</time></h3>
+    <p>I’ll try fixing that</p>
+    <p>Thank you</p>
+  </div>
+  <p>
+    Shot 3. CrofAI denies anything going to OpenRouter now, but all models still had OpenRouter
+    fingerprints, just with certain metadata masked.
+  </p>
+  <div class="discord">
+    <h3>CROF_OWNER <time datetime="2026-09-14T01:14:17.687Z">9/13/26, 6:14 PM</time></h3>
+    <p>
+      I’ll spin up another update with an experiment in a sec, can you do what you did for the last
+      couple?
+    </p>
+    <h3>ktibow <time datetime="2026-09-14T01:14:35.754Z">9/13/26, 6:14 PM</time></h3>
+    <p>i can, can you share more about the experiment?</p>
+    <p>*will</p>
+    <h3>CROF_OWNER <time datetime="2026-09-14T01:32:13.383Z">9/13/26, 6:32 PM</time></h3>
+    <p>
+      If it’s alright I will but after the experiment, I want to try just running it and see if it
+      feels better, I’ll share regardless afterwards
+    </p>
+    <p>It might take a bit (like an hour or so) so I do apologize</p>
+    <h3>ktibow <time datetime="2026-09-14T01:36:47.410Z">9/13/26, 6:36 PM</time></h3>
+    <p>alright let me know when it's live</p>
+    <p>
+      you could preregister an explanation about the experiment by using a <a
+        href="https://timevault.drand.love/">cryptographic time lock service</a
+      > - encrypt now, send now, i decrypt only when time comes
+    </p>
+    <h3>ktibow <time datetime="2026-09-14T02:31:05.759Z">9/13/26, 7:31 PM</time></h3>
+    <p>deployed yet?</p>
+    <h3>CROF_OWNER <time datetime="2026-09-14T02:35:39.724Z">9/13/26, 7:35 PM</time></h3>
+    <p>I can try that out</p>
+    <p>Not quite</p>
+    <h3>ktibow <time datetime="2026-09-14T03:02:05.136Z">9/13/26, 8:02 PM</time></h3>
+    <p>would appreciate if you sent the encrypted version</p>
+    <h3>CROF_OWNER <time datetime="2026-09-14T03:02:46.202Z">9/13/26, 8:02 PM</time></h3>
+    <p>sorry, just got back to my computer, I'll send that and then get the deployment finished</p>
+    <p>forgive me if this is silly but do I just send you the ciphertext?</p>
+    <h3>ktibow <time datetime="2026-09-14T03:10:27.152Z">9/13/26, 8:10 PM</time></h3>
+    <p>yeah</p>
+    <p>i won't be able to decrypt it until the time you set</p>
+    <h3>CROF_OWNER <time datetime="2026-09-14T03:10:43.040Z">9/13/26, 8:10 PM</time></h3>
+    <pre>-----BEGIN AGE ENCRYPTED FILE-----
+YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IHRsb2NrIDMyMTg1MTUyIDUyZGI5YmE3
+MGUwY2MwZjZlYWY3ODAzZGQwNzQ0N2ExZjU0Nzc3MzVmZDNmNjYxNzkyYmE5NDYw
+MGM4NGU5NzEKc1NKbllJbUVjc1dUSnhhQUlrdFBwZ01KcWkwd3JReW8xMys5Z2tz
+VkplMUZpSklWbVZXakhyNzI5SWUvamRYMgpHUDVra09YSlVXYjZ5QmUyTzQ3QXFx
+YVZYVkRLV0tJbXQ5MkYzWUNNUlJUUU02MlU2UndBczdFK1cwTDBWSll3CjRpMEp2
+ME5rVjdWNThmTXUzaDZxdmpWTmdhMVBQTmdkVHVxRUdWdzdzbUkKLS0tIG8vYVJr
+Mjh3NldxYXZZUStzNThSV1RGUWRxVkJLcFp3OHZjNEtjSnhtY00Kv7Bcyia3gy7X
++tk1gNGyJ9qlKVtlgKSRd3i3a/WKGHeqwNLUn6wsxvTznYOtXXnPnnE0wnslCjRf
+x7oKDiXL8IvRiIB0EnQ+wtKlw8YyNyUtF4CUmHx+azTfXltzbq9iIXxIGW1LTeQo
+eelHcIYivr5LaQj7/f0beskS5pisRziQIcuwTc+3S+QdHhMcQTYbJQmi5qqY/cUx
+skQC9sFaqo06WuN/mK4ifXq2UD8z2MLIeCrAWBCWKKRUaygMnCE8ro/cLXHDUSPL
+ZYgImnzZmrwlqr5pbb/poJPmzQrFe551zMD0QXM2RVgaBjvsLcu7Fs2s1g3pq1VF
+UnrC53QpT1uzYid9ZPyA1fcK6oCCy5slxp5QiV0vuonnvm6CqHZsdv15qHpNH8YM
+CJkEfbrjoXSpROpmM0Xk7/KcSVtcUn5e64NpkxL0itIpkTukQvVfphSMelYOjEqQ
+/6SPa3VUWmpfPf6pMO7JNG4Thl4ckWnbw8h3ZuJUHHZR6gu0QeMWsX6mpIk9oYlc
+fXRYlaqKmtNq8H6D7lH5sH6PO4NfVsTgzmqxDK8Q277/0maEy2ttybOLvzikoflT
+QNNWqW/eG7b+TZ6o/Wfn0NOspfVSF+NqAP2/w7gO
+-----END AGE ENCRYPTED FILE-----</pre>
+    <p>I set it for 23:07 my time</p>
+    <p>it's 22:10</p>
+    <h3>CROF_OWNER <time datetime="2026-09-14T03:55:37.358Z">9/13/26, 8:55 PM</time></h3>
+    <p>should be good</p>
+    <p>
+      although I broke deepseek-v4-flash-0731 but I'll redeploy to the test here in a sec and it
+      should be good
+    </p>
+    <h3>ktibow <time datetime="2026-09-14T03:56:56.083Z">9/13/26, 8:56 PM</time></h3>
+    <p>ok back, looking now</p>
+    <h3>CROF_OWNER <time datetime="2026-09-14T04:02:13.513Z">9/13/26, 9:02 PM</time></h3>
+    <p>looks like my kimi-k3 deployment I set up for this broke so I apologize for that</p>
+    <p>
+      I disabled all fallbacks to ensure we don't hit openrouter under any condition so perhaps that
+      was going wrong and my fallback code once we fail to hit any GPUs is absolute spaghetti so
+      perhaps that was part of it, I'm having kimi (on moonshot because I like their sub) look
+      through it and I'm gonna be working on it and I'll have my junior audit my code and I'll audit
+      the results he pushes
+    </p>
+    <h3>ktibow <time datetime="2026-09-14T04:06:24.765Z">9/13/26, 9:06 PM</time></h3>
+    <p>
+      to give some feedback before the answer about what changed is disclosed: most models look
+      better, i'm still running tests to verify completely correct behavior rn
+    </p>
+    <h3>CROF_OWNER <time datetime="2026-09-14T04:08:54.503Z">9/13/26, 9:08 PM</time></h3>
+    <p>
+      basically I tried to avoid any inconsistencies that could come from my routing and fallbacks
+    </p>
+    <h3>ktibow <time datetime="2026-09-14T04:11:14.239Z">9/13/26, 9:11 PM</time></h3>
+    <p>0731 seems still broken</p>
+    <h3>CROF_OWNER <time datetime="2026-09-14T04:11:41.452Z">9/13/26, 9:11 PM</time></h3>
+    <p>updated it just now</p>
+    <h3>ktibow <time datetime="2026-09-14T04:13:28.374Z">9/13/26, 9:13 PM</time></h3>
+    <p>ok yeah that fixed it</p>
+    <p>ill lyk when im done testing</p>
+  </div>
+  <p>
+    Shot 4. CrofAI announced an "experiment", disabled "all fallbacks to ensure we don't hit
+    openrouter under any condition", and time-locked an explanation that unlocked at 9:07 PM. Here's
+    its decryption:
+  </p>
+  <blockquote>
+    <p>
+      I'm deploying a separate version of the website, the deployments behind the backend will
+      consist of two types, pretty much all models will go to a set of rented boxes that I hand
+      configured and routed myself, they will not scale up or down traditionally (I anticipate that
+      for this test it will cost a few hundred -- approximately). The only model that won't fit this
+      is deepseek-v4-flash-0731 which will be deployed to my local dgx spark.
+    </p>
+  </blockquote>
+  <p>
+    <strong>With "all fallbacks" disabled, the experiment still went to OpenRouter.</strong> From the
+    <a href="https://github.com/KTibow/crof-is-an-openrouter-wrapper/releases/tag/probe-34804687001"
+      >attestation</a
+    > taken half an hour after it went live:
+  </p>
+  <ul>
+    <li>
+      <strong
+        ><code>deepseek-v4-flash-vision-exp</code> downloaded its image as <code
+          >OpenRouter/0.0 (https://openrouter.ai/; security@openrouter.ai)</code
+        >.</strong
+      >
+    </li>
+    <li>
+      <strong
+        ><code>greg-2-super</code>, <code>mimo-v2.5-pro</code>, and <code>qwen3.5-9b</code> returned OpenRouter
+        <code>gen-</code> response IDs</strong
+      >, with the exact same prompt token counts as on crof.ai. <code>greg-2-super</code> and <code
+        >qwen3.5-9b</code
+      > even downloaded their images from the same Alibaba Cloud IPs as on crof.ai.
+    </li>
+    <li>
+      <strong
+        ><code>deepseek-v4-flash-0731</code>, the "local DGX Spark" model, was answered by a Qwen
+        model</strong
+      >, counting tokens exactly like <code>deepseek-v4-flash-vision-exp</code> (in my testing after CrofAI
+      fixed it; it errored during the attested run). The real model wouldn't fit on a Spark anyway: <a
+        href="https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731">its weights</a
+      > are 167 GB, the Spark has 128 GB, and the Q8_0 CrofAI advertises would be 323 GB.
+    </li>
+  </ul>
+  <p>
+    The other models just got new paint. Compared to the <a
+      href="https://github.com/KTibow/crof-is-an-openrouter-wrapper/releases/tag/probe-34768920690"
+      >morning attestation</a
+    >, their <code>gen-</code> IDs became hex IDs, and the Kimi, GLM, and Gemma models that had been counting
+    tokens like another model family started counting them like their own. The DeepSeek and Gemma models
+    still downloaded images the same way as on crof.ai, from Huawei Cloud with browser User-Agents and
+    from the same Cogent /24.
+  </p>
+  <p>
+    And crof.ai itself didn't change at all: every model gave the same advisor result 5 out of 5
+    times.
+  </p>
+
+  <h2>A real fallback would act much differently</h2>
+  <ul>
+    <li>
+      <p>
+        A real fallback would be debuggable: it would note in the body or header that it's active,
+        and it could be disabled by turning off "Allow fallback servers", a switch that appends <code
+          >:consistent</code
+        > to the model ID. Instead, normal use has no (non-accidental) signs of fallbacks, and <code
+          >:consistent</code
+        > straight up 404s.
+      </p>
+    </li>
+    <li>
+      <p>
+        A real fallback would route to the model you request, or at least one similarly intelligent.
+        Instead, Kimi K3 and multiple other models are being routed to GLM 5.3 Flash. CrofAI
+        explains the general phenomenon of multiple models functioning the same way away as a "set
+        of infra":
+      </p>
+      <div class="discord">
+        <h3>CROF_OWNER <time datetime="2026-04-26T15:33:39.205Z">4/26/26, 8:33 AM</time></h3>
+        <p>
+          so if one set of infra is struggling, the similar ones will too (so k2.6-precision, ds4,
+          and 5.1-precision should all be struggling)
+        </p>
+      </div>
+    </li>
+  </ul>
+
+  <h2>The claims are questionable in the first place</h2>
+  <p>
+    Asked directly what <a href="https://huggingface.co/moonshotai/Kimi-K3">K3</a> runs on, the answer
+    was the same hardware as everything else:
+  </p>
+
+  <div class="discord">
+    <h3>
+      Unravel <time datetime="2026-07-29T15:39:43.753Z">7/29/26, 8:39 AM</time>
+    </h3>
+    <p>what you running kimi on now @CROF_OWNER?</p>
+    <h3>CROF_OWNER <time datetime="2026-07-29T15:40:46.342Z">7/29/26, 8:40 AM</time></h3>
+    <p>still pro 6000s like usual</p>
+    <p>their a great price per GB of vram</p>
+    <p>wait no, they're*</p>
+  </div>
+
+  <p>
+    An RTX PRO 6000 has 96 GB, and the largest RTX PRO 6000 machine on Vast only has 8, making 765
+    GiB. CrofAI's K3 is 1,454 GiB at mxfp4 and ~802 GiB at Q2_K. Both quantizations would need to be
+    split across two machines.
+  </p>
+
+  <p>
+    That's before the rest of the list. <a
+      href="https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813">DeepSeek V4 Pro 0813</a
+    > is 1.65 trillion parameters, which at the Q8_0 it advertises is 1,633 GiB: three machines. <a
+      href="https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro">MiMo V2.5 Pro</a
+    > needs two. And if you add every model advertised as open weight in <a
+      href="https://crof.ai/v1/models">/v1/models</a
+    >, you get 8,716 GiB of weights running across 15 machines and 120 GPUs.
+  </p>
+
+  <p>
+    CrofAI's <a href="https://crof.ai/api/page-data/dedicated">dedicated instance charges</a> price VRAM
+    at $0.0096 to $0.0112 per GiB-hour. Using the average of $0.01037 (which implies CrofAI charges $7.93
+    per box, while the cheapest 8 RTX PRO 6000 Vast box has been getting as expensive as $8.00/hr), the
+    catalog comes to <strong>$2,170 a day</strong>.
+  </p>
+
+  <p>
+    If you switch to Vast's pricing - at least $8/hour for 8 Pro 6000s (as of writing) - you get a
+    floor of
+    <strong>$2,880 a day</strong> instead.
+  </p>
+
+  <p>
+    In May, CrofAI published that <a href="https://crof.ai/blog/pricing-changes"
+      >daily costs above $1,000, against revenue between $500 and $1,000</a
+    >, killed their subscription offering. Since then, the model count has gone up and prices have
+    gone down.
+  </p>
+
+  <p>
+    It's implausible, not impossible. <code>kimi-k3</code>, <code>kimi-k3-eco</code>, <code
+      >deepseek-v4-pro-0813</code
+    >, and <code>mimo-v2.5-pro</code> just have to handle many expert all-to-all communication rounds
+    per token (92 for K3) without any NVLink or fabric between the multiple machines they run on. This
+    would be really interesting and novel if true, but CrofAI never claims, let alone provides evidence,
+    that it is.
+  </p>
+
+  <h2>Disclosures</h2>
+  <p>
+    I have helped CrofAI before by promoting it, debugging it, and noting when it isn't the lowest
+    price. CrofAI has helped me before by giving me unlimited tokens. I currently buy tokens on
+    competitors Surplus Intelligence and Inferhub and sell tokens on competitor Surplus
+    Intelligence. I currently use a free Claude subscription. However, nobody paid for this post.
+  </p>
+  <p>
+    I'm stopping use of CrofAI and I recommend others do the same. I don't condemn targeting
+    CrofAI's owner as a person - they're just young and made a mistake.
+  </p>
+</BlogPost>
+
+<style>
+  .discord {
+    background-color: var(--m3c-surface-container-low);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    h3 {
+      @apply --m3-body-large;
+      font-weight: 600;
+      &:not(:first-child) {
+        margin-block-start: 0.75rem;
+      }
+    }
+    time {
+      @apply --m3-body-small;
+      color: var(--m3c-on-surface-variant);
+      margin-inline-start: 0.25rem;
+    }
+  }
+</style>

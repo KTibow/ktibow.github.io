@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="https://files.nahcrof.com/file/crofai-black.png" />
+        <meta name="description" content="The cheapest inference provider for large models" />
+        <title>CrofAI - Pricing</title>
+        <link rel="stylesheet" href="/ui/crofui.css" />
+
+        <style>
+            .logo { height: 50px; width: auto; }
+            #nav-header { display: flex; justify-content: flex-end; width: 70vw; }
+            header { margin-top: 25px; width: 100%; display: flex; justify-content: center; flex: 0 0 auto; margin-bottom: 100px; }
+            header nav { margin-left: auto; float: right; margin-top: 10px; display: flex; }
+            header .link { margin-left: 20px; color: var(--link-text); border: 1px solid transparent; width: auto; height: 17px; padding: 7px 10px; border-radius: 14px; text-decoration: none; transition: 0.3s ease; }
+            header .link:hover { background: var(--hover-background); color: var(--text); }
+            header .btn { margin-left: 20px; margin-top: -5px; }
+
+            .speed-fast { color: #4ade80; }
+            .speed-medium { color: #fbbf24; }
+            .speed-slow { color: #f87171; }
+
+            .price-box-wrapper { display: flex; justify-content: center; }
+            .price-box { padding: 20px; border: 1px solid var(--border); background: var(--dark-background); width: 90%; max-width: 950px; border-radius: 12px; margin: auto; transition: 0.3s ease; display: grid; grid-template-columns: 1fr clamp(120px, 16vw, 160px) clamp(120px, 16vw, 160px) clamp(110px, 14vw, 140px); align-items: center; gap: 16px; }
+            .price-box:hover { background: var(--background); }
+            
+            price { color: #9e7ad6; }
+            .pricing-header { text-align: center; font-size: 2rem; margin-bottom: 40px; }
+            .price-list { width: 90%; max-width: 950px; margin: 0 auto 60px; }
+            .row-left { display: flex; flex-direction: column; min-width: 0; }
+            .row-left .model_name { display: flex; align-items: center; gap: 8px; font-weight: 600; }
+            .bubbles { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+            .bubble { padding: 6px 10px; border: 1px solid var(--border); background: var(--background); border-radius: 999px; font-size: 0.9rem; white-space: nowrap; }
+
+            .beta-tag { background: var(--background); color: var(--muted-text, #8a8a8a); border: 1px solid var(--border); font-size: 0.6rem; padding: 1px 5px; border-radius: 4px; text-transform: uppercase; cursor: help; position: relative; font-weight: 600; letter-spacing: 0.5px; transition: 0.2s ease; }
+            .beta-tag:hover { color: var(--text); border-color: #9b30ff; }
+            .beta-tag::after { content: "This model is very new and might have difficulty scaling..."; position: absolute; bottom: 140%; left: 50%; transform: translateX(-50%) translateY(10px); background: var(--dark-background); color: var(--text); padding: 10px 14px; border-radius: 8px; width: 200px; text-align: center; font-size: 0.8rem; visibility: hidden; opacity: 0; transition: 0.2s ease; z-index: 100; pointer-events: none; border: 1px solid var(--border); }
+            .beta-tag:hover::after { visibility: visible; opacity: 1; transform: translateX(-50%) translateY(0); }
+
+            .col { text-align: center; }
+            .colhead { color: var(--muted-text, #8a8a8a); font-weight: 600; text-align: center; }
+
+            /* Updated Plan Box Hover */
+            .plans { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-bottom: 50px; }
+            .plan-box { width: 350px; font-size: 1.1rem; max-width: 90%; border: 1px solid var(--border); border-radius: 15px; background: var(--dark-background); padding: 20px; transition: background 0.3s ease; display: flex; flex-direction: column; }
+            .plan-box:hover { background: var(--hover-background); } /* Lightens the background */
+            
+            .plan-header { display: flex; justify-content: space-between; align-items: center; font-weight: bold; }
+            .pretty { color: var(--bright-text); font-size: 1.3rem; }
+            .plan-box .bubble { margin-top: auto; width: fit-content; align-self: center; }
+
+            /* Updated Button Hover */
+            .btn-white { margin-top: 20px; width: 100%; display: inline-block; text-decoration: none; text-align: center; box-sizing: border-box; transition: 0.3s ease; }
+            .btn-white:hover { background: transparent !important; color: var(--text); border: 1px solid var(--border); }
+
+            .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); z-index: 1000; justify-content: center; align-items: center; backdrop-filter: blur(4px); }
+            .modal-overlay.active { display: flex; }
+            .modal { background: var(--dark-background); border: 1px solid var(--border); border-radius: 15px; padding: 30px; max-width: 450px; width: 90%; text-align: center; }
+            .modal-buttons { display: flex; gap: 15px; justify-content: center; margin-top: 20px; }
+
+            @media (max-width: 640px) {
+                .price-header { display: none; }
+                .price-box { grid-template-columns: 1fr; gap: 12px; }
+                .col { text-align: left; display: flex; align-items: baseline; gap: 8px; }
+                .col::before { content: attr(data-label); color: var(--muted-text, #8a8a8a); font-weight: 600; min-width: 7.5rem; }
+            }
+        </style>
+    </head>
+    <body>
+        
+        <header>
+            <div id="nav-header">
+                <a href="/"><img class="logo" src="https://files.nahcrof.com/file/crofai-black.png" /></a>
+                <nav>
+                    <a class="link" href="/pricing">Pricing</a>
+                    <a class="link" href="/docs">Documentation</a>
+                    <a class="btn" href="/signin">Sign In</a>
+                </nav>
+            </div>
+        </header>
+        
+
+        <div class="modal-overlay" id="confirmModal">
+            <div class="modal">
+                <h2 id="modalTitle">Confirm Plan Change</h2>
+                <p id="modalMessage"></p>
+                <div class="modal-buttons">
+                    <button class="btn" style="width: auto;" onclick="closeModal()">Cancel</button>
+                    <button id="purchase-plan" class="btn-white" onclick="confirmPlanChange()" style="width: auto; padding: 10px 20px;">Yes, please</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="plans" id="plans-container"></div>
+
+        <div class="pricing-header">Large Language Model (LLM) Pricing</div>
+        <div class="price-list">
+            <div class="price-box-wrapper">
+                <div class="price-box price-header">
+                    <div class="row-left">
+                        <div class="model_name">Model</div>
+                        <div class="bubbles">
+                            <span class="bubble">Quantization</span>
+                            <span class="bubble">Context / Max output</span>
+                        </div>
+                    </div>
+                    <div class="colhead">$ / M in</div>
+                    <div class="colhead">$ / M out</div>
+                    <div class="colhead">Speed</div>
+                </div>
+            </div>
+
+            
+            <div class="price-box-wrapper">
+                <div class="price-box">
+                    <div class="row-left">
+                        <div class="model_name">
+                            kimi-k2.5
+                            
+                            <svg onclick="copy_text('kimi-k2.5')" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16" style="cursor: pointer;">
+                                <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                            </svg>
+                        </div>
+                        <div class="bubbles">
+                            <span class="bubble">int4</span>
+                            <span class="bubble">196,608 / 131,072</span>
+                            <span class="bubble">vision</span>
+                        </div>
+                    </div>
+                    <div class="col col--in" data-label="$ / M in"><price>$0.45</price></div>
+                    <div class="col col--out" data-label="$ / M out"><price>$2.00</price></div>
+                    <div class="col col--speed speed-fast" data-label="Speed">
+                        ~109 t/s
+                    </div>
+                </div>
+            </div>
+            
+            <div class="price-box-wrapper">
+                <div class="price-box">
+                    <div class="row-left">
+                        <div class="model_name">
+                            kimi-k2.5-instant
+                            
+                            <svg onclick="copy_text('kimi-k2.5-instant')" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16" style="cursor: pointer;">
+                                <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                            </svg>
+                        </div>
+                        <div class="bubbles">
+                            <span class="bubble">int4</span>
+                            <span class="bubble">131,072 / 8,192</span>
+                            <span class="bubble">vision</span>
+                        </div>
+                    </div>
+                    <div class="col col--in" data-label="$ / M in"><price>$0.50</price></div>
+                    <div class="col col--out" data-label="$ / M out"><price>$2.40</price></div>
+                    <div class="col col--speed speed-slow" data-label="Speed">
+                        ~27 t/s
+                    </div>
+                </div>
+            </div>
+            
+            <div class="price-box-wrapper">
+                <div class="price-box">
+                    <div class="row-left">
+                        <div class="model_name">
+                            kimi-k2.5-lightning
+                            
+                            <svg onclick="copy_text('kimi-k2.5-lightning')" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16" style="cursor: pointer;">
+                                <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                            </svg>
+                        </div>
+                        <div class="bubbles">
+                            <span class="bubble">int4</span>
+                            <span class="bubble">131,072 / 32,768</span>
+                            
+                        </div>
+                    </div>
+                    <div class="col col--in" data-label="$ / M in"><price>$2.50</price></div>
+                    <div class="col col--out" data-label="$ / M out"><price>$4.00</price></div>
+                    <div class="col col--speed speed-fast" data-label="Speed">
+                        ~1644 t/s
+                    </div>
+                </div>
+            </div>
+            
+            <div class="price-box-wrapper">
+                <div class="price-box">
+                    <div class="row-left">
+                        <div class="model_name">
+                            glm-5
+                            
+                            <svg onclick="copy_text('glm-5')" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16" style="cursor: pointer;">
+                                <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                            </svg>
+                        </div>
+                        <div class="bubbles">
+                            <span class="bubble">fp8</span>
+                            <span class="bubble">202,752 / 202,752</span>
+                            
+                        </div>
+                    </div>
+                    <div class="col col--in" data-label="$ / M in"><price>$0.75</price></div>
+                    <div class="col col--out" data-label="$ / M out"><price>$2.40</price></div>
+                    <div class="col col--speed speed-fast" data-label="Speed">
+                        ~146 t/s
+                    </div>
+                </div>
+            </div>
+            
+            <div class="price-box-wrapper">
+                <div class="price-box">
+                    <div class="row-left">
+                        <div class="model_name">
+                            glm-5-turbo
+                            
+                            <svg onclick="copy_text('glm-5-turbo')" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16" style="cursor: pointer;">
+                                <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                            </svg>
+                        </div>
+                        <div class="bubbles">
+                            <span class="bubble">int4</span>
+                            <span class="bubble">202,752 / 202,752</span>
+                            
+                        </div>
+                    </div>
+                    <div class="col col--in" data-label="$ / M in"><price>$0.80</price></div>
+                    <div class="col col--out" data-label="$ / M out"><price>$2.50</price></div>
+                    <div class="col col--speed speed-medium" data-label="Speed">
+                        ~88 t/s
+                    </div>
+                </div>
+            </div>
+            
+            <div class="price-box-wrapper">
+                <div class="price-box">
+                    <div class="row-left">
+                        <div class="model_name">
+                            minimax-m2.5
+                            
+                            <svg onclick="copy_text('minimax-m2.5')" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16" style="cursor: pointer;">
+                                <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                            </svg>
+                        </div>
+                        <div class="bubbles">
+                            <span class="bubble">awq</span>
+                            <span class="bubble">204,800 / 131,072</span>
+                            
+                        </div>
+                    </div>
+                    <div class="col col--in" data-label="$ / M in"><price>$0.25</price></div>
+                    <div class="col col--out" data-label="$ / M out"><price>$1.15</price></div>
+                    <div class="col col--speed speed-medium" data-label="Speed">
+                        ~72 t/s
+                    </div>
+                </div>
+            </div>
+            
+            <div class="price-box-wrapper">
+                <div class="price-box">
+                    <div class="row-left">
+                        <div class="model_name">
+                            qwen3.5-397b-a17b
+                            
+                            <svg onclick="copy_text('qwen3.5-397b-a17b')" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16" style="cursor: pointer;">
+                                <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                            </svg>
+                        </div>
+                        <div class="bubbles">
+                            <span class="bubble">fp8</span>
+                            <span class="bubble">262,144 / 262,144</span>
+                            <span class="bubble">vision</span>
+                        </div>
+                    </div>
+                    <div class="col col--in" data-label="$ / M in"><price>$0.35</price></div>
+                    <div class="col col--out" data-label="$ / M out"><price>$1.75</price></div>
+                    <div class="col col--speed speed-slow" data-label="Speed">
+                        ~19 t/s
+                    </div>
+                </div>
+            </div>
+            
+            <div class="price-box-wrapper">
+                <div class="price-box">
+                    <div class="row-left">
+                        <div class="model_name">
+                            qwen3.5-397b-a17b-canopy
+                            
+                            <svg onclick="copy_text('qwen3.5-397b-a17b-canopy')" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16" style="cursor: pointer;">
+                                <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                            </svg>
+                        </div>
+                        <div class="bubbles">
+                            <span class="bubble">fp8</span>
+                            <span class="bubble">262,144 / 262,144</span>
+                            
+                        </div>
+                    </div>
+                    <div class="col col--in" data-label="$ / M in"><price>$0.70</price></div>
+                    <div class="col col--out" data-label="$ / M out"><price>$3.75</price></div>
+                    <div class="col col--speed speed-fast" data-label="Speed">
+                        ~337 t/s
+                    </div>
+                </div>
+            </div>
+            
+            <div class="price-box-wrapper">
+                <div class="price-box">
+                    <div class="row-left">
+                        <div class="model_name">
+                            nemotron-3-nano-30b-a3b
+                            
+                            <svg onclick="copy_text('nemotron-3-nano-30b-a3b')" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16" style="cursor: pointer;">
+                                <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                            </svg>
+                        </div>
+                        <div class="bubbles">
+                            <span class="bubble">Q4_0</span>
+                            <span class="bubble">131,072 / 131,072</span>
+                            
+                        </div>
+                    </div>
+                    <div class="col col--in" data-label="$ / M in"><price>$0.00</price></div>
+                    <div class="col col--out" data-label="$ / M out"><price>$0.00</price></div>
+                    <div class="col col--speed speed-fast" data-label="Speed">
+                        ~760 t/s
+                    </div>
+                </div>
+            </div>
+            
+            <div class="price-box-wrapper">
+                <div class="price-box">
+                    <div class="row-left">
+                        <div class="model_name">
+                            glm-4.7-flash
+                            
+                            <svg onclick="copy_text('glm-4.7-flash')" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16" style="cursor: pointer;">
+                                <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                            </svg>
+                        </div>
+                        <div class="bubbles">
+                            <span class="bubble">fp8</span>
+                            <span class="bubble">202,752 / 131,072</span>
+                            
+                        </div>
+                    </div>
+                    <div class="col col--in" data-label="$ / M in"><price>$0.00</price></div>
+                    <div class="col col--out" data-label="$ / M out"><price>$0.00</price></div>
+                    <div class="col col--speed speed-fast" data-label="Speed">
+                        ~160 t/s
+                    </div>
+                </div>
+            </div>
+            
+            <div class="price-box-wrapper">
+                <div class="price-box">
+                    <div class="row-left">
+                        <div class="model_name">
+                            glm-4.7
+                            
+                            <svg onclick="copy_text('glm-4.7')" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16" style="cursor: pointer;">
+                                <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                            </svg>
+                        </div>
+                        <div class="bubbles">
+                            <span class="bubble">fp4</span>
+                            <span class="bubble">202,752 / 202,752</span>
+                            
+                        </div>
+                    </div>
+                    <div class="col col--in" data-label="$ / M in"><price>$0.40</price></div>
+                    <div class="col col--out" data-label="$ / M out"><price>$1.40</price></div>
+                    <div class="col col--speed speed-fast" data-label="Speed">
+                        ~126 t/s
+                    </div>
+                </div>
+            </div>
+            
+            <div class="price-box-wrapper">
+                <div class="price-box">
+                    <div class="row-left">
+                        <div class="model_name">
+                            glm-4.7-canopy
+                            
+                            <svg onclick="copy_text('glm-4.7-canopy')" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16" style="cursor: pointer;">
+                                <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                            </svg>
+                        </div>
+                        <div class="bubbles">
+                            <span class="bubble">fp8</span>
+                            <span class="bubble">202,752 / 202,752</span>
+                            
+                        </div>
+                    </div>
+                    <div class="col col--in" data-label="$ / M in"><price>$0.50</price></div>
+                    <div class="col col--out" data-label="$ / M out"><price>$2.10</price></div>
+                    <div class="col col--speed speed-medium" data-label="Speed">
+                        ~31 t/s
+                    </div>
+                </div>
+            </div>
+            
+            <div class="price-box-wrapper">
+                <div class="price-box">
+                    <div class="row-left">
+                        <div class="model_name">
+                            minimax-m2.1
+                            
+                            <svg onclick="copy_text('minimax-m2.1')" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16" style="cursor: pointer;">
+                                <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                            </svg>
+                        </div>
+                        <div class="bubbles">
+                            <span class="bubble">awq</span>
+                            <span class="bubble">131,072 / 131,072</span>
+                            
+                        </div>
+                    </div>
+                    <div class="col col--in" data-label="$ / M in"><price>$0.28</price></div>
+                    <div class="col col--out" data-label="$ / M out"><price>$0.90</price></div>
+                    <div class="col col--speed speed-slow" data-label="Speed">
+                        ~14 t/s
+                    </div>
+                </div>
+            </div>
+            
+            <div class="price-box-wrapper">
+                <div class="price-box">
+                    <div class="row-left">
+                        <div class="model_name">
+                            minimax-m2.1-canopy
+                            
+                            <svg onclick="copy_text('minimax-m2.1-canopy')" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16" style="cursor: pointer;">
+                                <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                            </svg>
+                        </div>
+                        <div class="bubbles">
+                            <span class="bubble">fp8</span>
+                            <span class="bubble">196,608 / 196,608</span>
+                            
+                        </div>
+                    </div>
+                    <div class="col col--in" data-label="$ / M in"><price>$0.35</price></div>
+                    <div class="col col--out" data-label="$ / M out"><price>$1.27</price></div>
+                    <div class="col col--speed speed-fast" data-label="Speed">
+                        ~418 t/s
+                    </div>
+                </div>
+            </div>
+            
+            <div class="price-box-wrapper">
+                <div class="price-box">
+                    <div class="row-left">
+                        <div class="model_name">
+                            kimi-k2-0905
+                            
+                            <svg onclick="copy_text('kimi-k2-0905')" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16" style="cursor: pointer;">
+                                <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                            </svg>
+                        </div>
+                        <div class="bubbles">
+                            <span class="bubble">Q8_0</span>
+                            <span class="bubble">131,072 / 131,072</span>
+                            
+                        </div>
+                    </div>
+                    <div class="col col--in" data-label="$ / M in"><price>$0.15</price></div>
+                    <div class="col col--out" data-label="$ / M out"><price>$0.55</price></div>
+                    <div class="col col--speed speed-fast" data-label="Speed">
+                        ~184 t/s
+                    </div>
+                </div>
+            </div>
+            
+            <div class="price-box-wrapper">
+                <div class="price-box">
+                    <div class="row-left">
+                        <div class="model_name">
+                            deepseek-v3.2
+                            
+                            <svg onclick="copy_text('deepseek-v3.2')" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16" style="cursor: pointer;">
+                                <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                            </svg>
+                        </div>
+                        <div class="bubbles">
+                            <span class="bubble">Q4_0</span>
+                            <span class="bubble">163,840 / 163,840</span>
+                            
+                        </div>
+                    </div>
+                    <div class="col col--in" data-label="$ / M in"><price>$0.28</price></div>
+                    <div class="col col--out" data-label="$ / M out"><price>$0.38</price></div>
+                    <div class="col col--speed speed-fast" data-label="Speed">
+                        ~163 t/s
+                    </div>
+                </div>
+            </div>
+            
+            <div class="price-box-wrapper">
+                <div class="price-box">
+                    <div class="row-left">
+                        <div class="model_name">
+                            deepseek-v3.2-chat
+                            
+                            <svg onclick="copy_text('deepseek-v3.2-chat')" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16" style="cursor: pointer;">
+                                <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                            </svg>
+                        </div>
+                        <div class="bubbles">
+                            <span class="bubble">Q4_0</span>
+                            <span class="bubble">163,840 / 163,840</span>
+                            
+                        </div>
+                    </div>
+                    <div class="col col--in" data-label="$ / M in"><price>$0.28</price></div>
+                    <div class="col col--out" data-label="$ / M out"><price>$0.38</price></div>
+                    <div class="col col--speed speed-slow" data-label="Speed">
+                        ~3 t/s
+                    </div>
+                </div>
+            </div>
+            
+            <div class="price-box-wrapper">
+                <div class="price-box">
+                    <div class="row-left">
+                        <div class="model_name">
+                            deepseek-v3.2-canopy
+                            
+                            <svg onclick="copy_text('deepseek-v3.2-canopy')" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16" style="cursor: pointer;">
+                                <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                            </svg>
+                        </div>
+                        <div class="bubbles">
+                            <span class="bubble">fp8</span>
+                            <span class="bubble">163,840 / 163,840</span>
+                            
+                        </div>
+                    </div>
+                    <div class="col col--in" data-label="$ / M in"><price>$0.35</price></div>
+                    <div class="col col--out" data-label="$ / M out"><price>$0.45</price></div>
+                    <div class="col col--speed speed-medium" data-label="Speed">
+                        ~58 t/s
+                    </div>
+                </div>
+            </div>
+            
+            <div class="price-box-wrapper">
+                <div class="price-box">
+                    <div class="row-left">
+                        <div class="model_name">
+                            deepseek-v3.2-speciale
+                            
+                            <svg onclick="copy_text('deepseek-v3.2-speciale')" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16" style="cursor: pointer;">
+                                <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                            </svg>
+                        </div>
+                        <div class="bubbles">
+                            <span class="bubble">Q4_0</span>
+                            <span class="bubble">163,840 / 163,840</span>
+                            
+                        </div>
+                    </div>
+                    <div class="col col--in" data-label="$ / M in"><price>$0.35</price></div>
+                    <div class="col col--out" data-label="$ / M out"><price>$0.45</price></div>
+                    <div class="col col--speed speed-fast" data-label="Speed">
+                        ~140 t/s
+                    </div>
+                </div>
+            </div>
+            
+            <div class="price-box-wrapper">
+                <div class="price-box">
+                    <div class="row-left">
+                        <div class="model_name">
+                            devstral-2
+                            
+                            <svg onclick="copy_text('devstral-2')" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16" style="cursor: pointer;">
+                                <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                            </svg>
+                        </div>
+                        <div class="bubbles">
+                            <span class="bubble">fp8</span>
+                            <span class="bubble">262,144 / 262,144</span>
+                            
+                        </div>
+                    </div>
+                    <div class="col col--in" data-label="$ / M in"><price>$0.07</price></div>
+                    <div class="col col--out" data-label="$ / M out"><price>$0.31</price></div>
+                    <div class="col col--speed speed-fast" data-label="Speed">
+                        ~152 t/s
+                    </div>
+                </div>
+            </div>
+            
+            <div class="price-box-wrapper">
+                <div class="price-box">
+                    <div class="row-left">
+                        <div class="model_name">
+                            intellect-3
+                            
+                            <svg onclick="copy_text('intellect-3')" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16" style="cursor: pointer;">
+                                <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                            </svg>
+                        </div>
+                        <div class="bubbles">
+                            <span class="bubble">Q8_0</span>
+                            <span class="bubble">128,000 / 128,000</span>
+                            
+                        </div>
+                    </div>
+                    <div class="col col--in" data-label="$ / M in"><price>$0.15</price></div>
+                    <div class="col col--out" data-label="$ / M out"><price>$1.00</price></div>
+                    <div class="col col--speed speed-fast" data-label="Speed">
+                        ~1544 t/s
+                    </div>
+                </div>
+            </div>
+            
+            <div class="price-box-wrapper">
+                <div class="price-box">
+                    <div class="row-left">
+                        <div class="model_name">
+                            ring-1t
+                            
+                            <svg onclick="copy_text('ring-1t')" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16" style="cursor: pointer;">
+                                <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                            </svg>
+                        </div>
+                        <div class="bubbles">
+                            <span class="bubble">Q4_0</span>
+                            <span class="bubble">131,072 / 131,072</span>
+                            
+                        </div>
+                    </div>
+                    <div class="col col--in" data-label="$ / M in"><price>$0.40</price></div>
+                    <div class="col col--out" data-label="$ / M out"><price>$1.00</price></div>
+                    <div class="col col--speed speed-fast" data-label="Speed">
+                        ~257 t/s
+                    </div>
+                </div>
+            </div>
+            
+            <div class="price-box-wrapper">
+                <div class="price-box">
+                    <div class="row-left">
+                        <div class="model_name">
+                            deepseek-v3.2-exp
+                            
+                            <svg onclick="copy_text('deepseek-v3.2-exp')" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16" style="cursor: pointer;">
+                                <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                            </svg>
+                        </div>
+                        <div class="bubbles">
+                            <span class="bubble">Q4_0</span>
+                            <span class="bubble">131,072 / 131,072</span>
+                            
+                        </div>
+                    </div>
+                    <div class="col col--in" data-label="$ / M in"><price>$0.15</price></div>
+                    <div class="col col--out" data-label="$ / M out"><price>$0.30</price></div>
+                    <div class="col col--speed speed-fast" data-label="Speed">
+                        ~181 t/s
+                    </div>
+                </div>
+            </div>
+            
+            <div class="price-box-wrapper">
+                <div class="price-box">
+                    <div class="row-left">
+                        <div class="model_name">
+                            deepseek-v3.1-terminus
+                            
+                            <svg onclick="copy_text('deepseek-v3.1-terminus')" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16" style="cursor: pointer;">
+                                <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                            </svg>
+                        </div>
+                        <div class="bubbles">
+                            <span class="bubble">Q4_0</span>
+                            <span class="bubble">131,072 / 131,072</span>
+                            
+                        </div>
+                    </div>
+                    <div class="col col--in" data-label="$ / M in"><price>$0.20</price></div>
+                    <div class="col col--out" data-label="$ / M out"><price>$0.50</price></div>
+                    <div class="col col--speed speed-slow" data-label="Speed">
+                        ~17 t/s
+                    </div>
+                </div>
+            </div>
+            
+            <div class="price-box-wrapper">
+                <div class="price-box">
+                    <div class="row-left">
+                        <div class="model_name">
+                            deepseek-v3.1-terminus-reasoner
+                            
+                            <svg onclick="copy_text('deepseek-v3.1-terminus-reasoner')" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16" style="cursor: pointer;">
+                                <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                            </svg>
+                        </div>
+                        <div class="bubbles">
+                            <span class="bubble">Q4_0</span>
+                            <span class="bubble">131,072 / 131,072</span>
+                            
+                        </div>
+                    </div>
+                    <div class="col col--in" data-label="$ / M in"><price>$0.20</price></div>
+                    <div class="col col--out" data-label="$ / M out"><price>$0.50</price></div>
+                    <div class="col col--speed speed-fast" data-label="Speed">
+                        ~639 t/s
+                    </div>
+                </div>
+            </div>
+            
+            <div class="price-box-wrapper">
+                <div class="price-box">
+                    <div class="row-left">
+                        <div class="model_name">
+                            deepseek-v3-0324-turbo
+                            
+                            <svg onclick="copy_text('deepseek-v3-0324-turbo')" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16" style="cursor: pointer;">
+                                <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                            </svg>
+                        </div>
+                        <div class="bubbles">
+                            <span class="bubble">Q4_0</span>
+                            <span class="bubble">131,072 / 8,192</span>
+                            
+                        </div>
+                    </div>
+                    <div class="col col--in" data-label="$ / M in"><price>$0.50</price></div>
+                    <div class="col col--out" data-label="$ / M out"><price>$1.00</price></div>
+                    <div class="col col--speed speed-fast" data-label="Speed">
+                        ~928 t/s
+                    </div>
+                </div>
+            </div>
+            
+            <div class="price-box-wrapper">
+                <div class="price-box">
+                    <div class="row-left">
+                        <div class="model_name">
+                            deepseek-r1-0528
+                            
+                            <svg onclick="copy_text('deepseek-r1-0528')" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16" style="cursor: pointer;">
+                                <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                            </svg>
+                        </div>
+                        <div class="bubbles">
+                            <span class="bubble">Q4_0</span>
+                            <span class="bubble">131,072 / 131,072</span>
+                            
+                        </div>
+                    </div>
+                    <div class="col col--in" data-label="$ / M in"><price>$0.25</price></div>
+                    <div class="col col--out" data-label="$ / M out"><price>$0.25</price></div>
+                    <div class="col col--speed speed-medium" data-label="Speed">
+                        ~80 t/s
+                    </div>
+                </div>
+            </div>
+            
+            <div class="price-box-wrapper">
+                <div class="price-box">
+                    <div class="row-left">
+                        <div class="model_name">
+                            deepseek-r1-0528-turbo
+                            
+                            <svg onclick="copy_text('deepseek-r1-0528-turbo')" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16" style="cursor: pointer;">
+                                <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                            </svg>
+                        </div>
+                        <div class="bubbles">
+                            <span class="bubble">Q4_0</span>
+                            <span class="bubble">131,072 / 131,072</span>
+                            
+                        </div>
+                    </div>
+                    <div class="col col--in" data-label="$ / M in"><price>$1.00</price></div>
+                    <div class="col col--out" data-label="$ / M out"><price>$2.00</price></div>
+                    <div class="col col--speed speed-medium" data-label="Speed">
+                        ~40 t/s
+                    </div>
+                </div>
+            </div>
+            
+            <div class="price-box-wrapper">
+                <div class="price-box">
+                    <div class="row-left">
+                        <div class="model_name">
+                            qwen3-next-80b-a3b-instruct
+                            
+                            <svg onclick="copy_text('qwen3-next-80b-a3b-instruct')" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16" style="cursor: pointer;">
+                                <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                            </svg>
+                        </div>
+                        <div class="bubbles">
+                            <span class="bubble">Q8_0</span>
+                            <span class="bubble">262,144 / 262,144</span>
+                            
+                        </div>
+                    </div>
+                    <div class="col col--in" data-label="$ / M in"><price>$0.08</price></div>
+                    <div class="col col--out" data-label="$ / M out"><price>$0.38</price></div>
+                    <div class="col col--speed speed-fast" data-label="Speed">
+                        ~224 t/s
+                    </div>
+                </div>
+            </div>
+            
+            <div class="price-box-wrapper">
+                <div class="price-box">
+                    <div class="row-left">
+                        <div class="model_name">
+                            qwen3-235b-a22b-2507-instruct
+                            
+                            <svg onclick="copy_text('qwen3-235b-a22b-2507-instruct')" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16" style="cursor: pointer;">
+                                <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                            </svg>
+                        </div>
+                        <div class="bubbles">
+                            <span class="bubble">Q8_0</span>
+                            <span class="bubble">131,072 / 131,072</span>
+                            
+                        </div>
+                    </div>
+                    <div class="col col--in" data-label="$ / M in"><price>$0.10</price></div>
+                    <div class="col col--out" data-label="$ / M out"><price>$0.25</price></div>
+                    <div class="col col--speed speed-slow" data-label="Speed">
+                        ~12 t/s
+                    </div>
+                </div>
+            </div>
+            
+            <div class="price-box-wrapper">
+                <div class="price-box">
+                    <div class="row-left">
+                        <div class="model_name">
+                            qwen3-235b-a22b-2507-thinking
+                            
+                            <svg onclick="copy_text('qwen3-235b-a22b-2507-thinking')" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16" style="cursor: pointer;">
+                                <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                            </svg>
+                        </div>
+                        <div class="bubbles">
+                            <span class="bubble">Q8_0</span>
+                            <span class="bubble">131,072 / 131,072</span>
+                            
+                        </div>
+                    </div>
+                    <div class="col col--in" data-label="$ / M in"><price>$0.10</price></div>
+                    <div class="col col--out" data-label="$ / M out"><price>$0.30</price></div>
+                    <div class="col col--speed speed-medium" data-label="Speed">
+                        ~51 t/s
+                    </div>
+                </div>
+            </div>
+            
+            <div class="price-box-wrapper">
+                <div class="price-box">
+                    <div class="row-left">
+                        <div class="model_name">
+                            qwen3-coder
+                            
+                            <svg onclick="copy_text('qwen3-coder')" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16" style="cursor: pointer;">
+                                <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                            </svg>
+                        </div>
+                        <div class="bubbles">
+                            <span class="bubble">fp8</span>
+                            <span class="bubble">131,072 / 131,072</span>
+                            
+                        </div>
+                    </div>
+                    <div class="col col--in" data-label="$ / M in"><price>$0.15</price></div>
+                    <div class="col col--out" data-label="$ / M out"><price>$0.35</price></div>
+                    <div class="col col--speed speed-fast" data-label="Speed">
+                        ~190 t/s
+                    </div>
+                </div>
+            </div>
+            
+            <div class="price-box-wrapper">
+                <div class="price-box">
+                    <div class="row-left">
+                        <div class="model_name">
+                            gpt-oss-120b
+                            
+                            <svg onclick="copy_text('gpt-oss-120b')" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16" style="cursor: pointer;">
+                                <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                            </svg>
+                        </div>
+                        <div class="bubbles">
+                            <span class="bubble">Q4_0</span>
+                            <span class="bubble">131,072 / 131,072</span>
+                            
+                        </div>
+                    </div>
+                    <div class="col col--in" data-label="$ / M in"><price>$0.00</price></div>
+                    <div class="col col--out" data-label="$ / M out"><price>$0.00</price></div>
+                    <div class="col col--speed speed-fast" data-label="Speed">
+                        ~121 t/s
+                    </div>
+                </div>
+            </div>
+            
+            <div class="price-box-wrapper">
+                <div class="price-box">
+                    <div class="row-left">
+                        <div class="model_name">
+                            gpt-oss-safeguard-120b
+                            
+                            <svg onclick="copy_text('gpt-oss-safeguard-120b')" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16" style="cursor: pointer;">
+                                <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                            </svg>
+                        </div>
+                        <div class="bubbles">
+                            <span class="bubble">Q8_0</span>
+                            <span class="bubble">131,072 / 131,072</span>
+                            
+                        </div>
+                    </div>
+                    <div class="col col--in" data-label="$ / M in"><price>$0.07</price></div>
+                    <div class="col col--out" data-label="$ / M out"><price>$0.27</price></div>
+                    <div class="col col--speed speed-medium" data-label="Speed">
+                        ~68 t/s
+                    </div>
+                </div>
+            </div>
+            
+            <div class="price-box-wrapper">
+                <div class="price-box">
+                    <div class="row-left">
+                        <div class="model_name">
+                            gemma-3-27b-it
+                            
+                            <svg onclick="copy_text('gemma-3-27b-it')" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16" style="cursor: pointer;">
+                                <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                            </svg>
+                        </div>
+                        <div class="bubbles">
+                            <span class="bubble">Q8_0</span>
+                            <span class="bubble">131,072 / 131,072</span>
+                            <span class="bubble">vision</span>
+                        </div>
+                    </div>
+                    <div class="col col--in" data-label="$ / M in"><price>$0.04</price></div>
+                    <div class="col col--out" data-label="$ / M out"><price>$0.10</price></div>
+                    <div class="col col--speed speed-slow" data-label="Speed">
+                        ~5 t/s
+                    </div>
+                </div>
+            </div>
+            
+            <div class="price-box-wrapper">
+                <div class="price-box">
+                    <div class="row-left">
+                        <div class="model_name">
+                            llama-4-scout
+                            
+                            <svg onclick="copy_text('llama-4-scout')" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16" style="cursor: pointer;">
+                                <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                            </svg>
+                        </div>
+                        <div class="bubbles">
+                            <span class="bubble">fp8</span>
+                            <span class="bubble">262,144 / 16,384</span>
+                            <span class="bubble">vision</span>
+                        </div>
+                    </div>
+                    <div class="col col--in" data-label="$ / M in"><price>$0.08</price></div>
+                    <div class="col col--out" data-label="$ / M out"><price>$0.40</price></div>
+                    <div class="col col--speed speed-fast" data-label="Speed">
+                        ~554 t/s
+                    </div>
+                </div>
+            </div>
+            
+            <div class="price-box-wrapper">
+                <div class="price-box">
+                    <div class="row-left">
+                        <div class="model_name">
+                            llama3.3-70b
+                            
+                            <svg onclick="copy_text('llama3.3-70b')" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16" style="cursor: pointer;">
+                                <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                            </svg>
+                        </div>
+                        <div class="bubbles">
+                            <span class="bubble">fp8</span>
+                            <span class="bubble">131,072 / 8,192</span>
+                            
+                        </div>
+                    </div>
+                    <div class="col col--in" data-label="$ / M in"><price>$0.12</price></div>
+                    <div class="col col--out" data-label="$ / M out"><price>$0.20</price></div>
+                    <div class="col col--speed speed-fast" data-label="Speed">
+                        ~339 t/s
+                    </div>
+                </div>
+            </div>
+            
+            <div class="price-box-wrapper">
+                <div class="price-box">
+                    <div class="row-left">
+                        <div class="model_name">
+                            stok-0.4.1
+                            
+                            <svg onclick="copy_text('stok-0.4.1')" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16" style="cursor: pointer;">
+                                <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                            </svg>
+                        </div>
+                        <div class="bubbles">
+                            <span class="bubble">stok</span>
+                            <span class="bubble">2,048 / 2,048</span>
+                            
+                        </div>
+                    </div>
+                    <div class="col col--in" data-label="$ / M in"><price>$0.00</price></div>
+                    <div class="col col--out" data-label="$ / M out"><price>$0.00</price></div>
+                    <div class="col col--speed speed-fast" data-label="Speed">
+                        ~6007 t/s
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <script src="/ui/crofui.js"></script>
+        <script>
+            const isLoggedIn = false;
+            let selectedPlan = null;
+
+            async function loadPricing() {
+                try {
+                    const response = await fetch('/pricing_api');
+                    const data = response.ok ? await response.json() : { name: "free", cost: 0, requests: 0 };
+                    renderPlans(data);
+                } catch (e) {
+                    renderPlans({ name: "free", cost: 0 });
+                }
+            }
+
+            function renderPlans(userPlan) {
+                const container = document.getElementById('plans-container');
+                const plans = [
+                    { id: 'free', name: 'Free/Pay-as-you-go', price: 0, features: ['Pay only for usage', 'No recurring monthly charge'] },
+                    { id: 'hobby', name: 'Hobby', price: 5, features: ['500 daily requests', 'Access to all models'] },
+                    { id: 'pro', name: 'Pro', price: 10, features: ['All Hobby benefits', '1,000 daily requests', 'Priority Support'] }
+                ];
+
+                const isKnown = plans.some(p => p.id === userPlan.name);
+                if (!isKnown && userPlan.name && userPlan.name !== "free") {
+                    plans.push({
+                        id: userPlan.name,
+                        name: userPlan.name.charAt(0).toUpperCase() + userPlan.name.slice(1),
+                        price: userPlan.cost,
+                        features: ['All Pro benefits', `${userPlan.requests.toLocaleString()} daily requests`, 'Priority Support']
+                    });
+                }
+
+                container.innerHTML = plans.map(plan => {
+                    const isCurrent = userPlan.name === plan.id;
+                    let actionHtml = '';
+
+                    if (!isLoggedIn) {
+                        actionHtml = `<a href="/signin" class="btn-white">Sign in to purchase</a>`;
+                    } else if (isCurrent) {
+                        actionHtml = `<div class="bubble">You have this plan</div>`;
+                    } else {
+                        const btnText = plan.id === 'free' ? 'Switch back to Free' : `Purchase ${plan.name} Plan`;
+                        actionHtml = `<button class="btn-white" onclick="showPlanModal('${plan.id}', '${plan.price}')">${btnText}</button>`;
+                    }
+
+                    return `
+                        <div class="plan-box">
+                            <div class="plan-header">
+                                <span>${plan.name}</span>
+                                <div class="pretty"><b>$${plan.price}</b><span style="font-size: 0.8rem; font-weight: normal;">/mo</span></div>
+                            </div><br>
+                            <div style="flex-grow: 1;">
+                                ${plan.features.map(f => `<div style="margin-bottom: 8px;">• ${f}</div>`).join('')}
+                            </div>
+                            ${actionHtml}
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            function showPlanModal(plan, price) {
+                selectedPlan = plan;
+                const modal = document.getElementById("confirmModal");
+                const message = document.getElementById("modalMessage");
+                
+                if (plan === "free") {
+                    message.textContent = `This will immediately remove all privileges of your current plan. Proceed?`;
+                } else {
+                    const name = plan.charAt(0).toUpperCase() + plan.slice(1);
+                    message.textContent = `The ${name} plan fee of $${price}/month will be deducted from your account credits. Proceed?`;
+                }
+                modal.classList.add("active");
+            }
+
+            function closeModal() {
+                document.getElementById("confirmModal").classList.remove("active");
+                selectedPlan = null;
+            }
+
+            function confirmPlanChange() {
+                if (selectedPlan) window.location.href = `/plan-api/${selectedPlan}`;
+            }
+
+            function copy_text(text) {
+                navigator.clipboard.writeText(text);
+                if (typeof createToast === 'function') createToast("Copied!");
+            }
+
+            window.onclick = (e) => { if (e.target == document.getElementById("confirmModal")) closeModal(); }
+
+            document.addEventListener("DOMContentLoaded", () => {
+                loadPricing();
+                const hamburger = document.querySelector(".hamburger");
+                const sidebar = document.querySelector(".sidebar");
+                const overlay = document.querySelector(".overlay");
+                if (hamburger) {
+                    hamburger.onclick = () => {
+                        [hamburger, sidebar, overlay].forEach(el => el.classList.toggle("active"));
+                    };
+                }
+                if (overlay) overlay.onclick = () => {
+                    [hamburger, sidebar, overlay].forEach(el => el.classList.remove("active"));
+                };
+            });
+        </script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"78fe6123b2fa44eb8a0eb0dcc5315127","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
