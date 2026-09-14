@@ -123,20 +123,27 @@ export const date = '2026-09-13';
     > (run <a
       href="https://github.com/KTibow/crof-is-an-openrouter-wrapper/actions/runs/34768920690"
       >34768920690</a
-    >) and <a
+    >), <a
       href="https://github.com/KTibow/crof-is-an-openrouter-wrapper/releases/tag/probe-34804687001"
       >one from that night</a
     >, after CrofAI's fixes (run <a
       href="https://github.com/KTibow/crof-is-an-openrouter-wrapper/actions/runs/34804687001"
       >34804687001</a
-    >), both on <a
+    >), and <a
+      href="https://github.com/KTibow/crof-is-an-openrouter-wrapper/releases/tag/probe-34824987757"
+      >one after CrofAI's last deploy</a
+    > (run <a
+      href="https://github.com/KTibow/crof-is-an-openrouter-wrapper/actions/runs/34824987757"
+      >34824987757</a
+    >), all on <a
       href="https://github.com/KTibow/crof-is-an-openrouter-wrapper/commit/1ec3ef09f007d6c9d38a6d845520aad1e68f96ab"
       >1ec3ef0</a
-    >. The most common result for every model above is the same in both. You're encouraged to ask
-    your agent to use <code>gh</code> to verify it. If that's not enough, we have more reasons to be suspicious:
+    >. The most common result for every model above is the same in all three. You're encouraged to
+    ask your agent to use <code>gh</code> to verify it. If that's not enough, we have more reasons to
+    be suspicious:
   </p>
 
-  <h2>I gave CrofAI 4 shots to fix it, it still routed to OpenRouter</h2>
+  <h2>I gave CrofAI 5 shots to fix it, it still routed to OpenRouter</h2>
   <div class="discord">
     <h3>ktibow <time datetime="2026-09-13T02:48:51.482Z">9/12/26, 7:48 PM</time></h3>
     <p>
@@ -429,6 +436,161 @@ QNNWqW/eG7b+TZ6o/Wfn0NOspfVSF+NqAP2/w7gO
   <p>
     And crof.ai itself didn't change at all: every model gave the same advisor result 5 out of 5
     times.
+  </p>
+  <div class="discord">
+    <h3>CROF_OWNER <time datetime="2026-09-14T08:19:07.927Z">9/14/26, 1:19 AM</time></h3>
+    <p>
+      Hey, I saw your blog, you said 4 tries but in your experience are you finding the new version
+      to still be routed somehow? It feels a little like you exploited my confusion with time, I
+      understand the concern but I don’t see what could be wrong with this latest version and you
+      ended the story short I feel like but it could be my biased opinion
+    </p>
+    <h3>ktibow <time datetime="2026-09-14T08:20:51.052Z">9/14/26, 1:20 AM</time></h3>
+    <p>
+      yes, i waited for the latest 67.nahcrof.com deploy to be up before running audits that show it
+      being routed to openrouter
+    </p>
+    <h3>CROF_OWNER <time datetime="2026-09-14T08:22:56.207Z">9/14/26, 1:22 AM</time></h3>
+    <p>
+      Then your latest audit is entirely false, your prior audits are correct in my finding, GPUs
+      were scaling worse than poorly, they weren’t set up properly at all and that’s far from
+      acceptable but in the latest update there’s no openrouter fallback, I did set up different
+      versions of the models and invited specifically your account and mine since others use the .67
+      version so perhaps you used a different account and that’s the issues
+    </p>
+    <p>?*</p>
+    <h3>ktibow <time datetime="2026-09-14T08:23:38.675Z">9/14/26, 1:23 AM</time></h3>
+    <p>you invited <code>KTibow</code>?</p>
+    <h3>CROF_OWNER <time datetime="2026-09-14T08:23:43.264Z">9/14/26, 1:23 AM</time></h3>
+    <p>Yes</p>
+    <p>
+      Your latest audit is either false or done on a different account because the custom config
+      contains no links to openrouter
+    </p>
+    <h3>ktibow <time datetime="2026-09-14T08:25:03.727Z">9/14/26, 1:25 AM</time></h3>
+    <p>that's the account i was using - i'll test again to clear up any doubts</p>
+    <h3>CROF_OWNER <time datetime="2026-09-14T08:25:37.795Z">9/14/26, 1:25 AM</time></h3>
+    <p>I’ll deploy it to the whole site just in case, one sec</p>
+    <h3>ktibow <time datetime="2026-09-14T08:25:53.700Z">9/14/26, 1:25 AM</time></h3>
+    <p>okay, i'll hold off until you confirm then</p>
+    <h3>CROF_OWNER <time datetime="2026-09-14T08:52:00.617Z">9/14/26, 1:52 AM</time></h3>
+    <p>alright, once it starts try again</p>
+    <p>
+      should be ready, as far as I see it there's a literal zero percent chance this somehow routes
+      to openrouter
+    </p>
+    <h3>ktibow <time datetime="2026-09-14T08:53:15.119Z">9/14/26, 1:53 AM</time></h3>
+    <p>will do</p>
+    <h3>CROF_OWNER <time datetime="2026-09-14T08:53:56.783Z">9/14/26, 1:53 AM</time></h3>
+    <p>
+      this explains the easy scaling, I should've taken a more hands on approach and not gotten so
+      lazy and just assumed it wasn't hitting backups
+    </p>
+    <p>
+      for transparency, I do route qwen3.5-9b to openrouter because I'm happy to eat the cost on
+      that one
+    </p>
+    <p>I'll check if there are others like that real quick</p>
+    <p>
+      deepseek-v4-flash-vision-exp will still fallback and it's fallback is configured incorrectly,
+      mimo-v2.5-pro is incorrect
+    </p>
+    <h3>ktibow <time datetime="2026-09-14T08:57:33.389Z">9/14/26, 1:57 AM</time></h3>
+    <p>is that all?</p>
+    <h3>CROF_OWNER <time datetime="2026-09-14T08:57:58.300Z">9/14/26, 1:57 AM</time></h3>
+    <p>yes</p>
+    <p>
+      I removed backups entirely, the config does not contain the option to backup for any of the
+      models I didn't list unless I'm reading it wrong
+    </p>
+    <p>
+      openrouter does not exist in the config for any of the models I didn't list, fallback or
+      primary
+    </p>
+    <h3>ktibow <time datetime="2026-09-14T08:59:30.497Z">9/14/26, 1:59 AM</time></h3>
+    <p>so the rest</p>
+    <ul>
+      <li>deepseek-v3.2</li>
+      <li>deepseek-v4-flash-0731</li>
+      <li>deepseek-v4-pro</li>
+      <li>deepseek-v4-pro-0813</li>
+      <li>deepseek-v4.1-flash</li>
+      <li>gemma-4-31b-it</li>
+      <li>glm-5.1</li>
+      <li>glm-5.2</li>
+      <li>glm-5.3</li>
+      <li>glm-5.3-flash</li>
+      <li>greg-1</li>
+      <li>greg-1-mini</li>
+      <li>greg-1-super</li>
+      <li>greg-2-super</li>
+      <li>greg-2-ultra</li>
+      <li>kimi-k2.6</li>
+      <li>kimi-k2.6-precision</li>
+      <li>kimi-k2.7-code</li>
+      <li>kimi-k3</li>
+      <li>kimi-k3-eco</li>
+      <li>qwen3.5-397b-a17b</li>
+      <li>qwen3.6-27b</li>
+      <li>qwen3.8-27b</li>
+    </ul>
+    <p>(excluding deepseek-v4-flash-vision-exp, qwen3.5-9b, mimo-v2.5-pro)</p>
+    <p>should all be running on crof infra now?</p>
+    <h3>CROF_OWNER <time datetime="2026-09-14T09:00:45.147Z">9/14/26, 2:00 AM</time></h3>
+    <p>
+      the greg models I believe point to openrouter, in all honesty, my goal with greg was to
+      experiment with increasing benchmark performance with a custom mcp thing, in my testing it did
+      work but it was marginal at best and UI was better but that's about all
+    </p>
+    <p>so greg models are openrouter re-routes</p>
+    <p>but otherwise yse</p>
+    <p>yes*</p>
+    <p>some of those are deprecated so they'll reroute though</p>
+    <h3>ktibow <time datetime="2026-09-14T09:01:25.756Z">9/14/26, 2:01 AM</time></h3>
+    <p>but reroute to another model running on crof infra?</p>
+    <h3>CROF_OWNER <time datetime="2026-09-14T09:01:31.201Z">9/14/26, 2:01 AM</time></h3>
+    <p>yes</p>
+    <h3>ktibow <time datetime="2026-09-14T09:18:17.452Z">9/14/26, 2:18 AM</time></h3>
+    <p>both crof.ai and 67.nahcrof.com are still routing to openrouter</p>
+    <h3>CROF_OWNER <time datetime="2026-09-14T09:18:57.542Z">9/14/26, 2:18 AM</time></h3>
+    <p>
+      can you give me any examples? I know it feels like I'm fishing for ways to hide it but I
+      seriously can't find any physical way that it's possible
+    </p>
+    <p>crof.ai yes</p>
+    <p>but not the 67 domain</p>
+    <h3>ktibow <time datetime="2026-09-14T09:22:22.058Z">9/14/26, 2:22 AM</time></h3>
+    <p>
+      i'm seeing various outside inference providers like fireworks have access to strings i only
+      gave 67.nahcrof.com
+    </p>
+    <h3>CROF_OWNER <time datetime="2026-09-14T09:23:52.151Z">9/14/26, 2:23 AM</time></h3>
+    <p>what in the world</p>
+    <p>
+      do you mind if I try something else? And can you check deepseek-v4-flash-0731, because as far
+      as I'm aware I'm literally just pointing that at my spark
+    </p>
+    <p>perhaps I just royally fucked my codebase</p>
+    <h3>ktibow <time datetime="2026-09-14T09:24:49.371Z">9/14/26, 2:24 AM</time></h3>
+    <p>
+      deepseek-v4-flash-0731 has been unreliable - it's currently giving <code
+        >&#123;"error": &#123;"message": "CODE: 500 - Engine error", "type": "internal_error",
+        "code": 500&#125;&#125;</code
+      >
+    </p>
+    <p>i'll give you another shot</p>
+    <h3>CROF_OWNER <time datetime="2026-09-14T09:25:31.242Z">9/14/26, 2:25 AM</time></h3>
+    <p>thank you so much</p>
+  </div>
+  <p>
+    Shot 5. CrofAI said it would deploy "to the whole site", then that outside the models it
+    admitted, there was "a literal zero percent chance" of routing to OpenRouter. <strong
+      >The <a
+        href="https://github.com/KTibow/crof-is-an-openrouter-wrapper/releases/tag/probe-34824987757"
+        >attestation</a
+      > from a minute later shows crof.ai didn't change at all</strong
+    >, and on 67.nahcrof.com, models CrofAI says it runs itself had their images downloaded by
+    inference providers just like last time.
   </p>
 
   <h2>A real fallback would act much differently</h2>
