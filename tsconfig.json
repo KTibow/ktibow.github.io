@@ -4,7 +4,8 @@
   "exclude": [
     "dist",
     "src/pages/blog/imisscfpages/_hifastlyjs",
-    "src/pages/blog/imisscfpages/_hivercel"
+    "src/pages/blog/imisscfpages/_hivercel",
+    "**/localfile-*"
   ],
   "compilerOptions": {
     "strictNullChecks": true,
