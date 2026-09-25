@@ -156,7 +156,7 @@ export const toPosition = (t: TokenLogprob): Position => ({
   token: tokenKey(t),
   logprob: t.logprob,
   // InferX's DeepSeek V4.1 Flash lists the sampled token first, so it can appear twice
-  top: [...new Map(t.top_logprobs.map((x) => [tokenKey(x), x.logprob])).entries()],
+  top: [...new Map((t.top_logprobs ?? []).map((x) => [tokenKey(x), x.logprob])).entries()],
 });
 
 /** Every token in a Hugging Face tokenizer.json with the identity tokenKey gives it. */
