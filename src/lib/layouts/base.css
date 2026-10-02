@@ -10,6 +10,7 @@
   color: var(--m3c-on-surface);
   accent-color: var(--m3c-primary);
   color-scheme: dark;
+  /* source color #324ad5 */
   --m3c-primary: #bbc3ff;
   --m3c-on-primary: #001c94;
   --m3c-primary-container: #324ad5;
