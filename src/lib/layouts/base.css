@@ -291,7 +291,7 @@ pre {
       color: var(--m3c-on-surface);
       border-left-width: 0.25rem;
       border-left-color: oklch(from var(--m3c-on-surface) l c h / 0.5);
-      quotes: '\201C' '\201D' '\2018' '\2019';
+      quotes: none;
       padding-left: 1em;
     }
     &:where(blockquote p:first-of-type)::before {
