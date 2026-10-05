@@ -1,0 +1,91 @@
+---
+import Base from '$lib/layouts/Base.astro';
+import groq from './groq.svg';
+import skyclient from './skyclient.svg';
+import vanta from './vanta.svg';
+import originality from './originality.svg';
+import surplus from './surplus.svg';
+import svgo from './svgo.svg';
+---
+
+<Base title="Notable affiliations">
+  <div class="prose">
+    <p>
+      <em
+        >This page is a list of my most notable affiliations. It admittedly looks like a resume, but
+        I genuinely had fun at each of these places.</em
+      >
+    </p>
+    <h2><img {...surplus} title="Surplus Intelligence" /> September 2026 - now</h2>
+    <p>Surplus Intelligence is a marketplace for discounted inference capacity.</p>
+    <p>
+      Provided 80B+ tokens of capacity. Created pipeline to automatically research and organize
+      support tickets. Created automation using highly efficient models to automatically ban
+      scammers.
+    </p>
+    <h2><img {...originality} title="Originality" /> January 2025</h2>
+    <p>Originality is one of the most accurate AI detectors on the market.</p>
+    <p>
+      Produced report on how well Originality detects base LLM output, measuring the effects of
+      different topics, prompts, and detectors.
+    </p>
+    <h2><img {...groq} title="Groq" /> May 2024 - December 2025</h2>
+    <p>
+      Groq was an AI inference service built on fast custom LPU hardware. Its talent was acquired
+      and designs were licensed in 2025 by NVIDIA.
+    </p>
+    <p>
+      Participated in GroqChamp community devrel program. Assisted Discord users with technical
+      support, both manually and with a custom context menu bot, until Groq was consumed by NVIDIA.
+    </p>
+    <h2>
+      <img {...svgo} title="SVGO" /> November 2023 - now
+    </h2>
+    <p>SVGO is an open source optimizer for SVGs. It arguably is the best one out there.</p>
+    <p>
+      Contributed novel optimizations like reducing redundancy around <code>z</code>, converting
+      arcs to lines, converting cubic beziers to quadratic beziers, and numerous other bug fixes and
+      assurances.
+    </p>
+    <h2>
+      <img {...vanta} title="Vanta" /> February 2023 - ~November 2023
+    </h2>
+    <p>Vanta was a community of Minecraft malware (mostly infostealer) researchers.</p>
+    <p>
+      Worked together to understand novel and obscure malware and obfuscation methods. Built
+      personal static analyzer <a href="https://github.com/KTibow/RatRater2">RatRater 2</a> and personally
+      terminated exfiltration webhooks.
+    </p>
+    <h2>
+      <img {...skyclient} title="SkyClient" /> March 2022 - April 2023, ~August 2023 - April 2024
+    </h2>
+    <p>
+      SkyClient was an alternative to traditional Hypixel clients that let you build your own
+      modpack. It was replaced by Polyfrost's OneClient when Hypixel removed support for Minecraft
+      1.8.9 in February 2026.
+    </p>
+    <p>
+      Maintained server, support tickets, and data repository. Created bot that performed various
+      maintainence functions, including providing automatic solutions to tickets using NLP
+      technology. Created info website (skyclient.co) and an installer in the novel form factor of a
+      web app (Mart). Contributed Bayes-based anti-spam logic to first party mods.
+    </p>
+  </div>
+</Base>
+
+<style>
+  .prose {
+    align-self: center;
+    margin: 1rem;
+  }
+  h2 {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    > img {
+      width: auto;
+      height: 1em;
+    }
+  }
+</style>

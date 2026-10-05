@@ -1,0 +1,15 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 154 24"
+  color="#b1ffcd"
+>
+  <path
+    stroke="currentColor"
+    fill="none"
+    stroke-width="3"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    d="M 12 9 L 12 2 l -3.5 3.5 M 12 2 l 3.5 3.5 M 15 12 L 22 12 l -3.5 -3.5 M 22 12 l -3.5 3.5 M 9 12 L 2 12 l 3.5 -3.5 M 2 12 l 3.5 3.5 M 12 15 L 12 22 l 3.5 -3.5 M 12 22 l -3.5 -3.5"
+  ></path>
+  <text fill="currentColor" font-family="system-ui" font-size="24" x="24" y="20">Abundance</text>
+</svg>

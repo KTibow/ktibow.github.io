@@ -1,7 +1,6 @@
 ---
-import Base from '$lib/layouts/Base.astro';
 import { blogPosts, milliblogPosts } from 'virtual:post-lists';
-import statuses from '../nanoblog/statuses.json';
+import statuses from './nanoblog/statuses.json';
 import { formatDate } from './_date';
 
 const thoughtsByYear = Object.groupBy(
@@ -29,41 +28,39 @@ const thoughtsByYear = Object.groupBy(
 );
 ---
 
-<Base title="Thoughts">
-  {
-    Object.keys(thoughtsByYear)
-      .reverse()
-      .map((year) => (
-        <>
-          <h2>{year}</h2>
-          <section>
-            {thoughtsByYear[year]!.map((thought) =>
-              'url' in thought ? (
-                <a
-                  class:list={['layer', { milliblog: 'isMilliblog' in thought }]}
-                  href={thought.url}
-                  style={`--length:${thought.length}`}
-                >
-                  {thought.title}
-                </a>
-              ) : (
-                <p>
-                  <span>{thought.title}</span>
-                  <time datetime={thought.date.toISOString()}>{formatDate(thought.date)}</time>
-                </p>
-              ),
-            )}
-          </section>
-        </>
-      ))
+{
+  Object.keys(thoughtsByYear)
+    .reverse()
+    .map((year) => (
+      <>
+        <h2>Thoughts from {year}</h2>
+        <section>
+          {thoughtsByYear[year]!.map((thought) =>
+            'url' in thought ? (
+              <a
+                class:list={['layer', { milliblog: 'isMilliblog' in thought }]}
+                href={thought.url}
+                style={`--length:${thought.length}`}
+              >
+                {thought.title}
+              </a>
+            ) : (
+              <p>
+                <span>{thought.title}</span>
+                <time datetime={thought.date.toISOString()}>{formatDate(thought.date)}</time>
+              </p>
+            ),
+          )}
+        </section>
+      </>
+    ))
+}
+<script>
+  import { formatDate } from './_date';
+  for (const time of document.querySelectorAll('time')) {
+    time.textContent = formatDate(new Date(time.getAttribute('datetime')!));
   }
-  <script>
-    import { formatDate } from './_date';
-    for (const time of document.querySelectorAll('time')) {
-      time.textContent = formatDate(new Date(time.getAttribute('datetime')!));
-    }
-  </script>
-</Base>
+</script>
 
 <style>
   h2 {
@@ -97,6 +94,7 @@ const thoughtsByYear = Object.groupBy(
     @apply --m3-body-small;
     flex: 0 1 auto;
     align-self: start;
+    word-break: break-word;
     border-radius: 1.25rem;
     padding: 0.25rem 0.875rem;
     margin-block-end: 0.5rem;

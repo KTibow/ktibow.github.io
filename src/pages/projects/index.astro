@@ -1,0 +1,102 @@
+---
+import Base from '$lib/layouts/Base.astro';
+import verifyinginference from './verifying-inference.svg';
+import m3svelte from './m3svelte.svg';
+import abundance from './abundance.svg';
+import trigonometry from './trigonometry.svg';
+import softui from './softui.svg';
+---
+
+<Base title="Notable projects">
+  <div class="prose">
+    <p>
+      <em
+        >This page only focuses on my most notable projects, the greatest hits, since a list of all
+        my projects would be much too lengthy.</em
+      >
+    </p>
+    <h2>
+      <img {...verifyinginference} title="Verifying Inference" /> Verifying Inference - September 2026
+      - now
+    </h2>
+    <p>
+      I've diverted billions of tokens away from low quality inference by exposing problematic
+      providers, like:
+    </p>
+    <ul>
+      <li><a href="/blog/crofaifalse/">CrofAI</a> (action: shut down)</li>
+      <li>
+        <a href="/blog/verifiableinference/">Fusion Code</a> (action: removed from inference market. although
+        I was not the only force here)
+      </li>
+      <li>more soon</li>
+    </ul>
+    <h2>
+      <img {...m3svelte} title="M3 Svelte" /> December 2022 - now
+    </h2>
+    <p>
+      <a href="https://kendell.dev/m3-svelte/">M3 Svelte</a> is one of the highest quality implementations
+      of Google's Material 3. It implements official Google specifications in efficient, clever, and simple
+      ways. It often even works without JS. It's popular among both Svelte developers and those porting
+      Material 3 to other component frameworks (as a reference).
+    </p>
+    <h2>
+      <img {...abundance} title="Abundance" /> April 2026 - June 2026
+    </h2>
+    <p>
+      From <a href="https://pub-a50359bc057145a29fec81fc5062b2b4.r2.dev/index.html"
+        >a list of every website</a
+      > to <a href="https://github.com/abndnce/pulsar">a way to send internet over WebRTC</a> (and
+      <a href="https://github.com/abndnce/0k">a client built on this</a>) to <a
+        href="https://github.com/abndnce/cod">a way to use CodeHS as a computer</a
+      >, Abundance's goal is the opposite of censorship: create an abundance of websites.
+    </p>
+    <h2>
+      <img {...trigonometry} title="Trigonometry" /> July 2022 - 2025
+    </h2>
+    <p>
+      The Trigonometry umbrella encompasses all the software I built for school. The most popular
+      Trigonometry application was Tangent, a private utility application that garnered more than
+      200 users, despite strict identity verification requirements to keep Tangent for local
+      students only. The ones before it were experiments in data integration, and the ones after it
+      were experiments in syncing and privacy.
+    </p>
+    <p>
+      I've since moved on from Trigonometry - personal agents on personal devices are more effective
+      at working with school data. Public Trigonometry code is available <a
+        href="https://github.com/trigonometry-archive">here</a
+      >.
+    </p>
+    <h2>
+      <img {...softui} title="Soft UI" /> May 2020
+    </h2>
+    <p>
+      I felt a deep sense of awe when I first saw <a
+        href="https://github.com/qiz-li/lovelace-soft-ui">qiz-li's lovelace-soft-ui</a
+      >, an implementation of Neumorphism in Home Assistant. So I spent a few months contributing to
+      his templates and porting the styling to - well two themes at first, a <a
+        href="https://github.com/KTibow/lovelace-light-soft-ui-theme">light</a
+      > and <a href="https://github.com/KTibow/lovelace-dark-soft-ui-theme">dark</a> one, both with complex
+      colors and CSS, but eventually a <a href="https://github.com/KTibow/lovelace-soft-theme"
+        >simple and unified</a
+      > theme.
+    </p>
+  </div>
+</Base>
+
+<style>
+  .prose {
+    align-self: center;
+    margin: 1rem;
+  }
+  h2 {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    > img {
+      width: auto;
+      height: 1em;
+    }
+  }
+</style>
