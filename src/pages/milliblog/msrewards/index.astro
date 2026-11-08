@@ -88,12 +88,6 @@ for (const coin of COINS) {
   MARKET[coin] = marketResp[COINGECKO_IDS[coin]] || {};
 }
 
-// Fetch buildId once (needed by _Offer for profile URLs)
-const html = await fetch(
-  'https://localcoinswap.com/en/buy/bitcoin/worldwide/amazon-gift-card',
-).then((r) => r.text());
-const buildId = JSON.parse(html.match(/__NEXT_DATA__.*?>(.*?)<\/script>/s)![1]).buildId;
-
 const tiersBySlug = new Map<string, { in: number; out: number }[]>();
 for (const gc of giftCards) {
   if (!tiersBySlug.has(gc.slug)) tiersBySlug.set(gc.slug, []);
@@ -109,6 +103,7 @@ interface Group {
   dpk: number;
   tiers: { dollars: number; points: number }[];
   seller: string;
+  online: boolean;
   trades: number;
   rating: string;
   headline: string;
@@ -144,6 +139,7 @@ for (const o of allOffers) {
       dpk,
       tiers: fitting.map((t) => ({ dollars: t.out, points: t.in })),
       seller: o.created_by.username,
+      online: o.created_by.activity_status === 'active',
       trades: o.created_by.completed_trades,
       rating: o.created_by.feedback_score,
       headline: o.headline || '',
@@ -169,12 +165,12 @@ const uniqueSellers = new Set(entries.map((e) => e.seller));
       .map((g) => (
         <Offer
           uuid={g.uuid}
-          buildId={buildId}
           cardName={g.cardName}
           coin={g.coin}
           dpk={g.dpk}
           tiers={g.tiers}
           seller={g.seller}
+          online={g.online}
           trades={g.trades}
           rating={g.rating}
           headline={g.headline}

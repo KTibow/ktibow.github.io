@@ -9,12 +9,12 @@ import { isPhysicalOrCashOnly } from './filter';
 
 export interface Props {
   uuid: string;
-  buildId: string;
   cardName: string;
   coin: string;
   dpk: number;
   tiers: { dollars: number; points: number }[];
   seller: string;
+  online: boolean;
   trades: number;
   rating: string;
   headline: string;
@@ -23,12 +23,12 @@ export interface Props {
 
 const {
   uuid,
-  buildId,
   cardName,
   coin: _coin,
   dpk,
   tiers,
   seller,
+  online: isOnline,
   trades,
   rating,
   headline,
@@ -51,37 +51,55 @@ const tradingConditions: string = offerDetail?.trading_conditions ?? '';
 const isPhysicalOnly = isPhysicalOrCashOnly(tradingConditions);
 
 // ── Fetch seller profile ─────────────────────────────────────────────────
-let profile: any = getCachedProfile(seller);
-if (!profile) {
-  try {
-    const resp = await fetch(
-      `https://localcoinswap.com/_next/data/${buildId}/en/profile/${seller}.json`,
-    );
-    if (resp.ok) {
-      const data: any = await resp.json();
-      profile = data.pageProps?.profileData?.user ?? null;
-      setCachedProfile(seller, profile);
+// SvelteKit's __data.json is streamed (only line 1 has the profile) and devalue-flattened:
+// every object field and array item is an index into the node's `data` array.
+function parseProfile(payload: string): any {
+  const nodes: any[] = JSON.parse(payload.split('\n')[0]).nodes;
+  const node = nodes.find((n) => n?.data?.[0]?.profile !== undefined);
+  if (!node) return null;
+  const resolve = (i: number): any => {
+    const value = node.data[i];
+    if (Array.isArray(value)) return value.map(resolve);
+    if (value && typeof value === 'object') {
+      return Object.fromEntries(Object.entries(value).map(([k, v]) => [k, resolve(v as number)]));
     }
+    return value;
+  };
+  return resolve(node.data[0].profile);
+}
+
+async function fetchProfile(): Promise<any> {
+  try {
+    const resp = await fetch(`https://localcoinswap.com/profile/${seller}/__data.json`);
+    return resp.ok ? parseProfile(await resp.text()) : null;
   } catch {
-    profile = null;
+    return null;
   }
 }
 
-const trades30d: number = profile?.trades_30d ?? 0;
-const followers: number = profile?.times_followed ?? 0;
-const phoneVerified: boolean = profile?.is_phone_verified ?? false;
-const lang: string = profile?.primary_language ?? '';
-const bio: string = (profile?.bio ?? '').trim();
-const tz: string = profile?.timezone ?? '';
-const profileImage: string = profile?.profile_image ?? '';
+// LocalCoinSwap caps how many distinct profiles one IP can load, replying "Too many profiles"
+// (parsed as null), so most sellers have no profile in a given build. Rows render the unknown
+// fields as absent, and the promise is cached so repeat sellers share one request.
+let profilePromise = getCachedProfile(seller);
+if (!profilePromise) {
+  profilePromise = fetchProfile();
+  setCachedProfile(seller, profilePromise);
+}
+const profile: any = await profilePromise;
 
-const isOnline = profile?.activity_status === 'active';
+const trades30d: number = profile?.metrics?.trades30d ?? 0;
+const followers: number = profile?.metrics?.timesFollowed ?? 0;
+const phoneVerified: boolean = profile?.shell?.phoneVerified ?? false;
+const lang: string = profile?.shell?.languages?.[0] ?? '';
+const bio: string = (profile?.shell?.bio ?? '').trim();
+const tz: string = profile?.shell?.timezone ?? '';
+const profileImage: string = profile?.shell?.image ?? '';
 
 // Pre-compute bio tag checks
 const bioLower = bio.toLowerCase();
 const hasImpersonator = bioLower.includes('impersonat') || bioLower.includes('scammer');
 const hasTelegram = bioLower.includes('t.me') || bioLower.includes('telegram');
-const hasNoBio = !bio;
+const hasNoBio = profile && !bio;
 
 // ── Bad-seller / emoji overrides ──────────────────────────────────────────
 const badSellers = new Set([
@@ -154,7 +172,8 @@ const dimmed = isPhysicalOnly || badSellers.has(seller);
       </span>
       <span class:list={{ 'seller-stat': true, 'seller-stat-new': trades < 50 }}>
         {trades.toLocaleString()}
-        {trades === 1 ? 'trade' : 'trades'} ({trades30d} last mo.)
+        {trades === 1 ? 'trade' : 'trades'}
+        {profile && `(${trades30d} last mo.)`}
       </span>
       <span class="seller-stat">{rating?.slice(0, 3)}⭐</span>
       {followers > 0 && <span class="seller-stat">{followers} followers</span>}
@@ -165,7 +184,7 @@ const dimmed = isPhysicalOnly || badSellers.has(seller);
     <div class="tags">
       <span class="tag">{tz || '?'}</span>
       {lang && <span class="tag">{lang}</span>}
-      {!phoneVerified && <span class="tag tag-nobio">no phone</span>}
+      {profile && !phoneVerified && <span class="tag tag-nobio">no phone</span>}
 
       {hasImpersonator && <span class="tag tag-impers">impersonators</span>}
       {hasTelegram && <span class="tag tag-tg">Telegram</span>}
