@@ -33,9 +33,10 @@ export const date = '2026-11-25';
         "Thinking" and more.
       </li>
       <li>
-        Its encryption is mostly for show: the "encrypted" browser storage keeps its key right next to
-        the data, and Venice and Phala <a href="#e2ee">can read your end-to-end encrypted prompts</a> if
-        they want to.
+        Its encryption is mostly for show: the "encrypted" browser storage keeps its key right next
+        to the data, and Venice and Phala <a href="#e2ee"
+          >can read your end-to-end encrypted prompts</a
+        > if they want to.
       </li>
     </ul>
   </details>
@@ -46,7 +47,7 @@ export const date = '2026-11-25';
       >(usual)</a
     >{' '}"private" tier is the self host tier.
   </p>
-  <ClickableQuote href="https://web.archive.org/web/20261121173608/https://venice.ai/llms.txt">
+  <ClickableQuote href="https://web.archive.org/web/20261126014917if_/https://venice.ai/llms.txt#:~:text=self-hosted">
     <p>
       Venice runs leading open-source and third-party models across four privacy tiers: [...]
       Private (zero data retention on <mark>self-hosted</mark> open-source models), [...]
@@ -137,10 +138,10 @@ description:
   <p>
     Venice's own documents don't agree with each other either. Its <a
       href="https://venice.ai/legal/privacy-policy">privacy policy</a
-    > says its model providers "are prohibited from storing, retaining, or using any of your Prompts
-    or Outputs", but its <a href="https://docs.venice.ai/models/claude-opus-4-5">Claude page</a> says
-    "the provider of this model may retain prompt data". And all 19 Grok models are labeled private,
-    even though Grok Imagine's images come back carrying xAI's own signature.
+    > says its model providers "are prohibited from storing, retaining, or using any of your Prompts or
+    Outputs", but its <a href="https://docs.venice.ai/models/claude-opus-4-5">Claude page</a> says "the
+    provider of this model may retain prompt data". And all 19 Grok models are labeled private, even though
+    Grok Imagine's images come back carrying xAI's own signature.
   </p>
 
   <h2>Venice's moat is marketing, not privacy</h2>
@@ -174,10 +175,9 @@ description:
             href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32002L0058">EU</a
           >, UK and California privacy law.</strong
         > From Germany, France, the Netherlands or the UK there's no cookie banner, yet Meta, TikTok,
-        Google Ads, Reddit, Snap and X pixels fire before you click anything, along with a
-        fingerprinting script. It ignores <a href="https://globalprivacycontrol.org/"
-          >Global Privacy Control</a
-        > and has no "Do Not Sell or Share" link. <a
+        Google Ads, Reddit, Snap and X pixels fire before you click anything, along with a fingerprinting
+        script. It ignores <a href="https://globalprivacycontrol.org/">Global Privacy Control</a> and
+        has no "Do Not Sell or Share" link. <a
           href="https://cnil.fr/en/cookie-regulation-cnil-continuing-action-plan-initiated-2019-and-has-imposed-two-fines-shein-and"
           >Shein</a
         >, <a
@@ -190,12 +190,13 @@ description:
       <p>
         <strong
           >Its image editor breaks Minnesota's <a
-            href="https://www.revisor.mn.gov/laws/2026/0/Session+Law/Chapter/72/">nudification ban</a
+            href="https://www.revisor.mn.gov/laws/2026/0/Session+Law/Chapter/72/"
+            >nudification ban</a
           >,</strong
-        > which says a service "must not [...] allow a user to [...] nudify an image". All five edit
-        models that didn't refuse upstream undressed an AI-generated man, none blocked a real photo
-        (they made Nikola Tesla shirtless, which counts), and when Grok refuses, Venice suggests a
-        model that complies. Its Mind marketplace even has a <a
+        > which says a service "must not [...] allow a user to [...] nudify an image". All five edit models
+        that didn't refuse upstream undressed an AI-generated man, none blocked a real photo (they made
+        Nikola Tesla shirtless, which counts), and when Grok refuses, Venice suggests a model that complies.
+        Its Mind marketplace even has a <a
           href="https://venice.ai/minds/clothing-swap-studio-free-10997">"Clothing Swap Studio"</a
         > that "removes [...] the clothing in your photos while holding identity".
       </p>
@@ -205,8 +206,8 @@ description:
           >age verification</a
         > and <a href="https://capitol.texas.gov/tlodocs/89R/billtext/html/SB00441F.HTM"
           >a removal process</a
-        > for AI nudes. Venice lets 13-year-olds sign up, offers only a copyright takedown form, and
-        rates its Android app "Everyone".
+        > for AI nudes. Venice lets 13-year-olds sign up, offers only a copyright takedown form, and rates
+        its Android app "Everyone".
       </p>
     </li>
     <li>
@@ -219,28 +220,27 @@ description:
       </p>
       <ul>
         <li>
-          <code>qwen3-235b-a22b-thinking-2507</code>, sold as a model that "reasons step by step before
-          it answers", gave the Instruct model's exact answers with no reasoning, for about 4× the
-          price.
+          <code>qwen3-235b-a22b-thinking-2507</code>, sold as a model that "reasons step by step
+          before it answers", gave the Instruct model's exact answers with no reasoning, for about
+          4× the price.
         </li>
         <li><code>llama-3.2-3b</code> was Gemma 4 31B.</li>
         <li><code>minimax-m27</code> said it was MiniMax-M3.</li>
       </ul>
       <p>
         And after <a href="https://zoan.space/llm-verification/case-studies.html">zoan found</a> that
-        Venice's Qwen3.8 27B isn't the released model, it came off OpenRouter. Some will call this
-        another Crof.
+        Venice's Qwen3.8 27B isn't the released model, it came off OpenRouter. Some will call this another
+        Crof.
       </p>
     </li>
     <li>
       <p>
-        <strong>It tells EU users their consumer rights don't apply.</strong> On Apple's EU App
-        Store, Venice <a href="https://apps.apple.com/ie/app/venice-ai/id6742061900"
+        <strong>It tells EU users their consumer rights don't apply.</strong> On Apple's EU App Store,
+        Venice <a href="https://apps.apple.com/ie/app/venice-ai/id6742061900"
           >declared it isn't a business</a
-        > (a "trader"), so Apple warns buyers that "consumer rights do not apply", right above
-        in-app purchases of up to €999. Venice says it makes $200M a year, and EU law <a
-          href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32005L0029"
-          >bans</a
+        > (a "trader"), so Apple warns buyers that "consumer rights do not apply", right above in-app
+        purchases of up to €999. Venice says it makes $200M a year, and EU law <a
+          href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32005L0029">bans</a
         > businesses from pretending they aren't one.
       </p>
     </li>
@@ -254,8 +254,7 @@ description:
         <li>the chat database's key sat in plain text in local storage, right next to the data</li>
         <li>7 of its 21 tables, including custom system prompts, weren't encrypted</li>
         <li>
-          the newer <code>venice-rx-db-encrypted</code> encrypts 0 of its 31 collections, memories
-          included
+          the newer <code>venice-rx-db-encrypted</code> encrypts 0 of its 31 collections, memories included
         </li>
       </ul>
       <p>
