@@ -1,0 +1,71 @@
+---
+// Inline provider badge. With OpenRouter data or a blurb, it opens the provider's dialog (rendered by
+// ProviderDialogs.astro, which must come after every badge) through invoker commands, so it works
+// without JS; JS adds a hover card built from the same basics. Otherwise it links to the website.
+import { dialogId, dialogRegistry, hasDialog, plainSummary } from './lib.ts';
+import { providers, type ProviderKey } from './providers.ts';
+
+type Props = { of: ProviderKey };
+const { of } = Astro.props;
+const { name, website, bg, fg, icon } = providers[of];
+
+const dialog = hasDialog(of);
+if (dialog) {
+  const registry = dialogRegistry(Astro.locals);
+  if (registry.rendered)
+    throw new Error(
+      `<Provider of="${of}" /> rendered after <ProviderDialogs />, so its dialog is missing. Put <ProviderDialogs /> last in the post.`,
+    );
+  registry.used.add(of);
+}
+const invoker = { commandfor: dialogId(of), command: 'show-modal' };
+---
+
+{
+  dialog ? (
+    <button
+      type="button"
+      class="provider layer"
+      style={`--bg: ${bg}; --fg: ${fg}`}
+      data-provider={of}
+      title={plainSummary(of)}
+      aria-haspopup="dialog"
+      {...invoker}
+    >
+      <svg viewBox={icon.viewBox} aria-hidden="true">
+        <path d={icon.d} fill="currentColor" />
+      </svg>
+      {name}
+    </button>
+  ) : (
+    <a class="provider layer not-prose" href={website} style={`--bg: ${bg}; --fg: ${fg}`}>
+      <svg viewBox={icon.viewBox} aria-hidden="true">
+        <path d={icon.d} fill="currentColor" />
+      </svg>
+      {name}
+    </a>
+  )
+}
+
+<style>
+  .provider {
+    display: inline-flex;
+    height: 1.5rem;
+    align-items: center;
+    gap: 0.25rem;
+    padding-inline: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: var(--bg);
+    color: var(--fg);
+    font: inherit;
+    line-height: 1;
+    text-decoration: none;
+    vertical-align: baseline;
+  }
+  svg {
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+  }
+</style>

@@ -1,0 +1,520 @@
+---
+// Stacked daily OpenRouter tokens, rendered to SVG at build time, with a crosshair added by JS.
+// Works in a post or in a provider dialog.
+//
+//   <UsageChart of="gmicloud" />                          one provider, stacked by model
+//   <UsageChart of="gmicloud" models="deepseek/deepseek-v4.1-flash" from="2026-09-01" />
+//   <UsageChart of={['novita', 'siliconflow']} models="deepseek/deepseek-v4.1-flash" />
+//                                                         several providers, stacked by provider
+//   <UsageChart of={[{ of: 'novita', models: [...] }, { of: 'streamlake', models: [...] }]} />
+//                                                         same, with a model filter per provider
+//
+// By model, the top models keep their own color and everything else folds into Other. A model
+// filter drops Other, so filtered charts are lower bounds (see lib.ts).
+import * as d3 from 'd3';
+import { formatTokens } from './format.ts';
+import {
+  dailySeries,
+  dateLabel,
+  daysOf,
+  modelMatcher,
+  modelName,
+  providers,
+  usageOf,
+  type ModelFilter,
+  type ProviderKey,
+} from './lib.ts';
+
+type Lane = { of: ProviderKey; models?: ModelFilter };
+type Props = {
+  of: ProviderKey | (ProviderKey | Lane)[];
+  /** Default filter; a lane's own models replace it */
+  models?: ModelFilter;
+  /** Inclusive YYYY-MM-DD bounds */
+  from?: string;
+  to?: string;
+  /** Replaces the bold part of the caption */
+  title?: string;
+};
+const { of, models, from, to, title } = Astro.props;
+const lanes: Lane[] = (Array.isArray(of) ? of : [of]).map((l) =>
+  typeof l == 'string' ? { of: l, models } : { models, ...l },
+);
+const keys = lanes.map((l) => l.of);
+const byProvider = Array.isArray(of);
+const filtered = lanes.some((l) => l.models);
+
+// dataviz reference palette, dark steps, validated as adjacent pairs on the dialog surface
+const COLORS = [
+  '#3987e5',
+  '#d95926',
+  '#199e70',
+  '#c98500',
+  '#d55181',
+  '#008300',
+  '#9085e9',
+  '#e66767',
+];
+const OTHER = '#5c5d6b';
+
+// Provider series use the badge color when it reads as a fill on the dark surface and stands
+// apart from the colors already picked; gradients, near-blacks and near-duplicates get the palette.
+const hexRgb = (c: string) => {
+  const m = /^#([0-9a-f]{6})$/i.exec(c.trim()) ?? /^#([0-9a-f]{3})$/i.exec(c.trim());
+  if (m) {
+    const h = m[1].length == 3 ? [...m[1]].map((x) => x + x).join('') : m[1];
+    return [0, 2, 4].map((i) => parseInt(h.slice(i, i + 2), 16) / 255);
+  }
+  if (c == 'white') return [1, 1, 1];
+  if (c == 'black') return [0, 0, 0];
+};
+const linear = (v: number) => (v <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4);
+const oklab = (rgb: number[]) => {
+  const [r, g, b] = rgb.map(linear);
+  const [l, m, s] = [
+    0.4122214708 * r + 0.5363325363 * g + 0.0514459929 * b,
+    0.2119034982 * r + 0.6806995451 * g + 0.1073969566 * b,
+    0.0883024619 * r + 0.2817188376 * g + 0.6299787055 * b,
+  ].map(Math.cbrt);
+  return [
+    0.2104542553 * l + 0.793617785 * m - 0.0040720468 * s,
+    1.9779984951 * l - 2.428592205 * m + 0.4505937099 * s,
+    0.0259040371 * l + 0.7827717662 * m - 0.808595867 * s,
+  ];
+};
+const distance = (a: string, b: string) => {
+  const [p, q] = [oklab(hexRgb(a)!), oklab(hexRgb(b)!)];
+  return Math.hypot(p[0] - q[0], p[1] - q[1], p[2] - q[2]);
+};
+const luminance = (rgb: number[]) => {
+  const [r, g, b] = rgb.map(linear);
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+};
+const pickColors = (brands: string[]) => {
+  const used: string[] = [];
+  // Real clashes (SiliconFlow/Atlas Cloud, Novita/NextBit, GMI/Venice) sit near 0.02; SiliconFlow
+  // vs StreamLake (0.078) still reads as lavender vs periwinkle
+  const distinct = (c: string) => used.every((u) => distance(c, u) > 0.05);
+  for (const brand of brands) {
+    const rgb = hexRgb(brand);
+    // 3:1 against the page surface (#12131b, luminance ~0.007)
+    const ok = rgb && (luminance(rgb) + 0.05) / 0.057 >= 3 && distinct(brand);
+    used.push(ok ? brand : (COLORS.find(distinct) ?? COLORS[used.length % COLORS.length]));
+  }
+  return used;
+};
+
+const dates = [...new Set(keys.flatMap((k) => daysOf(k, { from, to })))].sort();
+type Series = { name: string; color: string; values: number[] };
+let series: Series[];
+if (byProvider) {
+  const colors = pickColors(keys.map((k) => providers[k].bg));
+  series = lanes.map(({ of: k, models }, i) => {
+    const byDate = new Map(dailySeries(k, { from, to, models }).map((d) => [d.date, d.tokens]));
+    return {
+      name: providers[k].name,
+      color: colors[i],
+      values: dates.map((d) => byDate.get(d) ?? 0),
+    };
+  });
+} else {
+  const usage = usageOf(keys[0])?.usage ?? {};
+  const match = modelMatcher(models);
+  // Rank by summed share of each day, not raw tokens, so a big free promo can't bury a newer model
+  const score = new Map<string, number>();
+  for (const d of dates) {
+    const total = Object.values(usage[d]).reduce((a, b) => a + b, 0) || 1;
+    for (const [m, v] of Object.entries(usage[d]))
+      if (m != 'Others' && match(m)) score.set(m, (score.get(m) ?? 0) + v / total);
+  }
+  const top = [...score]
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, COLORS.length)
+    .map(([m]) => m);
+  series = top.map((m, i) => ({
+    name: modelName(m),
+    color: COLORS[i],
+    values: dates.map((d) => usage[d][m] ?? 0),
+  }));
+  if (!models)
+    series.push({
+      name: 'Other',
+      color: OTHER,
+      values: dates.map((d) =>
+        Object.entries(usage[d])
+          .filter(([m]) => !top.includes(m))
+          .reduce((a, [, v]) => a + v, 0),
+      ),
+    });
+}
+series = series.filter((s) => s.values.some((v) => v > 0));
+// Start at the first traffic, e.g. a model's launch when filtering by model
+const firstDay = dates.findIndex((_, i) => series.some((s) => s.values[i] > 0));
+if (firstDay > 0) {
+  dates.splice(0, firstDay);
+  for (const s of series) s.values.splice(0, firstDay);
+}
+
+const label = keys.map((k) => providers[k].name).join(', ');
+const filterNote = !filtered
+  ? undefined
+  : !models || typeof models == 'function' || lanes.some((l) => l.models != models)
+    ? 'selected models'
+    : (typeof models == 'string' ? [models] : models).join(', ');
+
+// SVG units; the plot stretches to its box and the axis labels are HTML, so text stays readable
+const W = 600;
+const H = 200;
+const x = d3
+  .scaleUtc()
+  .domain([new Date(dates[0]), new Date(dates.at(-1)!)])
+  .range([0, W]);
+const dayTotals = dates.map((_, i) => series.reduce((a, s) => a + s.values[i], 0));
+const y = d3
+  .scaleLinear()
+  .domain([0, d3.max(dayTotals) || 1])
+  .nice(4)
+  .range([H, 0]);
+
+const stacked = d3
+  .stack<number>()
+  .keys(series.map((_, i) => `${i}`))
+  .value((i, k) => series[+k].values[i])(dates.map((_, i) => i));
+const area = d3
+  .area<d3.SeriesPoint<number>>()
+  .x((p) => x(new Date(dates[p.data])))
+  .y0((p) => y(p[0]))
+  .y1((p) => y(p[1]));
+// @types/d3 predates d3-shape's .digits(); full-precision paths triple the page size
+(area as unknown as { digits(n: number): void }).digits(1);
+
+const yTicks = y.ticks(4);
+// Month ticks, or weekly ones when the range is too short to show two months
+const monthTicks = x.ticks(d3.utcMonth.every(1)!);
+const tickFormat = monthTicks.length >= 2 ? d3.utcFormat('%b') : d3.utcFormat('%b %-d');
+const xTicks = (monthTicks.length >= 2 ? monthTicks : x.ticks(d3.utcWeek.every(1)!)).filter(
+  (t) => x(t) > 24 && x(t) < W - 24,
+);
+
+const hover = JSON.stringify({
+  dates: dates.map(dateLabel),
+  x: dates.map((d) => Math.round(x(new Date(d)) * 10) / 10),
+  // hundred-thousands of tokens, to keep the attribute small
+  series: series.map(({ name, color, values }) => ({
+    name,
+    color,
+    values: values.map((v) => Math.round(v / 1e5)),
+  })),
+});
+
+// Weekly sums for the table view, oldest first
+const weeks = d3.range(0, dates.length, 7).map((start) => ({
+  label: dateLabel(dates[start]),
+  values: series.map((s) => d3.sum(s.values.slice(start, start + 7))),
+  days: Math.min(7, dates.length - start),
+}));
+---
+
+{
+  dates.length > 1 && series.length > 0 && (
+    <figure class="usage not-prose">
+      <figcaption>
+        <strong>{title ?? `Daily tokens on OpenRouter`}</strong>, {dateLabel(dates[0])} to{' '}
+        {dateLabel(dates.at(-1)!)}
+        {byProvider && <> · {label}</>}
+        {filterNote && (
+          <span class="filter" title="Days a model fell out of the provider's top models aren't counted">
+            {' '}
+            · {filterNote} only (lower bound)
+          </span>
+        )}
+      </figcaption>
+      <ul class="legend">
+        {series.map((s) => (
+          <li>
+            <span class="swatch" style={`background: ${s.color}`} />
+            {s.name}
+          </li>
+        ))}
+      </ul>
+      <div class="plot" data-chart={hover}>
+        <div class="y-axis" aria-hidden="true">
+          {yTicks.map((t) => (
+            <span style={`top: ${(y(t) / H) * 100}%`}>{t == 0 ? '0' : formatTokens(t)}</span>
+          ))}
+        </div>
+        <svg
+          viewBox={`0 0 ${W} ${H}`}
+          preserveAspectRatio="none"
+          role="img"
+          aria-label={`Stacked area chart of ${label}'s daily tokens by ${byProvider ? 'provider' : 'model'}`}
+        >
+          {yTicks.map((t) => (
+            <line class="grid" x1={0} x2={W} y1={y(t)} y2={y(t)} />
+          ))}
+          {stacked.map((layer, i) => (
+            <path class="layer-area" d={area(layer)} fill={series[i].color}>
+              <title>{series[i].name}</title>
+            </path>
+          ))}
+          <line class="crosshair" y1={0} y2={H} />
+        </svg>
+        <div class="x-axis" aria-hidden="true">
+          {xTicks.map((t) => (
+            <span style={`left: ${(x(t) / W) * 100}%`}>{tickFormat(t)}</span>
+          ))}
+        </div>
+        <div class="tooltip" hidden />
+      </div>
+      <details>
+        <summary>Weekly table</summary>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Week of</th>
+                {series.map((s) => (
+                  <th>{s.name}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {weeks.map((w) => (
+                <tr>
+                  <td>
+                    {w.label}
+                    {w.days < 7 && ` (${w.days}d)`}
+                  </td>
+                  {w.values.map((v) => (
+                    <td>{formatTokens(v)}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </figure>
+  )
+}
+
+<script>
+  import { formatTokens } from './format.ts';
+
+  type Chart = {
+    dates: string[];
+    x: number[];
+    /** hundred-thousands of tokens */
+    series: { name: string; color: string; values: number[] }[];
+  };
+  for (const plot of document.querySelectorAll<HTMLElement>('.usage .plot')) {
+    const chart: Chart = JSON.parse(plot.dataset.chart!);
+    const svg = plot.querySelector('svg')!;
+    const line = svg.querySelector<SVGLineElement>('.crosshair')!;
+    const tip = plot.querySelector<HTMLElement>('.tooltip')!;
+    const width = svg.viewBox.baseVal.width;
+
+    const move = (e: PointerEvent) => {
+      const r = svg.getBoundingClientRect();
+      const vx = ((e.clientX - r.left) / r.width) * width;
+      let i = 0;
+      for (let j = 1; j < chart.x.length; j++)
+        if (Math.abs(chart.x[j] - vx) < Math.abs(chart.x[i] - vx)) i = j;
+      line.setAttribute('x1', `${chart.x[i]}`);
+      line.setAttribute('x2', `${chart.x[i]}`);
+      line.style.opacity = '0.5';
+
+      // Biggest first, Other last, days a series had no traffic left out
+      const rows = chart.series
+        .filter((s) => s.values[i] > 0)
+        .sort((a, b) => +(a.name == 'Other') - +(b.name == 'Other') || b.values[i] - a.values[i])
+        .map((s) => {
+          const row = document.createElement('div');
+          row.className = 'row';
+          const swatch = document.createElement('span');
+          swatch.className = 'swatch';
+          swatch.style.background = s.color;
+          const name = document.createElement('span');
+          name.textContent = s.name;
+          const value = document.createElement('span');
+          value.className = 'value';
+          value.textContent = formatTokens(s.values[i] * 1e5);
+          row.replaceChildren(swatch, name, value);
+          return row;
+        });
+      const head = document.createElement('div');
+      head.className = 'head';
+      const total = chart.series.reduce((sum, s) => sum + s.values[i], 0);
+      head.textContent = `${chart.dates[i]} · ${formatTokens(total * 1e5)} total`;
+      tip.replaceChildren(head, ...rows);
+      tip.hidden = false;
+
+      // The tooltip lives in .plot, which also holds the y-axis gutter
+      const pr = plot.getBoundingClientRect();
+      const px = r.left - pr.left + (chart.x[i] / width) * r.width;
+      const tw = tip.offsetWidth;
+      const left = px + 12 + tw <= pr.width ? px + 12 : Math.max(0, px - 12 - tw);
+      tip.style.left = `${left}px`;
+    };
+    const leave = () => {
+      tip.hidden = true;
+      line.style.opacity = '0';
+    };
+    svg.addEventListener('pointermove', move);
+    svg.addEventListener('pointerdown', move);
+    svg.addEventListener('pointerleave', leave);
+  }
+</script>
+
+<style>
+  .usage {
+    margin: 0;
+  }
+  /* In a post, space it like the prose around it, which only sets margin-block-start */
+  :global(.prose) > .usage:not(:first-child) {
+    margin-block-start: 1em;
+  }
+  figcaption {
+    font-size: 0.875rem;
+    line-height: 1.4;
+  }
+  .filter {
+    color: var(--m3c-on-surface-variant);
+  }
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.75rem;
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0;
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+  .legend li {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0;
+    margin: 0;
+  }
+  .swatch {
+    width: 0.625rem;
+    height: 0.625rem;
+    border-radius: 0.125rem;
+  }
+  .plot {
+    position: relative;
+    display: grid;
+    grid-template-columns: 2.75rem 1fr;
+    grid-template-rows: 11rem 1.5rem;
+    margin-top: 1rem;
+  }
+  svg {
+    grid-area: 1 / 2;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    touch-action: pan-y;
+  }
+  .y-axis,
+  .x-axis {
+    position: relative;
+    color: var(--m3c-on-surface-variant);
+    font-size: 0.6875rem;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .y-axis {
+    grid-area: 1 / 1;
+  }
+  .y-axis span {
+    position: absolute;
+    right: 0.5rem;
+    translate: 0 -50%;
+  }
+  .x-axis {
+    grid-area: 2 / 2;
+  }
+  .x-axis span {
+    position: absolute;
+    top: 0.375rem;
+    translate: -50% 0;
+    white-space: nowrap;
+  }
+  .grid {
+    stroke: oklch(from var(--m3c-on-surface) l c h / 0.12);
+    vector-effect: non-scaling-stroke;
+  }
+  .layer-area {
+    /* surface gap between stacked fills; dialogs set --surface to their own background */
+    stroke: var(--surface, var(--m3c-surface));
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+  }
+  .crosshair {
+    stroke: var(--m3c-on-surface);
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+    opacity: 0;
+  }
+  .tooltip {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    pointer-events: none;
+    padding: 0.5rem 0.625rem;
+    border-radius: 0.5rem;
+    background: var(--m3c-surface-container-highest);
+    box-shadow: 0 4px 16px rgb(0 0 0 / 0.4);
+    font-size: 0.75rem;
+    line-height: 1.5;
+    white-space: nowrap;
+    color: var(--m3c-on-surface);
+  }
+  /* Tooltip rows are built by the script above, so they aren't scoped */
+  .tooltip :global(.head) {
+    margin-bottom: 0.25rem;
+    color: var(--m3c-on-surface-variant);
+  }
+  .tooltip :global(.row) {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .tooltip :global(.swatch) {
+    width: 0.625rem;
+    height: 0.625rem;
+    border-radius: 0.125rem;
+  }
+  .tooltip :global(.value) {
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+  }
+  details {
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+  }
+  summary {
+    color: var(--m3c-on-surface-variant);
+  }
+  .table-scroll {
+    overflow-x: auto;
+  }
+  table {
+    margin-top: 0.5rem;
+    font-variant-numeric: tabular-nums;
+  }
+  th,
+  td {
+    padding: 0.125rem 0.5rem;
+    text-align: right;
+    white-space: nowrap;
+  }
+  th:first-child,
+  td:first-child {
+    text-align: left;
+  }
+</style>

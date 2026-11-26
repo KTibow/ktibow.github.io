@@ -1,0 +1,261 @@
+---
+import ClickableQuote from '$lib/ClickableQuote.astro';
+import BlogPost from '$lib/layouts/BlogPost.astro';
+import Provider from '$lib/openrouter/Provider.astro';
+import ProviderDialogs from '$lib/openrouter/ProviderDialogs.astro';
+import UsageChart from '$lib/openrouter/UsageChart.astro';
+import Percent from './_Percent.astro';
+import './_tree.css';
+
+export const title = 'Novita, StreamLake, etc are Ark wrappers';
+export const date = '2026-11-25';
+---
+
+<BlogPost {title} {date}>
+  <UsageChart
+    title="DeepSeek tokens on routes traced to ByteDance Ark on Nov 21"
+    from="2026-11-01"
+    of={[
+      {
+        of: 'novita',
+        models: [
+          'deepseek/deepseek-v4.1-flash-1017',
+          'deepseek/deepseek-v4.1-flash',
+          'deepseek/deepseek-v4-pro',
+          'deepseek/deepseek-v4-pro-0813',
+        ],
+      },
+      {
+        of: 'streamlake',
+        models: ['deepseek/deepseek-v4.1-flash', 'deepseek/deepseek-v4-pro-0813'],
+      },
+      { of: 'antdigital', models: ['deepseek/deepseek-v4.1-flash-1017'] },
+    ]}
+  />
+  <p>
+    Sit back, but you probably won't be able to relax - this one's a doozy. First, <Provider
+      of="novita"
+    />, who looks like a standard US ZDR inference provider at first:
+  </p>
+  <ClickableQuote
+    href="https://trust.novita.ai/faq?search=What+data+do+you+collect%2C+and+for+how+long+is+it+retained%3F"
+  >
+    <p>
+      <mark>Zero Data Retention is the default for all endpoints</mark>, including serverless API
+      calls.
+    </p>
+  </ClickableQuote>
+  <p>
+    But the more you look, the weirder it gets. Why did OpenRouter drop their ZDR status sometime
+    before <time datetime="2026-11-20T22:40:36.790Z">2026-11-20 22:40 UTC</time>? Why is their
+    family tree so complicated?
+  </p>
+  <ul class="tree not-prose">
+    <li>
+      <span role="img" aria-label="Cayman Islands" title="Cayman Islands">🇰🇾</span> PPLabs Technology
+      Limited
+      <ul>
+        <li>
+          <span role="img" aria-label="Hong Kong" title="Hong Kong">🇭🇰</span> PPLabs HK
+          <ul>
+            <li>
+              <span role="img" aria-label="China" title="China">🇨🇳</span> Shanghai DAO
+              <ul>
+                <li class="vie">
+                  <span role="img" aria-label="China" title="China">🇨🇳</span> PPIO Shanghai <span
+                    class="note">(via VIE)</span
+                  >{' '}<a href="https://ppio.com" class="brand">PPIO 派欧云</a>
+                  <ul>
+                    <li>
+                      <span role="img" aria-label="China" title="China">🇨🇳</span> Generative Era
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span role="img" aria-label="Singapore" title="Singapore">🇸🇬</span> SWARMNET Singapore
+        </li>
+        <li>
+          <span role="img" aria-label="United States" title="United States">🇺🇸</span> Hivemind Labs, Inc.{
+            ' '
+          }<a href="https://novita.ai" class="brand">Novita AI</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <p>
+    And who are their subprocessors? Many (<a href="https://x.com/KTibow/status/2104285290429116759"
+      ><Percent v={0.125 + 0.333} />{' '}{12.5 + 33.3}%</a
+    >) think they would have none, since most OpenRouter providers host models themselves. And
+    PPLabs's draft IPO assures:
+  </p>
+  <ClickableQuote
+    href="https://web.archive.org/web/20260927181216/https://www1.hkexnews.hk/app/sehk/2026/108628/documents/sehk26061000116.pdf#page=13"
+  >
+    <p>
+      A defining feature of our model API services is that <mark
+        >we do not simply provide a pass-through gateway to underlying models</mark
+      >.
+    </p>
+  </ClickableQuote>
+  <p>
+    But <a href="https://trust.novita.ai/faq?search=Who+are+your+sub-processors%3F"
+      >"Who are your sub-processors?"</a
+    > details "Model provider" subprocessors. But it promises a <a
+      href="https://trust.novita.ai/subprocessors">"full and up-to-date sub-processor list"</a
+    >. But this list doesn't include any model subprocessors. But PPIO clearly implies the existence
+    of subprocessors:
+  </p>
+  <ClickableQuote
+    href="https://web.archive.org/web/20260909113349/https://ppio.com/legal/terms-of-service#:~:text=8%2E6"
+  >
+    <p>
+      You understand and agree that, [for] the large-model API product, <mark
+        >third-party technical-support providers provide the large-model API</mark
+      >. PPIO makes no warranty of any kind regarding the large-model API, whether express or
+      implied, including but not limited to its authenticity, suitability, non-infringement and
+      security. Furthermore, regarding the third-party technical-support providers' large-model API,
+      PPIO will not participate in the development and operation of the large-model API; <mark
+        >PPIO only provides a neutral platform</mark
+      >{' '}
+      and related technical services.
+    </p>
+  </ClickableQuote>
+  <p>
+    I also contacted their support and privacy contacts, and all they told me as of writing is that
+    models labeled as "Partner" may go to Qwen and InclusionAI. You can't get a straight answer.
+  </p>
+  <p>
+    What about <Provider of="streamlake" />? It's Kuaishou's model platform, and it looks like a
+    host too. But some of its error messages aren't StreamLake's. They're word for word Novita's
+    gateway errors: <code>invalid request error trace_id: …</code>. And on GLM 5.3 Flash, it
+    sometimes returns a tool-call id format (<code>call_</code> + 16 hex digits) that only Novita produces,
+    out of 41 hosts. Why would StreamLake's requests come back from Novita?
+  </p>
+  <p>
+    It keeps going. <Provider of="siliconflow" /> passes through StreamLake's own request ids (<code
+      >req-</code
+    > + 6 characters + 19 digits) on V4.1 Flash, V4 Pro and GLM 5. And then there's <Provider
+      of="antdigital"
+    />, a Singapore subsidiary of Ant Group that listed DeepSeek V4.1 Flash on November 18 at "60%
+    off", with ZDR (until OpenRouter removed it on November 22), and went from 1B tokens a day to
+    35.8B on November 21. Where is all this actually going?
+  </p>
+
+  <h2>The MiniMax investigation</h2>
+  <p>
+    You might've already seen OpenRouter's notice that requests sent to MiniMax models "may have
+    been read". A security researcher put unique URLs in prompts, and a third party opened them 40
+    to 130 hours later. This happened even with non-MiniMax providers:
+  </p>
+  <blockquote>
+    <p>
+      AtlasCloud, Novita and StreamLake have told us they <mark
+        >forwarded OpenRouter requests for MiniMax models to MiniMax</mark
+      >.
+    </p>
+  </blockquote>
+  <p>
+    So the forwarding is admitted. <a
+      href="https://www.minimax.io/blog/update-on-url-access-in-forwarded-api-requests-20261124"
+      >MiniMax's own notice</a
+    > names the same three and says its security system, on by default, opened URLs from forwarded
+    requests, ZDR ones included. <a href="https://novita.ai/blog/minimax-requests-privacy-notice/"
+      >Novita's notice</a
+    > calls it a "routing configuration issue" on a path "intended for specific customers", and promises
+    better "Partner API labeling", the same "Partner" label its support told me means a request goes to
+    Qwen or inclusionAI. Since then, 16 of Novita's endpoints have come off OpenRouter: every Qwen
+    and inclusionAI model, plus StepFun, Tencent and all but one Kimi.
+  </p>
+  <p>But MiniMax is a very small model series. What about DeepSeek?</p>
+
+  <h2>It goes to ByteDance</h2>
+  <p>
+    Ark is ByteDance's model API: Volcano Engine Ark in mainland China, BytePlus ModelArk everywhere
+    else. It sells DeepSeek, GLM and Kimi, and it leaves fingerprints:
+  </p>
+  <ul>
+    <li>
+      <strong>Who downloads your images.</strong> StreamLake's V4.1 Flash images are downloaded from Beijing
+      Volcano Engine (AS137718), ByteDance's cloud. Ant Digital's pass through Ant's own gateway on Alibaba
+      Cloud, then get downloaded by <code>101.47.5.59</code>, BytePlus in Singapore. Novita's own
+      API used to do the same (<code>124.174.46.139</code>, Volcano Engine, on November 12), until
+      Novita started downloading images itself first, from AWS.
+    </li>
+    <li>
+      <strong>Request IDs.</strong> Every Ant Digital response's upstream ID is a ByteDance one: <code
+        >02</code
+      > + a millisecond timestamp + hex.
+    </li>
+    <li>
+      <strong>Tool-call IDs.</strong> Novita's and StreamLake's V4.1 Flash return Ark's format (<code
+        >call_00_</code
+      > + 24 lowercase letters and digits).
+    </li>
+    <li>
+      <strong>Censorship.</strong> Ask StreamLake's V4 Pro 0813 who Tank Man was, or Novita's GLM 5.1
+      about June 4, 1989, and you can get ByteDance's canned refusal: <q lang="zh"
+        >你好，我无法给到相关内容。</q
+      > ("Hello, I can't provide related content.")
+    </li>
+    <li>
+      <strong>Price.</strong> Ant Digital launched at $0.12/$0.48 per million tokens, exactly BytePlus's
+      off-peak "Economy" rate for that model. By November 25 it was down to $0.09/$0.36, below BytePlus's
+      own list price.
+    </li>
+  </ul>
+  <p>
+    Other tests, which I won't detail here, put Novita's V4 Pro 0813 and V4.1 Flash 1017 on BytePlus
+    in Singapore and its V4.1 Flash on Volcano Engine in Beijing, as of November 21. That's the
+    chart at the top: Novita alone sent 120-160B tokens a day on these models until it lost its ZDR
+    label on November 20, then 33B on November 21. Routes move, though; one of those changed within
+    an afternoon, and Novita's V4.1 Flash 1017 had stopped showing Ark's fingerprints by November 24.
+    As for the weird errors, part of StreamLake's traffic goes through Novita on its
+    way to ByteDance. So a V4.1 Flash request to SiliconFlow can go SiliconFlow → StreamLake →
+    Novita → ByteDance.
+  </p>
+  <p>
+    Bonus: Novita's "DeepSeek V4 Pro" isn't the original V4 Pro. On Novita's own API, it sometimes
+    answers with DeepSeek's <code>system_fingerprint</code> for the 0813 checkpoint (<code
+      >d400d062…</code
+    >). ByteDance sells 0813 as "DeepSeek-V4-Pro正式版" (V4 Pro GA) and marks the original as about
+    to be retired.
+  </p>
+  <p>
+    Why bother? Price. BytePlus advertises savings plans of 30-50% off for high volume, and the
+    clouds come to you: <a href="https://x.com/tejasybhakta/status/2124195706479202377"
+      >Morph's Tejas Bhakta posted</a
+    > a Tencent Cloud email offering "up to 50-60% off" to route requests to them.
+  </p>
+  <p>
+    Attested proof of the image downloads, request IDs, tool-call IDs and refusals is available <a
+      href="https://github.com/KTibow/the-ark-of-deepseek-v4.1-flash/releases/tag/probe-44960395726"
+      >here</a
+    > (run <a
+      href="https://github.com/KTibow/the-ark-of-deepseek-v4.1-flash/actions/runs/44960395726"
+      >44960395726</a
+    > on <a
+      href="https://github.com/KTibow/the-ark-of-deepseek-v4.1-flash/commit/6dbc036f555e94966ab36a8747fe452504193438"
+      >6dbc036</a
+    >). It asks every OpenRouter host of DeepSeek V4.1 Flash, so you can compare against everyone
+    else too.
+  </p>
+
+  <h2>Disclosures</h2>
+  <p>
+    I got credits to survey providers from OpenRouter, which routes requests to Novita, StreamLake
+    and Ant Digital. I work at Surplus Intelligence, an inference marketplace that routes requests
+    to providers, including BytePlus for some models. However, nobody paid for this post.
+  </p>
+  <ProviderDialogs />
+</BlogPost>
+<style>
+  mark {
+    background-color: var(--m3c-primary);
+    color: var(--m3c-on-primary);
+    border-radius: 4px;
+  }
+</style>

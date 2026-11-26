@@ -1,0 +1,16 @@
+---
+interface Props {
+  v: number;
+}
+const { v } = Astro.props;
+---
+
+<span
+  style={{
+    display: 'inline-block',
+    width: '1em',
+    aspectRatio: '1 / 1',
+    verticalAlign: 'middle',
+    borderRadius: '50%',
+    backgroundImage: `conic-gradient(var(--m3c-primary) ${v * 100}%, var(--m3c-surface-container-highest) ${v * 100}%)`,
+  }}></span>

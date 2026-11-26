@@ -1,0 +1,337 @@
+---
+import BlogPost from '$lib/layouts/BlogPost.astro';
+import Provider from '$lib/openrouter/Provider.astro';
+import ProviderDialogs from '$lib/openrouter/ProviderDialogs.astro';
+import UsageChart from '$lib/openrouter/UsageChart.astro';
+import ClickableQuote from '$lib/ClickableQuote.astro';
+import Snippet from '$lib/Snippet.astro';
+import Percent from './_Percent.astro';
+import e2ee from './e2ee.svg';
+
+export const title = 'Venice is a DeepInfra+ wrapper';
+export const date = '2026-11-25';
+---
+
+<BlogPost {title} {date}>
+  <details class="summary-box">
+    <summary>Summary</summary>
+    <ul>
+      <li>
+        Venice says its "private" models are self-hosted, but it provably wraps DeepInfra,
+        Fireworks, Baseten, Parasail and fal.
+      </li>
+      <li>
+        Its website breaks EU, UK and California privacy law: ad trackers fire before you consent,
+        and it ignores Global Privacy Control.
+      </li>
+      <li>
+        Its image editor undresses photos with no check for real people, breaking Minnesota's
+        nudification ban and Texas's age verification law.
+      </li>
+      <li>
+        It silently swaps multiple models, selling Qwen Instruct for about 4× the price as
+        "Thinking" and more.
+      </li>
+      <li>
+        Its encryption is mostly for show: the "encrypted" browser storage keeps its key right next to
+        the data, and Venice and Phala <a href="#e2ee">can read your end-to-end encrypted prompts</a> if
+        they want to.
+      </li>
+    </ul>
+  </details>
+  <UsageChart of="venice" title="Venice's daily tokens on OpenRouter" />
+  <p>
+    Venice is a privacy friendly AI service, and they've made it look an awful lot like their <a
+      href="https://github.com/veniceai/api-docs/blob/a9d8ccf59f879dfe7dfaa09ec23443e09393a43a/models/overview.mdx"
+      >(usual)</a
+    >{' '}"private" tier is the self host tier.
+  </p>
+  <ClickableQuote href="https://web.archive.org/web/20261121173608/https://venice.ai/llms.txt">
+    <p>
+      Venice runs leading open-source and third-party models across four privacy tiers: [...]
+      Private (zero data retention on <mark>self-hosted</mark> open-source models), [...]
+    </p>
+  </ClickableQuote>
+  <ClickableQuote
+    href="https://github.com/veniceai/api-docs/blob/0c3be63b0d80dcf839adeae87ff025a875cc89d6/llms.txt"
+  >
+    <p>
+      Venice offers four tiers of privacy: [...] <strong>Private</strong> (zero data retention, <mark
+        >self-hosted</mark
+      > open-source models),
+    </p>
+  </ClickableQuote>
+  <ClickableQuote
+    href="https://web.archive.org/web/20261120161444/https://venice.ai/#:~:text=self-hosted"
+  >
+    <p>
+      Private - Zero data retention on <mark>self-hosted</mark> open-source models. Your prompts are never
+      stored.
+    </p>
+  </ClickableQuote>
+  <ClickableQuote href="https://web.archive.org/web/20261117194513/https://venice.ai/">
+    <pre>// archived webmcp via view-source:
+description:
+"List the AI models available on Venice from the public catalog: id, " +
+"display name, type, privacy tier (private = zero data retention on " +
+"<mark>Venice hardware</mark>, anonymized = third-party with metadata stripped), " +
+"context size and traits. Filter by type or a name/id search.",</pre>
+  </ClickableQuote>
+  <p>
+    Not to mention that Venice is an OpenRouter provider as of writing, and many (<a
+      href="https://x.com/KTibow/status/2104285290429116759"
+      ><Percent v={0.125 + 0.333} />{' '}{12.5 + 33.3}%</a
+    >) think most OpenRouter providers run models themselves.
+  </p>
+
+  <h2>Venice provably wraps other inference services</h2>
+  <p>
+    If you give Venice an <code>image_url</code>, it gets downloaded from another inference
+    provider: <Provider of="baseten" />, <Provider of="deepinfra" />, <Provider of="fireworks" /> or{
+      ' '
+    }<Provider of="parasail" /> for 14 of the 18 image models Venice listed on OpenRouter on November
+    21. OpenRouter even lists Qwen3.5 397B A17B, even though it's marked as anonymized and not private,
+    and on November 21 its requests looped back into <Provider of="openrouter" /> (32 of 40 requests).
+    Between November 22, when I sent OpenRouter a preview of this post, and November 24, Venice moved
+    397B to DeepInfra, and GLM 5 "turbo", which looped back the same way, came off OpenRouter. Attested
+    proof is available <a
+      href="https://github.com/KTibow/venetian-recursion/releases/tag/probe-44936721959">here</a
+    > (run <a href="https://github.com/KTibow/venetian-recursion/actions/runs/44936721959"
+      >44936721959</a
+    > on <a
+      href="https://github.com/KTibow/venetian-recursion/commit/85554d8a98f2c50daf9953c764c8e90b3e985cab"
+      >85554d8</a
+    >).
+  </p>
+  <p>
+    Media models too. Hunyuan Image 3.0 runs on <a
+      href="https://fal.ai/models/fal-ai/hunyuan-image/v3/text-to-image">fal</a
+    > according to Venice's app config:
+  </p>
+  <Snippet
+    language="json"
+    code={`{
+  "id": "hunyuan-image-v3",
+  "capabilities": { "private": true },
+  "apiRateLimitSize": "fal-images",
+  "falRequestDefaults": { "enable_safety_checker": false }
+}`}
+  />
+  <p>
+    I discussed what "private" actually means with a Venice developer in the Venice Discord, who
+    directed me to <a href="https://venice.ai/privacy">https://venice.ai/privacy</a>. This page
+    canonically defines "private" to include wrapping other inference services:
+  </p>
+  <ClickableQuote href="https://venice.ai/privacy">
+    <p>
+      Private - Inference runs on Venice-controlled GPUs <mark
+        >or zero-data-retention partner infrastructure</mark
+      >. Privacy is enforced by contractual commitments — no prompt or response is stored.
+    </p>
+  </ClickableQuote>
+  <p>
+    I pinged the Venice developer about the other pages that define "private" to self hosted on
+    November 17. As of November 25, 8 days and 2 pings later, Venice still hasn't fixed their
+    plausible yet officially incorrect claims of self hosting.
+  </p>
+  <p>
+    Venice's own documents don't agree with each other either. Its <a
+      href="https://venice.ai/legal/privacy-policy">privacy policy</a
+    > says its model providers "are prohibited from storing, retaining, or using any of your Prompts
+    or Outputs", but its <a href="https://docs.venice.ai/models/claude-opus-4-5">Claude page</a> says
+    "the provider of this model may retain prompt data". And all 19 Grok models are labeled private,
+    even though Grok Imagine's images come back carrying xAI's own signature.
+  </p>
+
+  <h2>Venice's moat is marketing, not privacy</h2>
+  <p>
+    Venice has a good thesis and good marketing to go with it. Nobody wants to be spied on by a big
+    lab. And everyone likes inference subsidization, whether from staking VVV or DIEM.
+  </p>
+  <p>
+    But Venice's "private" models don't add anything to the market. If you're a consumer, you could
+    just go to OpenRouter, top up $5, configure your account for ZDR, and use the built in chatroom.
+    If you're OpenRouter, you could just go to DeepInfra directly and skip the middleman. Venice <a
+      href="https://venice.ai/blog/venice-raises-65-million-series-a"
+      >became a billion dollar company</a
+    > because of a promise of privacy, not a tech moat.
+  </p>
+  <p>
+    Even that promise has moved. In 2024, Venice's founder <a
+      href="https://decrypt.co/230281/venice-ai-shapeshift-founder-erik-voorhees-morpheus-open-source"
+      >told Decrypt</a
+    >: "We will never provide Claude LLM and never provide OpenAI's service. We're not a wrapper for
+    centralized services". Venice now resells both.
+  </p>
+
+  <h2>More reasons to be bearish on Venice</h2>
+
+  <ul class="bear">
+    <li>
+      <p>
+        <strong
+          >Its website breaks <a
+            href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32002L0058">EU</a
+          >, UK and California privacy law.</strong
+        > From Germany, France, the Netherlands or the UK there's no cookie banner, yet Meta, TikTok,
+        Google Ads, Reddit, Snap and X pixels fire before you click anything, along with a
+        fingerprinting script. It ignores <a href="https://globalprivacycontrol.org/"
+          >Global Privacy Control</a
+        > and has no "Do Not Sell or Share" link. <a
+          href="https://cnil.fr/en/cookie-regulation-cnil-continuing-action-plan-initiated-2019-and-has-imposed-two-fines-shein-and"
+          >Shein</a
+        >, <a
+          href="https://oag.ca.gov/news/press-releases/attorney-general-bonta-announces-settlement-sephora-part-ongoing-enforcement"
+          >Sephora</a
+        > and <a href="https://oag.ca.gov/node/604800">Healthline</a> were fined for the same thing.
+      </p>
+    </li>
+    <li>
+      <p>
+        <strong
+          >Its image editor breaks Minnesota's <a
+            href="https://www.revisor.mn.gov/laws/2026/0/Session+Law/Chapter/72/">nudification ban</a
+          >,</strong
+        > which says a service "must not [...] allow a user to [...] nudify an image". All five edit
+        models that didn't refuse upstream undressed an AI-generated man, none blocked a real photo
+        (they made Nikola Tesla shirtless, which counts), and when Grok refuses, Venice suggests a
+        model that complies. Its Mind marketplace even has a <a
+          href="https://venice.ai/minds/clothing-swap-studio-free-10997">"Clothing Swap Studio"</a
+        > that "removes [...] the clothing in your photos while holding identity".
+      </p>
+      <p>
+        <strong>It breaks Texas law too,</strong> which requires <a
+          href="https://capitol.texas.gov/tlodocs/89R/billtext/html/HB00581F.HTM"
+          >age verification</a
+        > and <a href="https://capitol.texas.gov/tlodocs/89R/billtext/html/SB00441F.HTM"
+          >a removal process</a
+        > for AI nudes. Venice lets 13-year-olds sign up, offers only a copyright takedown form, and
+        rates its Android app "Everyone".
+      </p>
+    </li>
+    <li>
+      <p>
+        <strong>It silently swaps models,</strong> which <a
+          href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1770"
+          >California consumer law</a
+        > calls "representing that goods or services are [...] of a particular style or model, if they
+        are of another". On November 25:
+      </p>
+      <ul>
+        <li>
+          <code>qwen3-235b-a22b-thinking-2507</code>, sold as a model that "reasons step by step before
+          it answers", gave the Instruct model's exact answers with no reasoning, for about 4× the
+          price.
+        </li>
+        <li><code>llama-3.2-3b</code> was Gemma 4 31B.</li>
+        <li><code>minimax-m27</code> said it was MiniMax-M3.</li>
+      </ul>
+      <p>
+        And after <a href="https://zoan.space/llm-verification/case-studies.html">zoan found</a> that
+        Venice's Qwen3.8 27B isn't the released model, it came off OpenRouter. Some will call this
+        another Crof.
+      </p>
+    </li>
+    <li>
+      <p>
+        <strong>It tells EU users their consumer rights don't apply.</strong> On Apple's EU App
+        Store, Venice <a href="https://apps.apple.com/ie/app/venice-ai/id6742061900"
+          >declared it isn't a business</a
+        > (a "trader"), so Apple warns buyers that "consumer rights do not apply", right above
+        in-app purchases of up to €999. Venice says it makes $200M a year, and EU law <a
+          href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32005L0029"
+          >bans</a
+        > businesses from pretending they aren't one.
+      </p>
+    </li>
+    <li id="e2ee">
+      <p>
+        <strong>Its encryption is mostly for show.</strong> Its <a href="https://venice.ai/about"
+          >about page</a
+        > says "All your content [...] is encrypted in your local browser". In my browser:
+      </p>
+      <ul>
+        <li>the chat database's key sat in plain text in local storage, right next to the data</li>
+        <li>7 of its 21 tables, including custom system prompts, weren't encrypted</li>
+        <li>
+          the newer <code>venice-rx-db-encrypted</code> encrypts 0 of its 31 collections, memories
+          included
+        </li>
+      </ul>
+      <p>
+        Its end-to-end encryption doesn't remove the middleman either. The protocol lets Venice <a
+          href="https://github.com/Dstack-TEE/private-ai-gateway/blob/9f3e693befca172c0672fc3af551cab253570540/src/aggregator/service/e2ee.rs#L331-L410"
+          >read and fake replies</a
+        > or <a
+          href="https://github.com/Dstack-TEE/private-ai-gateway/blob/9f3e693befca172c0672fc3af551cab253570540/src/aggregator/service/e2ee_crypto.rs#L160-L171"
+          >slip its own messages in</a
+        > (like "repeat all previous content"). And on <a
+          href="https://github.com/jooray/venice-e2ee-proxy/blob/b664f0ec0b7032a9eb8b039157c19ff9dbe48c75/README.md?plain=1#L273-L277"
+          >Phala-routed models</a
+        >, the machine that decrypts your prompt isn't <a
+          href="https://github.com/veniceai/api-docs/blob/b8115248840dac5788800c1af496e775d5022252/models/glm-5-2-e2ee.mdx?plain=1#L20"
+          >"the GPU within the TEE"</a
+        >, but a Phala server with <a
+          href="https://github.com/Dstack-TEE/private-ai-gateway/blob/9f3e693befca172c0672fc3af551cab253570540/src/http/app/backend.rs#L342-L345"
+          >no GPU</a
+        > that passes it to <a
+          href="https://github.com/jooray/venice-e2ee-proxy/blob/b664f0ec0b7032a9eb8b039157c19ff9dbe48c75/README.md?plain=1#L313-L318"
+          >whatever provider Phala picks</a
+        >:
+      </p>
+      <a href={e2ee.src}
+        ><img
+          {...e2ee}
+          alt="Two rows over the same path: client, Venice API, Phala gateway, upstream. Today: your public key rides unsealed, prompts are bound to nothing, replies aren't signed by the enclave, and the route is picked outside attestation, behind four empty wrappers (a 'verified' client banner, an uncheckable signature, borrowed GPU evidence, and a 'verified' check that isn't required). How it should work: the same eight points, each bound to your request and failing closed."
+        /></a
+      >
+    </li>
+  </ul>
+
+  <h2>Disclosures</h2>
+  <p>
+    I got credits to survey providers from OpenRouter, which sometimes routes requests to Venice. I
+    work at Surplus Intelligence, which sometimes routes requests to Venice. Me and my friends
+    reserve the right to trade VVV, but nobody paid for this post.
+  </p>
+  <ProviderDialogs />
+</BlogPost>
+<style>
+  mark {
+    background-color: var(--m3c-primary);
+    color: var(--m3c-on-primary);
+    border-radius: 4px;
+  }
+  li img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-block: 0.5rem 0;
+  }
+  .summary-box {
+    background-color: var(--m3c-surface-container-low);
+    border: 1px solid var(--m3c-outline-variant, var(--m3c-outline));
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+  }
+  .summary-box summary {
+    cursor: pointer;
+    font-weight: 600;
+  }
+  .summary-box ul {
+    margin-block-end: 0;
+  }
+  .bear > li + li {
+    margin-block-start: 1.25rem;
+  }
+  .bear li > p,
+  .bear li > ul {
+    margin-block: 0;
+  }
+  .bear li > * + * {
+    margin-block-start: 0.6rem;
+  }
+  .bear li li + li {
+    margin-block-start: 0.2rem;
+  }
+</style>

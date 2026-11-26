@@ -1,0 +1,304 @@
+---
+// One closed <dialog> per provider badge on the page, opened by its badges. Put this last in the
+// post: it waits for the badges before it to register, and a badge after it fails the build.
+import { basics, dialogId, dialogRegistry, providers, usageOf, type ProviderKey } from './lib.ts';
+import UsageChart from './UsageChart.astro';
+
+// Badges nested in other components' slots render a few microtasks later
+await new Promise((r) => setTimeout(r, 0));
+const registry = dialogRegistry(Astro.locals);
+registry.rendered = true;
+
+const entries = (Object.keys(providers) as ProviderKey[])
+  .filter((k) => registry.used.has(k))
+  .map((key) => {
+    const info = providers[key];
+    const p = usageOf(key);
+    const m = p?.meta;
+    const links = [
+      ['Website', info.website],
+      info.orSlug && ['OpenRouter page', `https://openrouter.ai/provider/${info.orSlug}`],
+      m?.privacyPolicyUrl && ['Privacy policy', m.privacyPolicyUrl],
+      m?.termsOfServiceUrl && ['Terms', m.termsOfServiceUrl],
+      m?.statusPageUrl && ['Status', m.statusPageUrl],
+    ].filter(Boolean) as [string, string][];
+    return { key, info, p, links, basics: basics(key) };
+  });
+---
+
+{
+  entries.map(({ key, info, p, links, basics }) => (
+    <dialog
+      id={dialogId(key)}
+      class="provider-dialog"
+      closedby="any"
+      aria-labelledby={`${dialogId(key)}-title`}
+    >
+      <header class="not-prose" style={`--bg: ${info.bg}; --fg: ${info.fg}`}>
+        <h2 id={`${dialogId(key)}-title`}>
+          <svg viewBox={info.icon.viewBox} aria-hidden="true">
+            <path d={info.icon.d} fill="currentColor" />
+          </svg>
+          {info.name}
+        </h2>
+        <button
+          type="button"
+          class="close layer"
+          aria-label="Close"
+          {...{ commandfor: dialogId(key), command: 'close' }}
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M6 6l12 12M18 6 6 18"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+      </header>
+      <div class="body">
+        <ul class="links not-prose">
+          {links.map(([text, href]) => (
+            <li>
+              <a class="layer" {href}>
+                {text}
+              </a>
+            </li>
+          ))}
+        </ul>
+        {basics.rows.length ? (
+          <div class="basics not-prose">
+            <dl>
+              {basics.rows.map(([k, v]) => (
+                <>
+                  <dt>{k}</dt>
+                  <dd>{v}</dd>
+                </>
+              ))}
+            </dl>
+            <p class="source">{basics.source}</p>
+          </div>
+        ) : (
+          <div class="basics not-prose">
+            <p>{'blurb' in info && info.blurb}</p>
+          </div>
+        )}
+        {p && <UsageChart of={key} />}
+      </div>
+    </dialog>
+  ))
+}
+
+{entries.length > 0 && <div class="provider-hovercard" id="provider-hovercard" role="tooltip" hidden />}
+
+<script>
+  // Invoker commands open the dialogs natively; older browsers get the same behavior here
+  if (!('commandForElement' in HTMLButtonElement.prototype)) {
+    document.addEventListener('click', (e) => {
+      const button = (e.target as Element).closest?.('button[commandfor]');
+      if (!button) return;
+      const target = document.getElementById(button.getAttribute('commandfor')!);
+      if (!(target instanceof HTMLDialogElement)) return;
+      const command = button.getAttribute('command');
+      if (command == 'show-modal' && !target.open) target.showModal();
+      else if (command == 'close') target.close();
+    });
+  }
+  if (!('closedBy' in HTMLDialogElement.prototype)) {
+    for (const dialog of document.querySelectorAll<HTMLDialogElement>('.provider-dialog')) {
+      dialog.addEventListener('click', (e) => {
+        if (e.target != dialog) return;
+        const r = dialog.getBoundingClientRect();
+        const inside =
+          e.clientX >= r.left &&
+          e.clientX <= r.right &&
+          e.clientY >= r.top &&
+          e.clientY <= r.bottom;
+        if (!inside) dialog.close();
+      });
+    }
+  }
+
+  // Hover card: the dialog's basics, shown next to the badge
+  const card = document.getElementById('provider-hovercard');
+  let current: HTMLElement | undefined;
+
+  const hide = () => {
+    if (!card) return;
+    card.hidden = true;
+    current?.removeAttribute('aria-describedby');
+    current = undefined;
+  };
+  const show = (badge: HTMLElement) => {
+    const dialog = document.getElementById(badge.getAttribute('commandfor')!);
+    const basics = dialog?.querySelector('.basics');
+    if (!card || !dialog || !basics || dialog.matches('[open]')) return;
+    card.replaceChildren(basics.cloneNode(true));
+    const hint = document.createElement('p');
+    hint.className = 'hint';
+    hint.textContent = dialog.querySelector('.usage')
+      ? 'Click for usage and links'
+      : 'Click for links';
+    card.appendChild(hint);
+    card.hidden = false;
+    current = badge;
+    badge.setAttribute('aria-describedby', card.id);
+
+    const b = badge.getBoundingClientRect();
+    const c = card.getBoundingClientRect();
+    const gap = 6;
+    const margin = 8;
+    const below =
+      b.bottom + gap + c.height <= innerHeight - margin || b.top - gap - c.height < margin;
+    const top = below ? b.bottom + gap : b.top - gap - c.height;
+    const left = Math.min(Math.max(b.left, margin), innerWidth - margin - c.width);
+    card.style.translate = `${left}px ${top}px`;
+  };
+
+  for (const badge of document.querySelectorAll<HTMLElement>('button.provider')) {
+    badge.removeAttribute('title'); // the hover card replaces the native tooltip
+    badge.addEventListener('pointerenter', (e) => {
+      if (e.pointerType != 'mouse') return;
+      show(badge);
+    });
+    badge.addEventListener('pointerleave', hide);
+    badge.addEventListener('focus', () => {
+      if (badge.matches(':focus-visible')) show(badge);
+    });
+    badge.addEventListener('blur', hide);
+    badge.addEventListener('click', hide);
+  }
+  addEventListener('scroll', hide, { passive: true });
+  addEventListener('keydown', (e) => {
+    if (e.key == 'Escape') hide();
+  });
+</script>
+
+<style>
+  .provider-dialog {
+    --surface: var(--m3c-surface-container-high);
+    width: min(40rem, calc(100vw - 2rem));
+    max-height: calc(100dvh - 2rem);
+    padding: 0;
+    border: none;
+    border-radius: 1.5rem;
+    background: var(--surface);
+    color: var(--m3c-on-surface-dilute);
+    overflow: auto;
+    overscroll-behavior: contain;
+    &::backdrop {
+      background: rgb(0 0 0 / 0.6);
+    }
+  }
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1rem 1rem 1.5rem;
+    background: var(--bg);
+    color: var(--fg);
+  }
+  .provider-dialog header h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0;
+    color: inherit;
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+  h2 svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .close {
+    display: flex;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 100%;
+    background: none;
+    color: inherit;
+  }
+  .close svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  .body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 1.25rem 1.5rem 1.5rem;
+  }
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .links a {
+    display: inline-flex;
+    align-items: center;
+    height: 2rem;
+    padding-inline: 0.875rem;
+    border-radius: var(--m3-shape-full);
+    background: var(--m3c-secondary-container);
+    color: var(--m3c-on-secondary-container);
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  /* Shared by the dialog and the hover card, which clones .basics */
+  .basics :global(dl),
+  .provider-hovercard :global(dl) {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.125rem 1rem;
+    margin: 0;
+  }
+  .basics :global(dt),
+  .provider-hovercard :global(dt) {
+    color: var(--m3c-on-surface-variant);
+    font-weight: 400;
+  }
+  .basics :global(dd),
+  .provider-hovercard :global(dd) {
+    margin: 0;
+    color: var(--m3c-on-surface);
+  }
+  .basics :global(.source),
+  .provider-hovercard :global(.source),
+  .provider-hovercard :global(.hint) {
+    margin: 0.5rem 0 0;
+    font-size: 0.75rem;
+    color: var(--m3c-on-surface-variant);
+  }
+  .basics :global(p) {
+    margin: 0;
+  }
+
+  .provider-hovercard {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    max-width: min(20rem, calc(100vw - 1rem));
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    background: var(--m3c-surface-container-highest);
+    box-shadow: 0 8px 24px rgb(0 0 0 / 0.5);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    pointer-events: none;
+  }
+  .provider-hovercard :global(.hint) {
+    margin-top: 0.25rem;
+  }
+</style>

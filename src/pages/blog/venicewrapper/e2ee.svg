@@ -1,0 +1,302 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1302" viewBox="0 0 1440 1302" role="img" aria-labelledby="t d">
+<title id="t">Venice E2EE: what backward compatibility costs</title>
+<desc id="d">Two lanes over the same path (client, Venice API, Phala gateway, upstream). Top: the legacy path as deployed, eight numbered problems, four of them empty wrappers. Bottom: the fix for each number and where it already exists.</desc>
+<style>
+text { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+.title { font-size: 26px; font-weight: 700; }
+.ltitle { font-size: 18px; font-weight: 700; }
+.lsub { font-size: 13px; } .lkey { font-weight: 650; }
+.node { stroke-width: 2; }
+.nname { font-size: 15px; font-weight: 650; } .ndetail { font-size: 12px; }
+.arr { stroke-width: 2.5; }
+.alabel { font-size: 12px; font-weight: 600; }
+.card { stroke-width: 1; stroke-opacity: .35; }
+.card.wrapper { stroke-width: 2; stroke-opacity: 1; stroke-dasharray: 7 5; }
+.badget { font-size: 13px; font-weight: 700; }
+.ctitle { font-size: 14.5px; font-weight: 700; }
+.body { font-size: 13px; } .lk, .pk { font-weight: 700; }
+.exists { font-size: 12.5px; font-style: italic; }
+.existsk { font-weight: 700; font-style: normal; }
+.chipt { font-size: 11.5px; font-weight: 650; } .chipt-empty { font-weight: 800; letter-spacing: .04em; }
+.ftitle { font-size: 16px; font-weight: 700; }
+.fbody { font-size: 13px; } .fkey { font-weight: 700; }
+
+text { fill: #e8e9e3; }
+.bg { fill: #121411; }
+.lane { fill: #1a1c1a; stroke: #3a3c38; }
+.ltA { fill: #ffa08c; } .ltB { fill: #86d1a1; }
+.lsub { fill: #e8e9e3; fill-opacity: 0.72; } .lkey { fill: #ffa08c; fill-opacity: 1; }
+.node { fill: #202220; } .nodeA { stroke: #ffa08c; } .nodeB { stroke: #86d1a1; }
+.ndetail { fill: #e8e9e3; fill-opacity: 0.72; }
+.arrA { stroke: #ffa08c; } .arrB { stroke: #86d1a1; }
+.headA { fill: #ffa08c; } .headB { fill: #86d1a1; }
+.alA { fill: #ffa08c; } .alB { fill: #86d1a1; }
+.cardA { fill: #36231f; stroke: #ffa08c; } .cardB { fill: #1e2b22; stroke: #86d1a1; }
+.cardA.wrapper { fill: #271d1b; stroke: #ffa08c; }
+.badgeA { fill: #ffa08c; } .badgeB { fill: #86d1a1; }
+.lk { fill: #e1b7af; } .pk { fill: #ffa08c; }
+.exists { fill: #b0c7b4; } .existsk { fill: #86d1a1; }
+.badget { fill: #1a1c19; }
+.chip-empty { fill: #ffa08c; } .chipt-empty { fill: #4b1107; }
+.chip-compat { fill: #4d3719; } .chipt-compat { fill: #ffcc87; }
+.chip-choice { fill: #3f3751; } .chipt-choice { fill: #dccdff; }
+.chip-phala { fill: #283d50; } .chipt-phala { fill: #b0d9ff; }
+.chip-f { fill: #3a3c38; } .chipt-f { fill: #dcddd8; }
+.foot { fill: #161816; stroke: #3a3c38; }
+@media (prefers-color-scheme: dark) {
+text { fill: #e8e9e3; }
+.bg { fill: #121411; }
+.lane { fill: #1a1c1a; stroke: #3a3c38; }
+.ltA { fill: #ffa08c; } .ltB { fill: #86d1a1; }
+.lsub { fill: #e8e9e3; fill-opacity: 0.72; } .lkey { fill: #ffa08c; fill-opacity: 1; }
+.node { fill: #202220; } .nodeA { stroke: #ffa08c; } .nodeB { stroke: #86d1a1; }
+.ndetail { fill: #e8e9e3; fill-opacity: 0.72; }
+.arrA { stroke: #ffa08c; } .arrB { stroke: #86d1a1; }
+.headA { fill: #ffa08c; } .headB { fill: #86d1a1; }
+.alA { fill: #ffa08c; } .alB { fill: #86d1a1; }
+.cardA { fill: #36231f; stroke: #ffa08c; } .cardB { fill: #1e2b22; stroke: #86d1a1; }
+.cardA.wrapper { fill: #271d1b; stroke: #ffa08c; }
+.badgeA { fill: #ffa08c; } .badgeB { fill: #86d1a1; }
+.lk { fill: #e1b7af; } .pk { fill: #ffa08c; }
+.exists { fill: #b0c7b4; } .existsk { fill: #86d1a1; }
+.badget { fill: #1a1c19; }
+.chip-empty { fill: #ffa08c; } .chipt-empty { fill: #4b1107; }
+.chip-compat { fill: #4d3719; } .chipt-compat { fill: #ffcc87; }
+.chip-choice { fill: #3f3751; } .chipt-choice { fill: #dccdff; }
+.chip-phala { fill: #283d50; } .chipt-phala { fill: #b0d9ff; }
+.chip-f { fill: #3a3c38; } .chipt-f { fill: #dcddd8; }
+.foot { fill: #161816; stroke: #3a3c38; }
+}</style>
+
+<rect x="20" y="20" width="1400" height="618" rx="16" class="lane"/>
+<text x="44" y="54" class="ltitle ltA" text-anchor="start">Today: the legacy path, kept so old clients still pass</text>
+<text x="44" y="76" class="lsub" text-anchor="start">Venice’s Phala-routed E2EE models. Code: Dstack-TEE/private-ai-gateway @ 9f3e693. Docs: veniceai/api-docs @ b811524.</text>
+<rect x="85.0" y="124" width="240" height="64" rx="10" class="node nodeA"/>
+<text x="205.0" y="151" class="nname" text-anchor="middle">Client</text>
+<text x="205.0" y="171" class="ndetail" text-anchor="middle">venice-cli, docs sample, libraries</text>
+<rect x="425.0" y="124" width="240" height="64" rx="10" class="node nodeA"/>
+<text x="545.0" y="151" class="nname" text-anchor="middle">Venice API</text>
+<text x="545.0" y="171" class="ndetail" text-anchor="middle">api.venice.ai, in the middle</text>
+<rect x="765.0" y="124" width="240" height="64" rx="10" class="node nodeA"/>
+<text x="885.0" y="151" class="nname" text-anchor="middle">Phala/RedPill gateway</text>
+<text x="885.0" y="171" class="ndetail" text-anchor="middle">TDX CVM, 0 GPUs, decrypts</text>
+<rect x="1105.0" y="124" width="240" height="64" rx="10" class="node nodeA" stroke-dasharray="6 4"/>
+<text x="1225.0" y="151" class="nname" text-anchor="middle">Upstream picked at runtime</text>
+<text x="1225.0" y="171" class="ndetail" text-anchor="middle">checked, but not required</text>
+<line x1="329.0" y1="156.0" x2="412.0" y2="156.0" class="arr arrA"/>
+<path d="M410.0,150.0 L421.0,156.0 L410.0,162.0 Z" class="head headA"/>
+<text x="375.0" y="102" class="alabel alA" text-anchor="middle">encrypted prompt +</text>
+<text x="375.0" y="117" class="alabel alA" text-anchor="middle">your public key in a header</text>
+<line x1="669.0" y1="156.0" x2="752.0" y2="156.0" class="arr arrA"/>
+<path d="M750.0,150.0 L761.0,156.0 L750.0,162.0 Z" class="head headA"/>
+<text x="715.0" y="102" class="alabel alA" text-anchor="middle">relayed; can swap the key,</text>
+<text x="715.0" y="117" class="alabel alA" text-anchor="middle">replay, reformat</text>
+<line x1="1009.0" y1="156.0" x2="1092.0" y2="156.0" class="arr arrA" stroke-dasharray="7 5"/>
+<path d="M1090.0,150.0 L1101.0,156.0 L1090.0,162.0 Z" class="head headA"/>
+<text x="1055.0" y="102" class="alabel alA" text-anchor="middle">your decrypted prompt,</text>
+<text x="1055.0" y="117" class="alabel alA" text-anchor="middle">on a route set at runtime</text>
+<rect x="40" y="214" width="330" height="182" rx="10" class="card cardA"/>
+<circle cx="67" cy="239" r="11" class="badge badgeA"/>
+<text x="67" y="243.5" class="badget" text-anchor="middle">1</text>
+<text x="86" y="244" class="ctitle" text-anchor="start">Your public key rides unsealed</text>
+<rect x="56" y="254" width="91" height="20" rx="10" class="chip-phala"/>
+<text x="101.61640625000001" y="268" class="chipt chipt-phala" text-anchor="middle">Phala design</text>
+<text x="56" y="290" class="body" text-anchor="start">The enclave encrypts its reply to your public</text>
+<text x="56" y="308" class="body" text-anchor="start">key, which travels in a plain header. Venice</text>
+<text x="56" y="326" class="body" text-anchor="start">can swap in its own public key, read the reply</text>
+<text x="56" y="344" class="body" text-anchor="start">with its private key, then re-encrypt it to yours.</text>
+<rect x="40" y="410" width="330" height="206" rx="10" class="card cardA wrapper"/>
+<circle cx="67" cy="435" r="11" class="badge badgeA"/>
+<text x="67" y="439.5" class="badget" text-anchor="middle">2</text>
+<text x="86" y="440" class="ctitle" text-anchor="start">The client is told it’s safe</text>
+<rect x="56" y="450" width="128" height="20" rx="10" class="chip-empty"/>
+<text x="119.84890625" y="464" class="chipt chipt-empty" text-anchor="middle">EMPTY WRAPPER</text>
+<rect x="188.6978125" y="450" width="97" height="20" rx="10" class="chip-choice"/>
+<text x="237.08890625" y="464" class="chipt chipt-choice" text-anchor="middle">Venice choice</text>
+<text x="56" y="486" class="body"><tspan class="lk">Looks like:</tspan> “✓ TEE attestation verified”,</text>
+<text x="56" y="504" class="body" text-anchor="start">then “Response decrypted end-to-end”.</text>
+<text x="56" y="528" class="body"><tspan class="pk">Proves:</tspan> only that Venice’s server said</text>
+<text x="56" y="546" class="body" text-anchor="start">so (npm 2.1.0 takes its word), and that</text>
+<text x="56" y="564" class="body" text-anchor="start">the reply opened with your private</text>
+<text x="56" y="582" class="body" text-anchor="start">key, which a forged reply would too.</text>
+<rect x="380" y="214" width="330" height="182" rx="10" class="card cardA"/>
+<circle cx="407" cy="239" r="11" class="badge badgeA"/>
+<text x="407" y="243.5" class="badget" text-anchor="middle">3</text>
+<text x="426" y="244" class="ctitle" text-anchor="start">Prompts bound to nothing</text>
+<rect x="396" y="254" width="102" height="20" rx="10" class="chip-compat"/>
+<text x="446.92609375" y="268" class="chipt chipt-compat" text-anchor="middle">legacy compat</text>
+<text x="396" y="290" class="body" text-anchor="start">Each message is encrypted on its own, with</text>
+<text x="396" y="308" class="body" text-anchor="start">no nonce and no replay cache. Venice can</text>
+<text x="396" y="326" class="body" text-anchor="start">slip in its own messages, drop yours, or replay</text>
+<text x="396" y="344" class="body" text-anchor="start">old ones, and the enclave accepts all of it.</text>
+<rect x="380" y="410" width="330" height="206" rx="10" class="card cardA wrapper"/>
+<circle cx="407" cy="435" r="11" class="badge badgeA"/>
+<text x="407" y="439.5" class="badget" text-anchor="middle">4</text>
+<text x="426" y="440" class="ctitle" text-anchor="start">A signature no one can check</text>
+<rect x="396" y="450" width="128" height="20" rx="10" class="chip-empty"/>
+<text x="459.84890625" y="464" class="chipt chipt-empty" text-anchor="middle">EMPTY WRAPPER</text>
+<rect x="528.6978125" y="450" width="97" height="20" rx="10" class="chip-choice"/>
+<text x="577.08890625" y="464" class="chipt chipt-choice" text-anchor="middle">Venice choice</text>
+<text x="396" y="486" class="body"><tspan class="lk">Looks like:</tspan> a signed record of your exchange.</text>
+<text x="396" y="510" class="body"><tspan class="pk">Proves:</tspan> the gateway signed hashes</text>
+<text x="396" y="528" class="body" text-anchor="start">of two bodies. Venice reformats both</text>
+<text x="396" y="546" class="body" text-anchor="start">in transit (third-party measurement),</text>
+<text x="396" y="564" class="body" text-anchor="start">so you can never recompute them.</text>
+<rect x="720" y="214" width="330" height="182" rx="10" class="card cardA"/>
+<circle cx="747" cy="239" r="11" class="badge badgeA"/>
+<text x="747" y="243.5" class="badget" text-anchor="middle">5</text>
+<text x="766" y="244" class="ctitle" text-anchor="start">Replies not signed by the enclave</text>
+<rect x="736" y="254" width="91" height="20" rx="10" class="chip-phala"/>
+<text x="781.61640625" y="268" class="chipt chipt-phala" text-anchor="middle">Phala design</text>
+<text x="736" y="290" class="body" text-anchor="start">Each reply chunk is encrypted to your</text>
+<text x="736" y="308" class="body" text-anchor="start">public key with a throwaway key; the</text>
+<text x="736" y="326" class="body" text-anchor="start">enclave’s attested private key never</text>
+<text x="736" y="344" class="body" text-anchor="start">touches the reply. Anyone who knows your</text>
+<text x="736" y="362" class="body" text-anchor="start">public key can write a chunk that decrypts.</text>
+<rect x="720" y="410" width="330" height="206" rx="10" class="card cardA wrapper"/>
+<circle cx="747" cy="435" r="11" class="badge badgeA"/>
+<text x="747" y="439.5" class="badget" text-anchor="middle">6</text>
+<text x="766" y="440" class="ctitle" text-anchor="start">Borrowed GPU evidence</text>
+<rect x="736" y="450" width="128" height="20" rx="10" class="chip-empty"/>
+<text x="799.84890625" y="464" class="chipt chipt-empty" text-anchor="middle">EMPTY WRAPPER</text>
+<rect x="868.6978125" y="450" width="102" height="20" rx="10" class="chip-compat"/>
+<text x="919.62390625" y="464" class="chipt chipt-compat" text-anchor="middle">legacy compat</text>
+<text x="736" y="486" class="body"><tspan class="lk">Looks like:</tspan> proof your</text>
+<text x="736" y="504" class="body" text-anchor="start">prompt ran on a secure GPU.</text>
+<text x="736" y="528" class="body"><tspan class="pk">Proves:</tspan> some secure GPU somewhere</text>
+<text x="736" y="546" class="body" text-anchor="start">answered your nonce. The quote is the</text>
+<text x="736" y="564" class="body" text-anchor="start">gateway’s own (0 GPUs), identical for</text>
+<text x="736" y="582" class="body" text-anchor="start">every model; the GPU part is fetched</text>
+<text x="736" y="600" class="body" text-anchor="start">from a Phala or NEAR upstream.</text>
+<rect x="1060" y="214" width="330" height="182" rx="10" class="card cardA"/>
+<circle cx="1087" cy="239" r="11" class="badge badgeA"/>
+<text x="1087" y="243.5" class="badget" text-anchor="middle">7</text>
+<text x="1106" y="244" class="ctitle" text-anchor="start">Route picked outside attestation</text>
+<rect x="1076" y="254" width="91" height="20" rx="10" class="chip-phala"/>
+<text x="1121.61640625" y="268" class="chipt chipt-phala" text-anchor="middle">Phala design</text>
+<text x="1076" y="290" class="body" text-anchor="start">The gateway forwards your decrypted</text>
+<text x="1076" y="308" class="body" text-anchor="start">prompt along a route an operator sets</text>
+<text x="1076" y="326" class="body" text-anchor="start">at runtime (admin PUT, or a pull every</text>
+<text x="1076" y="344" class="body" text-anchor="start">300 s). Attesting the gateway doesn’t</text>
+<text x="1076" y="362" class="body" text-anchor="start">constrain where it goes next.</text>
+<rect x="1060" y="410" width="330" height="206" rx="10" class="card cardA wrapper"/>
+<circle cx="1087" cy="435" r="11" class="badge badgeA"/>
+<text x="1087" y="439.5" class="badget" text-anchor="middle">8</text>
+<text x="1106" y="440" class="ctitle" text-anchor="start">“Verified”, but not required</text>
+<rect x="1076" y="450" width="128" height="20" rx="10" class="chip-empty"/>
+<text x="1139.84890625" y="464" class="chipt chipt-empty" text-anchor="middle">EMPTY WRAPPER</text>
+<rect x="1208.6978125" y="450" width="97" height="20" rx="10" class="chip-choice"/>
+<text x="1257.08890625" y="464" class="chipt chipt-choice" text-anchor="middle">Venice choice</text>
+<text x="1076" y="486" class="body"><tspan class="lk">Looks like:</tspan> the next hop was checked.</text>
+<text x="1076" y="510" class="body"><tspan class="pk">Proves:</tspan> a check ran and was logged.</text>
+<text x="1076" y="528" class="body" text-anchor="start">On api.redpill.ai, the host Venice</text>
+<text x="1076" y="546" class="body" text-anchor="start">uses, a failed check still forwards</text>
+<text x="1076" y="564" class="body" text-anchor="start">(required: false), and Venice’s API</text>
+<text x="1076" y="582" class="body" text-anchor="start">rejects the flag that would enforce it.</text>
+<rect x="20" y="664" width="1400" height="618" rx="16" class="lane"/>
+<text x="44" y="698" class="ltitle ltB" text-anchor="start">How it should work: every check binds to your request, and failures block</text>
+<text x="44" y="720" class="lsub" text-anchor="start">Same four boxes, same numbers. Off-the-shelf equivalents: HPKE in auth mode, or TLS terminated inside the attested enclave.</text>
+<rect x="85.0" y="768" width="240" height="64" rx="10" class="node nodeB"/>
+<text x="205.0" y="795" class="nname" text-anchor="middle">Client</text>
+<text x="205.0" y="815" class="ndetail" text-anchor="middle">checks quote and every reply</text>
+<rect x="425.0" y="768" width="240" height="64" rx="10" class="node nodeB"/>
+<text x="545.0" y="795" class="nname" text-anchor="middle">Venice API</text>
+<text x="545.0" y="815" class="ndetail" text-anchor="middle">passes bytes through</text>
+<rect x="765.0" y="768" width="240" height="64" rx="10" class="node nodeB"/>
+<text x="885.0" y="795" class="nname" text-anchor="middle">Gateway enclave</text>
+<text x="885.0" y="815" class="ndetail" text-anchor="middle">attested, decrypts</text>
+<rect x="1105.0" y="768" width="240" height="64" rx="10" class="node nodeB"/>
+<text x="1225.0" y="795" class="nname" text-anchor="middle">Upstream GPU enclave</text>
+<text x="1225.0" y="815" class="ndetail" text-anchor="middle">attested per request</text>
+<line x1="329.0" y1="800.0" x2="412.0" y2="800.0" class="arr arrB"/>
+<path d="M410.0,794.0 L421.0,800.0 L410.0,806.0 Z" class="head headB"/>
+<text x="375.0" y="746" class="alabel alB" text-anchor="middle">prompt + your public key,</text>
+<text x="375.0" y="761" class="alabel alB" text-anchor="middle">sealed together</text>
+<line x1="669.0" y1="800.0" x2="752.0" y2="800.0" class="arr arrB"/>
+<path d="M750.0,794.0 L761.0,800.0 L750.0,806.0 Z" class="head headB"/>
+<text x="715.0" y="746" class="alabel alB" text-anchor="middle">same bytes,</text>
+<text x="715.0" y="761" class="alabel alB" text-anchor="middle">untouched</text>
+<line x1="1009.0" y1="800.0" x2="1092.0" y2="800.0" class="arr arrB"/>
+<path d="M1090.0,794.0 L1101.0,800.0 L1090.0,806.0 Z" class="head headB"/>
+<text x="1055.0" y="746" class="alabel alB" text-anchor="middle">only to an attested</text>
+<text x="1055.0" y="761" class="alabel alB" text-anchor="middle">enclave, else 503</text>
+<rect x="40" y="858" width="330" height="182" rx="10" class="card cardB"/>
+<circle cx="67" cy="883" r="11" class="badge badgeB"/>
+<text x="67" y="887.5" class="badget" text-anchor="middle">1</text>
+<text x="86" y="888" class="ctitle" text-anchor="start">Your public key sealed inside</text>
+<text x="56" y="908" class="body" text-anchor="start">Your public key is encrypted along with the</text>
+<text x="56" y="926" class="body" text-anchor="start">prompt, or bound to it as AAD. If Venice swaps</text>
+<text x="56" y="944" class="body" text-anchor="start">it, the enclave’s decryption fails and it refuses.</text>
+<text x="56" y="970" class="exists"><tspan class="existsk">Exists:</tspan> NEAR E2EE v3 (Oct</text>
+<text x="56" y="988" class="exists" text-anchor="start">2026; default in NEAR’s SDK)</text>
+<rect x="40" y="1054" width="330" height="206" rx="10" class="card cardB"/>
+<circle cx="67" cy="1079" r="11" class="badge badgeB"/>
+<text x="67" y="1083.5" class="badget" text-anchor="middle">2</text>
+<text x="86" y="1084" class="ctitle" text-anchor="start">The client says only what it checked</text>
+<text x="56" y="1104" class="body" text-anchor="start">“Verified” means the client itself</text>
+<text x="56" y="1122" class="body" text-anchor="start">checked Intel’s signature on the quote,</text>
+<text x="56" y="1140" class="body" text-anchor="start">the enclave’s measurements, and the</text>
+<text x="56" y="1158" class="body" text-anchor="start">enclave’s signature on every reply.</text>
+<text x="56" y="1184" class="exists"><tspan class="existsk">Exists:</tspan> partly: libraries check the quote</text>
+<text x="56" y="1202" class="exists" text-anchor="start">locally; signed response hashes exist,</text>
+<text x="56" y="1220" class="exists" text-anchor="start">but Venice’s reformatting breaks them</text>
+<rect x="380" y="858" width="330" height="182" rx="10" class="card cardB"/>
+<circle cx="407" cy="883" r="11" class="badge badgeB"/>
+<text x="407" y="887.5" class="badget" text-anchor="middle">3</text>
+<text x="426" y="888" class="ctitle" text-anchor="start">The whole request sealed as one</text>
+<text x="396" y="908" class="body" text-anchor="start">The conversation is encrypted as one</text>
+<text x="396" y="926" class="body" text-anchor="start">payload, bound to a nonce, a</text>
+<text x="396" y="944" class="body" text-anchor="start">timestamp and your public key, and the</text>
+<text x="396" y="962" class="body" text-anchor="start">enclave keeps a replay cache. Nothing</text>
+<text x="396" y="980" class="body" text-anchor="start">can be added, dropped or replayed.</text>
+<text x="396" y="1006" class="exists"><tspan class="existsk">Exists:</tspan> partly: Phala v2 adds AAD and a replay</text>
+<text x="396" y="1024" class="exists" text-anchor="start">cache, but per field and without your public key</text>
+<rect x="380" y="1054" width="330" height="206" rx="10" class="card cardB"/>
+<circle cx="407" cy="1079" r="11" class="badge badgeB"/>
+<text x="407" y="1083.5" class="badget" text-anchor="middle">4</text>
+<text x="426" y="1084" class="ctitle" text-anchor="start">A signature you can check</text>
+<text x="396" y="1104" class="body" text-anchor="start">Venice passes the bytes through untouched,</text>
+<text x="396" y="1122" class="body" text-anchor="start">and the signed receipt names the chat ID, your</text>
+<text x="396" y="1140" class="body" text-anchor="start">public key and the upstream that served it.</text>
+<text x="396" y="1166" class="exists"><tspan class="existsk">Exists:</tspan> partly: the gateway’s Ed25519 receipt</text>
+<text x="396" y="1184" class="exists" text-anchor="start">signs chat ID, model, body hashes and the</text>
+<text x="396" y="1202" class="exists" text-anchor="start">verified upstream, but not your public key</text>
+<rect x="720" y="858" width="330" height="182" rx="10" class="card cardB"/>
+<circle cx="747" cy="883" r="11" class="badge badgeB"/>
+<text x="747" y="887.5" class="badget" text-anchor="middle">5</text>
+<text x="766" y="888" class="ctitle" text-anchor="start">Replies signed by the enclave</text>
+<text x="736" y="908" class="body" text-anchor="start">Every chunk is signed with the</text>
+<text x="736" y="926" class="body" text-anchor="start">enclave’s attested private key and</text>
+<text x="736" y="944" class="body" text-anchor="start">numbered, with a signed end.</text>
+<text x="736" y="962" class="body" text-anchor="start">Forged, reordered or cut replies fail.</text>
+<text x="736" y="988" class="exists"><tspan class="existsk">Exists:</tspan> nowhere per chunk; NEAR and</text>
+<text x="736" y="1006" class="exists" text-anchor="start">Phala sign one hash of the whole</text>
+<text x="736" y="1024" class="exists" text-anchor="start">response, checked after the fact</text>
+<rect x="720" y="1054" width="330" height="206" rx="10" class="card cardB"/>
+<circle cx="747" cy="1079" r="11" class="badge badgeB"/>
+<text x="747" y="1083.5" class="badget" text-anchor="middle">6</text>
+<text x="766" y="1084" class="ctitle" text-anchor="start">Attest the machine that decrypts</text>
+<text x="736" y="1104" class="body" text-anchor="start">Attest the machine holding your</text>
+<text x="736" y="1122" class="body" text-anchor="start">plaintext, or chain it: the gateway’s</text>
+<text x="736" y="1140" class="body" text-anchor="start">quote plus a per-request receipt</text>
+<text x="736" y="1158" class="body" text-anchor="start">naming the upstream quote it checked.</text>
+<text x="736" y="1184" class="exists"><tspan class="existsk">Exists:</tspan> the canonical /v1/aci/attestation</text>
+<text x="736" y="1202" class="exists" text-anchor="start">endpoint doesn’t borrow</text>
+<rect x="1060" y="858" width="330" height="182" rx="10" class="card cardB"/>
+<circle cx="1087" cy="883" r="11" class="badge badgeB"/>
+<text x="1087" y="887.5" class="badget" text-anchor="middle">7</text>
+<text x="1106" y="888" class="ctitle" text-anchor="start">Only attested routes count</text>
+<text x="1076" y="908" class="body" text-anchor="start">However the route is chosen, only</text>
+<text x="1076" y="926" class="body" text-anchor="start">upstreams that pass attestation are</text>
+<text x="1076" y="944" class="body" text-anchor="start">eligible, so a routing change can’t send</text>
+<text x="1076" y="962" class="body" text-anchor="start">your prompt anywhere unverified.</text>
+<text x="1076" y="988" class="exists"><tspan class="existsk">Exists:</tspan> gateway strict mode</text>
+<rect x="1060" y="1054" width="330" height="206" rx="10" class="card cardB"/>
+<circle cx="1087" cy="1079" r="11" class="badge badgeB"/>
+<text x="1087" y="1083.5" class="badget" text-anchor="middle">8</text>
+<text x="1106" y="1084" class="ctitle" text-anchor="start">Fail closed</text>
+<text x="1076" y="1104" class="body" text-anchor="start">Serve Venice on a strict host, or let clients</text>
+<text x="1076" y="1122" class="body" text-anchor="start">send provider.aci_verified. An unattested</text>
+<text x="1076" y="1140" class="body" text-anchor="start">upstream gets a 503, not your prompt.</text>
+<text x="1076" y="1166" class="exists"><tspan class="existsk">Exists:</tspan> gateway strict mode (tee_only_domains)</text>
+</svg>

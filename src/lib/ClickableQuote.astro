@@ -1,0 +1,25 @@
+---
+type Props = {
+  href: string;
+};
+
+const { href } = Astro.props;
+---
+
+<a class="layer" {href}>
+  <slot />
+</a>
+
+<style>
+  a {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    border-radius: 0.75rem;
+    color: var(--m3c-primary);
+    > :global(*) {
+      color: var(--m3c-primary);
+    }
+    text-decoration: none;
+  }
+</style>

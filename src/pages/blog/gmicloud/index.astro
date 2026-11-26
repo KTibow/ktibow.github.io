@@ -1,0 +1,100 @@
+---
+import BlogPost from '$lib/layouts/BlogPost.astro';
+import Provider from '$lib/openrouter/Provider.astro';
+import ProviderDialogs from '$lib/openrouter/ProviderDialogs.astro';
+import UsageChart from '$lib/openrouter/UsageChart.astro';
+import ClickableQuote from '$lib/ClickableQuote.astro';
+
+export const title = 'GMI Cloud is a wrapper';
+export const date = '2026-11-25';
+---
+
+<BlogPost {title} {date}>
+  <p>
+    OpenRouter <a
+      href="https://web.archive.org/web/20261121184629/https://openrouter.ai/provider/gmicloud"
+      >disabled all GMI Cloud endpoints</a
+    > on November 20, after GMI Cloud told it an attacker had searched a system holding about three days
+    of request content "for credentials in prompts". A security researcher's planted AWS keys, sent to
+    GMI Cloud on October 21, 22, 27 and 28, were later used to try to create new users and keys. <a
+      href="https://www.gmicloud.ai/en/blog/security-incident-affecting-gmi-cloud-endpoints-on-openrouter"
+      >GMI Cloud's own notice</a
+    > puts the exposure window at October 18 to November 18, and says it has now stopped logging prompts
+    and responses.
+  </p>
+  <UsageChart of="gmicloud" title="GMI Cloud's daily tokens on OpenRouter" />
+  <p>
+    But the breach isn't the only thing GMI Cloud hasn't been upfront about. It markets itself as
+    hosting models on its own infrastructure, yet in its TOS it self-identifies as a pure router:
+  </p>
+  <ClickableQuote
+    href="https://web.archive.org/web/20261121185243/https://www.gmicloud.ai/en/legal/console-terms-of-service"
+  >
+    <p>
+      Company operates a <mark>large language model aggregator</mark> where users may use its website
+      [...] to <mark>access third-party application programming interfaces</mark> ("APIs") to use a variety
+      of generative artificial intelligence models (section 1.1)
+    </p>
+  </ClickableQuote>
+  <ClickableQuote
+    href="https://web.archive.org/web/20261121185243/https://www.gmicloud.ai/en/legal/console-terms-of-service"
+  >
+    <p>
+      The parties acknowledge and agree that Company <mark
+        >acts solely as a technical intermediary</mark
+      > that enables Client's access to third-party APIs and AI Models via the Site and provides billing,
+      routing and account management functions in connection with such access, and: (a) <mark
+        >does not provide or operate any APIs, AI Models</mark
+      >, or other Vendor Products accessible during the Service (section 1.3)
+    </p>
+  </ClickableQuote>
+  <p>
+    There are hints of choice and sovereignty elsewhere, but they're dead ends. Like this quote from
+    the MaaS Data Processing Addendum:
+  </p>
+  <ClickableQuote
+    href="https://trust.gmicloud.ai/resources?s=khd9h595ulrfn3hbydlmx8&name=gmi-cloud-maa-s-data-processing-addendum"
+  >
+    <p>
+      GMI makes no representation regarding Third Party Model Provider's retention, location, or
+      data-use practices; <mark>Customer is responsible for selecting routes</mark> appropriate to its
+      requirements. (section 3.1)
+    </p>
+  </ClickableQuote>
+  <p>
+    You can't select routes - as of writing, the console doesn't show or let you pick a route for
+    any model. So when you send a request to GMI Cloud, you can't tell which company runs the model,
+    and in GMI Cloud's case, the copy kept for troubleshooting wasn't safe either.
+  </p>
+  <p>Or this copy on their MaaS landing page:</p>
+  <ClickableQuote href="https://archive.is/VDhLU">
+    <p>
+      <mark>Not Just An API Router.</mark> [...] When the models are fully hosted and operated by GMI,
+      AI builders can focus on their core value proposition and products. [...] <mark
+        >GMI hosts and operates critical models on its own datacenter infrastructure</mark
+      >, ensuring consistent performance that routing-only platforms cannot guarantee.
+    </p>
+  </ClickableQuote>
+  <p>This seems like puffery, since their TOS says otherwise.</p>
+  <p>
+    You can't get clarification either - despite emailing <code>support@gmicloud.ai</code>, <code
+      >sales@gmicloud.ai</code
+    >, <code>louisa.g@gmicloud.ai</code>, and going to their Discord, GMI Cloud has been completely
+    unresponsive.
+  </p>
+
+  <h2>Disclosures</h2>
+  <p>
+    I got credits to survey providers from OpenRouter, which, as you read about, used to route to
+    GMI Cloud. I work at Surplus Intelligence, an inference marketplace that routes requests to
+    providers (most more trustworthy than GMI Cloud!). However, nobody paid for this post.
+  </p>
+  <ProviderDialogs />
+</BlogPost>
+<style>
+  mark {
+    background-color: var(--m3c-primary);
+    color: var(--m3c-on-primary);
+    border-radius: 4px;
+  }
+</style>

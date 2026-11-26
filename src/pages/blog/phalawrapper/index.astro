@@ -1,0 +1,88 @@
+---
+import BlogPost from '$lib/layouts/BlogPost.astro';
+import Provider from '$lib/openrouter/Provider.astro';
+import ProviderDialogs from '$lib/openrouter/ProviderDialogs.astro';
+import UsageChart from '$lib/openrouter/UsageChart.astro';
+import homepage from './homepage.avif';
+import models from './models.json';
+import type { ProviderKey } from '$lib/openrouter/providers.ts';
+
+export const title = 'Phala is a Chutes+ wrapper';
+export const date = '2026-11-25';
+
+const listfmt = new Intl.ListFormat('en-US', { style: 'long', type: 'conjunction' });
+---
+
+<BlogPost {title} {date}>
+  <UsageChart of="phala" title="Phala's daily tokens on OpenRouter" />
+  <p>
+    Phala is a privacy focused AI API, and they've made it look an awful lot like they own the
+    stack. Take a look at their <a
+      href="https://web.archive.org/web/20261121182306/https://phala.com/">homepage</a
+    >:
+  </p>
+  <img {...homepage} />
+
+  <h2>But Phala's API admits most of their models are wrappers</h2>
+  {
+    models.data.map((m) => (
+      <p>
+        <code>{m.id}</code> runs on{' '}
+        {listfmt
+          .formatToParts(m.providers)
+          .map((part) =>
+            part.type == 'element' ? <Provider of={part.value as ProviderKey} /> : part.value,
+          )}
+        .
+      </p>
+    ))
+  }
+  <p>
+    This data is from <a
+      href="https://web.archive.org/web/20261121182013/https://inference.phala.com/v1/models"
+      >https://inference.phala.com/v1/models</a
+    >, which openly includes <code>"providers"</code> for each model. Notice how few are actually <Provider
+      of="phala"
+    />?
+  </p>
+
+  <h2>I'm glad Phala was removed from OpenRouter</h2>
+  <p>
+    When Phala was on OpenRouter, OpenRouter listed all models, even the ones Phala admitted simply
+    went to another inference API. Phala saw this as an opportunity to make an extra buck by routing
+    OpenRouter's Phala account to cheaper, non-TEE upstreams.
+  </p>
+  <p>
+    Then Phala got hacked. In their <a
+      href="https://phala.com/posts/phala-november-preliminary-incident-report">postmortem</a
+    >, Phala admits OpenRouter users were sent down a different route than normal Phala users, and
+    that this route logged request content. OpenRouter responded by <a
+      href="https://web.archive.org/web/20261121184310/https://openrouter.ai/provider/phala"
+      >completely delisting Phala</a
+    >. I think this is a reasonable response to Phala's lack of honesty and security, and Phala
+    should remove OpenRouter from their "Trusted by 5,000+ users" section.
+  </p>
+  <p>
+    Phala's end-to-end encryption doesn't rule out sending you down a different route either. The
+    machine you encrypt to is a Phala gateway with <a
+      href="https://github.com/Dstack-TEE/private-ai-gateway/blob/9f3e693befca172c0672fc3af551cab253570540/src/http/app/backend.rs#L342-L345"
+      >no GPU</a
+    >, which decrypts your prompt and forwards it to an upstream from a list <a
+      href="https://github.com/jooray/venice-e2ee-proxy/blob/b664f0ec0b7032a9eb8b039157c19ff9dbe48c75/README.md?plain=1#L279-L287"
+      >Phala edits at runtime</a
+    >, outside what the attestation covers. The same model can <a
+      href="https://github.com/jooray/venice-e2ee-proxy/blob/b664f0ec0b7032a9eb8b039157c19ff9dbe48c75/README.md?plain=1#L313-L318"
+      >land on Phala, Chutes or NEAR within the same hour</a
+    >. I go into the rest of Phala's E2EE problems <a href="/blog/venicewrapper/#e2ee"
+      >in my Venice post</a
+    >.
+  </p>
+
+  <h2>Disclosures</h2>
+  <p>
+    I got credits to survey providers from OpenRouter, which, as you read about, used to route to
+    Phala. I work at Surplus Intelligence, an inference marketplace that routes requests to
+    providers (most more trustworthy than Phala!). However, nobody paid for this post.
+  </p>
+  <ProviderDialogs />
+</BlogPost>

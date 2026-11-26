@@ -1,0 +1,57 @@
+/* Corporate-structure trees, used in the post and in notes */
+.tree {
+  --line: oklch(from var(--m3c-on-surface) l c h / 0.25);
+  --muted: oklch(from var(--m3c-on-surface) l c h / 0.5);
+  font-family: ui-monospace, 'Monaspace Neon Var', monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  padding-left: 0;
+  margin-block: 1em;
+}
+.tree ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 1.4em;
+}
+.tree li {
+  position: relative;
+  padding-left: 1.2em;
+}
+.tree > li {
+  padding-left: 0;
+}
+.tree li li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 0.8em;
+  width: 0.9em;
+  border-left: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.tree li li::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.8em;
+  bottom: 0;
+  border-left: 1px solid var(--line);
+}
+.tree li li:last-child::after {
+  display: none;
+}
+.tree li.vie::before {
+  border-left-style: dashed;
+  border-bottom-style: dashed;
+}
+.tree .brand::before {
+  content: '→ ';
+  color: var(--muted);
+}
+a.brand {
+  color: var(--m3c-primary);
+}
+.tree .note {
+  color: var(--muted);
+}
