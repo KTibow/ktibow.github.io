@@ -7,6 +7,7 @@ import ClickableQuote from '$lib/ClickableQuote.astro';
 import Snippet from '$lib/Snippet.astro';
 import Percent from './_Percent.astro';
 import e2ee from './e2ee.svg';
+import e2eeDetails from './_e2ee-interception.md?url';
 
 export const title = 'Venice is a DeepInfra+ wrapper';
 export const date = '2026-11-25';
@@ -289,6 +290,9 @@ description:
           alt="Two rows over the same path: client, Venice API, Phala gateway, upstream. Today: your public key rides unsealed, prompts are bound to nothing, replies aren't signed by the enclave, and the route is picked outside attestation, behind four empty wrappers (a 'verified' client banner, an uncheckable signature, borrowed GPU evidence, and a 'verified' check that isn't required). How it should work: the same eight points, each bound to your request and failing closed."
         /></a
       >
+      <p>
+        <a href={e2eeDetails}>Full technical explanation, with every claim linked to code</a>
+      </p>
     </li>
   </ul>
 
