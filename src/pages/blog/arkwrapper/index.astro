@@ -162,13 +162,13 @@ export const date = '2026-11-25';
     So the forwarding is admitted. <a
       href="https://www.minimax.io/blog/update-on-url-access-in-forwarded-api-requests-20261124"
       >MiniMax's own notice</a
-    > names the same three and says its security system, on by default, opened URLs from forwarded
-    requests, ZDR ones included. <a href="https://novita.ai/blog/minimax-requests-privacy-notice/"
+    > names the same three and says its security system, on by default, opened URLs from forwarded requests,
+    ZDR ones included. <a href="https://novita.ai/blog/minimax-requests-privacy-notice/"
       >Novita's notice</a
     > calls it a "routing configuration issue" on a path "intended for specific customers", and promises
     better "Partner API labeling", the same "Partner" label its support told me means a request goes to
-    Qwen or inclusionAI. Since then, 16 of Novita's endpoints have come off OpenRouter: every Qwen
-    and inclusionAI model, plus StepFun, Tencent and all but one Kimi.
+    Qwen or inclusionAI. Since then, 16 of Novita's endpoints have come off OpenRouter: every Qwen and
+    inclusionAI model, plus StepFun, Tencent and all but one Kimi.
   </p>
   <p>But MiniMax is a very small model series. What about DeepSeek?</p>
 
@@ -212,10 +212,10 @@ export const date = '2026-11-25';
     in Singapore and its V4.1 Flash on Volcano Engine in Beijing, as of November 21. That's the
     chart at the top: Novita alone sent 120-160B tokens a day on these models until it lost its ZDR
     label on November 20, then 33B on November 21. Routes move, though; one of those changed within
-    an afternoon, and Novita's V4.1 Flash 1017 had stopped showing Ark's fingerprints by November 24.
-    As for the weird errors, part of StreamLake's traffic goes through Novita on its
-    way to ByteDance. So a V4.1 Flash request to SiliconFlow can go SiliconFlow → StreamLake →
-    Novita → ByteDance.
+    an afternoon, and Novita's V4.1 Flash 1017 had stopped showing Ark's fingerprints by November
+    24. As for the weird errors, part of StreamLake's traffic goes through Novita on its way to
+    ByteDance. So a V4.1 Flash request to SiliconFlow can go SiliconFlow → StreamLake → Novita →
+    ByteDance.
   </p>
   <p>
     Bonus: Novita's "DeepSeek V4 Pro" isn't the original V4 Pro. On Novita's own API, it sometimes
@@ -246,9 +246,10 @@ export const date = '2026-11-25';
 
   <h2>Disclosures</h2>
   <p>
-    I got credits to survey providers from OpenRouter, which routes requests to Novita, StreamLake
-    and Ant Digital. I work at Surplus Intelligence, an inference marketplace that routes requests
-    to providers, including BytePlus for some models. However, nobody paid for this post.
+    While a grant from OpenRouter helped with the research here and I work for an employer who would
+    prefer to go unnamed, <strong
+      >this post does not represent or reflect anyone else's opinion</strong
+    > - it is simply research I am publishing.
   </p>
   <ProviderDialogs />
 </BlogPost>
