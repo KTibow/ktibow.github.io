@@ -63,19 +63,12 @@ const listfmt = new Intl.ListFormat('en-US', { style: 'long', type: 'conjunction
     should remove OpenRouter from their "Trusted by 5,000+ users" section.
   </p>
   <p>
-    Phala's end-to-end encryption doesn't rule out sending you down a different route either. The
-    machine you encrypt to is a Phala gateway with <a
+    Phala's end to end encryption also has a few flaws - the machine you encrypt to is a Phala
+    gateway with <a
       href="https://github.com/Dstack-TEE/private-ai-gateway/blob/9f3e693befca172c0672fc3af551cab253570540/src/http/app/backend.rs#L342-L345"
       >no GPU</a
-    >, which decrypts your prompt and forwards it to an upstream from a list <a
-      href="https://github.com/jooray/venice-e2ee-proxy/blob/b664f0ec0b7032a9eb8b039157c19ff9dbe48c75/README.md?plain=1#L279-L287"
-      >Phala edits at runtime</a
-    >, outside what the attestation covers. The same model can <a
-      href="https://github.com/jooray/venice-e2ee-proxy/blob/b664f0ec0b7032a9eb8b039157c19ff9dbe48c75/README.md?plain=1#L313-L318"
-      >land on Phala, Chutes or NEAR within the same hour</a
-    >. I go into the rest of Phala's E2EE problems <a href="/blog/venicewrapper/#e2ee"
-      >in my Venice post</a
-    >.
+    >, and if you're a reseller like <a href="/blog/venicewrapper/#e2ee">Venice</a> you can man in the
+    middle the outputs. Phala is working on more secure end to end encryption.
   </p>
 
   <h2>Disclosures</h2>
