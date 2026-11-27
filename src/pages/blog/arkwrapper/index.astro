@@ -4,6 +4,7 @@ import BlogPost from '$lib/layouts/BlogPost.astro';
 import Provider from '$lib/openrouter/Provider.astro';
 import ProviderDialogs from '$lib/openrouter/ProviderDialogs.astro';
 import UsageChart from '$lib/openrouter/UsageChart.astro';
+import MoatCredits from './_MoatCredits.astro';
 import Percent from './_Percent.astro';
 import './_tree.css';
 
@@ -250,6 +251,35 @@ export const date = '2026-11-25';
     prefer to go unnamed, <strong
       >this post does not represent or reflect anyone else's opinion</strong
     > - it is simply research I am publishing.
+  </p>
+
+  <h2>Thanksgiving update: MOAT</h2>
+  <p>
+    Command Code <a href="https://web.archive.org/web/20261127050419/https://commandcode.ai/moat"
+      >advertises MOAT</a
+    > as a way "to access the highest quality models at wholesale prices", with "ZERO router fee" and
+    "no processing fee". They charge you a processing fee anyway:
+  </p>
+  <MoatCredits />
+  <p>
+    Where do your requests go? Command Code's privacy policy names Anthropic, OpenAI, Vercel,
+    Cloudflare and OpenRouter as its AI subprocessors. But the endpoint its CLI uses reports which
+    provider answered, and for 14 of its 122 models, the answer is sometimes or always Novita.
+  </p>
+  <p>
+    Turning on zero data retention (<code>CMD_ZDR=1</code>) sends more of your traffic there, not
+    less. DeepSeek V4.1 Flash is around 8% Novita with ZDR off but around 91% Novita with it on.
+    Kimi K3, Kimi K3.1 Pro, Ling 3.1, GLM-5.3 FlashX and Hy3 go to Novita either way. (And when
+    Command Code routes to Vercel, Vercel sometimes routes to Command Code's Novita BYOK. Command
+    Code says <code>zdrAttested: true</code> even when Vercel calls Novita <code
+      >zdr_not_supported</code
+    >.) Attested proof is available <a
+      href="https://github.com/KTibow/novita-code/releases/tag/probe-46047915789">here</a
+    > (run <a href="https://github.com/KTibow/novita-code/actions/runs/46047915789">46047915789</a> on{
+      ' '
+    }<a href="https://github.com/KTibow/novita-code/commit/9021bfe0e81a31ea2c2a091e45fbd1102cfd44fd"
+      >9021bfe</a
+    >).
   </p>
   <ProviderDialogs />
 </BlogPost>
